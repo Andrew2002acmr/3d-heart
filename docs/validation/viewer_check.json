@@ -1,0 +1,54 @@
+{
+  "browser": "154.0.4258.37",
+  "observations": [
+    {
+      "case": "ct_1001",
+      "status": "ct_1001 loaded. NiiVue directions follow the original header; displayed mm are NOT source-verified.",
+      "visual_observation": "Vertebral column appears on the header A side in the axial panel; anterior chest wall on the opposite side. Header A/P contradicts this anatomical landmark.",
+      "ct_mask_overlay": "No obvious global displacement on inspected slices; not a segmentation accuracy score",
+      "full_patient_orientation_confirmed": false,
+      "screenshot": "ct_1001_niivue.png",
+      "screenshot_sha256": "cd0560418f7efaa3e71ca654eb8f478b4bed39a257b3cab42bdff0f117b4b52a"
+    },
+    {
+      "case": "ct_1002",
+      "status": "ct_1002 loaded. NiiVue directions follow the original header; displayed mm are NOT source-verified.",
+      "visual_observation": "Vertebral column appears on the header A side in the axial panel; anterior chest wall on the opposite side. Header A/P contradicts this anatomical landmark.",
+      "ct_mask_overlay": "No obvious global displacement on inspected slices; not a segmentation accuracy score",
+      "full_patient_orientation_confirmed": false,
+      "screenshot": "ct_1002_niivue.png",
+      "screenshot_sha256": "bf835a1d69a0d175dbbd669fa01226ab2047f3d8deb3b7887cbda81dd55de812"
+    },
+    {
+      "case": "ct_1003",
+      "status": "ct_1003 loaded. NiiVue directions follow the original header; displayed mm are NOT source-verified.",
+      "visual_observation": "Vertebral column appears on the header A side in the axial panel; anterior chest wall on the opposite side. Header A/P contradicts this anatomical landmark.",
+      "ct_mask_overlay": "No obvious global displacement on inspected slices; not a segmentation accuracy score",
+      "full_patient_orientation_confirmed": false,
+      "screenshot": "ct_1003_niivue.png",
+      "screenshot_sha256": "a8f54ab7e08f6dfa770346762e9743c8122b36c566a4c3a012d28d6546c09b76"
+    },
+    {
+      "case": "ct_1004",
+      "status": "ct_1004 loaded. NiiVue directions follow the original header; displayed mm are NOT source-verified.",
+      "visual_observation": "Vertebral column appears on the header A side in the axial panel; anterior chest wall on the opposite side. Header A/P contradicts this anatomical landmark.",
+      "ct_mask_overlay": "No obvious global displacement on inspected slices; not a segmentation accuracy score",
+      "full_patient_orientation_confirmed": false,
+      "screenshot": "ct_1004_niivue.png",
+      "screenshot_sha256": "859dc942f84079e954dd4ad8fbef0e327596c9a219edfca232b9842d083cd772"
+    }
+  ],
+  "date": "2026-09-28",
+  "viewer": "NiiVue 0.69.0",
+  "mode": "headless Microsoft Edge; screenshots visually inspected",
+  "module_url": "https://cdn.jsdelivr.net/npm/@niivue/niivue@0.69.0/+esm",
+  "module_sha256_on_check": "4ee1cc26f15a5f2bf2446a0dc7ad527ab6d5b3cdf701b34d72141cf2e93a12b7",
+  "display_window_raw_values": [
+    1000,
+    2000
+  ],
+  "hu_confirmed": false,
+  "orientation_correction_applied": false,
+  "expert_review_performed": false,
+  "source_files": "headers.json contains SHA256 for the original files loaded by the viewer"
+}

@@ -1,0 +1,1274 @@
+{
+  "cases": [
+    {
+      "case": "ct_1001",
+      "ct": {
+        "file": "ct_1001_image.nii.gz",
+        "sha256": "03c6c49cb914704b68672cc92f3327dd50304c24cbe8fdbdd0ef34fe7fcd8962",
+        "nibabel": {
+          "shape": [
+            512,
+            512,
+            221
+          ],
+          "dtype": "int16",
+          "header_spacing": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "affine_spacing": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "spatial_unit": "unknown",
+          "axis_codes": [
+            "R",
+            "A",
+            "S"
+          ],
+          "affine": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              1.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              1.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "qform_code": 0,
+          "sform_code": 1,
+          "selected_transform": "sform",
+          "qform": null,
+          "sform": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              1.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              1.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "obliquity_degrees": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "simpleitk": {
+          "size": [
+            512,
+            512,
+            221
+          ],
+          "spacing": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "origin_lps": [
+            -1.0,
+            -1.0,
+            1.0
+          ],
+          "direction_lps": [
+            [
+              -1.0,
+              -0.0,
+              -0.0
+            ],
+            [
+              -0.0,
+              -1.0,
+              -0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "affine_ras": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              1.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              1.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "note": "SimpleITK's physical convention does not establish missing source units or patient orientation"
+        },
+        "readers_agree_shape": true,
+        "readers_agree_affine_ras": true,
+        "unit": "unknown",
+        "anatomical_orientation_confirmed": false,
+        "source_physical_scale_confirmed": false,
+        "warnings": []
+      },
+      "mask": {
+        "file": "ct_1001_label.nii.gz",
+        "sha256": "a8d04123b65b782e38010ff3b0c168437a76ae086b2849b622373dcc4fe4a6c2",
+        "nibabel": {
+          "shape": [
+            512,
+            512,
+            221
+          ],
+          "dtype": "int8",
+          "header_spacing": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "affine_spacing": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "spatial_unit": "unknown",
+          "axis_codes": [
+            "R",
+            "A",
+            "S"
+          ],
+          "affine": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              1.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              1.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "qform_code": 0,
+          "sform_code": 1,
+          "selected_transform": "sform",
+          "qform": null,
+          "sform": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              1.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              1.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "obliquity_degrees": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "simpleitk": {
+          "size": [
+            512,
+            512,
+            221
+          ],
+          "spacing": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "origin_lps": [
+            -1.0,
+            -1.0,
+            1.0
+          ],
+          "direction_lps": [
+            [
+              -1.0,
+              -0.0,
+              -0.0
+            ],
+            [
+              -0.0,
+              -1.0,
+              -0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "affine_ras": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              1.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              1.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "note": "SimpleITK's physical convention does not establish missing source units or patient orientation"
+        },
+        "readers_agree_shape": true,
+        "readers_agree_affine_ras": true,
+        "unit": "unknown",
+        "anatomical_orientation_confirmed": false,
+        "source_physical_scale_confirmed": false,
+        "warnings": []
+      },
+      "original_grids_identical": true,
+      "corrections_applied": []
+    },
+    {
+      "case": "ct_1002",
+      "ct": {
+        "file": "ct_1002_image.nii.gz",
+        "sha256": "d38ebf17f14db077dbd6101f17af6f959c4c3c6aa93a8abb8fd9d11ec1f945ab",
+        "nibabel": {
+          "shape": [
+            512,
+            512,
+            137
+          ],
+          "dtype": "int16",
+          "header_spacing": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "affine_spacing": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "spatial_unit": "unknown",
+          "axis_codes": [
+            "R",
+            "A",
+            "S"
+          ],
+          "affine": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              1.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              1.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "qform_code": 0,
+          "sform_code": 1,
+          "selected_transform": "sform",
+          "qform": null,
+          "sform": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              1.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              1.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "obliquity_degrees": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "simpleitk": {
+          "size": [
+            512,
+            512,
+            137
+          ],
+          "spacing": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "origin_lps": [
+            -1.0,
+            -1.0,
+            1.0
+          ],
+          "direction_lps": [
+            [
+              -1.0,
+              -0.0,
+              -0.0
+            ],
+            [
+              -0.0,
+              -1.0,
+              -0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "affine_ras": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              1.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              1.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "note": "SimpleITK's physical convention does not establish missing source units or patient orientation"
+        },
+        "readers_agree_shape": true,
+        "readers_agree_affine_ras": true,
+        "unit": "unknown",
+        "anatomical_orientation_confirmed": false,
+        "source_physical_scale_confirmed": false,
+        "warnings": []
+      },
+      "mask": {
+        "file": "ct_1002_label.nii.gz",
+        "sha256": "a7264680ac17d8a69c51f018a5779c209d92cc6bd9cfc7b4ed2c0788f012aa37",
+        "nibabel": {
+          "shape": [
+            512,
+            512,
+            137
+          ],
+          "dtype": "int8",
+          "header_spacing": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "affine_spacing": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "spatial_unit": "unknown",
+          "axis_codes": [
+            "R",
+            "A",
+            "S"
+          ],
+          "affine": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              1.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              1.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "qform_code": 0,
+          "sform_code": 1,
+          "selected_transform": "sform",
+          "qform": null,
+          "sform": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              1.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              1.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "obliquity_degrees": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "simpleitk": {
+          "size": [
+            512,
+            512,
+            137
+          ],
+          "spacing": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "origin_lps": [
+            -1.0,
+            -1.0,
+            1.0
+          ],
+          "direction_lps": [
+            [
+              -1.0,
+              -0.0,
+              -0.0
+            ],
+            [
+              -0.0,
+              -1.0,
+              -0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "affine_ras": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              1.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              1.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "note": "SimpleITK's physical convention does not establish missing source units or patient orientation"
+        },
+        "readers_agree_shape": true,
+        "readers_agree_affine_ras": true,
+        "unit": "unknown",
+        "anatomical_orientation_confirmed": false,
+        "source_physical_scale_confirmed": false,
+        "warnings": []
+      },
+      "original_grids_identical": true,
+      "corrections_applied": []
+    },
+    {
+      "case": "ct_1003",
+      "ct": {
+        "file": "ct_1003_image.nii.gz",
+        "sha256": "e0a91ce970d3f5dd57a6ac050ccf9ddd4345282ecec82a1ce845d42a115738b0",
+        "nibabel": {
+          "shape": [
+            512,
+            512,
+            206
+          ],
+          "dtype": "int16",
+          "header_spacing": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "affine_spacing": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "spatial_unit": "unknown",
+          "axis_codes": [
+            "R",
+            "A",
+            "S"
+          ],
+          "affine": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              1.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              1.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "qform_code": 0,
+          "sform_code": 1,
+          "selected_transform": "sform",
+          "qform": null,
+          "sform": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              1.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              1.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "obliquity_degrees": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "simpleitk": {
+          "size": [
+            512,
+            512,
+            206
+          ],
+          "spacing": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "origin_lps": [
+            -1.0,
+            -1.0,
+            1.0
+          ],
+          "direction_lps": [
+            [
+              -1.0,
+              -0.0,
+              -0.0
+            ],
+            [
+              -0.0,
+              -1.0,
+              -0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "affine_ras": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              1.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              1.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "note": "SimpleITK's physical convention does not establish missing source units or patient orientation"
+        },
+        "readers_agree_shape": true,
+        "readers_agree_affine_ras": true,
+        "unit": "unknown",
+        "anatomical_orientation_confirmed": false,
+        "source_physical_scale_confirmed": false,
+        "warnings": []
+      },
+      "mask": {
+        "file": "ct_1003_label.nii.gz",
+        "sha256": "50ed6b7b4e234f3250c95777c6085e7a58c760cfa3a10fe98b4b52a477a1c8cc",
+        "nibabel": {
+          "shape": [
+            512,
+            512,
+            206
+          ],
+          "dtype": "int8",
+          "header_spacing": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "affine_spacing": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "spatial_unit": "unknown",
+          "axis_codes": [
+            "R",
+            "A",
+            "S"
+          ],
+          "affine": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              1.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              1.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "qform_code": 0,
+          "sform_code": 1,
+          "selected_transform": "sform",
+          "qform": null,
+          "sform": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              1.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              1.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "obliquity_degrees": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "simpleitk": {
+          "size": [
+            512,
+            512,
+            206
+          ],
+          "spacing": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "origin_lps": [
+            -1.0,
+            -1.0,
+            1.0
+          ],
+          "direction_lps": [
+            [
+              -1.0,
+              -0.0,
+              -0.0
+            ],
+            [
+              -0.0,
+              -1.0,
+              -0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "affine_ras": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              1.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              1.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "note": "SimpleITK's physical convention does not establish missing source units or patient orientation"
+        },
+        "readers_agree_shape": true,
+        "readers_agree_affine_ras": true,
+        "unit": "unknown",
+        "anatomical_orientation_confirmed": false,
+        "source_physical_scale_confirmed": false,
+        "warnings": []
+      },
+      "original_grids_identical": true,
+      "corrections_applied": []
+    },
+    {
+      "case": "ct_1004",
+      "ct": {
+        "file": "ct_1004_image.nii.gz",
+        "sha256": "13a83c7f33e7250578bb65b9efb434dd6e45d186c2f35f25a48260975682d221",
+        "nibabel": {
+          "shape": [
+            512,
+            512,
+            344
+          ],
+          "dtype": "int16",
+          "header_spacing": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "affine_spacing": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "spatial_unit": "unknown",
+          "axis_codes": [
+            "R",
+            "A",
+            "S"
+          ],
+          "affine": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              1.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              1.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "qform_code": 0,
+          "sform_code": 1,
+          "selected_transform": "sform",
+          "qform": null,
+          "sform": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              1.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              1.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "obliquity_degrees": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "simpleitk": {
+          "size": [
+            512,
+            512,
+            344
+          ],
+          "spacing": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "origin_lps": [
+            -1.0,
+            -1.0,
+            1.0
+          ],
+          "direction_lps": [
+            [
+              -1.0,
+              -0.0,
+              -0.0
+            ],
+            [
+              -0.0,
+              -1.0,
+              -0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "affine_ras": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              1.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              1.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "note": "SimpleITK's physical convention does not establish missing source units or patient orientation"
+        },
+        "readers_agree_shape": true,
+        "readers_agree_affine_ras": true,
+        "unit": "unknown",
+        "anatomical_orientation_confirmed": false,
+        "source_physical_scale_confirmed": false,
+        "warnings": []
+      },
+      "mask": {
+        "file": "ct_1004_label.nii.gz",
+        "sha256": "30bf87b93d2bb23ec7f93727ad3c4536f3e55fb689376136e4db0735ed0ebf9e",
+        "nibabel": {
+          "shape": [
+            512,
+            512,
+            344
+          ],
+          "dtype": "int8",
+          "header_spacing": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "affine_spacing": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "spatial_unit": "unknown",
+          "axis_codes": [
+            "R",
+            "A",
+            "S"
+          ],
+          "affine": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              1.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              1.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "qform_code": 0,
+          "sform_code": 1,
+          "selected_transform": "sform",
+          "qform": null,
+          "sform": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              1.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              1.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "obliquity_degrees": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "simpleitk": {
+          "size": [
+            512,
+            512,
+            344
+          ],
+          "spacing": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "origin_lps": [
+            -1.0,
+            -1.0,
+            1.0
+          ],
+          "direction_lps": [
+            [
+              -1.0,
+              -0.0,
+              -0.0
+            ],
+            [
+              -0.0,
+              -1.0,
+              -0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "affine_ras": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              1.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              1.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "note": "SimpleITK's physical convention does not establish missing source units or patient orientation"
+        },
+        "readers_agree_shape": true,
+        "readers_agree_affine_ras": true,
+        "unit": "unknown",
+        "anatomical_orientation_confirmed": false,
+        "source_physical_scale_confirmed": false,
+        "warnings": []
+      },
+      "original_grids_identical": true,
+      "corrections_applied": []
+    }
+  ],
+  "SimpleITK_version": "2.5.6",
+  "coordinate_comparison": "SimpleITK LPS -> RAS by diag(-1,-1,1,1); no image reorientation"
+}
