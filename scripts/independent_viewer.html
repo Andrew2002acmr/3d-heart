@@ -1,0 +1,29 @@
+<!doctype html><html lang="en"><meta charset="utf-8">
+<title>ImageCHD independent NiiVue check</title>
+<style>html,body{margin:0;width:100%;height:100%;overflow:hidden}body{display:flex;flex-direction:column;background:#151515;color:white;font:15px sans-serif}header{padding:12px}main{position:relative;flex:1;min-height:0}canvas{display:block;width:100%;height:100%}button,select{margin:5px}pre{white-space:pre-wrap;margin:8px}</style>
+<header>Independent NiiVue check. Original NIfTI. Header directions and physical scale are unverified.
+<select id="case"><option>ct_1001</option><option>ct_1002</option><option>ct_1003</option><option>ct_1004</option></select>
+<button id="overlay">Toggle mask</button><button id="axial">Axial</button><button id="multi">Multiplanar</button>
+<span id="status">Loading NiiVue...</span></header>
+<main><canvas id="canvas"></canvas></main><pre id="location"></pre>
+<script type="module">
+import { Niivue } from 'https://cdn.jsdelivr.net/npm/@niivue/niivue@0.69.0/+esm';
+const status=document.getElementById('status');
+const nv=new Niivue({isRadiologicalConvention:false,dragAndDropEnabled:false,onLocationChange:(x)=>document.getElementById('location').textContent=x.string});
+await nv.attachTo('canvas');
+let opacity=0.35;
+const requested=new URLSearchParams(location.search).get('case');
+if(['ct_1001','ct_1002','ct_1003','ct_1004'].includes(requested))document.getElementById('case').value=requested;
+async function load(){
+ const id=document.getElementById('case').value; status.textContent='Loading '+id;
+ await nv.loadVolumes([{url:'/data/'+id+'_image.nii.gz',colormap:'gray',cal_min:1000,cal_max:2000},
+ {url:'/data/'+id+'_label.nii.gz',colormap:'warm',cal_min:0,cal_max:7,opacity}]);
+ nv.setSliceType(nv.sliceTypeMultiplanar); nv.setInterpolation(true);
+ status.textContent=id+' loaded. NiiVue directions follow the original header; displayed mm are NOT source-verified.';
+}
+document.getElementById('case').onchange=load;
+document.getElementById('overlay').onclick=()=>{opacity=opacity?0:0.35;nv.setOpacity(1,opacity)};
+document.getElementById('axial').onclick=()=>nv.setSliceType(0);
+document.getElementById('multi').onclick=()=>nv.setSliceType(3);
+load().catch(e=>status.textContent=String(e));
+</script></html>
