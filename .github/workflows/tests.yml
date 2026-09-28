@@ -1,0 +1,25 @@
+name: Geometry checks
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  geometry:
+    runs-on: windows-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.14'
+          cache: pip
+          cache-dependency-path: requirements-lock.txt
+      - name: Install pinned dependencies
+        run: python -m pip install -r requirements-lock.txt
+      - name: Test geometry without downloading patient volumes
+        run: python -m pytest tests/test_geometry.py -q
