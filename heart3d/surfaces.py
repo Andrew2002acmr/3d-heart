@@ -27,7 +27,10 @@ def build_surface(mask, label, affine):
         faces = faces[:, ::-1]
     vtk_faces = np.column_stack((np.full(len(faces), 3), faces))
     mesh = pv.PolyData(vertices, vtk_faces)
-    mesh = mesh.compute_normals(auto_orient_normals=True, consistent_normals=True, split_vertices=False)
+    # Marching cubes already orients the boundary of the occupied material.
+    # Auto-orient would turn enclosed cavity shells outwards, adding their
+    # volume instead of subtracting it. Preserve the signed boundary winding.
+    mesh = mesh.compute_normals(auto_orient_normals=False, consistent_normals=True, split_vertices=False)
     components, number = ndimage.label(crop, structure=np.ones((3, 3, 3)))
     sizes = np.bincount(components.ravel())[1:]
     voxel_count = int(crop.sum())
@@ -45,6 +48,7 @@ def build_surface(mask, label, affine):
             "voxel_volume_in_coordinate_units_cubed": float(voxel_count * abs(np.linalg.det(affine[:3, :3]))),
             "surface_area_in_coordinate_units_squared": float(mesh.area),
             "smoothing": False, "decimation": False, "components_removed": False}
+    info["normal_policy"] = "preserve marching-cubes material boundary; no automatic shell orientation"
     return mesh, info
 
 
