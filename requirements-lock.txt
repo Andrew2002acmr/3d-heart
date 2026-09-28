@@ -36,6 +36,7 @@ scikit-image==0.26.0
 scipy==1.18.1
 scooby==0.12.0
 six==1.17.0
+simpleitk==2.5.6
 tifffile==2026.9.20
 typing_extensions==4.16.0
 urllib3==2.8.0
