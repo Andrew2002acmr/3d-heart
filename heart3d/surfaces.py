@@ -30,7 +30,9 @@ def build_surface(mask, label, affine):
     # Marching cubes already orients the boundary of the occupied material.
     # Auto-orient would turn enclosed cavity shells outwards, adding their
     # volume instead of subtracting it. Preserve the signed boundary winding.
-    mesh = mesh.compute_normals(auto_orient_normals=False, consistent_normals=True, split_vertices=False)
+    # Traversing non-manifold edges to "make consistent" can also reverse
+    # otherwise correctly wound neighbouring faces. Compute shading normals only.
+    mesh = mesh.compute_normals(auto_orient_normals=False, consistent_normals=False, split_vertices=False)
     components, number = ndimage.label(crop, structure=np.ones((3, 3, 3)))
     sizes = np.bincount(components.ravel())[1:]
     voxel_count = int(crop.sum())
