@@ -1,0 +1,1447 @@
+{
+  "completed": true,
+  "profiles": {
+    "protected_40": [
+      40,
+      0.05
+    ],
+    "protected_60": [
+      60,
+      0.01
+    ],
+    "protected_100": [
+      100,
+      0.001
+    ]
+  },
+  "units": "u, NOT mm",
+  "policy": "retain all but largest triangle-count component exactly; no branch protection",
+  "versions": {
+    "pyvista": "0.49.0",
+    "vtk": "9.7.0",
+    "numpy": "2.5.3"
+  },
+  "code_sha256": {
+    "scripts\\probe_smoothing.py": "9ae66b734cd53e3162fb672f9347835ddedef861ceb6a4e75f11fd338372cdda",
+    "heart3d\\__init__.py": "88548eba32a9a115196e705b3d78cd7dcb4cd7d700698c465c3b8321a0d8e764",
+    "heart3d\\__main__.py": "e0b0be2ff587c5330d8008b3cf67adb459b55eb55cfa0e22f55e9030f0726a71",
+    "heart3d\\audit.py": "7fba31406a7f6f237e65cb960bc2efb815f7e475c6d612562da855a7b0c00e21",
+    "heart3d\\geometry_audit.py": "04f16959e4830d20762104f8729f8e2adab581e16aaed1c7279bc80a03bb2222",
+    "heart3d\\labels.py": "62292e4309c0df0db387d0207479a06757e2375e385a5bea44a4191a58e0fbfe",
+    "heart3d\\mesh_quality.py": "709c977065849d02b5760507930ce60ccb1853afd7d70b88443d1b51b601f216",
+    "heart3d\\metadata_audit.py": "94d6bc98cc2b40e7b05892ade2f143a5b673217cfc9abbda8903d72f39d60cfd",
+    "heart3d\\postprocess.py": "ad32ed552fa066c5c74c7026b47bb60da25b59f70d272d7d9b3c47cb746c19dc",
+    "heart3d\\protected_smoothing.py": "4fbaab6c7a3d6321fbeaaa514feb27482168329c86f1f1c83ba367b3f0c5b649",
+    "heart3d\\slices.py": "7d657422e60f6c3c1925ea221b8381cc0a42b0f31c5224c7fe6674907e427332",
+    "heart3d\\smoothing.py": "9043e6bf6d582e286e53691f7244425b5a5f856c53efaff71b4f112894c6b401",
+    "heart3d\\smoothing_experiment.py": "73359a7d1139b503e9a0d8a629add3cce6f41f97c3406fdaab7a099b2b6be2fd",
+    "heart3d\\surfaces.py": "a6d786c291baf527e47242b5e6241107d33e21860e2be220053c0d0a503d0a25",
+    "heart3d\\viewer.py": "9d63560eb4c8bb5cb01d2396c6280583b91101acf8fb4937bcac79abf80b91be",
+    "heart3d\\volume.py": "c0c01eb39c3d94b19454fc86b498dfab6f3d0e3c5b5e8b04bd3bc51d75e02073"
+  },
+  "input_metrics_sha256": "1b31ac02c9c8257d31bb92f04b6ec51a81e1e671a894d57b8a75900ec134f208",
+  "structures": [
+    {
+      "case": "ct_1001",
+      "name": "LV",
+      "label": 1,
+      "baseline": {
+        "vertices": 88234,
+        "triangles": 176536,
+        "surface_area": 66540.56970081267,
+        "algebraic_signed_volume": 505783.8333333333,
+        "enclosed_volume": 505783.8333333333,
+        "volume_status": "closed_consistently_oriented; self-intersections not tested",
+        "boundary_edges": 0,
+        "non_manifold_edges": 0,
+        "inconsistent_winding_edges": 0,
+        "zero_area_triangles": 0,
+        "surface_components_vertex_connected": 4,
+        "component_triangle_counts_desc": [
+          176172,
+          348,
+          8,
+          8
+        ],
+        "euler_characteristic": -34,
+        "self_intersections_checked": false
+      },
+      "source_sha256": "f0ec00649934f473abbb7342e9d9a9151518dc122109458cd6416003eb95684c",
+      "source_file": "D:\\codexProjects\\3d-hearts\\outputs\\mesh_smoothing_20260929\\ct_1001\\LV\\baseline.vtp",
+      "variants": {
+        "protected_40": {
+          "vertices": 88234,
+          "triangles": 176536,
+          "surface_area": 58875.419063143294,
+          "algebraic_signed_volume": 505647.4467940161,
+          "enclosed_volume": 505647.4467940161,
+          "volume_status": "closed_consistently_oriented; self-intersections not tested",
+          "boundary_edges": 0,
+          "non_manifold_edges": 0,
+          "inconsistent_winding_edges": 0,
+          "zero_area_triangles": 0,
+          "surface_components_vertex_connected": 4,
+          "component_triangle_counts_desc": [
+            176172,
+            348,
+            8,
+            8
+          ],
+          "euler_characteristic": -34,
+          "self_intersections_checked": false,
+          "deviation_from_baseline": {
+            "sample_count_per_direction": 10000,
+            "seeds": [
+              20260928,
+              20260929
+            ],
+            "sampling": "uniform by triangle area; unsigned point-to-triangle distance",
+            "symmetric_mean": 0.14798067215395458,
+            "bidirectional_p95_max": 0.3824866793074939,
+            "sampled_max": 0.8845456233443619,
+            "is_exact_hausdorff": false,
+            "max_corresponding_vertex_displacement": 1.085307705053043,
+            "mean_corresponding_vertex_displacement": 0.340481851205464,
+            "hausdorff_upper_bound": 1.085307705053043
+          },
+          "area_change_percent": -11.519514594080437,
+          "volume_change_percent": -0.026965381320787074,
+          "algebraic_volume_change_percent": -0.026965381320787074,
+          "connectivity_identical": true,
+          "screening": {
+            "status": "candidate",
+            "reasons": [],
+            "is_clinically_validated": false
+          },
+          "protected_vertices": 188,
+          "protected_vertices_unchanged": true,
+          "file": "ct_1001\\LV\\protected_40.vtp",
+          "sha256": "f1fc0ff6a9976611782272f38bf0c8c99e989c3b87693d369e5fc8c5f255d980"
+        },
+        "protected_60": {
+          "vertices": 88234,
+          "triangles": 176536,
+          "surface_area": 55011.916462429865,
+          "algebraic_signed_volume": 505453.1387092504,
+          "enclosed_volume": 505453.1387092504,
+          "volume_status": "closed_consistently_oriented; self-intersections not tested",
+          "boundary_edges": 0,
+          "non_manifold_edges": 0,
+          "inconsistent_winding_edges": 0,
+          "zero_area_triangles": 0,
+          "surface_components_vertex_connected": 4,
+          "component_triangle_counts_desc": [
+            176172,
+            348,
+            8,
+            8
+          ],
+          "euler_characteristic": -34,
+          "self_intersections_checked": false,
+          "deviation_from_baseline": {
+            "sample_count_per_direction": 10000,
+            "seeds": [
+              20260928,
+              20260929
+            ],
+            "sampling": "uniform by triangle area; unsigned point-to-triangle distance",
+            "symmetric_mean": 0.2601731616329957,
+            "bidirectional_p95_max": 0.802487123281597,
+            "sampled_max": 1.8818593092323834,
+            "is_exact_hausdorff": false,
+            "max_corresponding_vertex_displacement": 2.3825517353168286,
+            "mean_corresponding_vertex_displacement": 0.5109755632199213,
+            "hausdorff_upper_bound": 2.3825517353168286
+          },
+          "area_change_percent": -17.3257507265406,
+          "volume_change_percent": -0.06538260068604806,
+          "algebraic_volume_change_percent": -0.06538260068604806,
+          "connectivity_identical": true,
+          "screening": {
+            "status": "rejected",
+            "reasons": [
+              "max_displacement_over_limit"
+            ],
+            "is_clinically_validated": false
+          },
+          "protected_vertices": 188,
+          "protected_vertices_unchanged": true,
+          "file": "ct_1001\\LV\\protected_60.vtp",
+          "sha256": "6ab92b5cce5de4d7548d1a7c8929adf1c5e16fdc012ae10666228f49fb9b970b"
+        },
+        "protected_100": {
+          "vertices": 88234,
+          "triangles": 176536,
+          "surface_area": 48742.93790093457,
+          "algebraic_signed_volume": 504374.30436973507,
+          "enclosed_volume": 504374.30436973507,
+          "volume_status": "closed_consistently_oriented; self-intersections not tested",
+          "boundary_edges": 0,
+          "non_manifold_edges": 0,
+          "inconsistent_winding_edges": 0,
+          "zero_area_triangles": 0,
+          "surface_components_vertex_connected": 4,
+          "component_triangle_counts_desc": [
+            176172,
+            348,
+            8,
+            8
+          ],
+          "euler_characteristic": -34,
+          "self_intersections_checked": false,
+          "deviation_from_baseline": {
+            "sample_count_per_direction": 10000,
+            "seeds": [
+              20260928,
+              20260929
+            ],
+            "sampling": "uniform by triangle area; unsigned point-to-triangle distance",
+            "symmetric_mean": 0.593027260394708,
+            "bidirectional_p95_max": 1.9775660469490586,
+            "sampled_max": 4.004735970301071,
+            "is_exact_hausdorff": false,
+            "max_corresponding_vertex_displacement": 4.941175674356689,
+            "mean_corresponding_vertex_displacement": 1.0057143773895267,
+            "hausdorff_upper_bound": 4.941175674356689
+          },
+          "area_change_percent": -26.74703850583464,
+          "volume_change_percent": -0.27868209118288023,
+          "algebraic_volume_change_percent": -0.27868209118288023,
+          "connectivity_identical": true,
+          "screening": {
+            "status": "rejected",
+            "reasons": [
+              "mean_distance_over_limit",
+              "max_displacement_over_limit"
+            ],
+            "is_clinically_validated": false
+          },
+          "protected_vertices": 188,
+          "protected_vertices_unchanged": true,
+          "file": "ct_1001\\LV\\protected_100.vtp",
+          "sha256": "728cca5632508dcb32aaa3e621af892a3b909561554f147dfe83ab60c1c4a322"
+        }
+      },
+      "camera": {
+        "position": [
+          615.9822286171654,
+          475.4822286171655,
+          341.4822286171655
+        ],
+        "focal_point": [
+          345.5,
+          205.0,
+          71.0
+        ],
+        "view_up": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "parallel_scale": 89.81767845759352
+      }
+    },
+    {
+      "case": "ct_1001",
+      "name": "RV",
+      "label": 2,
+      "baseline": {
+        "vertices": 95547,
+        "triangles": 191206,
+        "surface_area": 71641.51918770818,
+        "algebraic_signed_volume": 620981.0416666666,
+        "enclosed_volume": 620981.0416666666,
+        "volume_status": "closed_consistently_oriented; self-intersections not tested",
+        "boundary_edges": 0,
+        "non_manifold_edges": 0,
+        "inconsistent_winding_edges": 0,
+        "zero_area_triangles": 0,
+        "surface_components_vertex_connected": 3,
+        "component_triangle_counts_desc": [
+          191190,
+          8,
+          8
+        ],
+        "euler_characteristic": -56,
+        "self_intersections_checked": false
+      },
+      "source_sha256": "997a92f133e00cd50df305884a25289f35662fddfdd10fd356dc54a09a4af363",
+      "source_file": "D:\\codexProjects\\3d-hearts\\outputs\\mesh_smoothing_20260929\\ct_1001\\RV\\baseline.vtp",
+      "variants": {
+        "protected_40": {
+          "vertices": 95547,
+          "triangles": 191206,
+          "surface_area": 63453.32542961446,
+          "algebraic_signed_volume": 620953.5428668073,
+          "enclosed_volume": 620953.5428668073,
+          "volume_status": "closed_consistently_oriented; self-intersections not tested",
+          "boundary_edges": 0,
+          "non_manifold_edges": 0,
+          "inconsistent_winding_edges": 0,
+          "zero_area_triangles": 0,
+          "surface_components_vertex_connected": 3,
+          "component_triangle_counts_desc": [
+            191190,
+            8,
+            8
+          ],
+          "euler_characteristic": -56,
+          "self_intersections_checked": false,
+          "deviation_from_baseline": {
+            "sample_count_per_direction": 10000,
+            "seeds": [
+              20260928,
+              20260929
+            ],
+            "sampling": "uniform by triangle area; unsigned point-to-triangle distance",
+            "symmetric_mean": 0.1457553079699408,
+            "bidirectional_p95_max": 0.3914208708158139,
+            "sampled_max": 0.7739442070756155,
+            "is_exact_hausdorff": false,
+            "max_corresponding_vertex_displacement": 1.12588193314393,
+            "mean_corresponding_vertex_displacement": 0.33351728405981734,
+            "hausdorff_upper_bound": 1.12588193314393
+          },
+          "area_change_percent": -11.429397158147648,
+          "volume_change_percent": -0.004428283315305315,
+          "algebraic_volume_change_percent": -0.004428283315305315,
+          "connectivity_identical": true,
+          "screening": {
+            "status": "candidate",
+            "reasons": [],
+            "is_clinically_validated": false
+          },
+          "protected_vertices": 12,
+          "protected_vertices_unchanged": true,
+          "file": "ct_1001\\RV\\protected_40.vtp",
+          "sha256": "ec2e72934c636d8d89b8d36e1ade5cb1fefc2a4a0882781e3999d832aa6aca43"
+        },
+        "protected_60": {
+          "vertices": 95547,
+          "triangles": 191206,
+          "surface_area": 59323.08082011989,
+          "algebraic_signed_volume": 621045.7384261648,
+          "enclosed_volume": 621045.7384261648,
+          "volume_status": "closed_consistently_oriented; self-intersections not tested",
+          "boundary_edges": 0,
+          "non_manifold_edges": 0,
+          "inconsistent_winding_edges": 0,
+          "zero_area_triangles": 0,
+          "surface_components_vertex_connected": 3,
+          "component_triangle_counts_desc": [
+            191190,
+            8,
+            8
+          ],
+          "euler_characteristic": -56,
+          "self_intersections_checked": false,
+          "deviation_from_baseline": {
+            "sample_count_per_direction": 10000,
+            "seeds": [
+              20260928,
+              20260929
+            ],
+            "sampling": "uniform by triangle area; unsigned point-to-triangle distance",
+            "symmetric_mean": 0.2646026316396183,
+            "bidirectional_p95_max": 0.8117886977190631,
+            "sampled_max": 2.0584827404976336,
+            "is_exact_hausdorff": false,
+            "max_corresponding_vertex_displacement": 2.3495783328638353,
+            "mean_corresponding_vertex_displacement": 0.5138080139679235,
+            "hausdorff_upper_bound": 2.3495783328638353
+          },
+          "area_change_percent": -17.194552135770202,
+          "volume_change_percent": 0.010418475791884596,
+          "algebraic_volume_change_percent": 0.010418475791884596,
+          "connectivity_identical": true,
+          "screening": {
+            "status": "rejected",
+            "reasons": [
+              "max_displacement_over_limit"
+            ],
+            "is_clinically_validated": false
+          },
+          "protected_vertices": 12,
+          "protected_vertices_unchanged": true,
+          "file": "ct_1001\\RV\\protected_60.vtp",
+          "sha256": "635dfc8f4db79009ae3d010e955da2d0c06f315565c10cb40df74e0667d93019"
+        },
+        "protected_100": {
+          "vertices": 95547,
+          "triangles": 191206,
+          "surface_area": 53296.035168595525,
+          "algebraic_signed_volume": 621390.355086753,
+          "enclosed_volume": 621390.355086753,
+          "volume_status": "closed_consistently_oriented; self-intersections not tested",
+          "boundary_edges": 0,
+          "non_manifold_edges": 0,
+          "inconsistent_winding_edges": 0,
+          "zero_area_triangles": 0,
+          "surface_components_vertex_connected": 3,
+          "component_triangle_counts_desc": [
+            191190,
+            8,
+            8
+          ],
+          "euler_characteristic": -56,
+          "self_intersections_checked": false,
+          "deviation_from_baseline": {
+            "sample_count_per_direction": 10000,
+            "seeds": [
+              20260928,
+              20260929
+            ],
+            "sampling": "uniform by triangle area; unsigned point-to-triangle distance",
+            "symmetric_mean": 0.5577348986695309,
+            "bidirectional_p95_max": 1.8600917431301038,
+            "sampled_max": 4.126565546827918,
+            "is_exact_hausdorff": false,
+            "max_corresponding_vertex_displacement": 5.006044617636574,
+            "mean_corresponding_vertex_displacement": 0.9684794200584615,
+            "hausdorff_upper_bound": 5.006044617636574
+          },
+          "area_change_percent": -25.60733528143868,
+          "volume_change_percent": 0.0659139961805888,
+          "algebraic_volume_change_percent": 0.0659139961805888,
+          "connectivity_identical": true,
+          "screening": {
+            "status": "rejected",
+            "reasons": [
+              "mean_distance_over_limit",
+              "max_displacement_over_limit"
+            ],
+            "is_clinically_validated": false
+          },
+          "protected_vertices": 12,
+          "protected_vertices_unchanged": true,
+          "file": "ct_1001\\RV\\protected_100.vtp",
+          "sha256": "4c4ca0d5a05f82b0c3cbf846395d76fe337d455f11ca120def9a57741c9a4932"
+        }
+      }
+    },
+    {
+      "case": "ct_1001",
+      "name": "MYO",
+      "label": 5,
+      "baseline": {
+        "vertices": 318839,
+        "triangles": 638366,
+        "surface_area": 241387.66106886772,
+        "algebraic_signed_volume": 1401041.0,
+        "enclosed_volume": null,
+        "volume_status": "invalid_topology_or_winding; algebraic value is diagnostic only",
+        "boundary_edges": 0,
+        "non_manifold_edges": 12,
+        "inconsistent_winding_edges": 0,
+        "zero_area_triangles": 0,
+        "surface_components_vertex_connected": 3,
+        "component_triangle_counts_desc": [
+          638014,
+          344,
+          8
+        ],
+        "euler_characteristic": -332,
+        "self_intersections_checked": false
+      },
+      "source_sha256": "0c674c1b4826b3d6e7145bd70a9e31a98944fb115c01b4faa8af995901d23b04",
+      "source_file": "D:\\codexProjects\\3d-hearts\\outputs\\mesh_smoothing_20260929\\ct_1001\\MYO\\baseline.vtp",
+      "variants": {
+        "protected_40": {
+          "vertices": 318839,
+          "triangles": 638366,
+          "surface_area": 218042.338420436,
+          "algebraic_signed_volume": 1400773.973490807,
+          "enclosed_volume": null,
+          "volume_status": "invalid_topology_or_winding; algebraic value is diagnostic only",
+          "boundary_edges": 0,
+          "non_manifold_edges": 12,
+          "inconsistent_winding_edges": 0,
+          "zero_area_triangles": 0,
+          "surface_components_vertex_connected": 3,
+          "component_triangle_counts_desc": [
+            638014,
+            344,
+            8
+          ],
+          "euler_characteristic": -332,
+          "self_intersections_checked": false,
+          "deviation_from_baseline": {
+            "sample_count_per_direction": 10000,
+            "seeds": [
+              20260928,
+              20260929
+            ],
+            "sampling": "uniform by triangle area; unsigned point-to-triangle distance",
+            "symmetric_mean": 0.13262998416214145,
+            "bidirectional_p95_max": 0.34457892451780825,
+            "sampled_max": 0.7504234208959657,
+            "is_exact_hausdorff": false,
+            "max_corresponding_vertex_displacement": 1.1056784630025087,
+            "mean_corresponding_vertex_displacement": 0.31378028501610483,
+            "hausdorff_upper_bound": 1.1056784630025087
+          },
+          "area_change_percent": -9.6712990817585,
+          "volume_change_percent": null,
+          "algebraic_volume_change_percent": -0.019059150245637202,
+          "connectivity_identical": true,
+          "screening": {
+            "status": "review_invalid_baseline",
+            "reasons": [],
+            "is_clinically_validated": false
+          },
+          "protected_vertices": 180,
+          "protected_vertices_unchanged": true,
+          "file": "ct_1001\\MYO\\protected_40.vtp",
+          "sha256": "195f9b1ce5cd1366cb6a5e7ce8eefa1d93404d791cae82dea3317086faf80f91"
+        },
+        "protected_60": {
+          "vertices": 318839,
+          "triangles": 638366,
+          "surface_area": 209732.43549762224,
+          "algebraic_signed_volume": 1400676.8303799955,
+          "enclosed_volume": null,
+          "volume_status": "invalid_topology_or_winding; algebraic value is diagnostic only",
+          "boundary_edges": 0,
+          "non_manifold_edges": 12,
+          "inconsistent_winding_edges": 0,
+          "zero_area_triangles": 0,
+          "surface_components_vertex_connected": 3,
+          "component_triangle_counts_desc": [
+            638014,
+            344,
+            8
+          ],
+          "euler_characteristic": -332,
+          "self_intersections_checked": false,
+          "deviation_from_baseline": {
+            "sample_count_per_direction": 10000,
+            "seeds": [
+              20260928,
+              20260929
+            ],
+            "sampling": "uniform by triangle area; unsigned point-to-triangle distance",
+            "symmetric_mean": 0.2071961766124245,
+            "bidirectional_p95_max": 0.6291905359256301,
+            "sampled_max": 1.8250311891208737,
+            "is_exact_hausdorff": false,
+            "max_corresponding_vertex_displacement": 2.2773964810304657,
+            "mean_corresponding_vertex_displacement": 0.43164086328812884,
+            "hausdorff_upper_bound": 2.2773964810304657
+          },
+          "area_change_percent": -13.113854051642793,
+          "volume_change_percent": null,
+          "algebraic_volume_change_percent": -0.025992788219941776,
+          "connectivity_identical": true,
+          "screening": {
+            "status": "rejected",
+            "reasons": [
+              "max_displacement_over_limit"
+            ],
+            "is_clinically_validated": false
+          },
+          "protected_vertices": 180,
+          "protected_vertices_unchanged": true,
+          "file": "ct_1001\\MYO\\protected_60.vtp",
+          "sha256": "6a7e097cbd1e87518aefcf3dd0c55aa5ae795b003281fa6448e9cf33eb144109"
+        },
+        "protected_100": {
+          "vertices": 318839,
+          "triangles": 638366,
+          "surface_area": 194316.28760702006,
+          "algebraic_signed_volume": 1402644.640438376,
+          "enclosed_volume": null,
+          "volume_status": "invalid_topology_or_winding; algebraic value is diagnostic only",
+          "boundary_edges": 0,
+          "non_manifold_edges": 12,
+          "inconsistent_winding_edges": 0,
+          "zero_area_triangles": 0,
+          "surface_components_vertex_connected": 3,
+          "component_triangle_counts_desc": [
+            638014,
+            344,
+            8
+          ],
+          "euler_characteristic": -332,
+          "self_intersections_checked": false,
+          "deviation_from_baseline": {
+            "sample_count_per_direction": 10000,
+            "seeds": [
+              20260928,
+              20260929
+            ],
+            "sampling": "uniform by triangle area; unsigned point-to-triangle distance",
+            "symmetric_mean": 0.41931121928475024,
+            "bidirectional_p95_max": 1.6964655041362393,
+            "sampled_max": 4.092305448118018,
+            "is_exact_hausdorff": false,
+            "max_corresponding_vertex_displacement": 5.07321486215712,
+            "mean_corresponding_vertex_displacement": 0.77886473307964,
+            "hausdorff_upper_bound": 5.07321486215712
+          },
+          "area_change_percent": -19.500322946672167,
+          "volume_change_percent": null,
+          "algebraic_volume_change_percent": 0.11446063593969491,
+          "connectivity_identical": true,
+          "screening": {
+            "status": "rejected",
+            "reasons": [
+              "mean_distance_over_limit",
+              "max_displacement_over_limit"
+            ],
+            "is_clinically_validated": false
+          },
+          "protected_vertices": 180,
+          "protected_vertices_unchanged": true,
+          "file": "ct_1001\\MYO\\protected_100.vtp",
+          "sha256": "a64519f8c6c5a2b03cb4e984c1023a3d89b083119b16003e8c895e93e015533d"
+        }
+      }
+    },
+    {
+      "case": "ct_1001",
+      "name": "PA",
+      "label": 7,
+      "baseline": {
+        "vertices": 265259,
+        "triangles": 530650,
+        "surface_area": 198544.23871783947,
+        "algebraic_signed_volume": 864653.375,
+        "enclosed_volume": 864653.375,
+        "volume_status": "closed_consistently_oriented; self-intersections not tested",
+        "boundary_edges": 0,
+        "non_manifold_edges": 0,
+        "inconsistent_winding_edges": 0,
+        "zero_area_triangles": 0,
+        "surface_components_vertex_connected": 12,
+        "component_triangle_counts_desc": [
+          529586,
+          240,
+          224,
+          220,
+          184,
+          44,
+          36,
+          36,
+          32,
+          24,
+          16,
+          8
+        ],
+        "euler_characteristic": -66,
+        "self_intersections_checked": false
+      },
+      "source_sha256": "622f626a16fb7f6262aa447bc82ad4df2191fef6d06715a5332a5b894e1357ba",
+      "source_file": "D:\\codexProjects\\3d-hearts\\outputs\\mesh_smoothing_20260929\\ct_1001\\PA\\baseline.vtp",
+      "variants": {
+        "protected_40": {
+          "vertices": 265259,
+          "triangles": 530650,
+          "surface_area": 178470.38652993768,
+          "algebraic_signed_volume": 862714.8467034722,
+          "enclosed_volume": 862714.8467034722,
+          "volume_status": "closed_consistently_oriented; self-intersections not tested",
+          "boundary_edges": 0,
+          "non_manifold_edges": 0,
+          "inconsistent_winding_edges": 0,
+          "zero_area_triangles": 0,
+          "surface_components_vertex_connected": 12,
+          "component_triangle_counts_desc": [
+            529586,
+            240,
+            224,
+            220,
+            184,
+            44,
+            36,
+            36,
+            32,
+            24,
+            16,
+            8
+          ],
+          "euler_characteristic": -66,
+          "self_intersections_checked": false,
+          "deviation_from_baseline": {
+            "sample_count_per_direction": 10000,
+            "seeds": [
+              20260928,
+              20260929
+            ],
+            "sampling": "uniform by triangle area; unsigned point-to-triangle distance",
+            "symmetric_mean": 0.13468625871506335,
+            "bidirectional_p95_max": 0.3470570196356466,
+            "sampled_max": 0.7831783760255685,
+            "is_exact_hausdorff": false,
+            "max_corresponding_vertex_displacement": 1.2234805536059405,
+            "mean_corresponding_vertex_displacement": 0.3238445485586786,
+            "hausdorff_upper_bound": 1.2234805536059405
+          },
+          "area_change_percent": -10.1105186015645,
+          "volume_change_percent": -0.224197158373185,
+          "algebraic_volume_change_percent": -0.224197158373185,
+          "connectivity_identical": true,
+          "screening": {
+            "status": "candidate",
+            "reasons": [],
+            "is_clinically_validated": false
+          },
+          "protected_vertices": 554,
+          "protected_vertices_unchanged": true,
+          "file": "ct_1001\\PA\\protected_40.vtp",
+          "sha256": "6dfd1acfe2145a57bd40fbdc5da9a7a7ae34c23e619f025c56695fbf3d428eae"
+        },
+        "protected_60": {
+          "vertices": 265259,
+          "triangles": 530650,
+          "surface_area": 165561.16895014758,
+          "algebraic_signed_volume": 851700.379943967,
+          "enclosed_volume": 851700.379943967,
+          "volume_status": "closed_consistently_oriented; self-intersections not tested",
+          "boundary_edges": 0,
+          "non_manifold_edges": 0,
+          "inconsistent_winding_edges": 0,
+          "zero_area_triangles": 0,
+          "surface_components_vertex_connected": 12,
+          "component_triangle_counts_desc": [
+            529586,
+            240,
+            224,
+            220,
+            184,
+            44,
+            36,
+            36,
+            32,
+            24,
+            16,
+            8
+          ],
+          "euler_characteristic": -66,
+          "self_intersections_checked": false,
+          "deviation_from_baseline": {
+            "sample_count_per_direction": 10000,
+            "seeds": [
+              20260928,
+              20260929
+            ],
+            "sampling": "uniform by triangle area; unsigned point-to-triangle distance",
+            "symmetric_mean": 0.2304789787663224,
+            "bidirectional_p95_max": 0.8214955196774542,
+            "sampled_max": 1.9978041092484624,
+            "is_exact_hausdorff": false,
+            "max_corresponding_vertex_displacement": 2.368301165273097,
+            "mean_corresponding_vertex_displacement": 0.4729161867011291,
+            "hausdorff_upper_bound": 2.368301165273097
+          },
+          "area_change_percent": -16.61245371847112,
+          "volume_change_percent": -1.4980563808049685,
+          "algebraic_volume_change_percent": -1.4980563808049685,
+          "connectivity_identical": true,
+          "screening": {
+            "status": "rejected",
+            "reasons": [
+              "max_displacement_over_limit"
+            ],
+            "is_clinically_validated": false
+          },
+          "protected_vertices": 554,
+          "protected_vertices_unchanged": true,
+          "file": "ct_1001\\PA\\protected_60.vtp",
+          "sha256": "100b19c3845bd26966c8f73747efeb4dea466b3dc0094fb84a93a53dfa1d3d6a"
+        },
+        "protected_100": {
+          "vertices": 265259,
+          "triangles": 530650,
+          "surface_area": 132231.99647230882,
+          "algebraic_signed_volume": 796072.7786883116,
+          "enclosed_volume": 796072.7786883116,
+          "volume_status": "closed_consistently_oriented; self-intersections not tested",
+          "boundary_edges": 0,
+          "non_manifold_edges": 0,
+          "inconsistent_winding_edges": 0,
+          "zero_area_triangles": 0,
+          "surface_components_vertex_connected": 12,
+          "component_triangle_counts_desc": [
+            529586,
+            240,
+            224,
+            220,
+            184,
+            44,
+            36,
+            36,
+            32,
+            24,
+            16,
+            8
+          ],
+          "euler_characteristic": -66,
+          "self_intersections_checked": false,
+          "deviation_from_baseline": {
+            "sample_count_per_direction": 10000,
+            "seeds": [
+              20260928,
+              20260929
+            ],
+            "sampling": "uniform by triangle area; unsigned point-to-triangle distance",
+            "symmetric_mean": 0.6539282285858736,
+            "bidirectional_p95_max": 2.3182716698744685,
+            "sampled_max": 3.935992219828105,
+            "is_exact_hausdorff": false,
+            "max_corresponding_vertex_displacement": 4.4545181773521385,
+            "mean_corresponding_vertex_displacement": 1.0902769301399815,
+            "hausdorff_upper_bound": 4.4545181773521385
+          },
+          "area_change_percent": -33.39922763499076,
+          "volume_change_percent": -7.93157099649191,
+          "algebraic_volume_change_percent": -7.93157099649191,
+          "connectivity_identical": true,
+          "screening": {
+            "status": "rejected",
+            "reasons": [
+              "volume_change_over_limit",
+              "mean_distance_over_limit",
+              "max_displacement_over_limit"
+            ],
+            "is_clinically_validated": false
+          },
+          "protected_vertices": 554,
+          "protected_vertices_unchanged": true,
+          "file": "ct_1001\\PA\\protected_100.vtp",
+          "sha256": "828f1a6e8bbbe565adccdee734ecb57b5644c2f87bc1766718ed581c870d1186"
+        }
+      },
+      "camera": {
+        "position": [
+          885.1241866529734,
+          929.1241866529734,
+          774.6241866529734
+        ],
+        "focal_point": [
+          233.5,
+          277.5,
+          123.0
+        ],
+        "view_up": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "parallel_scale": 216.38157882389382
+      }
+    },
+    {
+      "case": "ct_1002",
+      "name": "LV",
+      "label": 1,
+      "baseline": {
+        "vertices": 35533,
+        "triangles": 71086,
+        "surface_area": 26969.981044847707,
+        "algebraic_signed_volume": 155726.83333333334,
+        "enclosed_volume": 155726.83333333334,
+        "volume_status": "closed_consistently_oriented; self-intersections not tested",
+        "boundary_edges": 0,
+        "non_manifold_edges": 0,
+        "inconsistent_winding_edges": 0,
+        "zero_area_triangles": 0,
+        "surface_components_vertex_connected": 1,
+        "component_triangle_counts_desc": [
+          71086
+        ],
+        "euler_characteristic": -10,
+        "self_intersections_checked": false
+      },
+      "source_sha256": "6e8d39e4d83e97cf2650c4caf2104e55dd99d3c2779fbda11f7eb3c8e5423155",
+      "source_file": "D:\\codexProjects\\3d-hearts\\outputs\\mesh_smoothing_20260929\\ct_1002\\LV\\baseline.vtp",
+      "variants": {
+        "protected_40": {
+          "vertices": 35533,
+          "triangles": 71086,
+          "surface_area": 24034.674724308716,
+          "algebraic_signed_volume": 155666.52194013007,
+          "enclosed_volume": 155666.52194013007,
+          "volume_status": "closed_consistently_oriented; self-intersections not tested",
+          "boundary_edges": 0,
+          "non_manifold_edges": 0,
+          "inconsistent_winding_edges": 0,
+          "zero_area_triangles": 0,
+          "surface_components_vertex_connected": 1,
+          "component_triangle_counts_desc": [
+            71086
+          ],
+          "euler_characteristic": -10,
+          "self_intersections_checked": false,
+          "deviation_from_baseline": {
+            "sample_count_per_direction": 10000,
+            "seeds": [
+              20260928,
+              20260929
+            ],
+            "sampling": "uniform by triangle area; unsigned point-to-triangle distance",
+            "symmetric_mean": 0.14639804138479956,
+            "bidirectional_p95_max": 0.3764388465071543,
+            "sampled_max": 0.82193968752842,
+            "is_exact_hausdorff": false,
+            "max_corresponding_vertex_displacement": 1.0184036973885375,
+            "mean_corresponding_vertex_displacement": 0.3312719841768342,
+            "hausdorff_upper_bound": 1.0184036973885375
+          },
+          "area_change_percent": -10.88360542655905,
+          "volume_change_percent": -0.03872896655785496,
+          "algebraic_volume_change_percent": -0.03872896655785496,
+          "connectivity_identical": true,
+          "screening": {
+            "status": "candidate",
+            "reasons": [],
+            "is_clinically_validated": false
+          },
+          "protected_vertices": 0,
+          "protected_vertices_unchanged": true,
+          "file": "ct_1002\\LV\\protected_40.vtp",
+          "sha256": "8f6fa279e10d8f2b7cc9b1da580f4bbf450e81324712e3cc6adf070e20acd56e"
+        },
+        "protected_60": {
+          "vertices": 35533,
+          "triangles": 71086,
+          "surface_area": 22782.061371382562,
+          "algebraic_signed_volume": 155383.655554758,
+          "enclosed_volume": 155383.655554758,
+          "volume_status": "closed_consistently_oriented; self-intersections not tested",
+          "boundary_edges": 0,
+          "non_manifold_edges": 0,
+          "inconsistent_winding_edges": 0,
+          "zero_area_triangles": 0,
+          "surface_components_vertex_connected": 1,
+          "component_triangle_counts_desc": [
+            71086
+          ],
+          "euler_characteristic": -10,
+          "self_intersections_checked": false,
+          "deviation_from_baseline": {
+            "sample_count_per_direction": 10000,
+            "seeds": [
+              20260928,
+              20260929
+            ],
+            "sampling": "uniform by triangle area; unsigned point-to-triangle distance",
+            "symmetric_mean": 0.250678912966597,
+            "bidirectional_p95_max": 0.7522969129291549,
+            "sampled_max": 1.6288565187415,
+            "is_exact_hausdorff": false,
+            "max_corresponding_vertex_displacement": 2.132711997842495,
+            "mean_corresponding_vertex_displacement": 0.4865568851683831,
+            "hausdorff_upper_bound": 2.132711997842495
+          },
+          "area_change_percent": -15.528077926718442,
+          "volume_change_percent": -0.2203716413090917,
+          "algebraic_volume_change_percent": -0.2203716413090917,
+          "connectivity_identical": true,
+          "screening": {
+            "status": "rejected",
+            "reasons": [
+              "max_displacement_over_limit"
+            ],
+            "is_clinically_validated": false
+          },
+          "protected_vertices": 0,
+          "protected_vertices_unchanged": true,
+          "file": "ct_1002\\LV\\protected_60.vtp",
+          "sha256": "44ea38580f9b4adcace4542630b8ba43b14cbfcafa750689b84749122ad1d51e"
+        },
+        "protected_100": {
+          "vertices": 35533,
+          "triangles": 71086,
+          "surface_area": 20726.13393667413,
+          "algebraic_signed_volume": 154869.26464996525,
+          "enclosed_volume": 154869.26464996525,
+          "volume_status": "closed_consistently_oriented; self-intersections not tested",
+          "boundary_edges": 0,
+          "non_manifold_edges": 0,
+          "inconsistent_winding_edges": 0,
+          "zero_area_triangles": 0,
+          "surface_components_vertex_connected": 1,
+          "component_triangle_counts_desc": [
+            71086
+          ],
+          "euler_characteristic": -10,
+          "self_intersections_checked": false,
+          "deviation_from_baseline": {
+            "sample_count_per_direction": 10000,
+            "seeds": [
+              20260928,
+              20260929
+            ],
+            "sampling": "uniform by triangle area; unsigned point-to-triangle distance",
+            "symmetric_mean": 0.5445100588624533,
+            "bidirectional_p95_max": 1.8035328308201395,
+            "sampled_max": 4.1117429974464725,
+            "is_exact_hausdorff": false,
+            "max_corresponding_vertex_displacement": 4.366427030562512,
+            "mean_corresponding_vertex_displacement": 0.9452527365483476,
+            "hausdorff_upper_bound": 4.366427030562512
+          },
+          "area_change_percent": -23.151099356691574,
+          "volume_change_percent": -0.5506878069834409,
+          "algebraic_volume_change_percent": -0.5506878069834409,
+          "connectivity_identical": true,
+          "screening": {
+            "status": "rejected",
+            "reasons": [
+              "mean_distance_over_limit",
+              "max_displacement_over_limit"
+            ],
+            "is_clinically_validated": false
+          },
+          "protected_vertices": 0,
+          "protected_vertices_unchanged": true,
+          "file": "ct_1002\\LV\\protected_100.vtp",
+          "sha256": "96773158415ee577bb80227246a63c0a282ccef3e712556ac2c9b60e299c27c1"
+        }
+      }
+    },
+    {
+      "case": "ct_1003",
+      "name": "RV",
+      "label": 2,
+      "baseline": {
+        "vertices": 40985,
+        "triangles": 82062,
+        "surface_area": 29912.805325753958,
+        "algebraic_signed_volume": 141377.20833333334,
+        "enclosed_volume": 141377.20833333334,
+        "volume_status": "closed_consistently_oriented; self-intersections not tested",
+        "boundary_edges": 0,
+        "non_manifold_edges": 0,
+        "inconsistent_winding_edges": 0,
+        "zero_area_triangles": 0,
+        "surface_components_vertex_connected": 1,
+        "component_triangle_counts_desc": [
+          82062
+        ],
+        "euler_characteristic": -46,
+        "self_intersections_checked": false
+      },
+      "source_sha256": "1e02b03e756ecd64416a67f8f258ac8ef09db828ba6aaeed4f9bfb82b9d8c792",
+      "source_file": "D:\\codexProjects\\3d-hearts\\outputs\\mesh_smoothing_20260929\\ct_1003\\RV\\baseline.vtp",
+      "variants": {
+        "protected_40": {
+          "vertices": 40985,
+          "triangles": 82062,
+          "surface_area": 26343.93913290953,
+          "algebraic_signed_volume": 141378.7783221593,
+          "enclosed_volume": 141378.7783221593,
+          "volume_status": "closed_consistently_oriented; self-intersections not tested",
+          "boundary_edges": 0,
+          "non_manifold_edges": 0,
+          "inconsistent_winding_edges": 0,
+          "zero_area_triangles": 0,
+          "surface_components_vertex_connected": 1,
+          "component_triangle_counts_desc": [
+            82062
+          ],
+          "euler_characteristic": -46,
+          "self_intersections_checked": false,
+          "deviation_from_baseline": {
+            "sample_count_per_direction": 10000,
+            "seeds": [
+              20260928,
+              20260929
+            ],
+            "sampling": "uniform by triangle area; unsigned point-to-triangle distance",
+            "symmetric_mean": 0.1484063080676455,
+            "bidirectional_p95_max": 0.38690099345249696,
+            "sampled_max": 0.7955823445521661,
+            "is_exact_hausdorff": false,
+            "max_corresponding_vertex_displacement": 1.04900572215596,
+            "mean_corresponding_vertex_displacement": 0.3457252791992969,
+            "hausdorff_upper_bound": 1.04900572215596
+          },
+          "area_change_percent": -11.930897667333628,
+          "volume_change_percent": 0.0011104964120267624,
+          "algebraic_volume_change_percent": 0.0011104964120267624,
+          "connectivity_identical": true,
+          "screening": {
+            "status": "candidate",
+            "reasons": [],
+            "is_clinically_validated": false
+          },
+          "protected_vertices": 0,
+          "protected_vertices_unchanged": true,
+          "file": "ct_1003\\RV\\protected_40.vtp",
+          "sha256": "8d406b26e61160b0423e962d9284c69d96eec368cde0c34be636504cb37738f5"
+        },
+        "protected_60": {
+          "vertices": 40985,
+          "triangles": 82062,
+          "surface_area": 24527.75392587168,
+          "algebraic_signed_volume": 141435.42229199762,
+          "enclosed_volume": 141435.42229199762,
+          "volume_status": "closed_consistently_oriented; self-intersections not tested",
+          "boundary_edges": 0,
+          "non_manifold_edges": 0,
+          "inconsistent_winding_edges": 0,
+          "zero_area_triangles": 0,
+          "surface_components_vertex_connected": 1,
+          "component_triangle_counts_desc": [
+            82062
+          ],
+          "euler_characteristic": -46,
+          "self_intersections_checked": false,
+          "deviation_from_baseline": {
+            "sample_count_per_direction": 10000,
+            "seeds": [
+              20260928,
+              20260929
+            ],
+            "sampling": "uniform by triangle area; unsigned point-to-triangle distance",
+            "symmetric_mean": 0.27044142828358403,
+            "bidirectional_p95_max": 0.8022840089111185,
+            "sampled_max": 1.663446587813924,
+            "is_exact_hausdorff": false,
+            "max_corresponding_vertex_displacement": 2.6846433089170705,
+            "mean_corresponding_vertex_displacement": 0.5179599475360323,
+            "hausdorff_upper_bound": 2.6846433089170705
+          },
+          "area_change_percent": -18.0024953903134,
+          "volume_change_percent": 0.04117633906521867,
+          "algebraic_volume_change_percent": 0.04117633906521867,
+          "connectivity_identical": true,
+          "screening": {
+            "status": "rejected",
+            "reasons": [
+              "max_displacement_over_limit"
+            ],
+            "is_clinically_validated": false
+          },
+          "protected_vertices": 0,
+          "protected_vertices_unchanged": true,
+          "file": "ct_1003\\RV\\protected_60.vtp",
+          "sha256": "5d8ab218f379fe0d05b26ecce1809b537e5da0d9b77ec07d293b87353351a12d"
+        },
+        "protected_100": {
+          "vertices": 40985,
+          "triangles": 82062,
+          "surface_area": 21556.34592898234,
+          "algebraic_signed_volume": 140028.723333014,
+          "enclosed_volume": 140028.723333014,
+          "volume_status": "closed_consistently_oriented; self-intersections not tested",
+          "boundary_edges": 0,
+          "non_manifold_edges": 0,
+          "inconsistent_winding_edges": 0,
+          "zero_area_triangles": 0,
+          "surface_components_vertex_connected": 1,
+          "component_triangle_counts_desc": [
+            82062
+          ],
+          "euler_characteristic": -46,
+          "self_intersections_checked": false,
+          "deviation_from_baseline": {
+            "sample_count_per_direction": 10000,
+            "seeds": [
+              20260928,
+              20260929
+            ],
+            "sampling": "uniform by triangle area; unsigned point-to-triangle distance",
+            "symmetric_mean": 0.6001400450076693,
+            "bidirectional_p95_max": 1.9565837685628702,
+            "sampled_max": 3.7489426285752674,
+            "is_exact_hausdorff": false,
+            "max_corresponding_vertex_displacement": 4.885429753097546,
+            "mean_corresponding_vertex_displacement": 1.0159669003191505,
+            "hausdorff_upper_bound": 4.885429753097546
+          },
+          "area_change_percent": -27.93606051244206,
+          "volume_change_percent": -0.9538206449372977,
+          "algebraic_volume_change_percent": -0.9538206449372977,
+          "connectivity_identical": true,
+          "screening": {
+            "status": "rejected",
+            "reasons": [
+              "mean_distance_over_limit",
+              "max_displacement_over_limit"
+            ],
+            "is_clinically_validated": false
+          },
+          "protected_vertices": 0,
+          "protected_vertices_unchanged": true,
+          "file": "ct_1003\\RV\\protected_100.vtp",
+          "sha256": "2ee56313b7cd24972fa37cd6f3b3d54f4d1999121bdc0079c0e9db5f1dd063a3"
+        }
+      }
+    },
+    {
+      "case": "ct_1004",
+      "name": "MYO",
+      "label": 5,
+      "baseline": {
+        "vertices": 570074,
+        "triangles": 1141564,
+        "surface_area": 422858.96570134646,
+        "algebraic_signed_volume": 3067328.6666666665,
+        "enclosed_volume": null,
+        "volume_status": "invalid_topology_or_winding; algebraic value is diagnostic only",
+        "boundary_edges": 0,
+        "non_manifold_edges": 3,
+        "inconsistent_winding_edges": 0,
+        "zero_area_triangles": 0,
+        "surface_components_vertex_connected": 22,
+        "component_triangle_counts_desc": [
+          1131734,
+          4282,
+          2162,
+          1356,
+          830,
+          300,
+          288,
+          124,
+          88,
+          88,
+          72,
+          44,
+          44,
+          36,
+          28,
+          28,
+          20,
+          8,
+          8,
+          8,
+          8,
+          8
+        ],
+        "euler_characteristic": -705,
+        "self_intersections_checked": false
+      },
+      "source_sha256": "e1922135dc66154274693ec9c13d43dd91b29a1a2937685804692e03d3e648ef",
+      "source_file": "D:\\codexProjects\\3d-hearts\\outputs\\mesh_smoothing_20260929\\ct_1004\\MYO\\baseline.vtp",
+      "variants": {
+        "protected_40": {
+          "vertices": 570074,
+          "triangles": 1141564,
+          "surface_area": 376280.81954413885,
+          "algebraic_signed_volume": 3067246.4380868324,
+          "enclosed_volume": null,
+          "volume_status": "invalid_topology_or_winding; algebraic value is diagnostic only",
+          "boundary_edges": 0,
+          "non_manifold_edges": 3,
+          "inconsistent_winding_edges": 0,
+          "zero_area_triangles": 0,
+          "surface_components_vertex_connected": 22,
+          "component_triangle_counts_desc": [
+            1131734,
+            4282,
+            2162,
+            1356,
+            830,
+            300,
+            288,
+            124,
+            88,
+            88,
+            72,
+            44,
+            44,
+            36,
+            28,
+            28,
+            20,
+            8,
+            8,
+            8,
+            8,
+            8
+          ],
+          "euler_characteristic": -705,
+          "self_intersections_checked": false,
+          "deviation_from_baseline": {
+            "sample_count_per_direction": 10000,
+            "seeds": [
+              20260928,
+              20260929
+            ],
+            "sampling": "uniform by triangle area; unsigned point-to-triangle distance",
+            "symmetric_mean": 0.14354923076147674,
+            "bidirectional_p95_max": 0.3785941009718564,
+            "sampled_max": 0.8295792170373836,
+            "is_exact_hausdorff": false,
+            "max_corresponding_vertex_displacement": 1.2673430680846458,
+            "mean_corresponding_vertex_displacement": 0.33275978619862556,
+            "hausdorff_upper_bound": 1.2673430680846458
+          },
+          "area_change_percent": -11.015054648292466,
+          "volume_change_percent": null,
+          "algebraic_volume_change_percent": -0.0026807880331713996,
+          "connectivity_identical": true,
+          "screening": {
+            "status": "review_invalid_baseline",
+            "reasons": [],
+            "is_clinically_validated": false
+          },
+          "protected_vertices": 4929,
+          "protected_vertices_unchanged": true,
+          "file": "ct_1004\\MYO\\protected_40.vtp",
+          "sha256": "615cc243c337414f1e20936a27ee4633574a2633ae57c1d467962b2f73fe3e2c"
+        },
+        "protected_60": {
+          "vertices": 570074,
+          "triangles": 1141564,
+          "surface_area": 357878.9252362127,
+          "algebraic_signed_volume": 3069998.219775072,
+          "enclosed_volume": null,
+          "volume_status": "invalid_topology_or_winding; algebraic value is diagnostic only",
+          "boundary_edges": 0,
+          "non_manifold_edges": 3,
+          "inconsistent_winding_edges": 0,
+          "zero_area_triangles": 0,
+          "surface_components_vertex_connected": 22,
+          "component_triangle_counts_desc": [
+            1131734,
+            4282,
+            2162,
+            1356,
+            830,
+            300,
+            288,
+            124,
+            88,
+            88,
+            72,
+            44,
+            44,
+            36,
+            28,
+            28,
+            20,
+            8,
+            8,
+            8,
+            8,
+            8
+          ],
+          "euler_characteristic": -705,
+          "self_intersections_checked": false,
+          "deviation_from_baseline": {
+            "sample_count_per_direction": 10000,
+            "seeds": [
+              20260928,
+              20260929
+            ],
+            "sampling": "uniform by triangle area; unsigned point-to-triangle distance",
+            "symmetric_mean": 0.2322702130320698,
+            "bidirectional_p95_max": 0.7471671827446433,
+            "sampled_max": 1.6756122333572048,
+            "is_exact_hausdorff": false,
+            "max_corresponding_vertex_displacement": 2.74068739161906,
+            "mean_corresponding_vertex_displacement": 0.46700141189740274,
+            "hausdorff_upper_bound": 2.74068739161906
+          },
+          "area_change_percent": -15.366835218300034,
+          "volume_change_percent": null,
+          "algebraic_volume_change_percent": 0.08703185731011587,
+          "connectivity_identical": true,
+          "screening": {
+            "status": "rejected",
+            "reasons": [
+              "max_displacement_over_limit"
+            ],
+            "is_clinically_validated": false
+          },
+          "protected_vertices": 4929,
+          "protected_vertices_unchanged": true,
+          "file": "ct_1004\\MYO\\protected_60.vtp",
+          "sha256": "a021f1118d5df22e0a7121ee678de99be1310d9f6becc9ba8aa2f7ed66e46de3"
+        },
+        "protected_100": {
+          "vertices": 570074,
+          "triangles": 1141564,
+          "surface_area": 328555.24774933455,
+          "algebraic_signed_volume": 3083366.591441915,
+          "enclosed_volume": null,
+          "volume_status": "invalid_topology_or_winding; algebraic value is diagnostic only",
+          "boundary_edges": 0,
+          "non_manifold_edges": 3,
+          "inconsistent_winding_edges": 0,
+          "zero_area_triangles": 0,
+          "surface_components_vertex_connected": 22,
+          "component_triangle_counts_desc": [
+            1131734,
+            4282,
+            2162,
+            1356,
+            830,
+            300,
+            288,
+            124,
+            88,
+            88,
+            72,
+            44,
+            44,
+            36,
+            28,
+            28,
+            20,
+            8,
+            8,
+            8,
+            8,
+            8
+          ],
+          "euler_characteristic": -705,
+          "self_intersections_checked": false,
+          "deviation_from_baseline": {
+            "sample_count_per_direction": 10000,
+            "seeds": [
+              20260928,
+              20260929
+            ],
+            "sampling": "uniform by triangle area; unsigned point-to-triangle distance",
+            "symmetric_mean": 0.46243493890540144,
+            "bidirectional_p95_max": 1.8419291629231354,
+            "sampled_max": 4.327639969925378,
+            "is_exact_hausdorff": false,
+            "max_corresponding_vertex_displacement": 5.44785694278279,
+            "mean_corresponding_vertex_displacement": 0.8275728722246095,
+            "hausdorff_upper_bound": 5.44785694278279
+          },
+          "area_change_percent": -22.301458784396686,
+          "volume_change_percent": null,
+          "algebraic_volume_change_percent": 0.5228629376935023,
+          "connectivity_identical": true,
+          "screening": {
+            "status": "rejected",
+            "reasons": [
+              "mean_distance_over_limit",
+              "max_displacement_over_limit"
+            ],
+            "is_clinically_validated": false
+          },
+          "protected_vertices": 4929,
+          "protected_vertices_unchanged": true,
+          "file": "ct_1004\\MYO\\protected_100.vtp",
+          "sha256": "29b4ab6c727f53909ff2c5bd14895ee3180039023c13a97e1aeb20651a2b27a5"
+        }
+      },
+      "camera": {
+        "position": [
+          773.6897096850128,
+          659.1897096850128,
+          581.1897096850128
+        ],
+        "focal_point": [
+          315.5,
+          201.0,
+          123.0
+        ],
+        "view_up": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "parallel_scale": 152.1487612234754
+      }
+    }
+  ],
+  "all_source_hashes_unchanged": true
+}
