@@ -6,6 +6,7 @@ import pytest
 
 from heart3d.mesh_quality import quality
 from heart3d.smoothing_experiment import assess, compare, run
+from heart3d.smoothing import smooth_surface
 from heart3d.volume import sha256
 
 
@@ -34,6 +35,19 @@ def test_screening_rejects_new_defects_and_large_volume_drift():
     assert assess(baseline, {**metrics, "volume_change_percent": -3})["status"] == "rejected"
     assert assess({**baseline, "enclosed_volume": None}, {**metrics, "enclosed_volume": None,
                   "volume_change_percent": None})["status"] == "review_invalid_baseline"
+
+
+def test_small_closed_shell_can_collapse_without_new_nonmanifold_edges():
+    # Minimal reproduction of eight-face components collapsing in real cases.
+    mesh = pv.PlatonicSolid("octahedron")
+    baseline = quality(mesh)
+    strong = compare(mesh, smooth_surface(mesh, "windowed_sinc", "strong"), baseline, count=100)
+    assert strong["connectivity_identical"]
+    assert strong["boundary_edges"] == strong["non_manifold_edges"] == 0
+    assert strong["surface_components_vertex_connected"] == baseline["surface_components_vertex_connected"]
+    assert strong["zero_area_triangles"] == 8
+    assert strong["enclosed_volume"] is None
+    assert assess(baseline, strong)["status"] == "rejected"
 
 
 def test_run_reads_only_saved_baseline_skips_absent_myo_and_never_overwrites(tmp_path):
