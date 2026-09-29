@@ -1,0 +1,591 @@
+{
+  "checked_utc": "2026-09-29T03:07:57.507040+00:00",
+  "run": "validation_20260928_120859_296",
+  "verifier_sha256": "57cdd9612f31fb6718cedbe6782980721a582e25d924e32144d1063dfcc1c7e9",
+  "reference": "docs/validation",
+  "reproducibility_passed": true,
+  "physical_geometry_validated": false,
+  "clinical_segmentation_validated": false,
+  "numeric_tolerance": {
+    "rtol": 1e-09,
+    "atol": 1e-08
+  },
+  "documents": [
+    {
+      "file": "audit/audit.json",
+      "matches_reference": true,
+      "exact_json_value_match": true
+    },
+    {
+      "file": "audit/headers.json",
+      "matches_reference": true,
+      "exact_json_value_match": true
+    },
+    {
+      "file": "audit/metadata.json",
+      "matches_reference": true,
+      "exact_json_value_match": true
+    },
+    {
+      "file": "postprocess/experiment.json",
+      "matches_reference": true,
+      "exact_json_value_match": true
+    }
+  ],
+  "inputs": [
+    {
+      "file": "ct_1001_image.nii.gz",
+      "sha256": "03c6c49cb914704b68672cc92f3327dd50304c24cbe8fdbdd0ef34fe7fcd8962",
+      "matches_report_and_provenance": true
+    },
+    {
+      "file": "ct_1001_label.nii.gz",
+      "sha256": "a8d04123b65b782e38010ff3b0c168437a76ae086b2849b622373dcc4fe4a6c2",
+      "matches_report_and_provenance": true
+    },
+    {
+      "file": "ct_1002_image.nii.gz",
+      "sha256": "d38ebf17f14db077dbd6101f17af6f959c4c3c6aa93a8abb8fd9d11ec1f945ab",
+      "matches_report_and_provenance": true
+    },
+    {
+      "file": "ct_1002_label.nii.gz",
+      "sha256": "a7264680ac17d8a69c51f018a5779c209d92cc6bd9cfc7b4ed2c0788f012aa37",
+      "matches_report_and_provenance": true
+    },
+    {
+      "file": "ct_1003_image.nii.gz",
+      "sha256": "e0a91ce970d3f5dd57a6ac050ccf9ddd4345282ecec82a1ce845d42a115738b0",
+      "matches_report_and_provenance": true
+    },
+    {
+      "file": "ct_1003_label.nii.gz",
+      "sha256": "50ed6b7b4e234f3250c95777c6085e7a58c760cfa3a10fe98b4b52a477a1c8cc",
+      "matches_report_and_provenance": true
+    },
+    {
+      "file": "ct_1004_image.nii.gz",
+      "sha256": "13a83c7f33e7250578bb65b9efb434dd6e45d186c2f35f25a48260975682d221",
+      "matches_report_and_provenance": true
+    },
+    {
+      "file": "ct_1004_label.nii.gz",
+      "sha256": "30bf87b93d2bb23ec7f93727ad3c4536f3e55fb689376136e4db0735ed0ebf9e",
+      "matches_report_and_provenance": true
+    }
+  ],
+  "readable_slice_panels": 4,
+  "saved_mesh_count": 72,
+  "mesh_quality_recomputed_count": 45,
+  "meshes": [
+    {
+      "file": "audit/ct_1001/meshes/01_LV.vtp",
+      "sha256": "f0ec00649934f473abbb7342e9d9a9151518dc122109458cd6416003eb95684c",
+      "audit_matches_postprocess_baseline": true
+    },
+    {
+      "file": "postprocess/ct_1001/LV/original.vtp",
+      "sha256": "9c1973d70b7a1fb5c5999001c6c783ece236a4f855c46c7ff17a545a7d1a0eab",
+      "recomputed_metrics_match": true,
+      "boundary_edges": 0,
+      "non_manifold_edges": 0,
+      "volume_is_qualified": true
+    },
+    {
+      "file": "postprocess/ct_1001/LV/taubin.vtp",
+      "sha256": "2b3c5942cb0f71350390ed031fcbb9de4759d2b441d7fa243dead9e442956b69",
+      "recomputed_metrics_match": true,
+      "boundary_edges": 0,
+      "non_manifold_edges": 0,
+      "volume_is_qualified": true
+    },
+    {
+      "file": "postprocess/ct_1001/LV/decimate50.vtp",
+      "sha256": "2ace4cc9d4078c65877ca1f1e3a0768dcbf5dee8564e1574ba999b42d43ae773",
+      "recomputed_metrics_match": true,
+      "boundary_edges": 0,
+      "non_manifold_edges": 0,
+      "volume_is_qualified": true
+    },
+    {
+      "file": "postprocess/ct_1001/LV/taubin_decimate50.vtp",
+      "sha256": "7f13487aab2c6e0bb4afacb6a78aa716283a5e7a7d9f83703a35c75f815d1513",
+      "recomputed_metrics_match": true,
+      "boundary_edges": 0,
+      "non_manifold_edges": 2,
+      "volume_is_qualified": false
+    },
+    {
+      "file": "audit/ct_1001/meshes/02_RV.vtp",
+      "sha256": "997a92f133e00cd50df305884a25289f35662fddfdd10fd356dc54a09a4af363",
+      "audit_matches_postprocess_baseline": true
+    },
+    {
+      "file": "postprocess/ct_1001/RV/original.vtp",
+      "sha256": "529974afe7c8d58c3d302db4346cee6bf3c66c53f16717b4e640ab4d169c0c44",
+      "recomputed_metrics_match": true,
+      "boundary_edges": 0,
+      "non_manifold_edges": 0,
+      "volume_is_qualified": true
+    },
+    {
+      "file": "audit/ct_1001/meshes/03_LA.vtp",
+      "sha256": "5fff42067d542ac851cd1b7b8a7b707e74355e653cda0ef32bf943824d38f9ce",
+      "audit_matches_postprocess_baseline": true
+    },
+    {
+      "file": "postprocess/ct_1001/LA/original.vtp",
+      "sha256": "e66421fded2682119986a56b27c72d102fbde9363de56fd1d5c404608f7d2fa7",
+      "recomputed_metrics_match": true,
+      "boundary_edges": 0,
+      "non_manifold_edges": 0,
+      "volume_is_qualified": true
+    },
+    {
+      "file": "audit/ct_1001/meshes/04_RA.vtp",
+      "sha256": "8142202e0629876c93ae23b52e8e2257217a403783b8e130f9d4c423ef55d559",
+      "audit_matches_postprocess_baseline": true
+    },
+    {
+      "file": "postprocess/ct_1001/RA/original.vtp",
+      "sha256": "6808e17a9e0de87fb840715cc3bd8dfc77e4c98d3ee4c1ad13bbbb0bad1d9b77",
+      "recomputed_metrics_match": true,
+      "boundary_edges": 0,
+      "non_manifold_edges": 0,
+      "volume_is_qualified": true
+    },
+    {
+      "file": "audit/ct_1001/meshes/05_MYO.vtp",
+      "sha256": "0c674c1b4826b3d6e7145bd70a9e31a98944fb115c01b4faa8af995901d23b04",
+      "audit_matches_postprocess_baseline": true
+    },
+    {
+      "file": "postprocess/ct_1001/MYO/original.vtp",
+      "sha256": "4f0b34fc388233a7c277fb3be2a06f8533354987f774e2dbacc794e820fc9202",
+      "recomputed_metrics_match": true,
+      "boundary_edges": 0,
+      "non_manifold_edges": 12,
+      "volume_is_qualified": false
+    },
+    {
+      "file": "postprocess/ct_1001/MYO/taubin.vtp",
+      "sha256": "d02db3437bed9efd7e6e174ff50e389d53890d2745263f909f02852c1f579cfc",
+      "recomputed_metrics_match": true,
+      "boundary_edges": 0,
+      "non_manifold_edges": 12,
+      "volume_is_qualified": false
+    },
+    {
+      "file": "postprocess/ct_1001/MYO/decimate50.vtp",
+      "sha256": "782bea576b8f1b93b1c012cd9e3c99e74aeed9aa18983ed3115a4c03411d4f78",
+      "recomputed_metrics_match": true,
+      "boundary_edges": 0,
+      "non_manifold_edges": 12,
+      "volume_is_qualified": false
+    },
+    {
+      "file": "postprocess/ct_1001/MYO/taubin_decimate50.vtp",
+      "sha256": "200fa39e89dd4443cfe60a688994085d3289d7ce36ecba36b70e8f3178671203",
+      "recomputed_metrics_match": true,
+      "boundary_edges": 0,
+      "non_manifold_edges": 12,
+      "volume_is_qualified": false
+    },
+    {
+      "file": "audit/ct_1001/meshes/06_AO.vtp",
+      "sha256": "891566140c015c8e54e4cac6895281bdf11d7d716ab15ef6705ef4330d6b0b4b",
+      "audit_matches_postprocess_baseline": true
+    },
+    {
+      "file": "postprocess/ct_1001/AO/original.vtp",
+      "sha256": "df717e5091d42f503ca4011315f0e516622def5cb49e8a3bc2a7943cd00dca66",
+      "recomputed_metrics_match": true,
+      "boundary_edges": 0,
+      "non_manifold_edges": 0,
+      "volume_is_qualified": true
+    },
+    {
+      "file": "audit/ct_1001/meshes/07_PA.vtp",
+      "sha256": "622f626a16fb7f6262aa447bc82ad4df2191fef6d06715a5332a5b894e1357ba",
+      "audit_matches_postprocess_baseline": true
+    },
+    {
+      "file": "postprocess/ct_1001/PA/original.vtp",
+      "sha256": "3e83e2bd109f8fa24bf439983ef6a375a308c34d13906c72b97510f5f5858bab",
+      "recomputed_metrics_match": true,
+      "boundary_edges": 0,
+      "non_manifold_edges": 0,
+      "volume_is_qualified": true
+    },
+    {
+      "file": "postprocess/ct_1001/PA/taubin.vtp",
+      "sha256": "f57e599a97c38becc21b1002299eb8a4d23d2e1f88db1b5a1a33521c5553d3cb",
+      "recomputed_metrics_match": true,
+      "boundary_edges": 0,
+      "non_manifold_edges": 0,
+      "volume_is_qualified": true
+    },
+    {
+      "file": "postprocess/ct_1001/PA/decimate50.vtp",
+      "sha256": "e4ff59d2a69cf8e5da64c45b9fe2a8cc9baeae60c20027398e6587d6423aa735",
+      "recomputed_metrics_match": true,
+      "boundary_edges": 0,
+      "non_manifold_edges": 0,
+      "volume_is_qualified": true
+    },
+    {
+      "file": "postprocess/ct_1001/PA/taubin_decimate50.vtp",
+      "sha256": "928c43b411b377b5312a27521c168f6c5e93f1d41f66de64c7a9f8452dec28e3",
+      "recomputed_metrics_match": true,
+      "boundary_edges": 0,
+      "non_manifold_edges": 0,
+      "volume_is_qualified": true
+    },
+    {
+      "file": "audit/ct_1002/meshes/01_LV.vtp",
+      "sha256": "6e8d39e4d83e97cf2650c4caf2104e55dd99d3c2779fbda11f7eb3c8e5423155",
+      "audit_matches_postprocess_baseline": true
+    },
+    {
+      "file": "postprocess/ct_1002/LV/original.vtp",
+      "sha256": "1c1844f5b993d38f5dd54f6789aa09eafea07e29fc1991cffcea84a4d6881b05",
+      "recomputed_metrics_match": true,
+      "boundary_edges": 0,
+      "non_manifold_edges": 0,
+      "volume_is_qualified": true
+    },
+    {
+      "file": "audit/ct_1002/meshes/02_RV.vtp",
+      "sha256": "37776718e27b4682e3e7a9440f63d5c2490902552e755f4978a4b8ebdaa8c5df",
+      "audit_matches_postprocess_baseline": true
+    },
+    {
+      "file": "postprocess/ct_1002/RV/original.vtp",
+      "sha256": "798c7fb3df8086eed9d5aeb82cd1639c49eee1654eb08c923a71d626cc94debc",
+      "recomputed_metrics_match": true,
+      "boundary_edges": 0,
+      "non_manifold_edges": 0,
+      "volume_is_qualified": true
+    },
+    {
+      "file": "audit/ct_1002/meshes/03_LA.vtp",
+      "sha256": "2a119078129de621a8935fdb8477a83f840a75bfe7d2a6ca6ad80263bcc38941",
+      "audit_matches_postprocess_baseline": true
+    },
+    {
+      "file": "postprocess/ct_1002/LA/original.vtp",
+      "sha256": "28f4bae90ed06cbe01211645fe2a0d2f59b6bd94f1ef95c17b0197965efdd7b4",
+      "recomputed_metrics_match": true,
+      "boundary_edges": 0,
+      "non_manifold_edges": 0,
+      "volume_is_qualified": true
+    },
+    {
+      "file": "audit/ct_1002/meshes/04_RA.vtp",
+      "sha256": "37da6732590554a6ece3806d7c2c7c5eb128916248621ca19893c1c9d42554f9",
+      "audit_matches_postprocess_baseline": true
+    },
+    {
+      "file": "postprocess/ct_1002/RA/original.vtp",
+      "sha256": "450807de69677d98c66c3a30fa4fe24745a73859fd51cd8418ae23122ebb39eb",
+      "recomputed_metrics_match": true,
+      "boundary_edges": 0,
+      "non_manifold_edges": 0,
+      "volume_is_qualified": true
+    },
+    {
+      "file": "audit/ct_1002/meshes/05_MYO.vtp",
+      "sha256": "aa3d124aefa22f51032605ef6687c7a282e6508a7be5e914e38be1ddebc1855b",
+      "audit_matches_postprocess_baseline": true
+    },
+    {
+      "file": "postprocess/ct_1002/MYO/original.vtp",
+      "sha256": "f301064d4cab65715172eb75c010eb56c6b7da62935a6bdefcda192791b66fb0",
+      "recomputed_metrics_match": true,
+      "boundary_edges": 0,
+      "non_manifold_edges": 0,
+      "volume_is_qualified": true
+    },
+    {
+      "file": "audit/ct_1002/meshes/06_AO.vtp",
+      "sha256": "a25e4852bf5531e0fc3abe91780c32ab03b5836ac2815896ace9ab97bff1f4fe",
+      "audit_matches_postprocess_baseline": true
+    },
+    {
+      "file": "postprocess/ct_1002/AO/original.vtp",
+      "sha256": "032aac206e4d1d0ac6c6448dd0f056d45b0311c73247ab691ad0578ec52f73a4",
+      "recomputed_metrics_match": true,
+      "boundary_edges": 0,
+      "non_manifold_edges": 0,
+      "volume_is_qualified": true
+    },
+    {
+      "file": "audit/ct_1002/meshes/07_PA.vtp",
+      "sha256": "31c745362005f7f475115e206b77696f6ce8d701402a2f6e292dabc6a035c11d",
+      "audit_matches_postprocess_baseline": true
+    },
+    {
+      "file": "postprocess/ct_1002/PA/original.vtp",
+      "sha256": "9fbb46f452ca783e66cb55ba78bd1769e03af9607bda57d104f74fb60628a2c6",
+      "recomputed_metrics_match": true,
+      "boundary_edges": 0,
+      "non_manifold_edges": 0,
+      "volume_is_qualified": true
+    },
+    {
+      "file": "audit/ct_1003/meshes/01_LV.vtp",
+      "sha256": "40bd852c40cfde30569fe1f2ccb78d8334479cd11836ed43f15e1876d2a9d5a3",
+      "audit_matches_postprocess_baseline": true
+    },
+    {
+      "file": "postprocess/ct_1003/LV/original.vtp",
+      "sha256": "8a8d2d5535f46cf65379c5ff9ef26d4ea62cdfa9aeae9d26fef8c405cd3bb1ba",
+      "recomputed_metrics_match": true,
+      "boundary_edges": 0,
+      "non_manifold_edges": 0,
+      "volume_is_qualified": true
+    },
+    {
+      "file": "audit/ct_1003/meshes/02_RV.vtp",
+      "sha256": "1e02b03e756ecd64416a67f8f258ac8ef09db828ba6aaeed4f9bfb82b9d8c792",
+      "audit_matches_postprocess_baseline": true
+    },
+    {
+      "file": "postprocess/ct_1003/RV/original.vtp",
+      "sha256": "8217b097d21421c5431e373ebad82aae74b31a4515d42a5bed26188c6bc5dd7a",
+      "recomputed_metrics_match": true,
+      "boundary_edges": 0,
+      "non_manifold_edges": 0,
+      "volume_is_qualified": true
+    },
+    {
+      "file": "audit/ct_1003/meshes/03_LA.vtp",
+      "sha256": "195db442edb476332b5c56431a99dcff32c4579404ffdb228e3503f8b912d80e",
+      "audit_matches_postprocess_baseline": true
+    },
+    {
+      "file": "postprocess/ct_1003/LA/original.vtp",
+      "sha256": "4d54874c6bbe8b53d961c9462c05f6b387b4567f159e16cb1ff5c5c4e54aa0e3",
+      "recomputed_metrics_match": true,
+      "boundary_edges": 0,
+      "non_manifold_edges": 0,
+      "volume_is_qualified": true
+    },
+    {
+      "file": "audit/ct_1003/meshes/04_RA.vtp",
+      "sha256": "0365e6b5002c0de3f1e539b194cb6fca25077fd4af58acdc0a2a69ddb57ffd91",
+      "audit_matches_postprocess_baseline": true
+    },
+    {
+      "file": "postprocess/ct_1003/RA/original.vtp",
+      "sha256": "ff47266b1a0fe4b010cda7869156ec0aa786586b5bea9ea1dd483e0c3174d652",
+      "recomputed_metrics_match": true,
+      "boundary_edges": 0,
+      "non_manifold_edges": 0,
+      "volume_is_qualified": true
+    },
+    {
+      "file": "audit/ct_1003/meshes/06_AO.vtp",
+      "sha256": "f4b1bf84324115a062a80b5789d589bba05b82a0584a16545396f2192d4bd32e",
+      "audit_matches_postprocess_baseline": true
+    },
+    {
+      "file": "postprocess/ct_1003/AO/original.vtp",
+      "sha256": "bc187c11cd75b691ce3def713efbb6789b6af7df03a8aad1ff500b6b9e5fe732",
+      "recomputed_metrics_match": true,
+      "boundary_edges": 0,
+      "non_manifold_edges": 0,
+      "volume_is_qualified": true
+    },
+    {
+      "file": "audit/ct_1003/meshes/07_PA.vtp",
+      "sha256": "e5056be5cced4db96c578d135369c0d4af0f21efdce417550297bc3c84f19a7d",
+      "audit_matches_postprocess_baseline": true
+    },
+    {
+      "file": "postprocess/ct_1003/PA/original.vtp",
+      "sha256": "1d24b94e8c9b8741fd43eb4b6d2cf293468301c49b2b1689d29922f430ef2a06",
+      "recomputed_metrics_match": true,
+      "boundary_edges": 0,
+      "non_manifold_edges": 0,
+      "volume_is_qualified": true
+    },
+    {
+      "file": "audit/ct_1004/meshes/01_LV.vtp",
+      "sha256": "9316c8a11d0705ae5bc9e344cd965e34e5673fc5dddb806b18f480fb7b8295c4",
+      "audit_matches_postprocess_baseline": true
+    },
+    {
+      "file": "postprocess/ct_1004/LV/original.vtp",
+      "sha256": "a565b783f28a3ed58893ebd77595c45c34d83d88cde97e98aafa6de245450b6c",
+      "recomputed_metrics_match": true,
+      "boundary_edges": 0,
+      "non_manifold_edges": 0,
+      "volume_is_qualified": true
+    },
+    {
+      "file": "postprocess/ct_1004/LV/taubin.vtp",
+      "sha256": "1b3fe381f1a54ba3182476a9764f4b05828d2b62d5a627471aff061da731d641",
+      "recomputed_metrics_match": true,
+      "boundary_edges": 0,
+      "non_manifold_edges": 0,
+      "volume_is_qualified": true
+    },
+    {
+      "file": "postprocess/ct_1004/LV/decimate50.vtp",
+      "sha256": "1770378fdde848e9ab7cb124b2100a7e486ad38ed7c6a121829763ebaeeaa22a",
+      "recomputed_metrics_match": true,
+      "boundary_edges": 0,
+      "non_manifold_edges": 0,
+      "volume_is_qualified": true
+    },
+    {
+      "file": "postprocess/ct_1004/LV/taubin_decimate50.vtp",
+      "sha256": "5a26ea2eea7d0dc93132b5accc2a7ac444d726a5f5b040d774d69c7a67f5e4dd",
+      "recomputed_metrics_match": true,
+      "boundary_edges": 0,
+      "non_manifold_edges": 1,
+      "volume_is_qualified": false
+    },
+    {
+      "file": "audit/ct_1004/meshes/02_RV.vtp",
+      "sha256": "5cd75bb6327d3d29e03cd31020714db94e1efeacc908d6e69c12a7254cf7e7e5",
+      "audit_matches_postprocess_baseline": true
+    },
+    {
+      "file": "postprocess/ct_1004/RV/original.vtp",
+      "sha256": "cab0d9dca0b47ecbe055e655d9dccae74c06e855c1fe0c9f54d2b4a6901a4114",
+      "recomputed_metrics_match": true,
+      "boundary_edges": 0,
+      "non_manifold_edges": 0,
+      "volume_is_qualified": true
+    },
+    {
+      "file": "audit/ct_1004/meshes/03_LA.vtp",
+      "sha256": "14c85fd960ac92c7db5ee64df40e4a8a11370bb8d0196ef379e8ec7e0ce7dfca",
+      "audit_matches_postprocess_baseline": true
+    },
+    {
+      "file": "postprocess/ct_1004/LA/original.vtp",
+      "sha256": "34e5a6b581ba301de32e9b382e53257df343a603c7bb5a3e65e03050f666c114",
+      "recomputed_metrics_match": true,
+      "boundary_edges": 0,
+      "non_manifold_edges": 0,
+      "volume_is_qualified": true
+    },
+    {
+      "file": "audit/ct_1004/meshes/04_RA.vtp",
+      "sha256": "636ab3d5ee99927d43a60b458a405fb03647c5119bb90ab10ab0bb996e52763e",
+      "audit_matches_postprocess_baseline": true
+    },
+    {
+      "file": "postprocess/ct_1004/RA/original.vtp",
+      "sha256": "d93b5b0358d53b9038902dd8cc25e750093aa7f0be4d11d945f7aed021180913",
+      "recomputed_metrics_match": true,
+      "boundary_edges": 0,
+      "non_manifold_edges": 0,
+      "volume_is_qualified": true
+    },
+    {
+      "file": "audit/ct_1004/meshes/05_MYO.vtp",
+      "sha256": "e1922135dc66154274693ec9c13d43dd91b29a1a2937685804692e03d3e648ef",
+      "audit_matches_postprocess_baseline": true
+    },
+    {
+      "file": "postprocess/ct_1004/MYO/original.vtp",
+      "sha256": "4551fe3cd90bed3056616295a1e96d349b88736fe7da630a4d32682e6939b0c6",
+      "recomputed_metrics_match": true,
+      "boundary_edges": 0,
+      "non_manifold_edges": 3,
+      "volume_is_qualified": false
+    },
+    {
+      "file": "postprocess/ct_1004/MYO/taubin.vtp",
+      "sha256": "f502374231fc622543a4d48973eb1bd9f7ef88e36e248eb20de27693f58b8e96",
+      "recomputed_metrics_match": true,
+      "boundary_edges": 0,
+      "non_manifold_edges": 3,
+      "volume_is_qualified": false
+    },
+    {
+      "file": "postprocess/ct_1004/MYO/decimate50.vtp",
+      "sha256": "911e7641dcf58e6822583c50c7970550463581eb8d5e2deff7a398b11fda9635",
+      "recomputed_metrics_match": true,
+      "boundary_edges": 0,
+      "non_manifold_edges": 3,
+      "volume_is_qualified": false
+    },
+    {
+      "file": "postprocess/ct_1004/MYO/taubin_decimate50.vtp",
+      "sha256": "f287fcd88e39c4dabca4221c237cde61ea03c8928f9b4544b1d70f4dc583e9b5",
+      "recomputed_metrics_match": true,
+      "boundary_edges": 0,
+      "non_manifold_edges": 5,
+      "volume_is_qualified": false
+    },
+    {
+      "file": "audit/ct_1004/meshes/06_AO.vtp",
+      "sha256": "73e65bf590b42875786d4df0a443b10806712b15e945214e65d4218431ef5f2e",
+      "audit_matches_postprocess_baseline": true
+    },
+    {
+      "file": "postprocess/ct_1004/AO/original.vtp",
+      "sha256": "e42bdc74e8a31b95c37b4627bb865fceacd1b16d9911598d9d34a00d7db0e4ae",
+      "recomputed_metrics_match": true,
+      "boundary_edges": 0,
+      "non_manifold_edges": 0,
+      "volume_is_qualified": true
+    },
+    {
+      "file": "audit/ct_1004/meshes/07_PA.vtp",
+      "sha256": "b206386e7f5c6d7d1397e27f6aa8c62e79ca494e86e2bc120873d3673569092a",
+      "audit_matches_postprocess_baseline": true
+    },
+    {
+      "file": "postprocess/ct_1004/PA/original.vtp",
+      "sha256": "e37d92c82883e5b079fac2d919464d95ac7374129bb978abe8392123e384688c",
+      "recomputed_metrics_match": true,
+      "boundary_edges": 0,
+      "non_manifold_edges": 0,
+      "volume_is_qualified": true
+    },
+    {
+      "file": "postprocess/ct_1004/PA/taubin.vtp",
+      "sha256": "4825bca96c218b728125f3a134846aee2322637628ed829efb84083c0b1a3008",
+      "recomputed_metrics_match": true,
+      "boundary_edges": 0,
+      "non_manifold_edges": 0,
+      "volume_is_qualified": true
+    },
+    {
+      "file": "postprocess/ct_1004/PA/decimate50.vtp",
+      "sha256": "71b74643bc7de01d06b44d85516c0ce666d1e11947900f83c916758ff0a8738c",
+      "recomputed_metrics_match": true,
+      "boundary_edges": 0,
+      "non_manifold_edges": 0,
+      "volume_is_qualified": true
+    },
+    {
+      "file": "postprocess/ct_1004/PA/taubin_decimate50.vtp",
+      "sha256": "0d145698d4b6819952a3f9ce4f163fd8d1dcf8b4714841393cd4f0303b1705e5",
+      "recomputed_metrics_match": true,
+      "boundary_edges": 0,
+      "non_manifold_edges": 0,
+      "volume_is_qualified": true
+    }
+  ],
+  "issues": [],
+  "limits": [
+    "Reference agreement is not anatomical ground truth",
+    "Unknown physical units and patient orientation remain unresolved",
+    "Self-intersections and non-manifold vertex fans not tested",
+    "Sampled surface deviations compared to reference JSON, not recomputed"
+  ],
+  "prior_run_bytewise_comparison": {
+    "files_checked": 72,
+    "identical_files": 72,
+    "all_equal": true,
+    "reference_audit": "outputs/geometry_validation/audit_final",
+    "reference_experiment": "outputs/geometry_validation/postprocess_v1"
+  }
+}

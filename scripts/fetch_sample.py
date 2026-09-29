@@ -86,7 +86,7 @@ def part_prefix(name, required, expected_size):
         return data, downloaded
 
 
-def fetch(destination):
+def fetch(destination, cases=None):
     destination.mkdir(parents=True, exist_ok=True)
     with request(f"{BASE}list/{DATASET}") as response:
         listing = json.load(response)
@@ -131,17 +131,31 @@ def fetch(destination):
                 candidates.append((end, entry, label))
     if not candidates:
         raise RuntimeError("No complete pair in first disk. Use full download and 7-Zip.")
-    required, ct, mask = min(candidates, key=lambda row: row[0])
-    if all((destination / Path(i.filename).name).exists() and
-           zlib.crc32((destination / Path(i.filename).name).read_bytes()) == i.CRC for i in (ct, mask)):
-        print("Sample pair already downloaded and CRC verified.")
+    selected = [min(candidates, key=lambda row: row[0])] if not cases else [
+        row for row in candidates if Path(row[1].filename).name.split("_image")[0] in cases]
+    found = {Path(row[1].filename).name.split("_image")[0] for row in selected}
+    if cases and set(cases) != found:
+        raise RuntimeError(f"Requested cases not wholly in z01: {sorted(set(cases) - found)}")
+    needed = []
+    for end, ct, mask in selected:
+        valid = True
+        for entry in (ct, mask):
+            target = destination / Path(entry.filename).name
+            if target.exists() and (target.stat().st_size != entry.file_size or zlib.crc32(target.read_bytes()) != entry.CRC):
+                raise RuntimeError(f"Existing input differs from archive; refusing overwrite: {target}")
+            valid = valid and target.exists()
+        if not valid:
+            needed.append((end, ct, mask))
+    if not needed:
+        print("Requested pairs already downloaded and CRC verified.")
         return
-    print(f"Selected {ct.filename} + {mask.filename}; reading {required / 1e6:.1f} MB prefix", flush=True)
+    required = max(row[0] for row in needed)
+    print(f"Selected {sorted(found)}; reading {required / 1e6:.1f} MB prefix", flush=True)
     prefix, network_bytes = part_prefix("ImageCHD_dataset.z01", required, part_size)
     provenance = {"dataset": f"https://www.kaggle.com/datasets/{DATASET}",
                   "method": "Public Kaggle API; final part + prefix of z01; original ZIP entry CRC32 verified",
                   "z01_download_bytes": network_bytes, "files": []}
-    for entry in (ct, mask):
+    for entry in [i for _, ct, mask in needed for i in (ct, mask)]:
         position = entry.header_offset
         fields = struct.unpack_from("<4s5H3I2H", prefix, position)
         if fields[0] != b"PK\x03\x04" or fields[2] & 1:
@@ -157,16 +171,23 @@ def fetch(destination):
         if len(payload) != entry.file_size or zlib.crc32(payload) != entry.CRC:
             raise RuntimeError(f"CRC/size mismatch: {entry.filename}")
         target = destination / Path(entry.filename).name
-        target.write_bytes(payload)
+        if not target.exists():
+            target.write_bytes(payload)
         provenance["files"].append({"archive_name": entry.filename, "local_name": target.name,
                                     "sha256": hashlib.sha256(payload).hexdigest(),
                                     "crc32": f"{entry.CRC:08x}", "bytes": len(payload)})
         print(f"Saved {target} ({len(payload) / 1e6:.1f} MB); CRC OK", flush=True)
-    (destination / "provenance.json").write_text(json.dumps(provenance, indent=2), encoding="utf-8")
+    provenance_path = destination / "provenance.json"
+    if provenance_path.exists():
+        previous = json.loads(provenance_path.read_text(encoding="utf-8"))
+        known = {item["local_name"] for item in provenance["files"]}
+        provenance["files"].extend(item for item in previous["files"] if item["local_name"] not in known)
+    provenance_path.write_text(json.dumps(provenance, indent=2), encoding="utf-8")
 
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--out", type=Path, default=Path("data/imagechd"))
+    parser.add_argument("--cases", nargs="+", help="Explicit case IDs wholly in z01, e.g. ct_1001 ct_1002")
     args = parser.parse_args()
-    fetch(args.out)
+    fetch(args.out, args.cases)
