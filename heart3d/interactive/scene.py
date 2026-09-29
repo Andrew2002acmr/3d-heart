@@ -38,6 +38,8 @@ class ScenePanel(QtWidgets.QGroupBox):
 
     def set_state(self, state):
         self.plotter.clear()
+        # PyVista clear() also removes lights; restore them after every case switch.
+        self.plotter.enable_lightkit()
         self.state = state
         self.actors, self.displayed, self.planes = {}, {}, {}
         if state is not None:
@@ -52,7 +54,7 @@ class ScenePanel(QtWidgets.QGroupBox):
                 actor.SetUseBounds(False)
                 actor.SetVisibility(state.planes)
                 self.planes[axis] = (mesh, actor)
-            self.plotter.add_axes(xlabel="X*", ylabel="Y*", zlabel="Z*")
+            self.plotter.add_axes(xlabel="X*", ylabel="Y*", zlabel="Z*", color="white")
             self.reset_camera()
         self.plotter.render()
 
