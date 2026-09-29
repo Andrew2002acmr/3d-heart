@@ -1,0 +1,1112 @@
+[
+  {
+    "case": "ct_1001",
+    "structure": "LV",
+    "profile": "windowed_sinc/strong",
+    "components": [
+      {
+        "baseline_component_id": 2,
+        "component_triangles": 8,
+        "new_degenerate_triangles": 8,
+        "baseline_area": 1.7320508075688772,
+        "processed_area": 1.0298325664086935e-12,
+        "area_change_percent_by_profile": {
+          "taubin/mild": -99.18874518674697,
+          "taubin/medium": -99.99341865627972,
+          "taubin/strong": -99.99999956685915,
+          "windowed_sinc/mild": -41.66394616889991,
+          "windowed_sinc/medium": -99.7291352083257,
+          "windowed_sinc/strong": -99.99999999994054
+        }
+      },
+      {
+        "baseline_component_id": 3,
+        "component_triangles": 8,
+        "new_degenerate_triangles": 8,
+        "baseline_area": 1.7320508075688772,
+        "processed_area": 1.0298326233470716e-12,
+        "area_change_percent_by_profile": {
+          "taubin/mild": -99.18874518674697,
+          "taubin/medium": -99.99341865627972,
+          "taubin/strong": -99.99999956685915,
+          "windowed_sinc/mild": -41.66394616889991,
+          "windowed_sinc/medium": -99.72913520832583,
+          "windowed_sinc/strong": -99.99999999994054
+        }
+      }
+    ]
+  },
+  {
+    "case": "ct_1001",
+    "structure": "RV",
+    "profile": "windowed_sinc/strong",
+    "components": [
+      {
+        "baseline_component_id": 1,
+        "component_triangles": 8,
+        "new_degenerate_triangles": 8,
+        "baseline_area": 1.7320508075688772,
+        "processed_area": 1.0298325727351802e-12,
+        "area_change_percent_by_profile": {
+          "taubin/mild": -99.18874518674706,
+          "taubin/medium": -99.99341865627972,
+          "taubin/strong": -99.99999956685915,
+          "windowed_sinc/mild": -41.66394616890099,
+          "windowed_sinc/medium": -99.72913520832586,
+          "windowed_sinc/strong": -99.99999999994054
+        }
+      },
+      {
+        "baseline_component_id": 2,
+        "component_triangles": 8,
+        "new_degenerate_triangles": 8,
+        "baseline_area": 1.7320508075688772,
+        "processed_area": 1.029832598041125e-12,
+        "area_change_percent_by_profile": {
+          "taubin/mild": -99.18874518674697,
+          "taubin/medium": -99.99341865627972,
+          "taubin/strong": -99.99999956685915,
+          "windowed_sinc/mild": -41.66394616889847,
+          "windowed_sinc/medium": -99.7291352083258,
+          "windowed_sinc/strong": -99.99999999994054
+        }
+      }
+    ]
+  },
+  {
+    "case": "ct_1001",
+    "structure": "LA",
+    "profile": "windowed_sinc/strong",
+    "components": [
+      {
+        "baseline_component_id": 9,
+        "component_triangles": 8,
+        "new_degenerate_triangles": 8,
+        "baseline_area": 1.7320508075688772,
+        "processed_area": 1.0298324968173472e-12,
+        "area_change_percent_by_profile": {
+          "taubin/mild": -99.18874518674697,
+          "taubin/medium": -99.99341865627972,
+          "taubin/strong": -99.99999956685915,
+          "windowed_sinc/mild": -41.66394616889918,
+          "windowed_sinc/medium": -99.72913520832593,
+          "windowed_sinc/strong": -99.99999999994054
+        }
+      },
+      {
+        "baseline_component_id": 10,
+        "component_triangles": 8,
+        "new_degenerate_triangles": 8,
+        "baseline_area": 1.7320508075688772,
+        "processed_area": 1.0298324715114079e-12,
+        "area_change_percent_by_profile": {
+          "taubin/mild": -99.18874518674697,
+          "taubin/medium": -99.99341865627972,
+          "taubin/strong": -99.99999956685915,
+          "windowed_sinc/mild": -41.663946168899166,
+          "windowed_sinc/medium": -99.72913520832603,
+          "windowed_sinc/strong": -99.99999999994054
+        }
+      }
+    ]
+  },
+  {
+    "case": "ct_1001",
+    "structure": "RA",
+    "profile": "windowed_sinc/strong",
+    "components": [
+      {
+        "baseline_component_id": 1,
+        "component_triangles": 8,
+        "new_degenerate_triangles": 8,
+        "baseline_area": 1.7320508075688772,
+        "processed_area": 1.0298326613059894e-12,
+        "area_change_percent_by_profile": {
+          "taubin/mild": -99.1887451867468,
+          "taubin/medium": -99.99341865627972,
+          "taubin/strong": -99.99999956685915,
+          "windowed_sinc/mild": -41.66394616889845,
+          "windowed_sinc/medium": -99.72913520832569,
+          "windowed_sinc/strong": -99.99999999994054
+        }
+      }
+    ]
+  },
+  {
+    "case": "ct_1001",
+    "structure": "MYO",
+    "profile": "windowed_sinc/strong",
+    "components": [
+      {
+        "baseline_component_id": 2,
+        "component_triangles": 8,
+        "new_degenerate_triangles": 8,
+        "baseline_area": 1.7320508075688772,
+        "processed_area": 1.0298325727351847e-12,
+        "area_change_percent_by_profile": {
+          "taubin/mild": -99.18874518674697,
+          "taubin/medium": -99.99341865627972,
+          "taubin/strong": -99.99999956685915,
+          "windowed_sinc/mild": -41.66394616890064,
+          "windowed_sinc/medium": -99.72913520832608,
+          "windowed_sinc/strong": -99.99999999994054
+        }
+      }
+    ]
+  },
+  {
+    "case": "ct_1001",
+    "structure": "PA",
+    "profile": "windowed_sinc/strong",
+    "components": [
+      {
+        "baseline_component_id": 10,
+        "component_triangles": 16,
+        "new_degenerate_triangles": 16,
+        "baseline_area": 4.5604779323150675,
+        "processed_area": 7.915862443144874e-12,
+        "area_change_percent_by_profile": {
+          "taubin/mild": -81.87797273553959,
+          "taubin/medium": -96.40366587567266,
+          "taubin/strong": -99.85529982991218,
+          "windowed_sinc/mild": -18.476316012281046,
+          "windowed_sinc/medium": -85.74023642986485,
+          "windowed_sinc/strong": -99.99999999982643
+        }
+      },
+      {
+        "baseline_component_id": 11,
+        "component_triangles": 8,
+        "new_degenerate_triangles": 8,
+        "baseline_area": 1.7320508075688772,
+        "processed_area": 1.0298324335524894e-12,
+        "area_change_percent_by_profile": {
+          "taubin/mild": -99.18874518674697,
+          "taubin/medium": -99.99341865627972,
+          "taubin/strong": -99.99999956685915,
+          "windowed_sinc/mild": -41.66394616889991,
+          "windowed_sinc/medium": -99.72913520832583,
+          "windowed_sinc/strong": -99.99999999994054
+        }
+      }
+    ]
+  },
+  {
+    "case": "ct_1002",
+    "structure": "LA",
+    "profile": "windowed_sinc/strong",
+    "components": [
+      {
+        "baseline_component_id": 1,
+        "component_triangles": 8,
+        "new_degenerate_triangles": 8,
+        "baseline_area": 1.7320508075688772,
+        "processed_area": 1.0298325221232901e-12,
+        "area_change_percent_by_profile": {
+          "taubin/mild": -99.18874518674697,
+          "taubin/medium": -99.99341865627972,
+          "taubin/strong": -99.99999956685915,
+          "windowed_sinc/mild": -41.66394616889484,
+          "windowed_sinc/medium": -99.72913520832583,
+          "windowed_sinc/strong": -99.99999999994054
+        }
+      }
+    ]
+  },
+  {
+    "case": "ct_1003",
+    "structure": "LA",
+    "profile": "windowed_sinc/strong",
+    "components": [
+      {
+        "baseline_component_id": 9,
+        "component_triangles": 16,
+        "new_degenerate_triangles": 16,
+        "baseline_area": 4.5604779323150675,
+        "processed_area": 7.915862462706323e-12,
+        "area_change_percent_by_profile": {
+          "taubin/mild": -81.87797273553853,
+          "taubin/medium": -96.4036658756726,
+          "taubin/strong": -99.85529982991198,
+          "windowed_sinc/mild": -18.476316012284432,
+          "windowed_sinc/medium": -85.74023642986492,
+          "windowed_sinc/strong": -99.99999999982643
+        }
+      },
+      {
+        "baseline_component_id": 10,
+        "component_triangles": 16,
+        "new_degenerate_triangles": 16,
+        "baseline_area": 4.5604779323150675,
+        "processed_area": 7.915862404078123e-12,
+        "area_change_percent_by_profile": {
+          "taubin/mild": -81.87797273553844,
+          "taubin/medium": -96.40366587567298,
+          "taubin/strong": -99.85529982991208,
+          "windowed_sinc/mild": -18.47631601228531,
+          "windowed_sinc/medium": -85.74023642986566,
+          "windowed_sinc/strong": -99.99999999982643
+        }
+      },
+      {
+        "baseline_component_id": 11,
+        "component_triangles": 8,
+        "new_degenerate_triangles": 8,
+        "baseline_area": 1.7320508075688772,
+        "processed_area": 1.029832572735182e-12,
+        "area_change_percent_by_profile": {
+          "taubin/mild": -99.18874518674697,
+          "taubin/medium": -99.99341865627972,
+          "taubin/strong": -99.99999956685915,
+          "windowed_sinc/mild": -41.66394616889701,
+          "windowed_sinc/medium": -99.72913520832563,
+          "windowed_sinc/strong": -99.99999999994054
+        }
+      },
+      {
+        "baseline_component_id": 12,
+        "component_triangles": 8,
+        "new_degenerate_triangles": 8,
+        "baseline_area": 1.7320508075688772,
+        "processed_area": 1.0298325474292373e-12,
+        "area_change_percent_by_profile": {
+          "taubin/mild": -99.18874518674697,
+          "taubin/medium": -99.99341865627972,
+          "taubin/strong": -99.99999956685915,
+          "windowed_sinc/mild": -41.66394616889991,
+          "windowed_sinc/medium": -99.7291352083258,
+          "windowed_sinc/strong": -99.99999999994054
+        }
+      },
+      {
+        "baseline_component_id": 13,
+        "component_triangles": 8,
+        "new_degenerate_triangles": 8,
+        "baseline_area": 1.7320508075688772,
+        "processed_area": 1.0298325853881535e-12,
+        "area_change_percent_by_profile": {
+          "taubin/mild": -99.18874518674697,
+          "taubin/medium": -99.99341865627972,
+          "taubin/strong": -99.99999956685915,
+          "windowed_sinc/mild": -41.66394616889847,
+          "windowed_sinc/medium": -99.72913520832593,
+          "windowed_sinc/strong": -99.99999999994054
+        }
+      }
+    ]
+  },
+  {
+    "case": "ct_1003",
+    "structure": "PA",
+    "profile": "windowed_sinc/strong",
+    "components": [
+      {
+        "baseline_component_id": 8,
+        "component_triangles": 16,
+        "new_degenerate_triangles": 16,
+        "baseline_area": 4.5604779323150675,
+        "processed_area": 7.915862369743523e-12,
+        "area_change_percent_by_profile": {
+          "taubin/mild": -81.8779727355401,
+          "taubin/medium": -96.40366587567276,
+          "taubin/strong": -99.85529982991227,
+          "windowed_sinc/mild": -18.476316012286254,
+          "windowed_sinc/medium": -85.7402364298657,
+          "windowed_sinc/strong": -99.99999999982643
+        }
+      },
+      {
+        "baseline_component_id": 9,
+        "component_triangles": 16,
+        "new_degenerate_triangles": 16,
+        "baseline_area": 4.5604779323150675,
+        "processed_area": 7.915862642030407e-12,
+        "area_change_percent_by_profile": {
+          "taubin/mild": -81.87797273553919,
+          "taubin/medium": -96.40366587567341,
+          "taubin/strong": -99.85529982991216,
+          "windowed_sinc/mild": -18.476316012285597,
+          "windowed_sinc/medium": -85.74023642986491,
+          "windowed_sinc/strong": -99.99999999982643
+        }
+      },
+      {
+        "baseline_component_id": 10,
+        "component_triangles": 16,
+        "new_degenerate_triangles": 16,
+        "baseline_area": 4.5604779323150675,
+        "processed_area": 7.9158627640618e-12,
+        "area_change_percent_by_profile": {
+          "taubin/mild": -81.87797273553966,
+          "taubin/medium": -96.40366587567325,
+          "taubin/strong": -99.85529982991223,
+          "windowed_sinc/mild": -18.476316012284776,
+          "windowed_sinc/medium": -85.7402364298661,
+          "windowed_sinc/strong": -99.99999999982643
+        }
+      },
+      {
+        "baseline_component_id": 11,
+        "component_triangles": 8,
+        "new_degenerate_triangles": 8,
+        "baseline_area": 1.7320508075688772,
+        "processed_area": 1.0298325221232931e-12,
+        "area_change_percent_by_profile": {
+          "taubin/mild": -99.18874518674697,
+          "taubin/medium": -99.99341865627972,
+          "taubin/strong": -99.99999956685915,
+          "windowed_sinc/mild": -41.66394616889701,
+          "windowed_sinc/medium": -99.72913520832579,
+          "windowed_sinc/strong": -99.99999999994054
+        }
+      },
+      {
+        "baseline_component_id": 12,
+        "component_triangles": 8,
+        "new_degenerate_triangles": 8,
+        "baseline_area": 1.7320508075688772,
+        "processed_area": 1.0298325600822073e-12,
+        "area_change_percent_by_profile": {
+          "taubin/mild": -99.18874518674697,
+          "taubin/medium": -99.99341865627972,
+          "taubin/strong": -99.99999956685915,
+          "windowed_sinc/mild": -41.66394616889991,
+          "windowed_sinc/medium": -99.72913520832583,
+          "windowed_sinc/strong": -99.99999999994054
+        }
+      },
+      {
+        "baseline_component_id": 13,
+        "component_triangles": 8,
+        "new_degenerate_triangles": 8,
+        "baseline_area": 1.7320508075688772,
+        "processed_area": 1.0298325221232927e-12,
+        "area_change_percent_by_profile": {
+          "taubin/mild": -99.18874518674697,
+          "taubin/medium": -99.99341865627972,
+          "taubin/strong": -99.99999956685915,
+          "windowed_sinc/mild": -41.663946168904964,
+          "windowed_sinc/medium": -99.72913520832583,
+          "windowed_sinc/strong": -99.99999999994054
+        }
+      },
+      {
+        "baseline_component_id": 14,
+        "component_triangles": 8,
+        "new_degenerate_triangles": 8,
+        "baseline_area": 1.7320508075688772,
+        "processed_area": 1.0298325727351873e-12,
+        "area_change_percent_by_profile": {
+          "taubin/mild": -99.18874518674697,
+          "taubin/medium": -99.99341865627972,
+          "taubin/strong": -99.99999956685915,
+          "windowed_sinc/mild": -41.66394616889847,
+          "windowed_sinc/medium": -99.72913520832574,
+          "windowed_sinc/strong": -99.99999999994054
+        }
+      }
+    ]
+  },
+  {
+    "case": "ct_1004",
+    "structure": "LV",
+    "profile": "windowed_sinc/strong",
+    "components": [
+      {
+        "baseline_component_id": 4,
+        "component_triangles": 8,
+        "new_degenerate_triangles": 8,
+        "baseline_area": 1.7320508075688772,
+        "processed_area": 1.029832572735182e-12,
+        "area_change_percent_by_profile": {
+          "taubin/mild": -99.18874518674697,
+          "taubin/medium": -99.99341865627972,
+          "taubin/strong": -99.99999956685915,
+          "windowed_sinc/mild": -41.66394616889847,
+          "windowed_sinc/medium": -99.72913520832613,
+          "windowed_sinc/strong": -99.99999999994054
+        }
+      },
+      {
+        "baseline_component_id": 5,
+        "component_triangles": 8,
+        "new_degenerate_triangles": 8,
+        "baseline_area": 1.7320508075688772,
+        "processed_area": 1.0298325221232905e-12,
+        "area_change_percent_by_profile": {
+          "taubin/mild": -99.18874518674697,
+          "taubin/medium": -99.99341865627972,
+          "taubin/strong": -99.99999956685915,
+          "windowed_sinc/mild": -41.66394616890135,
+          "windowed_sinc/medium": -99.72913520832583,
+          "windowed_sinc/strong": -99.99999999994054
+        }
+      },
+      {
+        "baseline_component_id": 6,
+        "component_triangles": 8,
+        "new_degenerate_triangles": 8,
+        "baseline_area": 1.7320508075688772,
+        "processed_area": 1.0298325094703186e-12,
+        "area_change_percent_by_profile": {
+          "taubin/mild": -99.18874518674697,
+          "taubin/medium": -99.99341865627972,
+          "taubin/strong": -99.99999956685915,
+          "windowed_sinc/mild": -41.66394616889918,
+          "windowed_sinc/medium": -99.72913520832583,
+          "windowed_sinc/strong": -99.99999999994054
+        }
+      },
+      {
+        "baseline_component_id": 7,
+        "component_triangles": 8,
+        "new_degenerate_triangles": 8,
+        "baseline_area": 1.7320508075688772,
+        "processed_area": 1.0298326106940985e-12,
+        "area_change_percent_by_profile": {
+          "taubin/mild": -99.18874518674697,
+          "taubin/medium": -99.99341865627972,
+          "taubin/strong": -99.99999956685915,
+          "windowed_sinc/mild": -41.663946168902065,
+          "windowed_sinc/medium": -99.72913520832583,
+          "windowed_sinc/strong": -99.99999999994054
+        }
+      },
+      {
+        "baseline_component_id": 8,
+        "component_triangles": 8,
+        "new_degenerate_triangles": 8,
+        "baseline_area": 1.7320508075688772,
+        "processed_area": 1.0298325853881523e-12,
+        "area_change_percent_by_profile": {
+          "taubin/mild": -99.18874518674697,
+          "taubin/medium": -99.99341865627972,
+          "taubin/strong": -99.99999956685915,
+          "windowed_sinc/mild": -41.66394616889774,
+          "windowed_sinc/medium": -99.72913520832583,
+          "windowed_sinc/strong": -99.99999999994054
+        }
+      },
+      {
+        "baseline_component_id": 9,
+        "component_triangles": 8,
+        "new_degenerate_triangles": 8,
+        "baseline_area": 1.7320508075688772,
+        "processed_area": 1.0298325727351796e-12,
+        "area_change_percent_by_profile": {
+          "taubin/mild": -99.18874518674697,
+          "taubin/medium": -99.99341865627972,
+          "taubin/strong": -99.99999956685915,
+          "windowed_sinc/mild": -41.66394616890064,
+          "windowed_sinc/medium": -99.72913520832589,
+          "windowed_sinc/strong": -99.99999999994054
+        }
+      },
+      {
+        "baseline_component_id": 10,
+        "component_triangles": 8,
+        "new_degenerate_triangles": 8,
+        "baseline_area": 1.7320508075688772,
+        "processed_area": 1.0298325600822071e-12,
+        "area_change_percent_by_profile": {
+          "taubin/mild": -99.18874518674697,
+          "taubin/medium": -99.99341865627972,
+          "taubin/strong": -99.99999956685915,
+          "windowed_sinc/mild": -41.66394616889991,
+          "windowed_sinc/medium": -99.72913520832583,
+          "windowed_sinc/strong": -99.99999999994054
+        }
+      },
+      {
+        "baseline_component_id": 11,
+        "component_triangles": 8,
+        "new_degenerate_triangles": 8,
+        "baseline_area": 1.7320508075688772,
+        "processed_area": 1.0298325727351796e-12,
+        "area_change_percent_by_profile": {
+          "taubin/mild": -99.18874518674697,
+          "taubin/medium": -99.99341865627972,
+          "taubin/strong": -99.99999956685915,
+          "windowed_sinc/mild": -41.66394616889774,
+          "windowed_sinc/medium": -99.72913520832583,
+          "windowed_sinc/strong": -99.99999999994054
+        }
+      },
+      {
+        "baseline_component_id": 12,
+        "component_triangles": 8,
+        "new_degenerate_triangles": 8,
+        "baseline_area": 1.7320508075688772,
+        "processed_area": 1.0298326233470712e-12,
+        "area_change_percent_by_profile": {
+          "taubin/mild": -99.18874518674697,
+          "taubin/medium": -99.99341865627972,
+          "taubin/strong": -99.99999956685915,
+          "windowed_sinc/mild": -41.66394616889628,
+          "windowed_sinc/medium": -99.72913520832583,
+          "windowed_sinc/strong": -99.99999999994054
+        }
+      },
+      {
+        "baseline_component_id": 13,
+        "component_triangles": 8,
+        "new_degenerate_triangles": 8,
+        "baseline_area": 1.7320508075688772,
+        "processed_area": 1.0298325221232905e-12,
+        "area_change_percent_by_profile": {
+          "taubin/mild": -99.18874518674697,
+          "taubin/medium": -99.99341865627972,
+          "taubin/strong": -99.99999956685915,
+          "windowed_sinc/mild": -41.66394616890064,
+          "windowed_sinc/medium": -99.72913520832583,
+          "windowed_sinc/strong": -99.99999999994054
+        }
+      }
+    ]
+  },
+  {
+    "case": "ct_1004",
+    "structure": "RV",
+    "profile": "windowed_sinc/strong",
+    "components": [
+      {
+        "baseline_component_id": 7,
+        "component_triangles": 8,
+        "new_degenerate_triangles": 8,
+        "baseline_area": 1.7320508075688772,
+        "processed_area": 1.0298325727351796e-12,
+        "area_change_percent_by_profile": {
+          "taubin/mild": -99.18874518674697,
+          "taubin/medium": -99.99341865627972,
+          "taubin/strong": -99.99999956685915,
+          "windowed_sinc/mild": -41.66394616889918,
+          "windowed_sinc/medium": -99.72913520832603,
+          "windowed_sinc/strong": -99.99999999994054
+        }
+      },
+      {
+        "baseline_component_id": 8,
+        "component_triangles": 8,
+        "new_degenerate_triangles": 8,
+        "baseline_area": 1.7320508075688772,
+        "processed_area": 1.0298325727351827e-12,
+        "area_change_percent_by_profile": {
+          "taubin/mild": -99.18874518674697,
+          "taubin/medium": -99.99341865627972,
+          "taubin/strong": -99.99999956685915,
+          "windowed_sinc/mild": -41.66394616889774,
+          "windowed_sinc/medium": -99.72913520832593,
+          "windowed_sinc/strong": -99.99999999994054
+        }
+      },
+      {
+        "baseline_component_id": 9,
+        "component_triangles": 8,
+        "new_degenerate_triangles": 8,
+        "baseline_area": 1.7320508075688772,
+        "processed_area": 1.029832598041125e-12,
+        "area_change_percent_by_profile": {
+          "taubin/mild": -99.18874518674697,
+          "taubin/medium": -99.99341865627972,
+          "taubin/strong": -99.99999956685915,
+          "windowed_sinc/mild": -41.66394616890208,
+          "windowed_sinc/medium": -99.72913520832583,
+          "windowed_sinc/strong": -99.99999999994054
+        }
+      },
+      {
+        "baseline_component_id": 10,
+        "component_triangles": 8,
+        "new_degenerate_triangles": 8,
+        "baseline_area": 1.7320508075688772,
+        "processed_area": 1.0298325221232913e-12,
+        "area_change_percent_by_profile": {
+          "taubin/mild": -99.18874518674697,
+          "taubin/medium": -99.99341865627972,
+          "taubin/strong": -99.99999956685915,
+          "windowed_sinc/mild": -41.66394616890208,
+          "windowed_sinc/medium": -99.72913520832593,
+          "windowed_sinc/strong": -99.99999999994054
+        }
+      },
+      {
+        "baseline_component_id": 11,
+        "component_triangles": 8,
+        "new_degenerate_triangles": 8,
+        "baseline_area": 1.7320508075688772,
+        "processed_area": 1.0298325727351804e-12,
+        "area_change_percent_by_profile": {
+          "taubin/mild": -99.18874518674697,
+          "taubin/medium": -99.99341865627972,
+          "taubin/strong": -99.99999956685915,
+          "windowed_sinc/mild": -41.66394616889847,
+          "windowed_sinc/medium": -99.72913520832579,
+          "windowed_sinc/strong": -99.99999999994054
+        }
+      },
+      {
+        "baseline_component_id": 12,
+        "component_triangles": 8,
+        "new_degenerate_triangles": 8,
+        "baseline_area": 1.7320508075688772,
+        "processed_area": 1.0298325727351827e-12,
+        "area_change_percent_by_profile": {
+          "taubin/mild": -99.18874518674697,
+          "taubin/medium": -99.99341865627972,
+          "taubin/strong": -99.99999956685915,
+          "windowed_sinc/mild": -41.66394616889847,
+          "windowed_sinc/medium": -99.72913520832579,
+          "windowed_sinc/strong": -99.99999999994054
+        }
+      },
+      {
+        "baseline_component_id": 13,
+        "component_triangles": 8,
+        "new_degenerate_triangles": 8,
+        "baseline_area": 1.7320508075688772,
+        "processed_area": 1.0298325094703186e-12,
+        "area_change_percent_by_profile": {
+          "taubin/mild": -99.18874518674697,
+          "taubin/medium": -99.99341865627972,
+          "taubin/strong": -99.99999956685915,
+          "windowed_sinc/mild": -41.66394616889991,
+          "windowed_sinc/medium": -99.72913520832608,
+          "windowed_sinc/strong": -99.99999999994054
+        }
+      },
+      {
+        "baseline_component_id": 14,
+        "component_triangles": 8,
+        "new_degenerate_triangles": 8,
+        "baseline_area": 1.7320508075688772,
+        "processed_area": 1.02983257273518e-12,
+        "area_change_percent_by_profile": {
+          "taubin/mild": -99.18874518674697,
+          "taubin/medium": -99.99341865627972,
+          "taubin/strong": -99.99999956685915,
+          "windowed_sinc/mild": -41.66394616889847,
+          "windowed_sinc/medium": -99.72913520832579,
+          "windowed_sinc/strong": -99.99999999994054
+        }
+      },
+      {
+        "baseline_component_id": 15,
+        "component_triangles": 8,
+        "new_degenerate_triangles": 8,
+        "baseline_area": 1.7320508075688772,
+        "processed_area": 1.0298325094703178e-12,
+        "area_change_percent_by_profile": {
+          "taubin/mild": -99.18874518674697,
+          "taubin/medium": -99.99341865627972,
+          "taubin/strong": -99.99999956685915,
+          "windowed_sinc/mild": -41.66394616890135,
+          "windowed_sinc/medium": -99.72913520832593,
+          "windowed_sinc/strong": -99.99999999994054
+        }
+      },
+      {
+        "baseline_component_id": 16,
+        "component_triangles": 8,
+        "new_degenerate_triangles": 8,
+        "baseline_area": 1.7320508075688772,
+        "processed_area": 1.0298324968173464e-12,
+        "area_change_percent_by_profile": {
+          "taubin/mild": -99.18874518674697,
+          "taubin/medium": -99.99341865627972,
+          "taubin/strong": -99.99999956685915,
+          "windowed_sinc/mild": -41.66394616890135,
+          "windowed_sinc/medium": -99.72913520832593,
+          "windowed_sinc/strong": -99.99999999994054
+        }
+      },
+      {
+        "baseline_component_id": 17,
+        "component_triangles": 8,
+        "new_degenerate_triangles": 8,
+        "baseline_area": 1.7320508075688772,
+        "processed_area": 1.0298325474292349e-12,
+        "area_change_percent_by_profile": {
+          "taubin/mild": -99.18874518674697,
+          "taubin/medium": -99.99341865627972,
+          "taubin/strong": -99.99999956685915,
+          "windowed_sinc/mild": -41.66394616889847,
+          "windowed_sinc/medium": -99.72913520832574,
+          "windowed_sinc/strong": -99.99999999994054
+        }
+      },
+      {
+        "baseline_component_id": 18,
+        "component_triangles": 8,
+        "new_degenerate_triangles": 8,
+        "baseline_area": 1.7320508075688772,
+        "processed_area": 1.0298325600822073e-12,
+        "area_change_percent_by_profile": {
+          "taubin/mild": -99.18874518674697,
+          "taubin/medium": -99.99341865627972,
+          "taubin/strong": -99.99999956685915,
+          "windowed_sinc/mild": -41.66394616889918,
+          "windowed_sinc/medium": -99.72913520832593,
+          "windowed_sinc/strong": -99.99999999994054
+        }
+      },
+      {
+        "baseline_component_id": 19,
+        "component_triangles": 8,
+        "new_degenerate_triangles": 8,
+        "baseline_area": 1.7320508075688772,
+        "processed_area": 1.0298325474292367e-12,
+        "area_change_percent_by_profile": {
+          "taubin/mild": -99.18874518674697,
+          "taubin/medium": -99.99341865627972,
+          "taubin/strong": -99.99999956685915,
+          "windowed_sinc/mild": -41.66394616889918,
+          "windowed_sinc/medium": -99.72913520832583,
+          "windowed_sinc/strong": -99.99999999994054
+        }
+      },
+      {
+        "baseline_component_id": 20,
+        "component_triangles": 8,
+        "new_degenerate_triangles": 8,
+        "baseline_area": 1.7320508075688772,
+        "processed_area": 1.029832547429237e-12,
+        "area_change_percent_by_profile": {
+          "taubin/mild": -99.18874518674697,
+          "taubin/medium": -99.99341865627972,
+          "taubin/strong": -99.99999956685915,
+          "windowed_sinc/mild": -41.66394616890135,
+          "windowed_sinc/medium": -99.72913520832589,
+          "windowed_sinc/strong": -99.99999999994054
+        }
+      },
+      {
+        "baseline_component_id": 21,
+        "component_triangles": 8,
+        "new_degenerate_triangles": 8,
+        "baseline_area": 1.7320508075688772,
+        "processed_area": 1.0298325600822098e-12,
+        "area_change_percent_by_profile": {
+          "taubin/mild": -99.18874518674697,
+          "taubin/medium": -99.99341865627972,
+          "taubin/strong": -99.99999956685915,
+          "windowed_sinc/mild": -41.66394616889845,
+          "windowed_sinc/medium": -99.72913520832593,
+          "windowed_sinc/strong": -99.99999999994054
+        }
+      },
+      {
+        "baseline_component_id": 22,
+        "component_triangles": 8,
+        "new_degenerate_triangles": 8,
+        "baseline_area": 1.7320508075688772,
+        "processed_area": 1.0298325474292355e-12,
+        "area_change_percent_by_profile": {
+          "taubin/mild": -99.18874518674697,
+          "taubin/medium": -99.99341865627972,
+          "taubin/strong": -99.99999956685915,
+          "windowed_sinc/mild": -41.66394616889774,
+          "windowed_sinc/medium": -99.72913520832583,
+          "windowed_sinc/strong": -99.99999999994054
+        }
+      },
+      {
+        "baseline_component_id": 23,
+        "component_triangles": 8,
+        "new_degenerate_triangles": 8,
+        "baseline_area": 1.7320508075688772,
+        "processed_area": 1.0298325727351798e-12,
+        "area_change_percent_by_profile": {
+          "taubin/mild": -99.18874518674697,
+          "taubin/medium": -99.99341865627972,
+          "taubin/strong": -99.99999956685915,
+          "windowed_sinc/mild": -41.66394616890135,
+          "windowed_sinc/medium": -99.72913520832613,
+          "windowed_sinc/strong": -99.99999999994054
+        }
+      },
+      {
+        "baseline_component_id": 24,
+        "component_triangles": 8,
+        "new_degenerate_triangles": 8,
+        "baseline_area": 1.7320508075688772,
+        "processed_area": 1.0298324968173464e-12,
+        "area_change_percent_by_profile": {
+          "taubin/mild": -99.18874518674697,
+          "taubin/medium": -99.99341865627972,
+          "taubin/strong": -99.99999956685915,
+          "windowed_sinc/mild": -41.66394616889628,
+          "windowed_sinc/medium": -99.72913520832583,
+          "windowed_sinc/strong": -99.99999999994054
+        }
+      }
+    ]
+  },
+  {
+    "case": "ct_1004",
+    "structure": "LA",
+    "profile": "windowed_sinc/strong",
+    "components": [
+      {
+        "baseline_component_id": 3,
+        "component_triangles": 8,
+        "new_degenerate_triangles": 8,
+        "baseline_area": 1.7320508075688772,
+        "processed_area": 1.0298325980411282e-12,
+        "area_change_percent_by_profile": {
+          "taubin/mild": -99.18874518674697,
+          "taubin/medium": -99.99341865627972,
+          "taubin/strong": -99.99999956685915,
+          "windowed_sinc/mild": -41.66394616889774,
+          "windowed_sinc/medium": -99.72913520832543,
+          "windowed_sinc/strong": -99.99999999994054
+        }
+      },
+      {
+        "baseline_component_id": 4,
+        "component_triangles": 8,
+        "new_degenerate_triangles": 8,
+        "baseline_area": 1.7320508075688772,
+        "processed_area": 1.0298326233470712e-12,
+        "area_change_percent_by_profile": {
+          "taubin/mild": -99.18874518674697,
+          "taubin/medium": -99.99341865627972,
+          "taubin/strong": -99.99999956685915,
+          "windowed_sinc/mild": -41.66394616890064,
+          "windowed_sinc/medium": -99.72913520832583,
+          "windowed_sinc/strong": -99.99999999994054
+        }
+      },
+      {
+        "baseline_component_id": 5,
+        "component_triangles": 8,
+        "new_degenerate_triangles": 8,
+        "baseline_area": 1.7320508075688772,
+        "processed_area": 1.0298325727351796e-12,
+        "area_change_percent_by_profile": {
+          "taubin/mild": -99.18874518674697,
+          "taubin/medium": -99.99341865627972,
+          "taubin/strong": -99.99999956685915,
+          "windowed_sinc/mild": -41.66394616890064,
+          "windowed_sinc/medium": -99.72913520832583,
+          "windowed_sinc/strong": -99.99999999994054
+        }
+      },
+      {
+        "baseline_component_id": 6,
+        "component_triangles": 8,
+        "new_degenerate_triangles": 8,
+        "baseline_area": 1.7320508075688772,
+        "processed_area": 1.0298325727351796e-12,
+        "area_change_percent_by_profile": {
+          "taubin/mild": -99.18874518674697,
+          "taubin/medium": -99.99341865627972,
+          "taubin/strong": -99.99999956685915,
+          "windowed_sinc/mild": -41.66394616890064,
+          "windowed_sinc/medium": -99.72913520832583,
+          "windowed_sinc/strong": -99.99999999994054
+        }
+      },
+      {
+        "baseline_component_id": 7,
+        "component_triangles": 8,
+        "new_degenerate_triangles": 8,
+        "baseline_area": 1.7320508075688772,
+        "processed_area": 1.0298325727351804e-12,
+        "area_change_percent_by_profile": {
+          "taubin/mild": -99.1887451867468,
+          "taubin/medium": -99.99341865627972,
+          "taubin/strong": -99.99999956685915,
+          "windowed_sinc/mild": -41.66394616889774,
+          "windowed_sinc/medium": -99.72913520832593,
+          "windowed_sinc/strong": -99.99999999994054
+        }
+      }
+    ]
+  },
+  {
+    "case": "ct_1004",
+    "structure": "RA",
+    "profile": "windowed_sinc/strong",
+    "components": [
+      {
+        "baseline_component_id": 1,
+        "component_triangles": 8,
+        "new_degenerate_triangles": 8,
+        "baseline_area": 1.7320508075688772,
+        "processed_area": 1.029832547429236e-12,
+        "area_change_percent_by_profile": {
+          "taubin/mild": -99.1887451867468,
+          "taubin/medium": -99.99341865627972,
+          "taubin/strong": -99.99999956685915,
+          "windowed_sinc/mild": -41.66394616889918,
+          "windowed_sinc/medium": -99.72913520832583,
+          "windowed_sinc/strong": -99.99999999994054
+        }
+      }
+    ]
+  },
+  {
+    "case": "ct_1004",
+    "structure": "MYO",
+    "profile": "windowed_sinc/strong",
+    "components": [
+      {
+        "baseline_component_id": 17,
+        "component_triangles": 8,
+        "new_degenerate_triangles": 8,
+        "baseline_area": 1.7320508075688772,
+        "processed_area": 1.0298324715114016e-12,
+        "area_change_percent_by_profile": {
+          "taubin/mild": -99.18874518674697,
+          "taubin/medium": -99.99341865627972,
+          "taubin/strong": -99.99999956685915,
+          "windowed_sinc/mild": -41.66394616890064,
+          "windowed_sinc/medium": -99.72913520832583,
+          "windowed_sinc/strong": -99.99999999994054
+        }
+      },
+      {
+        "baseline_component_id": 18,
+        "component_triangles": 8,
+        "new_degenerate_triangles": 8,
+        "baseline_area": 1.7320508075688772,
+        "processed_area": 1.029832598041125e-12,
+        "area_change_percent_by_profile": {
+          "taubin/mild": -99.18874518674697,
+          "taubin/medium": -99.99341865627972,
+          "taubin/strong": -99.99999956685915,
+          "windowed_sinc/mild": -41.66394616890208,
+          "windowed_sinc/medium": -99.72913520832593,
+          "windowed_sinc/strong": -99.99999999994054
+        }
+      },
+      {
+        "baseline_component_id": 19,
+        "component_triangles": 8,
+        "new_degenerate_triangles": 8,
+        "baseline_area": 1.7320508075688772,
+        "processed_area": 1.0298324841643743e-12,
+        "area_change_percent_by_profile": {
+          "taubin/mild": -99.18874518674697,
+          "taubin/medium": -99.99341865627972,
+          "taubin/strong": -99.99999956685915,
+          "windowed_sinc/mild": -41.66394616890064,
+          "windowed_sinc/medium": -99.72913520832574,
+          "windowed_sinc/strong": -99.99999999994054
+        }
+      },
+      {
+        "baseline_component_id": 20,
+        "component_triangles": 8,
+        "new_degenerate_triangles": 8,
+        "baseline_area": 1.7320508075688772,
+        "processed_area": 1.0298325157968076e-12,
+        "area_change_percent_by_profile": {
+          "taubin/mild": -99.18874518674689,
+          "taubin/medium": -99.99341865627972,
+          "taubin/strong": -99.99999956685915,
+          "windowed_sinc/mild": -41.66394616890135,
+          "windowed_sinc/medium": -99.72913520832579,
+          "windowed_sinc/strong": -99.99999999994054
+        }
+      },
+      {
+        "baseline_component_id": 21,
+        "component_triangles": 8,
+        "new_degenerate_triangles": 8,
+        "baseline_area": 1.7320508075688772,
+        "processed_area": 1.029832566408695e-12,
+        "area_change_percent_by_profile": {
+          "taubin/mild": -99.18874518674684,
+          "taubin/medium": -99.99341865627972,
+          "taubin/strong": -99.99999956685915,
+          "windowed_sinc/mild": -41.66394616890099,
+          "windowed_sinc/medium": -99.72913520832569,
+          "windowed_sinc/strong": -99.99999999994054
+        }
+      }
+    ]
+  },
+  {
+    "case": "ct_1004",
+    "structure": "PA",
+    "profile": "windowed_sinc/strong",
+    "components": [
+      {
+        "baseline_component_id": 5,
+        "component_triangles": 16,
+        "new_degenerate_triangles": 16,
+        "baseline_area": 4.5604779323150675,
+        "processed_area": 7.915862764404285e-12,
+        "area_change_percent_by_profile": {
+          "taubin/mild": -81.8779727355398,
+          "taubin/medium": -96.40366587567222,
+          "taubin/strong": -99.8552998299117,
+          "windowed_sinc/mild": -18.476316012278136,
+          "windowed_sinc/medium": -85.74023642986923,
+          "windowed_sinc/strong": -99.99999999982643
+        }
+      },
+      {
+        "baseline_component_id": 6,
+        "component_triangles": 16,
+        "new_degenerate_triangles": 16,
+        "baseline_area": 4.5604779323150675,
+        "processed_area": 7.915862630103243e-12,
+        "area_change_percent_by_profile": {
+          "taubin/mild": -81.87797273553828,
+          "taubin/medium": -96.40366587567264,
+          "taubin/strong": -99.85529982991214,
+          "windowed_sinc/mild": -18.476316012285398,
+          "windowed_sinc/medium": -85.74023642986538,
+          "windowed_sinc/strong": -99.99999999982643
+        }
+      },
+      {
+        "baseline_component_id": 7,
+        "component_triangles": 8,
+        "new_degenerate_triangles": 8,
+        "baseline_area": 1.7320508075688772,
+        "processed_area": 1.0298326233470736e-12,
+        "area_change_percent_by_profile": {
+          "taubin/mild": -99.18874518674697,
+          "taubin/medium": -99.99341865627972,
+          "taubin/strong": -99.99999956685915,
+          "windowed_sinc/mild": -41.66394616889918,
+          "windowed_sinc/medium": -99.72913520832643,
+          "windowed_sinc/strong": -99.99999999994054
+        }
+      },
+      {
+        "baseline_component_id": 8,
+        "component_triangles": 8,
+        "new_degenerate_triangles": 8,
+        "baseline_area": 1.7320508075688772,
+        "processed_area": 1.029832496817349e-12,
+        "area_change_percent_by_profile": {
+          "taubin/mild": -99.18874518674697,
+          "taubin/medium": -99.99341865627972,
+          "taubin/strong": -99.99999956685915,
+          "windowed_sinc/mild": -41.66394616889774,
+          "windowed_sinc/medium": -99.72913520832563,
+          "windowed_sinc/strong": -99.99999999994054
+        }
+      },
+      {
+        "baseline_component_id": 9,
+        "component_triangles": 8,
+        "new_degenerate_triangles": 8,
+        "baseline_area": 1.7320508075688772,
+        "processed_area": 1.02983254742924e-12,
+        "area_change_percent_by_profile": {
+          "taubin/mild": -99.18874518674697,
+          "taubin/medium": -99.99341865627972,
+          "taubin/strong": -99.99999956685915,
+          "windowed_sinc/mild": -41.66394616890064,
+          "windowed_sinc/medium": -99.72913520832613,
+          "windowed_sinc/strong": -99.99999999994054
+        }
+      }
+    ]
+  }
+]
