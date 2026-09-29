@@ -1,0 +1,190 @@
+[
+  {
+    "case": "ct_1001",
+    "shape": [
+      512,
+      512,
+      221
+    ],
+    "labels": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "load_seconds": 12.35,
+    "report": "outputs\\validation_20260928_120859_296\\audit\\ct_1001\\report.json",
+    "variants": {
+      "LV": [
+        "Original",
+        "Smoothed",
+        "Simplified"
+      ],
+      "RV": [
+        "Original"
+      ],
+      "LA": [
+        "Original"
+      ],
+      "RA": [
+        "Original"
+      ],
+      "MYO": [
+        "Original",
+        "Smoothed",
+        "Simplified"
+      ],
+      "AO": [
+        "Original"
+      ],
+      "PA": [
+        "Original",
+        "Smoothed",
+        "Simplified"
+      ]
+    },
+    "warnings": "Физический масштаб не подтверждён.\n\nОриентация пациента не подтверждена.\n\nSpatial units are unspecified. Header coordinates are NOT confirmed millimetres; physical dimensions and volumes are unverified.\n\nAnatomical orientation is taken from the NIfTI header, not independently verified against DICOM or landmarks.\n\nLA has 9 voxel components (26-neighbour); all retained\n\nMYO has 3 voxel components (26-neighbour); all retained\n\nMYO mesh: 0 boundary edges, 12 non-manifold edges; no automatic topology repair\n\nPA has 7 voxel components (26-neighbour); all retained\n\nОтчёт моделей: outputs\\validation_20260928_120859_296\\audit\\ct_1001\\report.json",
+    "inputs_unchanged": true,
+    "widget_camera_and_plane_checks_passed": true
+  },
+  {
+    "case": "ct_1002",
+    "shape": [
+      512,
+      512,
+      137
+    ],
+    "labels": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "load_seconds": 6.36,
+    "report": "outputs\\validation_20260928_120859_296\\audit\\ct_1002\\report.json",
+    "variants": {
+      "LV": [
+        "Original"
+      ],
+      "RV": [
+        "Original"
+      ],
+      "LA": [
+        "Original"
+      ],
+      "RA": [
+        "Original"
+      ],
+      "MYO": [
+        "Original"
+      ],
+      "AO": [
+        "Original"
+      ],
+      "PA": [
+        "Original"
+      ]
+    },
+    "warnings": "Физический масштаб не подтверждён.\n\nОриентация пациента не подтверждена.\n\nSpatial units are unspecified. Header coordinates are NOT confirmed millimetres; physical dimensions and volumes are unverified.\n\nAnatomical orientation is taken from the NIfTI header, not independently verified against DICOM or landmarks.\n\nLA has 2 voxel components (26-neighbour); all retained\n\nОтчёт моделей: outputs\\validation_20260928_120859_296\\audit\\ct_1002\\report.json",
+    "inputs_unchanged": true,
+    "widget_camera_and_plane_checks_passed": true
+  },
+  {
+    "case": "ct_1003",
+    "shape": [
+      512,
+      512,
+      206
+    ],
+    "labels": [
+      1,
+      2,
+      3,
+      4,
+      6,
+      7
+    ],
+    "load_seconds": 8.67,
+    "report": "outputs\\validation_20260928_120859_296\\audit\\ct_1003\\report.json",
+    "variants": {
+      "LV": [
+        "Original"
+      ],
+      "RV": [
+        "Original"
+      ],
+      "LA": [
+        "Original"
+      ],
+      "RA": [
+        "Original"
+      ],
+      "AO": [
+        "Original"
+      ],
+      "PA": [
+        "Original"
+      ]
+    },
+    "warnings": "Физический масштаб не подтверждён.\n\nОриентация пациента не подтверждена.\n\nОтсутствуют метки: MYO\n\nSpatial units are unspecified. Header coordinates are NOT confirmed millimetres; physical dimensions and volumes are unverified.\n\nAnatomical orientation is taken from the NIfTI header, not independently verified against DICOM or landmarks.\n\nCardiac labels absent: [5]. Absence is not interpreted as a diagnosis.\n\nLA has 7 voxel components (26-neighbour); all retained\n\nAO has 2 voxel components (26-neighbour); all retained\n\nPA has 13 voxel components (26-neighbour); all retained\n\nОтчёт моделей: outputs\\validation_20260928_120859_296\\audit\\ct_1003\\report.json",
+    "inputs_unchanged": true,
+    "widget_camera_and_plane_checks_passed": true
+  },
+  {
+    "case": "ct_1004",
+    "shape": [
+      512,
+      512,
+      344
+    ],
+    "labels": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "load_seconds": 19.01,
+    "report": "outputs\\validation_20260928_120859_296\\audit\\ct_1004\\report.json",
+    "variants": {
+      "LV": [
+        "Original",
+        "Smoothed",
+        "Simplified"
+      ],
+      "RV": [
+        "Original"
+      ],
+      "LA": [
+        "Original"
+      ],
+      "RA": [
+        "Original"
+      ],
+      "MYO": [
+        "Original",
+        "Smoothed",
+        "Simplified"
+      ],
+      "AO": [
+        "Original"
+      ],
+      "PA": [
+        "Original",
+        "Smoothed",
+        "Simplified"
+      ]
+    },
+    "warnings": "Физический масштаб не подтверждён.\n\nОриентация пациента не подтверждена.\n\nSpatial units are unspecified. Header coordinates are NOT confirmed millimetres; physical dimensions and volumes are unverified.\n\nAnatomical orientation is taken from the NIfTI header, not independently verified against DICOM or landmarks.\n\nLV has 2 voxel components (26-neighbour); all retained\n\nLA has 4 voxel components (26-neighbour); all retained\n\nMYO has 18 voxel components (26-neighbour); all retained\n\nMYO mesh: 0 boundary edges, 3 non-manifold edges; no automatic topology repair\n\nPA has 7 voxel components (26-neighbour); all retained\n\nОтчёт моделей: outputs\\validation_20260928_120859_296\\audit\\ct_1004\\report.json",
+    "inputs_unchanged": true,
+    "widget_camera_and_plane_checks_passed": true
+  }
+]
