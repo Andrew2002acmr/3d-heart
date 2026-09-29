@@ -62,9 +62,13 @@ def render(root, case_id, labels, levels, output, interactive=False, zoom=.92):
             metadata["rows"].append({"structure": entry["name"], "level": level,
                 "camera": {"position": list(camera.position), "focal_point": list(camera.focal_point),
                            "view_up": list(camera.up), "parallel_scale": camera.parallel_scale}})
+        if interactive:
+            # An on-screen Plotter needs an initial render before screenshot().
+            plotter.show(auto_close=False, interactive_update=True)
         plotter.screenshot(str(output))
         output.with_suffix(".json").write_text(json.dumps(metadata, indent=2)+"\n", encoding="utf-8")
         if interactive:
+            # Use PyVista's platform event loop (including its Windows workaround).
             plotter.show()
     finally:
         plotter.close()
