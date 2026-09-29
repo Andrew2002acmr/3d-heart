@@ -51,6 +51,17 @@ def inspect(root, out):
                 parts.append({"baseline_component_id": int(region), "component_triangles": int(selected.sum()),
                               "new_degenerate_triangles": int((new & selected).sum()),
                               "baseline_area": float(before[selected].sum()), "processed_area": float(after[selected].sum())})
+            # Global volume can hide severe loss of small components even for
+            # profiles that have not crossed the numerical degeneracy threshold.
+            for profile, q in entry["variants"].items():
+                candidate_path = root / q["file"]
+                if sha256(candidate_path) != q["sha256"]:
+                    raise ValueError("Variant hash differs")
+                candidate_areas = areas(pv.read(candidate_path))
+                for part in parts:
+                    selected = regions == part["baseline_component_id"]
+                    change = 100*(float(candidate_areas[selected].sum())/part["baseline_area"]-1)
+                    part.setdefault("area_change_percent_by_profile", {})[profile] = change
             results.append({"case": entry["case"], "structure": entry["name"], "profile": key, "components": parts})
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(json.dumps(results, indent=2)+"\n", encoding="utf-8")
