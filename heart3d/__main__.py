@@ -19,11 +19,21 @@ def main():
     build.add_argument("--preview", action="store_true", help="Save off-screen 3D PNG (requires VTK rendering)")
     view = commands.add_parser("view", help="Open exported meshes in interactive PyVista window")
     view.add_argument("directory", type=Path)
+    gui = commands.add_parser("gui", help="Open CT, segmentation and saved VTP in a local Qt window")
+    gui.add_argument("--data", type=Path, default=Path("data/imagechd"))
+    gui.add_argument("--results", type=Path, default=Path("outputs"))
+    gui.add_argument("--case", dest="case_id", default=None)
     args = parser.parse_args()
     try:
         if args.command == "scan":
             from .volume import discover
             print(json.dumps(discover(args.directory), indent=2, ensure_ascii=False))
+        elif args.command == "gui":
+            try:
+                from .interactive.window import run_app
+            except ModuleNotFoundError as error:
+                parser.exit(2, f"GUI dependency missing: {error}. Install requirements-lock.txt.\n")
+            return run_app(args.data, args.results, args.case_id)
         elif args.command == "view":
             from .viewer import view_directory
             view_directory(args.directory)
