@@ -1,0 +1,28 @@
+<!doctype html><html lang="en"><meta charset="utf-8">
+<title>Pediatric CT / original Heart GT — independent QA</title>
+<style>html,body{margin:0;height:100%;overflow:hidden}body{display:flex;flex-direction:column;background:#151515;color:white;font:15px sans-serif}header{padding:12px}main{position:relative;flex:1;min-height:0}canvas{width:100%;height:100%;display:block}button,select{margin:5px}pre{margin:8px;white-space:pre-wrap}</style>
+<header>Pediatric-CT-SEG: CT + original Heart ROI. Independent NiiVue QA; no predictions.
+<select id="case"></select><button id="overlay">Toggle Heart</button><button id="axial">Axial</button><button id="multi">Multiplanar</button>
+<div id="status">Loading...</div></header><main><canvas id="canvas"></canvas></main><pre id="location"></pre>
+<script type="module">
+import {Niivue} from 'https://cdn.jsdelivr.net/npm/@niivue/niivue@0.69.0/+esm';
+const status=document.getElementById('status'), select=document.getElementById('case');
+const cases=await (await fetch('/cases.json')).json();
+for(const c of cases){const o=document.createElement('option');o.value=c.patient_id;o.textContent=`${c.patient_id} | ${c.age}y | ${c.scanner}`;select.append(o)}
+const requested=new URLSearchParams(location.search).get('case');if(cases.some(c=>c.patient_id===requested))select.value=requested;
+const nv=new Niivue({isRadiologicalConvention:true,dragAndDropEnabled:false,onLocationChange:x=>document.getElementById('location').textContent=x.string});
+await nv.attachTo('canvas');window.qaNV=nv;let opacity=.35;
+async function load(){
+ const id=select.value;status.textContent='Loading '+id;
+ await nv.loadVolumes([{url:`/data/${id}/ct_original.nii.gz`,colormap:'gray',cal_min:-150,cal_max:250},
+ {url:`/data/${id}/heart_gt_original.nii.gz`,colormap:'green',cal_min:0,cal_max:1,opacity}]);
+ nv.setInterpolation(false);nv.setSliceType(nv.sliceTypeMultiplanar);
+ const info=cases.find(c=>c.patient_id===id);nv.scene.crosshairPos=info.center_fraction;nv.updateGLVolume();
+ status.textContent=id+' loaded. Original CT grid; mm verified from DICOM; Heart GT only. '+info.status;
+}
+select.onchange=()=>load().catch(e=>status.textContent=String(e));
+document.getElementById('overlay').onclick=()=>{opacity=opacity?0:.35;nv.setOpacity(1,opacity)};
+document.getElementById('axial').onclick=()=>nv.setSliceType(0);
+document.getElementById('multi').onclick=()=>nv.setSliceType(3);
+load().catch(e=>status.textContent=String(e));
+</script></html>

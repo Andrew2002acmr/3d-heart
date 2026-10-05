@@ -90,7 +90,7 @@ def main():
     p.add_argument("--series", type=Path, required=True)
     p.add_argument("--data", type=Path, required=True)
     p.add_argument("--out", type=Path, required=True)
-    p.add_argument("--workers", type=int, default=4, choices=range(1, 5))
+    p.add_argument("--workers", type=int, default=4, choices=range(1, 9))
     args = p.parse_args()
     args.data.mkdir(parents=True, exist_ok=True)
     rows = [r for r in json.loads(args.registry.read_text(encoding="utf-8"))["records"]

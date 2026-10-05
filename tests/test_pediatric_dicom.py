@@ -10,7 +10,7 @@ from pydicom.uid import CTImageStorage, RTStructureSetStorage, ExplicitVRLittleE
 
 from heart3d.dicom.ct import inspect_headers, load_volume, save_nifti
 from heart3d.dicom.rtstruct import rasterize_heart
-from heart3d.dicom.tcia import BoundedStream, extract_heart_stream
+from heart3d.dicom.tcia import BoundedStream, extract_heart_stream, mark_derived_extract
 
 
 def ct_headers():
@@ -162,3 +162,32 @@ def test_stream_rejects_truncated_heart():
     payload = buffer.getvalue()
     with pytest.raises((ValueError, EOFError, AttributeError)):
         extract_heart_stream(BoundedStream(io.BytesIO(payload[:-90])))
+
+
+def test_undefined_item_requires_delimiter_and_distinct_derived_uids():
+    rt = rt_for(inspect_headers(ct_headers()))
+    rt[0x30060039].is_undefined_length = True
+    rt.ROIContourSequence[0].is_undefined_length_sequence_item = True
+    buffer = io.BytesIO(); rt.save_as(buffer, enforce_file_format=True)
+    payload = buffer.getvalue()
+    extract, receipt = extract_heart_stream(BoundedStream(io.BytesIO(payload)))
+    assert extract.ROIContourSequence[0] == rt.ROIContourSequence[0]
+    mark_derived_extract(extract, receipt)
+    assert receipt['source_rt_sop_uid'] == '1.2.9'
+    assert extract.SOPInstanceUID != rt.SOPInstanceUID
+    assert extract.SeriesInstanceUID != rt.SeriesInstanceUID
+    assert extract.file_meta.MediaStorageSOPInstanceUID == extract.SOPInstanceUID
+    # Remove the item delimiter (the outer sequence delimiter alone is insufficient).
+    import struct
+    delimiter = struct.pack('<HHI',0xFFFE,0xE00D,0)
+    end = payload.rfind(delimiter)
+    with pytest.raises(ValueError, match='Truncated undefined-length'):
+        extract_heart_stream(BoundedStream(io.BytesIO(payload[:end])))
+
+
+def test_vtk_independent_polygon_check():
+    from heart3d.dicom.qa import check_vtk
+    g = inspect_headers(ct_headers()); mask, report, polygons = rasterize_heart(rt_for(g), g)
+    result = check_vtk(mask, polygons)
+    assert result['Dice_between_rasterizers'] == 1
+    assert result['nonboundary_differences'] == 0
