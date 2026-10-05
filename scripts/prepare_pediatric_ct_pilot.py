@@ -11,7 +11,7 @@ from heart3d.dicom.ct import inspect_series, load_volume, save_nifti
 from heart3d.dicom.rtstruct import rasterize_heart
 from heart3d.dicom.qa import check_simpleitk, check_vtk, make_mosaic
 from heart3d.dicom.tcia import fetch_ct_probe
-from heart3d.pediatric import write_json
+from heart3d.pediatric import write_json, dicom_age
 
 
 def prepare_case(row, data):
@@ -21,6 +21,9 @@ def prepare_case(row, data):
     try:
         _, sops, _ = fetch_ct_probe(row['ct_series_uid'], directory / 'census')
         geometry = inspect_series(directory / 'ct', sops, row['ct_series_uid'])
+        age = dicom_age(geometry.report['patient_age'])
+        if age['eligible_by_reported_age'] is not True or age['age'] != row['age']:
+            raise ValueError('Full-series DICOM age differs from eligible pilot manifest')
         rt_files = [p for p in (directory / 'rtstruct').rglob('*') if p.suffix.lower() == '.dcm']
         if len(rt_files) != 1:
             raise ValueError('Need one original full RTSTRUCT file')
@@ -50,13 +53,14 @@ def prepare_case(row, data):
 
 def main():
     p = argparse.ArgumentParser(); p.add_argument('--data', type=Path, required=True)
+    p.add_argument('--refresh', action='store_true', help='Revalidate and refresh existing derived QA; never change original DICOM')
     args = p.parse_args()
     cases = json.loads((args.data/'pilot_selection.json').read_text())['cases']
     for row in cases:
         if not (args.data / row['patient_id'] / 'full_download_receipt.json').exists():
             print('WAITING full original studies', row['patient_id'], flush=True); continue
         existing = args.data / row['patient_id'] / 'pilot_qa.json'
-        if existing.exists() and json.loads(existing.read_text()).get('mask_rasterized'):
+        if not args.refresh and existing.exists() and json.loads(existing.read_text()).get('mask_rasterized'):
             continue
         result = prepare_case(row, args.data)
         print('QA', row['patient_id'], result['status'], result.get('reason', ''), flush=True)

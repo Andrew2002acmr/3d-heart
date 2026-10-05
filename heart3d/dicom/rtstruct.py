@@ -2,6 +2,7 @@
 import numpy as np
 from skimage.draw import polygon
 from scipy import ndimage
+from pydicom.uid import CTImageStorage
 
 
 def referenced_series(rt):
@@ -31,10 +32,18 @@ def validate_references(rt, series_uid, frame_uid, ct_sops):
         raise ValueError("RT referenced CT series/frame mismatch or mixed references")
     if any(set(sops) - set(ct_sops) for _, _, sops in refs):
         raise ValueError("RT global SOP references absent from CT inventory")
+    for frame in rt.ReferencedFrameOfReferenceSequence:
+        for study in frame.RTReferencedStudySequence:
+            for series in study.RTReferencedSeriesSequence:
+                for reference in getattr(series, 'ContourImageSequence', []):
+                    if str(getattr(reference, 'ReferencedSOPClassUID', '')) != str(CTImageStorage):
+                        raise ValueError('RT global reference is not classic CT Image Storage')
     for contour in item.ContourSequence:
         refs = [str(r.ReferencedSOPInstanceUID) for r in getattr(contour, "ContourImageSequence", [])]
         if len(refs) != 1 or refs[0] not in ct_sops:
             raise ValueError("Heart contour lacks unique released CT SOP reference")
+        if str(getattr(contour.ContourImageSequence[0], 'ReferencedSOPClassUID', '')) != str(CTImageStorage):
+            raise ValueError('Heart reference is not classic CT Image Storage')
     return item
 
 

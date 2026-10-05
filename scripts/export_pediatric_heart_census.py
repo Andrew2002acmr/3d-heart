@@ -1,15 +1,13 @@
 """Export deidentified evidence, preserving every pending/full-stack/visual gate."""
 import argparse
 from collections import Counter
-import hashlib
 import json
 from pathlib import Path
 import sys
-import pydicom
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from heart3d.dicom.tcia import fetch_heart_extract
-from heart3d.dicom.rtstruct import referenced_series, heart_item
+from heart3d.dicom.rtstruct import referenced_series, heart_item, validate_references
 from heart3d.pediatric import write_json
 
 
@@ -42,6 +40,11 @@ def main():
                     _, item = heart_item(rt)
                     refs = {str(r.ReferencedSOPInstanceUID) for c in item.ContourSequence for r in c.ContourImageSequence}
                     row['missing_Heart_SOP_reference_count'] = len(refs-sops)
+                    try:
+                        validate_references(rt,row['ct_series_uid'],row['frame_uid'],sops)
+                    except ValueError as error:
+                        row['status']='requires_review'
+                        row['exclusion_reasons']=list(dict.fromkeys(row['exclusion_reasons']+[f'ValueError: {error}']))
                 except ValueError:
                     row['missing_Heart_SOP_reference_count'] = None
         report_path = directory/'pilot_qa.json'
@@ -67,15 +70,18 @@ def main():
         pilot_summaries.append(report)
     records = census['records']
     summary = {'patients':len(records), 'by_age_group':dict(Counter(r['age_group'] for r in records)),
+               'reported_age_min_max':[min(r['age'] for r in records), max(r['age'] for r in records)],
                'by_scanner':dict(Counter(r['scanner'] for r in records)),
                'by_contrast_evidence':dict(Counter(r.get('contrast_status','unknown') for r in records)),
                'by_status':dict(Counter(r['status'] for r in records)),
                'Heart_present':sum(r['heart_roi_present'] is True for r in records),
+               'no_ROI_availability_unknown':sum(r['heart_roi_present'] is None for r in records)==0,
                'Heart_missing_or_empty':sum(r['status']=='excluded' and 'missing_or_empty_Heart_ROI' in r['exclusion_reasons'] for r in records),
                'metadata_references_passed':sum(r.get('Heart_SOP_references_verified',False) for r in records),
                'full_studies_downloaded':len(pilot_summaries),
                'full_studies_rasterized':sum(p.get('mask_rasterized',False) for p in pilot_summaries),
                'technical_DICOM_gate_passed':sum(r.get('technical_DICOM_gate_passed',False) for r in records),
+               'pilot_incomplete_coverage':sum(r['status']=='excluded_incomplete_heart_coverage' for r in records),
                'fully_approved_for_training':sum(r['suitable_for_training'] for r in records),
                'CT_published_bytes':sum(r.get('CT_published_bytes',0) for r in records),
                'RT_published_bytes':sum(r.get('RT_published_bytes',0) for r in records)}

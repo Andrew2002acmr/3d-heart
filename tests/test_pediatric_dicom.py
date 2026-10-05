@@ -127,13 +127,14 @@ def test_xor_hole():
     np.testing.assert_array_equal(mask, expected)
 
 
-@pytest.mark.parametrize('problem', ['frame', 'series', 'sop', 'plane', 'outside', 'empty', 'open'])
+@pytest.mark.parametrize('problem', ['frame', 'series', 'sop', 'sop_class', 'plane', 'outside', 'empty', 'open'])
 def test_rt_gate_rejects(problem):
     g = inspect_headers(ct_headers()); rt = rt_for(g)
     c = rt.ROIContourSequence[0].ContourSequence[0]
     if problem == 'frame': rt.StructureSetROISequence[0].ReferencedFrameOfReferenceUID = '1.2.99'
     elif problem == 'series': rt.ReferencedFrameOfReferenceSequence[0].RTReferencedStudySequence[0].RTReferencedSeriesSequence[0].SeriesInstanceUID = '1.2.99'
     elif problem == 'sop': c.ContourImageSequence[0].ReferencedSOPInstanceUID = '1.2.99'
+    elif problem == 'sop_class': c.ContourImageSequence[0].ReferencedSOPClassUID = RTStructureSetStorage
     elif problem == 'plane': c.ContourData[2] += 1
     elif problem == 'outside': c.ContourData[0] = -10
     elif problem == 'empty': rt.ROIContourSequence[0].ContourSequence = Sequence()
