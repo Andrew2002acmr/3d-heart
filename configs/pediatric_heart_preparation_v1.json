@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "status": "proposal_only_not_training_authorization",
+  "seed": 20261006,
+  "target": "binary Heart organ-at-risk ROI from original RTSTRUCT",
+  "clinical_status": "unknown; no healthy controls inferred",
+  "desired_cohort": 60,
+  "desired_split": {"train": 42, "validation": 9, "test": 9},
+  "split_unit": "patient",
+  "split_is_frozen": false,
+  "stratum_targets": [
+    {"age_group":"2-5","scanner":"SOMATOM Definition AS+","patients":8},
+    {"age_group":"2-5","scanner":"LightSpeed VCT","patients":7},
+    {"age_group":"2-5","scanner":"Revolution CT","patients":5},
+    {"age_group":"6-11","scanner":"SOMATOM Definition AS+","patients":6},
+    {"age_group":"6-11","scanner":"LightSpeed VCT","patients":7},
+    {"age_group":"6-11","scanner":"Revolution CT","patients":7},
+    {"age_group":"12-17","scanner":"SOMATOM Definition AS+","patients":8},
+    {"age_group":"12-17","scanner":"LightSpeed VCT","patients":12}
+  ],
+  "required_before_frozen_split": ["full_CT_SOP_inventory", "DICOM_geometry_HU_gate", "full_RTSTRUCT_Heart_rasterization", "visual_alignment", "scan_coverage", "annotation_extent_and_OAR_scope_review"],
+  "model_proposal": {
+    "implementation":"own PyTorch layers, from scratch, not implemented in preparation phase",
+    "type":"2.5D U-Net",
+    "input_slices":5,
+    "input_xy":[256,256],
+    "features":[16,32,64,128],
+    "block":"two bias-enabled 3x3 Conv2d + GroupNorm(8 groups) + ReLU",
+    "downsampling":"three 2x2 max pools",
+    "upsampling":"bilinear x2, concatenate skip, two-convolution block",
+    "output":"Conv2d(16,1,1), binary logits for center slice",
+    "estimated_parameters":488993,
+    "batch_size_proposal":2,
+    "num_workers_proposal":0,
+    "device":"CPU until a supported GPU is verified",
+    "loss_comparison":["BCEWithLogits", "soft_Dice", "BCEWithLogits_plus_soft_Dice"]
+  },
+  "preprocessing": {
+    "status":"not_fitted; final values derived from train only after frozen patient split",
+    "image_interpolation":"linear",
+    "mask_interpolation":"nearest-neighbor",
+    "original_ground_truth":"preserved unchanged on original CT grid",
+    "candidate_z_spacing_mm":2.0,
+    "candidate_context_offsets_mm":[-4,-2,0,2,4],
+    "candidate_xy_method":"fit entire axial field into 256x256 with pad; explicitly track inverse transform",
+    "HU_clip_bounds":null,
+    "normalization_statistics":null,
+    "GT_guided_crop_allowed":false,
+    "flips_allowed":false
+  },
+  "training_executed":false
+}

@@ -1,0 +1,18 @@
+{
+  "state": "paused_by_user",
+  "date": "2026-10-06",
+  "census_completed_patients": 171,
+  "census_expected_patients": 327,
+  "census_remaining_patients": 156,
+  "census_status_counts": {
+    "metadata_candidate_full_QA_pending": 166,
+    "requires_review": 2,
+    "excluded": 3
+  },
+  "full_CT_and_RTSTRUCT_downloaded": 9,
+  "full_studies_converted_and_independently_checked": 8,
+  "pilot_visual_reviews_recorded": 8,
+  "training_executed": false,
+  "final_split_frozen": false,
+  "whole_cohort_preparation_complete": false
+}

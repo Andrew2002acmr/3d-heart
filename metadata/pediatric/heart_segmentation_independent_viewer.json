@@ -1,0 +1,17 @@
+{
+  "browser": "154.0.4258.53",
+  "module_url": "https://cdn.jsdelivr.net/npm/@niivue/niivue@0.69.0/+esm",
+  "observations": [
+    {
+      "patient_id": "Pediatric-CT-SEG-E66B16E4",
+      "status": "Pediatric-CT-SEG-E66B16E4 loaded. Original CT grid; mm verified from DICOM; Heart GT only. geometry_passed_visual_QA_pending",
+      "location": ""
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-ED076087",
+      "status": "Pediatric-CT-SEG-ED076087 loaded. Original CT grid; mm verified from DICOM; Heart GT only. geometry_passed_visual_QA_pending",
+      "location": ""
+    }
+  ],
+  "scope": "first two pilot studies only; remaining viewer checks pending"
+}

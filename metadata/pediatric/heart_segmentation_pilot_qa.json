@@ -1,0 +1,1689 @@
+{
+  "state": "paused_by_user",
+  "date": "2026-10-06",
+  "summary": {
+    "state": "paused_by_user",
+    "date": "2026-10-06",
+    "census_completed_patients": 171,
+    "census_expected_patients": 327,
+    "census_remaining_patients": 156,
+    "census_status_counts": {
+      "metadata_candidate_full_QA_pending": 166,
+      "requires_review": 2,
+      "excluded": 3
+    },
+    "full_CT_and_RTSTRUCT_downloaded": 9,
+    "full_studies_converted_and_independently_checked": 8,
+    "pilot_visual_reviews_recorded": 8,
+    "training_executed": false,
+    "final_split_frozen": false,
+    "whole_cohort_preparation_complete": false
+  },
+  "selection": {
+    "method": "median-size CT per represented age/scanner cell + previously probed case; no outcome selection",
+    "cases": [
+      {
+        "patient_id": "Pediatric-CT-SEG-ED076087",
+        "age": 14.0,
+        "age_group": "12-17",
+        "scanner": "LightSpeed VCT",
+        "ct_series_uid": "1.3.6.1.4.1.14519.5.2.1.335901926764605993922625736395545500480",
+        "rt_series_uid": "1.3.6.1.4.1.14519.5.2.1.1.16090748909761603739885130563006068629",
+        "expected_slices": 625,
+        "published_CT_bytes": 329226800,
+        "published_RT_bytes": 50022236
+      },
+      {
+        "patient_id": "Pediatric-CT-SEG-E66B16E4",
+        "age": 16.0,
+        "age_group": "12-17",
+        "scanner": "SOMATOM Definition AS+",
+        "ct_series_uid": "1.3.6.1.4.1.14519.5.2.1.196220101365696730537230959989468232406",
+        "rt_series_uid": "1.3.6.1.4.1.14519.5.2.1.283411104895308677562620230326384957946",
+        "expected_slices": 311,
+        "published_CT_bytes": 163844644,
+        "published_RT_bytes": 23124548
+      },
+      {
+        "patient_id": "Pediatric-CT-SEG-5F74CD3E",
+        "age": 3.0,
+        "age_group": "2-5",
+        "scanner": "LightSpeed VCT",
+        "ct_series_uid": "1.3.6.1.4.1.14519.5.2.1.246284951059396540404388316286116658544",
+        "rt_series_uid": "1.3.6.1.4.1.14519.5.2.1.38594735141632724572433012097365685457",
+        "expected_slices": 192,
+        "published_CT_bytes": 101139538,
+        "published_RT_bytes": 14314846
+      },
+      {
+        "patient_id": "Pediatric-CT-SEG-BEC712BF",
+        "age": 3.0,
+        "age_group": "2-5",
+        "scanner": "Revolution CT",
+        "ct_series_uid": "1.3.6.1.4.1.14519.5.2.1.133742245714270925254982946723351496764",
+        "rt_series_uid": "1.3.6.1.4.1.14519.5.2.1.110148733280183048267163655999762366898",
+        "expected_slices": 165,
+        "published_CT_bytes": 86917104,
+        "published_RT_bytes": 11183010
+      },
+      {
+        "patient_id": "Pediatric-CT-SEG-8FAE886E",
+        "age": 2.0,
+        "age_group": "2-5",
+        "scanner": "SOMATOM Definition AS+",
+        "ct_series_uid": "1.3.6.1.4.1.14519.5.2.1.335931304674189039960160909021581061457",
+        "rt_series_uid": "1.3.6.1.4.1.14519.5.2.1.1.32892057006391638009924162619097800350",
+        "expected_slices": 179,
+        "published_CT_bytes": 94285838,
+        "published_RT_bytes": 11858554
+      },
+      {
+        "patient_id": "Pediatric-CT-SEG-32C20E78",
+        "age": 6.0,
+        "age_group": "6-11",
+        "scanner": "LightSpeed VCT",
+        "ct_series_uid": "1.3.6.1.4.1.14519.5.2.1.86989932068974098157998750958882348318",
+        "rt_series_uid": "1.3.6.1.4.1.14519.5.2.1.269720998236324202778245630189280125254",
+        "expected_slices": 665,
+        "published_CT_bytes": 350301116,
+        "published_RT_bytes": 47805406
+      },
+      {
+        "patient_id": "Pediatric-CT-SEG-4C1A38AE",
+        "age": 10.0,
+        "age_group": "6-11",
+        "scanner": "Revolution CT",
+        "ct_series_uid": "1.3.6.1.4.1.14519.5.2.1.85212413426501195284723037808586368402",
+        "rt_series_uid": "1.3.6.1.4.1.14519.5.2.1.1.15203893650494675513644774815964198841",
+        "expected_slices": 185,
+        "published_CT_bytes": 97448288,
+        "published_RT_bytes": 12706130
+      },
+      {
+        "patient_id": "Pediatric-CT-SEG-813E523C",
+        "age": 9.0,
+        "age_group": "6-11",
+        "scanner": "SOMATOM Definition AS+",
+        "ct_series_uid": "1.3.6.1.4.1.14519.5.2.1.225920974907500136628548184850125785091",
+        "rt_series_uid": "1.3.6.1.4.1.14519.5.2.1.22037671289077092041457165566581841178",
+        "expected_slices": 189,
+        "published_CT_bytes": 99574194,
+        "published_RT_bytes": 14252608
+      },
+      {
+        "patient_id": "Pediatric-CT-SEG-E03568A6",
+        "age": 4.0,
+        "age_group": "2-5",
+        "scanner": "Revolution CT",
+        "ct_series_uid": "1.3.6.1.4.1.14519.5.2.1.5863853179332742362135462579472262159",
+        "rt_series_uid": "1.3.6.1.4.1.14519.5.2.1.166504774202857411359258367562254852392",
+        "expected_slices": 175,
+        "published_CT_bytes": 92184272,
+        "published_RT_bytes": 11050258
+      }
+    ]
+  },
+  "original_download_receipts": [
+    {
+      "patient_id": "Pediatric-CT-SEG-32C20E78",
+      "CT": {
+        "url": "https://services.cancerimagingarchive.net/nbia-api/services/v1/getImage?SeriesInstanceUID=1.3.6.1.4.1.14519.5.2.1.86989932068974098157998750958882348318",
+        "bytes": 170511304,
+        "sha256": "9f50a60881fce5480fb3856c8c786b7d2b9a0bea81f774e679e092880b6cbb12",
+        "original_zip_crc_verified": true
+      },
+      "RTSTRUCT": {
+        "url": "https://services.cancerimagingarchive.net/nbia-api/services/v1/getImage?SeriesInstanceUID=1.3.6.1.4.1.14519.5.2.1.269720998236324202778245630189280125254",
+        "bytes": 10986224,
+        "sha256": "4c8fbf8eeb728ce982cf3b8d8310c5873997b75966224cf6bd07d8ffbc119c23",
+        "original_zip_crc_verified": true
+      }
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-4C1A38AE",
+      "CT": {
+        "url": "https://services.cancerimagingarchive.net/nbia-api/services/v1/getImage?SeriesInstanceUID=1.3.6.1.4.1.14519.5.2.1.85212413426501195284723037808586368402",
+        "bytes": 43343886,
+        "sha256": "21a64a69dc8c0288402c5d94ab5ab7df362ee72f4563c1c9e1b0fdc0a75e29ed",
+        "original_zip_crc_verified": true
+      },
+      "RTSTRUCT": {
+        "url": "https://services.cancerimagingarchive.net/nbia-api/services/v1/getImage?SeriesInstanceUID=1.3.6.1.4.1.14519.5.2.1.1.15203893650494675513644774815964198841",
+        "bytes": 3025411,
+        "sha256": "f3f5fba3775773babb9aa37503933cb84851cb60e03b69e68c209ac9bcc8d1ea",
+        "original_zip_crc_verified": true
+      }
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-5F74CD3E",
+      "CT": {
+        "url": "https://services.cancerimagingarchive.net/nbia-api/services/v1/getImage?SeriesInstanceUID=1.3.6.1.4.1.14519.5.2.1.246284951059396540404388316286116658544",
+        "bytes": 49665201,
+        "sha256": "4fcb661a152d4af5872c31161f6895b1957ef3e5c7e61f777a0ca1f2c878dc7b",
+        "original_zip_crc_verified": true
+      },
+      "RTSTRUCT": {
+        "url": "https://services.cancerimagingarchive.net/nbia-api/services/v1/getImage?SeriesInstanceUID=1.3.6.1.4.1.14519.5.2.1.38594735141632724572433012097365685457",
+        "bytes": 3527042,
+        "sha256": "83125c4f8abac4409469f1d35e3558c13f5a3fe2f2276849d359c9931e0d0cb3",
+        "original_zip_crc_verified": true
+      }
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-813E523C",
+      "CT": {
+        "url": "https://services.cancerimagingarchive.net/nbia-api/services/v1/getImage?SeriesInstanceUID=1.3.6.1.4.1.14519.5.2.1.225920974907500136628548184850125785091",
+        "bytes": 49368629,
+        "sha256": "07343660055beeef39c38f550444a13c6f3c260c094158c50b63a566fc181e0c",
+        "original_zip_crc_verified": true
+      },
+      "RTSTRUCT": {
+        "url": "https://services.cancerimagingarchive.net/nbia-api/services/v1/getImage?SeriesInstanceUID=1.3.6.1.4.1.14519.5.2.1.22037671289077092041457165566581841178",
+        "bytes": 3374478,
+        "sha256": "b04e65f07d16b01ac1982207136eebb0a383420f6ba412e54bf3a92181edbd16",
+        "original_zip_crc_verified": true
+      }
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-8FAE886E",
+      "CT": {
+        "url": "https://services.cancerimagingarchive.net/nbia-api/services/v1/getImage?SeriesInstanceUID=1.3.6.1.4.1.14519.5.2.1.335931304674189039960160909021581061457",
+        "bytes": 44395260,
+        "sha256": "96f10c8199ee1bd1392a7325d3a2016e80a5671398f275d369bc6199e77f86f6",
+        "original_zip_crc_verified": true
+      },
+      "RTSTRUCT": {
+        "url": "https://services.cancerimagingarchive.net/nbia-api/services/v1/getImage?SeriesInstanceUID=1.3.6.1.4.1.14519.5.2.1.1.32892057006391638009924162619097800350",
+        "bytes": 2903206,
+        "sha256": "d8c819458b318b419e0e07188510ae5844f5a607a6fe121197a6a1a45752624e",
+        "original_zip_crc_verified": true
+      }
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-BEC712BF",
+      "CT": {
+        "url": "https://services.cancerimagingarchive.net/nbia-api/services/v1/getImage?SeriesInstanceUID=1.3.6.1.4.1.14519.5.2.1.133742245714270925254982946723351496764",
+        "bytes": 40928597,
+        "sha256": "e9a757b7cf2ff8c50c2aa848f1d10afd31f7e4c83f157540fc7ad5ecae10c1e3",
+        "original_zip_crc_verified": true
+      },
+      "RTSTRUCT": {
+        "url": "https://services.cancerimagingarchive.net/nbia-api/services/v1/getImage?SeriesInstanceUID=1.3.6.1.4.1.14519.5.2.1.110148733280183048267163655999762366898",
+        "bytes": 2631760,
+        "sha256": "59653bf05487a2e74dc295407a92bff0a1c8f4acdd6750a76ca7d41b7ae550a2",
+        "original_zip_crc_verified": true
+      }
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-E03568A6",
+      "CT": {
+        "url": "https://services.cancerimagingarchive.net/nbia-api/services/v1/getImage?SeriesInstanceUID=1.3.6.1.4.1.14519.5.2.1.5863853179332742362135462579472262159",
+        "bytes": 42304194,
+        "sha256": "52bd05a93af9325c32e1fa17486f01746674aa2ef0e0d8a75eb95531d62d8ca6",
+        "original_zip_crc_verified": true
+      },
+      "RTSTRUCT": {
+        "url": "https://services.cancerimagingarchive.net/nbia-api/services/v1/getImage?SeriesInstanceUID=1.3.6.1.4.1.14519.5.2.1.166504774202857411359258367562254852392",
+        "bytes": 2645406,
+        "sha256": "a4556f2cd433cf6da76dcac6bf9710b63d608e665b016910b6e627c95745bd54",
+        "original_zip_crc_verified": true
+      }
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-E66B16E4",
+      "CT": {
+        "url": "https://services.cancerimagingarchive.net/nbia-api/services/v1/getImage?SeriesInstanceUID=1.3.6.1.4.1.14519.5.2.1.196220101365696730537230959989468232406",
+        "bytes": 81268787,
+        "sha256": "6a62ab78dce195e6a3b8bfb7fa1407d6da800ed4d0adfc8a07aa3611c56b01bb",
+        "original_zip_crc_verified": true
+      },
+      "RTSTRUCT": {
+        "url": "https://services.cancerimagingarchive.net/nbia-api/services/v1/getImage?SeriesInstanceUID=1.3.6.1.4.1.14519.5.2.1.283411104895308677562620230326384957946",
+        "bytes": 5116708,
+        "sha256": "358e6893eee6206d71889fdba250190dd4937c58a412188ab88182acef002762",
+        "original_zip_crc_verified": true
+      }
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-ED076087",
+      "CT": {
+        "url": "https://services.cancerimagingarchive.net/nbia-api/services/v1/getImage?SeriesInstanceUID=1.3.6.1.4.1.14519.5.2.1.335901926764605993922625736395545500480",
+        "bytes": 158333728,
+        "sha256": "bec37a7f904079db71911fba6a89285c2f9ad063d15ef1024fbb10695b835b25",
+        "original_zip_crc_verified": true
+      },
+      "RTSTRUCT": {
+        "url": "https://services.cancerimagingarchive.net/nbia-api/services/v1/getImage?SeriesInstanceUID=1.3.6.1.4.1.14519.5.2.1.1.16090748909761603739885130563006068629",
+        "bytes": 11339503,
+        "sha256": "cab1dd6bc9d08b441bfe619626cc6b6858edce45a11fe8751dd37e3eac5307b7",
+        "original_zip_crc_verified": true
+      }
+    }
+  ],
+  "records": [
+    {
+      "patient_id": "Pediatric-CT-SEG-32C20E78",
+      "age": 6.0,
+      "age_group": "6-11",
+      "scanner": "LightSpeed VCT",
+      "ct_series_uid": "1.3.6.1.4.1.14519.5.2.1.86989932068974098157998750958882348318",
+      "rt_series_uid": "1.3.6.1.4.1.14519.5.2.1.269720998236324202778245630189280125254",
+      "expected_slices": 665,
+      "published_CT_bytes": 350301116,
+      "published_RT_bytes": 47805406,
+      "status": "geometry_passed_visual_QA_pending",
+      "visual_review": "pending",
+      "healthy_status": "unknown",
+      "CT": {
+        "patient_id": "Pediatric-CT-SEG-32C20E78",
+        "patient_age": "006Y",
+        "series_uid": "1.3.6.1.4.1.14519.5.2.1.86989932068974098157998750958882348318",
+        "frame_of_reference_uid": "1.3.6.1.4.1.14519.5.2.1.122821370383417002755132354067849451739",
+        "shape_xyz": [
+          512,
+          512,
+          665
+        ],
+        "spacing_xyz_mm": [
+          0.449219,
+          0.449219,
+          0.625
+        ],
+        "coordinate_system": "LPS",
+        "array_axes": [
+          "column",
+          "row",
+          "slice"
+        ],
+        "origin_lps_mm": [
+          -112.9,
+          -115.0,
+          -428.25
+        ],
+        "orientation_iop": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        "affine_lps": [
+          [
+            0.449219,
+            0.0,
+            0.0,
+            -112.9
+          ],
+          [
+            0.0,
+            0.449219,
+            0.0,
+            -115.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.625,
+            -428.25
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "affine_ras": [
+          [
+            -0.449219,
+            0.0,
+            0.0,
+            112.9
+          ],
+          [
+            0.0,
+            -0.449219,
+            0.0,
+            115.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.625,
+            -428.25
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "slice_distance_min_max_mm": [
+          0.625,
+          0.625
+        ],
+        "slice_thickness_values_mm": [
+          0.625
+        ],
+        "max_grid_residual_mm": 0.0,
+        "released_SOP_inventory_complete": true,
+        "source_acquisition_missing_slices_independently_verified": false,
+        "sop_set_sha256": "142405d099d0c58b86c21c60e03b15f3a88e194d68815ca57255120a25888d36",
+        "regular_spacing": true,
+        "physical_geometry_confirmed_from_DICOM": true,
+        "HU_rescale_tags_confirmed": true,
+        "rescale_slope_values": [
+          1.0
+        ],
+        "rescale_intercept_values": [
+          -1000.0
+        ],
+        "resampled": false,
+        "instance_number_gaps": false
+      },
+      "Heart": {
+        "roi": "Heart",
+        "binary_labels": [
+          0,
+          1
+        ],
+        "contours": 112,
+        "combination": "union CLOSED_PLANAR",
+        "shape_xyz": [
+          512,
+          512,
+          665
+        ],
+        "resampled": false,
+        "max_contour_slice_residual_mm": 0.005000000000023874,
+        "contoured_slice_range": [
+          412,
+          523
+        ],
+        "internal_uncontoured_slices": [],
+        "touches_grid_faces": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "scan_coverage": "ROI_inside_grid_anatomical_completeness_requires_visual_review",
+        "components_26": 1,
+        "component_sizes_voxels": [
+          1520723
+        ],
+        "heart_voxels": 1520723,
+        "volume_ml": 191.79901180313857,
+        "initial_status": "geometry_passed_visual_QA_pending"
+      },
+      "independent_reader": {
+        "reader": "SimpleITK.ImageSeriesReader",
+        "geometry_match": true,
+        "max_HU_difference": 0.0,
+        "array_match": true
+      },
+      "independent_rasterizer": {
+        "rasterizer": "vtkPolyDataToImageStencil, index voxel centers",
+        "Dice_between_rasterizers": 0.9999993424180472,
+        "differing_boundary_voxels": 2,
+        "nonboundary_differences": 0
+      },
+      "full_CT_downloaded": true,
+      "original_full_RTSTRUCT_downloaded": true,
+      "mask_rasterized": true,
+      "CT_array_MiB": 665.0,
+      "mask_array_MiB": 166.25,
+      "conversion_and_QA_seconds": 47.67219509999995
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-4C1A38AE",
+      "age": 10.0,
+      "age_group": "6-11",
+      "scanner": "Revolution CT",
+      "ct_series_uid": "1.3.6.1.4.1.14519.5.2.1.85212413426501195284723037808586368402",
+      "rt_series_uid": "1.3.6.1.4.1.14519.5.2.1.1.15203893650494675513644774815964198841",
+      "expected_slices": 185,
+      "published_CT_bytes": 97448288,
+      "published_RT_bytes": 12706130,
+      "status": "requires_review",
+      "visual_review": "pending",
+      "healthy_status": "unknown",
+      "CT": {
+        "patient_id": "Pediatric-CT-SEG-4C1A38AE",
+        "patient_age": "010Y",
+        "series_uid": "1.3.6.1.4.1.14519.5.2.1.85212413426501195284723037808586368402",
+        "frame_of_reference_uid": "1.3.6.1.4.1.14519.5.2.1.46479126676589840497681433571422767854",
+        "shape_xyz": [
+          512,
+          512,
+          185
+        ],
+        "spacing_xyz_mm": [
+          0.585938,
+          0.585938,
+          2.0
+        ],
+        "coordinate_system": "LPS",
+        "array_axes": [
+          "column",
+          "row",
+          "slice"
+        ],
+        "origin_lps_mm": [
+          -150.0,
+          -150.0,
+          -453.2665
+        ],
+        "orientation_iop": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        "affine_lps": [
+          [
+            0.585938,
+            0.0,
+            0.0,
+            -150.0
+          ],
+          [
+            0.0,
+            0.585938,
+            0.0,
+            -150.0
+          ],
+          [
+            0.0,
+            0.0,
+            2.0,
+            -453.2665
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "affine_ras": [
+          [
+            -0.585938,
+            0.0,
+            0.0,
+            150.0
+          ],
+          [
+            0.0,
+            -0.585938,
+            0.0,
+            150.0
+          ],
+          [
+            0.0,
+            0.0,
+            2.0,
+            -453.2665
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "slice_distance_min_max_mm": [
+          2.0,
+          2.000000000000014
+        ],
+        "slice_thickness_values_mm": [
+          2.0
+        ],
+        "max_grid_residual_mm": 1.4210854715202004e-14,
+        "released_SOP_inventory_complete": true,
+        "source_acquisition_missing_slices_independently_verified": false,
+        "sop_set_sha256": "fa197234a45c2ea3c11f8ce5b3f1aa3b81619f37a5fe5a865d056c8078b01f3b",
+        "regular_spacing": true,
+        "physical_geometry_confirmed_from_DICOM": true,
+        "HU_rescale_tags_confirmed": true,
+        "rescale_slope_values": [
+          1.0
+        ],
+        "rescale_intercept_values": [
+          -1000.0
+        ],
+        "resampled": false,
+        "instance_number_gaps": false
+      },
+      "Heart": {
+        "roi": "Heart",
+        "binary_labels": [
+          0,
+          1
+        ],
+        "contours": 5,
+        "combination": "union CLOSED_PLANAR",
+        "shape_xyz": [
+          512,
+          512,
+          185
+        ],
+        "resampled": false,
+        "max_contour_slice_residual_mm": 0.0034999999999740794,
+        "contoured_slice_range": [
+          180,
+          184
+        ],
+        "internal_uncontoured_slices": [],
+        "touches_grid_faces": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          true
+        ],
+        "scan_coverage": "requires_review_truncated",
+        "components_26": 1,
+        "component_sizes_voxels": [
+          9782
+        ],
+        "heart_voxels": 9782,
+        "volume_ml": 6.716777820708015,
+        "initial_status": "requires_review"
+      },
+      "independent_reader": {
+        "reader": "SimpleITK.ImageSeriesReader",
+        "geometry_match": true,
+        "max_HU_difference": 0.0,
+        "array_match": true
+      },
+      "independent_rasterizer": {
+        "rasterizer": "vtkPolyDataToImageStencil, index voxel centers",
+        "Dice_between_rasterizers": 1.0,
+        "differing_boundary_voxels": 0,
+        "nonboundary_differences": 0
+      },
+      "full_CT_downloaded": true,
+      "original_full_RTSTRUCT_downloaded": true,
+      "mask_rasterized": true,
+      "CT_array_MiB": 185.0,
+      "mask_array_MiB": 46.25,
+      "conversion_and_QA_seconds": 12.317616599997564
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-5F74CD3E",
+      "age": 3.0,
+      "age_group": "2-5",
+      "scanner": "LightSpeed VCT",
+      "ct_series_uid": "1.3.6.1.4.1.14519.5.2.1.246284951059396540404388316286116658544",
+      "rt_series_uid": "1.3.6.1.4.1.14519.5.2.1.38594735141632724572433012097365685457",
+      "expected_slices": 192,
+      "published_CT_bytes": 101139538,
+      "published_RT_bytes": 14314846,
+      "status": "geometry_passed_visual_QA_pending",
+      "visual_review": "pending",
+      "healthy_status": "unknown",
+      "CT": {
+        "patient_id": "Pediatric-CT-SEG-5F74CD3E",
+        "patient_age": "003Y",
+        "series_uid": "1.3.6.1.4.1.14519.5.2.1.246284951059396540404388316286116658544",
+        "frame_of_reference_uid": "1.3.6.1.4.1.14519.5.2.1.166782441544295593598027743724348390286",
+        "shape_xyz": [
+          512,
+          512,
+          192
+        ],
+        "spacing_xyz_mm": [
+          0.429688,
+          0.429688,
+          2.0
+        ],
+        "coordinate_system": "LPS",
+        "array_axes": [
+          "column",
+          "row",
+          "slice"
+        ],
+        "origin_lps_mm": [
+          -112.6,
+          -80.0,
+          -336.1875
+        ],
+        "orientation_iop": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        "affine_lps": [
+          [
+            0.429688,
+            0.0,
+            0.0,
+            -112.6
+          ],
+          [
+            0.0,
+            0.429688,
+            0.0,
+            -80.0
+          ],
+          [
+            0.0,
+            0.0,
+            2.0,
+            -336.1875
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "affine_ras": [
+          [
+            -0.429688,
+            0.0,
+            0.0,
+            112.6
+          ],
+          [
+            0.0,
+            -0.429688,
+            0.0,
+            80.0
+          ],
+          [
+            0.0,
+            0.0,
+            2.0,
+            -336.1875
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "slice_distance_min_max_mm": [
+          2.0,
+          2.0
+        ],
+        "slice_thickness_values_mm": [
+          2.0
+        ],
+        "max_grid_residual_mm": 0.0,
+        "released_SOP_inventory_complete": true,
+        "source_acquisition_missing_slices_independently_verified": false,
+        "sop_set_sha256": "31163b3695db6dec7abd770d5b6dce2d7768df14c31efc3883c18f082490656a",
+        "regular_spacing": true,
+        "physical_geometry_confirmed_from_DICOM": true,
+        "HU_rescale_tags_confirmed": true,
+        "rescale_slope_values": [
+          1.0
+        ],
+        "rescale_intercept_values": [
+          -1000.0
+        ],
+        "resampled": false,
+        "instance_number_gaps": false
+      },
+      "Heart": {
+        "roi": "Heart",
+        "binary_labels": [
+          0,
+          1
+        ],
+        "contours": 29,
+        "combination": "union CLOSED_PLANAR",
+        "shape_xyz": [
+          512,
+          512,
+          192
+        ],
+        "resampled": false,
+        "max_contour_slice_residual_mm": 0.0024999999999977263,
+        "contoured_slice_range": [
+          132,
+          160
+        ],
+        "internal_uncontoured_slices": [],
+        "touches_grid_faces": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "scan_coverage": "ROI_inside_grid_anatomical_completeness_requires_visual_review",
+        "components_26": 1,
+        "component_sizes_voxels": [
+          481978
+        ],
+        "heart_voxels": 481978,
+        "volume_ml": 177.97690956141287,
+        "initial_status": "geometry_passed_visual_QA_pending"
+      },
+      "independent_reader": {
+        "reader": "SimpleITK.ImageSeriesReader",
+        "geometry_match": true,
+        "max_HU_difference": 0.0,
+        "array_match": true
+      },
+      "independent_rasterizer": {
+        "rasterizer": "vtkPolyDataToImageStencil, index voxel centers",
+        "Dice_between_rasterizers": 1.0,
+        "differing_boundary_voxels": 0,
+        "nonboundary_differences": 0
+      },
+      "full_CT_downloaded": true,
+      "original_full_RTSTRUCT_downloaded": true,
+      "mask_rasterized": true,
+      "CT_array_MiB": 192.0,
+      "mask_array_MiB": 48.0,
+      "conversion_and_QA_seconds": 47.30782860000181
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-813E523C",
+      "age": 9.0,
+      "age_group": "6-11",
+      "scanner": "SOMATOM Definition AS+",
+      "ct_series_uid": "1.3.6.1.4.1.14519.5.2.1.225920974907500136628548184850125785091",
+      "rt_series_uid": "1.3.6.1.4.1.14519.5.2.1.22037671289077092041457165566581841178",
+      "expected_slices": 189,
+      "published_CT_bytes": 99574194,
+      "published_RT_bytes": 14252608,
+      "status": "requires_review",
+      "visual_review": "pending",
+      "healthy_status": "unknown",
+      "CT": {
+        "patient_id": "Pediatric-CT-SEG-813E523C",
+        "patient_age": "009Y",
+        "series_uid": "1.3.6.1.4.1.14519.5.2.1.225920974907500136628548184850125785091",
+        "frame_of_reference_uid": "1.3.6.1.4.1.14519.5.2.1.204041434859466289505080346777197060234",
+        "shape_xyz": [
+          512,
+          512,
+          189
+        ],
+        "spacing_xyz_mm": [
+          0.48828125,
+          0.48828125,
+          2.0
+        ],
+        "coordinate_system": "LPS",
+        "array_axes": [
+          "column",
+          "row",
+          "slice"
+        ],
+        "origin_lps_mm": [
+          -120.755859375,
+          -248.755859375,
+          -390.2
+        ],
+        "orientation_iop": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        "affine_lps": [
+          [
+            0.48828125,
+            0.0,
+            0.0,
+            -120.755859375
+          ],
+          [
+            0.0,
+            0.48828125,
+            0.0,
+            -248.755859375
+          ],
+          [
+            0.0,
+            0.0,
+            2.0,
+            -390.2
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "affine_ras": [
+          [
+            -0.48828125,
+            0.0,
+            0.0,
+            120.755859375
+          ],
+          [
+            0.0,
+            -0.48828125,
+            0.0,
+            248.755859375
+          ],
+          [
+            0.0,
+            0.0,
+            2.0,
+            -390.2
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "slice_distance_min_max_mm": [
+          1.9999999999999858,
+          2.0000000000000036
+        ],
+        "slice_thickness_values_mm": [
+          2.0
+        ],
+        "max_grid_residual_mm": 1.4210854715202004e-14,
+        "released_SOP_inventory_complete": true,
+        "source_acquisition_missing_slices_independently_verified": false,
+        "sop_set_sha256": "4f63882523fa41ae25b3217bdde511f7ed57068ed5c687c4a11da734db77710f",
+        "regular_spacing": true,
+        "physical_geometry_confirmed_from_DICOM": true,
+        "HU_rescale_tags_confirmed": true,
+        "rescale_slope_values": [
+          1.0
+        ],
+        "rescale_intercept_values": [
+          -1000.0
+        ],
+        "resampled": false,
+        "instance_number_gaps": false
+      },
+      "Heart": {
+        "roi": "Heart",
+        "binary_labels": [
+          0,
+          1
+        ],
+        "contours": 25,
+        "combination": "union CLOSED_PLANAR",
+        "shape_xyz": [
+          512,
+          512,
+          189
+        ],
+        "resampled": false,
+        "max_contour_slice_residual_mm": 0.0,
+        "contoured_slice_range": [
+          164,
+          188
+        ],
+        "internal_uncontoured_slices": [],
+        "touches_grid_faces": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          true
+        ],
+        "scan_coverage": "requires_review_truncated",
+        "components_26": 1,
+        "component_sizes_voxels": [
+          344983
+        ],
+        "heart_voxels": 344983,
+        "volume_ml": 164.50071334838867,
+        "initial_status": "requires_review"
+      },
+      "independent_reader": {
+        "reader": "SimpleITK.ImageSeriesReader",
+        "geometry_match": true,
+        "max_HU_difference": 0.0,
+        "array_match": true
+      },
+      "independent_rasterizer": {
+        "rasterizer": "vtkPolyDataToImageStencil, index voxel centers",
+        "Dice_between_rasterizers": 1.0,
+        "differing_boundary_voxels": 0,
+        "nonboundary_differences": 0
+      },
+      "full_CT_downloaded": true,
+      "original_full_RTSTRUCT_downloaded": true,
+      "mask_rasterized": true,
+      "CT_array_MiB": 189.0,
+      "mask_array_MiB": 47.25,
+      "conversion_and_QA_seconds": 46.43716829999903
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-8FAE886E",
+      "age": 2.0,
+      "age_group": "2-5",
+      "scanner": "SOMATOM Definition AS+",
+      "ct_series_uid": "1.3.6.1.4.1.14519.5.2.1.335931304674189039960160909021581061457",
+      "rt_series_uid": "1.3.6.1.4.1.14519.5.2.1.1.32892057006391638009924162619097800350",
+      "expected_slices": 179,
+      "published_CT_bytes": 94285838,
+      "published_RT_bytes": 11858554,
+      "status": "geometry_passed_visual_QA_pending",
+      "visual_review": "pending",
+      "healthy_status": "unknown",
+      "CT": {
+        "patient_id": "Pediatric-CT-SEG-8FAE886E",
+        "patient_age": "002Y",
+        "series_uid": "1.3.6.1.4.1.14519.5.2.1.335931304674189039960160909021581061457",
+        "frame_of_reference_uid": "1.3.6.1.4.1.14519.5.2.1.167695386739292521177895948949315865550",
+        "shape_xyz": [
+          512,
+          512,
+          179
+        ],
+        "spacing_xyz_mm": [
+          0.4296875,
+          0.4296875,
+          2.0
+        ],
+        "coordinate_system": "LPS",
+        "array_axes": [
+          "column",
+          "row",
+          "slice"
+        ],
+        "origin_lps_mm": [
+          -92.78515625,
+          -230.78515625,
+          -348.2
+        ],
+        "orientation_iop": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        "affine_lps": [
+          [
+            0.4296875,
+            0.0,
+            0.0,
+            -92.78515625
+          ],
+          [
+            0.0,
+            0.4296875,
+            0.0,
+            -230.78515625
+          ],
+          [
+            0.0,
+            0.0,
+            2.0,
+            -348.2
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "affine_ras": [
+          [
+            -0.4296875,
+            0.0,
+            0.0,
+            92.78515625
+          ],
+          [
+            0.0,
+            -0.4296875,
+            0.0,
+            230.78515625
+          ],
+          [
+            0.0,
+            0.0,
+            2.0,
+            -348.2
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "slice_distance_min_max_mm": [
+          1.9999999999999858,
+          2.0000000000000036
+        ],
+        "slice_thickness_values_mm": [
+          2.0
+        ],
+        "max_grid_residual_mm": 1.4210854715202004e-14,
+        "released_SOP_inventory_complete": true,
+        "source_acquisition_missing_slices_independently_verified": false,
+        "sop_set_sha256": "662996355dbf477af54544b3de51ce79d8ee852b3972c5871939487362d14d9f",
+        "regular_spacing": true,
+        "physical_geometry_confirmed_from_DICOM": true,
+        "HU_rescale_tags_confirmed": true,
+        "rescale_slope_values": [
+          1.0
+        ],
+        "rescale_intercept_values": [
+          -1000.0
+        ],
+        "resampled": false,
+        "instance_number_gaps": false
+      },
+      "Heart": {
+        "roi": "Heart",
+        "binary_labels": [
+          0,
+          1
+        ],
+        "contours": 23,
+        "combination": "union CLOSED_PLANAR",
+        "shape_xyz": [
+          512,
+          512,
+          179
+        ],
+        "resampled": false,
+        "max_contour_slice_residual_mm": 0.0,
+        "contoured_slice_range": [
+          124,
+          146
+        ],
+        "internal_uncontoured_slices": [],
+        "touches_grid_faces": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "scan_coverage": "ROI_inside_grid_anatomical_completeness_requires_visual_review",
+        "components_26": 1,
+        "component_sizes_voxels": [
+          360277
+        ],
+        "heart_voxels": 360277,
+        "volume_ml": 133.03685607910157,
+        "initial_status": "geometry_passed_visual_QA_pending"
+      },
+      "independent_reader": {
+        "reader": "SimpleITK.ImageSeriesReader",
+        "geometry_match": true,
+        "max_HU_difference": 0.0,
+        "array_match": true
+      },
+      "independent_rasterizer": {
+        "rasterizer": "vtkPolyDataToImageStencil, index voxel centers",
+        "Dice_between_rasterizers": 1.0,
+        "differing_boundary_voxels": 0,
+        "nonboundary_differences": 0
+      },
+      "full_CT_downloaded": true,
+      "original_full_RTSTRUCT_downloaded": true,
+      "mask_rasterized": true,
+      "CT_array_MiB": 179.0,
+      "mask_array_MiB": 44.75,
+      "conversion_and_QA_seconds": 52.990170600001875
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-BEC712BF",
+      "age": 3.0,
+      "age_group": "2-5",
+      "scanner": "Revolution CT",
+      "ct_series_uid": "1.3.6.1.4.1.14519.5.2.1.133742245714270925254982946723351496764",
+      "rt_series_uid": "1.3.6.1.4.1.14519.5.2.1.110148733280183048267163655999762366898",
+      "expected_slices": 165,
+      "published_CT_bytes": 86917104,
+      "published_RT_bytes": 11183010,
+      "status": "requires_review",
+      "visual_review": "pending",
+      "healthy_status": "unknown",
+      "CT": {
+        "patient_id": "Pediatric-CT-SEG-BEC712BF",
+        "patient_age": "003Y",
+        "series_uid": "1.3.6.1.4.1.14519.5.2.1.133742245714270925254982946723351496764",
+        "frame_of_reference_uid": "1.3.6.1.4.1.14519.5.2.1.204529225817713919258959217536925886700",
+        "shape_xyz": [
+          512,
+          512,
+          165
+        ],
+        "spacing_xyz_mm": [
+          0.46875,
+          0.46875,
+          2.0
+        ],
+        "coordinate_system": "LPS",
+        "array_axes": [
+          "column",
+          "row",
+          "slice"
+        ],
+        "origin_lps_mm": [
+          -120.0,
+          -120.0,
+          -328.6875
+        ],
+        "orientation_iop": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        "affine_lps": [
+          [
+            0.46875,
+            0.0,
+            0.0,
+            -120.0
+          ],
+          [
+            0.0,
+            0.46875,
+            0.0,
+            -120.0
+          ],
+          [
+            0.0,
+            0.0,
+            2.0,
+            -328.6875
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "affine_ras": [
+          [
+            -0.46875,
+            0.0,
+            0.0,
+            120.0
+          ],
+          [
+            0.0,
+            -0.46875,
+            0.0,
+            120.0
+          ],
+          [
+            0.0,
+            0.0,
+            2.0,
+            -328.6875
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "slice_distance_min_max_mm": [
+          2.0,
+          2.0
+        ],
+        "slice_thickness_values_mm": [
+          2.0
+        ],
+        "max_grid_residual_mm": 0.0,
+        "released_SOP_inventory_complete": true,
+        "source_acquisition_missing_slices_independently_verified": false,
+        "sop_set_sha256": "741e6bc731f19d413aefa3e104ec7da6aaefe31665454a753c9b357fe896bd3e",
+        "regular_spacing": true,
+        "physical_geometry_confirmed_from_DICOM": true,
+        "HU_rescale_tags_confirmed": true,
+        "rescale_slope_values": [
+          1.0
+        ],
+        "rescale_intercept_values": [
+          -1000.0
+        ],
+        "resampled": false,
+        "instance_number_gaps": false
+      },
+      "Heart": {
+        "roi": "Heart",
+        "binary_labels": [
+          0,
+          1
+        ],
+        "contours": 23,
+        "combination": "union CLOSED_PLANAR",
+        "shape_xyz": [
+          512,
+          512,
+          165
+        ],
+        "resampled": false,
+        "max_contour_slice_residual_mm": 0.0024999999999977263,
+        "contoured_slice_range": [
+          142,
+          164
+        ],
+        "internal_uncontoured_slices": [],
+        "touches_grid_faces": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          true
+        ],
+        "scan_coverage": "requires_review_truncated",
+        "components_26": 1,
+        "component_sizes_voxels": [
+          379311
+        ],
+        "heart_voxels": 379311,
+        "volume_ml": 166.689404296875,
+        "initial_status": "requires_review"
+      },
+      "independent_reader": {
+        "reader": "SimpleITK.ImageSeriesReader",
+        "geometry_match": true,
+        "max_HU_difference": 0.0,
+        "array_match": true
+      },
+      "independent_rasterizer": {
+        "rasterizer": "vtkPolyDataToImageStencil, index voxel centers",
+        "Dice_between_rasterizers": 0.9999947272818347,
+        "differing_boundary_voxels": 4,
+        "nonboundary_differences": 0
+      },
+      "full_CT_downloaded": true,
+      "original_full_RTSTRUCT_downloaded": true,
+      "mask_rasterized": true,
+      "CT_array_MiB": 165.0,
+      "mask_array_MiB": 41.25,
+      "conversion_and_QA_seconds": 48.16730330000428
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-E66B16E4",
+      "age": 16.0,
+      "age_group": "12-17",
+      "scanner": "SOMATOM Definition AS+",
+      "ct_series_uid": "1.3.6.1.4.1.14519.5.2.1.196220101365696730537230959989468232406",
+      "rt_series_uid": "1.3.6.1.4.1.14519.5.2.1.283411104895308677562620230326384957946",
+      "expected_slices": 311,
+      "published_CT_bytes": 163844644,
+      "published_RT_bytes": 23124548,
+      "status": "geometry_passed_visual_QA_pending",
+      "visual_review": "pending",
+      "healthy_status": "unknown",
+      "CT": {
+        "patient_id": "Pediatric-CT-SEG-E66B16E4",
+        "patient_age": "016Y",
+        "series_uid": "1.3.6.1.4.1.14519.5.2.1.196220101365696730537230959989468232406",
+        "frame_of_reference_uid": "1.3.6.1.4.1.14519.5.2.1.282549353386027121328328495203941102832",
+        "shape_xyz": [
+          512,
+          512,
+          311
+        ],
+        "spacing_xyz_mm": [
+          0.625,
+          0.625,
+          2.0
+        ],
+        "coordinate_system": "LPS",
+        "array_axes": [
+          "column",
+          "row",
+          "slice"
+        ],
+        "origin_lps_mm": [
+          -159.6875,
+          -305.1875,
+          -680.7
+        ],
+        "orientation_iop": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        "affine_lps": [
+          [
+            0.625,
+            0.0,
+            0.0,
+            -159.6875
+          ],
+          [
+            0.0,
+            0.625,
+            0.0,
+            -305.1875
+          ],
+          [
+            0.0,
+            0.0,
+            2.0,
+            -680.7
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "affine_ras": [
+          [
+            -0.625,
+            0.0,
+            0.0,
+            159.6875
+          ],
+          [
+            0.0,
+            -0.625,
+            0.0,
+            305.1875
+          ],
+          [
+            0.0,
+            0.0,
+            2.0,
+            -680.7
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "slice_distance_min_max_mm": [
+          1.9999999999999858,
+          2.000000000000057
+        ],
+        "slice_thickness_values_mm": [
+          2.0
+        ],
+        "max_grid_residual_mm": 5.684341886080802e-14,
+        "released_SOP_inventory_complete": true,
+        "source_acquisition_missing_slices_independently_verified": false,
+        "sop_set_sha256": "1c4f1fcc833470324924ee15d337772eef2fb28d8e00b06ccf35207c1a6565bb",
+        "regular_spacing": true,
+        "physical_geometry_confirmed_from_DICOM": true,
+        "HU_rescale_tags_confirmed": true,
+        "rescale_slope_values": [
+          1.0
+        ],
+        "rescale_intercept_values": [
+          -1000.0
+        ],
+        "resampled": false,
+        "instance_number_gaps": false
+      },
+      "Heart": {
+        "roi": "Heart",
+        "binary_labels": [
+          0,
+          1
+        ],
+        "contours": 57,
+        "combination": "union CLOSED_PLANAR",
+        "shape_xyz": [
+          512,
+          512,
+          311
+        ],
+        "resampled": false,
+        "max_contour_slice_residual_mm": 5.684341886080802e-14,
+        "contoured_slice_range": [
+          198,
+          254
+        ],
+        "internal_uncontoured_slices": [],
+        "touches_grid_faces": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "scan_coverage": "ROI_inside_grid_anatomical_completeness_requires_visual_review",
+        "components_26": 1,
+        "component_sizes_voxels": [
+          715847
+        ],
+        "heart_voxels": 715847,
+        "volume_ml": 559.25546875,
+        "initial_status": "geometry_passed_visual_QA_pending"
+      },
+      "independent_reader": {
+        "reader": "SimpleITK.ImageSeriesReader",
+        "geometry_match": true,
+        "max_HU_difference": 0.0,
+        "array_match": true
+      },
+      "independent_rasterizer": {
+        "rasterizer": "vtkPolyDataToImageStencil, index voxel centers",
+        "Dice_between_rasterizers": 1.0,
+        "differing_boundary_voxels": 0,
+        "nonboundary_differences": 0
+      },
+      "full_CT_downloaded": true,
+      "original_full_RTSTRUCT_downloaded": true,
+      "mask_rasterized": true,
+      "CT_array_MiB": 311.0,
+      "mask_array_MiB": 77.75,
+      "conversion_and_QA_seconds": 43.66744599999947
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-ED076087",
+      "age": 14.0,
+      "age_group": "12-17",
+      "scanner": "LightSpeed VCT",
+      "ct_series_uid": "1.3.6.1.4.1.14519.5.2.1.335901926764605993922625736395545500480",
+      "rt_series_uid": "1.3.6.1.4.1.14519.5.2.1.1.16090748909761603739885130563006068629",
+      "expected_slices": 625,
+      "published_CT_bytes": 329226800,
+      "published_RT_bytes": 50022236,
+      "status": "geometry_passed_visual_QA_pending",
+      "visual_review": "pending",
+      "healthy_status": "unknown",
+      "CT": {
+        "patient_id": "Pediatric-CT-SEG-ED076087",
+        "patient_age": "014Y",
+        "series_uid": "1.3.6.1.4.1.14519.5.2.1.335901926764605993922625736395545500480",
+        "frame_of_reference_uid": "1.3.6.1.4.1.14519.5.2.1.80293460872911525219695917868792953674",
+        "shape_xyz": [
+          512,
+          512,
+          625
+        ],
+        "spacing_xyz_mm": [
+          0.527344,
+          0.527344,
+          0.625
+        ],
+        "coordinate_system": "LPS",
+        "array_axes": [
+          "column",
+          "row",
+          "slice"
+        ],
+        "origin_lps_mm": [
+          -143.6,
+          -106.7,
+          -441.5
+        ],
+        "orientation_iop": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        "affine_lps": [
+          [
+            0.527344,
+            0.0,
+            0.0,
+            -143.6
+          ],
+          [
+            0.0,
+            0.527344,
+            0.0,
+            -106.7
+          ],
+          [
+            0.0,
+            0.0,
+            0.625,
+            -441.5
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "affine_ras": [
+          [
+            -0.527344,
+            0.0,
+            0.0,
+            143.6
+          ],
+          [
+            0.0,
+            -0.527344,
+            0.0,
+            106.7
+          ],
+          [
+            0.0,
+            0.0,
+            0.625,
+            -441.5
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "slice_distance_min_max_mm": [
+          0.625,
+          0.625
+        ],
+        "slice_thickness_values_mm": [
+          0.625
+        ],
+        "max_grid_residual_mm": 0.0,
+        "released_SOP_inventory_complete": true,
+        "source_acquisition_missing_slices_independently_verified": false,
+        "sop_set_sha256": "12eebba24e81603104f672bffaf6384f4b6192ef64b482f3e722d00f7c96dec0",
+        "regular_spacing": true,
+        "physical_geometry_confirmed_from_DICOM": true,
+        "HU_rescale_tags_confirmed": true,
+        "rescale_slope_values": [
+          1.0
+        ],
+        "rescale_intercept_values": [
+          -1000.0
+        ],
+        "resampled": false,
+        "instance_number_gaps": false
+      },
+      "Heart": {
+        "roi": "Heart",
+        "binary_labels": [
+          0,
+          1
+        ],
+        "contours": 115,
+        "combination": "union CLOSED_PLANAR",
+        "shape_xyz": [
+          512,
+          512,
+          625
+        ],
+        "resampled": false,
+        "max_contour_slice_residual_mm": 0.005000000000059401,
+        "contoured_slice_range": [
+          300,
+          414
+        ],
+        "internal_uncontoured_slices": [],
+        "touches_grid_faces": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "scan_coverage": "ROI_inside_grid_anatomical_completeness_requires_visual_review",
+        "components_26": 1,
+        "component_sizes_voxels": [
+          1928399
+        ],
+        "heart_voxels": 1928399,
+        "volume_ml": 335.1698407911551,
+        "initial_status": "geometry_passed_visual_QA_pending"
+      },
+      "independent_reader": {
+        "reader": "SimpleITK.ImageSeriesReader",
+        "geometry_match": true,
+        "max_HU_difference": 0.0,
+        "array_match": true
+      },
+      "independent_rasterizer": {
+        "rasterizer": "vtkPolyDataToImageStencil, index voxel centers",
+        "Dice_between_rasterizers": 0.9999997407176262,
+        "differing_boundary_voxels": 1,
+        "nonboundary_differences": 0
+      },
+      "full_CT_downloaded": true,
+      "original_full_RTSTRUCT_downloaded": true,
+      "mask_rasterized": true,
+      "CT_array_MiB": 625.0,
+      "mask_array_MiB": 156.25,
+      "conversion_and_QA_seconds": 102.00558789999923
+    }
+  ]
+}
