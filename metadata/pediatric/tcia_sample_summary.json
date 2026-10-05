@@ -1,0 +1,62 @@
+{
+  "patient_id": "Pediatric-CT-SEG-E03568A6",
+  "full_CT_series_downloaded": false,
+  "DICOM_pipeline_complete": false,
+  "series": [
+    {
+      "modality": "CT",
+      "series_uid": "1.3.6.1.4.1.14519.5.2.1.5863853179332742362135462579472262159",
+      "sha256": "187f7cfed61e4bd19527da15f8ef5973a039742893c9bcb001db90d57611ab79",
+      "bytes": 526768,
+      "PatientAge": "004Y",
+      "PixelSpacing": "[0.546875, 0.546875]",
+      "SliceThickness": "2",
+      "ImagePositionPatient": "[-140, -140, -11.558]",
+      "ImageOrientationPatient": "[1, 0, 0, 0, 1, 0]",
+      "RescaleSlope": "1",
+      "RescaleIntercept": "-1000",
+      "FrameOfReferenceUID": "1.3.6.1.4.1.14519.5.2.1.10771428618178519070655489629804023132"
+    },
+    {
+      "modality": "RTSTRUCT",
+      "series_uid": "1.3.6.1.4.1.14519.5.2.1.166504774202857411359258367562254852392",
+      "sha256": "5d4e5e39229ca66d44e1b503fee28c80c256556eb9d5f9056f7e4d7c1c909798",
+      "bytes": 11050258,
+      "ROIs": [
+        "UteroCervix",
+        "Thymus",
+        "Stomach",
+        "Spleen",
+        "Spinal Canal",
+        "Small Intestine",
+        "Rectum",
+        "Prostate",
+        "Pancreas",
+        "Liver",
+        "Large Intestine",
+        "Kidney Right",
+        "Kidney Left",
+        "Heart",
+        "Gonads",
+        "Gall Bladder",
+        "Femoral Head Rig",
+        "Femoral Head Lef",
+        "Esophagus",
+        "Duodenum",
+        "Breast Right",
+        "Breast Left",
+        "Bladder",
+        "Adrenal Right",
+        "Adrenal Left",
+        "Bones",
+        "Skin",
+        "Lung_R",
+        "Lung_L"
+      ],
+      "heart_contour_available": true,
+      "referenced_ct_series": [
+        "1.3.6.1.4.1.14519.5.2.1.5863853179332742362135462579472262159"
+      ]
+    }
+  ]
+}

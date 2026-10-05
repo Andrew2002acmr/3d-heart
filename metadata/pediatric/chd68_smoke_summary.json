@@ -1,0 +1,867 @@
+{
+  "pipeline": "existing heart3d build --preview",
+  "training_started": false,
+  "cases": [
+    {
+      "patient_id": "ct_1008",
+      "age_verified": false,
+      "image_sha256": "514c8a080707dbe5c4c75a2a5ed9e1808e6d5f2f267aa4e3edfc5f5faa5113e1",
+      "mask_sha256": "810a685b21463089b41702dda33cead9db7784dbdcb6d308f7469c6223578b03",
+      "geometry": {
+        "grids_match_after_lossless_reorientation": true,
+        "shape": [
+          512,
+          512,
+          206
+        ],
+        "affine": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            1.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            1.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "spacing": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "unit": "unknown",
+        "axis_codes": [
+          "R",
+          "A",
+          "S"
+        ],
+        "coordinates": "RAS+ according to NIfTI header",
+        "resampled": false,
+        "spatial_unit_defined": false,
+        "physical_scale_independently_verified": false,
+        "anatomical_orientation_independently_verified": false
+      },
+      "original_ct_shape": [
+        512,
+        512,
+        206
+      ],
+      "original_axis_codes": [
+        "R",
+        "A",
+        "S"
+      ],
+      "qform_code": 0,
+      "sform_code": 1,
+      "labels": {
+        "0": 52085005,
+        "1": 117549,
+        "2": 91654,
+        "3": 274907,
+        "4": 261708,
+        "5": 643079,
+        "6": 238595,
+        "7": 289167
+      },
+      "ignored_labels": [],
+      "structures": [
+        {
+          "label": 1,
+          "short_name": "LV",
+          "name": "Left ventricle",
+          "voxels": 117549,
+          "components_26_connected": 1,
+          "largest_component_voxels": 117549,
+          "touches_scan_boundary": false,
+          "artificial_boundary_caps": false,
+          "points": 29280,
+          "triangles": 58572,
+          "boundary_edges": 0,
+          "non_manifold_edges": 0,
+          "bounds": [
+            256.5,
+            391.5,
+            161.5,
+            255.5,
+            54.5,
+            105.5
+          ],
+          "voxel_volume_in_coordinate_units_cubed": 117549.0,
+          "surface_area_in_coordinate_units_squared": 21732.474432838088,
+          "smoothing": false,
+          "decimation": false,
+          "components_removed": false,
+          "normal_policy": "preserve marching-cubes material boundary; no automatic shell orientation"
+        },
+        {
+          "label": 2,
+          "short_name": "RV",
+          "name": "Right ventricle",
+          "voxels": 91654,
+          "components_26_connected": 1,
+          "largest_component_voxels": 91654,
+          "touches_scan_boundary": false,
+          "artificial_boundary_caps": false,
+          "points": 30945,
+          "triangles": 61930,
+          "boundary_edges": 0,
+          "non_manifold_edges": 0,
+          "bounds": [
+            241.5,
+            355.5,
+            137.5,
+            210.5,
+            43.5,
+            122.5
+          ],
+          "voxel_volume_in_coordinate_units_cubed": 91654.0,
+          "surface_area_in_coordinate_units_squared": 23243.889580864656,
+          "smoothing": false,
+          "decimation": false,
+          "components_removed": false,
+          "normal_policy": "preserve marching-cubes material boundary; no automatic shell orientation"
+        },
+        {
+          "label": 3,
+          "short_name": "LA",
+          "name": "Left atrium",
+          "voxels": 274907,
+          "components_26_connected": 3,
+          "largest_component_voxels": 274871,
+          "touches_scan_boundary": false,
+          "artificial_boundary_caps": false,
+          "points": 72867,
+          "triangles": 145738,
+          "boundary_edges": 0,
+          "non_manifold_edges": 0,
+          "bounds": [
+            94.5,
+            403.5,
+            188.5,
+            368.5,
+            72.5,
+            134.5
+          ],
+          "voxel_volume_in_coordinate_units_cubed": 274907.0,
+          "surface_area_in_coordinate_units_squared": 54073.17166917978,
+          "smoothing": false,
+          "decimation": false,
+          "components_removed": false,
+          "normal_policy": "preserve marching-cubes material boundary; no automatic shell orientation"
+        },
+        {
+          "label": 4,
+          "short_name": "RA",
+          "name": "Right atrium",
+          "voxels": 261708,
+          "components_26_connected": 1,
+          "largest_component_voxels": 261708,
+          "touches_scan_boundary": false,
+          "artificial_boundary_caps": false,
+          "points": 51270,
+          "triangles": 102544,
+          "boundary_edges": 0,
+          "non_manifold_edges": 0,
+          "bounds": [
+            161.5,
+            324.5,
+            138.5,
+            283.5,
+            62.5,
+            202.5
+          ],
+          "voxel_volume_in_coordinate_units_cubed": 261708.0,
+          "surface_area_in_coordinate_units_squared": 38542.02631055594,
+          "smoothing": false,
+          "decimation": false,
+          "components_removed": false,
+          "normal_policy": "preserve marching-cubes material boundary; no automatic shell orientation"
+        },
+        {
+          "label": 5,
+          "short_name": "MYO",
+          "name": "Myocardium",
+          "voxels": 643079,
+          "components_26_connected": 1,
+          "largest_component_voxels": 643079,
+          "touches_scan_boundary": false,
+          "artificial_boundary_caps": false,
+          "points": 130851,
+          "triangles": 261922,
+          "boundary_edges": 0,
+          "non_manifold_edges": 0,
+          "bounds": [
+            227.5,
+            400.5,
+            122.5,
+            267.5,
+            38.5,
+            124.5
+          ],
+          "voxel_volume_in_coordinate_units_cubed": 643079.0,
+          "surface_area_in_coordinate_units_squared": 98024.33818351038,
+          "smoothing": false,
+          "decimation": false,
+          "components_removed": false,
+          "normal_policy": "preserve marching-cubes material boundary; no automatic shell orientation"
+        },
+        {
+          "label": 6,
+          "short_name": "AO",
+          "name": "Aorta",
+          "voxels": 238595,
+          "components_26_connected": 1,
+          "largest_component_voxels": 238595,
+          "touches_scan_boundary": false,
+          "artificial_boundary_caps": false,
+          "points": 62437,
+          "triangles": 124882,
+          "boundary_edges": 0,
+          "non_manifold_edges": 0,
+          "bounds": [
+            147.5,
+            332.5,
+            145.5,
+            337.5,
+            70.5,
+            204.5
+          ],
+          "voxel_volume_in_coordinate_units_cubed": 238595.0,
+          "surface_area_in_coordinate_units_squared": 46173.19592169624,
+          "smoothing": false,
+          "decimation": false,
+          "components_removed": false,
+          "normal_policy": "preserve marching-cubes material boundary; no automatic shell orientation"
+        },
+        {
+          "label": 7,
+          "short_name": "PA",
+          "name": "Pulmonary artery",
+          "voxels": 289167,
+          "components_26_connected": 7,
+          "largest_component_voxels": 289125,
+          "touches_scan_boundary": false,
+          "artificial_boundary_caps": false,
+          "points": 93266,
+          "triangles": 186524,
+          "boundary_edges": 0,
+          "non_manifold_edges": 0,
+          "bounds": [
+            92.5,
+            406.5,
+            138.5,
+            385.5,
+            71.5,
+            174.5
+          ],
+          "voxel_volume_in_coordinate_units_cubed": 289167.0,
+          "surface_area_in_coordinate_units_squared": 69740.53524710273,
+          "smoothing": false,
+          "decimation": false,
+          "components_removed": false,
+          "normal_policy": "preserve marching-cubes material boundary; no automatic shell orientation"
+        }
+      ],
+      "warnings": [
+        "Spatial units are unspecified. Header coordinates are NOT confirmed millimetres; physical dimensions and volumes are unverified.",
+        "Anatomical orientation is taken from the NIfTI header, not independently verified against DICOM or landmarks.",
+        "LA has 3 voxel components (26-neighbour); all retained",
+        "PA has 7 voxel components (26-neighbour); all retained"
+      ],
+      "preview_generated": true
+    },
+    {
+      "patient_id": "ct_1072",
+      "age_verified": false,
+      "image_sha256": "66bd9de87e14a07c2c748e704c544644e11ff92804564278f08dfe58f959cd67",
+      "mask_sha256": "eac51772e46d84b7985bb6e7cabec7cea5070bf5d08b303478fd2a6eb9d927fa",
+      "geometry": {
+        "grids_match_after_lossless_reorientation": true,
+        "shape": [
+          512,
+          512,
+          382
+        ],
+        "affine": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            1.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            1.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "spacing": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "unit": "unknown",
+        "axis_codes": [
+          "R",
+          "A",
+          "S"
+        ],
+        "coordinates": "RAS+ according to NIfTI header",
+        "resampled": false,
+        "spatial_unit_defined": false,
+        "physical_scale_independently_verified": false,
+        "anatomical_orientation_independently_verified": false
+      },
+      "original_ct_shape": [
+        512,
+        512,
+        382
+      ],
+      "original_axis_codes": [
+        "R",
+        "A",
+        "S"
+      ],
+      "qform_code": 0,
+      "sform_code": 1,
+      "labels": {
+        "0": 95381461,
+        "1": 328456,
+        "2": 365754,
+        "3": 1047193,
+        "4": 925870,
+        "5": 1006883,
+        "6": 648480,
+        "7": 434911
+      },
+      "ignored_labels": [],
+      "structures": [
+        {
+          "label": 1,
+          "short_name": "LV",
+          "name": "Left ventricle",
+          "voxels": 328456,
+          "components_26_connected": 1,
+          "largest_component_voxels": 328456,
+          "touches_scan_boundary": false,
+          "artificial_boundary_caps": false,
+          "points": 59666,
+          "triangles": 119372,
+          "boundary_edges": 0,
+          "non_manifold_edges": 0,
+          "bounds": [
+            280.5,
+            388.5,
+            138.5,
+            265.5,
+            38.5,
+            163.5
+          ],
+          "voxel_volume_in_coordinate_units_cubed": 328456.0,
+          "surface_area_in_coordinate_units_squared": 43712.25138496366,
+          "smoothing": false,
+          "decimation": false,
+          "components_removed": false,
+          "normal_policy": "preserve marching-cubes material boundary; no automatic shell orientation"
+        },
+        {
+          "label": 2,
+          "short_name": "RV",
+          "name": "Right ventricle",
+          "voxels": 365754,
+          "components_26_connected": 3,
+          "largest_component_voxels": 365748,
+          "touches_scan_boundary": false,
+          "artificial_boundary_caps": false,
+          "points": 73639,
+          "triangles": 147466,
+          "boundary_edges": 0,
+          "non_manifold_edges": 0,
+          "bounds": [
+            241.5,
+            358.5,
+            128.5,
+            211.5,
+            44.5,
+            196.5
+          ],
+          "voxel_volume_in_coordinate_units_cubed": 365754.0,
+          "surface_area_in_coordinate_units_squared": 53512.527731877635,
+          "smoothing": false,
+          "decimation": false,
+          "components_removed": false,
+          "normal_policy": "preserve marching-cubes material boundary; no automatic shell orientation"
+        },
+        {
+          "label": 3,
+          "short_name": "LA",
+          "name": "Left atrium",
+          "voxels": 1047193,
+          "components_26_connected": 2,
+          "largest_component_voxels": 1047189,
+          "touches_scan_boundary": false,
+          "artificial_boundary_caps": false,
+          "points": 187849,
+          "triangles": 375722,
+          "boundary_edges": 0,
+          "non_manifold_edges": 0,
+          "bounds": [
+            100.5,
+            430.5,
+            150.5,
+            368.5,
+            87.5,
+            321.5
+          ],
+          "voxel_volume_in_coordinate_units_cubed": 1047193.0,
+          "surface_area_in_coordinate_units_squared": 136849.2119666417,
+          "smoothing": false,
+          "decimation": false,
+          "components_removed": false,
+          "normal_policy": "preserve marching-cubes material boundary; no automatic shell orientation"
+        },
+        {
+          "label": 4,
+          "short_name": "RA",
+          "name": "Right atrium",
+          "voxels": 925870,
+          "components_26_connected": 2,
+          "largest_component_voxels": 925866,
+          "touches_scan_boundary": false,
+          "artificial_boundary_caps": false,
+          "points": 100209,
+          "triangles": 200566,
+          "boundary_edges": 0,
+          "non_manifold_edges": 0,
+          "bounds": [
+            194.5,
+            323.5,
+            129.5,
+            286.5,
+            63.5,
+            276.5
+          ],
+          "voxel_volume_in_coordinate_units_cubed": 925870.0,
+          "surface_area_in_coordinate_units_squared": 73069.03983736596,
+          "smoothing": false,
+          "decimation": false,
+          "components_removed": false,
+          "normal_policy": "preserve marching-cubes material boundary; no automatic shell orientation"
+        },
+        {
+          "label": 5,
+          "short_name": "MYO",
+          "name": "Myocardium",
+          "voxels": 1006883,
+          "components_26_connected": 4,
+          "largest_component_voxels": 1006872,
+          "touches_scan_boundary": false,
+          "artificial_boundary_caps": false,
+          "points": 226246,
+          "triangles": 453432,
+          "boundary_edges": 0,
+          "non_manifold_edges": 81,
+          "bounds": [
+            234.5,
+            407.5,
+            121.5,
+            272.5,
+            28.5,
+            200.5
+          ],
+          "voxel_volume_in_coordinate_units_cubed": 1006883.0,
+          "surface_area_in_coordinate_units_squared": 164690.56294822064,
+          "smoothing": false,
+          "decimation": false,
+          "components_removed": false,
+          "normal_policy": "preserve marching-cubes material boundary; no automatic shell orientation"
+        },
+        {
+          "label": 6,
+          "short_name": "AO",
+          "name": "Aorta",
+          "voxels": 648480,
+          "components_26_connected": 3,
+          "largest_component_voxels": 648473,
+          "touches_scan_boundary": false,
+          "artificial_boundary_caps": false,
+          "points": 110734,
+          "triangles": 221632,
+          "boundary_edges": 0,
+          "non_manifold_edges": 0,
+          "bounds": [
+            219.5,
+            341.5,
+            143.5,
+            389.5,
+            36.5,
+            322.5
+          ],
+          "voxel_volume_in_coordinate_units_cubed": 648480.0,
+          "surface_area_in_coordinate_units_squared": 82286.64669266241,
+          "smoothing": false,
+          "decimation": false,
+          "components_removed": false,
+          "normal_policy": "preserve marching-cubes material boundary; no automatic shell orientation"
+        },
+        {
+          "label": 7,
+          "short_name": "PA",
+          "name": "Pulmonary artery",
+          "voxels": 434911,
+          "components_26_connected": 5,
+          "largest_component_voxels": 434635,
+          "touches_scan_boundary": false,
+          "artificial_boundary_caps": false,
+          "points": 118674,
+          "triangles": 237880,
+          "boundary_edges": 0,
+          "non_manifold_edges": 45,
+          "bounds": [
+            113.5,
+            418.5,
+            152.5,
+            378.5,
+            94.5,
+            291.5
+          ],
+          "voxel_volume_in_coordinate_units_cubed": 434911.0,
+          "surface_area_in_coordinate_units_squared": 86558.40787419259,
+          "smoothing": false,
+          "decimation": false,
+          "components_removed": false,
+          "normal_policy": "preserve marching-cubes material boundary; no automatic shell orientation"
+        }
+      ],
+      "warnings": [
+        "Spatial units are unspecified. Header coordinates are NOT confirmed millimetres; physical dimensions and volumes are unverified.",
+        "Anatomical orientation is taken from the NIfTI header, not independently verified against DICOM or landmarks.",
+        "RV has 3 voxel components (26-neighbour); all retained",
+        "LA has 2 voxel components (26-neighbour); all retained",
+        "RA has 2 voxel components (26-neighbour); all retained",
+        "MYO has 4 voxel components (26-neighbour); all retained",
+        "MYO mesh: 0 boundary edges, 81 non-manifold edges; no automatic topology repair",
+        "AO has 3 voxel components (26-neighbour); all retained",
+        "PA has 5 voxel components (26-neighbour); all retained",
+        "PA mesh: 0 boundary edges, 45 non-manifold edges; no automatic topology repair"
+      ],
+      "preview_generated": true
+    },
+    {
+      "patient_id": "ct_1102",
+      "age_verified": false,
+      "image_sha256": "8c53373a0a069db740d948ea6cc7f0ef15763158192254e8f8f78c22342b7096",
+      "mask_sha256": "e54784a149be71919872c801bc82540a6179be853b0f2aaf60db2c3366abdd82",
+      "geometry": {
+        "grids_match_after_lossless_reorientation": true,
+        "shape": [
+          512,
+          512,
+          205
+        ],
+        "affine": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            1.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            1.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "spacing": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "unit": "unknown",
+        "axis_codes": [
+          "R",
+          "A",
+          "S"
+        ],
+        "coordinates": "RAS+ according to NIfTI header",
+        "resampled": false,
+        "spatial_unit_defined": false,
+        "physical_scale_independently_verified": false,
+        "anatomical_orientation_independently_verified": false
+      },
+      "original_ct_shape": [
+        512,
+        512,
+        205
+      ],
+      "original_axis_codes": [
+        "R",
+        "A",
+        "S"
+      ],
+      "qform_code": 0,
+      "sform_code": 1,
+      "labels": {
+        "0": 49865027,
+        "1": 210666,
+        "2": 287840,
+        "3": 388143,
+        "4": 1087104,
+        "5": 1165443,
+        "6": 482358,
+        "7": 252939
+      },
+      "ignored_labels": [],
+      "structures": [
+        {
+          "label": 1,
+          "short_name": "LV",
+          "name": "Left ventricle",
+          "voxels": 210666,
+          "components_26_connected": 3,
+          "largest_component_voxels": 210635,
+          "touches_scan_boundary": false,
+          "artificial_boundary_caps": false,
+          "points": 47917,
+          "triangles": 95902,
+          "boundary_edges": 0,
+          "non_manifold_edges": 0,
+          "bounds": [
+            225.5,
+            402.5,
+            164.5,
+            261.5,
+            64.5,
+            117.5
+          ],
+          "voxel_volume_in_coordinate_units_cubed": 210666.0,
+          "surface_area_in_coordinate_units_squared": 37152.009809096184,
+          "smoothing": false,
+          "decimation": false,
+          "components_removed": false,
+          "normal_policy": "preserve marching-cubes material boundary; no automatic shell orientation"
+        },
+        {
+          "label": 2,
+          "short_name": "RV",
+          "name": "Right ventricle",
+          "voxels": 287840,
+          "components_26_connected": 1,
+          "largest_component_voxels": 287840,
+          "touches_scan_boundary": false,
+          "artificial_boundary_caps": false,
+          "points": 97301,
+          "triangles": 194798,
+          "boundary_edges": 0,
+          "non_manifold_edges": 0,
+          "bounds": [
+            196.5,
+            405.5,
+            91.5,
+            194.5,
+            52.5,
+            114.5
+          ],
+          "voxel_volume_in_coordinate_units_cubed": 287840.0,
+          "surface_area_in_coordinate_units_squared": 75236.35337829526,
+          "smoothing": false,
+          "decimation": false,
+          "components_removed": false,
+          "normal_policy": "preserve marching-cubes material boundary; no automatic shell orientation"
+        },
+        {
+          "label": 3,
+          "short_name": "LA",
+          "name": "Left atrium",
+          "voxels": 388143,
+          "components_26_connected": 1,
+          "largest_component_voxels": 388143,
+          "touches_scan_boundary": false,
+          "artificial_boundary_caps": false,
+          "points": 130335,
+          "triangles": 260758,
+          "boundary_edges": 0,
+          "non_manifold_edges": 0,
+          "bounds": [
+            29.5,
+            411.5,
+            170.5,
+            394.5,
+            40.5,
+            159.5
+          ],
+          "voxel_volume_in_coordinate_units_cubed": 388143.0,
+          "surface_area_in_coordinate_units_squared": 99458.11842879621,
+          "smoothing": false,
+          "decimation": false,
+          "components_removed": false,
+          "normal_policy": "preserve marching-cubes material boundary; no automatic shell orientation"
+        },
+        {
+          "label": 4,
+          "short_name": "RA",
+          "name": "Right atrium",
+          "voxels": 1087104,
+          "components_26_connected": 1,
+          "largest_component_voxels": 1087104,
+          "touches_scan_boundary": false,
+          "artificial_boundary_caps": false,
+          "points": 123816,
+          "triangles": 247684,
+          "boundary_edges": 0,
+          "non_manifold_edges": 0,
+          "bounds": [
+            112.5,
+            318.5,
+            105.5,
+            303.5,
+            46.5,
+            173.5
+          ],
+          "voxel_volume_in_coordinate_units_cubed": 1087104.0,
+          "surface_area_in_coordinate_units_squared": 93700.59981338105,
+          "smoothing": false,
+          "decimation": false,
+          "components_removed": false,
+          "normal_policy": "preserve marching-cubes material boundary; no automatic shell orientation"
+        },
+        {
+          "label": 5,
+          "short_name": "MYO",
+          "name": "Myocardium",
+          "voxels": 1165443,
+          "components_26_connected": 3,
+          "largest_component_voxels": 1165441,
+          "touches_scan_boundary": false,
+          "artificial_boundary_caps": false,
+          "points": 247248,
+          "triangles": 494980,
+          "boundary_edges": 0,
+          "non_manifold_edges": 0,
+          "bounds": [
+            186.5,
+            412.5,
+            74.5,
+            285.5,
+            46.5,
+            122.5
+          ],
+          "voxel_volume_in_coordinate_units_cubed": 1165443.0,
+          "surface_area_in_coordinate_units_squared": 192580.69913161895,
+          "smoothing": false,
+          "decimation": false,
+          "components_removed": false,
+          "normal_policy": "preserve marching-cubes material boundary; no automatic shell orientation"
+        },
+        {
+          "label": 6,
+          "short_name": "AO",
+          "name": "Aorta",
+          "voxels": 482358,
+          "components_26_connected": 8,
+          "largest_component_voxels": 480210,
+          "touches_scan_boundary": false,
+          "artificial_boundary_caps": false,
+          "points": 94923,
+          "triangles": 190298,
+          "boundary_edges": 0,
+          "non_manifold_edges": 9,
+          "bounds": [
+            175.5,
+            363.5,
+            86.5,
+            349.5,
+            39.5,
+            179.5
+          ],
+          "voxel_volume_in_coordinate_units_cubed": 482358.0,
+          "surface_area_in_coordinate_units_squared": 71474.85410507832,
+          "smoothing": false,
+          "decimation": false,
+          "components_removed": false,
+          "normal_policy": "preserve marching-cubes material boundary; no automatic shell orientation"
+        },
+        {
+          "label": 7,
+          "short_name": "PA",
+          "name": "Pulmonary artery",
+          "voxels": 252939,
+          "components_26_connected": 4,
+          "largest_component_voxels": 252834,
+          "touches_scan_boundary": false,
+          "artificial_boundary_caps": false,
+          "points": 107538,
+          "triangles": 215220,
+          "boundary_edges": 0,
+          "non_manifold_edges": 0,
+          "bounds": [
+            14.5,
+            404.5,
+            150.5,
+            383.5,
+            48.5,
+            157.5
+          ],
+          "voxel_volume_in_coordinate_units_cubed": 252939.0,
+          "surface_area_in_coordinate_units_squared": 81146.43700259863,
+          "smoothing": false,
+          "decimation": false,
+          "components_removed": false,
+          "normal_policy": "preserve marching-cubes material boundary; no automatic shell orientation"
+        }
+      ],
+      "warnings": [
+        "Spatial units are unspecified. Header coordinates are NOT confirmed millimetres; physical dimensions and volumes are unverified.",
+        "Anatomical orientation is taken from the NIfTI header, not independently verified against DICOM or landmarks.",
+        "LV has 3 voxel components (26-neighbour); all retained",
+        "MYO has 3 voxel components (26-neighbour); all retained",
+        "AO has 8 voxel components (26-neighbour); all retained",
+        "AO mesh: 0 boundary edges, 9 non-manifold edges; no automatic topology repair",
+        "PA has 4 voxel components (26-neighbour); all retained"
+      ],
+      "preview_generated": true
+    }
+  ]
+}

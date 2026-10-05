@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Pediatric patient registry with evidence and source precision",
+  "type": "object",
+  "required": ["schema_version", "age_rule", "records"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "age_rule": {"type": "string"},
+    "records": {"type": "array", "items": {
+      "type": "object",
+      "required": ["dataset", "patient_id", "age", "age_group", "modality", "healthy_status", "diagnosis", "pathology_group", "segmentation_available", "structures", "image_format", "spacing_available", "source", "access_type", "eligible_by_reported_age", "age_precision"],
+      "properties": {
+        "dataset": {"type": "string"}, "patient_id": {"type": "string"},
+        "age": {"type": ["number", "null"], "minimum": 0},
+        "age_group": {"enum": ["2-5", "6-11", "12-17", "unknown", "outside_target"]},
+        "age_precision": {"type": "string"}, "exact_age_available": {"type": "boolean"},
+        "eligible_by_reported_age": {"type": ["boolean", "null"]},
+        "modality": {"enum": ["CT", "MRI"]},
+        "healthy_status": {"enum": ["confirmed_healthy", "no_structural_cardiac_abnormality_reported", "unknown", "pathological"]},
+        "diagnosis": {"type": "array", "items": {"type": "string"}},
+        "pathology_group": {"type": "array", "items": {"type": "string"}},
+        "segmentation_available": {"type": ["boolean", "null"]},
+        "structures": {"type": "array", "items": {"type": "string"}},
+        "image_format": {"type": "string"}, "spacing_available": {"type": ["boolean", "null"]},
+        "source": {"type": "string"}, "access_type": {"type": "string"},
+        "binary_classification_eligible": {"type": "boolean"}
+      }
+    }}
+  }
+}

@@ -11,3 +11,24 @@ outputs/
 *.log
 .DS_Store
 Thumbs.db
+
+# External pediatric datasets and reconstruction artefacts must never enter Git.
+datasets/
+checkpoints/
+*.dcm
+*.dicom
+*.nii
+*.nii.gz
+*.zip
+*.z[0-9][0-9]
+*.change2zip
+*.part
+*.mat
+*.vtp
+*.vtk
+*.stl
+*.ply
+*.obj
+*.pt
+*.pth
+*.ckpt

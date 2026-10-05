@@ -1,0 +1,72 @@
+[
+  {
+    "name": "hvsmr_clinical.csv",
+    "url": "https://ndownloader.figshare.com/files/44566088",
+    "bytes": 3432,
+    "md5": "b280b832e209f37e20b611449bb6a789",
+    "sha256": "ba06e25db27c29acb1086a72128faed8af0c86c7daae2a05f4fde5417475fa8a"
+  },
+  {
+    "name": "hvsmr_technical.csv",
+    "url": "https://ndownloader.figshare.com/files/44566091",
+    "bytes": 2222,
+    "md5": "87a96a29132bba80644446c692ad388b",
+    "sha256": "7af95e023f4828fd17d82cf45d3ebec904f14e5c446390b7c76514e24e3dfed0"
+  },
+  {
+    "name": "chd68_source_readme.md",
+    "url": "https://raw.githubusercontent.com/XiaoweiXu/Whole-heart-and-great-vessel-segmentation-of-chd_segmentation/master/README.md",
+    "bytes": 8201,
+    "md5": "9da55cc9b4424875812a2a07238b609d",
+    "sha256": "a950ed0264c20e28c8797b2c142b414e0a8400855c7177520a751d4673418746"
+  },
+  {
+    "name": "tcia_series.txt",
+    "url": "https://services.cancerimagingarchive.net/nbia-api/services/v1/getSeries?Collection=Pediatric-CT-SEG&format=json",
+    "bytes": 593376,
+    "md5": "931ca2e137d17c1c1b0e7f59a9834598",
+    "sha256": "a3addb5624e84882876920d062fdf05b34ae6fef005f5c36b69102453b8978d8"
+  },
+  {
+    "name": "tcia_patients.txt",
+    "url": "https://services.cancerimagingarchive.net/nbia-api/services/v1/getPatient?Collection=Pediatric-CT-SEG&format=json",
+    "bytes": 75031,
+    "md5": "d4b42d08e9994e7ff0965558bdfbe006",
+    "sha256": "7ece62c5a65f9ab2a693a971dae3a62f8ef47705601022803faa92cfa5dbdd0f"
+  },
+  {
+    "name": "pediatric_ct_manifest.tcia",
+    "url": "https://www.cancerimagingarchive.net/wp-content/uploads/Pediatric-CT-SEG-Mar-22-2022-manifest.tcia",
+    "bytes": 46083,
+    "md5": "8b4e3dc2725389500c6c4929494e69d8",
+    "sha256": "d18fdfcfca04d012867b88e78e802165f4f866446b9598ef9ecddb7ff9081ad2"
+  },
+  {
+    "name": "pediatric_ct_digest.xlsx",
+    "url": "https://www.cancerimagingarchive.net/wp-content/uploads/Pediatric-CT-SEG-Mar-22-2022-manifes-nbia-digest.xlsx",
+    "bytes": 145551,
+    "md5": "2dd315fb4176b056f5c40d462aa7d7ab",
+    "sha256": "1fbf3d15796e6b51c7966a3156b993b7a99a3033363fe1cc1db1033c652e889f"
+  },
+  {
+    "name": "zenodo_record.json",
+    "url": "https://zenodo.org/api/records/17554213",
+    "bytes": 5460,
+    "md5": "e9a38509a7fb06bf68da467c4ab3be67",
+    "sha256": "180e52fb2084bbc102456f0e4b455ff4b0b67bf3612d9b103de679916db606ca"
+  },
+  {
+    "name": "Pediatric-Atlas-v.2.1.0.zip",
+    "url": "https://zenodo.org/api/records/18980865/files/cmrg-lab/Pediatric-Atlas-v.2.1.0.zip/content",
+    "bytes": 49398508,
+    "md5": "bc117b3d978cb463249ccae20519a411",
+    "sha256": "1a9e62b1b0d80102789e24282ac57da2b3aed287843bf7f42e5301d930b71031"
+  },
+  {
+    "name": "AtlasFile.zip",
+    "url": "https://zenodo.org/api/records/18980865/files/AtlasFile.zip/content",
+    "bytes": 27240892,
+    "md5": "7ae217d79fe6b0fad9a3f5a63ba71171",
+    "sha256": "a3769126ffc6c923bfeb26ebabbda1ad3e986ead9c529bb85170e315102fbf0c"
+  }
+]

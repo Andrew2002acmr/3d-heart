@@ -1,0 +1,2 @@
+# Optional DICOM audit helpers, in addition to project requirements-lock.txt.
+pydicom>=3.0.2,<4
