@@ -20,6 +20,6 @@ jobs:
           cache: pip
           cache-dependency-path: requirements-lock.txt
       - name: Install pinned dependencies
-        run: python -m pip install -r requirements-lock.txt
+        run: python -m pip install -r requirements-lock.txt -r requirements-pediatric.txt
       - name: Test geometry without downloading patient volumes
         run: python -m pytest tests --ignore=tests/test_viewer.py --ignore=tests/test_interactive_gui.py -q

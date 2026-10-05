@@ -32,3 +32,7 @@ checkpoints/
 *.pt
 *.pth
 *.ckpt
+*.npy
+*.npz
+tensorboard/
+predictions/
