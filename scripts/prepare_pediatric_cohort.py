@@ -7,7 +7,7 @@ import sys
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from heart3d.cohort import make_queue, automatic_review_status
-from heart3d.storage import require_space, sha256_file
+from heart3d.storage import require_space, sha256_file, exclusive_file_lock
 from heart3d.dicom.tcia import fetch_full_series
 from heart3d.pediatric import write_json
 from prepare_pediatric_ct_pilot import prepare_case
@@ -37,8 +37,17 @@ def main():
     p.add_argument('--queue',type=Path,required=True)
     p.add_argument('--start',type=int,default=0)
     p.add_argument('--count',type=int,default=60)
+    p.add_argument('--download-workers',type=int,choices=range(1,5),default=2)
+    p.add_argument('--age-group',action='append',choices=['2-5','6-11','12-17'])
+    p.add_argument('--download-only',action='store_true')
     p.add_argument('--include-development',action='store_true')
     args=p.parse_args()
+    if args.start<0 or args.count<1:raise ValueError('Positive bounded wave required')
+    with exclusive_file_lock(args.data/'cache'/'cohort_preparation.lock'):
+        run_wave(args)
+
+
+def run_wave(args):
     config=json.loads(args.config.read_text())
     registry=json.loads(args.registry.read_text())['records']
     dev=config['development_pilot_patient_ids']
@@ -52,7 +61,10 @@ def main():
                'development_patient_ids':dev,
                'records':make_queue(registry,config['seed'],set(dev),config['stratum_targets'])}
         write_json(args.queue,queue)
-    rows=queue['records'][args.start:args.start+args.count]
+    remaining=queue['records'][args.start:]
+    if args.age_group:
+        remaining=[r for r in remaining if r['age_group'] in args.age_group]
+    rows=remaining[:args.count]
     if args.include_development:
         by={r['patient_id']:r for r in registry}
         rows=[by[pid] for pid in dev]+rows
@@ -65,16 +77,24 @@ def main():
     prepared=sum(r['slices']*512*512*5 for r in rows)
     need=int(2.1*raw)+prepared+1_000_000_000
     free=require_space(args.data,need,reserve)
-    write_json(args.data/'cache'/f'cohort_wave_{args.start}_{args.count}_budget.json',
+    suffix='_'.join(args.age_group or ['all'])
+    mode='download_only' if args.download_only else 'full_QA'
+    write_json(args.data/'cache'/f'cohort_wave_{args.start}_{args.count}_{suffix}_{mode}_budget.json',
                {'raw_DICOM_bytes':raw,'prepared_uncompressed_estimate_bytes':prepared,
-                'additional_budget_bytes':need,'free_bytes':free,'reserve_bytes':reserve})
+                'additional_budget_bytes':need,'free_bytes':free,'reserve_bytes':reserve,
+                'queue_start':args.start,'age_filter':args.age_group,'download_workers':args.download_workers,
+                'mode':mode,
+                'patients':[r['patient_id'] for r in rows]})
     print('WAVE',len(rows),'additional budget',need,'free',free,flush=True)
-    with ThreadPoolExecutor(max_workers=2) as pool:
+    with ThreadPoolExecutor(max_workers=args.download_workers) as pool:
         futures=[pool.submit(download_case,r,args.data,reserve) for r in rows]
         for index,(row,future) in enumerate(zip(rows,futures)):
             pid=row['patient_id']; directory=args.data/pid
             try:
                 future.result()
+                if args.download_only:
+                    print('RAW READY FOR QA',index+1,'/',len(rows),pid,flush=True)
+                    continue
                 path=directory/'pilot_qa.json'
                 old=json.loads(path.read_text()) if path.exists() else {}
                 if old.get('mask_rasterized') and old.get('qa_sampling_version')==2:
