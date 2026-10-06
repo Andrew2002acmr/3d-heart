@@ -34,6 +34,8 @@ def prepare_partition(config_path, partition='train', data_root=None):
                 raise ValueError('Reviewed original data changed')
             ct=nib.load(ct_path);mask=nib.load(mask_path)
             if ct.shape!=mask.shape or not np.allclose(ct.affine,mask.affine,atol=1e-5):raise ValueError('CT/GT geometry mismatch')
+            if 'orientation_iop' in pre and not np.allclose(row['geometry']['orientation_iop'],pre['orientation_iop'],atol=1e-5):
+                raise ValueError('Native orientation differs from train-fitted baseline convention; explicit reorientation required')
             transform=make_transform(ct.shape,ct.affine,pre['input_size'],pre['z_spacing_mm'])
             needed=len(transform['z_positions_mm'])*pre['input_size']**2*5
             require_space(root,needed,int(config['reserve_GB']*1e9))
@@ -47,6 +49,7 @@ def prepare_partition(config_path, partition='train', data_root=None):
             if not np.isfinite(image).all() or not set(np.unique(target)).issubset({0,1}):raise ValueError('Invalid prepared tensors')
             np.save(destination/'image.npy',image);np.save(destination/'mask.npy',target)
             positive=np.flatnonzero(target.any(axis=(1,2))).tolist()
+            if not positive:raise ValueError('Resampling removed the entire Heart target; review rather than train an empty case')
             provenance={'patient_id':row['patient_id'],'partition':partition,'source_series_uid':row['ct_series_uid'],
                 'split_SHA256':sha256_file(split_path),'preprocessing_SHA256':sha256_file(preproc_path),
                 'source_CT_SHA256':row['review']['CT_SHA256'],'source_GT_SHA256':row['review']['mask_SHA256'],

@@ -23,6 +23,9 @@ def analyse(root, split_path, cohort_path, output):
     hist={key:np.zeros(len(edges)-1,dtype=np.int64) for key in ('CT','body','Heart')}
     summaries=[]
     for row in split['partitions']['train']:
+        for relative,key in [('ct_relative_path','CT_SHA256'),('mask_relative_path','mask_SHA256')]:
+            if sha256_file(root/row[relative])!=row['review'][key]:
+                raise ValueError('Original reviewed train data changed')
         ct=nib.load(root/row['ct_relative_path']); gt=nib.load(root/row['mask_relative_path'])
         if ct.shape!=gt.shape or not np.allclose(ct.affine,gt.affine,atol=1e-5):
             raise ValueError('Original CT/GT geometry differs')
@@ -39,6 +42,7 @@ def analyse(root, split_path, cohort_path, output):
         summaries.append({'patient_id':row['patient_id'],'age_group':row['age_group'],
             'scanner':row['scanner'],'contrast_status':row['contrast_status'],
             'shape_xyz':list(ct.shape),'spacing_xyz_mm':geometry['spacing_xyz_mm'],
+            'orientation_iop':geometry['orientation_iop'],
             'FOV_xyz_mm':(np.array(ct.shape)*geometry['spacing_xyz_mm']).tolist(),
             'Heart_volume_ml':heart['volume_ml'],
             'Heart_voxel_fraction':heart['heart_voxels']/np.prod(ct.shape),
@@ -54,6 +58,7 @@ def analyse(root, split_path, cohort_path, output):
         'aggregate_HU_quantiles':quantiles,'histogram_range_HU':[-4096,8193],
         'histogram_bin_width_HU':1,'age_counts':dict(Counter(r['age_group'] for r in summaries)),
         'scanner_counts':dict(Counter(r['scanner'] for r in summaries)),
+        'orientation_counts':dict(Counter(str(r['orientation_iop']) for r in summaries)),
         'original_total_slices':sum(r['shape_xyz'][2] for r in summaries),
         'positive_slices':sum(r['positive_slices'] for r in summaries),
         'negative_slices':sum(r['negative_slices'] for r in summaries),'records':summaries}
