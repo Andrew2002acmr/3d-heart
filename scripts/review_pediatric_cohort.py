@@ -12,7 +12,7 @@ from heart3d.storage import sha256_file
 from heart3d.pediatric import write_json
 
 STATUSES={'approved','coverage_incomplete','coverage_review','annotation_scope_review',
-          'reference_failure','empty_roi','geometry_failure'}
+          'reference_failure','empty_roi','geometry_failure','identity_review'}
 
 
 def record_review(root, patient, status, note, destination):

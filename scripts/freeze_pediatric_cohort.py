@@ -32,10 +32,15 @@ def export_records(root, registry, reviews):
             independent_rasterizer=report.get('independent_rasterizer'),
             ct_relative_path=f'{pid}/prepared/ct_original.nii.gz',
             mask_relative_path=f'{pid}/prepared/heart_gt_original.nii.gz')
+        record['related_patient_ids']=review.get('related_patient_ids',[])
         if review['status']=='approved':
             for name,key in [('ct_original.nii.gz','CT_SHA256'),('heart_gt_original.nii.gz','mask_SHA256')]:
                 if sha256_file(root/pid/'prepared'/name)!=review[key]:
                     raise ValueError(f'Prepared data changed: {pid}')
+            fingerprint=json.loads((root/pid/'prepared'/'ct_fingerprint.json').read_text())
+            if fingerprint['source_NIfTI_SHA256']!=review['CT_SHA256']:
+                raise ValueError('Content fingerprint does not match reviewed CT')
+            record['image_voxel_SHA256']=fingerprint['voxel_SHA256']
         records.append(record)
     return records
 

@@ -14,6 +14,9 @@ def load_frozen_split(path, cohort_path):
     ids=[r['patient_id'] for rows in data['partitions'].values() for r in rows]
     if len(ids)!=len(set(ids)) or set(ids)!=set(expected):
         raise ValueError('Patient leakage or incomplete cohort assignment')
+    hashes=[r['image_voxel_SHA256'] for r in cohort if r.get('image_voxel_SHA256')]
+    if len(hashes)!=len(set(hashes)) or any(set(r.get('related_patient_ids',[]))&set(ids) for r in cohort):
+        raise ValueError('Image duplicate or unresolved identity leakage')
     if set(data['partitions'])!={'train','validation','test'}:
         raise ValueError('Three explicit partitions required')
     for rows in data['partitions'].values():

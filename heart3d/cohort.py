@@ -90,6 +90,11 @@ def freeze_patient_split(rows, seed, development_ids):
     ids = [r['patient_id'] for r in rows]
     if len(set(ids)) != len(ids) or any(r.get('review_status') != 'approved' for r in rows):
         raise ValueError('Unique, explicitly approved patients required')
+    content=[r['image_voxel_SHA256'] for r in rows if r.get('image_voxel_SHA256')]
+    if len(content)!=len(set(content)):
+        raise ValueError('Exact image duplicate in cohort')
+    if any(set(r.get('related_patient_ids',[])) & set(ids) for r in rows):
+        raise ValueError('Unresolved related patient identities cannot be independent cohort units')
     groups = defaultdict(list)
     for row in rows:
         if not 2 <= row['age'] <= 17:

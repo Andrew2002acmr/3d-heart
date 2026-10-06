@@ -77,3 +77,10 @@ def test_allocation_smaller_cohort_keeps_counts():
     assert sum(allocate(7,{'2-5':16,'6-11':16,'12-17':16}).values())==7
     split=freeze_patient_split(approved_rows()[:16]+approved_rows()[20:36]+approved_rows()[40:56],42,set())
     assert {k:len(v) for k,v in split.items()}=={'train':34,'validation':7,'test':7}
+
+
+def test_split_rejects_duplicate_image_content_and_unresolved_related_ids():
+    rows=approved_rows();rows[0]['image_voxel_SHA256']='same';rows[1]['image_voxel_SHA256']='same'
+    with pytest.raises(ValueError,match='image duplicate'):freeze_patient_split(rows,42,set())
+    rows=approved_rows();rows[0]['related_patient_ids']=[rows[1]['patient_id']]
+    with pytest.raises(ValueError,match='related patient'):freeze_patient_split(rows,42,set())
