@@ -118,6 +118,17 @@ def test_oblique_polygon_has_expected_centers_and_no_shift():
     assert report['volume_ml'] == pytest.approx(.072)
 
 
+def test_one_uncontoured_slice_does_not_prove_full_coverage():
+    g = inspect_headers(ct_headers())
+    mask, report, _ = rasterize_heart(rt_for(g, [(2, [(2.25, 2.25), (6.75, 2.25),
+                                                  (6.75, 5.75), (2.25, 5.75)])]), g)
+    assert not any(report['touches_grid_faces'])
+    assert report['uncontoured_CT_margin_z_slices'] == [2, 1]
+    assert report['ROI_to_scan_boundary_z_mm'] == pytest.approx([6, 3])
+    assert report['scan_coverage'] == 'requires_review_near_scan_boundary'
+    assert report['initial_status'] == 'requires_review'
+
+
 def test_xor_hole():
     g = inspect_headers(ct_headers())
     polygons = [(1, [(1.25, 1.25), (7.75, 1.25), (7.75, 6.75), (1.25, 6.75)]),

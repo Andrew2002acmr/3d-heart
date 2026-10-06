@@ -78,6 +78,8 @@ def rasterize_heart(rt, geometry):
     if not mask.any():
         raise ValueError("Rasterized Heart is empty")
     active_slices = np.flatnonzero(mask.any(axis=(0, 1)))
+    z_margins = [int(active_slices[0]), int(mask.shape[2]-1-active_slices[-1])]
+    near_scan_z_boundary = min(z_margins) <= 1
     missing_planes = sorted(set(range(int(active_slices[0]), int(active_slices[-1]) + 1)) - set(active_slices))
     touches = [bool(mask.take(i, axis=a).any()) for a in range(3) for i in (0, -1)]
     components, count = ndimage.label(mask, structure=np.ones((3, 3, 3)))
@@ -86,10 +88,15 @@ def rasterize_heart(rt, geometry):
         "combination": "XOR" if xor else "union CLOSED_PLANAR", "shape_xyz": list(mask.shape),
         "resampled": False, "max_contour_slice_residual_mm": max(residuals),
         "contoured_slice_range": [int(active_slices[0]), int(active_slices[-1])],
+        "uncontoured_CT_margin_z_slices": z_margins,
+        "ROI_to_scan_boundary_z_mm": [v*geometry.report['spacing_xyz_mm'][2] for v in z_margins],
+        "near_scan_z_boundary": near_scan_z_boundary,
         "internal_uncontoured_slices": missing_planes, "touches_grid_faces": touches,
-        "scan_coverage": "requires_review_truncated" if any(touches) else "ROI_inside_grid_anatomical_completeness_requires_visual_review",
+        "scan_coverage": ("requires_review_truncated" if any(touches) else
+                          "requires_review_near_scan_boundary" if near_scan_z_boundary else
+                          "ROI_inside_grid_anatomical_completeness_requires_visual_review"),
         "components_26": int(count), "component_sizes_voxels": sizes.tolist(),
         "heart_voxels": int(mask.sum()),
         "volume_ml": float(mask.sum() * abs(np.linalg.det(geometry.affine_lps[:3, :3])) / 1000),
-        "initial_status": "requires_review" if any(touches) or missing_planes else "geometry_passed_visual_QA_pending"}
+        "initial_status": "requires_review" if any(touches) or missing_planes or near_scan_z_boundary else "geometry_passed_visual_QA_pending"}
     return mask, report, polygons
