@@ -3,7 +3,7 @@ import json
 import pytest
 import torch
 
-from heart3d.ml.benchmark import run, seed_everything, train_step
+from heart3d.ml.benchmark import benchmark_patient_ids, run, seed_everything, train_step
 from heart3d.ml.losses import SegmentationLoss
 
 
@@ -46,3 +46,8 @@ def test_configuration_cannot_turn_benchmark_into_long_training(tmp_path):
     config.write_text(json.dumps({'benchmark_warmup_batches': 5, 'sanity_batches': 10000}))
     with pytest.raises(ValueError, match='bounded'):
         run(config, 50, 'safe')
+
+
+def test_provenance_includes_fixed_train_cases_absent_from_random_batches():
+    history=[{'patient_ids':['p2','p3']},{'phase':'fixed_train_sanity'}]
+    assert benchmark_patient_ids(history,['p0','p2'])==['p0','p2','p3']

@@ -1,0 +1,350 @@
+{
+  "partition": "train",
+  "split_SHA256": "21a5d6e10b248aecd64af1c29bb703f5761e13a1cec6c6cd032c7f5a25747570",
+  "preprocessing_SHA256": "6228decfcb7ad5eee8ddb9d878963f5cf14fe533d4e2e423b800cda93f4e1c6d",
+  "records": [
+    {
+      "patient_id": "Pediatric-CT-SEG-06722123",
+      "cache_relative_path": "preprocessing/heart_v1/Pediatric-CT-SEG-06722123",
+      "provenance_SHA256": "c84753d520c93429122fc8fb248e18c498157311bc5c882fe7e97f773bc3ecf7",
+      "positive_slices": 61,
+      "negative_slices": 259,
+      "total_slices": 320
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-0D53FEEE",
+      "cache_relative_path": "preprocessing/heart_v1/Pediatric-CT-SEG-0D53FEEE",
+      "provenance_SHA256": "da10223cb789f4b455ba19cf8feabbd9c0c3e019ca04ff42db09ff1804dc6d05",
+      "positive_slices": 33,
+      "negative_slices": 152,
+      "total_slices": 185
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-0D7F3188",
+      "cache_relative_path": "preprocessing/heart_v1/Pediatric-CT-SEG-0D7F3188",
+      "provenance_SHA256": "583b9b7a04420685d7ba0aa980bd7f7542a68ffe9936d434256183c01a8d977d",
+      "positive_slices": 33,
+      "negative_slices": 173,
+      "total_slices": 206
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-1360E26F",
+      "cache_relative_path": "preprocessing/heart_v1/Pediatric-CT-SEG-1360E26F",
+      "provenance_SHA256": "03a9821e69aa1650e0411492a306c0c4deb5ff8955bd3cf543bb6cb0f64b453b",
+      "positive_slices": 47,
+      "negative_slices": 207,
+      "total_slices": 254
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-1644392C",
+      "cache_relative_path": "preprocessing/heart_v1/Pediatric-CT-SEG-1644392C",
+      "provenance_SHA256": "185609e75ad6e690f08c8d91fffb27d6e9185a73d8f6990774bda6fd0f761ceb",
+      "positive_slices": 53,
+      "negative_slices": 248,
+      "total_slices": 301
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-1DFF8B65",
+      "cache_relative_path": "preprocessing/heart_v1/Pediatric-CT-SEG-1DFF8B65",
+      "provenance_SHA256": "7d094a96a7c9a8fda0c91724a64bd1b17fad8801b0cf1745816706f3c3b3b442",
+      "positive_slices": 46,
+      "negative_slices": 216,
+      "total_slices": 262
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-2197048C",
+      "cache_relative_path": "preprocessing/heart_v1/Pediatric-CT-SEG-2197048C",
+      "provenance_SHA256": "aaf923b9c2f46435a3733659d0f0588635baef5ec5a66bd2b201804fd9b15ce0",
+      "positive_slices": 33,
+      "negative_slices": 225,
+      "total_slices": 258
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-2D905107",
+      "cache_relative_path": "preprocessing/heart_v1/Pediatric-CT-SEG-2D905107",
+      "provenance_SHA256": "3f6f5ef2ac5fe004822db8611e65bd1f9f1d5b3ad077bf17b3079cce48777175",
+      "positive_slices": 32,
+      "negative_slices": 39,
+      "total_slices": 71
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-3DA8BA0F",
+      "cache_relative_path": "preprocessing/heart_v1/Pediatric-CT-SEG-3DA8BA0F",
+      "provenance_SHA256": "1a5114af6d6d50a5698793a7dc982200d737d76af7a78ce5e99c5f942713cc1d",
+      "positive_slices": 48,
+      "negative_slices": 185,
+      "total_slices": 233
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-474F00E2",
+      "cache_relative_path": "preprocessing/heart_v1/Pediatric-CT-SEG-474F00E2",
+      "provenance_SHA256": "c7a982d8fe403da308dd535e0e55002bbd00da7ded2802cdaa9219ea06118d6b",
+      "positive_slices": 31,
+      "negative_slices": 136,
+      "total_slices": 167
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-51A54CC5",
+      "cache_relative_path": "preprocessing/heart_v1/Pediatric-CT-SEG-51A54CC5",
+      "provenance_SHA256": "45c8d617dc2d214b93046db548baae31225c3c3c01431536768bf2e6d61482b3",
+      "positive_slices": 36,
+      "negative_slices": 160,
+      "total_slices": 196
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-59397A22",
+      "cache_relative_path": "preprocessing/heart_v1/Pediatric-CT-SEG-59397A22",
+      "provenance_SHA256": "457dc99c77169596477abbe1e12f45101358336fb0191d9e4cb842cba4e3358d",
+      "positive_slices": 43,
+      "negative_slices": 260,
+      "total_slices": 303
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-5E12AC25",
+      "cache_relative_path": "preprocessing/heart_v1/Pediatric-CT-SEG-5E12AC25",
+      "provenance_SHA256": "e6f5393e27c8addbf68a547b1f0f4b6586fe6e2cf9e1af6a11d6c4cad4ef4007",
+      "positive_slices": 53,
+      "negative_slices": 273,
+      "total_slices": 326
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-5F74CD3E",
+      "cache_relative_path": "preprocessing/heart_v1/Pediatric-CT-SEG-5F74CD3E",
+      "provenance_SHA256": "6fbf2279f16f60c448e02493bac3953d3599c965084fa2e9a482079a2fcf89c9",
+      "positive_slices": 29,
+      "negative_slices": 163,
+      "total_slices": 192
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-5FF9F6C8",
+      "cache_relative_path": "preprocessing/heart_v1/Pediatric-CT-SEG-5FF9F6C8",
+      "provenance_SHA256": "cbffbe020148c0cd46833e04b70775998fec1b4f6b644bb195d8b6224b3b8bc0",
+      "positive_slices": 39,
+      "negative_slices": 173,
+      "total_slices": 212
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-63E23C60",
+      "cache_relative_path": "preprocessing/heart_v1/Pediatric-CT-SEG-63E23C60",
+      "provenance_SHA256": "85eadae878cf46e51875e5c99256f16f50bdd74da6cd0b5066e5246a30ed4ba0",
+      "positive_slices": 25,
+      "negative_slices": 155,
+      "total_slices": 180
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-677673CD",
+      "cache_relative_path": "preprocessing/heart_v1/Pediatric-CT-SEG-677673CD",
+      "provenance_SHA256": "094a835e5c94d14ccea183d94cfdd2d23848485071000d17a2a6e3c42f394cc3",
+      "positive_slices": 55,
+      "negative_slices": 265,
+      "total_slices": 320
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-7CD1BD9D",
+      "cache_relative_path": "preprocessing/heart_v1/Pediatric-CT-SEG-7CD1BD9D",
+      "provenance_SHA256": "fb4b16d9eb2e9313e691a97287337a58a9a54235baf964bf424389d474c8edbf",
+      "positive_slices": 36,
+      "negative_slices": 170,
+      "total_slices": 206
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-882CD2BF",
+      "cache_relative_path": "preprocessing/heart_v1/Pediatric-CT-SEG-882CD2BF",
+      "provenance_SHA256": "2fcfdd7ee9b2a4bb5fe26d7250361f4f6e155e98bf7130c6cf60a4d18c9c8475",
+      "positive_slices": 47,
+      "negative_slices": 255,
+      "total_slices": 302
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-885F9D36",
+      "cache_relative_path": "preprocessing/heart_v1/Pediatric-CT-SEG-885F9D36",
+      "provenance_SHA256": "1f1d10e7c444177107e238506875dea9d6e7af0691847dfbda3813e05d7488e8",
+      "positive_slices": 49,
+      "negative_slices": 267,
+      "total_slices": 316
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-8FAE886E",
+      "cache_relative_path": "preprocessing/heart_v1/Pediatric-CT-SEG-8FAE886E",
+      "provenance_SHA256": "c8818611ba45fb28e8d216a6acba9813b216e2851beff599501fe288474602a8",
+      "positive_slices": 23,
+      "negative_slices": 156,
+      "total_slices": 179
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-92891A2F",
+      "cache_relative_path": "preprocessing/heart_v1/Pediatric-CT-SEG-92891A2F",
+      "provenance_SHA256": "b4384f36d4f73c5f1d1fc610e8b2f5433f790f4ed89dce838900b01f0d18ca63",
+      "positive_slices": 46,
+      "negative_slices": 234,
+      "total_slices": 280
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-9D15A505",
+      "cache_relative_path": "preprocessing/heart_v1/Pediatric-CT-SEG-9D15A505",
+      "provenance_SHA256": "ada5ffc4594457d432f3d66a3d0d14df2ee175cc504b375084d398882cab3dfe",
+      "positive_slices": 45,
+      "negative_slices": 213,
+      "total_slices": 258
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-9ECC8D5B",
+      "cache_relative_path": "preprocessing/heart_v1/Pediatric-CT-SEG-9ECC8D5B",
+      "provenance_SHA256": "69ebe5832b001775c9b33c07fc59fc46c37fa73a574c6567c2f31b1105f5718f",
+      "positive_slices": 53,
+      "negative_slices": 240,
+      "total_slices": 293
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-A79D004C",
+      "cache_relative_path": "preprocessing/heart_v1/Pediatric-CT-SEG-A79D004C",
+      "provenance_SHA256": "bbd0ffccc2d0ed224af16237479d538dbdc2db347358f12948f7fe82b3b1348c",
+      "positive_slices": 39,
+      "negative_slices": 198,
+      "total_slices": 237
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-A7F73045",
+      "cache_relative_path": "preprocessing/heart_v1/Pediatric-CT-SEG-A7F73045",
+      "provenance_SHA256": "e3f63b1ce9495ba8f1427db7fbcb36b0f7b7d30d15a3c905f0cf4d45b572e093",
+      "positive_slices": 45,
+      "negative_slices": 205,
+      "total_slices": 250
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-AA032583",
+      "cache_relative_path": "preprocessing/heart_v1/Pediatric-CT-SEG-AA032583",
+      "provenance_SHA256": "8771bb93859d03498f979e07a7cecf69344a2c77007bad782502f4f50fae7e23",
+      "positive_slices": 50,
+      "negative_slices": 269,
+      "total_slices": 319
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-AD87B3CD",
+      "cache_relative_path": "preprocessing/heart_v1/Pediatric-CT-SEG-AD87B3CD",
+      "provenance_SHA256": "ed063c5c2f0d368f080a020a693103f6aa6f2ca33da5ef01a200bf0f5608cd32",
+      "positive_slices": 50,
+      "negative_slices": 263,
+      "total_slices": 313
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-B1CA7F8B",
+      "cache_relative_path": "preprocessing/heart_v1/Pediatric-CT-SEG-B1CA7F8B",
+      "provenance_SHA256": "ef8e540dd15af25067bd9e1768996acd97172400fcd42140d7480d0fc927857d",
+      "positive_slices": 54,
+      "negative_slices": 294,
+      "total_slices": 348
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-B42CD321",
+      "cache_relative_path": "preprocessing/heart_v1/Pediatric-CT-SEG-B42CD321",
+      "provenance_SHA256": "e39962167295eae3b60a454f6821c0ab155fe99673e0a5acf0256eb5bc59925f",
+      "positive_slices": 42,
+      "negative_slices": 218,
+      "total_slices": 260
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-B93CB2C7",
+      "cache_relative_path": "preprocessing/heart_v1/Pediatric-CT-SEG-B93CB2C7",
+      "provenance_SHA256": "5e53332d4ba8ccdba9a72d54054b3356413c61e0abbfbde971913f327e8ed337",
+      "positive_slices": 49,
+      "negative_slices": 181,
+      "total_slices": 230
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-BFCF2E26",
+      "cache_relative_path": "preprocessing/heart_v1/Pediatric-CT-SEG-BFCF2E26",
+      "provenance_SHA256": "cbf132cdc988771593c03f1fc6c7121a76baa113003eaeacf218065ebf0f4bb5",
+      "positive_slices": 36,
+      "negative_slices": 181,
+      "total_slices": 217
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-C9616E71",
+      "cache_relative_path": "preprocessing/heart_v1/Pediatric-CT-SEG-C9616E71",
+      "provenance_SHA256": "be77e485a8f55b3ee6336a5fd597a4824ba785cc4923f4ebd8dea0e4216a7517",
+      "positive_slices": 38,
+      "negative_slices": 233,
+      "total_slices": 271
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-CB9BF05E",
+      "cache_relative_path": "preprocessing/heart_v1/Pediatric-CT-SEG-CB9BF05E",
+      "provenance_SHA256": "adf919135b03654746f6b73b1214ca3e0d16c3fcd796fce2b386319438327e12",
+      "positive_slices": 52,
+      "negative_slices": 238,
+      "total_slices": 290
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-D1572D48",
+      "cache_relative_path": "preprocessing/heart_v1/Pediatric-CT-SEG-D1572D48",
+      "provenance_SHA256": "f36da329f80f4c0c9dec4ac6df40a6f7de47f1511a6d22d5eb2c45d298e6c9ff",
+      "positive_slices": 31,
+      "negative_slices": 59,
+      "total_slices": 90
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-D20DA719",
+      "cache_relative_path": "preprocessing/heart_v1/Pediatric-CT-SEG-D20DA719",
+      "provenance_SHA256": "687468b8211a94233cb0b77ee0ab319a8b3ba12a06c8e28c2b820e445ada1f8b",
+      "positive_slices": 33,
+      "negative_slices": 219,
+      "total_slices": 252
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-E1FF3C7E",
+      "cache_relative_path": "preprocessing/heart_v1/Pediatric-CT-SEG-E1FF3C7E",
+      "provenance_SHA256": "6044689932bcbc85221b1be43247c30425418187fce6619b2eea28dcc2df0ca5",
+      "positive_slices": 34,
+      "negative_slices": 222,
+      "total_slices": 256
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-E66B16E4",
+      "cache_relative_path": "preprocessing/heart_v1/Pediatric-CT-SEG-E66B16E4",
+      "provenance_SHA256": "7fbf05c6cd8bd6c6a79bdfd60d6af80da1d39262019eeebc5a2ad55311151525",
+      "positive_slices": 57,
+      "negative_slices": 254,
+      "total_slices": 311
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-E69AC901",
+      "cache_relative_path": "preprocessing/heart_v1/Pediatric-CT-SEG-E69AC901",
+      "provenance_SHA256": "0b04efcf4a5d85b5d3cdf44f8c407d405bb46218e8e646866217057da3450c57",
+      "positive_slices": 33,
+      "negative_slices": 154,
+      "total_slices": 187
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-E6DF2006",
+      "cache_relative_path": "preprocessing/heart_v1/Pediatric-CT-SEG-E6DF2006",
+      "provenance_SHA256": "ae0751ba0616b7773dec50f4801a68057dde57aaf7338664608e93fe96e85853",
+      "positive_slices": 37,
+      "negative_slices": 173,
+      "total_slices": 210
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-F0386168",
+      "cache_relative_path": "preprocessing/heart_v1/Pediatric-CT-SEG-F0386168",
+      "provenance_SHA256": "200a5bee911484b41d545fd013085850b1ea0f23688d92d7d57e7d95df2009d7",
+      "positive_slices": 39,
+      "negative_slices": 192,
+      "total_slices": 231
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-FC6A7B5A",
+      "cache_relative_path": "preprocessing/heart_v1/Pediatric-CT-SEG-FC6A7B5A",
+      "provenance_SHA256": "6106294f41e9727bd8f9d2fd6431ac4b3f4bcb911f2dd54617be67942ec7e737",
+      "positive_slices": 27,
+      "negative_slices": 161,
+      "total_slices": 188
+    }
+  ],
+  "source_index_SHA256": "7a138fab1483d76a63edea638cfc498f3b48cc2567342efb70e68d95e1e0bba0",
+  "patient_count": 42,
+  "positive_slices": 1742,
+  "negative_slices": 8538,
+  "total_preprocessed_slices": 10280,
+  "balanced_train_samples_per_epoch": 3484,
+  "validation_test_prepared": false
+}

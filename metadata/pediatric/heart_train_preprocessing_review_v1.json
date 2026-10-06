@@ -1,0 +1,51 @@
+{
+  "partition": "train",
+  "augmentation": false,
+  "records": [
+    {
+      "patient_id": "Pediatric-CT-SEG-06722123",
+      "age_group": "12-17",
+      "center_index": 226,
+      "center_position_mm": 452.0,
+      "context_outside_scan": [
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-0D53FEEE",
+      "age_group": "2-5",
+      "center_index": 137,
+      "center_position_mm": 274.0,
+      "context_outside_scan": [
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-1360E26F",
+      "age_group": "6-11",
+      "center_index": 180,
+      "center_position_mm": 360.0,
+      "context_outside_scan": [
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    }
+  ],
+  "review_status": "approved",
+  "reviewer": "Codex technical visual QA",
+  "reason": "Train-only five physical planes and central source Heart GT align on sampled cases, one per age group. No held-out cases used.",
+  "image_relative_path": "experiments/heart_baseline_v1/preprocessing_qa/train_context.png",
+  "image_SHA256": "e8ff0f57bb62da3c3c9dc43ff4415e35b0589d178429ed351bbc293cf13895b9",
+  "preprocessing_SHA256": "6228decfcb7ad5eee8ddb9d878963f5cf14fe533d4e2e423b800cda93f4e1c6d"
+}

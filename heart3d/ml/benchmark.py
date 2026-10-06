@@ -37,6 +37,10 @@ def train_step(model,optimizer,loss_function,batch):
     return float(loss.detach()),norm
 
 
+def benchmark_patient_ids(history,fixed_patient_ids):
+    return sorted(set(fixed_patient_ids) | {pid for h in history for pid in h.get('patient_ids',[])})
+
+
 def run(config_path,batches,run_name,data_root=None):
     if not 1<=batches<=200:raise ValueError('This entry point permits at most 200 measured batches')
     if not re.fullmatch(r'[A-Za-z0-9][A-Za-z0-9_.-]*',run_name) or '..' in run_name:
@@ -113,7 +117,7 @@ def run(config_path,batches,run_name,data_root=None):
         'resources':monitor.summary(),'learning':learning,'checkpoint_bytes':checkpoint.stat().st_size,
         'checkpoint_relative_path':checkpoint.relative_to(root).as_posix(),'checkpoint_SHA256':sha256_file(checkpoint),
         'full_training_executed':False,'validation_evaluated':False,'test_evaluated':False,
-        'all_benchmark_patient_ids':sorted({pid for h in history for pid in h.get('patient_ids',[])})}
+        'all_benchmark_patient_ids':benchmark_patient_ids(history,patients)}
     write_json(output/'config.json',config);write_json(output/'environment.json',env)
     write_json(output/'history.json',history);write_json(output/'resource_samples.json',monitor.samples)
     write_json(output/'summary.json',summary)
