@@ -77,7 +77,7 @@ def check_vtk(mask, polygons, xor=False):
             'nonboundary_differences': nonboundary}
 
 
-def make_mosaic(volume, mask, geometry, polygons, destination, title):
+def make_mosaic(volume, mask, geometry, polygons, destination, title, boundary_sampling=False):
     import matplotlib
     matplotlib.use('Agg')
     import matplotlib.pyplot as plt
@@ -89,8 +89,13 @@ def make_mosaic(volume, mask, geometry, polygons, destination, title):
                ('native axial / last Heart plane', 2, int(high[2])),
                ('native coronal / center', 1, int(center[1])),
                ('native sagittal / center', 0, int(center[0]))]
+    if boundary_sampling:
+        axial=[('below first',int(low[2])-2),('first',int(low[2])),
+               ('first + 2',int(low[2])+2),('center',int(center[2])),
+               ('last - 2',int(high[2])-2),('last',int(high[2])),('above last',int(high[2])+2)]
+        choices=[('native axial / '+name,2,max(0,min(volume.shape[2]-1,k))) for name,k in axial]+choices[-2:]
     spacing = geometry.report['spacing_xyz_mm']
-    fig, axes = plt.subplots(len(choices), 2, figsize=(12, 16), constrained_layout=True)
+    fig, axes = plt.subplots(len(choices), 2, figsize=(12, 3.0*len(choices)), constrained_layout=True)
     for row, (name, axis, index) in enumerate(choices):
         image = np.take(volume, index, axis=axis).T
         roi = np.take(mask, index, axis=axis).T
@@ -102,7 +107,8 @@ def make_mosaic(volume, mask, geometry, polygons, destination, title):
             if col:
                 overlay = np.zeros((*roi.shape, 4)); overlay[roi > 0] = [.05, 1., .2, .28]
                 ax.imshow(overlay, origin='lower', aspect=aspect)
-                ax.contour(roi, levels=[.5], colors=['lime'], linewidths=.7)
+                if roi.any() and not roi.all():
+                    ax.contour(roi, levels=[.5], colors=['lime'], linewidths=.7)
                 if axis == 2:
                     for p in polygons:
                         if p['slice'] == index:
