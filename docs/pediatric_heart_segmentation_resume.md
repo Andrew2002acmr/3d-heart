@@ -8,8 +8,10 @@
 
 - Ветка: `feature/pediatric-heart-segmentation`, основана на audit commit `66c5804`.
 - Worktree: `C:/Users/Андрей/.codex/worktrees/pediatric-heart-segmentation/3d-hearts`.
-- Raw/cache/derived: `D:/codexProjects/3d-hearts/data/pediatric_ct_heart` — вне Git.
-- Inventory: `D:/codexProjects/3d-hearts/data/pediatric_audit/tcia_series.txt`.
+- Активный raw/cache/derived root: `E:/3d-heart-data/pediatric_ct_heart` — вне Git.
+- Inventory: `<data_root>/cache/tcia_series_v1.json` (существующий snapshot).
+- Копия на D сохранена без изменений; SHA-256 всех 4,109 copied files совпали,
+  674 download receipt hashes проверены. Активные будущие artifacts писать на E.
 - Python: `D:/codexProjects/3d-hearts/.venv/Scripts/python.exe`.
 - Pydicom 3.0.2: external `data/pediatric_audit/python_deps`, подключается PYTHONPATH.
 - Основной checkout с пользовательскими изменениями не переключать и не очищать.
@@ -18,7 +20,7 @@
 
 Strict classic CT adapter: IPP/normal sort, actual Z step, LPS/RAS affine,
 HU tags, series/frame/SOP/inventory/regularity. Heart rasterization на original
-grid: union/XOR, references и contour planes, coverage flags. **73 tests passed**;
+grid: union/XOR, references и contour planes, coverage flags. **78 tests passed**;
 GUI tests исключены, прежние NumPy/scikit-image warnings сохранены.
 
 **9 полных CT + 9 original RTSTRUCT**: original-grid NIfTI, independent
@@ -47,7 +49,10 @@ seed 20261006. Девять inspected pilot cases исключить из test. 
 features 16/32/64/128, 488,993 parameters, CPU batch 2/workers 0. RAM 16 GB,
 ожидаемый training budget 4–6 GB, duration неизвестен до короткого benchmark.
 Radeon backend не проверен; CUDA нет; torch не установлен. Whole raw cohort
-не помещается в оставшиеся ~28 GB на D. Автоматически ничего не удалять.
+теперь хранится на E (~329.90 GB свободно после копии). Минимальный резерв 80 GB.
+Суммарный дополнительный бюджет со сжатыми prepared volumes ограничен 228.89 GB;
+полная несжатая materialization с архивами и рабочим cache нарушает резерв.
+Пересчитывать перед массовым скачиванием. Автоматически ничего не удалять.
 
 ## Проверить сохранённые результаты без повторного скачивания
 
@@ -56,7 +61,7 @@ Radeon backend не проверен; CUDA нет; torch не установле
 ```powershell
 $env:PYTHONPATH = 'D:/codexProjects/3d-hearts/data/pediatric_audit/python_deps'
 $pythonExe = 'D:/codexProjects/3d-hearts/.venv/Scripts/python.exe'
-$dataRoot = 'D:/codexProjects/3d-hearts/data/pediatric_ct_heart'
+$dataRoot = 'E:/3d-heart-data/pediatric_ct_heart'
 & $pythonExe scripts/export_pediatric_heart_census.py --data $dataRoot --reviews metadata/pediatric/heart_segmentation_visual_reviews.json --out metadata/pediatric/heart_segmentation_candidates.json
 & $pythonExe scripts/view_pediatric_ct_qa.py --data $dataRoot --reviews metadata/pediatric/heart_segmentation_visual_reviews.json
 ```

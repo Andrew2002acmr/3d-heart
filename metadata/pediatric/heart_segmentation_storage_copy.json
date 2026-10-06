@@ -1,0 +1,16 @@
+{
+  "source": "D:\\codexProjects\\3d-hearts\\data\\pediatric_ct_heart",
+  "destination": "E:\\3d-heart-data\\pediatric_ct_heart",
+  "files_verified": 4109,
+  "source_bytes": 3999915198,
+  "bytes_copied": 3999915198,
+  "files_reused": 0,
+  "download_receipt_hashes_verified": 674,
+  "reserve_bytes": 80000000000,
+  "free_bytes_before": 333916770304,
+  "free_bytes_after": 329903775744,
+  "all_destination_SHA256_match": true,
+  "source_files_modified_or_deleted": false,
+  "date_utc": "20261006T030831598599Z",
+  "external_receipt_relative_path": "cache/copy_verification_20261006T030831598599Z.json"
+}

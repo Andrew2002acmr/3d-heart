@@ -1,5 +1,27 @@
 {
   "version": 1,
+  "storage": {
+    "data_root": "E:/3d-heart-data/pediatric_ct_heart",
+    "minimum_free_reserve_GB": 80,
+    "provisional_workspace_budgets_GB": {
+      "compressed_prepared_CT_and_masks": 80,
+      "additional_preprocessing_cache": 10,
+      "experiment_outputs_checkpoints_predictions_meshes": 15
+    },
+    "workspace_budget_policy": "planning caps, not measured compression ratios; recheck actual bytes before each cohort/stage and stop at reserve",
+    "GB_definition": "decimal 1000000000 bytes",
+    "originals_and_prepared": "<data_root>/<patient_id>/{ct,rtstruct,census,prepared}",
+    "inventory_relative_path": "cache/tcia_series_v1.json",
+    "preprocessing_relative_path": "preprocessing",
+    "prediction_relative_path": "predictions",
+    "checkpoint_relative_path": "checkpoints",
+    "mesh_relative_path": "meshes",
+    "screenshots_relative_path": "screenshots",
+    "experiment_outputs_relative_path": "experiments",
+    "temporary_relative_path": "temporary",
+    "all_large_artifacts_under_data_root": true,
+    "automatic_deletion_or_moving_of_old_data": false
+  },
   "status": "proposal_only_not_training_authorization",
   "seed": 20261006,
   "target": "binary Heart organ-at-risk ROI from original RTSTRUCT",

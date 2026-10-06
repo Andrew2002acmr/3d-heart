@@ -1,0 +1,40 @@
+{
+  "date": "2026-10-06",
+  "config": "configs/pediatric_heart_preparation_v1.json",
+  "units": "decimal bytes and GB; GiB = 1073741824 bytes",
+  "active_data_root": "E:/3d-heart-data/pediatric_ct_heart",
+  "free_bytes_before_copy": 333916770304,
+  "free_bytes_after_copy": 329903775744,
+  "minimum_free_reserve_bytes": 80000000000,
+  "published_CT_bytes": 54658909982,
+  "published_RTSTRUCT_bytes": 7286328758,
+  "archive_budget_bytes": 61945238740,
+  "archive_budget_is_measured": false,
+  "total_CT_slices": 103760,
+  "probe_rows_columns": [
+    512,
+    512
+  ],
+  "probe_dimensions_apply_to_all_slices_is_full_stack_verified": false,
+  "estimated_original_float32_CT_uint8_mask_uncompressed_bytes": 136000307200,
+  "compressed_prepared_budget_bytes": 80000000000,
+  "compressed_prepared_budget_is_measured": false,
+  "additional_preprocessing_cache_budget_bytes": 10000000000,
+  "experiment_outputs_budget_bytes": 15000000000,
+  "conservative_additional_budget_bytes": 228890477480,
+  "budget_counts_existing_pilot_portions_again": true,
+  "remaining_bytes_after_planned_additional_budget": 101013298264,
+  "planned_budget_preserves_80GB_reserve": true,
+  "uncompressed_all_cohort_additional_budget_bytes": 284890784680,
+  "uncompressed_all_cohort_remaining_bytes": 45012991064,
+  "uncompressed_all_cohort_allowed_with_80GB_reserve": false,
+  "conditions": [
+    "re-evaluate UID sizes and actual disk free space immediately before bulk download",
+    "compressed prepared 80GB is a planning cap, not promised compression",
+    "measure actual output and cache sizes before each stage; stop/replan above budgets",
+    "keep at least 80GB free; no automatic removal of old data"
+  ],
+  "mass_download_started": false,
+  "training_executed": false,
+  "source_on_D_preserved": true
+}

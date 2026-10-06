@@ -141,9 +141,15 @@ ContrastBolusAgent — evidence введения контраста; пусто�
 unknown. Scanner metadata здесь означают модель аппарата, а не независимые центры.
 
 CT всего возрастного inventory: 54,658,909,982 bytes; RT: 7,286,328,758 bytes.
-Свободного места на D недостаточно для всех raw CT. Пилот, raw originals,
-архивы, derived volumes, masks и screenshots находятся вне Git, в
-`D:/codexProjects/3d-hearts/data/pediatric_ct_heart`.
+Активное внешнее хранилище этого этапа:
+`E:/3d-heart-data/pediatric_ct_heart`. Пилот, raw originals, архивы, derived volumes,
+masks, screenshots, будущие predictions/checkpoints/meshes и outputs находятся
+там. Репозиторий остаётся в текущем worktree. Исходная копия на D сохранена.
+Перед копированием проверены все source SHA-256 и 674 прежних receipt hashes;
+после копирования SHA-256 всех 4,109 файлов совпали (включая public inventory).
+Объём копии — 3,999,915,198 bytes. Small summary:
+[heart_segmentation_storage_copy.json](../metadata/pediatric/heart_segmentation_storage_copy.json).
+Подробный file-level receipt находится в `cache/` внешнего хранилища.
 
 ## 7. Предложение cohort и split
 
@@ -239,13 +245,34 @@ PyTorch в использованном environment отсутствует. GPU 
 с запасом, отдельно до 8 lightweight network workers. Training 2.5D: ориентир
 4–6 GB CPU RAM при batch 2 и дисковом/lazy cache; это оценка, не измеренное обучение.
 
-60 raw CT могут потребовать около 10–15 GB до archive duplication и prepared
-cache, точный объём надо суммировать по выбранным UID. При проверке свободно
-**28.07 GB на D**; этого недостаточно для всей возрастной raw cohort.
-Перед cohort download проверить место, не удалять существующие
-данные автоматически. Для всей когорты raw CT + RT + derived/cache рекомендуется
-отдельное хранилище с ≥150 GB свободного пространства; фактический бюджет зависит
-от retention архивов и формата cache. Полные float32 volumes не cache в RAM.
+На E перед копированием было **333.92 GB**, после — **329.90 GB** свободного места
+(около 307.25 GiB). Минимальный свободный резерв выбран **80 GB**, decimal units.
+Обновлённый бюджет:
+
+| Компонент полной возрастной когорты | Бюджет, GB |
+|---|---:|
+| Published CT + RTSTRUCT | 61.95 |
+| Download archives, консервативное повторное резервирование raw размера | 61.95 |
+| Original float32 CT + uint8 mask без сжатия | 136.00 |
+| Вместо несжатого варианта: лимит сжатых prepared volumes/masks | 80.00 |
+| Дополнительный preprocessing cache | 10.00 |
+| Predictions/checkpoints/meshes/screenshots/outputs | 15.00 |
+
+136 GB рассчитаны по 103,760 published CT slices и 512×512 из всех CT probes;
+полная постоянность этих размеров подтверждена только на девяти full stacks.
+Архивный бюджет — резерв, а не измеренный размер всех ZIP. Несжатый вариант с
+архивами и 25 GB рабочих artifacts потребовал бы дополнительно **284.89 GB**,
+оставив около 45 GB: он не соответствует резерву 80 GB и не предлагается.
+
+Сжатый вариант с указанными лимитами резервирует **228.89 GB** дополнительно
+после текущей копии; это консервативно повторно считает часть существующих данных.
+Остаётся около **101 GB**. Лимит 80 GB для prepared — бюджет, не обещание степени
+сжатия: контролировать фактический размер и остановиться/пересчитать при его
+превышении. Перед каждым массовым скачиванием повторить estimate по выбранным UID
+и реальному free space. Pilot downloader проверяет запас до запуска и во время
+download/extraction (`--reserve-gb`, default 80). Старые данные не удаляются.
+Полные float32 volumes не cache в RAM. Подробные оценки:
+[heart_segmentation_storage_budget.json](../metadata/pediatric/heart_segmentation_storage_budget.json).
 
 ## 14. Метрики — будущая оценка
 
@@ -259,7 +286,8 @@ aggregation и empty-mask convention. Никаких выдуманных test s
 Синтетические проверки включают oblique/anisotropic landmarks, HU, RAS/LPS,
 unordered slices, duplicates/missing inventory, irregular spacing, ROI mismatch,
 XOR hole, off-plane/out-of-FOV contours, implicit/explicit stream и truncation.
-**73 tests passed** (GUI tests не запускались; существующие NumPy/scikit-image
+**78 tests passed** (включая 5 storage integrity/reserve tests; GUI tests не
+запускались; существующие NumPy/scikit-image
 deprecation warnings сохранены). Независимое чтение девяти реальных CT:
 SimpleITK ImageSeriesReader с собственным GDCM discovery/sorting; проверены affine,
 dimensions и все HU pixels. Во всех девяти max HU difference = 0.
@@ -321,15 +349,19 @@ Raw data path задаётся вне Git. Пример PowerShell из ново
 
 ```powershell
 python -m pip install -r requirements-lock.txt -r requirements-pediatric.txt
-$dataRoot = 'D:/codexProjects/3d-hearts/data/pediatric_ct_heart'
-python scripts/fetch_tcia_inventory.py --out "$dataRoot/tcia_series_v1.json"
-python scripts/fetch_pediatric_ct_pilot.py --registry metadata/pediatric/registry.json --series "$dataRoot/tcia_series_v1.json" --data $dataRoot
+$dataRoot = 'E:/3d-heart-data/pediatric_ct_heart'
+# Текущий cache уже содержит cache/tcia_series_v1.json.
+# Для новой snapshot выбрать новый путь и использовать его в --series:
+# python scripts/fetch_tcia_inventory.py --out "$dataRoot/cache/tcia_series_v2.json"
+python scripts/fetch_pediatric_ct_pilot.py --registry metadata/pediatric/registry.json --series "$dataRoot/cache/tcia_series_v1.json" --data $dataRoot --reserve-gb 80
 python scripts/prepare_pediatric_ct_pilot.py --data $dataRoot
-python scripts/census_pediatric_ct_heart.py --registry metadata/pediatric/registry.json --series "$dataRoot/tcia_series_v1.json" --data $dataRoot --out "$dataRoot/census.json" --workers 8
+python scripts/census_pediatric_ct_heart.py --registry metadata/pediatric/registry.json --series "$dataRoot/cache/tcia_series_v1.json" --data $dataRoot --out "$dataRoot/census.json" --workers 8
 python scripts/audit_pediatric_rt_references.py --data $dataRoot --out metadata/pediatric/heart_segmentation_reference_review.json
 python scripts/export_pediatric_heart_census.py --data $dataRoot --reviews metadata/pediatric/heart_segmentation_visual_reviews.json --out metadata/pediatric/heart_segmentation_candidates.json
 python scripts/view_pediatric_ct_qa.py --data $dataRoot --reviews metadata/pediatric/heart_segmentation_visual_reviews.json
-python -m pytest tests --ignore=tests/test_viewer.py --ignore=tests/test_interactive_gui.py -q
+New-Item -ItemType Directory -Path "$dataRoot/temporary" -Force | Out-Null
+# Использовать новый basetemp для каждого запуска: pytest удаляет существующий basetemp.
+python -m pytest tests --ignore=tests/test_viewer.py --ignore=tests/test_interactive_gui.py --basetemp "$dataRoot/temporary/pytest_run_unique" -q
 ```
 
 Download cache содержит SHA-256 receipts; ZIP CRC и отсутствие перезаписи
@@ -337,6 +369,20 @@ Download cache содержит SHA-256 receipts; ZIP CRC и отсутстви�
 обновлении source использовать новый versioned путь и сравнить case metadata.
 Оригинальные данные не входят в Git. Для текущего запуска использован существующий
 Python 3.14 environment и отдельная external installation pydicom 3.0.2.
+
+Диск задаётся в `storage.data_root` конфигурации или через `--data`; E: не зашит
+в Python-код. Config относит все крупные artifacts к одному data root.
+Скопированные старые `pilot_qa.json` сохраняют исторический absolute output path;
+viewer/exporter/preparation используют CLI root и не читают данные по этому полю.
+Новые reports используют `output_directory_relative`. CLI verified copy:
+
+```powershell
+python scripts/copy_pediatric_ct_data.py --source 'D:/codexProjects/3d-hearts/data/pediatric_ct_heart' --destination $dataRoot --reserve-gb 80 --summary metadata/pediatric/heart_segmentation_storage_copy.json
+```
+
+Копирование не перезаписывает отличающиеся destination files; повторный запуск
+проверяет и переиспользует совпадающие файлы. File-level receipts остаются вне Git.
+Для inventory передать `--inventory` с исходным snapshot; он копируется в `cache/`.
 
 Следующий конкретный шаг: review annotation extent и coverage, выбрать 60
 кандидатов, провести полный gate для каждого, зафиксировать patient split и
