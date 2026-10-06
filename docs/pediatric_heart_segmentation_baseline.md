@@ -1,391 +1,232 @@
-# Pediatric Heart segmentation: подготовка baseline
+# Pediatric Heart segmentation baseline
 
-Дата проверки: 2026-10-06. Ветка `feature/pediatric-heart-segmentation`, создана от
-`feature/pediatric-datasets` (`66c5804`). Основной checkout с пользовательскими
-изменениями не переключался. **Обучение не запускалось.** Здесь зафиксирован
-подготовительный этап; результаты модели, test metrics и predictions отсутствуют.
+Дата: 2026-10-06. Ветка `feature/pediatric-heart-segmentation`, audit base `66c5804`.
+Основной checkout и пользовательские изменения не трогались.
 
-**Подготовительный отчёт перед обучением.** Census завершён для **327/327**
-пациентов. У всех есть определение Heart ROI, у 324 — непустые контуры;
-322 проходят metadata/reference gate, 2 имеют неподтверждённые CT SOP references,
-3 имеют пустые Heart contours. Полные CT + оригинальные RTSTRUCT получены и
-независимо конвертированы для **9/9 пилотных исследований**; все девять просмотрены
-на native mosaics и в NiiVue. Три исключены из-за неполного scan coverage,
-ещё один требует coverage review, пять — проверки объёма OAR-аннотации.
-Готовая training cohort и frozen split отсутствуют: **0 полностью одобренных
-для обучения случаев**. Это результат проверки gates, а не отрицательная оценка
-качества всех исходных контуров. Предложение следующего эксперимента: 60 пациентов
-после полного QA, split 42/9/9, собственная 2.5D U-Net на CPU. Работа остановлена
-перед выбором полной когорты и обучением согласно заданному порядку этапа.
-Точка продолжения: [pediatric_heart_segmentation_resume.md](pediatric_heart_segmentation_resume.md).
+**Готовы QA cohort 60, frozen split 42/9/9, train-only preprocessing, собственная
+2.5D U-Net и короткий CPU benchmark. Full training и test evaluation не было.**
+Подробный отчёт: [pediatric_heart_training_readiness.md](pediatric_heart_training_readiness.md).
+Продолжение: [pediatric_heart_segmentation_resume.md](pediatric_heart_segmentation_resume.md).
 
 ## 1. Цель
 
-Исследовать устойчивость собственной бинарной сегментации **исходного Heart ROI**
-на детских CT разного возраста, scanner/protocol и coverage. Первый target —
-Heart organ-at-risk (OAR), определённый экспертами источника. Это не разметка
-камер, миокарда или сосудов и не clinical whole-heart diagnosis. Цепочка этапа:
-полная DICOM CT series → HU volume с проверенной геометрией → RTSTRUCT Heart
-→ маска на исходной сетке → техническая и визуальная QA → план эксперимента.
+Сегментировать исходный экспертный **Heart OAR** на детских CT разных возрастов
+и scanner/protocol. Цепочка: полная DICOM CT → подтверждённые HU/geometry →
+original RTSTRUCT Heart → original-grid GT → QA → patient split → train-fitted
+preprocessing → собственная модель → короткий benchmark. Камеры, сосуды, диагнозы
+и clinical decision logic не входят в этот эксперимент.
 
-## 2. Источник данных
+## 2. Источник
 
 [TCIA Pediatric-CT-SEG](https://www.cancerimagingarchive.net/collection/pediatric-ct-seg/),
-DOI [10.7937/TCIA.X0H0-1706](https://doi.org/10.7937/TCIA.X0H0-1706).
-Возрастная выборка из предыдущего аудита: 327 пациентов с `2 <= reported age <= 17`:
-143 — группа 2–5, 105 — 6–11, 79 — 12–17. Фактически сообщённые возраста —
-**2–16 лет**, случаев 17 лет нет. Это рабочие группы; DICOM `NNNY`
-указывает возраст с точностью до сообщённых лет, а не точную дату рождения.
-
-В [публикации источника](https://pmc.ncbi.nlm.nih.gov/articles/PMC9090951/)
-описаны CT по клиническим показаниям, отсутствие диагнозов и экспертные OAR-контуры.
-Поэтому `healthy_status=unknown` для всех случаев. Отсутствие CHD-метки ничего
-не говорит о нормальности сердца. Авторы сообщают о разных scan ranges,
-контрастировании, шуме и артефактах крайних срезов после исходного reformating.
-Опубликованное количество Heart contours не заменяет наш case-level census.
+DOI [10.7937/TCIA.X0H0-1706](https://doi.org/10.7937/TCIA.X0H0-1706),
+[source publication](https://pmc.ncbi.nlm.nih.gov/articles/PMC9090951/).
+Clinical CT + экспертный OAR RTSTRUCT. Census: 327 с reported age 2–17,
+фактически **2–16**, без 17-летних. Рабочие группы 2–5 / 6–11 / 12–17:
+143 / 105 / 79. DICOM NNNY не exact birthday. **healthy_status=unknown**;
+отсутствие CHD label не подтверждает норму. MRI/Atlas/healthy classifier не используются.
 
 ## 3. DICOM QA
 
-`heart3d/dicom/ct.py` поддерживает classic single-frame CT Image Storage.
-Enhanced CT, смешанные серии, нерегулярные сетки и gantry shear требуют отдельного
-adapter; они не исправляются автоматически. Проверяются PatientID/PatientAge,
-SeriesInstanceUID, FrameOfReferenceUID, SOP UID uniqueness, размеры, IOP/IPP,
-PixelSpacing, RescaleSlope/Intercept и допустимый RescaleType.
+`heart3d/dicom/ct.py`: classic single-frame CT, patient/age/series/frame/SOP,
+inventory completeness, IOP/IPP/PixelSpacing, slope/intercept/RescaleType.
+Enhanced CT, irregular grids, mixed series и gantry shear автоматически не исправляются.
+Sort: `dot(IPP,cross(IOP[:3],IOP[3:]))`. Z spacing определяется соседними проекциями,
+SliceThickness сохраняется как nominal metadata. Regularity tolerance:
+max(0.02 mm, 1% step), grid residual ≤0.05 mm. Inventory подтверждает полноту
+опубликованной series, не неопубликованной acquisition.
 
-Порядок срезов: `dot(IPP, cross(IOP[:3], IOP[3:]))`. Z step определяется медианой
-соседних проекций; SliceThickness сохраняется только как nominal metadata.
-Допуск регулярности — `max(0.02 mm, 1% step)`, допустимый residual сетки — 0.05 mm.
-Это технические допуски данного adapter. Совпадение с live TCIA SOP inventory
-проверяет полноту **публикации**, но не доказывает отсутствие срезов в исходной
-неопубликованной acquisition. InstanceNumber не определяет порядок.
+Массив `[column,row,slice]`, LPS affine axes: IOP[:3]*PixelSpacing[1],
+IOP[3:]*PixelSpacing[0], normal*actual Z. Origin — первый sorted IPP, voxel center 0.
+HU = stored*slope+intercept каждого slice при подтверждённых tags.
+NIfTI RAS = `diag(-1,-1,1,1) @ LPS`, qform=sform, mm; массив не переворачивается.
+Independent GDCM/SimpleITK sorting/affine и все HU pixels проверены.
+[Image Plane Module](https://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.2.html).
 
-Внутренняя CT grid: массив `[column,row,slice]`, координаты **LPS**;
-оси affine: `IOP[:3]*PixelSpacing[1]`, `IOP[3:]*PixelSpacing[0]`, `normal*z_step`.
-Origin — IPP первого пространственно отсортированного среза, центр voxel 0.
-HU = stored pixel × RescaleSlope + RescaleIntercept, отдельно для каждого среза.
-Без подтверждённых tags конвертация останавливается.
+## 4. RTSTRUCT → mask
 
-NIfTI имеет **RAS** affine: `diag(-1,-1,1,1) @ affine_LPS`, units mm,
-qform=sform. Массив не переворачивается при смене системы координат.
-Такой перевод предотвращает прежнюю неопределённость анатомической ориентации
-ImageCHD. Правило следует [DICOM Image Plane Module](https://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.2.html).
+`heart3d/dicom/rtstruct.py`: единственный nonempty Heart ROI, original patient,
+series/frame/SOP class и global/Heart references. LPS points → inverse CT affine;
+slice определяется SOP, missing reference не заменяется ближайшим. FOV/plane
+residual ≤0.05 mm, union CLOSED_PLANAR / XOR CLOSEDPLANAR_XOR; mixed types rejected.
+Заполнение voxel centers **без межсрезовой GT interpolation**. CT/GT shape,
+spacing/origin/affine совпадают. Independent VTK stencil: Dice ≥0.99,
+differences только на boundary. [ROI Contour Module](https://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.8.6.html).
+Original DICOM не изменяются; census Heart extracts не являются full RT.
 
-## 4. RTSTRUCT rasterization
+## 5. Включение и visual QA
 
-`heart3d/dicom/rtstruct.py`: точное имя `Heart` без учёта регистра и крайних
-пробелов, ровно один ROI. Проверяются ROI FrameOfReference, referenced CT series,
-global SOP references и уникальный CT SOP reference каждого контура.
-Отсутствующие ссылки не заменяются ближайшим срезом.
+Необходимы age/full inventory/HU/geometry/references gates, continuous Heart OAR,
+independent agreement и visual alignment/coverage. Face contact, margin ≤1 slice,
+internal gaps/components требуют review; unusual size/spacing не критерий ranking.
+Sampling v2: axial first−2 / first / first+2 / median active / last−2 / last /
+last+2 (clamp), native coronal/sagittal median active; CT+mask, original contour
+на axial, physical aspect без resampling.
 
-ContourData LPS переводится inverse CT affine в voxel coordinates. Срез выбирается
-по SOP, а не округлением Z. Максимальный plane residual — 0.05 mm; выход за FOV,
-некорректные точки и пустая маска требуют review. Полигон заполняется по центрам
-voxel. `CLOSED_PLANAR` объединяются, `CLOSEDPLANAR_XOR` комбинируются XOR;
-смешанные типы отвергаются. **Никакой межсрезовой interpolation первичного GT.**
-Основание: [DICOM ROI Contour Module](https://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.8.8.6.html).
+Различаем scan truncation, annotation scope, technical error и ROI endpoint.
+Planar cap внутри полного scan сохраняется как original OAR; anatomical chamber
+completeness не утверждается. Неоднозначные cases оставлены review, repair нет.
+`approved` — technical visual suitability, не новый clinician sign-off или healthy.
 
-CT и GT имеют одинаковые shape, affine, spacing и origin. Исходные DICOM
-не изменяются. Для пилота используется оригинальный полный RTSTRUCT.
-Heart-only extracts census являются отдельными производными файлами с новыми
-SOP/Series UID и source receipt; они не выдаются за полные RTSTRUCT.
+## 6. Census и полученные данные
 
-## 5. Критерии включения и исключения
+[327-patient registry](../metadata/pediatric/heart_segmentation_candidates.json):
+327 Heart definitions, 324 nonempty, 322 reference candidates, 2 reference failures,
+3 empty. Census CT probe/Heart item не заменяют full-stack QA.
+Scanner LightSpeed/SOMATOM/Revolution = 134/128/65; contrast evidence/unknown = 301/26.
 
-Включение: допустимый сообщённый возраст, одна полная CT series, HU/geometry gate,
-валидный Heart и все ссылки, техническая visual alignment QA, достаточное coverage,
-проверенный объём исходной аннотации для согласованного Heart OAR target.
+**117 complete CT/RT pairs**: 9 development +60 initial +48 replacements.
+**114 DICOM и 114 RTSTRUCT gates pass**, все 114 native visual reviews выполнены.
+**62 approved**, 50 coverage_incomplete, 3 geometry_failure, 1 coverage_review,
+1 identity_review. Annotation/reference/empty statuses в этой wave =0; исходные
+reference/empty failures не выбирались.
+[Full audit](../metadata/pediatric/heart_qa_audit_v1.json),
+[reviews](../metadata/pediatric/heart_cohort_reviews_v1.json). Historical pilot
+summaries сохранены отдельно; ещё два original reference-only RT без full CT.
+Все 234 source ZIP SHA совпадают с receipts, recovery завершён, originals не менялись.
+Крупные raw/derived/ML artifacts на E через config/CLI; D-copy сохранена.
 
-Исключение/отложенный review: missing/empty Heart; unmatched SOP/frame/series;
-нерегулярные или неполные grid; открытые/смешанные contours; маска вне FOV;
-Heart на scan boundary или в пределах одного неразмеченного CT slice от неё;
-внутренние пропуски контуров; неоднозначный annotation extent. Правило одного
-среза — технический сигнал для review, не медицинский критерий полноты сердца.
-Автоматического исправления GT нет. Техническая корректность rasterization,
-полнота scan coverage и анатомическая полнота разметки — три разные проверки.
+## 7. Frozen cohort и split
 
-## 6. Dataset census и фактически полученные данные
-
-Машинный реестр: [heart_segmentation_candidates.json](../metadata/pediatric/heart_segmentation_candidates.json).
-Результаты полных studies: [heart_segmentation_pilot_qa.json](../metadata/pediatric/heart_segmentation_pilot_qa.json).
-Visual review: [heart_segmentation_visual_reviews.json](../metadata/pediatric/heart_segmentation_visual_reviews.json).
-Итоговые количества находятся в поле `summary` реестра.
-
-Пилот: девять полных CT + оригинальных RTSTRUCT. Выбор — median published CT size
-в каждой представленной age/scanner cell плюс ранее проверенный E03568A6,
-без выбора по качеству target. Есть все три модели scanner и возрастные группы.
-
-Census для всех 327 пациентов использует live SOP inventory, одну полную CT probe
-и **полный Heart contour item**. HTTP prefix читается последовательно и ограничен
-64 MiB; может включать другие предшествующие ROI и небольшой read-ahead.
-Item delimiters/length проверяются, неполный item не принимается.
-Полные CT headers/pixels и оригинальные RTSTRUCT проверены для девяти studies.
-Дополнительно скачаны два полных оригинальных RTSTRUCT для проверки reference
-failures: всего **11 original RTSTRUCT**, из них 9 с полным CT. Для остальных
-318 пациентов full-stack spacing, rasterization, coverage и suitability остаются
-`null`/pending, а не автоматически подтверждёнными. Это census metadata,
-**не завершённая preparation всей возрастной когорты**.
-
-| Проверка | Результат |
-|---|---:|
-| Возрастной metadata census | 327/327 |
-| Определение Heart / непустые Heart contours | 327 / 324 |
-| Metadata/reference gate | 322 pass, 2 review, 3 empty |
-| Scanner: LightSpeed VCT / SOMATOM Definition AS+ / Revolution CT | 134 / 128 / 65 |
-| ContrastBolusAgent указан / не указан | 301 / 26 |
-| Полный CT + RT, HU/geometry/rasterization gate | 9/9 |
-| Native mosaics + независимый NiiVue | 9/9 |
-| Pilot: неполное coverage / coverage review / annotation scope review | 3 / 1 / 5 |
-| Полностью одобрены для обучения | 0 |
-
-ContrastBolusAgent — evidence введения контраста; пустой tag оставляет статус
-unknown. Scanner metadata здесь означают модель аппарата, а не независимые центры.
-
-CT всего возрастного inventory: 54,658,909,982 bytes; RT: 7,286,328,758 bytes.
-Активное внешнее хранилище этого этапа:
-`E:/3d-heart-data/pediatric_ct_heart`. Пилот, raw originals, архивы, derived volumes,
-masks, screenshots, будущие predictions/checkpoints/meshes и outputs находятся
-там. Репозиторий остаётся в текущем worktree. Исходная копия на D сохранена.
-Перед копированием проверены все source SHA-256 и 674 прежних receipt hashes;
-после копирования SHA-256 всех 4,109 файлов совпали (включая public inventory).
-Объём копии — 3,999,915,198 bytes. Small summary:
-[heart_segmentation_storage_copy.json](../metadata/pediatric/heart_segmentation_storage_copy.json).
-Подробный file-level receipt находится в `cache/` внешнего хранилища.
-
-## 7. Предложение cohort и split
-
-Первый эксперимент: **60 полностью QA-approved пациентов** — по 20 в каждой
-рабочей возрастной группе. **42 train / 9 validation / 9 test**, patient-level,
-seed `20261006`. Точные age/scanner квоты заданы в
-[pediatric_heart_preparation_v1.json](../configs/pediatric_heart_preparation_v1.json).
-Дополнительно балансировать contrast evidence и published reformatting artifacts
-в пределах доступных case metadata. Нельзя объявлять absent ContrastBolusAgent
-доказательством non-contrast. Revolution CT не представлен в старшей age group;
-это реальное ограничение age/scanner независимости.
-
-60 — точный **предлагаемый**, не уже подтверждённый размер training cohort.
-Необходимы full-stack/coverage/annotation extent QA кандидатов и замены в той же
-stratum при исключении. После этой проверки следует создать и зафиксировать
-`configs/splits/pediatric_ct_heart_v1.json`; сейчас frozen split отсутствует,
-чтобы не выдавать metadata candidates за готовый dataset. Уже inspected cases
-исключены из будущего test: они уже использованы для разработки loader и QA.
-Квоты — цели; если full coverage не даст нужного количества в stratum, пересмотреть
-их до фиксации split и документировать причину. Три пилотных Revolution studies
-с ограниченным coverage не доказывают непригодность всех 65 случаев этого scanner.
+**60**: первые 20 каждой age group по predeclared seeded metadata queue;
+два approved young cases в reserve. Volume/beauty не входят в ranking.
+Seed 20261006, **42/9/9**, внутри каждой age group 14/3/3. Development IDs вне test.
+[Cohort](../metadata/pediatric/heart_approved_cohort_v1.json),
+[frozen split](../configs/splits/pediatric_ct_heart_v1.json) с cohort SHA.
+Public patient IDs не пересекаются; exact HU audit 114, duplicate groups 0.
+Unresolved related pair не включена как два units; clinical identity по anonymized
+данным полностью не доказуема. Frozen v1 не менять.
+Train scanner 29/12/1, held-out 6/3/0 каждый; contrast 39/3, held-out 9/0.
+Revolution и confirmed non-contrast generalization этим split не оцениваются.
 
 ## 8. Preprocessing
 
-Пока отсутствуют fitted training statistics. Диапазон -150..250 HU в screenshots —
-только окно просмотра, не training clipping. После frozen split анализировать
-train HU distributions, padding, body FOV, anisotropy и размеры Heart; выбрать
-clipping/normalization только по train, зафиксировать их один раз для val/test.
+Только 42 train: CT512XY, FOV 200/280/~500 mm, 30 Z2 mm /12 Z0.625 mm,
+standard axial IOP. Heart OAR volume 133/343/744 ml, median voxel fraction 0.844%;
+original positive/negative slices 2830/14350.
+[Statistics](../metadata/pediatric/heart_train_statistics_v1.json).
+[Frozen preprocessing](../configs/pediatric_heart_preprocessing_v1.json):
+HU **−1000..969** по train CT0.5th/body99.5th percentiles → [-1,1]; full physical
+FOV fit/pad **256×256**, **Z2 mm**, no GT crop. Image linear/mask nearest, original
+GT сохранён. Context **[-4,-2,0,2,4] mm**, central target; missing offsets
+replicate-edge +flags. Native orientation сохранена; другие IOP требуют adapter.
+Inverse XYZ/RAS affine и pixel-center mapping сохранены; future probability
+linear обратно, threshold на original grid. Train mmapcache: 10280 slices,
+1742 positive /8538 negative; epoch all-positive +equal-negative per patient =3484.
+Future held-out/inference all-slices. Ни held-out fitting, ни GT crop нет.
 
-Гипотеза для CPU baseline: axial full-FOV fit/pad до 256×256, без GT-guided crop;
-кандидат Z grid 2 mm и пять slices с physical offsets [-4,-2,0,2,4] mm.
-Окончательные spacing/FOV проверить по train до запуска. Image interpolation —
-linear, mask — nearest-neighbor. Сохранять inverse spatial transform и original
-GT grid; оценивать восстановленную prediction на original geometry.
+## 9. Архитектура
 
-## 9. Предлагаемая архитектура
+[Own model](../heart3d/ml/model.py), с нуля, **488993 parameters**. Input5,
+encoder16/32/64/128, 3 MaxPool2d(2), double Conv3×3 bias=True /GN8 /ReLU;
+decoder bilinear до skip shape, concat +double block, output Conv1×1→1 logits.
+Готовая segmentation network не импортируется. CPU backend реально проверен,
+CUDA=false, Radeon не проверен. Odd H/W и target output shape протестированы.
 
-Собственная **2.5D U-Net** на PyTorch с нуля: 5 input slices → binary mask центра.
-Число каналов 16/32/64/128, три max-pool; в каждом block две Conv2d 3×3 +
-GroupNorm(8) + ReLU. Decoder: bilinear upsample, concatenate skip, такой же block.
-Выход Conv2d 16→1, logits. Расчётный размер при bias-enabled convolutions:
-488,993 parameters (1.87 MiB FP32 weights). Код модели пока не реализован.
+## 10. Loss
 
-Причина выбора: на текущем компьютере не подтверждён CUDA device. 3D U-Net
-целесообразен отдельным экспериментом при наличии поддерживаемого GPU с достаточной
-памятью; чужая готовая segmentation network и nnU-Net не подставляются.
+[Implemented losses](../heart3d/ml/losses.py): BCEWithLogits, own soft Dice, combined1/1.
+Для p=sigmoid(logits), epsilon=1e−6:
 
-## 10. Loss — план сравнения
+`BCE = -mean[y log(p)+(1-y) log(1-p)]` (stable BCEWithLogits).
 
-Три сопоставимых запусках с одним split и бюджетом: BCEWithLogits, soft Dice,
-BCE + Dice. Для p=sigmoid(logits), y∈{0,1}:
+`DiceLoss = mean_batch[1-(2 sum(p*y)+epsilon)/(sum(p)+sum(y)+epsilon)]`.
 
-`BCE = -mean[y*log(p)+(1-y)*log(1-p)]`
+Empty targets сохранены, epsilon smoothing; BCE даёт основной background signal.
+Synthetic tests passed; benchmark combined, три full experiments не запускались.
 
-`DiceLoss = 1-(2*sum(p*y)+epsilon)/(sum(p)+sum(y)+epsilon)`
+## 11. Augmentation
 
-`Combined = BCE + DiceLoss`.
+Train only: rotation ±5°, scale 0.95..1.05, normalized shift ±0.03 (~29.5 HU),
+noise sigma 0.01 (~9.85 HU), clamp. Shared spatial transform пяти planes и target,
+image bilinear/mask nearest. Flips запрещены guard. Seed/epoch/index deterministic;
+val/test без augmentation.
 
-Реализовать Dice внутри проекта; вычислять per sample, затем mean. Отдельно
-определить обработку empty-target slices, чтобы отрицательные slices не исчезали
-из эксперимента. Формулы здесь — предложение, loss code ещё не выполнялся.
+## 12. Training setup
 
-## 11. Augmentation — план
+[Config](../configs/pediatric_heart_baseline_v1.json), own bounded optimizer loop
+`heart3d.ml.benchmark`: CPU6 threads, batch2, workers0, Adam0.001, no scheduler,
+seed20261006. Реально 5 warmup +50 measured +20 fixed-train sanity =**75 updates**.
+History/config/environment/resources/last_benchmark.pt на E. Full train/validation
+loop best/last — следующий отдельно разрешаемый этап. Benchmark weights не final
+model; full baseline должен стартовать с нуля.
 
-Небольшие rotations/scaling синхронно для CT и mask, image linear/mask nearest;
-малый intensity shift/noise. Одинаковое spatial преобразование всех пяти input
-slices. Без flips. Параметры зафиксировать после train analysis; validation/test
-не augment. Не обрезать систематически границу Heart.
+## 13. Hardware и измеренный бюджет
 
-## 12. Training setup — следующий этап
+Ryzen5 4500, 6 physical/12 logical, RAM~16 GiB, Windows11, Python3.14.4,
+torch2.14.1+cpu. **0.4150 sec/batch**, p95 0.4497, **4.819 samples/sec**;
+peak sampled RSS **624 MB**, CPU579% (~48.3% machine), min available RAM7.69 GB,
+checkpoint5.95 MB. [Measured summary](../metadata/pediatric/heart_cpu_benchmark_v1.json).
+1742 batches/epoch → **12.05 min**, 30 training epochs → **6.02 h**, linear
+extrapolation **без validation/save overhead**. Full wall time больше,
+эти составляющие не измерены. E~281.48 GB free, reserve80 decimalGB;
+require_space перед allocations, автоматического удаления нет.
 
-После data gate и отдельного согласования: собственный `heart3d.ml.train`, CPU,
-batch 2 (fallback 1), workers 0, deterministic seed; 30 epochs — начальный
-план, Adam, learning rate/scheduler по development validation. Все три loss
-варианта сравнить при одинаковом training budget. Сохранять best-validation/last
-checkpoints, history, config, environment, split hash. Test не использовать для
-подбора clipping, learning rate, threshold или postprocessing.
+## 14. Метрики будущего baseline
 
-Многочасовой запуск не сделан. До измерения скорости PyTorch на одном коротком
-train-only benchmark нельзя надёжно обещать duration целого эксперимента.
+Dice/IoU/precision/recall per patient и age/scanner/contrast/spacing aggregates.
+HD95/ASSD mm только confirmed geometry, explicit empty-mask/surface conventions.
+**Test evaluation не было**, scientific scores отсутствуют.
 
-## 13. Hardware и budget
+## 15. Технические результаты
 
-Windows, AMD Ryzen 5 4500, 6 cores / 12 threads, 16 GB RAM. Win32 сообщает
-AMD Radeon RX 580 2048SP и около 4 GB AdapterRAM; это не проверка фактической
-VRAM или работоспособности PyTorch backend. `nvidia-smi` и CUDA GPU не найдены,
-PyTorch в использованном environment отсутствует. GPU training не предполагается.
+**120 tests passed**, 320 прежних NumPy/skimage warnings. DICOM/HU/RAS-LPS,
+inventory/references/planes, rasterization, own model/losses/gradients, physical
+neighbors, seed/indexing, patient isolation, shared augmentation, inverse landmarks.
+Three-age train preprocessing mosaic просмотрен, context/central GT aligned.
+114 independent reader checks HU difference0; rasterizer Dice min0.9999947272818347,
+nonboundary differences0 — conversion agreement, не ML metric.
+Fixed2 train slices loss **1.4544→1.0210→0.8787**, finite gradients/weight updates,
+no NaN/Inf. Это technical learning sanity, не generalization.
 
-Полный pilot CT array — float32, mask — uint8; конкретные MiB и время конвертации
-есть в pilot QA. Самый крупный выбранный stack содержит 665 slices:
-665 MiB CT + 166.25 MiB mask. Независимые reader/labels/stencil требуют временных
-копий. Практический preparation budget: один volume одновременно, 3–5 GB RAM
-с запасом, отдельно до 8 lightweight network workers. Training 2.5D: ориентир
-4–6 GB CPU RAM при batch 2 и дисковом/lazy cache; это оценка, не измеренное обучение.
+## 16. Failures
 
-На E перед копированием было **333.92 GB**, после — **329.90 GB** свободного места
-(около 307.25 GiB). Минимальный свободный резерв выбран **80 GB**, decimal units.
-Обновлённый бюджет:
-
-| Компонент полной возрастной когорты | Бюджет, GB |
-|---|---:|
-| Published CT + RTSTRUCT | 61.95 |
-| Download archives, консервативное повторное резервирование raw размера | 61.95 |
-| Original float32 CT + uint8 mask без сжатия | 136.00 |
-| Вместо несжатого варианта: лимит сжатых prepared volumes/masks | 80.00 |
-| Дополнительный preprocessing cache | 10.00 |
-| Predictions/checkpoints/meshes/screenshots/outputs | 15.00 |
-
-136 GB рассчитаны по 103,760 published CT slices и 512×512 из всех CT probes;
-полная постоянность этих размеров подтверждена только на девяти full stacks.
-Архивный бюджет — резерв, а не измеренный размер всех ZIP. Несжатый вариант с
-архивами и 25 GB рабочих artifacts потребовал бы дополнительно **284.89 GB**,
-оставив около 45 GB: он не соответствует резерву 80 GB и не предлагается.
-
-Сжатый вариант с указанными лимитами резервирует **228.89 GB** дополнительно
-после текущей копии; это консервативно повторно считает часть существующих данных.
-Остаётся около **101 GB**. Лимит 80 GB для prepared — бюджет, не обещание степени
-сжатия: контролировать фактический размер и остановиться/пересчитать при его
-превышении. Перед каждым массовым скачиванием повторить estimate по выбранным UID
-и реальному free space. Pilot downloader проверяет запас до запуска и во время
-download/extraction (`--reserve-gb`, default 80). Старые данные не удаляются.
-Полные float32 volumes не cache в RAM. Подробные оценки:
-[heart_segmentation_storage_budget.json](../metadata/pediatric/heart_segmentation_storage_budget.json).
-
-## 14. Метрики — будущая оценка
-
-Dice, IoU, precision, recall per patient на original CT grid; aggregate и
-разбивка age/scanner/contrast evidence/spacing/coverage. HD95 и ASSD в mm только
-для cases с подтверждённой geometry; явно определить surface sampling, directed
-aggregation и empty-mask convention. Никаких выдуманных test scores сейчас нет.
-
-## 15. Результаты подготовительного этапа
-
-Синтетические проверки включают oblique/anisotropic landmarks, HU, RAS/LPS,
-unordered slices, duplicates/missing inventory, irregular spacing, ROI mismatch,
-XOR hole, off-plane/out-of-FOV contours, implicit/explicit stream и truncation.
-**78 tests passed** (включая 5 storage integrity/reserve tests; GUI tests не
-запускались; существующие NumPy/scikit-image
-deprecation warnings сохранены). Независимое чтение девяти реальных CT:
-SimpleITK ImageSeriesReader с собственным GDCM discovery/sorting; проверены affine,
-dimensions и все HU pixels. Во всех девяти max HU difference = 0.
-Независимая rasterization: vtkPolyDataToImageStencil;
-различия допускаются только на voxel boundary, порог Dice ≥0.99. Фактический
-Dice двух rasterizers на пилоте: **0.999994727–1.0**, вне границы различий нет.
-Максимальный contour-to-slice residual: **0.005 mm**.
-Это **agreement двух способов конвертации**, не ML segmentation metric.
-
-## 16. Failure cases и незавершённые gates
-
-BEC712BF, 4C1A38AE, 813E523C: Heart на последних CT slices 164/164, 184/184,
-188/188 соответственно, визуально superior coverage недостаточно; исключены
-из whole Heart cohort. Masks не достраивались.
-E03568A6: Heart заканчивается за один CT slice (2 mm) до верхней границы.
-Контакт с voxel face отсутствует, но полное coverage не подтверждено; требуется
-review coverage и исходной аннотации.
-Пять остальных пилотных cases имеют плоскую cranial границу исходного Heart ROI.
-Она совпадает с source contours; нужно согласовать объём OAR target, а не
-автоматически объявлять это полной анатомической разметкой или исправлять.
-Reference failures подтверждены по **полным оригинальным RTSTRUCT**:
-272B6C5D — 211 global references и **17 Heart references** отсутствуют в
-published CT inventory; 34ECBB32 — 147 global и **8 Heart references**.
-Heart item и global references совпадают с census extracts; это не ошибка
-stream extraction. Причина несоответствия на стороне опубликованной пары требует
-выяснения; не подменять SOP ближайшими slices. Отчёт:
-[heart_segmentation_reference_review.json](../metadata/pediatric/heart_segmentation_reference_review.json).
-Три пустых Heart: наличие ROI definition не означает наличие segmentation.
+50 truncated scans исключены без repair; E03568A6 coverage review.
+376/37058120/EB1DCBAA irregular spacing rejected. 176261A0 identity review:
+похож на92891A2F, voxels различаются, identity unknown; только92891A2F включён.
+Source planar caps сохранены в OAR target.
+Historical full-RT failures:272B6C5D missing17 Heart references, 34ECBB32 missing8:
+[evidence](../metadata/pediatric/heart_segmentation_reference_review.json).
+Они и3 empty не candidates. Interrupted download cache сохранён/recovered,
+OS root lock предотвращает overlap; originals untouched, resolution в readiness.
 
 ## 17. Ground Truth vs Prediction
 
-Сейчас доступен независимый QA viewer **CT + GT Heart**, axial и multiplanar,
-toggle overlay. `scripts/view_pediatric_ct_qa.py` слушает только loopback и
-выдаёт только allowlisted prepared files. В `--reviews` можно передать сохранённые
-review statuses. NiiVue — независимый NIfTI viewer, визуальная техническая проверка
-не является clinical annotation sign-off. Нужен интернет для pinned NiiVue
-0.69.0 CDN. Нативный viewer проекта не переделан. Prediction/Comparison режимы
-добавлять после реального baseline; пока prediction отсутствует.
+Independent NiiVue `scripts/view_pediatric_ct_qa.py`: loopback, allowlisted CT+GT,
+pinned CDN; native mosaics reproducible. Benchmark predictions не экспортировались.
+GT/Prediction/Comparison и test masks — после отдельно разрешённого full baseline.
 
 ## 18. 3D comparison
 
-GT vs predicted surfaces, volume, area, components, distances и topology warnings
-относятся к следующему этапу после training/inference. Текущий multiclass mesh
-pipeline имеет label 1=LV; binary Heart нельзя выдавать за LV. При интеграции
-нужен явный Heart label mapping. Сейчас сравнительных surfaces нет.
+GT/Prediction surfaces/volume/area/components/distances/topology пока отсутствуют.
+После training/inference existing mask→mesh с explicit binary Heart mapping;
+старый label1=LV нельзя выдавать за Heart. Physical units только verified geometry.
 
-## 19. Ограничения
+## 19. Ограничения и рекомендация
 
-OAR scope отличается от специализированного cardiac whole-heart protocol;
-coverage и clinical status неоднородны; reported age имеет ограниченную точность;
-одна институция, три scanner models, age/scanner confounding, unknown contrast
-при пустых tags. Metadata-level pass не заменяет full volume QA. Независимая
-техническая QA не является медицинской переоценкой экспертных контуров.
+OAR extent не гарантирует полную chamber/vascular anatomy, technical approval
+не clinician sign-off; clinical status unknown, reported age limited, age17 нет.
+Coverage selection меняет scanner/protocol distribution, held-out два scanner models,
+confirmed non-contrast нет. Public IDs/hashes не доказывают все repeat identities.
+**Технически data/model готовы** к full source-OAR baseline, CPU/RAM/storage
+достаточны. Нужно отдельное согласование full training и полноценный
+train/validation loop с original-grid evaluation/failure review. Clinical reasoning
+этим экспериментом не валидируется; полное обучение здесь не выполнялось.
 
 ## 20. Воспроизведение и следующий этап
 
-Python dependencies: `requirements-lock.txt` + pinned `requirements-pediatric.txt`.
-Raw data path задаётся вне Git. Пример PowerShell из нового worktree:
+Pinned requirements-lock/pediatric/ml. Current Python
+`D:/codexProjects/3d-hearts/.venv/Scripts/python.exe`; external pydicom PYTHONPATH
+`D:/codexProjects/3d-hearts/data/pediatric_audit/python_deps`. Data paths config/CLI.
 
 ```powershell
-python -m pip install -r requirements-lock.txt -r requirements-pediatric.txt
-$dataRoot = 'E:/3d-heart-data/pediatric_ct_heart'
-# Текущий cache уже содержит cache/tcia_series_v1.json.
-# Для новой snapshot выбрать новый путь и использовать его в --series:
-# python scripts/fetch_tcia_inventory.py --out "$dataRoot/cache/tcia_series_v2.json"
-python scripts/fetch_pediatric_ct_pilot.py --registry metadata/pediatric/registry.json --series "$dataRoot/cache/tcia_series_v1.json" --data $dataRoot --reserve-gb 80
-python scripts/prepare_pediatric_ct_pilot.py --data $dataRoot
-python scripts/census_pediatric_ct_heart.py --registry metadata/pediatric/registry.json --series "$dataRoot/cache/tcia_series_v1.json" --data $dataRoot --out "$dataRoot/census.json" --workers 8
-python scripts/audit_pediatric_rt_references.py --data $dataRoot --out metadata/pediatric/heart_segmentation_reference_review.json
-python scripts/export_pediatric_heart_census.py --data $dataRoot --reviews metadata/pediatric/heart_segmentation_visual_reviews.json --out metadata/pediatric/heart_segmentation_candidates.json
-python scripts/view_pediatric_ct_qa.py --data $dataRoot --reviews metadata/pediatric/heart_segmentation_visual_reviews.json
-New-Item -ItemType Directory -Path "$dataRoot/temporary" -Force | Out-Null
-# Использовать новый basetemp для каждого запуска: pytest удаляет существующий basetemp.
-python -m pytest tests --ignore=tests/test_viewer.py --ignore=tests/test_interactive_gui.py --basetemp "$dataRoot/temporary/pytest_run_unique" -q
+$dataRoot='E:/3d-heart-data/pediatric_ct_heart'
+python -m heart3d.ml.prepare --config configs/pediatric_heart_baseline_v1.json --data $dataRoot --partition train
+python -m heart3d.ml.benchmark --config configs/pediatric_heart_baseline_v1.json --data $dataRoot --batches 50 --run-name new_unique_bounded_run
+python -m pytest -q --basetemp "$dataRoot/temporary/pytest_new_unique"
 ```
 
-Download cache содержит SHA-256 receipts; ZIP CRC и отсутствие перезаписи
-отличающихся DICOM проверяются. Inventory snapshot не перезаписывается; при
-обновлении source использовать новый versioned путь и сравнить case metadata.
-Оригинальные данные не входят в Git. Для текущего запуска использован существующий
-Python 3.14 environment и отдельная external installation pydicom 3.0.2.
-
-Диск задаётся в `storage.data_root` конфигурации или через `--data`; E: не зашит
-в Python-код. Config относит все крупные artifacts к одному data root.
-Скопированные старые `pilot_qa.json` сохраняют исторический absolute output path;
-viewer/exporter/preparation используют CLI root и не читают данные по этому полю.
-Новые reports используют `output_directory_relative`. CLI verified copy:
-
-```powershell
-python scripts/copy_pediatric_ct_data.py --source 'D:/codexProjects/3d-hearts/data/pediatric_ct_heart' --destination $dataRoot --reserve-gb 80 --summary metadata/pediatric/heart_segmentation_storage_copy.json
-```
-
-Копирование не перезаписывает отличающиеся destination files; повторный запуск
-проверяет и переиспользует совпадающие файлы. File-level receipts остаются вне Git.
-Для inventory передать `--inventory` с исходным snapshot; он копируется в `cache/`.
-
-Следующий конкретный шаг: review annotation extent и coverage, выбрать 60
-кандидатов, провести полный gate для каждого, зафиксировать patient split и
-train-only preprocessing, реализовать предложенную модель и короткий resource
-benchmark. Затем отдельное согласование многочасового training. CT/MRI joint
-training, диагнозы, multiclass segmentation и СППР на этом этапе отсутствуют.
+Это bounded reproduction, не разрешение full training. Полные команды/artifacts
+в readiness. Frozen v1 не менять, approved reports не refresh, originals не
+перезаписывать, data/weights не коммитить. Следующий отдельно согласуемый шаг:
+full train/validation, один untouched-test pass, failures, GT/Prediction viewer/3D.
