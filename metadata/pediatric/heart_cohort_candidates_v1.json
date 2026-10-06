@@ -1,6 +1,6 @@
 {
   "seed": 20261006,
-  "registry_sha256": "ffa334e17d9add71a95394151b37b3858648a06ec06221172124c784851c793c",
+  "registry_sha256": "d3c8ff9608b01ec1b0e0386fe45486c0b5487fbfdf06e1ec3854851079e07799",
   "selection_uses_mask_volume_or_visual_quality": false,
   "development_patient_ids": [
     "Pediatric-CT-SEG-ED076087",

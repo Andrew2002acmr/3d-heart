@@ -205,4 +205,5 @@ def validate_registry(rows):
 
 def write_json(path, data):
     Path(path).parent.mkdir(parents=True, exist_ok=True)
-    Path(path).write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    # Match Git's *.json eol=lf policy so frozen manifest hashes survive checkout.
+    Path(path).write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8", newline="\n")
