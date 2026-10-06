@@ -3,6 +3,7 @@ import argparse
 import json
 from pathlib import Path
 import subprocess
+import sys
 from heart3d.ml.bundle import pack, verify
 from heart3d.ml.evaluate import evaluate
 from heart3d.ml.gpu_benchmark import benchmark
@@ -24,7 +25,7 @@ def main():
     train(a.config, a.run_name, receipt_dir/'summary.json', root)
     # Hyperparameters and threshold are already fixed. Test is evaluated once.
     evaluate(a.config, checkpoints/'best.pt', output/'test', 'test', root, 'cuda')
-    freeze = subprocess.check_output(['python','-m','pip','freeze'], text=True)
+    freeze = subprocess.check_output([sys.executable,'-m','pip','freeze'], text=True)
     (output/'pip_freeze.txt').write_text(freeze, encoding='utf-8')
     paths = [p.relative_to(root).as_posix() for directory in (output, checkpoints, receipt_dir)
              for p in directory.rglob('*') if p.is_file()]
