@@ -8,6 +8,9 @@
   "desired_split": {"train": 42, "validation": 9, "test": 9},
   "split_unit": "patient",
   "split_is_frozen": false,
+  "quota_policy":"proposed targets; revise unavailable strata based on full scan coverage QA before freezing split",
+  "development_pilot_excluded_from_test":true,
+  "development_pilot_patient_ids":["Pediatric-CT-SEG-ED076087","Pediatric-CT-SEG-E66B16E4","Pediatric-CT-SEG-5F74CD3E","Pediatric-CT-SEG-BEC712BF","Pediatric-CT-SEG-8FAE886E","Pediatric-CT-SEG-32C20E78","Pediatric-CT-SEG-4C1A38AE","Pediatric-CT-SEG-813E523C","Pediatric-CT-SEG-E03568A6"],
   "stratum_targets": [
     {"age_group":"2-5","scanner":"SOMATOM Definition AS+","patients":8},
     {"age_group":"2-5","scanner":"LightSpeed VCT","patients":7},

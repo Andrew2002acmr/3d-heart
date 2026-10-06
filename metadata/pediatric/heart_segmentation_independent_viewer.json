@@ -3,15 +3,52 @@
   "module_url": "https://cdn.jsdelivr.net/npm/@niivue/niivue@0.69.0/+esm",
   "observations": [
     {
+      "patient_id": "Pediatric-CT-SEG-32C20E78",
+      "status": "Pediatric-CT-SEG-32C20E78 loaded. Original CT grid; mm verified from DICOM; Heart GT only. annotation_extent_requires_review",
+      "location": ""
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-4C1A38AE",
+      "status": "Pediatric-CT-SEG-4C1A38AE loaded. Original CT grid; mm verified from DICOM; Heart GT only. excluded_incomplete_heart_coverage",
+      "location": ""
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-5F74CD3E",
+      "status": "Pediatric-CT-SEG-5F74CD3E loaded. Original CT grid; mm verified from DICOM; Heart GT only. annotation_extent_requires_review",
+      "location": ""
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-813E523C",
+      "status": "Pediatric-CT-SEG-813E523C loaded. Original CT grid; mm verified from DICOM; Heart GT only. excluded_incomplete_heart_coverage",
+      "location": ""
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-8FAE886E",
+      "status": "Pediatric-CT-SEG-8FAE886E loaded. Original CT grid; mm verified from DICOM; Heart GT only. annotation_extent_requires_review",
+      "location": ""
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-BEC712BF",
+      "status": "Pediatric-CT-SEG-BEC712BF loaded. Original CT grid; mm verified from DICOM; Heart GT only. excluded_incomplete_heart_coverage",
+      "location": ""
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-E03568A6",
+      "status": "Pediatric-CT-SEG-E03568A6 loaded. Original CT grid; mm verified from DICOM; Heart GT only. coverage_and_annotation_extent_requires_review",
+      "location": ""
+    },
+    {
       "patient_id": "Pediatric-CT-SEG-E66B16E4",
-      "status": "Pediatric-CT-SEG-E66B16E4 loaded. Original CT grid; mm verified from DICOM; Heart GT only. geometry_passed_visual_QA_pending",
+      "status": "Pediatric-CT-SEG-E66B16E4 loaded. Original CT grid; mm verified from DICOM; Heart GT only. annotation_extent_requires_review",
       "location": ""
     },
     {
       "patient_id": "Pediatric-CT-SEG-ED076087",
-      "status": "Pediatric-CT-SEG-ED076087 loaded. Original CT grid; mm verified from DICOM; Heart GT only. geometry_passed_visual_QA_pending",
+      "status": "Pediatric-CT-SEG-ED076087 loaded. Original CT grid; mm verified from DICOM; Heart GT only. annotation_extent_requires_review",
       "location": ""
     }
   ],
-  "scope": "first two pilot studies only; remaining viewer checks pending"
+  "date": "2026-10-06",
+  "scope": "all nine full pilot studies",
+  "technical_review_scope": "Codex visual inspection of CT/GT alignment and coverage; no clinician annotation sign-off"
 }

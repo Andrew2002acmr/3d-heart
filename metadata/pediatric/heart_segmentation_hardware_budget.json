@@ -14,7 +14,7 @@
   "torch_installed_at_audit":false,
   "OS":"Windows",
   "python":"3.14",
-  "free_D_bytes_at_checkpoint":23207661568,
+  "free_D_bytes_at_checkpoint":28065247232,
   "preparation_parallel_full_volumes":1,
   "preparation_RAM_budget_GiB":[3,5],
   "lightweight_census_max_network_workers":8,

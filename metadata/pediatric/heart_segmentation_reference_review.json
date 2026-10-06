@@ -1,0 +1,54 @@
+{
+  "date": "2026-10-06",
+  "method": "original full RTSTRUCT vs extracted complete Heart item and published CT SOP inventory",
+  "records": [
+    {
+      "patient_id": "Pediatric-CT-SEG-272B6C5D",
+      "source_RT_series_uid": "1.3.6.1.4.1.14519.5.2.1.1.17305113025728199346750740188024809813",
+      "original_RT_SOP_uid": "1.3.6.1.4.1.14519.5.2.1.1.11681899263363834317763376752261121060",
+      "original_full_RTSTRUCT_downloaded": true,
+      "original_archive_receipt": {
+        "url": "https://services.cancerimagingarchive.net/nbia-api/services/v1/getImage?SeriesInstanceUID=1.3.6.1.4.1.14519.5.2.1.1.17305113025728199346750740188024809813",
+        "bytes": 3003358,
+        "sha256": "8102ac6f8db491d0a3b90c6278d3996efc8584d0ef6f996ed2f5df57c140aa3c",
+        "original_zip_crc_verified": true
+      },
+      "full_original_Heart_matches_extract": true,
+      "full_original_global_references_match_extract": true,
+      "published_CT_instances": 211,
+      "original_global_RT_referenced_instances": 422,
+      "missing_global_RT_SOP_reference_count": 211,
+      "original_Heart_referenced_instances": 35,
+      "missing_Heart_SOP_reference_count": 17,
+      "contours": 35,
+      "full_CT_downloaded": false,
+      "status": "requires_source_reference_review",
+      "reference_remapping_performed": false,
+      "healthy_status": "unknown"
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-34ECBB32",
+      "source_RT_series_uid": "1.3.6.1.4.1.14519.5.2.1.1.25927210562287345060498125954444953116",
+      "original_RT_SOP_uid": "1.3.6.1.4.1.14519.5.2.1.1.99838631322318487911866516480874083683",
+      "original_full_RTSTRUCT_downloaded": true,
+      "original_archive_receipt": {
+        "url": "https://services.cancerimagingarchive.net/nbia-api/services/v1/getImage?SeriesInstanceUID=1.3.6.1.4.1.14519.5.2.1.1.25927210562287345060498125954444953116",
+        "bytes": 2631914,
+        "sha256": "39fd73915515f67960089ab17685b65a36ce978a38ba2ff80a387c38d07c98a5",
+        "original_zip_crc_verified": true
+      },
+      "full_original_Heart_matches_extract": true,
+      "full_original_global_references_match_extract": true,
+      "published_CT_instances": 147,
+      "original_global_RT_referenced_instances": 294,
+      "missing_global_RT_SOP_reference_count": 147,
+      "original_Heart_referenced_instances": 16,
+      "missing_Heart_SOP_reference_count": 8,
+      "contours": 16,
+      "full_CT_downloaded": false,
+      "status": "requires_source_reference_review",
+      "reference_remapping_performed": false,
+      "healthy_status": "unknown"
+    }
+  ]
+}

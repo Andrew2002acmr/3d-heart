@@ -1,265 +1,5 @@
 {
-  "state": "paused_by_user",
   "date": "2026-10-06",
-  "summary": {
-    "state": "paused_by_user",
-    "date": "2026-10-06",
-    "census_completed_patients": 171,
-    "census_expected_patients": 327,
-    "census_remaining_patients": 156,
-    "census_status_counts": {
-      "metadata_candidate_full_QA_pending": 166,
-      "requires_review": 2,
-      "excluded": 3
-    },
-    "full_CT_and_RTSTRUCT_downloaded": 9,
-    "full_studies_converted_and_independently_checked": 8,
-    "pilot_visual_reviews_recorded": 8,
-    "training_executed": false,
-    "final_split_frozen": false,
-    "whole_cohort_preparation_complete": false
-  },
-  "selection": {
-    "method": "median-size CT per represented age/scanner cell + previously probed case; no outcome selection",
-    "cases": [
-      {
-        "patient_id": "Pediatric-CT-SEG-ED076087",
-        "age": 14.0,
-        "age_group": "12-17",
-        "scanner": "LightSpeed VCT",
-        "ct_series_uid": "1.3.6.1.4.1.14519.5.2.1.335901926764605993922625736395545500480",
-        "rt_series_uid": "1.3.6.1.4.1.14519.5.2.1.1.16090748909761603739885130563006068629",
-        "expected_slices": 625,
-        "published_CT_bytes": 329226800,
-        "published_RT_bytes": 50022236
-      },
-      {
-        "patient_id": "Pediatric-CT-SEG-E66B16E4",
-        "age": 16.0,
-        "age_group": "12-17",
-        "scanner": "SOMATOM Definition AS+",
-        "ct_series_uid": "1.3.6.1.4.1.14519.5.2.1.196220101365696730537230959989468232406",
-        "rt_series_uid": "1.3.6.1.4.1.14519.5.2.1.283411104895308677562620230326384957946",
-        "expected_slices": 311,
-        "published_CT_bytes": 163844644,
-        "published_RT_bytes": 23124548
-      },
-      {
-        "patient_id": "Pediatric-CT-SEG-5F74CD3E",
-        "age": 3.0,
-        "age_group": "2-5",
-        "scanner": "LightSpeed VCT",
-        "ct_series_uid": "1.3.6.1.4.1.14519.5.2.1.246284951059396540404388316286116658544",
-        "rt_series_uid": "1.3.6.1.4.1.14519.5.2.1.38594735141632724572433012097365685457",
-        "expected_slices": 192,
-        "published_CT_bytes": 101139538,
-        "published_RT_bytes": 14314846
-      },
-      {
-        "patient_id": "Pediatric-CT-SEG-BEC712BF",
-        "age": 3.0,
-        "age_group": "2-5",
-        "scanner": "Revolution CT",
-        "ct_series_uid": "1.3.6.1.4.1.14519.5.2.1.133742245714270925254982946723351496764",
-        "rt_series_uid": "1.3.6.1.4.1.14519.5.2.1.110148733280183048267163655999762366898",
-        "expected_slices": 165,
-        "published_CT_bytes": 86917104,
-        "published_RT_bytes": 11183010
-      },
-      {
-        "patient_id": "Pediatric-CT-SEG-8FAE886E",
-        "age": 2.0,
-        "age_group": "2-5",
-        "scanner": "SOMATOM Definition AS+",
-        "ct_series_uid": "1.3.6.1.4.1.14519.5.2.1.335931304674189039960160909021581061457",
-        "rt_series_uid": "1.3.6.1.4.1.14519.5.2.1.1.32892057006391638009924162619097800350",
-        "expected_slices": 179,
-        "published_CT_bytes": 94285838,
-        "published_RT_bytes": 11858554
-      },
-      {
-        "patient_id": "Pediatric-CT-SEG-32C20E78",
-        "age": 6.0,
-        "age_group": "6-11",
-        "scanner": "LightSpeed VCT",
-        "ct_series_uid": "1.3.6.1.4.1.14519.5.2.1.86989932068974098157998750958882348318",
-        "rt_series_uid": "1.3.6.1.4.1.14519.5.2.1.269720998236324202778245630189280125254",
-        "expected_slices": 665,
-        "published_CT_bytes": 350301116,
-        "published_RT_bytes": 47805406
-      },
-      {
-        "patient_id": "Pediatric-CT-SEG-4C1A38AE",
-        "age": 10.0,
-        "age_group": "6-11",
-        "scanner": "Revolution CT",
-        "ct_series_uid": "1.3.6.1.4.1.14519.5.2.1.85212413426501195284723037808586368402",
-        "rt_series_uid": "1.3.6.1.4.1.14519.5.2.1.1.15203893650494675513644774815964198841",
-        "expected_slices": 185,
-        "published_CT_bytes": 97448288,
-        "published_RT_bytes": 12706130
-      },
-      {
-        "patient_id": "Pediatric-CT-SEG-813E523C",
-        "age": 9.0,
-        "age_group": "6-11",
-        "scanner": "SOMATOM Definition AS+",
-        "ct_series_uid": "1.3.6.1.4.1.14519.5.2.1.225920974907500136628548184850125785091",
-        "rt_series_uid": "1.3.6.1.4.1.14519.5.2.1.22037671289077092041457165566581841178",
-        "expected_slices": 189,
-        "published_CT_bytes": 99574194,
-        "published_RT_bytes": 14252608
-      },
-      {
-        "patient_id": "Pediatric-CT-SEG-E03568A6",
-        "age": 4.0,
-        "age_group": "2-5",
-        "scanner": "Revolution CT",
-        "ct_series_uid": "1.3.6.1.4.1.14519.5.2.1.5863853179332742362135462579472262159",
-        "rt_series_uid": "1.3.6.1.4.1.14519.5.2.1.166504774202857411359258367562254852392",
-        "expected_slices": 175,
-        "published_CT_bytes": 92184272,
-        "published_RT_bytes": 11050258
-      }
-    ]
-  },
-  "original_download_receipts": [
-    {
-      "patient_id": "Pediatric-CT-SEG-32C20E78",
-      "CT": {
-        "url": "https://services.cancerimagingarchive.net/nbia-api/services/v1/getImage?SeriesInstanceUID=1.3.6.1.4.1.14519.5.2.1.86989932068974098157998750958882348318",
-        "bytes": 170511304,
-        "sha256": "9f50a60881fce5480fb3856c8c786b7d2b9a0bea81f774e679e092880b6cbb12",
-        "original_zip_crc_verified": true
-      },
-      "RTSTRUCT": {
-        "url": "https://services.cancerimagingarchive.net/nbia-api/services/v1/getImage?SeriesInstanceUID=1.3.6.1.4.1.14519.5.2.1.269720998236324202778245630189280125254",
-        "bytes": 10986224,
-        "sha256": "4c8fbf8eeb728ce982cf3b8d8310c5873997b75966224cf6bd07d8ffbc119c23",
-        "original_zip_crc_verified": true
-      }
-    },
-    {
-      "patient_id": "Pediatric-CT-SEG-4C1A38AE",
-      "CT": {
-        "url": "https://services.cancerimagingarchive.net/nbia-api/services/v1/getImage?SeriesInstanceUID=1.3.6.1.4.1.14519.5.2.1.85212413426501195284723037808586368402",
-        "bytes": 43343886,
-        "sha256": "21a64a69dc8c0288402c5d94ab5ab7df362ee72f4563c1c9e1b0fdc0a75e29ed",
-        "original_zip_crc_verified": true
-      },
-      "RTSTRUCT": {
-        "url": "https://services.cancerimagingarchive.net/nbia-api/services/v1/getImage?SeriesInstanceUID=1.3.6.1.4.1.14519.5.2.1.1.15203893650494675513644774815964198841",
-        "bytes": 3025411,
-        "sha256": "f3f5fba3775773babb9aa37503933cb84851cb60e03b69e68c209ac9bcc8d1ea",
-        "original_zip_crc_verified": true
-      }
-    },
-    {
-      "patient_id": "Pediatric-CT-SEG-5F74CD3E",
-      "CT": {
-        "url": "https://services.cancerimagingarchive.net/nbia-api/services/v1/getImage?SeriesInstanceUID=1.3.6.1.4.1.14519.5.2.1.246284951059396540404388316286116658544",
-        "bytes": 49665201,
-        "sha256": "4fcb661a152d4af5872c31161f6895b1957ef3e5c7e61f777a0ca1f2c878dc7b",
-        "original_zip_crc_verified": true
-      },
-      "RTSTRUCT": {
-        "url": "https://services.cancerimagingarchive.net/nbia-api/services/v1/getImage?SeriesInstanceUID=1.3.6.1.4.1.14519.5.2.1.38594735141632724572433012097365685457",
-        "bytes": 3527042,
-        "sha256": "83125c4f8abac4409469f1d35e3558c13f5a3fe2f2276849d359c9931e0d0cb3",
-        "original_zip_crc_verified": true
-      }
-    },
-    {
-      "patient_id": "Pediatric-CT-SEG-813E523C",
-      "CT": {
-        "url": "https://services.cancerimagingarchive.net/nbia-api/services/v1/getImage?SeriesInstanceUID=1.3.6.1.4.1.14519.5.2.1.225920974907500136628548184850125785091",
-        "bytes": 49368629,
-        "sha256": "07343660055beeef39c38f550444a13c6f3c260c094158c50b63a566fc181e0c",
-        "original_zip_crc_verified": true
-      },
-      "RTSTRUCT": {
-        "url": "https://services.cancerimagingarchive.net/nbia-api/services/v1/getImage?SeriesInstanceUID=1.3.6.1.4.1.14519.5.2.1.22037671289077092041457165566581841178",
-        "bytes": 3374478,
-        "sha256": "b04e65f07d16b01ac1982207136eebb0a383420f6ba412e54bf3a92181edbd16",
-        "original_zip_crc_verified": true
-      }
-    },
-    {
-      "patient_id": "Pediatric-CT-SEG-8FAE886E",
-      "CT": {
-        "url": "https://services.cancerimagingarchive.net/nbia-api/services/v1/getImage?SeriesInstanceUID=1.3.6.1.4.1.14519.5.2.1.335931304674189039960160909021581061457",
-        "bytes": 44395260,
-        "sha256": "96f10c8199ee1bd1392a7325d3a2016e80a5671398f275d369bc6199e77f86f6",
-        "original_zip_crc_verified": true
-      },
-      "RTSTRUCT": {
-        "url": "https://services.cancerimagingarchive.net/nbia-api/services/v1/getImage?SeriesInstanceUID=1.3.6.1.4.1.14519.5.2.1.1.32892057006391638009924162619097800350",
-        "bytes": 2903206,
-        "sha256": "d8c819458b318b419e0e07188510ae5844f5a607a6fe121197a6a1a45752624e",
-        "original_zip_crc_verified": true
-      }
-    },
-    {
-      "patient_id": "Pediatric-CT-SEG-BEC712BF",
-      "CT": {
-        "url": "https://services.cancerimagingarchive.net/nbia-api/services/v1/getImage?SeriesInstanceUID=1.3.6.1.4.1.14519.5.2.1.133742245714270925254982946723351496764",
-        "bytes": 40928597,
-        "sha256": "e9a757b7cf2ff8c50c2aa848f1d10afd31f7e4c83f157540fc7ad5ecae10c1e3",
-        "original_zip_crc_verified": true
-      },
-      "RTSTRUCT": {
-        "url": "https://services.cancerimagingarchive.net/nbia-api/services/v1/getImage?SeriesInstanceUID=1.3.6.1.4.1.14519.5.2.1.110148733280183048267163655999762366898",
-        "bytes": 2631760,
-        "sha256": "59653bf05487a2e74dc295407a92bff0a1c8f4acdd6750a76ca7d41b7ae550a2",
-        "original_zip_crc_verified": true
-      }
-    },
-    {
-      "patient_id": "Pediatric-CT-SEG-E03568A6",
-      "CT": {
-        "url": "https://services.cancerimagingarchive.net/nbia-api/services/v1/getImage?SeriesInstanceUID=1.3.6.1.4.1.14519.5.2.1.5863853179332742362135462579472262159",
-        "bytes": 42304194,
-        "sha256": "52bd05a93af9325c32e1fa17486f01746674aa2ef0e0d8a75eb95531d62d8ca6",
-        "original_zip_crc_verified": true
-      },
-      "RTSTRUCT": {
-        "url": "https://services.cancerimagingarchive.net/nbia-api/services/v1/getImage?SeriesInstanceUID=1.3.6.1.4.1.14519.5.2.1.166504774202857411359258367562254852392",
-        "bytes": 2645406,
-        "sha256": "a4556f2cd433cf6da76dcac6bf9710b63d608e665b016910b6e627c95745bd54",
-        "original_zip_crc_verified": true
-      }
-    },
-    {
-      "patient_id": "Pediatric-CT-SEG-E66B16E4",
-      "CT": {
-        "url": "https://services.cancerimagingarchive.net/nbia-api/services/v1/getImage?SeriesInstanceUID=1.3.6.1.4.1.14519.5.2.1.196220101365696730537230959989468232406",
-        "bytes": 81268787,
-        "sha256": "6a62ab78dce195e6a3b8bfb7fa1407d6da800ed4d0adfc8a07aa3611c56b01bb",
-        "original_zip_crc_verified": true
-      },
-      "RTSTRUCT": {
-        "url": "https://services.cancerimagingarchive.net/nbia-api/services/v1/getImage?SeriesInstanceUID=1.3.6.1.4.1.14519.5.2.1.283411104895308677562620230326384957946",
-        "bytes": 5116708,
-        "sha256": "358e6893eee6206d71889fdba250190dd4937c58a412188ab88182acef002762",
-        "original_zip_crc_verified": true
-      }
-    },
-    {
-      "patient_id": "Pediatric-CT-SEG-ED076087",
-      "CT": {
-        "url": "https://services.cancerimagingarchive.net/nbia-api/services/v1/getImage?SeriesInstanceUID=1.3.6.1.4.1.14519.5.2.1.335901926764605993922625736395545500480",
-        "bytes": 158333728,
-        "sha256": "bec37a7f904079db71911fba6a89285c2f9ad063d15ef1024fbb10695b835b25",
-        "original_zip_crc_verified": true
-      },
-      "RTSTRUCT": {
-        "url": "https://services.cancerimagingarchive.net/nbia-api/services/v1/getImage?SeriesInstanceUID=1.3.6.1.4.1.14519.5.2.1.1.16090748909761603739885130563006068629",
-        "bytes": 11339503,
-        "sha256": "cab1dd6bc9d08b441bfe619626cc6b6858edce45a11fe8751dd37e3eac5307b7",
-        "original_zip_crc_verified": true
-      }
-    }
-  ],
   "records": [
     {
       "patient_id": "Pediatric-CT-SEG-32C20E78",
@@ -271,8 +11,20 @@
       "expected_slices": 665,
       "published_CT_bytes": 350301116,
       "published_RT_bytes": 47805406,
-      "status": "geometry_passed_visual_QA_pending",
-      "visual_review": "pending",
+      "status": "annotation_extent_requires_review",
+      "visual_review": {
+        "patient_id": "Pediatric-CT-SEG-32C20E78",
+        "alignment": "pass",
+        "scan_coverage": "Heart_ROI_inside_grid; thorax visible in inspected planes",
+        "status": "annotation_extent_requires_review",
+        "anatomical_annotation_scope": "cranial OAR cap retained",
+        "pending_checks": [
+          "annotation_extent_and_OAR_scope_review"
+        ],
+        "notes": [
+          "Native 0.625 mm stack; axial source contours and mask aligned, coronal/sagittal source cap visible."
+        ]
+      },
       "healthy_status": "unknown",
       "CT": {
         "patient_id": "Pediatric-CT-SEG-32C20E78",
@@ -402,6 +154,15 @@
           412,
           523
         ],
+        "uncontoured_CT_margin_z_slices": [
+          412,
+          141
+        ],
+        "ROI_to_scan_boundary_z_mm": [
+          257.5,
+          88.125
+        ],
+        "near_scan_z_boundary": false,
         "internal_uncontoured_slices": [],
         "touches_grid_faces": [
           false,
@@ -423,6 +184,7 @@
       "independent_reader": {
         "reader": "SimpleITK.ImageSeriesReader",
         "geometry_match": true,
+        "series_order": "independent GDCM series discovery and sorting",
         "max_HU_difference": 0.0,
         "array_match": true
       },
@@ -437,7 +199,7 @@
       "mask_rasterized": true,
       "CT_array_MiB": 665.0,
       "mask_array_MiB": 166.25,
-      "conversion_and_QA_seconds": 47.67219509999995
+      "conversion_and_QA_seconds": 40.88191490000008
     },
     {
       "patient_id": "Pediatric-CT-SEG-4C1A38AE",
@@ -449,8 +211,21 @@
       "expected_slices": 185,
       "published_CT_bytes": 97448288,
       "published_RT_bytes": 12706130,
-      "status": "requires_review",
-      "visual_review": "pending",
+      "status": "excluded_incomplete_heart_coverage",
+      "visual_review": {
+        "patient_id": "Pediatric-CT-SEG-4C1A38AE",
+        "alignment": "pass",
+        "scan_coverage": "truncated_superior; Heart on last CT slice 184/184",
+        "status": "excluded_incomplete_heart_coverage",
+        "anatomical_annotation_scope": "only small inferior Heart region included",
+        "pending_checks": [],
+        "exclusion_reasons": [
+          "Heart reaches superior scan boundary; most of heart outside scan coverage"
+        ],
+        "notes": [
+          "Only five contour planes, volume 6.72 mL; keep original labels and exclude from full Heart baseline."
+        ]
+      },
       "healthy_status": "unknown",
       "CT": {
         "patient_id": "Pediatric-CT-SEG-4C1A38AE",
@@ -580,6 +355,15 @@
           180,
           184
         ],
+        "uncontoured_CT_margin_z_slices": [
+          180,
+          0
+        ],
+        "ROI_to_scan_boundary_z_mm": [
+          360.0,
+          0.0
+        ],
+        "near_scan_z_boundary": true,
         "internal_uncontoured_slices": [],
         "touches_grid_faces": [
           false,
@@ -601,6 +385,7 @@
       "independent_reader": {
         "reader": "SimpleITK.ImageSeriesReader",
         "geometry_match": true,
+        "series_order": "independent GDCM series discovery and sorting",
         "max_HU_difference": 0.0,
         "array_match": true
       },
@@ -615,7 +400,7 @@
       "mask_rasterized": true,
       "CT_array_MiB": 185.0,
       "mask_array_MiB": 46.25,
-      "conversion_and_QA_seconds": 12.317616599997564
+      "conversion_and_QA_seconds": 11.218888999999763
     },
     {
       "patient_id": "Pediatric-CT-SEG-5F74CD3E",
@@ -627,8 +412,20 @@
       "expected_slices": 192,
       "published_CT_bytes": 101139538,
       "published_RT_bytes": 14314846,
-      "status": "geometry_passed_visual_QA_pending",
-      "visual_review": "pending",
+      "status": "annotation_extent_requires_review",
+      "visual_review": {
+        "patient_id": "Pediatric-CT-SEG-5F74CD3E",
+        "alignment": "pass",
+        "scan_coverage": "Heart_ROI_inside_grid; thorax visible in inspected planes",
+        "status": "annotation_extent_requires_review",
+        "anatomical_annotation_scope": "cranial cap and inferior first contour require OAR scope review",
+        "pending_checks": [
+          "annotation_extent_and_OAR_scope_review"
+        ],
+        "notes": [
+          "Source contour and mask borders overlap; irregular inferior contour and source cranial cap retained."
+        ]
+      },
       "healthy_status": "unknown",
       "CT": {
         "patient_id": "Pediatric-CT-SEG-5F74CD3E",
@@ -758,6 +555,15 @@
           132,
           160
         ],
+        "uncontoured_CT_margin_z_slices": [
+          132,
+          31
+        ],
+        "ROI_to_scan_boundary_z_mm": [
+          264.0,
+          62.0
+        ],
+        "near_scan_z_boundary": false,
         "internal_uncontoured_slices": [],
         "touches_grid_faces": [
           false,
@@ -779,6 +585,7 @@
       "independent_reader": {
         "reader": "SimpleITK.ImageSeriesReader",
         "geometry_match": true,
+        "series_order": "independent GDCM series discovery and sorting",
         "max_HU_difference": 0.0,
         "array_match": true
       },
@@ -793,7 +600,7 @@
       "mask_rasterized": true,
       "CT_array_MiB": 192.0,
       "mask_array_MiB": 48.0,
-      "conversion_and_QA_seconds": 47.30782860000181
+      "conversion_and_QA_seconds": 16.027875000000222
     },
     {
       "patient_id": "Pediatric-CT-SEG-813E523C",
@@ -805,8 +612,21 @@
       "expected_slices": 189,
       "published_CT_bytes": 99574194,
       "published_RT_bytes": 14252608,
-      "status": "requires_review",
-      "visual_review": "pending",
+      "status": "excluded_incomplete_heart_coverage",
+      "visual_review": {
+        "patient_id": "Pediatric-CT-SEG-813E523C",
+        "alignment": "pass",
+        "scan_coverage": "truncated_superior; Heart on last CT slice 188/188",
+        "status": "excluded_incomplete_heart_coverage",
+        "anatomical_annotation_scope": "superior Heart absent from scan coverage",
+        "pending_checks": [],
+        "exclusion_reasons": [
+          "Heart reaches superior scan boundary; incomplete heart coverage"
+        ],
+        "notes": [
+          "Source mask correct on available slices; coronal and sagittal coverage terminate inside heart."
+        ]
+      },
       "healthy_status": "unknown",
       "CT": {
         "patient_id": "Pediatric-CT-SEG-813E523C",
@@ -936,6 +756,15 @@
           164,
           188
         ],
+        "uncontoured_CT_margin_z_slices": [
+          164,
+          0
+        ],
+        "ROI_to_scan_boundary_z_mm": [
+          328.0,
+          0.0
+        ],
+        "near_scan_z_boundary": true,
         "internal_uncontoured_slices": [],
         "touches_grid_faces": [
           false,
@@ -957,6 +786,7 @@
       "independent_reader": {
         "reader": "SimpleITK.ImageSeriesReader",
         "geometry_match": true,
+        "series_order": "independent GDCM series discovery and sorting",
         "max_HU_difference": 0.0,
         "array_match": true
       },
@@ -971,7 +801,7 @@
       "mask_rasterized": true,
       "CT_array_MiB": 189.0,
       "mask_array_MiB": 47.25,
-      "conversion_and_QA_seconds": 46.43716829999903
+      "conversion_and_QA_seconds": 14.864476199999444
     },
     {
       "patient_id": "Pediatric-CT-SEG-8FAE886E",
@@ -983,8 +813,20 @@
       "expected_slices": 179,
       "published_CT_bytes": 94285838,
       "published_RT_bytes": 11858554,
-      "status": "geometry_passed_visual_QA_pending",
-      "visual_review": "pending",
+      "status": "annotation_extent_requires_review",
+      "visual_review": {
+        "patient_id": "Pediatric-CT-SEG-8FAE886E",
+        "alignment": "pass",
+        "scan_coverage": "Heart_ROI_inside_grid; thorax visible in inspected planes",
+        "status": "annotation_extent_requires_review",
+        "anatomical_annotation_scope": "source cranial cap; low soft-tissue contrast",
+        "pending_checks": [
+          "annotation_extent_and_OAR_scope_review"
+        ],
+        "notes": [
+          "Mask and RT borders coincide; conspicuous image heterogeneity retained without inferred diagnosis or non-contrast label."
+        ]
+      },
       "healthy_status": "unknown",
       "CT": {
         "patient_id": "Pediatric-CT-SEG-8FAE886E",
@@ -1114,6 +956,15 @@
           124,
           146
         ],
+        "uncontoured_CT_margin_z_slices": [
+          124,
+          32
+        ],
+        "ROI_to_scan_boundary_z_mm": [
+          248.0,
+          64.0
+        ],
+        "near_scan_z_boundary": false,
         "internal_uncontoured_slices": [],
         "touches_grid_faces": [
           false,
@@ -1135,6 +986,7 @@
       "independent_reader": {
         "reader": "SimpleITK.ImageSeriesReader",
         "geometry_match": true,
+        "series_order": "independent GDCM series discovery and sorting",
         "max_HU_difference": 0.0,
         "array_match": true
       },
@@ -1149,7 +1001,7 @@
       "mask_rasterized": true,
       "CT_array_MiB": 179.0,
       "mask_array_MiB": 44.75,
-      "conversion_and_QA_seconds": 52.990170600001875
+      "conversion_and_QA_seconds": 12.113171399999828
     },
     {
       "patient_id": "Pediatric-CT-SEG-BEC712BF",
@@ -1161,8 +1013,21 @@
       "expected_slices": 165,
       "published_CT_bytes": 86917104,
       "published_RT_bytes": 11183010,
-      "status": "requires_review",
-      "visual_review": "pending",
+      "status": "excluded_incomplete_heart_coverage",
+      "visual_review": {
+        "patient_id": "Pediatric-CT-SEG-BEC712BF",
+        "alignment": "pass",
+        "scan_coverage": "truncated_superior; Heart on last CT slice 164/164",
+        "status": "excluded_incomplete_heart_coverage",
+        "anatomical_annotation_scope": "incomplete due to limited scan coverage",
+        "pending_checks": [],
+        "exclusion_reasons": [
+          "Heart reaches superior scan boundary; incomplete heart coverage"
+        ],
+        "notes": [
+          "Rasterization and references valid; exclude from whole Heart baseline, retain as later partial-coverage stress case."
+        ]
+      },
       "healthy_status": "unknown",
       "CT": {
         "patient_id": "Pediatric-CT-SEG-BEC712BF",
@@ -1292,6 +1157,15 @@
           142,
           164
         ],
+        "uncontoured_CT_margin_z_slices": [
+          142,
+          0
+        ],
+        "ROI_to_scan_boundary_z_mm": [
+          284.0,
+          0.0
+        ],
+        "near_scan_z_boundary": true,
         "internal_uncontoured_slices": [],
         "touches_grid_faces": [
           false,
@@ -1313,6 +1187,7 @@
       "independent_reader": {
         "reader": "SimpleITK.ImageSeriesReader",
         "geometry_match": true,
+        "series_order": "independent GDCM series discovery and sorting",
         "max_HU_difference": 0.0,
         "array_match": true
       },
@@ -1327,7 +1202,208 @@
       "mask_rasterized": true,
       "CT_array_MiB": 165.0,
       "mask_array_MiB": 41.25,
-      "conversion_and_QA_seconds": 48.16730330000428
+      "conversion_and_QA_seconds": 10.75944729999992
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-E03568A6",
+      "age": 4.0,
+      "age_group": "2-5",
+      "scanner": "Revolution CT",
+      "ct_series_uid": "1.3.6.1.4.1.14519.5.2.1.5863853179332742362135462579472262159",
+      "rt_series_uid": "1.3.6.1.4.1.14519.5.2.1.166504774202857411359258367562254852392",
+      "expected_slices": 175,
+      "published_CT_bytes": 92184272,
+      "published_RT_bytes": 11050258,
+      "status": "coverage_and_annotation_extent_requires_review",
+      "visual_review": {
+        "patient_id": "Pediatric-CT-SEG-E03568A6",
+        "alignment": "pass",
+        "scan_coverage": "requires_review_near_superior_CT_boundary; one unlabelled slice (2 mm) above Heart",
+        "status": "coverage_and_annotation_extent_requires_review",
+        "anatomical_annotation_scope": "cranial ROI cap approaches CT boundary; full coverage not established",
+        "pending_checks": [
+          "superior_scan_coverage_review",
+          "annotation_extent_and_OAR_scope_review"
+        ],
+        "notes": [
+          "Full source SOP inventory, HU/geometry and independent rasterization pass; NiiVue/native views show superior extent close to scan edge; absent face contact does not establish complete Heart coverage."
+        ]
+      },
+      "healthy_status": "unknown",
+      "CT": {
+        "patient_id": "Pediatric-CT-SEG-E03568A6",
+        "patient_age": "004Y",
+        "series_uid": "1.3.6.1.4.1.14519.5.2.1.5863853179332742362135462579472262159",
+        "frame_of_reference_uid": "1.3.6.1.4.1.14519.5.2.1.10771428618178519070655489629804023132",
+        "shape_xyz": [
+          512,
+          512,
+          175
+        ],
+        "spacing_xyz_mm": [
+          0.546875,
+          0.546875,
+          2.0
+        ],
+        "coordinate_system": "LPS",
+        "array_axes": [
+          "column",
+          "row",
+          "slice"
+        ],
+        "origin_lps_mm": [
+          -140.0,
+          -140.0,
+          -307.558
+        ],
+        "orientation_iop": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        "affine_lps": [
+          [
+            0.546875,
+            0.0,
+            0.0,
+            -140.0
+          ],
+          [
+            0.0,
+            0.546875,
+            0.0,
+            -140.0
+          ],
+          [
+            0.0,
+            0.0,
+            2.0,
+            -307.558
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "affine_ras": [
+          [
+            -0.546875,
+            0.0,
+            0.0,
+            140.0
+          ],
+          [
+            0.0,
+            -0.546875,
+            0.0,
+            140.0
+          ],
+          [
+            0.0,
+            0.0,
+            2.0,
+            -307.558
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "slice_distance_min_max_mm": [
+          1.9999999999999858,
+          2.000000000000007
+        ],
+        "slice_thickness_values_mm": [
+          2.0
+        ],
+        "max_grid_residual_mm": 1.4210854715202004e-14,
+        "released_SOP_inventory_complete": true,
+        "source_acquisition_missing_slices_independently_verified": false,
+        "sop_set_sha256": "8623709ec725ca85dddb9c27e805dfdabc693d042106faf6ca32ef27e5efe6b5",
+        "regular_spacing": true,
+        "physical_geometry_confirmed_from_DICOM": true,
+        "HU_rescale_tags_confirmed": true,
+        "rescale_slope_values": [
+          1.0
+        ],
+        "rescale_intercept_values": [
+          -1000.0
+        ],
+        "resampled": false,
+        "instance_number_gaps": false
+      },
+      "Heart": {
+        "roi": "Heart",
+        "binary_labels": [
+          0,
+          1
+        ],
+        "contours": 32,
+        "combination": "union CLOSED_PLANAR",
+        "shape_xyz": [
+          512,
+          512,
+          175
+        ],
+        "resampled": false,
+        "max_contour_slice_residual_mm": 0.0020000000000095497,
+        "contoured_slice_range": [
+          142,
+          173
+        ],
+        "uncontoured_CT_margin_z_slices": [
+          142,
+          1
+        ],
+        "ROI_to_scan_boundary_z_mm": [
+          284.0,
+          2.0
+        ],
+        "near_scan_z_boundary": true,
+        "internal_uncontoured_slices": [],
+        "touches_grid_faces": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "scan_coverage": "requires_review_near_scan_boundary",
+        "components_26": 1,
+        "component_sizes_voxels": [
+          407495
+        ],
+        "heart_voxels": 407495,
+        "volume_ml": 243.74090576171875,
+        "initial_status": "requires_review"
+      },
+      "independent_reader": {
+        "reader": "SimpleITK.ImageSeriesReader",
+        "geometry_match": true,
+        "series_order": "independent GDCM series discovery and sorting",
+        "max_HU_difference": 0.0,
+        "array_match": true
+      },
+      "independent_rasterizer": {
+        "rasterizer": "vtkPolyDataToImageStencil, index voxel centers",
+        "Dice_between_rasterizers": 0.9999975459761371,
+        "differing_boundary_voxels": 2,
+        "nonboundary_differences": 0
+      },
+      "full_CT_downloaded": true,
+      "original_full_RTSTRUCT_downloaded": true,
+      "mask_rasterized": true,
+      "CT_array_MiB": 175.0,
+      "mask_array_MiB": 43.75,
+      "conversion_and_QA_seconds": 11.382443699999385
     },
     {
       "patient_id": "Pediatric-CT-SEG-E66B16E4",
@@ -1339,8 +1415,20 @@
       "expected_slices": 311,
       "published_CT_bytes": 163844644,
       "published_RT_bytes": 23124548,
-      "status": "geometry_passed_visual_QA_pending",
-      "visual_review": "pending",
+      "status": "annotation_extent_requires_review",
+      "visual_review": {
+        "patient_id": "Pediatric-CT-SEG-E66B16E4",
+        "alignment": "pass",
+        "scan_coverage": "Heart_ROI_inside_grid; thorax visible in inspected planes",
+        "status": "annotation_extent_requires_review",
+        "anatomical_annotation_scope": "cranial flat ROI cap requires review against OAR definition",
+        "pending_checks": [
+          "annotation_extent_and_OAR_scope_review"
+        ],
+        "notes": [
+          "Independent NiiVue landmarks: spine posterior, sternum anterior, liver right; mask aligned; source cap preserved."
+        ]
+      },
       "healthy_status": "unknown",
       "CT": {
         "patient_id": "Pediatric-CT-SEG-E66B16E4",
@@ -1470,6 +1558,15 @@
           198,
           254
         ],
+        "uncontoured_CT_margin_z_slices": [
+          198,
+          56
+        ],
+        "ROI_to_scan_boundary_z_mm": [
+          396.0,
+          112.0
+        ],
+        "near_scan_z_boundary": false,
         "internal_uncontoured_slices": [],
         "touches_grid_faces": [
           false,
@@ -1491,6 +1588,7 @@
       "independent_reader": {
         "reader": "SimpleITK.ImageSeriesReader",
         "geometry_match": true,
+        "series_order": "independent GDCM series discovery and sorting",
         "max_HU_difference": 0.0,
         "array_match": true
       },
@@ -1505,7 +1603,7 @@
       "mask_rasterized": true,
       "CT_array_MiB": 311.0,
       "mask_array_MiB": 77.75,
-      "conversion_and_QA_seconds": 43.66744599999947
+      "conversion_and_QA_seconds": 20.247629599999982
     },
     {
       "patient_id": "Pediatric-CT-SEG-ED076087",
@@ -1517,8 +1615,20 @@
       "expected_slices": 625,
       "published_CT_bytes": 329226800,
       "published_RT_bytes": 50022236,
-      "status": "geometry_passed_visual_QA_pending",
-      "visual_review": "pending",
+      "status": "annotation_extent_requires_review",
+      "visual_review": {
+        "patient_id": "Pediatric-CT-SEG-ED076087",
+        "alignment": "pass",
+        "scan_coverage": "Heart_ROI_inside_grid; full thorax visible in inspected planes",
+        "status": "annotation_extent_requires_review",
+        "anatomical_annotation_scope": "cranial flat ROI cap requires review against OAR definition",
+        "pending_checks": [
+          "annotation_extent_and_OAR_scope_review"
+        ],
+        "notes": [
+          "CT and polygon overlay aligned in all inspected native planes; cranial Heart cap is present in original RT contours, not created by rasterization."
+        ]
+      },
       "healthy_status": "unknown",
       "CT": {
         "patient_id": "Pediatric-CT-SEG-ED076087",
@@ -1648,6 +1758,15 @@
           300,
           414
         ],
+        "uncontoured_CT_margin_z_slices": [
+          300,
+          210
+        ],
+        "ROI_to_scan_boundary_z_mm": [
+          187.5,
+          131.25
+        ],
+        "near_scan_z_boundary": false,
         "internal_uncontoured_slices": [],
         "touches_grid_faces": [
           false,
@@ -1669,6 +1788,7 @@
       "independent_reader": {
         "reader": "SimpleITK.ImageSeriesReader",
         "geometry_match": true,
+        "series_order": "independent GDCM series discovery and sorting",
         "max_HU_difference": 0.0,
         "array_match": true
       },
@@ -1683,7 +1803,7 @@
       "mask_rasterized": true,
       "CT_array_MiB": 625.0,
       "mask_array_MiB": 156.25,
-      "conversion_and_QA_seconds": 102.00558789999923
+      "conversion_and_QA_seconds": 47.44604749999962
     }
   ]
 }
