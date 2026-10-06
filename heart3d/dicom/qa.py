@@ -5,8 +5,15 @@ from scipy import ndimage
 
 def check_simpleitk(geometry, volume):
     import SimpleITK as sitk
+    parents = {str(p.parent) for p in geometry.files}
+    if len(parents) != 1:
+        raise ValueError('Independent GDCM series discovery requires one CT directory')
+    filenames = sitk.ImageSeriesReader.GetGDCMSeriesFileNames(next(iter(parents)), geometry.report['series_uid'])
+    from pathlib import Path
+    if {Path(p).resolve() for p in filenames} != {p.resolve() for p in geometry.files}:
+        raise ValueError('Independent GDCM inventory differs from inspected CT files')
     reader = sitk.ImageSeriesReader()
-    reader.SetFileNames([str(p) for p in geometry.files])
+    reader.SetFileNames(filenames)
     image = reader.Execute()
     affine = np.eye(4)
     affine[:3, :3] = np.array(image.GetDirection()).reshape(3, 3) @ np.diag(image.GetSpacing())
@@ -20,6 +27,7 @@ def check_simpleitk(geometry, volume):
     if maximum > 1e-3:
         raise ValueError('Independent SimpleITK HU values differ')
     return {'reader': 'SimpleITK.ImageSeriesReader', 'geometry_match': True,
+            'series_order': 'independent GDCM series discovery and sorting',
             'max_HU_difference': maximum, 'array_match': True}
 
 

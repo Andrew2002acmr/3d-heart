@@ -55,6 +55,7 @@ def census_one(row, series, data_root):
         out["contrast_status"] = "contrast_agent_reported" if out["contrast_agent"].strip() else "unknown"
         rt, receipt = fetch_heart_extract(out["rt_series_uid"], data_root / pid / "census")
         out.update(heart_roi_present=receipt["heart_defined"], heart_contours_complete=receipt["heart_contour_item_complete"],
+                   heart_contours_nonempty=receipt['heart_contours'] > 0,
                    heart_contours=receipt["heart_contours"], rt_prefix_bytes=receipt["received_prefix_bytes"],
                    RT_heart_extract_sha256=receipt["derived_sha256"])
         if str(rt.PatientID) != pid:

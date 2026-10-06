@@ -25,6 +25,7 @@ def main():
     pilot_summaries = []
     for row in census['records']:
         pid = row['patient_id']; directory = args.data/pid
+        row['heart_contours_nonempty'] = row.get('heart_contours', 0) > 0
         extract_path = directory/'census'/'heart_extract.dcm'
         if extract_path.exists():
             # Cache-only migration to distinct derived UIDs; original RT remains unchanged.
@@ -47,6 +48,13 @@ def main():
                         row['exclusion_reasons']=list(dict.fromkeys(row['exclusion_reasons']+[f'ValueError: {error}']))
                 except ValueError:
                     row['missing_Heart_SOP_reference_count'] = None
+        reference_report = directory/'reference_review.json'
+        if reference_report.exists():
+            row['reference_review'] = json.loads(reference_report.read_text())
+            row['full_original_rtstruct_downloaded'] = True
+            row['can_rasterize_on_full_CT'] = False  # original references fail the strict gate
+            row['pending_checks'] = ['source_CT_RT_reference_resolution','complete_CT_geometry',
+                                     'mask_rasterization','scan_coverage','visual_QA']
         report_path = directory/'pilot_qa.json'
         if not report_path.exists(): continue
         report = json.loads(report_path.read_text())
@@ -74,11 +82,13 @@ def main():
                'by_scanner':dict(Counter(r['scanner'] for r in records)),
                'by_contrast_evidence':dict(Counter(r.get('contrast_status','unknown') for r in records)),
                'by_status':dict(Counter(r['status'] for r in records)),
-               'Heart_present':sum(r['heart_roi_present'] is True for r in records),
+               'Heart_definitions_present':sum(r['heart_roi_present'] is True for r in records),
+               'Heart_nonempty_contours':sum(r['heart_contours_nonempty'] for r in records),
                'no_ROI_availability_unknown':sum(r['heart_roi_present'] is None for r in records)==0,
                'Heart_missing_or_empty':sum(r['status']=='excluded' and 'missing_or_empty_Heart_ROI' in r['exclusion_reasons'] for r in records),
                'metadata_references_passed':sum(r.get('Heart_SOP_references_verified',False) for r in records),
                'full_studies_downloaded':len(pilot_summaries),
+               'original_full_RTSTRUCT_downloaded':sum(r['full_original_rtstruct_downloaded'] for r in records),
                'full_studies_rasterized':sum(p.get('mask_rasterized',False) for p in pilot_summaries),
                'technical_DICOM_gate_passed':sum(r.get('technical_DICOM_gate_passed',False) for r in records),
                'pilot_incomplete_coverage':sum(r['status']=='excluded_incomplete_heart_coverage' for r in records),
@@ -86,6 +96,7 @@ def main():
                'CT_published_bytes':sum(r.get('CT_published_bytes',0) for r in records),
                'RT_published_bytes':sum(r.get('RT_published_bytes',0) for r in records)}
     output = dict(census, records=records, summary=summary,
+                  stage='pretraining_data_gate_report', training_executed=False, split_frozen=False,
                   preparation_complete_for_entire_cohort=False,
                   source='https://www.cancerimagingarchive.net/collection/pediatric-ct-seg/',
                   clinical_labels_available=False, date='2026-10-06',

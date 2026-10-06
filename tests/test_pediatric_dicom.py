@@ -103,6 +103,10 @@ def test_pixels_and_nifti_world_coordinates(tmp_path):
         path = tmp_path / f'{h.SOPInstanceUID}.dcm'; d.save_as(path, enforce_file_format=True); paths.append(path)
     g = inspect_headers(headers, paths); volume = load_volume(g)
     assert volume[4, 3, :].tolist() == [-966, -932, -898, -864]
+    from heart3d.dicom.qa import check_simpleitk
+    independent = check_simpleitk(g, volume)
+    assert independent['max_HU_difference'] == 0
+    assert independent['series_order'] == 'independent GDCM series discovery and sorting'
     save_nifti(volume, g.affine_ras, tmp_path / 'ct.nii.gz')
     import nibabel as nib
     image = nib.load(tmp_path / 'ct.nii.gz')

@@ -11,7 +11,9 @@ import nibabel as nib
 def main():
     p=argparse.ArgumentParser(description=__doc__)
     p.add_argument('--data', type=Path, required=True); p.add_argument('--port', type=int, default=8766)
+    p.add_argument('--reviews',type=Path,help='Optional reviewed status manifest')
     a=p.parse_args(); allowed={'/': Path(__file__).with_name('pediatric_ct_qa_viewer.html')}; cases=[]
+    reviews={r['patient_id']:r for r in json.loads(a.reviews.read_text())['records']} if a.reviews else {}
     for path in sorted(a.data.glob('*/pilot_qa.json')):
         info=json.loads(path.read_text())
         if not info.get('mask_rasterized'): continue
@@ -21,6 +23,7 @@ def main():
         voxels=np.argwhere(np.asarray(image.dataobj)>0)
         center=(np.median(voxels, axis=0)+.5)/image.shape
         cases.append({k:info[k] for k in ('patient_id','age','scanner','status')})
+        if info['patient_id'] in reviews: cases[-1]['status']=reviews[info['patient_id']]['status']
         cases[-1]['center_fraction']=center.tolist()
         for name in ('ct_original.nii.gz','heart_gt_original.nii.gz'):
             allowed[f'/data/{info["patient_id"]}/{name}']=prepared/name
