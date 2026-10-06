@@ -1,0 +1,4227 @@
+{
+  "version": 1,
+  "method": "exact decoded HU voxel content, independent of released PatientID/UID",
+  "limitation": "cannot establish clinical identity or exclude repeat acquisitions with different pixels",
+  "patients_screened": 114,
+  "exact_duplicate_groups": [],
+  "records": [
+    {
+      "patient_id": "Pediatric-CT-SEG-06722123",
+      "source_NIfTI_SHA256": "fa5bf980591311dc0c0f8e7b5dc44c96ce75dc37956083dfb413deae32f5b349",
+      "voxel_SHA256": "b8274bb6ab0c5d3a529ed651614cedd8ded973f71eef7e6c8eab5eda008af8e6",
+      "voxel_hash_order": "ascending z, each XY plane C-order, little-endian float32 HU",
+      "shape_xyz": [
+        512,
+        512,
+        320
+      ],
+      "affine_ras": [
+        [
+          -0.60546875,
+          0.0,
+          0.0,
+          150.697265625
+        ],
+        [
+          0.0,
+          -0.60546875,
+          0.0,
+          270.697265625
+        ],
+        [
+          0.0,
+          0.0,
+          2.0,
+          -646.5
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-0C49C1B7",
+      "source_NIfTI_SHA256": "b9363c49999c59bb447ad342d498ef75c7d9a015b0892c6bb9ad2637e799669c",
+      "voxel_SHA256": "cc28e92244df63e5a1fc6d4f963748dbe7aa379fb51bf00007fcdcf2ab236bdd",
+      "voxel_hash_order": "ascending z, each XY plane C-order, little-endian float32 HU",
+      "shape_xyz": [
+        512,
+        512,
+        172
+      ],
+      "affine_ras": [
+        [
+          -0.4492189884185791,
+          0.0,
+          0.0,
+          135.6280059814453
+        ],
+        [
+          0.0,
+          -0.4492189884185791,
+          0.0,
+          94.37200164794922
+        ],
+        [
+          0.0,
+          0.0,
+          2.0,
+          -347.8655090332031
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-0D53FEEE",
+      "source_NIfTI_SHA256": "ba462d6f0a1653475ffac473d649fa6e04f5be84915f96a15e7955c8e2e39b46",
+      "voxel_SHA256": "aaee27d18a1a28e88cd2ed19d49b31c4f947ebb79261419c87cd23b0f920a0ea",
+      "voxel_hash_order": "ascending z, each XY plane C-order, little-endian float32 HU",
+      "shape_xyz": [
+        512,
+        512,
+        185
+      ],
+      "affine_ras": [
+        [
+          -0.390625,
+          0.0,
+          0.0,
+          101.0999984741211
+        ],
+        [
+          0.0,
+          -0.390625,
+          0.0,
+          73.5999984741211
+        ],
+        [
+          0.0,
+          0.0,
+          2.0,
+          -396.1875
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-0D7F3188",
+      "source_NIfTI_SHA256": "52cdcf826b6474667890e5214a2048cd0b3aa530221290da9015fb223debce62",
+      "voxel_SHA256": "d6226cc19c6a972918b4417e082854a1ff4908d51a969e5333eb6baf1bc7fa32",
+      "voxel_hash_order": "ascending z, each XY plane C-order, little-endian float32 HU",
+      "shape_xyz": [
+        512,
+        512,
+        657
+      ],
+      "affine_ras": [
+        [
+          -0.46875,
+          0.0,
+          0.0,
+          110.19999694824219
+        ],
+        [
+          0.0,
+          -0.46875,
+          0.0,
+          97.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.625,
+          -409.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-1360E26F",
+      "source_NIfTI_SHA256": "48cb5e6da1d6cee71bc02a352ebc5774cc186820fb3990d6588ca41bbff8e88b",
+      "voxel_SHA256": "5ee5e28f85d72f737ba30f193c7365aac51afb73c1f230c0127b2f01f2a65e7a",
+      "voxel_hash_order": "ascending z, each XY plane C-order, little-endian float32 HU",
+      "shape_xyz": [
+        512,
+        512,
+        254
+      ],
+      "affine_ras": [
+        [
+          -0.501953125,
+          0.0,
+          0.0,
+          120.2490234375
+        ],
+        [
+          0.0,
+          -0.501953125,
+          0.0,
+          244.7490234375
+        ],
+        [
+          0.0,
+          0.0,
+          2.0,
+          -496.20001220703125
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-1644392C",
+      "source_NIfTI_SHA256": "d24df30991867e08ef2e753920faeba800ab8dafd4f35a93329d41dfeed1e422",
+      "voxel_SHA256": "212868a5301b2f461bf0220c143a7810a14e97ca76c0797795f7dd00637f6a3a",
+      "voxel_hash_order": "ascending z, each XY plane C-order, little-endian float32 HU",
+      "shape_xyz": [
+        512,
+        512,
+        961
+      ],
+      "affine_ras": [
+        [
+          -0.6640620231628418,
+          0.0,
+          0.0,
+          174.1999969482422
+        ],
+        [
+          0.0,
+          -0.6640620231628418,
+          0.0,
+          151.60000610351562
+        ],
+        [
+          0.0,
+          0.0,
+          0.625,
+          -666.75
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-176261A0",
+      "source_NIfTI_SHA256": "5dac49f6b38ebd3bcb255198ae4f26b1523aeaac996e146043bb9fc712d0edfb",
+      "voxel_SHA256": "a61b21a23ba5b476f1baec2c59c11ff99a6f04a31b6f1533162e02816479a4b0",
+      "voxel_hash_order": "ascending z, each XY plane C-order, little-endian float32 HU",
+      "shape_xyz": [
+        512,
+        512,
+        280
+      ],
+      "affine_ras": [
+        [
+          -0.5859379768371582,
+          0.0,
+          0.0,
+          159.89999389648438
+        ],
+        [
+          0.0,
+          -0.5859379768371582,
+          0.0,
+          150.0
+        ],
+        [
+          0.0,
+          0.0,
+          2.0,
+          -631.1875
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-1DFF8B65",
+      "source_NIfTI_SHA256": "02ad4aafadb9c1c00d4b39cca4051ef8cc603a811b147a98708b9bdff5c837ab",
+      "voxel_SHA256": "3dc4d6855f9a2732c2448b4577607e59f2e086299886add09b15cfab12abce48",
+      "voxel_hash_order": "ascending z, each XY plane C-order, little-endian float32 HU",
+      "shape_xyz": [
+        512,
+        512,
+        262
+      ],
+      "affine_ras": [
+        [
+          -0.546875,
+          0.0,
+          0.0,
+          136.3000030517578
+        ],
+        [
+          0.0,
+          -0.546875,
+          0.0,
+          106.30000305175781
+        ],
+        [
+          0.0,
+          0.0,
+          2.0,
+          -576.4375
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-20DD8C56",
+      "source_NIfTI_SHA256": "20321ff9b822cab013a3222e2019a97e64230ba10e3a3cb4575127d6deccf8e7",
+      "voxel_SHA256": "6386429c7f7ef47b1f6f1704b80d809b82c4b1388d085de79d3e41efee5ebe78",
+      "voxel_hash_order": "ascending z, each XY plane C-order, little-endian float32 HU",
+      "shape_xyz": [
+        512,
+        512,
+        777
+      ],
+      "affine_ras": [
+        [
+          -0.4882810115814209,
+          0.0,
+          0.0,
+          118.9000015258789
+        ],
+        [
+          0.0,
+          -0.4882810115814209,
+          0.0,
+          115.5
+        ],
+        [
+          0.0,
+          0.0,
+          0.625,
+          -509.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-2197048C",
+      "source_NIfTI_SHA256": "eedcb5980a70627dc8decb78be4f4ea2015cb13add8102549937c262062a87a5",
+      "voxel_SHA256": "44b102b605ae3419a84e61c82955b51227954a478813261592e9513a0dd7639b",
+      "voxel_hash_order": "ascending z, each XY plane C-order, little-endian float32 HU",
+      "shape_xyz": [
+        512,
+        512,
+        825
+      ],
+      "affine_ras": [
+        [
+          -0.625,
+          0.0,
+          0.0,
+          162.39999389648438
+        ],
+        [
+          0.0,
+          -0.625,
+          0.0,
+          138.5
+        ],
+        [
+          0.0,
+          0.0,
+          0.625,
+          -545.5
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-239D233D",
+      "source_NIfTI_SHA256": "7b12fa7bc932c4dbef7c8ad4cb99124323009bc373de5026123220d1c5c260ca",
+      "voxel_SHA256": "43ab16b9d6400094a9526ce935b3ed026e53d86ea15b182d9899e940ffbccbcf",
+      "voxel_hash_order": "ascending z, each XY plane C-order, little-endian float32 HU",
+      "shape_xyz": [
+        512,
+        512,
+        167
+      ],
+      "affine_ras": [
+        [
+          -0.4492189884185791,
+          0.0,
+          0.0,
+          115.0
+        ],
+        [
+          0.0,
+          -0.4492189884185791,
+          0.0,
+          115.0
+        ],
+        [
+          0.0,
+          0.0,
+          2.0,
+          -307.6875
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-2AA52776",
+      "source_NIfTI_SHA256": "7fcb2228eb0cebc3b7f92f4e591b0c7333fc9f810d4179f7e1af089ef14038b3",
+      "voxel_SHA256": "8c2e72dac3d83de8d08cda28f2570babb06554baaff2a59361b48fbc293febf4",
+      "voxel_hash_order": "ascending z, each XY plane C-order, little-endian float32 HU",
+      "shape_xyz": [
+        512,
+        512,
+        158
+      ],
+      "affine_ras": [
+        [
+          -0.46875,
+          0.0,
+          0.0,
+          127.765625
+        ],
+        [
+          0.0,
+          -0.46875,
+          0.0,
+          229.265625
+        ],
+        [
+          0.0,
+          0.0,
+          2.0,
+          -306.20001220703125
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-2D905107",
+      "source_NIfTI_SHA256": "a53d74256cd46f81e9cad4c1cd87c708b99df127ee89d5ebbfe970a7f4a3838d",
+      "voxel_SHA256": "45107e614f2b1e412cd205d142a6d209f132161b71175c79f45bcd60a1a9d6ae",
+      "voxel_hash_order": "ascending z, each XY plane C-order, little-endian float32 HU",
+      "shape_xyz": [
+        512,
+        512,
+        71
+      ],
+      "affine_ras": [
+        [
+          -0.390625,
+          0.0,
+          0.0,
+          87.0999984741211
+        ],
+        [
+          0.0,
+          -0.390625,
+          0.0,
+          75.69999694824219
+        ],
+        [
+          0.0,
+          0.0,
+          2.0,
+          -154.9375
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-32820634",
+      "source_NIfTI_SHA256": "c71d30f3088810386414c6797a293c4039d828620e4e56195f1eb8fbd7b89f59",
+      "voxel_SHA256": "194748634018708509fb210a91b0c9ff8d41a7b5e38867207ebced885fbad3a0",
+      "voxel_hash_order": "ascending z, each XY plane C-order, little-endian float32 HU",
+      "shape_xyz": [
+        512,
+        512,
+        160
+      ],
+      "affine_ras": [
+        [
+          -0.46875,
+          0.0,
+          0.0,
+          128.8000030517578
+        ],
+        [
+          0.0,
+          -0.46875,
+          0.0,
+          120.0
+        ],
+        [
+          0.0,
+          0.0,
+          2.0,
+          -330.4375
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-32C20E78",
+      "source_NIfTI_SHA256": "27ad0e8862c774b03cc88f0e0a9064c8129e3e74dd0117c82d8154b1146bb9d1",
+      "voxel_SHA256": "3667ab007a5bd69fbc8adb9f3ced1b7293e2c997e2d0ba4f850681cd38e14ed7",
+      "voxel_hash_order": "ascending z, each XY plane C-order, little-endian float32 HU",
+      "shape_xyz": [
+        512,
+        512,
+        665
+      ],
+      "affine_ras": [
+        [
+          -0.4492189884185791,
+          0.0,
+          0.0,
+          112.9000015258789
+        ],
+        [
+          0.0,
+          -0.4492189884185791,
+          0.0,
+          115.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.625,
+          -428.25
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-3555A98F",
+      "source_NIfTI_SHA256": "2a8abddac15e854dc5733a1d7b530c06bae4d8effcbec07779d4e03aeb0be783",
+      "voxel_SHA256": "267b3f44caed2747ed1e343b031b148f8a68f03395d5e4a6396841e7e93d1e59",
+      "voxel_hash_order": "ascending z, each XY plane C-order, little-endian float32 HU",
+      "shape_xyz": [
+        512,
+        512,
+        255
+      ],
+      "affine_ras": [
+        [
+          -0.6640625,
+          0.0,
+          0.0,
+          164.66796875
+        ],
+        [
+          0.0,
+          -0.6640625,
+          0.0,
+          323.66796875
+        ],
+        [
+          0.0,
+          0.0,
+          2.0,
+          -251.6999969482422
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-358",
+      "source_NIfTI_SHA256": "3df09b07ca1adf822925ed9d77cdaeb22b0c0e78b655651bbbcd833f4133cdd7",
+      "voxel_SHA256": "6d21ffef291e585ca1a39e8ffd689dfac4eaf8bdc8d86307403fbe6dfd466c33",
+      "voxel_hash_order": "ascending z, each XY plane C-order, little-endian float32 HU",
+      "shape_xyz": [
+        512,
+        512,
+        161
+      ],
+      "affine_ras": [
+        [
+          -0.44921875,
+          0.0,
+          0.0,
+          130.775390625
+        ],
+        [
+          0.0,
+          -0.44921875,
+          0.0,
+          228.775390625
+        ],
+        [
+          0.0,
+          0.0,
+          2.0,
+          -81.19999694824219
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-372",
+      "source_NIfTI_SHA256": "a53e993c497abe08ad5c7dbfddfbc2053412093ccd806255def5d32ae40081a8",
+      "voxel_SHA256": "b37c007612130da2a8903ae1b90c7d57bdcf7e7e03bf3f7d0af58f104c8cf8ed",
+      "voxel_hash_order": "ascending z, each XY plane C-order, little-endian float32 HU",
+      "shape_xyz": [
+        512,
+        512,
+        161
+      ],
+      "affine_ras": [
+        [
+          -0.52734375,
+          0.0,
+          0.0,
+          143.736328125
+        ],
+        [
+          0.0,
+          -0.52734375,
+          0.0,
+          263.736328125
+        ],
+        [
+          0.0,
+          0.0,
+          2.0,
+          -317.20001220703125
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-373",
+      "source_NIfTI_SHA256": "798ee27171e4337a76f233a41b760b0f6e9d523fd7e573b509a6d5beda7944bb",
+      "voxel_SHA256": "a9cc1649d34b230a39c580092cea64f8549daee64955403ad56d2df0530c8229",
+      "voxel_hash_order": "ascending z, each XY plane C-order, little-endian float32 HU",
+      "shape_xyz": [
+        512,
+        512,
+        153
+      ],
+      "affine_ras": [
+        [
+          -0.44921875,
+          0.0,
+          0.0,
+          129.775390625
+        ],
+        [
+          0.0,
+          -0.44921875,
+          0.0,
+          214.775390625
+        ],
+        [
+          0.0,
+          0.0,
+          2.0,
+          -326.20001220703125
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-374",
+      "source_NIfTI_SHA256": "6ea33c3602bd3a76ae6740ddf3f6c009078a85d731747a14d30a101ee89fbb6d",
+      "voxel_SHA256": "4ad5fa700fb71cc5f97ae927b3e29258d706d0b440167e7316d2488548623d99",
+      "voxel_hash_order": "ascending z, each XY plane C-order, little-endian float32 HU",
+      "shape_xyz": [
+        512,
+        512,
+        167
+      ],
+      "affine_ras": [
+        [
+          -0.390625,
+          0.0,
+          0.0,
+          100.0
+        ],
+        [
+          0.0,
+          -0.390625,
+          0.0,
+          64.79499816894531
+        ],
+        [
+          0.0,
+          0.0,
+          2.0,
+          -335.2904968261719
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-375",
+      "source_NIfTI_SHA256": "e3d87db0e9a66148be29358736e40c774b968c56f3256fb0dcdf6a3240a063a0",
+      "voxel_SHA256": "31c66d619065d75e4542e78a8315ecb55c475e956ab78ff327458e3827dfac8e",
+      "voxel_hash_order": "ascending z, each XY plane C-order, little-endian float32 HU",
+      "shape_xyz": [
+        512,
+        512,
+        167
+      ],
+      "affine_ras": [
+        [
+          -0.48828125,
+          0.0,
+          0.0,
+          126.755859375
+        ],
+        [
+          0.0,
+          -0.48828125,
+          0.0,
+          267.755859375
+        ],
+        [
+          0.0,
+          0.0,
+          2.0,
+          -362.70001220703125
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-380",
+      "source_NIfTI_SHA256": "6bddcbbd94d55955b221b2a8eaa0816317048ac0cf96c011b818ab4df235a59d",
+      "voxel_SHA256": "3894c5aeff3c464138ed6fe7871d97036c40c6fd3455c723aad66cc0500d5137",
+      "voxel_hash_order": "ascending z, each XY plane C-order, little-endian float32 HU",
+      "shape_xyz": [
+        512,
+        512,
+        157
+      ],
+      "affine_ras": [
+        [
+          -0.44921875,
+          0.0,
+          0.0,
+          93.775390625
+        ],
+        [
+          0.0,
+          -0.44921875,
+          0.0,
+          217.775390625
+        ],
+        [
+          0.0,
+          0.0,
+          2.0,
+          -340.20001220703125
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-388",
+      "source_NIfTI_SHA256": "6c4277d568c398cc7d5c0e7f2e63e5de99751e2fb4bf6d3aabdda3fb4328f070",
+      "voxel_SHA256": "111bacaf212c17f337a908083fa933e1806def2ab13fa62f298ec7c29563e867",
+      "voxel_hash_order": "ascending z, each XY plane C-order, little-endian float32 HU",
+      "shape_xyz": [
+        512,
+        512,
+        170
+      ],
+      "affine_ras": [
+        [
+          -0.4296880066394806,
+          0.0,
+          0.0,
+          110.0
+        ],
+        [
+          0.0,
+          -0.4296880066394806,
+          0.0,
+          110.0
+        ],
+        [
+          0.0,
+          0.0,
+          2.0,
+          -358.6875
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-38C25E47",
+      "source_NIfTI_SHA256": "27d6dab87d983abc9ef8e8c5b33966033caac825fde05e7386921f47b1132a92",
+      "voxel_SHA256": "54f540f691c316ea2bc51dde4f76d89486b2cbd430cea1858b82eca2fe1c3e99",
+      "voxel_hash_order": "ascending z, each XY plane C-order, little-endian float32 HU",
+      "shape_xyz": [
+        512,
+        512,
+        167
+      ],
+      "affine_ras": [
+        [
+          -0.5078129768371582,
+          0.0,
+          0.0,
+          132.92599487304688
+        ],
+        [
+          0.0,
+          -0.5078129768371582,
+          0.0,
+          130.0
+        ],
+        [
+          0.0,
+          0.0,
+          2.0,
+          -366.2409973144531
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-390",
+      "source_NIfTI_SHA256": "0663956ee6489b5d8d68c0dd69ee87d56583c63adb70907337e2102559ef10a0",
+      "voxel_SHA256": "13b8491ccb399b087f47e00d676d9aaf1eaa230a344f3916d5b49c15eec9247b",
+      "voxel_hash_order": "ascending z, each XY plane C-order, little-endian float32 HU",
+      "shape_xyz": [
+        512,
+        512,
+        193
+      ],
+      "affine_ras": [
+        [
+          -0.5078125,
+          0.0,
+          0.0,
+          129.74609375
+        ],
+        [
+          0.0,
+          -0.5078125,
+          0.0,
+          254.24609375
+        ],
+        [
+          0.0,
+          0.0,
+          2.0,
+          -371.20001220703125
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-393",
+      "source_NIfTI_SHA256": "82db2e903150fd1b0f46dce89c39574d76b0e8573d005fb83166d577d42e8af7",
+      "voxel_SHA256": "18d454ae7ae6f494aac40c63d1b0e2f1978c11ec67dc99140c15fc7240697c3e",
+      "voxel_hash_order": "ascending z, each XY plane C-order, little-endian float32 HU",
+      "shape_xyz": [
+        512,
+        512,
+        238
+      ],
+      "affine_ras": [
+        [
+          -0.625,
+          0.0,
+          0.0,
+          149.6875
+        ],
+        [
+          0.0,
+          -0.625,
+          0.0,
+          291.6875
+        ],
+        [
+          0.0,
+          0.0,
+          2.0,
+          -462.20001220703125
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-394",
+      "source_NIfTI_SHA256": "bdbfee834d8eee0c8ab77ca0deee60e5fc7690fac5c87d661557c1555547b9b4",
+      "voxel_SHA256": "50f4de12486f7904a83c8a83b8e177d96e82a2d26307dc0d13cf22a1e248fdc2",
+      "voxel_hash_order": "ascending z, each XY plane C-order, little-endian float32 HU",
+      "shape_xyz": [
+        512,
+        512,
+        204
+      ],
+      "affine_ras": [
+        [
+          -0.5859375,
+          0.0,
+          0.0,
+          135.70703125
+        ],
+        [
+          0.0,
+          -0.5859375,
+          0.0,
+          271.70703125
+        ],
+        [
+          0.0,
+          0.0,
+          2.0,
+          -521.2000122070312
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-3DA8BA0F",
+      "source_NIfTI_SHA256": "04665dde2c330e39098161ed9842e1e9119303ee29eb44bb3ee47cf2da8c27d9",
+      "voxel_SHA256": "7e3b5d1899554bb27efd5ea046bfd354b13ec716cc1c968d85ea34c0a664cd79",
+      "voxel_hash_order": "ascending z, each XY plane C-order, little-endian float32 HU",
+      "shape_xyz": [
+        512,
+        512,
+        745
+      ],
+      "affine_ras": [
+        [
+          -0.4882810115814209,
+          0.0,
+          0.0,
+          120.30000305175781
+        ],
+        [
+          0.0,
+          -0.4882810115814209,
+          0.0,
+          105.30000305175781
+        ],
+        [
+          0.0,
+          0.0,
+          0.625,
+          -502.5
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-3EE98BA3",
+      "source_NIfTI_SHA256": "d843d877a377ff62748d17f25192ae28dfda1136ee6bf0740e1d22ea716d75a9",
+      "voxel_SHA256": "97acf6ad9379e6f945af7cf801c8ffa20fb34392cb6da3e398535f522ac6ffe5",
+      "voxel_hash_order": "ascending z, each XY plane C-order, little-endian float32 HU",
+      "shape_xyz": [
+        512,
+        512,
+        190
+      ],
+      "affine_ras": [
+        [
+          -0.4296880066394806,
+          0.0,
+          0.0,
+          110.0
+        ],
+        [
+          0.0,
+          -0.4296880066394806,
+          0.0,
+          98.5999984741211
+        ],
+        [
+          0.0,
+          0.0,
+          2.0,
+          -404.9375
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-423F282F",
+      "source_NIfTI_SHA256": "a1425ae3ff77e675073d65c114ac0c43dae00f3f866c41a2a70a03ba062bd6b0",
+      "voxel_SHA256": "32eb539ab8edb3eac3bc9dd257bcd2b5c3886433b00106b3bbdac172fde1062a",
+      "voxel_hash_order": "ascending z, each XY plane C-order, little-endian float32 HU",
+      "shape_xyz": [
+        512,
+        512,
+        314
+      ],
+      "affine_ras": [
+        [
+          -0.78125,
+          0.0,
+          0.0,
+          199.609375
+        ],
+        [
+          0.0,
+          -0.78125,
+          0.0,
+          340.609375
+        ],
+        [
+          0.0,
+          0.0,
+          2.0,
+          -638.7000122070312
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-474F00E2",
+      "source_NIfTI_SHA256": "bfc254cd55b51c79a62fb45751a1e50984db50bd7c72132bd6b71027a94716e6",
+      "voxel_SHA256": "5f82281cea1b605c08edc4b6d35875e8ef7c2d4f0ce3a37638c00bc70bcbf842",
+      "voxel_hash_order": "ascending z, each XY plane C-order, little-endian float32 HU",
+      "shape_xyz": [
+        512,
+        512,
+        167
+      ],
+      "affine_ras": [
+        [
+          -0.4296880066394806,
+          0.0,
+          0.0,
+          102.51399993896484
+        ],
+        [
+          0.0,
+          -0.4296880066394806,
+          0.0,
+          110.0
+        ],
+        [
+          0.0,
+          0.0,
+          2.0,
+          -331.5425109863281
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-4C1A38AE",
+      "source_NIfTI_SHA256": "e5c00c65af89cb56ecf4baffb9eb8cf08ecd804e6979abb80f90430567d531a4",
+      "voxel_SHA256": "068cd9d87710154cce15a08f7d86a5901bc7042549f79c09403b3cb352f2b028",
+      "voxel_hash_order": "ascending z, each XY plane C-order, little-endian float32 HU",
+      "shape_xyz": [
+        512,
+        512,
+        185
+      ],
+      "affine_ras": [
+        [
+          -0.5859379768371582,
+          0.0,
+          0.0,
+          150.0
+        ],
+        [
+          0.0,
+          -0.5859379768371582,
+          0.0,
+          150.0
+        ],
+        [
+          0.0,
+          0.0,
+          2.0,
+          -453.2665100097656
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-5140F786",
+      "source_NIfTI_SHA256": "664a95d707cf2da81720e5ec93774e4513e95dfd04f9fcbb22dd93e86f72b1a0",
+      "voxel_SHA256": "1e1888f1c383fa78e04535ce945948d1b4d3d6923d0b69e98220fdf297769fd5",
+      "voxel_hash_order": "ascending z, each XY plane C-order, little-endian float32 HU",
+      "shape_xyz": [
+        512,
+        512,
+        156
+      ],
+      "affine_ras": [
+        [
+          -0.4296880066394806,
+          0.0,
+          0.0,
+          96.26599884033203
+        ],
+        [
+          0.0,
+          -0.4296880066394806,
+          0.0,
+          110.0
+        ],
+        [
+          0.0,
+          0.0,
+          2.0,
+          -325.906005859375
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-51A54CC5",
+      "source_NIfTI_SHA256": "2fe87356283dda3dacbfd91e77ed37e49470028e44bd1e9df731594bc9b83a67",
+      "voxel_SHA256": "0849c1c81acc35443576b5b1eb31148d3bcdf9e7a3fd2955931c88ebcae94dc3",
+      "voxel_hash_order": "ascending z, each XY plane C-order, little-endian float32 HU",
+      "shape_xyz": [
+        512,
+        512,
+        196
+      ],
+      "affine_ras": [
+        [
+          -0.4296875,
+          0.0,
+          0.0,
+          121.78515625
+        ],
+        [
+          0.0,
+          -0.4296875,
+          0.0,
+          228.28515625
+        ],
+        [
+          0.0,
+          0.0,
+          2.0,
+          -431.20001220703125
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-54BC2D63",
+      "source_NIfTI_SHA256": "d2fb05a163012dbbc79d798af4f29532a10a4d572e31a545c54574f255378f31",
+      "voxel_SHA256": "ddb7fe82fd27dcbaf388ccf1d1a057489f43f4eaf9802b480c322bb534d09efd",
+      "voxel_hash_order": "ascending z, each XY plane C-order, little-endian float32 HU",
+      "shape_xyz": [
+        512,
+        512,
+        577
+      ],
+      "affine_ras": [
+        [
+          -0.46875,
+          0.0,
+          0.0,
+          120.0
+        ],
+        [
+          0.0,
+          -0.46875,
+          0.0,
+          120.5
+        ],
+        [
+          0.0,
+          0.0,
+          0.625,
+          -388.25
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-572C61DF",
+      "source_NIfTI_SHA256": "b1e5d09adb8e539ba385924d0b93bc7f8ac1e12e77414f32c92e46385e16af7b",
+      "voxel_SHA256": "b04877f9a6a161e37549265327cb181bd81e4ab89face03c7bddd784938431bb",
+      "voxel_hash_order": "ascending z, each XY plane C-order, little-endian float32 HU",
+      "shape_xyz": [
+        512,
+        512,
+        287
+      ],
+      "affine_ras": [
+        [
+          -0.5859379768371582,
+          0.0,
+          0.0,
+          147.89999389648438
+        ],
+        [
+          0.0,
+          -0.5859379768371582,
+          0.0,
+          150.0
+        ],
+        [
+          0.0,
+          0.0,
+          2.0,
+          -588.6875
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-59397A22",
+      "source_NIfTI_SHA256": "d09f3f11b29c39eb09ad5515b1debcc4fac7da8447b44acbda25b20f4c420b73",
+      "voxel_SHA256": "504f895a2d1c1020dd762efd5cdaea41f6d1ee89c705a2633c96ae87efa99bed",
+      "voxel_hash_order": "ascending z, each XY plane C-order, little-endian float32 HU",
+      "shape_xyz": [
+        512,
+        512,
+        969
+      ],
+      "affine_ras": [
+        [
+          -0.9765620231628418,
+          0.0,
+          0.0,
+          275.6000061035156
+        ],
+        [
+          0.0,
+          -0.9765620231628418,
+          0.0,
+          250.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.625,
+          -613.25
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-5AEBE68F",
+      "source_NIfTI_SHA256": "9de84142594ab711d58a8d0d3b0217ab475ba23a0eb45f6019b50a0f8ea73db8",
+      "voxel_SHA256": "070af7fe064f9f9d95974282f58f72338ad4e5e559166653f2f3366281300532",
+      "voxel_hash_order": "ascending z, each XY plane C-order, little-endian float32 HU",
+      "shape_xyz": [
+        512,
+        512,
+        182
+      ],
+      "affine_ras": [
+        [
+          -0.5859379768371582,
+          0.0,
+          0.0,
+          166.46299743652344
+        ],
+        [
+          0.0,
+          -0.5859379768371582,
+          0.0,
+          157.48599243164062
+        ],
+        [
+          0.0,
+          0.0,
+          2.0,
+          -445.64801025390625
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-5B6E8C36",
+      "source_NIfTI_SHA256": "ef33a3a0a20faacdf947a74d80fc878097efe6658ab9ba328ee21336b611b1de",
+      "voxel_SHA256": "8cec1d3e899b027fea84c6b30cb6ed032a0871b4ae35d58eb84e44c6f5527cc2",
+      "voxel_hash_order": "ascending z, each XY plane C-order, little-endian float32 HU",
+      "shape_xyz": [
+        512,
+        512,
+        201
+      ],
+      "affine_ras": [
+        [
+          -0.46875,
+          0.0,
+          0.0,
+          132.765625
+        ],
+        [
+          0.0,
+          -0.46875,
+          0.0,
+          212.265625
+        ],
+        [
+          0.0,
+          0.0,
+          2.0,
+          -360.20001220703125
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-5E12AC25",
+      "source_NIfTI_SHA256": "9eb7d3dcc4c09f207928774aae456f1afd7ae06a6bf982882349896232f9b41b",
+      "voxel_SHA256": "a04c9207e9aa8e92e414e095ef2560a0b8767275edbe5ee9182ab3a407a9fd7d",
+      "voxel_hash_order": "ascending z, each XY plane C-order, little-endian float32 HU",
+      "shape_xyz": [
+        512,
+        512,
+        1041
+      ],
+      "affine_ras": [
+        [
+          -0.7421879768371582,
+          0.0,
+          0.0,
+          187.60000610351562
+        ],
+        [
+          0.0,
+          -0.7421879768371582,
+          0.0,
+          190.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.625,
+          -686.5
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-5F74CD3E",
+      "source_NIfTI_SHA256": "e12984ddfde155fce03125778db179b306084dcfa250084292b7dcf51e8953cd",
+      "voxel_SHA256": "8576b45a9d5a91c2ee312cefa108fe5128ba1ec7eb97fe3e4827b00688b1795c",
+      "voxel_hash_order": "ascending z, each XY plane C-order, little-endian float32 HU",
+      "shape_xyz": [
+        512,
+        512,
+        192
+      ],
+      "affine_ras": [
+        [
+          -0.4296880066394806,
+          0.0,
+          0.0,
+          112.5999984741211
+        ],
+        [
+          0.0,
+          -0.4296880066394806,
+          0.0,
+          80.0
+        ],
+        [
+          0.0,
+          0.0,
+          2.0,
+          -336.1875
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-5FF9F6C8",
+      "source_NIfTI_SHA256": "340d7d933b7c2c257fba984731b6d9d26eb14c7f6491f61633e3ab6e8d6a3cac",
+      "voxel_SHA256": "4b53239a7499903f3987701106a40b3bc0918593f9072c15c61fce4334f7b4bd",
+      "voxel_hash_order": "ascending z, each XY plane C-order, little-endian float32 HU",
+      "shape_xyz": [
+        512,
+        512,
+        212
+      ],
+      "affine_ras": [
+        [
+          -0.4296880066394806,
+          0.0,
+          0.0,
+          125.0
+        ],
+        [
+          0.0,
+          -0.4296880066394806,
+          0.0,
+          110.0
+        ],
+        [
+          0.0,
+          0.0,
+          2.0,
+          -443.4375
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-627003CD",
+      "source_NIfTI_SHA256": "05bb74257c539c42794db8809a5a99a2ceb64960be3c7754475c1da12f846096",
+      "voxel_SHA256": "de86c7a412c5faad0b71596c6e7a4e9e27a21de1599f9ac39493cd9ee6045075",
+      "voxel_hash_order": "ascending z, each XY plane C-order, little-endian float32 HU",
+      "shape_xyz": [
+        512,
+        512,
+        192
+      ],
+      "affine_ras": [
+        [
+          -0.546875,
+          0.0,
+          0.0,
+          114.81300354003906
+        ],
+        [
+          0.0,
+          -0.546875,
+          0.0,
+          140.0
+        ],
+        [
+          0.0,
+          0.0,
+          2.0,
+          -387.7560119628906
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-63E23C60",
+      "source_NIfTI_SHA256": "8bf0fe5b22ee7abc68ad5a0e9d6eb6c152f185914848b5e1d2cbfe8147529715",
+      "voxel_SHA256": "55db50b5bd5bfe687da4adcb258c6e23ebaad3e390920509e946f06e7952e4ad",
+      "voxel_hash_order": "ascending z, each XY plane C-order, little-endian float32 HU",
+      "shape_xyz": [
+        512,
+        512,
+        180
+      ],
+      "affine_ras": [
+        [
+          -0.5273439884185791,
+          0.0,
+          0.0,
+          119.4000015258789
+        ],
+        [
+          0.0,
+          -0.5273439884185791,
+          0.0,
+          122.0999984741211
+        ],
+        [
+          0.0,
+          0.0,
+          2.0,
+          -368.4375
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-642CA0DF",
+      "source_NIfTI_SHA256": "1ae535854fe1b122f26061c4cd0322549b51df7e8e9f3b57e4d3e80f41cb4a89",
+      "voxel_SHA256": "ca89fb79a2358c3ce50334417b2812de266055b7a4575535724047e7b1b8a8f5",
+      "voxel_hash_order": "ascending z, each XY plane C-order, little-endian float32 HU",
+      "shape_xyz": [
+        512,
+        512,
+        179
+      ],
+      "affine_ras": [
+        [
+          -0.4296875,
+          0.0,
+          0.0,
+          106.78515625
+        ],
+        [
+          0.0,
+          -0.4296875,
+          0.0,
+          226.28515625
+        ],
+        [
+          0.0,
+          0.0,
+          2.0,
+          -402.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-65A12C1E",
+      "source_NIfTI_SHA256": "2659eb4d7834e2046d6dc619e5723d3fb842b63b2eae9975a6aa53b1b6015e00",
+      "voxel_SHA256": "94856786d3e02dea5e9ea7b7936502f91fb77b63152126b118f4172fcf2eaba1",
+      "voxel_hash_order": "ascending z, each XY plane C-order, little-endian float32 HU",
+      "shape_xyz": [
+        512,
+        512,
+        169
+      ],
+      "affine_ras": [
+        [
+          -0.5078129768371582,
+          0.0,
+          0.0,
+          130.0
+        ],
+        [
+          0.0,
+          -0.5078129768371582,
+          0.0,
+          130.0
+        ],
+        [
+          0.0,
+          0.0,
+          2.0,
+          -355.2864990234375
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-677673CD",
+      "source_NIfTI_SHA256": "40f7d93494bc8fecad50a0411cd5c14183d9bbebb08d15ce77dbae40e20dbbf8",
+      "voxel_SHA256": "57eb6b9d690300e39f9e62cbf629218803022fc2bf3eb5e38cbe8e74fb4b23c3",
+      "voxel_hash_order": "ascending z, each XY plane C-order, little-endian float32 HU",
+      "shape_xyz": [
+        512,
+        512,
+        320
+      ],
+      "affine_ras": [
+        [
+          -0.6640625,
+          0.0,
+          0.0,
+          169.66796875
+        ],
+        [
+          0.0,
+          -0.6640625,
+          0.0,
+          316.16796875
+        ],
+        [
+          0.0,
+          0.0,
+          2.0,
+          -667.5999755859375
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-6B1C605C",
+      "source_NIfTI_SHA256": "538aab78d28b92e5bc3c7a50bba890aa4065e74d5429b204cc91680d2c39f0e4",
+      "voxel_SHA256": "470d2dfb46bf0cd2ecebf0e752c8dc6802ba2efa40822daa4af99c5a9c5ff432",
+      "voxel_hash_order": "ascending z, each XY plane C-order, little-endian float32 HU",
+      "shape_xyz": [
+        512,
+        512,
+        187
+      ],
+      "affine_ras": [
+        [
+          -0.5859375,
+          0.0,
+          0.0,
+          144.70703125
+        ],
+        [
+          0.0,
+          -0.5859375,
+          0.0,
+          274.70703125
+        ],
+        [
+          0.0,
+          0.0,
+          2.0,
+          -370.20001220703125
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-72C58EB3",
+      "source_NIfTI_SHA256": "2767ef241352eb60afb9015ad348ba977fe952cb9b6b0ead1e8f8c2ae86bbccf",
+      "voxel_SHA256": "05c4b21e7953b2ab73f09011302d16cb02b284d3e682c91c3915548f75423763",
+      "voxel_hash_order": "ascending z, each XY plane C-order, little-endian float32 HU",
+      "shape_xyz": [
+        512,
+        512,
+        187
+      ],
+      "affine_ras": [
+        [
+          -0.37304699420928955,
+          0.0,
+          0.0,
+          108.0
+        ],
+        [
+          0.0,
+          -0.37304699420928955,
+          0.0,
+          95.0
+        ],
+        [
+          0.0,
+          0.0,
+          2.0,
+          -386.1875
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-7606C1AB",
+      "source_NIfTI_SHA256": "7f4438136aec9f685687123bcb0633909dbf801bd104482690340b1ff39e262f",
+      "voxel_SHA256": "be34a5af0d31396a64bf9498a1c9f195e071806f31d8c42a5a63f6a0db770bfe",
+      "voxel_hash_order": "ascending z, each XY plane C-order, little-endian float32 HU",
+      "shape_xyz": [
+        512,
+        512,
+        255
+      ],
+      "affine_ras": [
+        [
+          -0.5859375,
+          0.0,
+          0.0,
+          135.70703125
+        ],
+        [
+          0.0,
+          -0.5859375,
+          0.0,
+          274.20703125
+        ],
+        [
+          0.0,
+          0.0,
+          2.0,
+          -533.2000122070312
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-792705D7",
+      "source_NIfTI_SHA256": "5fc7c29919bd0e62d7e5409a307a1baa7fd361de61123b6544ffab21bbba302d",
+      "voxel_SHA256": "a40b93d0ffde1496965a59448e85b7c88926f33454cb1bee6d91cb15c771d7ce",
+      "voxel_hash_order": "ascending z, each XY plane C-order, little-endian float32 HU",
+      "shape_xyz": [
+        512,
+        512,
+        921
+      ],
+      "affine_ras": [
+        [
+          -0.6640620231628418,
+          0.0,
+          0.0,
+          176.39999389648438
+        ],
+        [
+          0.0,
+          -0.6640620231628418,
+          0.0,
+          170.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.625,
+          -602.25
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-7AF2728D",
+      "source_NIfTI_SHA256": "afcc897eb6ba97313b41eb916b4ed25dd7c8fbcb7bf8eabaea3573ae158dcbfe",
+      "voxel_SHA256": "06f261a83dad67351db8c31f25e525505294e5128edd1abc5976dc1dcc6d4992",
+      "voxel_hash_order": "ascending z, each XY plane C-order, little-endian float32 HU",
+      "shape_xyz": [
+        512,
+        512,
+        167
+      ],
+      "affine_ras": [
+        [
+          -0.45117199420928955,
+          0.0,
+          0.0,
+          89.27100372314453
+        ],
+        [
+          0.0,
+          -0.45117199420928955,
+          0.0,
+          115.5
+        ],
+        [
+          0.0,
+          0.0,
+          2.0,
+          -363.2325134277344
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-7C205617",
+      "source_NIfTI_SHA256": "ff2e0a7dde99e32e6f50b2519e24217353ca126a606df361898f93173232f7a6",
+      "voxel_SHA256": "77a222612ee5bc2c2c9d5e728c80542d8ec225d0a61ddfe2505fe70481728d2e",
+      "voxel_hash_order": "ascending z, each XY plane C-order, little-endian float32 HU",
+      "shape_xyz": [
+        512,
+        512,
+        137
+      ],
+      "affine_ras": [
+        [
+          -0.46875,
+          0.0,
+          0.0,
+          146.875
+        ],
+        [
+          0.0,
+          -0.46875,
+          0.0,
+          120.0
+        ],
+        [
+          0.0,
+          0.0,
+          2.0,
+          -325.5509948730469
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-7C7F4414",
+      "source_NIfTI_SHA256": "6e889a4c42547771325a4d78478e88f6c6653e10a52831f741094e9a6ccb0d03",
+      "voxel_SHA256": "a73a35cb415a9d11d0e98f49469a22e4e67e092ff029999b1d6ae2eeb23449cd",
+      "voxel_hash_order": "ascending z, each XY plane C-order, little-endian float32 HU",
+      "shape_xyz": [
+        512,
+        512,
+        174
+      ],
+      "affine_ras": [
+        [
+          -0.4882810115814209,
+          0.0,
+          0.0,
+          132.0919952392578
+        ],
+        [
+          0.0,
+          -0.4882810115814209,
+          0.0,
+          125.0
+        ],
+        [
+          0.0,
+          0.0,
+          2.0,
+          -346.3315124511719
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-7CD1BD9D",
+      "source_NIfTI_SHA256": "0ba660b5a27209202504341b6de080193e5e2d2dc920d38d91f30873e2370de9",
+      "voxel_SHA256": "6199a70c801363f35605061f75aa4a05faa4e217c908f9459631f8aef5225204",
+      "voxel_hash_order": "ascending z, each XY plane C-order, little-endian float32 HU",
+      "shape_xyz": [
+        512,
+        512,
+        206
+      ],
+      "affine_ras": [
+        [
+          -0.46875,
+          0.0,
+          0.0,
+          120.765625
+        ],
+        [
+          0.0,
+          -0.46875,
+          0.0,
+          219.765625
+        ],
+        [
+          0.0,
+          0.0,
+          2.0,
+          -766.2000122070312
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-7E9377C4",
+      "source_NIfTI_SHA256": "72915ca7d1730e5cc426adf8499dd0f66a8a348392b8a075b479d25d74c2b9d9",
+      "voxel_SHA256": "72b603e3b6c73d93646090db000a7590e5c0f353dfdbc19b240f891967fd4be5",
+      "voxel_hash_order": "ascending z, each XY plane C-order, little-endian float32 HU",
+      "shape_xyz": [
+        512,
+        512,
+        170
+      ],
+      "affine_ras": [
+        [
+          -0.4296880066394806,
+          0.0,
+          0.0,
+          101.4729995727539
+        ],
+        [
+          0.0,
+          -0.4296880066394806,
+          0.0,
+          110.0
+        ],
+        [
+          0.0,
+          0.0,
+          2.0,
+          -383.7745056152344
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-7FF0293F",
+      "source_NIfTI_SHA256": "51ecfe9410772d3f01e21a84448802b3ae6d6006a5bc2a446a1f33a0fad783e8",
+      "voxel_SHA256": "e546324632dedd19d7052a5a60026150180bd640eefdd42d9aa09d3d4ad8cace",
+      "voxel_hash_order": "ascending z, each XY plane C-order, little-endian float32 HU",
+      "shape_xyz": [
+        512,
+        512,
+        190
+      ],
+      "affine_ras": [
+        [
+          -0.46875,
+          0.0,
+          0.0,
+          113.4000015258789
+        ],
+        [
+          0.0,
+          -0.46875,
+          0.0,
+          105.0
+        ],
+        [
+          0.0,
+          0.0,
+          2.0,
+          -396.6875
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-813E523C",
+      "source_NIfTI_SHA256": "50844f894d3941399b48d5544f9c1687a7db94ffc226be680a017f06d37621da",
+      "voxel_SHA256": "26b512f7d911e5cee0810b83f530f5ce60517a0e4be7b22849862695e82a74c7",
+      "voxel_hash_order": "ascending z, each XY plane C-order, little-endian float32 HU",
+      "shape_xyz": [
+        512,
+        512,
+        189
+      ],
+      "affine_ras": [
+        [
+          -0.48828125,
+          0.0,
+          0.0,
+          120.755859375
+        ],
+        [
+          0.0,
+          -0.48828125,
+          0.0,
+          248.755859375
+        ],
+        [
+          0.0,
+          0.0,
+          2.0,
+          -390.20001220703125
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-86096795",
+      "source_NIfTI_SHA256": "8787402d5c845c7975fef5db98d1b588f1287c0ab8768950dfaae3911e9436ee",
+      "voxel_SHA256": "7da6e40820bea5a3738c9f17a7118f6a0f63030a6f22236c47867db6965122f3",
+      "voxel_hash_order": "ascending z, each XY plane C-order, little-endian float32 HU",
+      "shape_xyz": [
+        512,
+        512,
+        180
+      ],
+      "affine_ras": [
+        [
+          -0.4960939884185791,
+          0.0,
+          0.0,
+          124.72000122070312
+        ],
+        [
+          0.0,
+          -0.4960939884185791,
+          0.0,
+          139.69200134277344
+        ],
+        [
+          0.0,
+          0.0,
+          2.0,
+          -416.6579895019531
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-882CD2BF",
+      "source_NIfTI_SHA256": "7fa33c118273fc0fd2668bf0f18e01f267df82d62c99fa59aab36fdfe0ed5508",
+      "voxel_SHA256": "4db7a7dab3019f1772eca2c3df3baa6651c57e1c29660c11d440ebb47f4f87b3",
+      "voxel_hash_order": "ascending z, each XY plane C-order, little-endian float32 HU",
+      "shape_xyz": [
+        512,
+        512,
+        302
+      ],
+      "affine_ras": [
+        [
+          -0.78125,
+          0.0,
+          0.0,
+          211.0
+        ],
+        [
+          0.0,
+          -0.78125,
+          0.0,
+          179.39999389648438
+        ],
+        [
+          0.0,
+          0.0,
+          2.0,
+          -602.9375
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-885A32DF",
+      "source_NIfTI_SHA256": "41bd7225878ad587562eb41c6875378fd9f383c68f1da2d8ece6cf75b0b0f565",
+      "voxel_SHA256": "d07113c4eaa84b21799eb4f3d3adf53f737757a03813b9e423c01d7cb3fd3540",
+      "voxel_hash_order": "ascending z, each XY plane C-order, little-endian float32 HU",
+      "shape_xyz": [
+        512,
+        512,
+        188
+      ],
+      "affine_ras": [
+        [
+          -0.5859375,
+          0.0,
+          0.0,
+          169.70703125
+        ],
+        [
+          0.0,
+          -0.5859375,
+          0.0,
+          271.20703125
+        ],
+        [
+          0.0,
+          0.0,
+          2.0,
+          -63.70000076293945
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-885F9D36",
+      "source_NIfTI_SHA256": "e5bad69af2a96cb995bc0b3e983c2b97f1016affd4758977e7732d2eddda06eb",
+      "voxel_SHA256": "4f6c3ba41d027642949e25fb60be2391f2b465e943430707e464215e605a59ae",
+      "voxel_hash_order": "ascending z, each XY plane C-order, little-endian float32 HU",
+      "shape_xyz": [
+        512,
+        512,
+        316
+      ],
+      "affine_ras": [
+        [
+          -0.64453125,
+          0.0,
+          0.0,
+          174.677734375
+        ],
+        [
+          0.0,
+          -0.64453125,
+          0.0,
+          298.677734375
+        ],
+        [
+          0.0,
+          0.0,
+          2.0,
+          -588.7000122070312
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-886ABD82",
+      "source_NIfTI_SHA256": "3653aa1352cfbc781e3265d06586d511b409b8f2798e3627d0e5f5fb37c6405a",
+      "voxel_SHA256": "5e91724d01f20bf663d98fae1661bac95a05374b5b8e0f16c3e9210ec5b56013",
+      "voxel_hash_order": "ascending z, each XY plane C-order, little-endian float32 HU",
+      "shape_xyz": [
+        512,
+        512,
+        134
+      ],
+      "affine_ras": [
+        [
+          -0.48828125,
+          0.0,
+          0.0,
+          143.755859375
+        ],
+        [
+          0.0,
+          -0.48828125,
+          0.0,
+          247.255859375
+        ],
+        [
+          0.0,
+          0.0,
+          2.0,
+          -256.20001220703125
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-8D386469",
+      "source_NIfTI_SHA256": "0bdb80b743cc67129f367efa5c49871f7261b9849c678c73a2b2f4c51daa03e4",
+      "voxel_SHA256": "7aedfd45ffff9cc4b1ffd2849da202aab205f261cbf4b4379391556d175d6b11",
+      "voxel_hash_order": "ascending z, each XY plane C-order, little-endian float32 HU",
+      "shape_xyz": [
+        512,
+        512,
+        167
+      ],
+      "affine_ras": [
+        [
+          -0.46875,
+          0.0,
+          0.0,
+          128.13299560546875
+        ],
+        [
+          0.0,
+          -0.46875,
+          0.0,
+          120.0
+        ],
+        [
+          0.0,
+          0.0,
+          2.0,
+          -339.8525085449219
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-8FAE886E",
+      "source_NIfTI_SHA256": "38d36c88b380d079a4fda56015902d0fed9a5e919d4c09d83c0bc5d43b6c2764",
+      "voxel_SHA256": "bdec5e770556e434a2f277f200223fcbbedfa9e0dedc7c0818e9f6f8b63a7933",
+      "voxel_hash_order": "ascending z, each XY plane C-order, little-endian float32 HU",
+      "shape_xyz": [
+        512,
+        512,
+        179
+      ],
+      "affine_ras": [
+        [
+          -0.4296875,
+          0.0,
+          0.0,
+          92.78515625
+        ],
+        [
+          0.0,
+          -0.4296875,
+          0.0,
+          230.78515625
+        ],
+        [
+          0.0,
+          0.0,
+          2.0,
+          -348.20001220703125
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-92891A2F",
+      "source_NIfTI_SHA256": "f72470c7191a1f7fa61b9ac5240bf80a97252e401591c9f5bd2e08fa59ebe69f",
+      "voxel_SHA256": "434ebe567b5881a8090ba813b11ae84c786f779d5e065db8bceca11149a23380",
+      "voxel_hash_order": "ascending z, each XY plane C-order, little-endian float32 HU",
+      "shape_xyz": [
+        512,
+        512,
+        280
+      ],
+      "affine_ras": [
+        [
+          -0.5859379768371582,
+          0.0,
+          0.0,
+          159.89999389648438
+        ],
+        [
+          0.0,
+          -0.5859379768371582,
+          0.0,
+          150.0
+        ],
+        [
+          0.0,
+          0.0,
+          2.0,
+          -631.1875
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-9B29D191",
+      "source_NIfTI_SHA256": "5a98c7bb059355fe5be5881adb935c2e20aa8ab9ba8dfe7b01b6ad48905f2fb0",
+      "voxel_SHA256": "818f4063dbdc53844c7197f3fda82c2d8f81440c530403babc9fbe9630f3ca66",
+      "voxel_hash_order": "ascending z, each XY plane C-order, little-endian float32 HU",
+      "shape_xyz": [
+        512,
+        512,
+        310
+      ],
+      "affine_ras": [
+        [
+          -0.703125,
+          0.0,
+          0.0,
+          171.39999389648438
+        ],
+        [
+          0.0,
+          -0.703125,
+          0.0,
+          138.60000610351562
+        ],
+        [
+          0.0,
+          0.0,
+          2.0,
+          -620.1875
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-9D15A505",
+      "source_NIfTI_SHA256": "1dd454ec0f2b9425126bc394dc631d087e2c8b4df10dfef9d942598fb3cbd173",
+      "voxel_SHA256": "b6ff872c0227001d564843e8423d0023c1e8ed616b45a779d3dfc43b1a43f0b6",
+      "voxel_hash_order": "ascending z, each XY plane C-order, little-endian float32 HU",
+      "shape_xyz": [
+        512,
+        512,
+        825
+      ],
+      "affine_ras": [
+        [
+          -0.5859379768371582,
+          0.0,
+          0.0,
+          145.89999389648438
+        ],
+        [
+          0.0,
+          -0.5859379768371582,
+          0.0,
+          133.3000030517578
+        ],
+        [
+          0.0,
+          0.0,
+          0.625,
+          -537.75
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-9ECC8D5B",
+      "source_NIfTI_SHA256": "e1f5dc4217c672062490fb8ed1545d1a34cba43961a01ca622152730442810ee",
+      "voxel_SHA256": "491a0c7290dc1dd8d834231e147c51b118c658ab8c4b40396c5aa1fee2bdefcc",
+      "voxel_hash_order": "ascending z, each XY plane C-order, little-endian float32 HU",
+      "shape_xyz": [
+        512,
+        512,
+        293
+      ],
+      "affine_ras": [
+        [
+          -0.546875,
+          0.0,
+          0.0,
+          141.7265625
+        ],
+        [
+          0.0,
+          -0.546875,
+          0.0,
+          269.2265625
+        ],
+        [
+          0.0,
+          0.0,
+          2.0,
+          -629.7000122070312
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-A1FF5A26",
+      "source_NIfTI_SHA256": "08a293963e4e808a5a9ce2d0d828d6469f705cdb56e9920713ce8d91600a7be1",
+      "voxel_SHA256": "3505e062dfff3e7aaeb75ddaa1e9d53ae4dfdb5f22055b606047982979e03998",
+      "voxel_hash_order": "ascending z, each XY plane C-order, little-endian float32 HU",
+      "shape_xyz": [
+        512,
+        512,
+        157
+      ],
+      "affine_ras": [
+        [
+          -0.4492189884185791,
+          0.0,
+          0.0,
+          115.0
+        ],
+        [
+          0.0,
+          -0.4492189884185791,
+          0.0,
+          51.680999755859375
+        ],
+        [
+          0.0,
+          0.0,
+          2.0,
+          -285.9339904785156
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-A328BA9A",
+      "source_NIfTI_SHA256": "342906e0f317a339b3a08d5481da66db450b9101023787879c9e6048e640e94d",
+      "voxel_SHA256": "fb75490420d8ef00a33e30ac41b1f1d5a8f8dbe9d86a288683aaa409b8ccc44d",
+      "voxel_hash_order": "ascending z, each XY plane C-order, little-endian float32 HU",
+      "shape_xyz": [
+        512,
+        512,
+        195
+      ],
+      "affine_ras": [
+        [
+          -0.5859379768371582,
+          0.0,
+          0.0,
+          135.22500610351562
+        ],
+        [
+          0.0,
+          -0.5859379768371582,
+          0.0,
+          150.0
+        ],
+        [
+          0.0,
+          0.0,
+          2.0,
+          -416.9184875488281
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-A79D004C",
+      "source_NIfTI_SHA256": "9bbb65cfb1b375f5014451ec4db9f9510d6363060f854dfe55e6e7617da80b48",
+      "voxel_SHA256": "646b0b2d677d187e3065c2d31a43804671412947dfcccd87f12adfcd3b674f57",
+      "voxel_hash_order": "ascending z, each XY plane C-order, little-endian float32 HU",
+      "shape_xyz": [
+        512,
+        512,
+        237
+      ],
+      "affine_ras": [
+        [
+          -0.5078120231628418,
+          0.0,
+          0.0,
+          113.9000015258789
+        ],
+        [
+          0.0,
+          -0.5078120231628418,
+          0.0,
+          130.0
+        ],
+        [
+          0.0,
+          0.0,
+          2.0,
+          -470.4375
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-A7F73045",
+      "source_NIfTI_SHA256": "68f9c06a70a0f7b729a26f764a826bc126f9edd7f6fb590c8b2301a14742f6a9",
+      "voxel_SHA256": "1deb3e9fbc891d63de2ed4b1737fde84e424e03f1ee18646c6a0daae7334b78d",
+      "voxel_hash_order": "ascending z, each XY plane C-order, little-endian float32 HU",
+      "shape_xyz": [
+        512,
+        512,
+        250
+      ],
+      "affine_ras": [
+        [
+          -0.5859375,
+          0.0,
+          0.0,
+          159.70703125
+        ],
+        [
+          0.0,
+          -0.5859375,
+          0.0,
+          256.20703125
+        ],
+        [
+          0.0,
+          0.0,
+          2.0,
+          -466.20001220703125
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-AA032583",
+      "source_NIfTI_SHA256": "d6f3f2c972e4c2a77c492c14502c5bfdb8941f7e45b543422740fd1c7032bc1c",
+      "voxel_SHA256": "657a263637b7ba82eaaad733454938236e5eb93d53629221ccb18bc901591e0d",
+      "voxel_hash_order": "ascending z, each XY plane C-order, little-endian float32 HU",
+      "shape_xyz": [
+        512,
+        512,
+        319
+      ],
+      "affine_ras": [
+        [
+          -0.5859375,
+          0.0,
+          0.0,
+          149.70703125
+        ],
+        [
+          0.0,
+          -0.5859375,
+          0.0,
+          293.70703125
+        ],
+        [
+          0.0,
+          0.0,
+          2.0,
+          -625.5
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-ACCA52D8",
+      "source_NIfTI_SHA256": "7ada1e31b14c4b3b932b1eb252422cea48a5c161fe344bfe88c909b1c09669a0",
+      "voxel_SHA256": "80b0adae47000c6aa0ef967c883488d4211d089fd1ccff18a1013424deb685c9",
+      "voxel_hash_order": "ascending z, each XY plane C-order, little-endian float32 HU",
+      "shape_xyz": [
+        512,
+        512,
+        196
+      ],
+      "affine_ras": [
+        [
+          -0.5078129768371582,
+          0.0,
+          0.0,
+          138.13299560546875
+        ],
+        [
+          0.0,
+          -0.5078129768371582,
+          0.0,
+          123.94999694824219
+        ],
+        [
+          0.0,
+          0.0,
+          2.0,
+          -367.52801513671875
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-AD87B3CD",
+      "source_NIfTI_SHA256": "df7c638be26a81b14dfa023fd88496cd6d1d49d2587633736d4c713f33018353",
+      "voxel_SHA256": "1a46006bbbc2d2124d42a0a3acf8626357978c0359b7ea5b23dcdabc42a243d2",
+      "voxel_hash_order": "ascending z, each XY plane C-order, little-endian float32 HU",
+      "shape_xyz": [
+        512,
+        512,
+        1001
+      ],
+      "affine_ras": [
+        [
+          -0.703125,
+          0.0,
+          0.0,
+          185.10000610351562
+        ],
+        [
+          0.0,
+          -0.703125,
+          0.0,
+          180.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.625,
+          -706.5
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-AF83DAF1",
+      "source_NIfTI_SHA256": "3b5ee3f10ee3a447f4e9b3916e67d628b3c30851ab4440860b59005b4b849216",
+      "voxel_SHA256": "52aba5bd2e16f31aae905339491411a0f5c3299dc27e628715fd1dc3b33b916c",
+      "voxel_hash_order": "ascending z, each XY plane C-order, little-endian float32 HU",
+      "shape_xyz": [
+        512,
+        512,
+        175
+      ],
+      "affine_ras": [
+        [
+          -0.4960939884185791,
+          0.0,
+          0.0,
+          144.50399780273438
+        ],
+        [
+          0.0,
+          -0.4960939884185791,
+          0.0,
+          127.0
+        ],
+        [
+          0.0,
+          0.0,
+          2.0,
+          -365.8684997558594
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-B1CA7F8B",
+      "source_NIfTI_SHA256": "8037f627e27409dfa58b28bd7f44bf3ee4535a28dc8e0d135655a5246f10f91a",
+      "voxel_SHA256": "b0f441018682353451a966136c4d66dd48847d98c725c9bd8cf7793a5ccaf792",
+      "voxel_hash_order": "ascending z, each XY plane C-order, little-endian float32 HU",
+      "shape_xyz": [
+        512,
+        512,
+        348
+      ],
+      "affine_ras": [
+        [
+          -0.68359375,
+          0.0,
+          0.0,
+          186.658203125
+        ],
+        [
+          0.0,
+          -0.68359375,
+          0.0,
+          319.158203125
+        ],
+        [
+          0.0,
+          0.0,
+          2.0,
+          -643.2000122070312
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-B42CD321",
+      "source_NIfTI_SHA256": "9671444f0ce837b209cef9ef364d937905f4dd12d22ca69a117cb9a3f4d4b64c",
+      "voxel_SHA256": "a17d18dfa3327acb36fb848d57d0054027968daba0646dead1350abea340cb8f",
+      "voxel_hash_order": "ascending z, each XY plane C-order, little-endian float32 HU",
+      "shape_xyz": [
+        512,
+        512,
+        260
+      ],
+      "affine_ras": [
+        [
+          -0.546875,
+          0.0,
+          0.0,
+          133.39999389648438
+        ],
+        [
+          0.0,
+          -0.546875,
+          0.0,
+          100.0
+        ],
+        [
+          0.0,
+          0.0,
+          2.0,
+          -562.9375
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-B93CB2C7",
+      "source_NIfTI_SHA256": "423462f43e1fb3648d198e901a51d3f8a3ae3790eab2fc3a44a6cca6074bd792",
+      "voxel_SHA256": "53ffd3526970edeac07723216c18869d88ea85274946718d4c37a33caaf33296",
+      "voxel_hash_order": "ascending z, each XY plane C-order, little-endian float32 HU",
+      "shape_xyz": [
+        512,
+        512,
+        230
+      ],
+      "affine_ras": [
+        [
+          -0.5078120231628418,
+          0.0,
+          0.0,
+          132.6999969482422
+        ],
+        [
+          0.0,
+          -0.5078120231628418,
+          0.0,
+          120.69999694824219
+        ],
+        [
+          0.0,
+          0.0,
+          2.0,
+          -479.4375
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-BB8351E7",
+      "source_NIfTI_SHA256": "36c5f0585e034a53d1ecc0112b12a31ca564eb13299304ff21b1379f8fe4b279",
+      "voxel_SHA256": "2cab257fa6ad9371eb8f39997cee6f378be505eb5b0ea791c85e46cbbf68fb66",
+      "voxel_hash_order": "ascending z, each XY plane C-order, little-endian float32 HU",
+      "shape_xyz": [
+        512,
+        512,
+        163
+      ],
+      "affine_ras": [
+        [
+          -0.5078125,
+          0.0,
+          0.0,
+          100.74609375
+        ],
+        [
+          0.0,
+          -0.5078125,
+          0.0,
+          246.74609375
+        ],
+        [
+          0.0,
+          0.0,
+          2.0,
+          -257.3999938964844
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-BB89BD7B",
+      "source_NIfTI_SHA256": "1535cea059ccb207031db1d2bd9877c19274f177948af7b96c9a28c3beb893d3",
+      "voxel_SHA256": "d802555e50014e9bb5e8bd6966641a71470010569121cb866de91c921f47ac6c",
+      "voxel_hash_order": "ascending z, each XY plane C-order, little-endian float32 HU",
+      "shape_xyz": [
+        512,
+        512,
+        969
+      ],
+      "affine_ras": [
+        [
+          -0.703125,
+          0.0,
+          0.0,
+          163.10000610351562
+        ],
+        [
+          0.0,
+          -0.703125,
+          0.0,
+          157.5
+        ],
+        [
+          0.0,
+          0.0,
+          0.625,
+          -628.5
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-BB8C3187",
+      "source_NIfTI_SHA256": "162704fb4eaea26194dd9149be9ed1a31986353cd4f095143326437433bfadce",
+      "voxel_SHA256": "b88cc27892d1a45e627bd65a064a09151f76b69b49da86bdb866c7ab465b3ad0",
+      "voxel_hash_order": "ascending z, each XY plane C-order, little-endian float32 HU",
+      "shape_xyz": [
+        512,
+        512,
+        281
+      ],
+      "affine_ras": [
+        [
+          -0.6640625,
+          0.0,
+          0.0,
+          167.66796875
+        ],
+        [
+          0.0,
+          -0.6640625,
+          0.0,
+          330.66796875
+        ],
+        [
+          0.0,
+          0.0,
+          2.0,
+          -592.7999877929688
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-BD4C52F3",
+      "source_NIfTI_SHA256": "4174469376fc4b46bf8f3caac9a30cd9991df72c6c44e8f29cb45d1ea0bcbe2f",
+      "voxel_SHA256": "ceea92cac2b542f0035a721ed41516a559b2789d73c640d2a955a7fba115e099",
+      "voxel_hash_order": "ascending z, each XY plane C-order, little-endian float32 HU",
+      "shape_xyz": [
+        512,
+        512,
+        149
+      ],
+      "affine_ras": [
+        [
+          -0.4296875,
+          0.0,
+          0.0,
+          96.78515625
+        ],
+        [
+          0.0,
+          -0.4296875,
+          0.0,
+          212.78515625
+        ],
+        [
+          0.0,
+          0.0,
+          2.0,
+          -344.3999938964844
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-BEC712BF",
+      "source_NIfTI_SHA256": "db3ba5dd0ddb5d95ddf13e35f78fc796c0577d2a5d28b317692739e5814e3584",
+      "voxel_SHA256": "dab80c49d4a9760a68d86c4591b40901d35fc1df785578ddf1b7c870345b7595",
+      "voxel_hash_order": "ascending z, each XY plane C-order, little-endian float32 HU",
+      "shape_xyz": [
+        512,
+        512,
+        165
+      ],
+      "affine_ras": [
+        [
+          -0.46875,
+          0.0,
+          0.0,
+          120.0
+        ],
+        [
+          0.0,
+          -0.46875,
+          0.0,
+          120.0
+        ],
+        [
+          0.0,
+          0.0,
+          2.0,
+          -328.6875
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-BFCF2E26",
+      "source_NIfTI_SHA256": "2725cbcd397b5096d8d3fc2b6ade3e3ce55b044f516fa999c36608f244e47179",
+      "voxel_SHA256": "ccf8183fef9a33c83033649263e52500d05d06c605951cf5aedff2770bc347e6",
+      "voxel_hash_order": "ascending z, each XY plane C-order, little-endian float32 HU",
+      "shape_xyz": [
+        512,
+        512,
+        217
+      ],
+      "affine_ras": [
+        [
+          -0.4492189884185791,
+          0.0,
+          0.0,
+          123.80000305175781
+        ],
+        [
+          0.0,
+          -0.4492189884185791,
+          0.0,
+          115.0
+        ],
+        [
+          0.0,
+          0.0,
+          2.0,
+          -439.6875
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-C1655E97",
+      "source_NIfTI_SHA256": "ce269416e1de56468470935c82530a22063a5dc1dfb347de892cfaf0f76c9083",
+      "voxel_SHA256": "f6eb5af969053776de59fca0038b8f9d71c83d688fd5a3068e140a160e591806",
+      "voxel_hash_order": "ascending z, each XY plane C-order, little-endian float32 HU",
+      "shape_xyz": [
+        512,
+        512,
+        157
+      ],
+      "affine_ras": [
+        [
+          -0.4296880066394806,
+          0.0,
+          0.0,
+          107.72000122070312
+        ],
+        [
+          0.0,
+          -0.4296880066394806,
+          0.0,
+          96.66100311279297
+        ],
+        [
+          0.0,
+          0.0,
+          2.0,
+          -346.572509765625
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-C26BBB5F",
+      "source_NIfTI_SHA256": "15dc743e9a6d52b875575cc10b24ac80a48365fc36fef307a8eab2375a90f220",
+      "voxel_SHA256": "83df18202352411f73ca73d2af50c2e3def2a81a3e76f963f1548c1020dc0aeb",
+      "voxel_hash_order": "ascending z, each XY plane C-order, little-endian float32 HU",
+      "shape_xyz": [
+        512,
+        512,
+        244
+      ],
+      "affine_ras": [
+        [
+          -0.625,
+          0.0,
+          0.0,
+          155.6875
+        ],
+        [
+          0.0,
+          -0.625,
+          0.0,
+          295.1875
+        ],
+        [
+          0.0,
+          0.0,
+          2.0,
+          -511.20001220703125
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-C60A79C6",
+      "source_NIfTI_SHA256": "fb31f8c0b523bca99472d57fe873cdf1ce029e3b0be7b1193f848ec49944e340",
+      "voxel_SHA256": "3b8d02fff08351670aa904f39dd5d7ab04f81ed1910859c26c837a0f2bcc81d5",
+      "voxel_hash_order": "ascending z, each XY plane C-order, little-endian float32 HU",
+      "shape_xyz": [
+        512,
+        512,
+        175
+      ],
+      "affine_ras": [
+        [
+          -0.44335898756980896,
+          0.0,
+          0.0,
+          97.68399810791016
+        ],
+        [
+          0.0,
+          -0.44335898756980896,
+          0.0,
+          113.5
+        ],
+        [
+          0.0,
+          0.0,
+          2.0,
+          -374.1724853515625
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-C7D4AEFA",
+      "source_NIfTI_SHA256": "74cb6923e94e0b05ccbc6d0beae68908e080238eb70f8d5e6041ce95f6c8c3e5",
+      "voxel_SHA256": "7077a7eb7cf3540b5bd153e76949240b7f0a84031e32aa97c34b9c2fff22428e",
+      "voxel_hash_order": "ascending z, each XY plane C-order, little-endian float32 HU",
+      "shape_xyz": [
+        512,
+        512,
+        192
+      ],
+      "affine_ras": [
+        [
+          -0.625,
+          0.0,
+          0.0,
+          160.0
+        ],
+        [
+          0.0,
+          -0.625,
+          0.0,
+          160.0
+        ],
+        [
+          0.0,
+          0.0,
+          2.0,
+          -412.41650390625
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-C9616E71",
+      "source_NIfTI_SHA256": "369212af916c873cc47da9fba0668901692bf511cde77a39c01ad939217257a3",
+      "voxel_SHA256": "baee49823cf1892850733b19627d4fb6d3d5d488ad465e000a239285adfde2e1",
+      "voxel_hash_order": "ascending z, each XY plane C-order, little-endian float32 HU",
+      "shape_xyz": [
+        512,
+        512,
+        865
+      ],
+      "affine_ras": [
+        [
+          -0.703125,
+          0.0,
+          0.0,
+          191.10000610351562
+        ],
+        [
+          0.0,
+          -0.703125,
+          0.0,
+          176.10000610351562
+        ],
+        [
+          0.0,
+          0.0,
+          0.625,
+          -558.75
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-CA967BD7",
+      "source_NIfTI_SHA256": "e120f3307405648bef3fced646bc22223efe0256dd3537ab9795af2ea7b6df8b",
+      "voxel_SHA256": "31460c38c37791506b623eaf5104fead1273e8bc0fbedc0eb6ae3c2965565305",
+      "voxel_hash_order": "ascending z, each XY plane C-order, little-endian float32 HU",
+      "shape_xyz": [
+        512,
+        512,
+        165
+      ],
+      "affine_ras": [
+        [
+          -0.4296880066394806,
+          0.0,
+          0.0,
+          103.30000305175781
+        ],
+        [
+          0.0,
+          -0.4296880066394806,
+          0.0,
+          110.0
+        ],
+        [
+          0.0,
+          0.0,
+          2.0,
+          -363.6875
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-CB9BF05E",
+      "source_NIfTI_SHA256": "259eb5d81faaf2a8354498020323fdf8ecc8189a22f19084237b647e301af011",
+      "voxel_SHA256": "a8d771345f65402e086e2698b1e868ffa7cdb189f2072c5d6d691358f873abdb",
+      "voxel_hash_order": "ascending z, each XY plane C-order, little-endian float32 HU",
+      "shape_xyz": [
+        512,
+        512,
+        290
+      ],
+      "affine_ras": [
+        [
+          -0.703125,
+          0.0,
+          0.0,
+          188.1999969482422
+        ],
+        [
+          0.0,
+          -0.703125,
+          0.0,
+          161.3000030517578
+        ],
+        [
+          0.0,
+          0.0,
+          2.0,
+          -621.9375
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-D1572D48",
+      "source_NIfTI_SHA256": "e8cc884fa6bb228c1d85cd93716f5d2508865e9d138ce868bbce7273b763b58b",
+      "voxel_SHA256": "824ce960949db2f0095dd94afa96e111f94fafa59c5e4800d0c9fd71ee27d629",
+      "voxel_hash_order": "ascending z, each XY plane C-order, little-endian float32 HU",
+      "shape_xyz": [
+        512,
+        512,
+        90
+      ],
+      "affine_ras": [
+        [
+          -0.4296880066394806,
+          0.0,
+          0.0,
+          118.80000305175781
+        ],
+        [
+          0.0,
+          -0.4296880066394806,
+          0.0,
+          126.5999984741211
+        ],
+        [
+          0.0,
+          0.0,
+          2.0,
+          -196.1875
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-D20DA719",
+      "source_NIfTI_SHA256": "e4b105268ef7e9f5be6409774e3905b2436535f0020a02c332da1a5d91f091b8",
+      "voxel_SHA256": "34c30eb6d9b135319092964a869ea1781317b9abbcd3b0c68061063e2fdb5e99",
+      "voxel_hash_order": "ascending z, each XY plane C-order, little-endian float32 HU",
+      "shape_xyz": [
+        512,
+        512,
+        252
+      ],
+      "affine_ras": [
+        [
+          -0.6054689884185791,
+          0.0,
+          0.0,
+          146.60000610351562
+        ],
+        [
+          0.0,
+          -0.6054689884185791,
+          0.0,
+          162.8000030517578
+        ],
+        [
+          0.0,
+          0.0,
+          2.0,
+          -662.9375
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-D3A481E3",
+      "source_NIfTI_SHA256": "65c57e4c036ad78f9727d477bed7d4d201e8df8b55efa9d8a63f939da2e5905d",
+      "voxel_SHA256": "bf3cbfaff35f1c7d66814b5656559d656a5e4e080c9cb32fc4f776208a27df7b",
+      "voxel_hash_order": "ascending z, each XY plane C-order, little-endian float32 HU",
+      "shape_xyz": [
+        512,
+        512,
+        197
+      ],
+      "affine_ras": [
+        [
+          -0.5859379768371582,
+          0.0,
+          0.0,
+          140.0500030517578
+        ],
+        [
+          0.0,
+          -0.5859379768371582,
+          0.0,
+          150.0
+        ],
+        [
+          0.0,
+          0.0,
+          2.0,
+          -434.0950012207031
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-D5A04A94",
+      "source_NIfTI_SHA256": "cfc42fa9e6fa96ad416a49eda7710d866a9f6fc707e636dce020d13284fa0dbe",
+      "voxel_SHA256": "5de33dd70f7ea665a9b22f716da41460c7f925cd95f6db60e3933b2c02e8f473",
+      "voxel_hash_order": "ascending z, each XY plane C-order, little-endian float32 HU",
+      "shape_xyz": [
+        512,
+        512,
+        212
+      ],
+      "affine_ras": [
+        [
+          -0.546875,
+          0.0,
+          0.0,
+          131.47300720214844
+        ],
+        [
+          0.0,
+          -0.546875,
+          0.0,
+          140.0
+        ],
+        [
+          0.0,
+          0.0,
+          2.0,
+          -470.6629943847656
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-D6A95512",
+      "source_NIfTI_SHA256": "cd8a0f25b1e66e63fb7ee324129be27881fb2b8a95566c0219e2b717622edaaa",
+      "voxel_SHA256": "c3d1d84f76cd6be980af3ba19cc23d5c541b4d028df1e6b8a1e573b45fb31627",
+      "voxel_hash_order": "ascending z, each XY plane C-order, little-endian float32 HU",
+      "shape_xyz": [
+        512,
+        512,
+        156
+      ],
+      "affine_ras": [
+        [
+          -0.4492189884185791,
+          0.0,
+          0.0,
+          115.0
+        ],
+        [
+          0.0,
+          -0.4492189884185791,
+          0.0,
+          115.0
+        ],
+        [
+          0.0,
+          0.0,
+          2.0,
+          -310.6875
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-D907F7A8",
+      "source_NIfTI_SHA256": "81005ed136a696094755e859dd62e979dff091c4e4060cd53c314aa3d807e637",
+      "voxel_SHA256": "c3626b892b16ad45478417ae37019c17fa04c4315abb6e1360ac4c49f9917f9e",
+      "voxel_hash_order": "ascending z, each XY plane C-order, little-endian float32 HU",
+      "shape_xyz": [
+        512,
+        512,
+        184
+      ],
+      "affine_ras": [
+        [
+          -0.5078125,
+          0.0,
+          0.0,
+          119.74609375
+        ],
+        [
+          0.0,
+          -0.5078125,
+          0.0,
+          241.74609375
+        ],
+        [
+          0.0,
+          0.0,
+          2.0,
+          -1574.199951171875
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-D9417C24",
+      "source_NIfTI_SHA256": "1ac3c55378823f423f07ce24865b374d91534153c5f934720e6f8c97ac69a7bc",
+      "voxel_SHA256": "33e8101fbb535f98f4e4e9c056c60d3f596d5ad5980e73d77e40a064ff34353c",
+      "voxel_hash_order": "ascending z, each XY plane C-order, little-endian float32 HU",
+      "shape_xyz": [
+        512,
+        512,
+        192
+      ],
+      "affine_ras": [
+        [
+          -0.44921875,
+          0.0,
+          0.0,
+          112.775390625
+        ],
+        [
+          0.0,
+          -0.44921875,
+          0.0,
+          214.775390625
+        ],
+        [
+          0.0,
+          0.0,
+          2.0,
+          -406.8999938964844
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-E03568A6",
+      "source_NIfTI_SHA256": "c6b90819fddfc43fccd34b4ba5ebf052c8bba2aede1ddbd645062b3591afa9d9",
+      "voxel_SHA256": "0ca0d21a152a0a021b3b47312449d171ffbfe9f202b2b4d7a8be0621e72e15bd",
+      "voxel_hash_order": "ascending z, each XY plane C-order, little-endian float32 HU",
+      "shape_xyz": [
+        512,
+        512,
+        175
+      ],
+      "affine_ras": [
+        [
+          -0.546875,
+          0.0,
+          0.0,
+          140.0
+        ],
+        [
+          0.0,
+          -0.546875,
+          0.0,
+          140.0
+        ],
+        [
+          0.0,
+          0.0,
+          2.0,
+          -307.5580139160156
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-E1FF3C7E",
+      "source_NIfTI_SHA256": "f0bf82ba43469a3474ebf5c86b6146f2adc22532b759acd90c304e164b7c4afb",
+      "voxel_SHA256": "d4d145bdac21ea09bfc5f9ced28330eb8e6d82817ef73ba8b1e859dc42b70ed1",
+      "voxel_hash_order": "ascending z, each XY plane C-order, little-endian float32 HU",
+      "shape_xyz": [
+        512,
+        512,
+        817
+      ],
+      "affine_ras": [
+        [
+          -0.546875,
+          0.0,
+          0.0,
+          157.1999969482422
+        ],
+        [
+          0.0,
+          -0.546875,
+          0.0,
+          116.80000305175781
+        ],
+        [
+          0.0,
+          0.0,
+          0.625,
+          -512.5
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-E66B16E4",
+      "source_NIfTI_SHA256": "29bba7e5f485fdf804bfc6c5b3d7250de5a2f7b77e1cf4d7ae1d0ee93e66e5d7",
+      "voxel_SHA256": "d0f1f893277988c78ad241b8fb4bce7fa47a1e0d1ac5aa487a0ce6c4354e32fb",
+      "voxel_hash_order": "ascending z, each XY plane C-order, little-endian float32 HU",
+      "shape_xyz": [
+        512,
+        512,
+        311
+      ],
+      "affine_ras": [
+        [
+          -0.625,
+          0.0,
+          0.0,
+          159.6875
+        ],
+        [
+          0.0,
+          -0.625,
+          0.0,
+          305.1875
+        ],
+        [
+          0.0,
+          0.0,
+          2.0,
+          -680.7000122070312
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-E69AC901",
+      "source_NIfTI_SHA256": "06bf6dec84a5cb8dce20b762412edb09a712a0a82938ff689cbc819a74cd79c0",
+      "voxel_SHA256": "8c4118868869de94767659349fa72873aca7eb6691d485d89c114944f50b4169",
+      "voxel_hash_order": "ascending z, each XY plane C-order, little-endian float32 HU",
+      "shape_xyz": [
+        512,
+        512,
+        187
+      ],
+      "affine_ras": [
+        [
+          -0.46875,
+          0.0,
+          0.0,
+          108.0999984741211
+        ],
+        [
+          0.0,
+          -0.46875,
+          0.0,
+          120.0
+        ],
+        [
+          0.0,
+          0.0,
+          2.0,
+          -399.6875
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-E6DF2006",
+      "source_NIfTI_SHA256": "38260bfe302262773007207d0a8b2440d9ff1826e294e9ebdaac0554bb42821f",
+      "voxel_SHA256": "1497ee8d022d8494acecc46b78e14554817c5741f49dd581484874a6f539d616",
+      "voxel_hash_order": "ascending z, each XY plane C-order, little-endian float32 HU",
+      "shape_xyz": [
+        512,
+        512,
+        210
+      ],
+      "affine_ras": [
+        [
+          -0.4492189884185791,
+          0.0,
+          0.0,
+          115.0
+        ],
+        [
+          0.0,
+          -0.4492189884185791,
+          0.0,
+          115.0
+        ],
+        [
+          0.0,
+          0.0,
+          2.0,
+          -443.1875
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-ED076087",
+      "source_NIfTI_SHA256": "44d4e7187bc5a6558cefb8f1c42d3bf8669d395a099e5f685487fadbf655fa5f",
+      "voxel_SHA256": "f19b2749a625aabb04e9e4881d1750fc5da30e3c109e11d05a1277f97cd69664",
+      "voxel_hash_order": "ascending z, each XY plane C-order, little-endian float32 HU",
+      "shape_xyz": [
+        512,
+        512,
+        625
+      ],
+      "affine_ras": [
+        [
+          -0.5273439884185791,
+          0.0,
+          0.0,
+          143.60000610351562
+        ],
+        [
+          0.0,
+          -0.5273439884185791,
+          0.0,
+          106.69999694824219
+        ],
+        [
+          0.0,
+          0.0,
+          0.625,
+          -441.5
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-F0386168",
+      "source_NIfTI_SHA256": "4616b3b7659289467ab76760b1bb6397c004348b2dbe262a357bd3bb21fb1f0e",
+      "voxel_SHA256": "2b3f05bf81b4de38f184f4e1e782d93f4d951802779a42e8b3d15f3b4813aeee",
+      "voxel_hash_order": "ascending z, each XY plane C-order, little-endian float32 HU",
+      "shape_xyz": [
+        512,
+        512,
+        737
+      ],
+      "affine_ras": [
+        [
+          -0.46875,
+          0.0,
+          0.0,
+          111.80000305175781
+        ],
+        [
+          0.0,
+          -0.46875,
+          0.0,
+          105.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.625,
+          -474.5
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-F0CBB224",
+      "source_NIfTI_SHA256": "25a36525b8695259992eefad2efe3951d04adf53343e266267a3b3a85d54f126",
+      "voxel_SHA256": "b112265bea8b5fb21bad5c00c73301346c35a4066044950847ce0e3d280dc389",
+      "voxel_hash_order": "ascending z, each XY plane C-order, little-endian float32 HU",
+      "shape_xyz": [
+        512,
+        512,
+        200
+      ],
+      "affine_ras": [
+        [
+          -0.625,
+          0.0,
+          0.0,
+          167.6875
+        ],
+        [
+          0.0,
+          -0.625,
+          0.0,
+          303.6875
+        ],
+        [
+          0.0,
+          0.0,
+          2.0,
+          -378.20001220703125
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-F22EFF95",
+      "source_NIfTI_SHA256": "d11298e17cb7ed85e71fad14cf9f7f59c4f9630ef5c16ddb1a1625fd3c35e1b8",
+      "voxel_SHA256": "bf17b8b24e47309991e3556ab3ccf2c6f617befe6aba78a7be7c1bc982c46d11",
+      "voxel_hash_order": "ascending z, each XY plane C-order, little-endian float32 HU",
+      "shape_xyz": [
+        512,
+        512,
+        183
+      ],
+      "affine_ras": [
+        [
+          -0.46875,
+          0.0,
+          0.0,
+          123.765625
+        ],
+        [
+          0.0,
+          -0.46875,
+          0.0,
+          242.765625
+        ],
+        [
+          0.0,
+          0.0,
+          2.0,
+          -386.20001220703125
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-F369B022",
+      "source_NIfTI_SHA256": "325ee03204a915605e72c72458feb7e64a995d6786dfc85c16cdae6a52d9e353",
+      "voxel_SHA256": "17fee98b08bcce5bb9c6acb6141606893e68f41b9e033b279b5701988c0fd3db",
+      "voxel_hash_order": "ascending z, each XY plane C-order, little-endian float32 HU",
+      "shape_xyz": [
+        512,
+        512,
+        190
+      ],
+      "affine_ras": [
+        [
+          -0.5078129768371582,
+          0.0,
+          0.0,
+          112.10099792480469
+        ],
+        [
+          0.0,
+          -0.5078129768371582,
+          0.0,
+          130.0
+        ],
+        [
+          0.0,
+          0.0,
+          2.0,
+          -370.0530090332031
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-F50AD62F",
+      "source_NIfTI_SHA256": "350fc343efbbca47d06ffdfa820bf6bc283bcaf0a45c53c40288ac0dcc82cd64",
+      "voxel_SHA256": "961e3e0af8e1fa23dd83727d5258f43512c0090f9099a7dd7ad0bc360e26588c",
+      "voxel_hash_order": "ascending z, each XY plane C-order, little-endian float32 HU",
+      "shape_xyz": [
+        512,
+        512,
+        232
+      ],
+      "affine_ras": [
+        [
+          -0.46875,
+          0.0,
+          0.0,
+          136.10000610351562
+        ],
+        [
+          0.0,
+          -0.46875,
+          0.0,
+          90.5999984741211
+        ],
+        [
+          0.0,
+          0.0,
+          2.0,
+          -474.6875
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-FA258908",
+      "source_NIfTI_SHA256": "9ca31c94fab56b175e4795497430616931ac08ead799be37abda99f0ca1d6323",
+      "voxel_SHA256": "6a34d5f6e9e894ceccffee1b38f19594fac8ab2a6fd57f820dd7a6b6c86ebfac",
+      "voxel_hash_order": "ascending z, each XY plane C-order, little-endian float32 HU",
+      "shape_xyz": [
+        512,
+        512,
+        147
+      ],
+      "affine_ras": [
+        [
+          -0.46875,
+          0.0,
+          0.0,
+          127.765625
+        ],
+        [
+          0.0,
+          -0.46875,
+          0.0,
+          240.765625
+        ],
+        [
+          0.0,
+          0.0,
+          2.0,
+          -248.1999969482422
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-FC1AE8BA",
+      "source_NIfTI_SHA256": "7b16accafd606d242137054468676f6387e9d5e69dc11c697248d87d6f703149",
+      "voxel_SHA256": "2e399fab950a7f023a0a317daf955f38b81848cce0dda347e1dcfe62efb75c27",
+      "voxel_hash_order": "ascending z, each XY plane C-order, little-endian float32 HU",
+      "shape_xyz": [
+        512,
+        512,
+        170
+      ],
+      "affine_ras": [
+        [
+          -0.4882810115814209,
+          0.0,
+          0.0,
+          130.00900268554688
+        ],
+        [
+          0.0,
+          -0.4882810115814209,
+          0.0,
+          108.53700256347656
+        ],
+        [
+          0.0,
+          0.0,
+          2.0,
+          -373.68798828125
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-FC6A7B5A",
+      "source_NIfTI_SHA256": "27cf207d91256474834dcd2ae023c088846dc9f62c7c2321640f2ad89891abdc",
+      "voxel_SHA256": "35946359745174a7aa1439dfbef7fa47dcbe81ed4ef6adda6e8416e970e3b089",
+      "voxel_hash_order": "ascending z, each XY plane C-order, little-endian float32 HU",
+      "shape_xyz": [
+        512,
+        512,
+        601
+      ],
+      "affine_ras": [
+        [
+          -0.46875,
+          0.0,
+          0.0,
+          131.89999389648438
+        ],
+        [
+          0.0,
+          -0.46875,
+          0.0,
+          120.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.625,
+          -397.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    }
+  ]
+}
