@@ -1,0 +1,1533 @@
+{
+  "version": 1,
+  "created_utc": "2026-10-06T04:44:11.538006+00:00",
+  "verified_patient_pairs": 117,
+  "verified_archives": 234,
+  "archive_bytes": 9599117652,
+  "hash_mismatches": [],
+  "raw_DICOM_modified": false,
+  "verification": "SHA256 equals receipt produced after downloader ZIP CRC/extraction verification",
+  "records": [
+    {
+      "patient_id": "Pediatric-CT-SEG-06722123",
+      "archives": {
+        "CT": {
+          "SHA256": "d9b2a38dcf7cc4df1d6a605511184ef53708edbddd4dd7245c62f87938be8dca",
+          "bytes": 87873826
+        },
+        "RTSTRUCT": {
+          "SHA256": "21c8edae2744eb30e1469092502e8246e7be1a3e448a67a931d143512177935d",
+          "bytes": 5604065
+        }
+      }
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-0C49C1B7",
+      "archives": {
+        "CT": {
+          "SHA256": "c53757340d2de9072cf1468fc0118e30d20dbffe85103203e8f746e8ad02d2db",
+          "bytes": 43864608
+        },
+        "RTSTRUCT": {
+          "SHA256": "663abf71ff4fe92dd31571d34fb7039f2751702daf74857fd0fcb453a9b0a47d",
+          "bytes": 3048510
+        }
+      }
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-0D53FEEE",
+      "archives": {
+        "CT": {
+          "SHA256": "5d0b936b05eb3d189051fcd465615bd02f5407a101e3be1b25bf8632b493e04f",
+          "bytes": 46411692
+        },
+        "RTSTRUCT": {
+          "SHA256": "c69a96eefeae72c84b9a69a5a2785758da459302d5a133cddfbbb3277081432e",
+          "bytes": 3227810
+        }
+      }
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-0D7F3188",
+      "archives": {
+        "CT": {
+          "SHA256": "5588b9f534b8220d7a36f734cb198dca5eef4c871ff7ef2eaf49de87f74b4c9c",
+          "bytes": 171430786
+        },
+        "RTSTRUCT": {
+          "SHA256": "738d8dfb2fe995619a9bd07ce530cc9eb17084e3b72f8a6219587c0095f4aea7",
+          "bytes": 10902107
+        }
+      }
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-1360E26F",
+      "archives": {
+        "CT": {
+          "SHA256": "877da9d16e8b3d5cdd21206f033f0119544212992f32814377abdc03bbe47f8e",
+          "bytes": 71296567
+        },
+        "RTSTRUCT": {
+          "SHA256": "a3ba6ad5024090b4d37252cf69bef5a8a0e6639d80d53dcec6c505a895605d16",
+          "bytes": 4577355
+        }
+      }
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-1644392C",
+      "archives": {
+        "CT": {
+          "SHA256": "ff8ad7827d074103162c46e5fab157acfa6a717604c4c3d12799b2f0590053c8",
+          "bytes": 247108379
+        },
+        "RTSTRUCT": {
+          "SHA256": "5d6e50bb3a80dc2b5fb529903fef38e2d1d8f022aea5a2e8db4c4110c76bbcf4",
+          "bytes": 16056030
+        }
+      }
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-176261A0",
+      "archives": {
+        "CT": {
+          "SHA256": "64a575027560576e1b694ac5cdbb217f41345f9fd489cfd012c0d63bcae10571",
+          "bytes": 75990654
+        },
+        "RTSTRUCT": {
+          "SHA256": "b52af7b47ca37376d7ec6b3fd52c69fa35af1f8acc43f7bd69fb718b3965b6c4",
+          "bytes": 4787931
+        }
+      }
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-1DFF8B65",
+      "archives": {
+        "CT": {
+          "SHA256": "d46500b7ba41e002ecb64deb38ff680b8fa47fe180e873f541cf38f40b9d1e81",
+          "bytes": 67535907
+        },
+        "RTSTRUCT": {
+          "SHA256": "1ef4218298f977a748a82890264c8513885022357d45ae55530aba41855c430c",
+          "bytes": 4738986
+        }
+      }
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-20DD8C56",
+      "archives": {
+        "CT": {
+          "SHA256": "1cff155a6b4258e6ebbb032369e3cdc8b2de87bb3c255105e7f5ae6ba672305d",
+          "bytes": 200543984
+        },
+        "RTSTRUCT": {
+          "SHA256": "8dc66d19c2039f4c6ff0594f01a9085f8ab4d549ff4ee4df0852b5678833271c",
+          "bytes": 13244638
+        }
+      }
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-2197048C",
+      "archives": {
+        "CT": {
+          "SHA256": "ea4c7166037d1f6195b347167a879ef12a32280c125ffc9ea424d8b957d0153c",
+          "bytes": 206058452
+        },
+        "RTSTRUCT": {
+          "SHA256": "ebac52d6e5f34d2bb54b49311d38b572d696bc9ac9b80996108af39d0536f909",
+          "bytes": 13589924
+        }
+      }
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-239D233D",
+      "archives": {
+        "CT": {
+          "SHA256": "ef4cb411e40d26e7a0b4d77d3d0985cddd50efb3a9a03581303d0e5aedb78a05",
+          "bytes": 42132728
+        },
+        "RTSTRUCT": {
+          "SHA256": "e3a60948e8fb873a4feb91c42dae0efc7182dae7e9740104003ce4fef9dc4785",
+          "bytes": 2836832
+        }
+      }
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-2AA52776",
+      "archives": {
+        "CT": {
+          "SHA256": "53d14b8adf4ca5cff1cd0b3917bd2f4644043f2a81a95cddb7cdc06f341fad32",
+          "bytes": 42800217
+        },
+        "RTSTRUCT": {
+          "SHA256": "1aecacd779119409da7e925e305cf8161e95dfa99169fecb397d3d12afa6d40a",
+          "bytes": 2674721
+        }
+      }
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-2D905107",
+      "archives": {
+        "CT": {
+          "SHA256": "8c6c4cf6a91f31766a55e0249c1a2e787426640b420a7fa77baf33550e255381",
+          "bytes": 20377777
+        },
+        "RTSTRUCT": {
+          "SHA256": "748f394ab15c16ea44f26a629210bf7a8ed9a803b056be4cf602eec3a74f40a2",
+          "bytes": 1143754
+        }
+      }
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-32820634",
+      "archives": {
+        "CT": {
+          "SHA256": "c90db61facaf13baee09d97f26de05c3d6836029a552d90ac8c1c4a8d8ca34e5",
+          "bytes": 38908456
+        },
+        "RTSTRUCT": {
+          "SHA256": "5902931144e4524a2b3938244e63f137515e7ae27d15c7b0c785b9bdee011d04",
+          "bytes": 2618901
+        }
+      }
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-32C20E78",
+      "archives": {
+        "CT": {
+          "SHA256": "9f50a60881fce5480fb3856c8c786b7d2b9a0bea81f774e679e092880b6cbb12",
+          "bytes": 170511304
+        },
+        "RTSTRUCT": {
+          "SHA256": "4c8fbf8eeb728ce982cf3b8d8310c5873997b75966224cf6bd07d8ffbc119c23",
+          "bytes": 10986224
+        }
+      }
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-3555A98F",
+      "archives": {
+        "CT": {
+          "SHA256": "a81f1fcf8af76a24fb1f041910576ff86cf3dacdeba482a5f262249976c5e5f9",
+          "bytes": 69423171
+        },
+        "RTSTRUCT": {
+          "SHA256": "2af1a363c61223cfee9b4a66fcb45316e9353b59a49806f31d0c92332ea866ad",
+          "bytes": 4091174
+        }
+      }
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-358",
+      "archives": {
+        "CT": {
+          "SHA256": "003fee6343298d8cb41b0d88e8e0aa29d8585b030a4f1b5dcc7e1d2643a30dba",
+          "bytes": 41796513
+        },
+        "RTSTRUCT": {
+          "SHA256": "960d496a326d933558c638da054bcd9240225c5071c7436aff176798e9583a43",
+          "bytes": 2600473
+        }
+      }
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-37058120",
+      "archives": {
+        "CT": {
+          "SHA256": "56ecfa72cd21add35489a2a6c76a13f12e73731577aa242449678b38090f8fb2",
+          "bytes": 235678943
+        },
+        "RTSTRUCT": {
+          "SHA256": "8d8b194192e0085332ba5ddc8743ad1b143b5af48e2fab35218f7e5f77205c78",
+          "bytes": 14199945
+        }
+      }
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-372",
+      "archives": {
+        "CT": {
+          "SHA256": "577ae39bd7a920ce036bf8b8447b407c7c0d74fe36c6c3d34da267bb2a04aa36",
+          "bytes": 40704993
+        },
+        "RTSTRUCT": {
+          "SHA256": "5c854ee967f2a229a7354c743ec24db088c1692f0e538d37c17eabb87913818d",
+          "bytes": 2444631
+        }
+      }
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-373",
+      "archives": {
+        "CT": {
+          "SHA256": "4db359d1b582c02a926e013fd7f0aa59b6e465291d90daac3f50212bfc2f5c36",
+          "bytes": 38590691
+        },
+        "RTSTRUCT": {
+          "SHA256": "25aeee4cc90de72c10179e6c4c98cf68af01163c0655d0d26a2a913697032813",
+          "bytes": 2327386
+        }
+      }
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-374",
+      "archives": {
+        "CT": {
+          "SHA256": "430bc0cced9fb8796fa518bd8bd1443d5dd95ebeeca5108190291b1db2ea59fe",
+          "bytes": 42059574
+        },
+        "RTSTRUCT": {
+          "SHA256": "1361de8c9fcbc876064ac2b653feed193bcd57c3e582c02975243a71f8f301c8",
+          "bytes": 2916554
+        }
+      }
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-375",
+      "archives": {
+        "CT": {
+          "SHA256": "0769a28b406ef3dca30ae08a4982bbcdd5b4aa3e28864465f47ff3f54d7dabf6",
+          "bytes": 40435997
+        },
+        "RTSTRUCT": {
+          "SHA256": "0e9c45abad2005e55643cab5dc84fd74e2f37758acb4503025f8cc6bb4b16c85",
+          "bytes": 2695296
+        }
+      }
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-376",
+      "archives": {
+        "CT": {
+          "SHA256": "3e7065c15b8bcd3811eb55bc5af4252f5dd20b78cd4339750ccc0887bad70fae",
+          "bytes": 44670860
+        },
+        "RTSTRUCT": {
+          "SHA256": "23792fd607126ab60b6d35080124f9f734badce756d569954ecd45eebaa9b74c",
+          "bytes": 2736602
+        }
+      }
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-380",
+      "archives": {
+        "CT": {
+          "SHA256": "3fa162c41e64602b1ea891a1aa18ac4fa5aeea44e806b0b5e831e0fd5d9cd9f8",
+          "bytes": 46005740
+        },
+        "RTSTRUCT": {
+          "SHA256": "fe59a48db0d9f93ab7b69eb9dc2c9ffcdaf7d4fe8b8a6efea8a12f0e92f0cd9b",
+          "bytes": 2685494
+        }
+      }
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-388",
+      "archives": {
+        "CT": {
+          "SHA256": "ef709bafaa0dbc5bc88939c40885df47da7241ef415f745cf3d9fa8d2a164bca",
+          "bytes": 41920531
+        },
+        "RTSTRUCT": {
+          "SHA256": "2ef1bffafef679164137a5d25730360fc68d9065d5f0032776d35c35aa93aa46",
+          "bytes": 2825252
+        }
+      }
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-38C25E47",
+      "archives": {
+        "CT": {
+          "SHA256": "960aebcbd3bd43ec223eb37368183d7c2ed3fb8c43f1d0d06ead4640ccf1f6a2",
+          "bytes": 42224816
+        },
+        "RTSTRUCT": {
+          "SHA256": "04fb7345f390fe4deb5b0ee70ffb1b929f6a494bcf94d7f0c5fea73fdbae8225",
+          "bytes": 2857591
+        }
+      }
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-390",
+      "archives": {
+        "CT": {
+          "SHA256": "b347ad080dc6b82ba9b49a2e62e098c08c18bfa396e490415c386854928373d0",
+          "bytes": 48468553
+        },
+        "RTSTRUCT": {
+          "SHA256": "b43d1b60eaa4cdbb4ab2142941a05cca2eb8fe3e8e7053555668cae83327438e",
+          "bytes": 3195700
+        }
+      }
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-393",
+      "archives": {
+        "CT": {
+          "SHA256": "7d5fdb2aed346baa77a767d4ab5fdf88cb7a52dea1d33fb87b8b317ff118721b",
+          "bytes": 71063897
+        },
+        "RTSTRUCT": {
+          "SHA256": "0247367b8871462f06c8e3bd3b8905416bcdc2ddc2a359f7e36691a9bf125693",
+          "bytes": 4301247
+        }
+      }
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-394",
+      "archives": {
+        "CT": {
+          "SHA256": "10adf3e4bcf1b807d94883bfa2ae0320111bce27c1942ec4f242966e87410ea5",
+          "bytes": 59654621
+        },
+        "RTSTRUCT": {
+          "SHA256": "861c275c45d83c3f61e60256fd47584c270591213941be23f5dd40428dde75e0",
+          "bytes": 3296727
+        }
+      }
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-3DA8BA0F",
+      "archives": {
+        "CT": {
+          "SHA256": "ea816d0b91e5b9f9798330a34e7f7e8aa67c78e1548aa01efd8a103af755144f",
+          "bytes": 192824792
+        },
+        "RTSTRUCT": {
+          "SHA256": "d8e0ffea8d066b5411f0b103ebacf76e42dc49a4a6630a25cb9ff06dda1c085e",
+          "bytes": 12974457
+        }
+      }
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-3EE98BA3",
+      "archives": {
+        "CT": {
+          "SHA256": "dbe0a4244a9a22d95ad027a2eefc3654b79c9ec6983b320b3571c0e0949b4665",
+          "bytes": 47579524
+        },
+        "RTSTRUCT": {
+          "SHA256": "b498b4f7f2376d1b2993ef84a1f45fe5d8fcec57375e65fc38fe459c9e24bdcb",
+          "bytes": 3048063
+        }
+      }
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-423F282F",
+      "archives": {
+        "CT": {
+          "SHA256": "6c3627c47f9ad436f3fe6c51dee9bb99a897494af2035681027ddb16ff5fba9f",
+          "bytes": 80855758
+        },
+        "RTSTRUCT": {
+          "SHA256": "b3f41c66e395e3e617acdbd80a71e472ce21cc0c5ed4b6fb4b46b99182080388",
+          "bytes": 5471020
+        }
+      }
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-474F00E2",
+      "archives": {
+        "CT": {
+          "SHA256": "bd1870fb75fc1108f8d2ed306f3b13048434b7f77a533dd3056dda586fe5efc9",
+          "bytes": 42359673
+        },
+        "RTSTRUCT": {
+          "SHA256": "50791a42ea46182372661b8787454ec8c158a85bbd76ce42595b8ebefcf5fabb",
+          "bytes": 2852100
+        }
+      }
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-4C1A38AE",
+      "archives": {
+        "CT": {
+          "SHA256": "21a64a69dc8c0288402c5d94ab5ab7df362ee72f4563c1c9e1b0fdc0a75e29ed",
+          "bytes": 43343886
+        },
+        "RTSTRUCT": {
+          "SHA256": "f3f5fba3775773babb9aa37503933cb84851cb60e03b69e68c209ac9bcc8d1ea",
+          "bytes": 3025411
+        }
+      }
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-5140F786",
+      "archives": {
+        "CT": {
+          "SHA256": "5c3cca78d6964f68abc542fbe81be587e95789c0bf677c92c76983fafd0dcf92",
+          "bytes": 37503702
+        },
+        "RTSTRUCT": {
+          "SHA256": "0f24a2f97a92f35e298c7232cb93d2063ce6eb96e425c497ef5f64fcd1dd45a6",
+          "bytes": 2583831
+        }
+      }
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-51A54CC5",
+      "archives": {
+        "CT": {
+          "SHA256": "84da8fc3bb824866f1a6543ae88f0c32365382efd9aae7615933c93febb8528e",
+          "bytes": 52117682
+        },
+        "RTSTRUCT": {
+          "SHA256": "8cb296a70b4aa6f8374387381b6328c72a8a3a5b7164a804cd61b753f960ab15",
+          "bytes": 3071894
+        }
+      }
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-54BC2D63",
+      "archives": {
+        "CT": {
+          "SHA256": "ace0b26a360ad5f3caf15248d12beab5c422ffcabcba19d79c55f6b1dc933723",
+          "bytes": 141150221
+        },
+        "RTSTRUCT": {
+          "SHA256": "34f49c4e30d889574daab5b48173135ff57b2d7b5ac4ee7221f304220004029f",
+          "bytes": 8453986
+        }
+      }
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-572C61DF",
+      "archives": {
+        "CT": {
+          "SHA256": "ca3a52954890c9b616a0a8de727d38faa058d77feac34dd455131f33b727d553",
+          "bytes": 72899633
+        },
+        "RTSTRUCT": {
+          "SHA256": "c48fe0e39657e243e53aef7f2e847cac758985029b8be2c342fd1459db19147d",
+          "bytes": 5229192
+        }
+      }
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-59397A22",
+      "archives": {
+        "CT": {
+          "SHA256": "600bed996ec9e01141d55d4b5d6e994caca2ed096f23f3f254671549d602d0ef",
+          "bytes": 209276670
+        },
+        "RTSTRUCT": {
+          "SHA256": "8eaefe0b1fa9189d5ddb6718df8ceb5e4f8a961939459ebd45bdbcfdaea007e6",
+          "bytes": 12465009
+        }
+      }
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-5AEBE68F",
+      "archives": {
+        "CT": {
+          "SHA256": "3aa5c51f4bd2b7bf503c98e8e08dbd56d851b255e287b97fd802bf6ed6fa915e",
+          "bytes": 44597306
+        },
+        "RTSTRUCT": {
+          "SHA256": "650715e6988c916942a0659750546418c44aaa9b9562f9388a46e5527430869e",
+          "bytes": 2841877
+        }
+      }
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-5B6E8C36",
+      "archives": {
+        "CT": {
+          "SHA256": "47ba7c32fa2ecd38bdb14f787451484db53bdaf79f7265a2ce54718371e6efc1",
+          "bytes": 57740895
+        },
+        "RTSTRUCT": {
+          "SHA256": "f1ac61fca588f1ed787d2271e8ad4b112e0dcae21cf014934db2a2e10b330e09",
+          "bytes": 3363740
+        }
+      }
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-5E12AC25",
+      "archives": {
+        "CT": {
+          "SHA256": "ee68c2c4caea16c39094c54ffc03d0dc13e49331962e10a1bd4a0cb03d10d9be",
+          "bytes": 262305349
+        },
+        "RTSTRUCT": {
+          "SHA256": "92a02b1494f75aad4d0feb76abbf18ce30fb05017581b34f014f2ce0b58ae732",
+          "bytes": 16873989
+        }
+      }
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-5F74CD3E",
+      "archives": {
+        "CT": {
+          "SHA256": "4fcb661a152d4af5872c31161f6895b1957ef3e5c7e61f777a0ca1f2c878dc7b",
+          "bytes": 49665201
+        },
+        "RTSTRUCT": {
+          "SHA256": "83125c4f8abac4409469f1d35e3558c13f5a3fe2f2276849d359c9931e0d0cb3",
+          "bytes": 3527042
+        }
+      }
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-5FF9F6C8",
+      "archives": {
+        "CT": {
+          "SHA256": "87a8dc5c7d23a3f96a1801df0c9a1749623a2f6d4eb9cad9e459518bd92db231",
+          "bytes": 51662593
+        },
+        "RTSTRUCT": {
+          "SHA256": "8fd7b03cddc032f617197dc91bb43dd07c8352d4b70b8c015287b476391ffb4b",
+          "bytes": 3555427
+        }
+      }
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-627003CD",
+      "archives": {
+        "CT": {
+          "SHA256": "04d9ca67e98ba727cfc08422464817256dd0865684f578d0afb6ae839c6cd039",
+          "bytes": 47587804
+        },
+        "RTSTRUCT": {
+          "SHA256": "19bfa1488aafdf3e56b0f5d2b2653a8a9fd5627dfbb6ef859c61d3b9dd916532",
+          "bytes": 3153349
+        }
+      }
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-63E23C60",
+      "archives": {
+        "CT": {
+          "SHA256": "d79657e916ae8b43fa764ce8acca7ad6dae92abc6c1c88e09e237c0d3550e9d3",
+          "bytes": 45786560
+        },
+        "RTSTRUCT": {
+          "SHA256": "dfe70882745aa06b3e70b9440e1c173873b60e62620b30fb58bc026b7363776b",
+          "bytes": 3133332
+        }
+      }
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-642CA0DF",
+      "archives": {
+        "CT": {
+          "SHA256": "df9ee042dc195ce73d09933fb38fd23b410c9e13fcee08960f25e336ad4be7bb",
+          "bytes": 49081906
+        },
+        "RTSTRUCT": {
+          "SHA256": "9d01d9f8da1672957d20a0099bb355922171c68507dd1159d6eb31a033e30fdd",
+          "bytes": 3378858
+        }
+      }
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-65A12C1E",
+      "archives": {
+        "CT": {
+          "SHA256": "ff870e30a87c994953bf6338e06be2d9a513cc98d59cbafd710a3a483f654815",
+          "bytes": 40973229
+        },
+        "RTSTRUCT": {
+          "SHA256": "bf091c00a7f3a6caa648ae8b41e8567400ea4e5d5a0784fb157db7f6685b99de",
+          "bytes": 3062550
+        }
+      }
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-677673CD",
+      "archives": {
+        "CT": {
+          "SHA256": "e4dfa043aab19b0e526825fb5b563387e1c569d04f81fb20bfdbeb8b97e8a3c5",
+          "bytes": 90606248
+        },
+        "RTSTRUCT": {
+          "SHA256": "fecd69a7758408d0888c0b4d6e3ac8df8de4973fa0facccb8ff4ede6571da065",
+          "bytes": 5733656
+        }
+      }
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-6B1C605C",
+      "archives": {
+        "CT": {
+          "SHA256": "76ab918aa87f8a8c64df3e474793e867826653f120db2c69b47d409a59518576",
+          "bytes": 55921931
+        },
+        "RTSTRUCT": {
+          "SHA256": "453670f44981deb7cc21b848f82d99bc30f7da38be1982625c5ea23ea725fbac",
+          "bytes": 3627574
+        }
+      }
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-72C58EB3",
+      "archives": {
+        "CT": {
+          "SHA256": "1e52665bd95900c915fa80f1405cf3610291bc517fd6ccc0a57cf0d8b9ce43b4",
+          "bytes": 46435632
+        },
+        "RTSTRUCT": {
+          "SHA256": "64dcee1f650fdfad576812b15a241b3f2117c9178b1a98d3bf834e9f4d49919a",
+          "bytes": 3505856
+        }
+      }
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-7606C1AB",
+      "archives": {
+        "CT": {
+          "SHA256": "637914d958045db2ea3ef44ada62f1fe3776e6035480c9d9c488881c0c5180e5",
+          "bytes": 70130159
+        },
+        "RTSTRUCT": {
+          "SHA256": "ec1f93726c685e58a70796b74e6af585cd8b9226f794eee4d90e4aacea4aa079",
+          "bytes": 4335707
+        }
+      }
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-792705D7",
+      "archives": {
+        "CT": {
+          "SHA256": "da4dfd605a4a9e1d00797c5d15bec2f8915db36717d670e6de62c509ea6304df",
+          "bytes": 220718684
+        },
+        "RTSTRUCT": {
+          "SHA256": "90a490786665eb9cb5eec033ed73dab8002641cd3befd529f2885c23cf35ef36",
+          "bytes": 13777201
+        }
+      }
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-7AF2728D",
+      "archives": {
+        "CT": {
+          "SHA256": "ac7c6b1fc4b7417bea03cca35cf98abd4ec90dd133667e934d449a10befc270e",
+          "bytes": 40702939
+        },
+        "RTSTRUCT": {
+          "SHA256": "d0ba64e189f9dce4e3931390ba0946bf46be16cffbb8eb531dfd36f237eac50b",
+          "bytes": 2970124
+        }
+      }
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-7C205617",
+      "archives": {
+        "CT": {
+          "SHA256": "7ecb6619ad3d39821c12ed33c24ff61e40ae661f8df5e6c01d83ba4a465d02d8",
+          "bytes": 34507262
+        },
+        "RTSTRUCT": {
+          "SHA256": "fa808ca5d4a533fe102e81ff29ad4690bb1a24e99a37422ab2093e7c16fd2f56",
+          "bytes": 2286816
+        }
+      }
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-7C7F4414",
+      "archives": {
+        "CT": {
+          "SHA256": "1e34ece7b5f0c51a7452a5629c79e3d16dc2625c9cf99bb9d7c23958a970f4d4",
+          "bytes": 42667826
+        },
+        "RTSTRUCT": {
+          "SHA256": "dd8e073127d8d4ca054cf705fe4a3b8535b7eceac1a9470153de066419b15468",
+          "bytes": 3078392
+        }
+      }
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-7CD1BD9D",
+      "archives": {
+        "CT": {
+          "SHA256": "884faeab49b68397381074915cfdec6b6a4b6668a1519dda435693a5c7791def",
+          "bytes": 54062258
+        },
+        "RTSTRUCT": {
+          "SHA256": "eb93a307950dda101bfa7d28032c4e97a6a0f97d59e27a8115142b3311d79c99",
+          "bytes": 3445940
+        }
+      }
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-7E9377C4",
+      "archives": {
+        "CT": {
+          "SHA256": "1582cfc2a81d0a08e43005498904f59dcb71bf162fb601bf034e12c6baad6b20",
+          "bytes": 42493892
+        },
+        "RTSTRUCT": {
+          "SHA256": "d2e34f33891829bb00d97f27e0e2a1ac3bfc404856edb9e7044374cc53bbfa7e",
+          "bytes": 3003828
+        }
+      }
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-7FF0293F",
+      "archives": {
+        "CT": {
+          "SHA256": "df7d7344a183182336b406a020fd0034f06437906b0199282498597afa61e856",
+          "bytes": 46420911
+        },
+        "RTSTRUCT": {
+          "SHA256": "60578210a8c1ee058c3d2edb2af9eaf8728156df1fb9fe219e598dd3005d49ce",
+          "bytes": 3196362
+        }
+      }
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-813E523C",
+      "archives": {
+        "CT": {
+          "SHA256": "07343660055beeef39c38f550444a13c6f3c260c094158c50b63a566fc181e0c",
+          "bytes": 49368629
+        },
+        "RTSTRUCT": {
+          "SHA256": "b04e65f07d16b01ac1982207136eebb0a383420f6ba412e54bf3a92181edbd16",
+          "bytes": 3374478
+        }
+      }
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-86096795",
+      "archives": {
+        "CT": {
+          "SHA256": "c13cf7f46e28a378215dc772f9bbebce3f028025b7f0ad69e9ef7f745df8b34f",
+          "bytes": 43266342
+        },
+        "RTSTRUCT": {
+          "SHA256": "4f04ce2733b7a7e8d45b2e72e692a0bede3d2b0806c969df8401535f3da91ce0",
+          "bytes": 3261355
+        }
+      }
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-882CD2BF",
+      "archives": {
+        "CT": {
+          "SHA256": "e9d1131200e2e9c1f64402ec60a686e50f3dc98f54fcfbf215aa4bf0e9c63bc2",
+          "bytes": 77287731
+        },
+        "RTSTRUCT": {
+          "SHA256": "e32100c4c84fe35182e48a45a8438cbc2d4595da26ff310b5b8752ae5e17cc14",
+          "bytes": 4920422
+        }
+      }
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-885A32DF",
+      "archives": {
+        "CT": {
+          "SHA256": "347aa609e25677d89b43b3549db5e4f0768ff70bae42e8b7fea2514cd22f2686",
+          "bytes": 48869737
+        },
+        "RTSTRUCT": {
+          "SHA256": "4dcf2f12c13cd8ba8fbf9f71217b47db39b54199b5aaaef47bc1a3c71870844e",
+          "bytes": 3156394
+        }
+      }
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-885F9D36",
+      "archives": {
+        "CT": {
+          "SHA256": "c734388eac1fa986d8bcb73e0adaab06441245f8e4f9278d34f66e2067da1014",
+          "bytes": 89155143
+        },
+        "RTSTRUCT": {
+          "SHA256": "7bbcc8e21ecdd211938f747777ac4ad9669bd7d06741162594e33b45aba6e029",
+          "bytes": 5219163
+        }
+      }
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-886ABD82",
+      "archives": {
+        "CT": {
+          "SHA256": "3d56342aad6cf4d44db8c5977e84f2a2e0c33b4ba35a7cf47b9fb2efa796790d",
+          "bytes": 33539009
+        },
+        "RTSTRUCT": {
+          "SHA256": "894264f93aac3cdc90e8efa77e82f55abdd5dfe5190f47c76e7ffc5e8b267668",
+          "bytes": 2001494
+        }
+      }
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-8D386469",
+      "archives": {
+        "CT": {
+          "SHA256": "d054e8592fbda7ae3dfd7349157da6bd6e5d985e50f1d8c552fd08498bf5f1a1",
+          "bytes": 39065082
+        },
+        "RTSTRUCT": {
+          "SHA256": "07ff2e82ac3d68caa4c91c5911e7ef11b8e75f8abcad4527e1cc437cebb8514d",
+          "bytes": 2510738
+        }
+      }
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-8FAE886E",
+      "archives": {
+        "CT": {
+          "SHA256": "96f10c8199ee1bd1392a7325d3a2016e80a5671398f275d369bc6199e77f86f6",
+          "bytes": 44395260
+        },
+        "RTSTRUCT": {
+          "SHA256": "d8c819458b318b419e0e07188510ae5844f5a607a6fe121197a6a1a45752624e",
+          "bytes": 2903206
+        }
+      }
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-92891A2F",
+      "archives": {
+        "CT": {
+          "SHA256": "881f570b146b3e7f8838a45f7f050fdd45012a35f8c7eb6b2943542971884352",
+          "bytes": 67463306
+        },
+        "RTSTRUCT": {
+          "SHA256": "a38b608f67b9ed39e0a8cf6b198431c6fb8ec535ab0c0ee4f15351129f3005e7",
+          "bytes": 4806434
+        }
+      }
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-9B29D191",
+      "archives": {
+        "CT": {
+          "SHA256": "d356a34f03138d76224b75cd6cf0b00663c55844f5cca5c1695ebeb40ef7baf9",
+          "bytes": 73887825
+        },
+        "RTSTRUCT": {
+          "SHA256": "f9d551c417d126c4eab94a1b73c566bbeccc391e7759deddae18d297aec3ccc4",
+          "bytes": 3873095
+        }
+      }
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-9D15A505",
+      "archives": {
+        "CT": {
+          "SHA256": "b36356a72c96d4bb712b40c525c66df84212f0cd5435df66a0b2d3a64fdd6757",
+          "bytes": 215119039
+        },
+        "RTSTRUCT": {
+          "SHA256": "2cc5c4f172c34f82b32adb9c53c96977c1b928d0bac20e624934a33f0bcf86b2",
+          "bytes": 12356843
+        }
+      }
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-9ECC8D5B",
+      "archives": {
+        "CT": {
+          "SHA256": "7892424b80dd3ca070cd932d88406c02f0ce5b0fc1384796f77697e4fcd764c2",
+          "bytes": 84328476
+        },
+        "RTSTRUCT": {
+          "SHA256": "8d6c77d11a3a13147e4b94ec88b94b833e2e65bde2ce7764af81bd893309a004",
+          "bytes": 5240904
+        }
+      }
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-A1FF5A26",
+      "archives": {
+        "CT": {
+          "SHA256": "dd38949dfa06f4c96d16e66f6aa0009f65d5c02d977b273956cfd06977ce7750",
+          "bytes": 35781754
+        },
+        "RTSTRUCT": {
+          "SHA256": "b625b193a78840badba5d8223cb3e85f1ee3e0b82bc294dc25d37f2364f3c5f2",
+          "bytes": 2647676
+        }
+      }
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-A328BA9A",
+      "archives": {
+        "CT": {
+          "SHA256": "165fdb1baba4e3b7cb909439433987f6f1811a4437457c959f986fc94e43a2d0",
+          "bytes": 48244423
+        },
+        "RTSTRUCT": {
+          "SHA256": "3749e34087f9829c52c33f5aedc42f8350ce36a256e974799520309cc65d7362",
+          "bytes": 3459949
+        }
+      }
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-A79D004C",
+      "archives": {
+        "CT": {
+          "SHA256": "404cadc81f1f7a2c883b0cb6585fe62a128df66167aab968b0eea2d0aae32dda",
+          "bytes": 54266153
+        },
+        "RTSTRUCT": {
+          "SHA256": "4f0983fad2ceee5fb6f78d6587edac2773461d33ff983005b635c7c91e50f61a",
+          "bytes": 3750161
+        }
+      }
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-A7F73045",
+      "archives": {
+        "CT": {
+          "SHA256": "deba45e804e539c1bc8aaa4d91d50005fc816850ec2649d8fe3b1fb41d7a0d38",
+          "bytes": 64741042
+        },
+        "RTSTRUCT": {
+          "SHA256": "f8b0d754fb1d38bc99b53e3bf8200f8233a4577038fe0ee2a3d6e5846a57cc57",
+          "bytes": 3833852
+        }
+      }
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-AA032583",
+      "archives": {
+        "CT": {
+          "SHA256": "b702cb22a3b16ee85f4267dbb88fbabb03b96b2b73e5d7c8d937d1fd60548611",
+          "bytes": 84486343
+        },
+        "RTSTRUCT": {
+          "SHA256": "b181a0faff7fdc8d98990a9a512d7475716a8b67104a568e1211792fb84406bf",
+          "bytes": 5249304
+        }
+      }
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-ACCA52D8",
+      "archives": {
+        "CT": {
+          "SHA256": "e01b898985a9246a3d7f309a37ab76287fcf3fdf52ba1e7058711fd90fc95a11",
+          "bytes": 50463446
+        },
+        "RTSTRUCT": {
+          "SHA256": "0485d508142112479f9b083145dfb0060fe32411e7cdafd2360ec7b5a94b4f71",
+          "bytes": 3387781
+        }
+      }
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-AD87B3CD",
+      "archives": {
+        "CT": {
+          "SHA256": "970d916439c4d1ea2fb72d66ecce2c4c81ed22b8064765d8a2c11c6de5f9f3be",
+          "bytes": 245816373
+        },
+        "RTSTRUCT": {
+          "SHA256": "9552243d2eb0d9c446729905b0255eb67781d4d76e8290ffe7f5e9873a68ce77",
+          "bytes": 16469435
+        }
+      }
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-AF83DAF1",
+      "archives": {
+        "CT": {
+          "SHA256": "85c1d1ad45dc117f69a263d9a8b6222660890edf0380ec6bf821828c11b79398",
+          "bytes": 43416812
+        },
+        "RTSTRUCT": {
+          "SHA256": "fdc539be08164af6f2a3c67443168621785e296de68c8c3145f10980656b0a23",
+          "bytes": 3073937
+        }
+      }
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-B1CA7F8B",
+      "archives": {
+        "CT": {
+          "SHA256": "72f4854b6bd79253a8fa811354e5fb471a07d304359b6a735d3a582f275c9f54",
+          "bytes": 89776134
+        },
+        "RTSTRUCT": {
+          "SHA256": "bec383fa38a15ffa15eb003301bd827ea9e48f34e169b7ccc5b9bb63e2dd0b01",
+          "bytes": 5613090
+        }
+      }
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-B42CD321",
+      "archives": {
+        "CT": {
+          "SHA256": "33741106cfe1a6cdef4f1c185f478a392d274bfd6ea1a5715a2a7dd689119247",
+          "bytes": 67654210
+        },
+        "RTSTRUCT": {
+          "SHA256": "7e008373a75574b5090f4fbfb03aa1f9467ff7a4c75ca0cf7b25c98cfa2511a7",
+          "bytes": 4644860
+        }
+      }
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-B93CB2C7",
+      "archives": {
+        "CT": {
+          "SHA256": "691b04cf888477d393988d5573ad7a26db49bd15b07b5038771d29a2f568e0d8",
+          "bytes": 54646381
+        },
+        "RTSTRUCT": {
+          "SHA256": "3688f5b0ca14c2769096a051a4baffae09ef7a7646560c5df83530b289f7b690",
+          "bytes": 3535998
+        }
+      }
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-BB8351E7",
+      "archives": {
+        "CT": {
+          "SHA256": "bea577c03fbe18240863d7eb3b5252163fa7d9997afc2c720dedc8fd7c24a0e4",
+          "bytes": 48226798
+        },
+        "RTSTRUCT": {
+          "SHA256": "95bc900577c8d0c70b566fac4b85462d5ff0921c291f0c862feb15de9c3d0bc1",
+          "bytes": 2518900
+        }
+      }
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-BB89BD7B",
+      "archives": {
+        "CT": {
+          "SHA256": "5b94378573572e7e1215fe13b966d2d8099de13aa508b216160d6b8a707c65ba",
+          "bytes": 245867626
+        },
+        "RTSTRUCT": {
+          "SHA256": "356410bfe5024d3a1923baf201ab1c36dde7596e534e060cc6bfae6e9ada071d",
+          "bytes": 13843279
+        }
+      }
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-BB8C3187",
+      "archives": {
+        "CT": {
+          "SHA256": "38b82ab9884332e166b5c3981b2d1277f91e9228a05f709596a3d53daba70128",
+          "bytes": 79310612
+        },
+        "RTSTRUCT": {
+          "SHA256": "9d1752d52a89ea24cee127344a37a15c05793c850763bf64e23498c43311f7ca",
+          "bytes": 4229879
+        }
+      }
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-BD4C52F3",
+      "archives": {
+        "CT": {
+          "SHA256": "073605d9cdd577f2a5adbcafa4a731eeea2294bd53b878f7746a5b9d905f0632",
+          "bytes": 40601704
+        },
+        "RTSTRUCT": {
+          "SHA256": "5bed9501060af258fa8a51fe8ab96e6443844f9f48836c3daafab0d663e2a518",
+          "bytes": 2356417
+        }
+      }
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-BEC712BF",
+      "archives": {
+        "CT": {
+          "SHA256": "e9a757b7cf2ff8c50c2aa848f1d10afd31f7e4c83f157540fc7ad5ecae10c1e3",
+          "bytes": 40928597
+        },
+        "RTSTRUCT": {
+          "SHA256": "59653bf05487a2e74dc295407a92bff0a1c8f4acdd6750a76ca7d41b7ae550a2",
+          "bytes": 2631760
+        }
+      }
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-BFCF2E26",
+      "archives": {
+        "CT": {
+          "SHA256": "5da35fd1fa4e84581398a8175b14e136b4aeea6d5a6fa06858359ea9534b2627",
+          "bytes": 53604369
+        },
+        "RTSTRUCT": {
+          "SHA256": "94b3e05f2ee7f0bd44b7a4fc621d8ea85283c0c737bad7ee5a38c4adf7776c9c",
+          "bytes": 3688296
+        }
+      }
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-C1655E97",
+      "archives": {
+        "CT": {
+          "SHA256": "fd1ad4a49199fb62182834932537d990020759f2303136ab484599da56fbb6fa",
+          "bytes": 38661059
+        },
+        "RTSTRUCT": {
+          "SHA256": "7a7d05965077cccc2f9d25aef6b4fa0bb2ee7a9b9225f29b9fcce57096dbd798",
+          "bytes": 2664595
+        }
+      }
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-C26BBB5F",
+      "archives": {
+        "CT": {
+          "SHA256": "69625355ebfdad70ae34caaf217736670821e008f1d0291db8aa4f75e5569a01",
+          "bytes": 62734344
+        },
+        "RTSTRUCT": {
+          "SHA256": "956d941fe0d24407217c03a409fd1c07c220d4e1f50ed266e844c1e4e77a435e",
+          "bytes": 3724048
+        }
+      }
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-C60A79C6",
+      "archives": {
+        "CT": {
+          "SHA256": "df6b8009662be626e6ebcb54cf7b42f22366354e75fcfdb344917bdf0a38e4c2",
+          "bytes": 42648614
+        },
+        "RTSTRUCT": {
+          "SHA256": "5a29f2f23efb87c6ba4c5bee8bf6f71473a508e348c8e7b7ac7d8e24400ab790",
+          "bytes": 3403646
+        }
+      }
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-C7D4AEFA",
+      "archives": {
+        "CT": {
+          "SHA256": "a11180dcc374acf8134677115da46188f2324b01bd37f26e9195f76409705c4a",
+          "bytes": 48339071
+        },
+        "RTSTRUCT": {
+          "SHA256": "d0ed0ce7630439661391d3e34d159c4dc789d53967fc1363b16e806e78743c82",
+          "bytes": 3136375
+        }
+      }
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-C9616E71",
+      "archives": {
+        "CT": {
+          "SHA256": "aa06d7cf49796bf0835c10ddb4037703ad22582afa0fdc804f9488ea0c8dc768",
+          "bytes": 223025476
+        },
+        "RTSTRUCT": {
+          "SHA256": "5467234e8493110c2d47a6d1cc641d097224d2339727c2ef4f6fe76b718d0be4",
+          "bytes": 12372617
+        }
+      }
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-CA967BD7",
+      "archives": {
+        "CT": {
+          "SHA256": "07199ca0da83015922dc819798c0cdee9d3f986f9d9164d4ee24ec7f227fabeb",
+          "bytes": 39650584
+        },
+        "RTSTRUCT": {
+          "SHA256": "6ad0bbdfe183b20c902b8d2a44e553759e44d0413bee8544bc8e5c0738b8a256",
+          "bytes": 2533133
+        }
+      }
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-CB9BF05E",
+      "archives": {
+        "CT": {
+          "SHA256": "3e25638f376726ca20284bc3c8713781880089fc1d0f29c5e7bbc6615630904b",
+          "bytes": 75967385
+        },
+        "RTSTRUCT": {
+          "SHA256": "e305fe2ece2297f91dd5389024699e8dc77eadf56959d8752ccd9ecc84c4b5a3",
+          "bytes": 5048146
+        }
+      }
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-D1572D48",
+      "archives": {
+        "CT": {
+          "SHA256": "78ffafb0b0aafa6c1151661b48e71616724046dde44c9f35b7f71d166cfcb10d",
+          "bytes": 24337500
+        },
+        "RTSTRUCT": {
+          "SHA256": "0161193f60452a8a18e259c90086c76657de0692d1087edc6f38e355c3315d20",
+          "bytes": 1777592
+        }
+      }
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-D20DA719",
+      "archives": {
+        "CT": {
+          "SHA256": "1513a1755d291bee49af372dd2bb2400d76f60d4c6d886f9a7c460c3436af03c",
+          "bytes": 62069280
+        },
+        "RTSTRUCT": {
+          "SHA256": "ea69af7a0f2e5637881e186bfa2ae5bd067b67a83e3d03e19f3c6e6a407cb8a2",
+          "bytes": 3339780
+        }
+      }
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-D3A481E3",
+      "archives": {
+        "CT": {
+          "SHA256": "5828450c0d5e12d4226e8f7bcba571ce92f6064ad1f152828bcc7d83b45ed98f",
+          "bytes": 50445048
+        },
+        "RTSTRUCT": {
+          "SHA256": "ad08dc2e9630f68f1a114192fb5be8f40cbf4794310d73bc7a057d5ff7f94749",
+          "bytes": 3519437
+        }
+      }
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-D5A04A94",
+      "archives": {
+        "CT": {
+          "SHA256": "9111e7124b6bdc122b3355fe30350d572251c69e8c15742887e1b6af861ba89d",
+          "bytes": 54140254
+        },
+        "RTSTRUCT": {
+          "SHA256": "475576038f5a4af1fe5e505b28cc70274609a17856751d2bbf949657b6e2ece5",
+          "bytes": 3624226
+        }
+      }
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-D6A95512",
+      "archives": {
+        "CT": {
+          "SHA256": "06f4c5d11fe4182ec83c1e13da21ad5728c5a9ff42371d631b7241eff9d4ff65",
+          "bytes": 38254222
+        },
+        "RTSTRUCT": {
+          "SHA256": "13626eb84065a8632276cc5d0b5be7e58df6e7a598b3a0740791b524cb417874",
+          "bytes": 2793089
+        }
+      }
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-D907F7A8",
+      "archives": {
+        "CT": {
+          "SHA256": "e69e821be238c146129c7744e26f9d3ab6d3191b0b45ca3d9fb1ae8b697fac8c",
+          "bytes": 51269528
+        },
+        "RTSTRUCT": {
+          "SHA256": "d3031ee847df57757ee8f94f9ac3c5d6ce26cdd574d30c882a9fb15b3008dc7d",
+          "bytes": 3181526
+        }
+      }
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-D9417C24",
+      "archives": {
+        "CT": {
+          "SHA256": "50feb590fbcf37aec41313c2981eeef7cf3ada2302618a2d307a5165063b4aa5",
+          "bytes": 50850419
+        },
+        "RTSTRUCT": {
+          "SHA256": "6d71ebb151763700ac4555f0c8ec4eb231c34a5436a04850690cf0086210689d",
+          "bytes": 2981174
+        }
+      }
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-E03568A6",
+      "archives": {
+        "CT": {
+          "SHA256": "52bd05a93af9325c32e1fa17486f01746674aa2ef0e0d8a75eb95531d62d8ca6",
+          "bytes": 42304194
+        },
+        "RTSTRUCT": {
+          "SHA256": "a4556f2cd433cf6da76dcac6bf9710b63d608e665b016910b6e627c95745bd54",
+          "bytes": 2645406
+        }
+      }
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-E1FF3C7E",
+      "archives": {
+        "CT": {
+          "SHA256": "a594766a1fdf7b271519ab106a343ccd29355b24af9f77326628421fecc96192",
+          "bytes": 213162136
+        },
+        "RTSTRUCT": {
+          "SHA256": "049cd6676f9417d30cb491f507a3e1aad20a74c5a6a8c9461c17a50f26d042b6",
+          "bytes": 13994391
+        }
+      }
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-E66B16E4",
+      "archives": {
+        "CT": {
+          "SHA256": "6a62ab78dce195e6a3b8bfb7fa1407d6da800ed4d0adfc8a07aa3611c56b01bb",
+          "bytes": 81268787
+        },
+        "RTSTRUCT": {
+          "SHA256": "358e6893eee6206d71889fdba250190dd4937c58a412188ab88182acef002762",
+          "bytes": 5116708
+        }
+      }
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-E69AC901",
+      "archives": {
+        "CT": {
+          "SHA256": "53924ecc0b143e2351141543e67a869a7d6deda2bf40551b4bfdd7335fcd0d1a",
+          "bytes": 43265509
+        },
+        "RTSTRUCT": {
+          "SHA256": "1f93913b19c8073a0cebf490f366cb5e69a352a34986bd40a3dd96159cf3f129",
+          "bytes": 3167772
+        }
+      }
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-E6DF2006",
+      "archives": {
+        "CT": {
+          "SHA256": "580fe9ee763c1cca2944dad77a538262095e9d44f0558977624344928fb0f5bd",
+          "bytes": 53291690
+        },
+        "RTSTRUCT": {
+          "SHA256": "1670547f4f66fff0b265f501c5c7034d6598a75ba310365991466c31b6181b5a",
+          "bytes": 3740168
+        }
+      }
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-EB1DCBAA",
+      "archives": {
+        "CT": {
+          "SHA256": "daf41c995d50eada6fdcbc1c0b2bb50a275f06be4751f28f2b533c4e06483d78",
+          "bytes": 32661084
+        },
+        "RTSTRUCT": {
+          "SHA256": "72aad45ba958a8250f54fa367f86540e3fbf04e5d9ae703507a83465dd111cdc",
+          "bytes": 1930037
+        }
+      }
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-ED076087",
+      "archives": {
+        "CT": {
+          "SHA256": "bec37a7f904079db71911fba6a89285c2f9ad063d15ef1024fbb10695b835b25",
+          "bytes": 158333728
+        },
+        "RTSTRUCT": {
+          "SHA256": "cab1dd6bc9d08b441bfe619626cc6b6858edce45a11fe8751dd37e3eac5307b7",
+          "bytes": 11339503
+        }
+      }
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-F0386168",
+      "archives": {
+        "CT": {
+          "SHA256": "7aaa6ba92d3876bde44ecd3a8a8e1f4facfc90e1542c2e92899dc758f0d9790b",
+          "bytes": 183524518
+        },
+        "RTSTRUCT": {
+          "SHA256": "4009c3b37b0ff8d7b096f4e5474d29cf87ac4ac20c034a2dd2a297b9c806a67f",
+          "bytes": 13045495
+        }
+      }
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-F0CBB224",
+      "archives": {
+        "CT": {
+          "SHA256": "137dfede8fcd6977dc3201a54ae25b3eb390e77005e63298992d647bb4b8c960",
+          "bytes": 56334784
+        },
+        "RTSTRUCT": {
+          "SHA256": "c83998379d75e86423e1ff2d7ca4b551c1c3b4145446cbe858837ba47a48f6ef",
+          "bytes": 3305144
+        }
+      }
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-F22EFF95",
+      "archives": {
+        "CT": {
+          "SHA256": "e3cc8eb9dc0106f31c746266a3aa60b0def948f920eecd82f471f332689fb9d0",
+          "bytes": 47855168
+        },
+        "RTSTRUCT": {
+          "SHA256": "997125888ae3e6d2eeec36250b88108c83016dd895c477215dce2087dea22ab0",
+          "bytes": 2904212
+        }
+      }
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-F369B022",
+      "archives": {
+        "CT": {
+          "SHA256": "d7b0601d7a03ec61f6ff80cc0541e90e26e1f40bc7636f78e844c1719396f5d6",
+          "bytes": 47184580
+        },
+        "RTSTRUCT": {
+          "SHA256": "ddcbfd5e75613234e61855883d2f6742abf1a4143a999ff9fe9c183a93dd1b7c",
+          "bytes": 3118667
+        }
+      }
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-F50AD62F",
+      "archives": {
+        "CT": {
+          "SHA256": "1a8017454d25bd23794344a01a2ab4f271363e288f463e2d64ad1339d11de482",
+          "bytes": 55227060
+        },
+        "RTSTRUCT": {
+          "SHA256": "57ac9fd28f7a9a7836af898478a9f29034e76c57ba24c1312df87555ae9a18e0",
+          "bytes": 4176231
+        }
+      }
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-FA258908",
+      "archives": {
+        "CT": {
+          "SHA256": "0ba70ce36b8496439a5ec8df21bafbf121bdd54bf8151934bcb3a2ab53653ade",
+          "bytes": 37324216
+        },
+        "RTSTRUCT": {
+          "SHA256": "8906b9ac705468695a35b9b82a515b69e214fac51c7714cb9748d2877fc86c42",
+          "bytes": 2250019
+        }
+      }
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-FC1AE8BA",
+      "archives": {
+        "CT": {
+          "SHA256": "90c4067d6283ce980cf61b0126fb0b7fd49bca5b4911672acd92004faaf595d9",
+          "bytes": 39631488
+        },
+        "RTSTRUCT": {
+          "SHA256": "80dcd26cf4dbc72e84428bea71eff7dbc16397f574dcd952b5ea400a0d881b33",
+          "bytes": 3021604
+        }
+      }
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-FC6A7B5A",
+      "archives": {
+        "CT": {
+          "SHA256": "f5949f32fe12a35c3b3a8f01f927b6c055129fee149bee7eba6535b32fc349fc",
+          "bytes": 144324228
+        },
+        "RTSTRUCT": {
+          "SHA256": "3721e890b77c062e3e6b1b6651f87045445f2ceaa7b39c94ccb76b826147a41c",
+          "bytes": 7276695
+        }
+      }
+    }
+  ]
+}

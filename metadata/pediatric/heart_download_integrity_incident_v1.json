@@ -1,0 +1,58 @@
+{
+  "cause": "Two preparation invocations overlapped; second stopped. Own newly downloaded incomplete/corrupt cache preserved, original DICOM directories untouched.",
+  "verified_archive_count": 88,
+  "hash_mismatches": [],
+  "missing_receipts_to_retry": [
+    "Pediatric-CT-SEG-20DD8C56",
+    "Pediatric-CT-SEG-E1FF3C7E",
+    "Pediatric-CT-SEG-A7F73045",
+    "Pediatric-CT-SEG-374"
+  ],
+  "quarantined": [
+    {
+      "patient_id": "Pediatric-CT-SEG-20DD8C56",
+      "file": "ct.zip.part",
+      "SHA256": "2ad04ec5f0fe8f992e8399b04a87845ec248e54ae50ce413bd96243d0a0a1b59",
+      "CRC_failure_entry": null,
+      "preserved_relative_path": "cache/download_incident_20261006/Pediatric-CT-SEG-20DD8C56/ct.zip.part"
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-E1FF3C7E",
+      "file": "ct.zip",
+      "SHA256": "c4dbbe6054369766852c7a6e974a3f06d5606748d7f1d128731c293766125e49",
+      "CRC_failure_entry": "00000205.dcm",
+      "preserved_relative_path": "cache/download_incident_20261006/Pediatric-CT-SEG-E1FF3C7E/ct.zip"
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-A7F73045",
+      "file": "ct.zip.part",
+      "SHA256": "31f55972d2636e56837880862bd0c75e866aea6d0ca8f5360ea0c6d116b472bd",
+      "CRC_failure_entry": null,
+      "preserved_relative_path": "cache/download_incident_20261006/Pediatric-CT-SEG-A7F73045/ct.zip.part"
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-374",
+      "file": "ct.zip.part",
+      "SHA256": "33bfbe4ae1e7c72801728b5dbe29fa5c74113f79168835addd657b48eb8e2816",
+      "CRC_failure_entry": null,
+      "preserved_relative_path": "cache/download_incident_20261006/Pediatric-CT-SEG-374/ct.zip.part"
+    }
+  ],
+  "existing_DICOM_modified_or_deleted": false,
+  "data_deleted": false,
+  "resolution": {
+    "recovered_patient_ids": [
+      "Pediatric-CT-SEG-20DD8C56",
+      "Pediatric-CT-SEG-E1FF3C7E",
+      "Pediatric-CT-SEG-A7F73045",
+      "Pediatric-CT-SEG-374"
+    ],
+    "all_current_source_archives_match_receipts": true,
+    "source_verification_summary_SHA256": "896082762e22c2d09aa2f488fe84c1600fe724c7f6f794b8aa9daf6de409df6d",
+    "verified_patient_pairs": 117,
+    "verified_archives": 234,
+    "existing_DICOM_modified_or_deleted": false,
+    "prevention": "OS-exclusive cohort preparation lock for this data root"
+  },
+  "pending_retry_patient_ids": []
+}
