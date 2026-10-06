@@ -12,12 +12,20 @@ def main():
     p=argparse.ArgumentParser(description=__doc__)
     p.add_argument('--data', type=Path, required=True); p.add_argument('--port', type=int, default=8766)
     p.add_argument('--reviews',type=Path,help='Optional reviewed status manifest')
+    p.add_argument('--predictions',type=Path,help='Optional per-patient original-grid predictions directory')
     a=p.parse_args(); allowed={'/': Path(__file__).with_name('pediatric_ct_qa_viewer.html')}; cases=[]
     reviews={r['patient_id']:r for r in json.loads(a.reviews.read_text())['records']} if a.reviews else {}
     for path in sorted(a.data.glob('*/pilot_qa.json')):
         info=json.loads(path.read_text())
         if not info.get('mask_rasterized'): continue
         prepared=path.parent/'prepared'
+        prediction=a.predictions/info['patient_id']/'heart_prediction_original.nii.gz' if a.predictions else None
+        if prediction is not None and not prediction.is_file():continue
+        if prediction is not None:
+            gt=nib.load(prepared/'heart_gt_original.nii.gz');pred=nib.load(prediction)
+            if gt.shape!=pred.shape or not np.allclose(gt.affine,pred.affine,atol=1e-5):
+                raise ValueError(f'Prediction geometry mismatch: {info["patient_id"]}')
+            allowed[f'/data/{info["patient_id"]}/heart_prediction_original.nii.gz']=prediction
         # Crosshair position is NiiVue's canonical RAS fraction, not storage indices.
         image=nib.as_closest_canonical(nib.load(prepared/'heart_gt_original.nii.gz'))
         voxels=np.argwhere(np.asarray(image.dataobj)>0)
@@ -25,6 +33,8 @@ def main():
         cases.append({k:info[k] for k in ('patient_id','age','scanner','status')})
         if info['patient_id'] in reviews: cases[-1]['status']=reviews[info['patient_id']]['status']
         cases[-1]['center_fraction']=center.tolist()
+        cases[-1]['prediction_available']=prediction is not None
+        cases[-1]['physical_geometry_confirmed']=bool(info.get('CT',{}).get('physical_geometry_confirmed_from_DICOM'))
         for name in ('ct_original.nii.gz','heart_gt_original.nii.gz'):
             allowed[f'/data/{info["patient_id"]}/{name}']=prepared/name
     payload=json.dumps(cases).encode()

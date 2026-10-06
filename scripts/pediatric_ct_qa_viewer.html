@@ -1,8 +1,9 @@
 <!doctype html><html lang="en"><meta charset="utf-8">
 <title>Pediatric CT / original Heart GT — independent QA</title>
 <style>html,body{margin:0;height:100%;overflow:hidden}body{display:flex;flex-direction:column;background:#151515;color:white;font:15px sans-serif}header{padding:12px}main{position:relative;flex:1;min-height:0}canvas{width:100%;height:100%;display:block}button,select{margin:5px}pre{margin:8px;white-space:pre-wrap}</style>
-<header>Pediatric-CT-SEG: CT + original Heart ROI. Independent NiiVue QA; no predictions.
+<header>Pediatric-CT-SEG: original CT + Heart OAR. GT green; prediction red.
 <select id="case"></select><button id="overlay">Toggle Heart</button><button id="axial">Axial</button><button id="multi">Multiplanar</button>
+<select id="mode"><option value="ground_truth">Ground Truth</option><option value="prediction">Prediction</option><option value="comparison">Comparison</option></select>
 <div id="status">Loading...</div></header><main><canvas id="canvas"></canvas></main><pre id="location"></pre>
 <script type="module">
 import {Niivue} from 'https://cdn.jsdelivr.net/npm/@niivue/niivue@0.69.0/+esm';
@@ -12,16 +13,28 @@ for(const c of cases){const o=document.createElement('option');o.value=c.patient
 const requested=new URLSearchParams(location.search).get('case');if(cases.some(c=>c.patient_id===requested))select.value=requested;
 const nv=new Niivue({isRadiologicalConvention:true,dragAndDropEnabled:false,onLocationChange:x=>document.getElementById('location').textContent=x.string});
 await nv.attachTo('canvas');window.qaNV=nv;let opacity=.35;
+function applyMode(){
+ const mode=document.getElementById('mode').value;
+ const prediction=cases.find(c=>c.patient_id===select.value)?.prediction_available;
+ nv.setOpacity(1,mode==='prediction'&&prediction?0:opacity);
+ if(prediction)nv.setOpacity(2,mode==='ground_truth'?0:opacity);
+}
 async function load(){
  const id=select.value;status.textContent='Loading '+id;
- await nv.loadVolumes([{url:`/data/${id}/ct_original.nii.gz`,colormap:'gray',cal_min:-150,cal_max:250},
- {url:`/data/${id}/heart_gt_original.nii.gz`,colormap:'green',cal_min:0,cal_max:1,opacity}]);
+ document.getElementById('mode').disabled=true;
+ const info=cases.find(c=>c.patient_id===id);
+ const volumes=[{url:`/data/${id}/ct_original.nii.gz`,colormap:'gray',cal_min:-150,cal_max:250},
+ {url:`/data/${id}/heart_gt_original.nii.gz`,colormap:'green',cal_min:0,cal_max:1,opacity}];
+ if(info.prediction_available)volumes.push({url:`/data/${id}/heart_prediction_original.nii.gz`,colormap:'red',cal_min:0,cal_max:1,opacity});
+ await nv.loadVolumes(volumes);
  nv.setInterpolation(false);nv.setSliceType(nv.sliceTypeMultiplanar);
- const info=cases.find(c=>c.patient_id===id);nv.scene.crosshairPos=info.center_fraction;nv.updateGLVolume();
- status.textContent=id+' loaded. Original CT grid; mm verified from DICOM; Heart GT only. '+info.status;
+ document.getElementById('mode').disabled=!info.prediction_available;
+ nv.scene.crosshairPos=info.center_fraction;nv.updateGLVolume();applyMode();
+ status.textContent=id+' loaded. Original grid; '+(info.physical_geometry_confirmed?'mm verified from DICOM. ':'physical geometry not DICOM-verified. ')+info.status;
 }
 select.onchange=()=>load().catch(e=>status.textContent=String(e));
-document.getElementById('overlay').onclick=()=>{opacity=opacity?0:.35;nv.setOpacity(1,opacity)};
+document.getElementById('mode').onchange=applyMode;
+document.getElementById('overlay').onclick=()=>{opacity=opacity?0:.35;applyMode()};
 document.getElementById('axial').onclick=()=>nv.setSliceType(0);
 document.getElementById('multi').onclick=()=>nv.setSliceType(3);
 load().catch(e=>status.textContent=String(e));
