@@ -60,7 +60,7 @@ def benchmark(config_path, output, data_root=None, batches=50):
     delta = sum(float((p.detach()-old).abs().sum()) for p,old in zip(model.parameters(),initial))
     mean = float(np.mean(timings))
     result = {**provenance(config_path, config), 'device': 'cuda', 'GPU_name': torch.cuda.get_device_name(0),
-              'environment': environment(), 'CUDA_version': torch.version.cuda, 'precision': 'FP32',
+              'environment': environment('cuda'), 'CUDA_version': torch.version.cuda, 'precision': 'FP32',
               'measured_batches': batches, 'warmup_batches': warmup, 'batch_size': config['batch_size'],
               'mean_sec_per_batch': mean, 'p95_sec_per_batch': float(np.quantile(timings,.95)),
               'samples_per_second': config['batch_size']/mean,

@@ -21,6 +21,7 @@ class HeartDataset(Dataset):
         if self.preproc['fitted_partition']!='train' or self.preproc['split_SHA256']!=sha256_file(self.config['split']):
             raise ValueError('Preprocessing provenance differs from this split')
         self.rows=self.split['partitions'][partition];self.provenance={};self.opened=OrderedDict()
+        self.file_headers={}
         self.augmentation=bool(augmentation and partition=='train')
         for row in self.rows:
             directory=self.root/self.config['cache_relative_path']/row['patient_id']
@@ -47,13 +48,46 @@ class HeartDataset(Dataset):
 
     def _arrays(self,pid):
         if pid not in self.opened:
-            directory=self.root/self.config['cache_relative_path']/pid
-            self.opened[pid]=(np.load(directory/'image.npy',mmap_mode='r'),np.load(directory/'mask.npy',mmap_mode='r'))
+            if pid not in self.provenance:raise ValueError('Patient outside this partition')
+            if pid not in self.file_headers:
+                directory=self.root/self.config['cache_relative_path']/pid
+                headers=[]
+                try:
+                    for name,expected_dtype in [('image.npy',np.dtype('float32')),('mask.npy',np.dtype('uint8'))]:
+                        handle=(directory/name).open('rb')
+                        headers.append([handle])
+                        version=np.lib.format.read_magic(handle)
+                        reader={(1,0):np.lib.format.read_array_header_1_0,(2,0):np.lib.format.read_array_header_2_0}.get(version)
+                        if reader is None:raise ValueError('Unsupported prepared NPY header')
+                        shape,fortran,dtype=reader(handle)
+                        transform=self.provenance[pid]['transform']
+                        if shape!=(len(transform['z_positions_mm']),transform['size'],transform['size']) or dtype!=expected_dtype:
+                            raise ValueError('Prepared NPY header differs from provenance')
+                        headers[-1].extend([dtype,shape,handle.tell(),'F' if fortran else 'C'])
+                except BaseException:
+                    for header in headers:header[0].close()
+                    raise
+                self.file_headers[pid]=headers
+            # Cache only file descriptors and tiny headers. Pixel arrays remain
+            # read-only disk-backed maps, at most two patients at a time.
+            self.opened[pid]=tuple(np.memmap(handle,dtype=dtype,shape=shape,offset=offset,order=order,mode='r')
+                                   for handle,dtype,shape,offset,order in self.file_headers[pid])
             while len(self.opened)>2:
                 _,arrays=self.opened.popitem(last=False)
                 for array in arrays:array._mmap.close()
         self.opened.move_to_end(pid)
         return self.opened[pid]
+
+    def close(self):
+        for arrays in getattr(self,'opened',{}).values():
+            for array in arrays:
+                if not array._mmap.closed:array._mmap.close()
+        for headers in getattr(self,'file_headers',{}).values():
+            for header in headers:header[0].close()
+        self.opened.clear();self.file_headers.clear()
+
+    def __del__(self):
+        if hasattr(self,'file_headers'):self.close()
 
     def __len__(self):return len(self.indices)
 

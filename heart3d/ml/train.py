@@ -65,7 +65,7 @@ def train(config_path, run_name, benchmark_path=None, data_root=None, device='cu
     criterion = SegmentationLoss(**config['loss'])
     info = provenance(config_path, config)
     output.mkdir(parents=True); checkpoints.mkdir(parents=True)
-    env = environment(); env['device'] = device
+    env = environment(device); env['device'] = device
     if device == 'cuda':
         env.update(GPU_name=torch.cuda.get_device_name(0), CUDA_version=torch.version.cuda,
                    GPU_total_bytes=torch.cuda.get_device_properties(0).total_memory,

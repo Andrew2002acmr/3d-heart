@@ -82,3 +82,18 @@ def test_spatial_augmentation_is_shared_across_context_and_binary_target():
     assert (foreground & truth).sum()/(foreground | truth).sum()>.95
     with pytest.raises(ValueError,match='Flips'):
         augment(image,mask,dict(settings,flips=True),torch.Generator())
+
+
+def test_file_header_cache_remaps_identical_samples_without_reopening(toy_experiment,monkeypatch):
+    config,_,_=toy_experiment;dataset=HeartDataset(config,augmentation=False)
+    index=dataset.indices.index(('p0',3));before=dataset[index]
+    handles=[row[0] for row in dataset.file_headers['p0']]
+    for array in dataset.opened.pop('p0'):array._mmap.close()
+    def forbidden_header_read(*args,**kwargs):raise AssertionError('Header reopened after eviction')
+    monkeypatch.setattr(np.lib.format,'read_magic',forbidden_header_read)
+    after=dataset[index]
+    assert torch.equal(before['image'],after['image']) and torch.equal(before['target'],after['target'])
+    assert not any(h.closed for h in handles) and len(dataset.opened)<=2
+    assert all(not a.flags.writeable for a in dataset.opened['p0'])
+    with pytest.raises(ValueError,match='outside'):dataset._arrays('p4')
+    dataset.close();assert all(h.closed for h in handles) and not dataset.opened

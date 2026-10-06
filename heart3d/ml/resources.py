@@ -6,7 +6,7 @@ import psutil
 import torch
 
 
-def environment():
+def environment(device='cpu'):
     processor=platform.processor()
     if platform.system()=='Windows':
         import winreg
@@ -16,7 +16,7 @@ def environment():
         'processor':processor,'logical_CPUs':psutil.cpu_count(),
         'physical_CPUs':psutil.cpu_count(logical=False),'RAM_bytes':psutil.virtual_memory().total,
         'torch':torch.__version__,'torch_threads':torch.get_num_threads(),
-        'CUDA_available':torch.cuda.is_available(),'benchmark_device':'cpu'}
+        'CUDA_available':torch.cuda.is_available(),'benchmark_device':device}
 
 
 class ResourceMonitor:
