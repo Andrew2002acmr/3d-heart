@@ -15,7 +15,7 @@ from heart3d.pediatric import write_json
 from heart3d.storage import sha256_file
 
 
-def compare_case(row, root, predictions, output):
+def compare_case(row, root, predictions, output, selection='first patient ID per age stratum in frozen test; no performance-based selection'):
     pid=row['patient_id'];destination=output/pid
     if destination.exists():raise ValueError('QA output exists; do not overwrite')
     paths=[root/row['ct_relative_path'],root/row['mask_relative_path'],predictions/pid/'heart_prediction_original.nii.gz']
@@ -61,7 +61,7 @@ def compare_case(row, root, predictions, output):
         distances={'mean_pooled_vertex_nearest_distance_mm':float((ab.sum()+ba.sum())/(len(ab)+len(ba))),
                    'HD95_vertex_nearest_mm':float(max(np.quantile(ab,.95),np.quantile(ba,.95))),
                    'definition':'sampled mesh vertex-to-vertex distances; distinct from voxel-boundary HD95/ASSD'}
-    result={'patient_id':pid,'selection':'first patient ID per age stratum in frozen test; no performance-based selection',
+    result={'patient_id':pid,'selection':selection,
             'sampling':specs,'meshes':summaries,'mesh_distances':distances,
             'physical_geometry_confirmed':row['geometry']['physical_geometry_confirmed_from_DICOM'],
             'sources':[{'path':str(p),'SHA256':sha256_file(p)} for p in paths],
@@ -75,8 +75,17 @@ if __name__=='__main__':
     p.add_argument('--predictions',type=Path,required=True);p.add_argument('--output',type=Path,required=True)
     p.add_argument('--split',type=Path,default=Path('configs/splits/pediatric_ct_heart_v1.json'))
     p.add_argument('--cohort',type=Path,default=Path('metadata/pediatric/heart_approved_cohort_v1.json'))
+    p.add_argument('--patient',action='append',help='Explicit frozen-test patient for post-hoc failure review; no model tuning')
     a=p.parse_args();split=load_frozen_split(a.split,a.cohort)
     selected={}
-    for row in sorted(split['partitions']['test'],key=lambda r:r['patient_id']):selected.setdefault(row['age_group'],row)
-    results=[compare_case(row,a.data,a.predictions,a.output) for row in selected.values()]
+    selection='first patient ID per age stratum in frozen test; no performance-based selection'
+    if a.patient:
+        available={r['patient_id']:r for r in split['partitions']['test']}
+        if len(a.patient)!=len(set(a.patient)) or any(pid not in available for pid in a.patient):
+            raise ValueError('Failure review requires unique patient IDs from frozen test')
+        selected={pid:available[pid] for pid in a.patient}
+        selection='explicit post-hoc frozen-test failure review; no retraining, threshold fitting or postprocessing'
+    else:
+        for row in sorted(split['partitions']['test'],key=lambda r:r['patient_id']):selected.setdefault(row['age_group'],row)
+    results=[compare_case(row,a.data,a.predictions,a.output,selection) for row in selected.values()]
     write_json(a.output/'summary.json',results)
