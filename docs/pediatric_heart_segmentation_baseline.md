@@ -1,27 +1,21 @@
 # Pediatric Heart segmentation baseline
 
-Дата: 2026-10-06. Ветка `feature/pediatric-heart-segmentation`, audit base `66c5804`.
-Основной checkout и пользовательские изменения не трогались.
-
-**Готовы QA cohort 60, frozen split 42/9/9, train-only preprocessing, собственная
-2.5D U-Net и короткий CPU benchmark. Full training и test evaluation не было.**
-Подробный отчёт: [pediatric_heart_training_readiness.md](pediatric_heart_training_readiness.md).
-Продолжение: [pediatric_heart_segmentation_resume.md](pediatric_heart_segmentation_resume.md).
-
-**Дополнение RunPod:** пользователь разрешил один full baseline после CUDA
-benchmark. Реализованы full scratch trainer, best/last, validation и original-grid
-evaluation; подготовлены также validation/test caches и SHA bundle 2.35 GB.
-124 теста проходят. Доступ к Pod пока блокирует отказ SSH принимать публичный
-ключ; GPU benchmark/full training/test evaluation ещё не выполнялись.
-Актуальный cloud plan/status: [pediatric_heart_runpod_v1.md](pediatric_heart_runpod_v1.md).
-Описанный ниже запрет full training относится к предыдущему CPU readiness этапу.
+Дата: 2026-10-06. Работа только в `feature/pediatric-heart-segmentation`.
+**QA cohort60, frozen42/9/9, train-only preprocessing и собственная2.5D U-Net
+готовы; один30-epoch RunPod baseline завершён, original-grid test n=9 оценён.**
+Training commit `7c93cb9f8b284a9a526e78c9c67432e26d15e794`; mean test Dice0.9194.
+Critical results скачаны на E и SHA-verified; Pod можно остановить.
+Полный отчёт: [RunPod baseline v1](pediatric_heart_runpod_v1.md).
+Подготовка: [training readiness](pediatric_heart_training_readiness.md).
+Продолжение: [resume](pediatric_heart_segmentation_resume.md).
+Основной checkout/пользовательские изменения, main и audit branch не менялись.
 
 ## 1. Цель
 
 Сегментировать исходный экспертный **Heart OAR** на детских CT разных возрастов
 и scanner/protocol. Цепочка: полная DICOM CT → подтверждённые HU/geometry →
 original RTSTRUCT Heart → original-grid GT → QA → patient split → train-fitted
-preprocessing → собственная модель → короткий benchmark. Камеры, сосуды, диагнозы
+preprocessing → собственная модель → benchmark → full training → original-grid evaluation. Камеры, сосуды, диагнозы
 и clinical decision logic не входят в этот эксперимент.
 
 ## 2. Источник
@@ -118,18 +112,17 @@ HU **−1000..969** по train CT0.5th/body99.5th percentiles → [-1,1]; full p
 FOV fit/pad **256×256**, **Z2 mm**, no GT crop. Image linear/mask nearest, original
 GT сохранён. Context **[-4,-2,0,2,4] mm**, central target; missing offsets
 replicate-edge +flags. Native orientation сохранена; другие IOP требуют adapter.
-Inverse XYZ/RAS affine и pixel-center mapping сохранены; future probability
+Inverse XYZ/RAS affine и pixel-center mapping сохранены; prediction probability
 linear обратно, threshold на original grid. Train mmapcache: 10280 slices,
 1742 positive /8538 negative; epoch all-positive +equal-negative per patient =3484.
-Future held-out/inference all-slices. Ни held-out fitting, ни GT crop нет.
+Held-out/inference all-slices. Ни held-out fitting, ни GT crop нет.
 
 ## 9. Архитектура
 
 [Own model](../heart3d/ml/model.py), с нуля, **488993 parameters**. Input5,
 encoder16/32/64/128, 3 MaxPool2d(2), double Conv3×3 bias=True /GN8 /ReLU;
 decoder bilinear до skip shape, concat +double block, output Conv1×1→1 logits.
-Готовая segmentation network не импортируется. CPU backend реально проверен,
-CUDA=false, Radeon не проверен. Odd H/W и target output shape протестированы.
+Готовая segmentation network не импортируется. CPU и RTX4090 CUDA backends реально проверены. Odd H/W и target output shape протестированы.
 
 ## 10. Loss
 
@@ -141,7 +134,7 @@ CUDA=false, Radeon не проверен. Odd H/W и target output shape про�
 `DiceLoss = mean_batch[1-(2 sum(p*y)+epsilon)/(sum(p)+sum(y)+epsilon)]`.
 
 Empty targets сохранены, epsilon smoothing; BCE даёт основной background signal.
-Synthetic tests passed; benchmark combined, три full experiments не запускались.
+Synthetic tests passed; один full combined experiment, три loss experiments не запускались.
 
 ## 11. Augmentation
 
@@ -152,89 +145,134 @@ val/test без augmentation.
 
 ## 12. Training setup
 
-[Config](../configs/pediatric_heart_baseline_v1.json), own bounded optimizer loop
-`heart3d.ml.benchmark`: CPU6 threads, batch2, workers0, Adam0.001, no scheduler,
-seed20261006. Реально 5 warmup +50 measured +20 fixed-train sanity =**75 updates**.
-History/config/environment/resources/last_benchmark.pt на E. Full train/validation
-loop best/last — следующий отдельно разрешаемый этап. Benchmark weights не final
-model; full baseline должен стартовать с нуля.
+Full config [pediatric_heart_runpod_v1.json](../configs/pediatric_heart_runpod_v1.json):
+FP32 CUDA, batch16, workers0, CPUthreads6, Adam0.001, без scheduler, seed20261006.
+30 epochs с нуля, balanced3484samples/218batches per train epoch.
+Validation — все central positions и mean patient Dice на preprocessing grid.
+Best epoch18; last epoch30; benchmark/pilot weights не загружались.
+TF32 off, CUDA deterministic warn-only; actual environment/pip freeze сохранены.
+CLI: `python -m scripts.run_pediatric_gpu --config ... --data ... --run-name ... --export ...`.
+Trainer/evaluate/bundle/infer реализованы внутри проекта; test не используется для fitting.
 
 ## 13. Hardware и измеренный бюджет
 
-Ryzen5 4500, 6 physical/12 logical, RAM~16 GiB, Windows11, Python3.14.4,
-torch2.14.1+cpu. **0.4150 sec/batch**, p95 0.4497, **4.819 samples/sec**;
-peak sampled RSS **624 MB**, CPU579% (~48.3% machine), min available RAM7.69 GB,
-checkpoint5.95 MB. [Measured summary](../metadata/pediatric/heart_cpu_benchmark_v1.json).
-1742 batches/epoch → **12.05 min**, 30 training epochs → **6.02 h**, linear
-extrapolation **без validation/save overhead**. Full wall time больше,
-эти составляющие не измерены. E~281.48 GB free, reserve80 decimalGB;
-require_space перед allocations, автоматического удаления нет.
+RTX4090 24564MiB, torch2.8.0+cu128/runtime12.8, Python3.12.3;32logical CPU,
+RAM124.9GiB, persistent /workspace. GPU benchmark50+5warmup+20sanity:
+**0.3344s/batch16,47.84samples/s**, VRAM allocated1.916GB/reserved3.127GB.
+Peak sampled benchmark RSS1.790GB; full-train RSS2.072GB.
+Измеренный benchmark estimate30train epochs36.45min без overhead;
+**фактические30epochs с validation/save 41.10min**.
+Train/validation epoch в среднем72.95/9.11s.
+NPY handles cache устранил повторные network opens; pixels lazy, максимум2patientmaps.
+Начальный медленный pilot остановлен и сохранён; final restarted from scratch.
 
-## 14. Метрики будущего baseline
+Historical CPU readiness: Ryzen54500/16GiB/torch2.14.1+cpu, batch2,0.4150s,
+4.819samples/s,RSS624MB;30train-only extrapolation6.02h. Это не full CPU run.
+[CPU summary](../metadata/pediatric/heart_cpu_benchmark_v1.json).
 
-Dice/IoU/precision/recall per patient и age/scanner/contrast/spacing aggregates.
-HD95/ASSD mm только confirmed geometry, explicit empty-mask/surface conventions.
-**Test evaluation не было**, scientific scores отсутствуют.
+## 14. Метрики
 
-## 15. Технические результаты
+Patient-weighted original DICOM-derived XYZ test n=9, probabilities inverse-linear,
+threshold0.5, без postprocessing. Geometry/spacing подтверждены в каждом case.
 
-**120 tests passed**, 320 прежних NumPy/skimage warnings. DICOM/HU/RAS-LPS,
-inventory/references/planes, rasterization, own model/losses/gradients, physical
-neighbors, seed/indexing, patient isolation, shared augmentation, inverse landmarks.
-Three-age train preprocessing mosaic просмотрен, context/central GT aligned.
-114 independent reader checks HU difference0; rasterizer Dice min0.9999947272818347,
-nonboundary differences0 — conversion agreement, не ML metric.
-Fixed2 train slices loss **1.4544→1.0210→0.8787**, finite gradients/weight updates,
-no NaN/Inf. Это technical learning sanity, не generalization.
+| Metric | Mean | Median | Range |
+|---|---:|---:|---:|
+| Dice | 0.9194 | 0.9251 | 0.8579–0.9658 |
+| IoU | 0.8521 | 0.8606 | 0.7512–0.9339 |
+| precision | 0.9472 | 0.9636 | 0.8518–0.9900 |
+| recall | 0.8977 | 0.9101 | 0.7569–0.9799 |
+| HD95_mm | 17.9010 | 14.0000 | 3.1250–70.6495 |
+| ASSD_mm | 3.0077 | 3.1639 | 1.4295–4.5990 |
+
+
+HD95=max двух directed95th percentiles; ASSD=pooled directed surface-voxel mean,
+6-neighbour boundary, units mm. Empty convention и valid counts сохранены;
+в этом test пустых prediction нет. Per-patient и age/scanner/contrast/Z-spacing
+таблицы находятся в [полном отчёте](pediatric_heart_runpod_v1.md).
+
+## 15. Результаты и проверки
+
+Полный локальный suite **127passed** (322 существующих NumPy/skimage warnings);
+после расширения failure review дополнительно prediction-QA test1passed.
+DICOM/HU/order/LPS→RAS, references/planes, rasterization, forward/loss/gradients,
+physical contexts, augmentation, mmap eviction, seed, patient isolation, inverse
+geometry, full synthetic trainer, original metrics и SHA bundle проверены.
+GPU sanity fixed loss1.4544→0.7031; finite gradients/optimizer update подтверждены.
+Это technical sanity; quality относится только к untouched-test pass финального run.
+
+[GPU experiment summary](../metadata/pediatric/heart_gpu_baseline_v1.json).
+Best validation Dice0.92967 на preprocessing grid; mean test Dice0.91937 на
+original grid. Это первый source-OAR baseline, не validation clinical support.
 
 ## 16. Failures
 
-50 truncated scans исключены без repair; E03568A6 coverage review.
-376/37058120/EB1DCBAA irregular spacing rejected. 176261A0 identity review:
-похож на92891A2F, voxels различаются, identity unknown; только92891A2F включён.
-Source planar caps сохранены в OAR target.
-Historical full-RT failures:272B6C5D missing17 Heart references, 34ECBB32 missing8:
-[evidence](../metadata/pediatric/heart_segmentation_reference_review.json).
-Они и3 empty не candidates. Interrupted download cache сохранён/recovered,
-OS root lock предотвращает overlap; originals untouched, resolution в readiness.
+Data QA:50 scan truncations excluded,3 irregular geometry rejected,1coverage review
+и1identity review сохранены. Planar source caps не достраивались.
+Prediction failures:792705D7 HD95=70.65mm, off-heart islands;423F282F islands
+в области CT table. CA967BD7 (2y) Dice0.8579/recall0.7569/volume−23.54%:
+недосегментация верхней области и внутренние gaps. F50AD62F precision0.8518,
+volume+12.97%. Все ошибки сохранены без repair и без test-based параметров.
+Age-group mean Dice2–5/6–11/12–17=0.8973/0.9315/0.9293, n3each: descriptive only.
+Scanner LightSpeed/SOMATOM=0.9118(n6)/0.9345(n3); effects не отделены от protocol/age.
 
-## 17. Ground Truth vs Prediction
+## 17. Ground Truth vs Prediction и inference
 
-Independent NiiVue `scripts/view_pediatric_ct_qa.py`: loopback, allowlisted CT+GT,
-pinned CDN; native mosaics reproducible. Benchmark predictions не экспортировались.
-GT/Prediction/Comparison и test masks — после отдельно разрешённого full baseline.
+Original-grid masks доступны для всех9test patients, GT unchanged.
+Minimal NiiVue viewer имеет Ground Truth / Prediction / Comparison; реальные
+F22EFF95 три modes проверены headless Edge, JS errors0, screenshot просмотрен.
+Static native axial/coronal/sagittal + endpoint comparisons просмотрены для
+трёх заранее выбранных age cases и отдельно lowest-Dice CA967BD7.
+[QA summary](../metadata/pediatric/heart_prediction_qa_v1.json).
+
+Image-only CLI `python -m heart3d.ml.infer_dicom --config ... --checkpoint ...
+--ct-series ... --output ... --device cpu --reserve-GB 80`: inspect full series,
+HU/geometry gates, preprocessing, model, inverse mask + provenance.
+На train/development06722123 проверено реально: shape512×512×320,639667voxels;
+GT/RTSTRUCT не использовались, источники не менялись. Это technical smoke.
+Predictions/checkpoints всегда отдельны от original CT/GT, no overwrite.
 
 ## 18. 3D comparison
 
-GT/Prediction surfaces/volume/area/components/distances/topology пока отсутствуют.
-После training/inference existing mask→mesh с explicit binary Heart mapping;
-старый label1=LV нельзя выдавать за Heart. Physical units только verified geometry.
+Existing mask→mesh выполнен для3preselected test +1posthocfailure. Binary label1
+явно переименован Heart OAR, не LV; RAS/mm field metadata подтверждены.
 
-## 19. Ограничения и рекомендация
+| Patient suffix | GT / prediction volume, ml | GT / prediction area, mm² | GT / prediction components (26) |
+|---|---:|---:|---:|
+| 423F282F | 661.20 / 642.08 | 47867.6 / 55413.0 | 1 / 3 |
+| 54BC2D63 | 159.64 / 150.26 | 16950.6 / 16932.8 | 1 / 3 |
+| 792705D7 | 358.77 / 321.66 | 29990.0 / 31448.8 | 1 / 5 |
+| CA967BD7 | 162.29 / 124.09 | 18334.8 / 19663.8 | 1 / 1 |
 
-OAR extent не гарантирует полную chamber/vascular anatomy, technical approval
-не clinician sign-off; clinical status unknown, reported age limited, age17 нет.
-Coverage selection меняет scanner/protocol distribution, held-out два scanner models,
-confirmed non-contrast нет. Public IDs/hashes не доказывают все repeat identities.
-**Технически data/model готовы** к full source-OAR baseline, CPU/RAM/storage
-достаточны. Нужно отдельное согласование full training и полноценный
-train/validation loop с original-grid evaluation/failure review. Clinical reasoning
-этим экспериментом не валидируется; полное обучение здесь не выполнялось.
 
-## 20. Воспроизведение и следующий этап
+Все четыре GT имеют1voxel26 component; prediction3/3/5/1 соответственно.
+Boundary/nonmanifold/inconsistent winding edges0, self-intersections не проверены.
+Topology/euler/component diagnostics и mesh vertex-distance metrics сохранены;
+последние отличаются от voxel HD95/ASSD. No smoothing/cleanup/component removal.
+Наличие закрытого mesh не означает корректную heart anatomy.
 
-Pinned requirements-lock/pediatric/ml. Current Python
-`D:/codexProjects/3d-hearts/.venv/Scripts/python.exe`; external pydicom PYTHONPATH
-`D:/codexProjects/3d-hearts/data/pediatric_audit/python_deps`. Data paths config/CLI.
+## 19. Ограничения
 
-```powershell
-$dataRoot='E:/3d-heart-data/pediatric_ct_heart'
-python -m heart3d.ml.prepare --config configs/pediatric_heart_baseline_v1.json --data $dataRoot --partition train
-python -m heart3d.ml.benchmark --config configs/pediatric_heart_baseline_v1.json --data $dataRoot --batches 50 --run-name new_unique_bounded_run
-python -m pytest -q --basetemp "$dataRoot/temporary/pytest_new_unique"
-```
+Source OAR scope не гарантирует полную anatomy камер/сосудов, approvals технические
+без нового clinician sign-off, healthy_status=unknown. Reported ages2–16, age17нет.
+Coverage selection меняет domain distribution; held-out n9,2scanner models,
+Revolution/confirmed noncontrast не проверены. Public IDs/content SHA не доказывают
+все repeat identities. Shape256²/Z2mm теряет native detail; planar boundaries
+влияют на learning/metrics. Высокий Dice сопровождается островками и miss boundaries.
+Test теперь просмотрен: для следующих tuned methods нужен заранее определённый
+evaluation protocol; нельзя вновь называть этот test untouched.
+CT/MRI joint training, diagnosis/healthy classifiers и СППР здесь не реализованы.
 
-Это bounded reproduction, не разрешение full training. Полные команды/artifacts
-в readiness. Frozen v1 не менять, approved reports не refresh, originals не
-перезаписывать, data/weights не коммитить. Следующий отдельно согласуемый шаг:
-full train/validation, один untouched-test pass, failures, GT/Prediction viewer/3D.
+## 20. Воспроизведение, сохранность и следующий этап
+
+Все тяжёлые artifacts E-selected data root,80GBreserve. Results под
+`runpod_results/gpu_full_v1_20261006_io/`, QA/plots/meshes под
+`experiments/heart_baseline_v1/gpu_full_v1_20261006_io/`. Все31result+9audit SHAverified,
+best/last CPU load verified. Pod можно остановить, автоматически не останавливался.
+В Git только code/config/tests/docs/small metadata. Main merge не выполняется.
+Команды, pinned commit/config hashes и artifact SHA: [RunPod report](pediatric_heart_runpod_v1.md).
+
+Следующий отдельно согласуемый experiment: экспертно уточнить source target,
+исследовать background islands/3D continuity на train/validation, зафиксировать
+v2 method и hold-out plan до новых экспериментов. Не менять frozen v1 и его scores.
+Многоклассовые cardiac CT из НИИ требуют отдельных согласованных anatomical labels/
+clinical metadata; никаких автоматических classifiers или MRI intensity mixing.

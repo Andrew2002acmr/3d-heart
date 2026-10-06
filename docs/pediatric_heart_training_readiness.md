@@ -1,14 +1,27 @@
-# Pediatric Heart baseline: cohort QA и вычислительная готовность
+# Pediatric Heart: готовность и завершённый baseline
 
-Начато 2026-10-06 в `feature/pediatric-heart-segmentation`. На исходном readiness
-этапе разрешены полный data gate и короткий CPU benchmark после split.
-Все raw/derived/ML artifacts находятся под CLI-selected data root на E, reserve 80 GB.
+Дата:2026-10-06. QA cohort60 / split42/9/9 заморожены, train-only preprocessing
+и собственная2.5D U-Net488993params проверены. CPU readiness успешно завершён;
+позднее пользователь разрешил один RunPod full experiment после GPU benchmark.
+**GPU benchmark прошёл,30epochs завершены за 41.10min, test n9 оценён
+один раз; mean Dice0.9194, HD95mean17.90mm/max70.65mm.**
+Results SHAverified на E, best/last load verified; Pod можно остановить.
+Доступ SSH исправлен, блокеров подключения больше нет.
+Full local suite127passed; actualDICOM inference + viewer/3D QA также выполнены.
 
-Позднее пользователь разрешил RunPod full baseline после успешного GPU benchmark.
-Trainer/evaluation и bundle готовы, 124 tests passed; frozen cohort/preproc прежние.
-SSH публичный key пока отвергается, CUDA/GPU не проверены, full training не было.
-Актуальная запись: [pediatric_heart_runpod_v1.md](pediatric_heart_runpod_v1.md).
-Ниже сохранён отчёт исходного CPU readiness этапа.
+Технически полный baseline запускается воспроизводимо. Качество первого run
+ещё недостаточно для clinical использования: islands/undersegmentation и небольшой
+held-out требуют дальнейшей проверки. Новые runs автоматически не запускаются.
+[Финальный GPU отчёт](pediatric_heart_runpod_v1.md),
+[общий baseline](pediatric_heart_segmentation_baseline.md),
+[small metrics](../metadata/pediatric/heart_gpu_baseline_v1.json).
+
+## Исторический CPU readiness report
+
+Следующие sections фиксируют состояние **до** последующего CUDA transfer/
+validation/test caching и full training. Frozen selection/preprocessing не менялись.
+Указанные CPU estimates и train-only benchmark относятся к этому прежнему этапу;
+актуальные GPU timings/results приведены выше и в отдельном отчёте.
 
 ## Target и критерии до отбора
 
@@ -299,10 +312,10 @@ GT/Prediction surfaces отсутствуют в соответствии с з�
 ```powershell
 python -m pip install -r requirements-lock.txt -r requirements-pediatric.txt -r requirements-ml.txt
 $dataRoot = 'E:/3d-heart-data/pediatric_ct_heart'
-python scripts/verify_pediatric_source_cache.py --data $dataRoot --out "$dataRoot/cache/source_integrity_recheck.json"
+python -m scripts.verify_pediatric_source_cache --data $dataRoot --out "$dataRoot/cache/source_integrity_recheck.json"
 python -m heart3d.ml.analyse --data $dataRoot --split configs/splits/pediatric_ct_heart_v1.json --cohort metadata/pediatric/heart_approved_cohort_v1.json --out "$dataRoot/experiments/train_statistics_recheck.json"
 python -m heart3d.ml.prepare --config configs/pediatric_heart_baseline_v1.json --data $dataRoot --partition train
-python scripts/qa_pediatric_preprocessing.py --config configs/pediatric_heart_baseline_v1.json --data $dataRoot --out "$dataRoot/experiments/heart_baseline_v1/preprocessing_qa/train_context_recheck.png"
+python -m scripts.qa_pediatric_preprocessing --config configs/pediatric_heart_baseline_v1.json --data $dataRoot --out "$dataRoot/experiments/heart_baseline_v1/preprocessing_qa/train_context_recheck.png"
 # Only a bounded benchmark; choose a NEW run name to preserve current artifacts.
 python -m heart3d.ml.benchmark --config configs/pediatric_heart_baseline_v1.json --data $dataRoot --batches 50 --run-name cpu_b50_recheck_unique
 python -m pytest -q --basetemp "$dataRoot/temporary/pytest_recheck_unique"
