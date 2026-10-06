@@ -8,6 +8,14 @@
 Подробный отчёт: [pediatric_heart_training_readiness.md](pediatric_heart_training_readiness.md).
 Продолжение: [pediatric_heart_segmentation_resume.md](pediatric_heart_segmentation_resume.md).
 
+**Дополнение RunPod:** пользователь разрешил один full baseline после CUDA
+benchmark. Реализованы full scratch trainer, best/last, validation и original-grid
+evaluation; подготовлены также validation/test caches и SHA bundle 2.35 GB.
+124 теста проходят. Доступ к Pod пока блокирует отказ SSH принимать публичный
+ключ; GPU benchmark/full training/test evaluation ещё не выполнялись.
+Актуальный cloud plan/status: [pediatric_heart_runpod_v1.md](pediatric_heart_runpod_v1.md).
+Описанный ниже запрет full training относится к предыдущему CPU readiness этапу.
+
 ## 1. Цель
 
 Сегментировать исходный экспертный **Heart OAR** на детских CT разных возрастов

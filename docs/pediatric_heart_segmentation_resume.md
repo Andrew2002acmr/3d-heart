@@ -1,7 +1,23 @@
 # Точка продолжения: pediatric Heart baseline
 
-Дата: 2026-10-06. Этап завершён после короткого CPU benchmark.
-**Full training не запускался; нужно отдельное разрешение.**
+Дата: 2026-10-06. CPU readiness завершён; затем подготовлен RunPod full pipeline.
+**Full training разрешён после успешного GPU benchmark, но ещё не запускался.**
+Актуальный cloud status: [pediatric_heart_runpod_v1.md](pediatric_heart_runpod_v1.md).
+Блокер: сервер TCP endpoint отклоняет явно заданный public RunPod key. Пользователь
+добавил key в account Credentials после boot; требуется restart/update authorized_keys.
+Проверка CUDA/RTX4090/mount, transfer и benchmark ещё не выполнялись.
+При restart уточнить новый endpoint. Не отключать host key checks и не использовать
+другие приватные keys. Только локальный ввод passphrase, без передачи в chat.
+
+Локально готовы caches **всех 60** (42/9/9), bundle201 files/2.35 GB + SHA manifest,
+`runpod_transfer/frozen_v1_20261006.tar.gz`. Frozen config/split/cohort hashes прежние.
+Full scratch trainer/best/last/evaluation/results export реализованы, **124 tests**.
+New config: `configs/pediatric_heart_runpod_v1.json`; driver `scripts/run_pediatric_gpu.py`.
+Benchmark50 measured +5 warmup +20 sanity → при pass один30epoch BCE+Dice fromscratch,
+затем один test original-grid evaluation и SHA results bundle. Critical results
+скачать на E и verify; только после этого подтверждать, что Pod можно остановить.
+
+Ниже историческая запись предыдущего CPU readiness; текущие изменения указаны выше.
 Readiness: [pediatric_heart_training_readiness.md](pediatric_heart_training_readiness.md).
 Baseline: [pediatric_heart_segmentation_baseline.md](pediatric_heart_segmentation_baseline.md).
 

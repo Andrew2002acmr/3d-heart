@@ -26,12 +26,13 @@ class ResourceMonitor:
 
     def _sample(self):
         self.process.cpu_percent(None)
-        while not self.stop_event.wait(self.interval):
+        while True:
             memory=psutil.virtual_memory()
             self.samples.append({'time_monotonic':time.perf_counter(),
                 'process_RSS_bytes':self.process.memory_info().rss,
                 'process_CPU_percent':self.process.cpu_percent(None),
                 'system_available_RAM_bytes':memory.available,'system_RAM_percent':memory.percent})
+            if self.stop_event.wait(self.interval):break
 
     def __enter__(self):
         self.thread=threading.Thread(target=self._sample,daemon=True);self.thread.start();return self

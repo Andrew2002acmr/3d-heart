@@ -1,0 +1,38 @@
+{
+  "cohort_patients": 60,
+  "split_counts": {
+    "train": 42,
+    "validation": 9,
+    "test": 9
+  },
+  "cache_partitions_prepared": [
+    "train",
+    "validation",
+    "test"
+  ],
+  "training_config": "configs/pediatric_heart_runpod_v1.json",
+  "config_SHA256": "f17e394d188476c46aa375911c66182fd9e72d33192895695295c2a399445c17",
+  "split_SHA256": "21a5d6e10b248aecd64af1c29bb703f5761e13a1cec6c6cd032c7f5a25747570",
+  "cohort_SHA256": "bdd4f9a4f5c2f3861f8a96211f5d6d77815f835ad8a06efa77fea08213690af0",
+  "preprocessing_SHA256": "6228decfcb7ad5eee8ddb9d878963f5cf14fe533d4e2e423b800cda93f4e1c6d",
+  "bundle": {
+    "archive_bytes": 2352906707,
+    "archive_SHA256": "8c8c2e7981cea6497e77462c403b396429ba4f840504d7818b6650bb29ad164e",
+    "manifest_SHA256": "197b646938806242ea4d98cd5ecdbd9f1b26d1706df6ed58df441a2ce6f920d2",
+    "files": 201,
+    "source_bytes": 4784231262
+  },
+  "bundle_relative_path": "runpod_transfer/frozen_v1_20261006.tar.gz",
+  "bundle_contents": "60 image/mask/provenance caches + 3 partition indices + 18 original held-out GT masks",
+  "raw_DICOM_included": false,
+  "local_free_bytes": 277721001984,
+  "local_reserve_bytes": 80000000000,
+  "SSH_status": "endpoint reachable, specified public key rejected before private-key passphrase prompt",
+  "GPU_verified": false,
+  "CUDA_verified": false,
+  "workspace_mount_verified": false,
+  "bundle_uploaded": false,
+  "GPU_benchmark_executed": false,
+  "full_training_executed": false,
+  "test_evaluated": false
+}

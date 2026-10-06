@@ -1,8 +1,14 @@
 # Pediatric Heart baseline: cohort QA и вычислительная готовность
 
-Начато 2026-10-06 в `feature/pediatric-heart-segmentation`. Full training запрещён
-текущим заданием: разрешены полный data gate и короткий CPU benchmark после split.
+Начато 2026-10-06 в `feature/pediatric-heart-segmentation`. На исходном readiness
+этапе разрешены полный data gate и короткий CPU benchmark после split.
 Все raw/derived/ML artifacts находятся под CLI-selected data root на E, reserve 80 GB.
+
+Позднее пользователь разрешил RunPod full baseline после успешного GPU benchmark.
+Trainer/evaluation и bundle готовы, 124 tests passed; frozen cohort/preproc прежние.
+SSH публичный key пока отвергается, CUDA/GPU не проверены, full training не было.
+Актуальная запись: [pediatric_heart_runpod_v1.md](pediatric_heart_runpod_v1.md).
+Ниже сохранён отчёт исходного CPU readiness этапа.
 
 ## Target и критерии до отбора
 

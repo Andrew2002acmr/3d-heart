@@ -59,7 +59,39 @@ grid и provenance. Results archive скачивается на E:, SHA archive 
 ## Результаты
 
 Здесь будут зафиксированы только фактические результаты завершённого запуска.
-Локальная проверка до подключения: 123 теста проходят, включая synthetic full
+Локальная проверка до подключения: 124 теста проходят, включая synthetic full
 trainer, best/last checkpoint, patient-level validation, mm distances и безопасный
 SHA bundle round-trip. CUDA benchmark и обучение ещё не выполнялись на момент
 фиксации исходного training code.
+
+## Фактическая готовность подключения, 2026-10-06
+
+Prepared train/validation/test: 42/9/9, параметры preprocessing и frozen SHA
+не изменены. Minimal bundle: **201 файл**, 4,784,231,262 bytes исходных данных,
+**2,352,906,707 bytes** compressed archive. SHA-256 archive:
+`8c8c2e7981cea6497e77462c403b396429ba4f840504d7818b6650bb29ad164e`.
+Manifest SHA: `197b646938806242ea4d98cd5ecdbd9f1b26d1706df6ed58df441a2ce6f920d2`.
+Files `runpod_transfer/frozen_v1_20261006.tar.gz` и manifest находятся под local
+data root. Свободно ~277.7 decimal GB, резерв 80 GB выполнен; raw DICOM не входят.
+Machine-readable status: [heart_runpod_preparation_v1.json](../metadata/pediatric/heart_runpod_preparation_v1.json).
+
+SSH TCP endpoint доступен. Использован только явно заданный RunPod key,
+IdentitiesOnly=yes. Host key впервые сохранён per-connection accept-new;
+повторная проверка с StrictHostKeyChecking=yes подтвердила совпадение. Это
+trust-on-first-use, не независимая проверка fingerprint через провайдера.
+Сервер **отклоняет публичный ключ до запроса passphrase**. Интерактивная попытка
+запрашивает пароль серверного root; пользователь подтвердил, что располагает
+только паролем приватного ключа. Неверный password prompt отменён.
+Пользователь добавил key в RunPod Credentials, но повторная попытка также получила
+отказ. Account keys внедряются при старте Pod: [официальная инструкция RunPod](https://github.com/runpod/runpod-plugins-official/blob/main/plugins/runpod/skills/runpod/golden-paths/06-dev-pod.md).
+Требуется restart с проверкой нового endpoint или ручное добавление .pub в
+authorized_keys через Web Terminal. Приватный ключ не выводился и не копировался.
+
+**Данных на RunPod ещё нет; GPU/CUDA/mount не проверены, GPU benchmark/full
+training/test evaluation не выполнялись.** GPU throughput/epoch/full-time estimates
+и scientific scores отсутствуют. Нельзя утверждать, что cloud baseline прошёл
+или что результаты cloud сохранены локально. Пользователь предупреждён о простое
+оплачиваемого Pod. После применения key требуется ввести passphrase локально
+(например ssh-add для этого key в Windows ssh-agent), затем проверить hardware,
+mount и storage, pin feature commit, передать archive с SHA проверкой и выполнить
+driver. При перезапуске Pod уточнить endpoint; host-key mismatch не обходить.
