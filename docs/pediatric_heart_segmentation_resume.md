@@ -38,6 +38,9 @@ ASSDmean3.01 mm. Это исследовательский source-OAR baseline.
 Data root: `E:/3d-heart-data/pediatric_ct_heart`; резерв 80 decimal GB, свободно ~277 GB.
 Worktree: `C:/Users/Андрей/.codex/worktrees/pediatric-heart-segmentation/3d-hearts`.
 Основной D: checkout, пользовательские изменения и старые D: данные не трогать.
+В Git Credential Manager сохранены две учётные записи. Финальный push успешно
+выполнен с явным выбором владельца репозитория, без изменения глобальных настроек:
+`git -c credential.username=Andrew2002acmr push origin feature/pediatric-heart-segmentation`.
 Локальный Python: `D:/codexProjects/3d-hearts/.venv/Scripts/python.exe` (CPU torch2.14.1).
 External pydicom: PYTHONPATH `D:/codexProjects/3d-hearts/data/pediatric_audit/python_deps`.
 Pod использовал Python3.12.3 / torch2.8.0+cu128 / CUDA12.8 под persistent /workspace.
