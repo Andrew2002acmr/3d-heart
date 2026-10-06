@@ -1,0 +1,695 @@
+{
+  "run_name": "gpu_full_v1_20261006_io",
+  "records": [
+    {
+      "patient_id": "Pediatric-CT-SEG-423F282F",
+      "selection": "first patient ID per age stratum in frozen test; no performance-based selection",
+      "sampling": [
+        [
+          "Axial center",
+          2,
+          242
+        ],
+        [
+          "Coronal center",
+          1,
+          202
+        ],
+        [
+          "Sagittal center",
+          0,
+          295
+        ],
+        [
+          "Axial lower OAR",
+          2,
+          219
+        ],
+        [
+          "Axial upper OAR",
+          2,
+          266
+        ]
+      ],
+      "meshes": {
+        "GT": {
+          "surface": {
+            "label": 1,
+            "short_name": "Heart",
+            "name": "Heart OAR",
+            "color": "#00ff00",
+            "voxels": 541652,
+            "components_26_connected": 1,
+            "largest_component_voxels": 541652,
+            "touches_scan_boundary": false,
+            "artificial_boundary_caps": false,
+            "points": 64396,
+            "triangles": 128788,
+            "boundary_edges": 0,
+            "non_manifold_edges": 0,
+            "bounds": [
+              -98.4375,
+              35.9375,
+              121.46875,
+              243.34375,
+              -199.70001220703125,
+              -107.70001220703125
+            ],
+            "voxel_volume_in_coordinate_units_cubed": 661196.2890625,
+            "surface_area_in_coordinate_units_squared": 47867.56566841999,
+            "smoothing": false,
+            "decimation": false,
+            "components_removed": false,
+            "normal_policy": "preserve marching-cubes material boundary; no automatic shell orientation"
+          },
+          "quality": {
+            "vertices": 64396,
+            "triangles": 128788,
+            "surface_area": 47867.56566841999,
+            "algebraic_signed_volume": 661030.3243001302,
+            "enclosed_volume": 661030.3243001302,
+            "volume_status": "closed_consistently_oriented; self-intersections not tested",
+            "boundary_edges": 0,
+            "non_manifold_edges": 0,
+            "inconsistent_winding_edges": 0,
+            "zero_area_triangles": 0,
+            "surface_components_vertex_connected": 1,
+            "component_triangle_counts_desc": [
+              128788
+            ],
+            "euler_characteristic": 2,
+            "self_intersections_checked": false
+          }
+        },
+        "Prediction": {
+          "surface": {
+            "label": 1,
+            "short_name": "Heart",
+            "name": "Heart OAR",
+            "color": "#ff0000",
+            "voxels": 525994,
+            "components_26_connected": 3,
+            "largest_component_voxels": 524084,
+            "touches_scan_boundary": false,
+            "artificial_boundary_caps": false,
+            "points": 73733,
+            "triangles": 147454,
+            "boundary_edges": 0,
+            "non_manifold_edges": 0,
+            "bounds": [
+              -98.4375,
+              35.9375,
+              -35.5625,
+              245.6875,
+              -215.70001220703125,
+              -107.70001220703125
+            ],
+            "voxel_volume_in_coordinate_units_cubed": 642082.51953125,
+            "surface_area_in_coordinate_units_squared": 55412.97031515651,
+            "smoothing": false,
+            "decimation": false,
+            "components_removed": false,
+            "normal_policy": "preserve marching-cubes material boundary; no automatic shell orientation"
+          },
+          "quality": {
+            "vertices": 73733,
+            "triangles": 147454,
+            "surface_area": 55412.97031515651,
+            "algebraic_signed_volume": 641928.1514485677,
+            "enclosed_volume": 641928.1514485677,
+            "volume_status": "closed_consistently_oriented; self-intersections not tested",
+            "boundary_edges": 0,
+            "non_manifold_edges": 0,
+            "inconsistent_winding_edges": 0,
+            "zero_area_triangles": 0,
+            "surface_components_vertex_connected": 4,
+            "component_triangle_counts_desc": [
+              143718,
+              1764,
+              1752,
+              220
+            ],
+            "euler_characteristic": 6,
+            "self_intersections_checked": false
+          }
+        }
+      },
+      "mesh_distances": {
+        "mean_pooled_vertex_nearest_distance_mm": 4.130707083040978,
+        "HD95_vertex_nearest_mm": 18.787110196000146,
+        "definition": "sampled mesh vertex-to-vertex distances; distinct from voxel-boundary HD95/ASSD"
+      },
+      "physical_geometry_confirmed": true,
+      "smoothing": false,
+      "component_removal": false,
+      "source_annotation_modified": false,
+      "sources_SHA256": [
+        {
+          "filename": "ct_original.nii.gz",
+          "SHA256": "a1425ae3ff77e675073d65c114ac0c43dae00f3f866c41a2a70a03ba062bd6b0"
+        },
+        {
+          "filename": "heart_gt_original.nii.gz",
+          "SHA256": "79650a4461e1db8fb87ae8ba787ceb03d05054518ba06621701af1ce8e635492"
+        },
+        {
+          "filename": "heart_prediction_original.nii.gz",
+          "SHA256": "00ad5018cad7df59f191d5aad7af3248a43beb36f9ca8a804b1a896c55edd8ee"
+        }
+      ],
+      "visual_review": "completed; prediction errors retained without correction",
+      "observations": "Heart largely overlaps GT; isolated prediction islands, including CT-table region; local holes and annotation-end mismatch."
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-54BC2D63",
+      "selection": "first patient ID per age stratum in frozen test; no performance-based selection",
+      "sampling": [
+        [
+          "Axial center",
+          2,
+          439
+        ],
+        [
+          "Coronal center",
+          1,
+          228
+        ],
+        [
+          "Sagittal center",
+          0,
+          333
+        ],
+        [
+          "Axial lower OAR",
+          2,
+          384
+        ],
+        [
+          "Axial upper OAR",
+          2,
+          494
+        ]
+      ],
+      "meshes": {
+        "GT": {
+          "surface": {
+            "label": 1,
+            "short_name": "Heart",
+            "name": "Heart OAR",
+            "color": "#00ff00",
+            "voxels": 1162431,
+            "components_26_connected": 1,
+            "largest_component_voxels": 1162431,
+            "touches_scan_boundary": false,
+            "artificial_boundary_caps": false,
+            "points": 87268,
+            "triangles": 174532,
+            "boundary_edges": 0,
+            "non_manifold_edges": 0,
+            "bounds": [
+              -76.640625,
+              3.984375,
+              -18.953125,
+              46.203125,
+              -147.9375,
+              -79.8125
+            ],
+            "voxel_volume_in_coordinate_units_cubed": 159635.6048583984,
+            "surface_area_in_coordinate_units_squared": 16950.64549482337,
+            "smoothing": false,
+            "decimation": false,
+            "components_removed": false,
+            "normal_policy": "preserve marching-cubes material boundary; no automatic shell orientation"
+          },
+          "quality": {
+            "vertices": 87268,
+            "triangles": 174532,
+            "surface_area": 16950.64549482337,
+            "algebraic_signed_volume": 159615.03410339355,
+            "enclosed_volume": 159615.03410339355,
+            "volume_status": "closed_consistently_oriented; self-intersections not tested",
+            "boundary_edges": 0,
+            "non_manifold_edges": 0,
+            "inconsistent_winding_edges": 0,
+            "zero_area_triangles": 0,
+            "surface_components_vertex_connected": 1,
+            "component_triangle_counts_desc": [
+              174532
+            ],
+            "euler_characteristic": 2,
+            "self_intersections_checked": false
+          }
+        },
+        "Prediction": {
+          "surface": {
+            "label": 1,
+            "short_name": "Heart",
+            "name": "Heart OAR",
+            "color": "#ff0000",
+            "voxels": 1094167,
+            "components_26_connected": 3,
+            "largest_component_voxels": 1094091,
+            "touches_scan_boundary": false,
+            "artificial_boundary_caps": false,
+            "points": 84810,
+            "triangles": 169608,
+            "boundary_edges": 0,
+            "non_manifold_edges": 0,
+            "bounds": [
+              -76.640625,
+              3.984375,
+              -18.015625,
+              46.671875,
+              -151.0625,
+              -71.6875
+            ],
+            "voxel_volume_in_coordinate_units_cubed": 150260.9710693359,
+            "surface_area_in_coordinate_units_squared": 16932.80975490708,
+            "smoothing": false,
+            "decimation": false,
+            "components_removed": false,
+            "normal_policy": "preserve marching-cubes material boundary; no automatic shell orientation"
+          },
+          "quality": {
+            "vertices": 84810,
+            "triangles": 169608,
+            "surface_area": 16932.80975490708,
+            "algebraic_signed_volume": 150239.5477294922,
+            "enclosed_volume": 150239.5477294922,
+            "volume_status": "closed_consistently_oriented; self-intersections not tested",
+            "boundary_edges": 0,
+            "non_manifold_edges": 0,
+            "inconsistent_winding_edges": 0,
+            "zero_area_triangles": 0,
+            "surface_components_vertex_connected": 3,
+            "component_triangle_counts_desc": [
+              169300,
+              232,
+              76
+            ],
+            "euler_characteristic": 6,
+            "self_intersections_checked": false
+          }
+        }
+      },
+      "mesh_distances": {
+        "mean_pooled_vertex_nearest_distance_mm": 1.2442201241735367,
+        "HD95_vertex_nearest_mm": 5.625,
+        "definition": "sampled mesh vertex-to-vertex distances; distinct from voxel-boundary HD95/ASSD"
+      },
+      "physical_geometry_confirmed": true,
+      "smoothing": false,
+      "component_removal": false,
+      "source_annotation_modified": false,
+      "sources_SHA256": [
+        {
+          "filename": "ct_original.nii.gz",
+          "SHA256": "d2fb05a163012dbbc79d798af4f29532a10a4d572e31a545c54574f255378f31"
+        },
+        {
+          "filename": "heart_gt_original.nii.gz",
+          "SHA256": "5b424dcc422891355108c37cde38ee096f71dfe7c49fdaba3b0619bf15eb6e36"
+        },
+        {
+          "filename": "heart_prediction_original.nii.gz",
+          "SHA256": "2aad73fedd6fbc853ba0243400cede44b7c746d4c98f57778fce1ee65150bc2f"
+        }
+      ],
+      "visual_review": "completed; prediction errors retained without correction",
+      "observations": "Heart overlaps GT; small isolated islands and prediction beyond original OAR lower endpoint."
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-792705D7",
+      "selection": "first patient ID per age stratum in frozen test; no performance-based selection",
+      "sampling": [
+        [
+          "Axial center",
+          2,
+          680
+        ],
+        [
+          "Coronal center",
+          1,
+          274
+        ],
+        [
+          "Sagittal center",
+          0,
+          285
+        ],
+        [
+          "Axial lower OAR",
+          2,
+          620
+        ],
+        [
+          "Axial upper OAR",
+          2,
+          741
+        ]
+      ],
+      "meshes": {
+        "GT": {
+          "surface": {
+            "label": 1,
+            "short_name": "Heart",
+            "name": "Heart OAR",
+            "color": "#00ff00",
+            "voxels": 1301725,
+            "components_26_connected": 1,
+            "largest_component_voxels": 1301725,
+            "touches_scan_boundary": false,
+            "artificial_boundary_caps": false,
+            "points": 92420,
+            "triangles": 184836,
+            "boundary_edges": 0,
+            "non_manifold_edges": 0,
+            "bounds": [
+              -69.63498568534851,
+              43.255558252334595,
+              -56.777180910110474,
+              32.20713019371033,
+              -214.4375,
+              -139.4375
+            ],
+            "voxel_volume_in_coordinate_units_cubed": 358770.35592410114,
+            "surface_area_in_coordinate_units_squared": 29990.019828210174,
+            "smoothing": false,
+            "decimation": false,
+            "components_removed": false,
+            "normal_policy": "preserve marching-cubes material boundary; no automatic shell orientation"
+          },
+          "quality": {
+            "vertices": 92420,
+            "triangles": 184836,
+            "surface_area": 29990.019828210174,
+            "algebraic_signed_volume": 358729.1290399741,
+            "enclosed_volume": 358729.1290399741,
+            "volume_status": "closed_consistently_oriented; self-intersections not tested",
+            "boundary_edges": 0,
+            "non_manifold_edges": 0,
+            "inconsistent_winding_edges": 0,
+            "zero_area_triangles": 0,
+            "surface_components_vertex_connected": 1,
+            "component_triangle_counts_desc": [
+              184836
+            ],
+            "euler_characteristic": 2,
+            "self_intersections_checked": false
+          }
+        },
+        "Prediction": {
+          "surface": {
+            "label": 1,
+            "short_name": "Heart",
+            "name": "Heart OAR",
+            "color": "#ff0000",
+            "voxels": 1167095,
+            "components_26_connected": 5,
+            "largest_component_voxels": 1149903,
+            "touches_scan_boundary": false,
+            "artificial_boundary_caps": false,
+            "points": 97294,
+            "triangles": 194576,
+            "boundary_edges": 0,
+            "non_manifold_edges": 0,
+            "bounds": [
+              -68.97092366218567,
+              42.59149622917175,
+              -55.44905686378479,
+              44.16024661064148,
+              -318.8125,
+              -138.1875
+            ],
+            "voxel_volume_in_coordinate_units_cubed": 321664.7821523277,
+            "surface_area_in_coordinate_units_squared": 31448.786752799842,
+            "smoothing": false,
+            "decimation": false,
+            "components_removed": false,
+            "normal_policy": "preserve marching-cubes material boundary; no automatic shell orientation"
+          },
+          "quality": {
+            "vertices": 97294,
+            "triangles": 194576,
+            "surface_area": 31448.786752799842,
+            "algebraic_signed_volume": 321601.311124871,
+            "enclosed_volume": 321601.311124871,
+            "volume_status": "closed_consistently_oriented; self-intersections not tested",
+            "boundary_edges": 0,
+            "non_manifold_edges": 0,
+            "inconsistent_winding_edges": 0,
+            "zero_area_triangles": 0,
+            "surface_components_vertex_connected": 5,
+            "component_triangle_counts_desc": [
+              179484,
+              11064,
+              3832,
+              116,
+              80
+            ],
+            "euler_characteristic": 6,
+            "self_intersections_checked": false
+          }
+        }
+      },
+      "mesh_distances": {
+        "mean_pooled_vertex_nearest_distance_mm": 4.707595459298314,
+        "HD95_vertex_nearest_mm": 71.23954831711315,
+        "definition": "sampled mesh vertex-to-vertex distances; distinct from voxel-boundary HD95/ASSD"
+      },
+      "physical_geometry_confirmed": true,
+      "smoothing": false,
+      "component_removal": false,
+      "source_annotation_modified": false,
+      "sources_SHA256": [
+        {
+          "filename": "ct_original.nii.gz",
+          "SHA256": "5fc7c29919bd0e62d7e5409a307a1baa7fd361de61123b6544ffab21bbba302d"
+        },
+        {
+          "filename": "heart_gt_original.nii.gz",
+          "SHA256": "32096c4e4d2a38c741c82ebcb85e8e55ba0240d237ff091899bcdca79013fda8"
+        },
+        {
+          "filename": "heart_prediction_original.nii.gz",
+          "SHA256": "a47e1f3019fec63346beb253f54b39c6309e652c9d21020d4a839cecdaa8fc19"
+        }
+      ],
+      "visual_review": "completed; prediction errors retained without correction",
+      "observations": "Off-heart islands visible in upper abdomen and upper annotation-end mismatch; large surface-distance outlier retained."
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-CA967BD7",
+      "selection": "explicit post-hoc frozen-test failure review; no retraining, threshold fitting or postprocessing",
+      "sampling": [
+        [
+          "Axial center",
+          2,
+          126
+        ],
+        [
+          "Coronal center",
+          1,
+          232
+        ],
+        [
+          "Sagittal center",
+          0,
+          291
+        ],
+        [
+          "Axial lower OAR",
+          2,
+          112
+        ],
+        [
+          "Axial upper OAR",
+          2,
+          141
+        ]
+      ],
+      "meshes": {
+        "GT": {
+          "surface": {
+            "label": 1,
+            "short_name": "Heart",
+            "name": "Heart OAR",
+            "color": "#00ff00",
+            "voxels": 439504,
+            "components_26_connected": 1,
+            "largest_component_voxels": 439504,
+            "touches_scan_boundary": false,
+            "artificial_boundary_caps": false,
+            "points": 62742,
+            "triangles": 125480,
+            "boundary_edges": 0,
+            "non_manifold_edges": 0,
+            "bounds": [
+              -65.7822275608778,
+              21.87412579357624,
+              -21.6993740350008,
+              42.32413895428181,
+              -138.6875,
+              -82.6875
+            ],
+            "voxel_volume_in_coordinate_units_cubed": 162292.81435504765,
+            "surface_area_in_coordinate_units_squared": 18334.796720509297,
+            "smoothing": false,
+            "decimation": false,
+            "components_removed": false,
+            "normal_policy": "preserve marching-cubes material boundary; no automatic shell orientation"
+          },
+          "quality": {
+            "vertices": 62742,
+            "triangles": 125480,
+            "surface_area": 18334.796720509297,
+            "algebraic_signed_volume": 162242.0560006909,
+            "enclosed_volume": 162242.0560006909,
+            "volume_status": "closed_consistently_oriented; self-intersections not tested",
+            "boundary_edges": 0,
+            "non_manifold_edges": 0,
+            "inconsistent_winding_edges": 0,
+            "zero_area_triangles": 0,
+            "surface_components_vertex_connected": 1,
+            "component_triangle_counts_desc": [
+              125480
+            ],
+            "euler_characteristic": 2,
+            "self_intersections_checked": false
+          }
+        },
+        "Prediction": {
+          "surface": {
+            "label": 1,
+            "short_name": "Heart",
+            "name": "Heart OAR",
+            "color": "#ff0000",
+            "voxels": 336037,
+            "components_26_connected": 1,
+            "largest_component_voxels": 336037,
+            "touches_scan_boundary": false,
+            "artificial_boundary_caps": false,
+            "points": 71608,
+            "triangles": 143220,
+            "boundary_edges": 0,
+            "non_manifold_edges": 0,
+            "bounds": [
+              -65.35253955423832,
+              21.44443778693676,
+              -18.691557988524437,
+              42.32413895428181,
+              -142.6875,
+              -88.6875
+            ],
+            "voxel_volume_in_coordinate_units_cubed": 124086.2209614182,
+            "surface_area_in_coordinate_units_squared": 19663.84882877638,
+            "smoothing": false,
+            "decimation": false,
+            "components_removed": false,
+            "normal_policy": "preserve marching-cubes material boundary; no automatic shell orientation"
+          },
+          "quality": {
+            "vertices": 71608,
+            "triangles": 143220,
+            "surface_area": 19663.84882877638,
+            "algebraic_signed_volume": 124046.26356636983,
+            "enclosed_volume": 124046.26356636983,
+            "volume_status": "closed_consistently_oriented; self-intersections not tested",
+            "boundary_edges": 0,
+            "non_manifold_edges": 0,
+            "inconsistent_winding_edges": 0,
+            "zero_area_triangles": 0,
+            "surface_components_vertex_connected": 1,
+            "component_triangle_counts_desc": [
+              143220
+            ],
+            "euler_characteristic": -2,
+            "self_intersections_checked": false
+          }
+        }
+      },
+      "mesh_distances": {
+        "mean_pooled_vertex_nearest_distance_mm": 3.4302065349115995,
+        "HD95_vertex_nearest_mm": 17.471444257398066,
+        "definition": "sampled mesh vertex-to-vertex distances; distinct from voxel-boundary HD95/ASSD"
+      },
+      "physical_geometry_confirmed": true,
+      "smoothing": false,
+      "component_removal": false,
+      "source_annotation_modified": false,
+      "sources_SHA256": [
+        {
+          "filename": "ct_original.nii.gz",
+          "SHA256": "e120f3307405648bef3fced646bc22223efe0256dd3537ab9795af2ea7b6df8b"
+        },
+        {
+          "filename": "heart_gt_original.nii.gz",
+          "SHA256": "4224e813c0ee0312b2ca1b27a97c24fba20961281204660f109ad7d4a5246aeb"
+        },
+        {
+          "filename": "heart_prediction_original.nii.gz",
+          "SHA256": "32952ad527decd33ef54ee0d9ea5e2482d65477a622969c199a8ae0e75bcf4f7"
+        }
+      ],
+      "visual_review": "completed; prediction errors retained without correction",
+      "observations": "Lowest test Dice; missed upper Heart OAR extent and internal gaps visible in coronal/sagittal view."
+    }
+  ],
+  "original_grid_predictions_for_all_test_patients": 9,
+  "predeclared_three_age_case_comparisons": 3,
+  "additional_posthoc_failure_cases": 1,
+  "model_or_threshold_modified_after_test": false,
+  "new_clinician_sign_off": false,
+  "clinical_classification": "unknown",
+  "DICOM_inference_smoke": {
+    "patient_id": "Pediatric-CT-SEG-06722123",
+    "source_series_uid": "1.3.6.1.4.1.14519.5.2.1.229147214220169303333189719367949142559",
+    "checkpoint_SHA256": "e6b28f1b87d581fde2dbc2e055ec58f0353c98c913f62c10b96ba3338690e8f0",
+    "prediction_SHA256": "30f0d6e5a63101b31e7ddf2b475d91fe8cf884ecf149206e8f92923565664428",
+    "training_git_revision": "7c93cb9f8b284a9a526e78c9c67432e26d15e794",
+    "inference_git_revision": "3acbe9d4344d4a5db1786c8fcb5048f7897f0f1d",
+    "predicted_voxels": 639667,
+    "empty_prediction": false,
+    "original_DICOM_modified": false,
+    "RTSTRUCT_used": false,
+    "GT_used": false
+  },
+  "DICOM_inference_smoke_scope": "engineering/train patient; no additional test evaluation or quality score",
+  "browser_QA": {
+    "synthetic_phantom": false,
+    "real_DICOM_case": "Pediatric-CT-SEG-F22EFF95",
+    "model_quality_result": false,
+    "states": [
+      {
+        "mode": "ground_truth",
+        "opacities": [
+          1,
+          0.35,
+          0
+        ],
+        "status": "Pediatric-CT-SEG-F22EFF95 loaded. Original grid; mm verified from DICOM. approved"
+      },
+      {
+        "mode": "prediction",
+        "opacities": [
+          1,
+          0,
+          0.35
+        ],
+        "status": "Pediatric-CT-SEG-F22EFF95 loaded. Original grid; mm verified from DICOM. approved"
+      },
+      {
+        "mode": "comparison",
+        "opacities": [
+          1,
+          0.35,
+          0.35
+        ],
+        "status": "Pediatric-CT-SEG-F22EFF95 loaded. Original grid; mm verified from DICOM. approved"
+      }
+    ],
+    "errors": [],
+    "renderer": "headless Microsoft Edge / NiiVue 0.69; comparison screenshot inspected"
+  },
+  "visual_review_does_not_modify_original_test_metrics": true
+}

@@ -25,14 +25,42 @@
   "bundle_relative_path": "runpod_transfer/frozen_v1_20261006.tar.gz",
   "bundle_contents": "60 image/mask/provenance caches + 3 partition indices + 18 original held-out GT masks",
   "raw_DICOM_included": false,
-  "local_free_bytes": 277721001984,
+  "local_free_bytes": 277667680256,
   "local_reserve_bytes": 80000000000,
-  "SSH_status": "endpoint reachable, specified public key rejected before private-key passphrase prompt",
-  "GPU_verified": false,
-  "CUDA_verified": false,
-  "workspace_mount_verified": false,
-  "bundle_uploaded": false,
-  "GPU_benchmark_executed": false,
-  "full_training_executed": false,
-  "test_evaluated": false
+  "SSH_status": "specified RunPod key authenticated through local ssh-agent; encrypted key never copied",
+  "GPU_verified": true,
+  "CUDA_verified": true,
+  "workspace_mount_verified": true,
+  "bundle_uploaded": true,
+  "GPU_benchmark_executed": true,
+  "full_training_executed": true,
+  "test_evaluated": true,
+  "SSH_endpoint": {
+    "host": "213.173.109.229",
+    "port": 10181,
+    "user": "root"
+  },
+  "full_training_completed": true,
+  "test_evaluated_once": true,
+  "training_git_revision": "7c93cb9f8b284a9a526e78c9c67432e26d15e794",
+  "training_run": "gpu_full_v1_20261006_io",
+  "local_results_relative_path": "runpod_results/gpu_full_v1_20261006_io",
+  "downloaded_result_bundle": {
+    "archive_bytes": 11956542,
+    "archive_SHA256": "6dc78afef3f645134424d5035da0a12908c88d32a35d9a58954b74b2abbef8f5",
+    "manifest_SHA256": "90bc227fc1c72c73c47a00bdd1ab38ad506f47b224ab0ab378754b0e7f90d1ff",
+    "files": 31,
+    "source_bytes": 18672396
+  },
+  "downloaded_audit_bundle": {
+    "archive_bytes": 13912,
+    "archive_SHA256": "549194d82e0807f69b38fbae0ca83bf9d6ad48f5ad436ccabdd2b0a2c95d6e94",
+    "manifest_SHA256": "defecaf36b353c80ac9399e9a7a5a2dbe6f7b342a8af1380b551cfadedfd6c84",
+    "files": 9,
+    "source_bytes": 59129
+  },
+  "archive_and_all_result_file_SHA256_verified": true,
+  "checkpoints_load_verified": true,
+  "Pod_can_be_stopped": true,
+  "Pod_stop_performed": false
 }

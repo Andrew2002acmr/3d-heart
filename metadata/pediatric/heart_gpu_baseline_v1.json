@@ -1,0 +1,904 @@
+{
+  "run_name": "gpu_full_v1_20261006_io",
+  "training_git_revision": "7c93cb9f8b284a9a526e78c9c67432e26d15e794",
+  "cohort_patients": 60,
+  "split_counts": {
+    "train": 42,
+    "validation": 9,
+    "test": 9
+  },
+  "split_SHA256": "21a5d6e10b248aecd64af1c29bb703f5761e13a1cec6c6cd032c7f5a25747570",
+  "preprocessing_SHA256": "6228decfcb7ad5eee8ddb9d878963f5cf14fe533d4e2e423b800cda93f4e1c6d",
+  "config_SHA256": "f17e394d188476c46aa375911c66182fd9e72d33192895695295c2a399445c17",
+  "epochs": 30,
+  "model": "project-owned 2.5D U-Net 5->16->32->64->128->1; 488993 parameters",
+  "batch_size": 16,
+  "precision": "FP32",
+  "loss": {
+    "variant": "bce_dice",
+    "bce_weight": 1.0,
+    "dice_weight": 1.0
+  },
+  "GPU_benchmark": {
+    "git_revision": "7c93cb9f8b284a9a526e78c9c67432e26d15e794",
+    "config_SHA256": "f17e394d188476c46aa375911c66182fd9e72d33192895695295c2a399445c17",
+    "split_SHA256": "21a5d6e10b248aecd64af1c29bb703f5761e13a1cec6c6cd032c7f5a25747570",
+    "preprocessing_SHA256": "6228decfcb7ad5eee8ddb9d878963f5cf14fe533d4e2e423b800cda93f4e1c6d",
+    "cohort_SHA256": "bdd4f9a4f5c2f3861f8a96211f5d6d77815f835ad8a06efa77fea08213690af0",
+    "model_version": "own_25d_unet_v1",
+    "device": "cuda",
+    "GPU_name": "NVIDIA GeForce RTX 4090",
+    "environment": {
+      "platform": "Linux-6.8.0-124-generic-x86_64-with-glibc2.39",
+      "python": "3.12.3",
+      "processor": "x86_64",
+      "logical_CPUs": 32,
+      "physical_CPUs": 16,
+      "RAM_bytes": 134123110400,
+      "torch": "2.8.0+cu128",
+      "torch_threads": 6,
+      "CUDA_available": true,
+      "benchmark_device": "cuda"
+    },
+    "CUDA_version": "12.8",
+    "precision": "FP32",
+    "measured_batches": 50,
+    "warmup_batches": 5,
+    "batch_size": 16,
+    "mean_sec_per_batch": 0.3344239154830575,
+    "p95_sec_per_batch": 0.3972701407968998,
+    "samples_per_second": 47.84346830246531,
+    "GPU_peak_allocated_bytes": 1916320768,
+    "GPU_peak_reserved_bytes": 3126853632,
+    "resources": {
+      "samples": 97,
+      "sampling_interval_seconds": 0.2,
+      "peak_process_RSS_bytes": 1790029824,
+      "mean_process_CPU_percent": 230.29072164948454,
+      "mean_process_CPU_percent_of_logical_machine": 7.196585051546392,
+      "minimum_system_available_RAM_bytes": 117910376448,
+      "maximum_system_RAM_percent": 12.1,
+      "CPU_percent_definition": "100% process = one logical CPU; all process threads included",
+      "memory_definition": "sampled working-set RSS; excludes OS file cache, includes Python/torch/cache pages"
+    },
+    "fixed_train_patient_ids": [
+      "Pediatric-CT-SEG-06722123",
+      "Pediatric-CT-SEG-0D53FEEE"
+    ],
+    "fixed_loss_before": 1.4544003009796143,
+    "fixed_loss_after": 0.7031353712081909,
+    "weights_absolute_delta": 3050.725066550076,
+    "sanity_passed": true,
+    "estimated_train_epoch_sec": 72.90441357530653,
+    "estimate_excludes": "validation and checkpoint I/O",
+    "training_scope": "train-only technical benchmark, no scientific test metrics"
+  },
+  "training_seconds": 2466.036278397776,
+  "mean_train_epoch_seconds": 72.9472466663147,
+  "mean_validation_epoch_seconds": 9.113164447372158,
+  "training_resources": {
+    "samples": 12302,
+    "sampling_interval_seconds": 0.2,
+    "peak_process_RSS_bytes": 2072461312,
+    "mean_process_CPU_percent": 224.72271988294585,
+    "mean_process_CPU_percent_of_logical_machine": 7.022584996342058,
+    "minimum_system_available_RAM_bytes": 116661424128,
+    "maximum_system_RAM_percent": 13.0,
+    "CPU_percent_definition": "100% process = one logical CPU; all process threads included",
+    "memory_definition": "sampled working-set RSS; excludes OS file cache, includes Python/torch/cache pages"
+  },
+  "best_epoch": 18,
+  "best_validation_Dice_preprocessing_grid": 0.9296660068598808,
+  "test_grid": "original DICOM-derived XYZ; threshold after inverse linear probability transform",
+  "test_aggregate": {
+    "all": {
+      "patients": 9,
+      "Dice": {
+        "mean": 0.9193682727758742,
+        "median": 0.9250808078353221,
+        "std_population": 0.029526213459464625,
+        "min": 0.8579249839789257,
+        "max": 0.9658228340378694,
+        "valid_patients": 9
+      },
+      "IoU": {
+        "mean": 0.8521337765099476,
+        "median": 0.8606049781029489,
+        "std_population": 0.04996859609310076,
+        "min": 0.7511984518914427,
+        "max": 0.9339046208193266,
+        "valid_patients": 9
+      },
+      "precision": {
+        "mean": 0.9471906782150786,
+        "median": 0.9636344360595778,
+        "std_population": 0.04040336702763866,
+        "min": 0.8517903579535224,
+        "max": 0.9900040769320045,
+        "valid_patients": 9
+      },
+      "recall": {
+        "mean": 0.8977312141257582,
+        "median": 0.9101106168532741,
+        "std_population": 0.06313305704715601,
+        "min": 0.7569396410499108,
+        "max": 0.9798822058074498,
+        "valid_patients": 9
+      },
+      "HD95_mm": {
+        "mean": 17.900966710575155,
+        "median": 14.0,
+        "std_population": 19.42344679921464,
+        "min": 3.125,
+        "max": 70.64950406272845,
+        "valid_patients": 9
+      },
+      "ASSD_mm": {
+        "mean": 3.0076866789951984,
+        "median": 3.1639333302859987,
+        "std_population": 1.031513267356819,
+        "min": 1.429520181025452,
+        "max": 4.598952610023236,
+        "valid_patients": 9
+      }
+    }
+  },
+  "by_age_group": {
+    "12-17": {
+      "patients": 3,
+      "Dice": {
+        "mean": 0.9292897378099197,
+        "median": 0.9383709581640356,
+        "std_population": 0.015424166073906212,
+        "min": 0.9075733910759292,
+        "max": 0.9419248641897945,
+        "valid_patients": 3
+      },
+      "IoU": {
+        "mean": 0.8683029175177625,
+        "median": 0.8838972194479833,
+        "std_population": 0.026653522498957895,
+        "min": 0.8307866026531491,
+        "max": 0.8902249304521548,
+        "valid_patients": 3
+      },
+      "precision": {
+        "mean": 0.9406469841821817,
+        "median": 0.9523378593672172,
+        "std_population": 0.025659900284623775,
+        "min": 0.9050502726340636,
+        "max": 0.9645528205452647,
+        "valid_patients": 3
+      },
+      "recall": {
+        "mean": 0.9184175605553286,
+        "median": 0.9203342546320051,
+        "std_population": 0.006151268707275262,
+        "min": 0.9101106168532741,
+        "max": 0.9248078101807065,
+        "valid_patients": 3
+      },
+      "HD95_mm": {
+        "mean": 13.16985490475527,
+        "median": 14.0,
+        "std_population": 4.459269143357674,
+        "min": 7.340840514077731,
+        "max": 18.16872420018808,
+        "valid_patients": 3
+      },
+      "ASSD_mm": {
+        "mean": 2.936748303854977,
+        "median": 3.1639333302859987,
+        "std_population": 0.8093363001739132,
+        "min": 1.8516476367915693,
+        "max": 3.794663944487364,
+        "valid_patients": 3
+      }
+    },
+    "2-5": {
+      "patients": 3,
+      "Dice": {
+        "mean": 0.897287224110393,
+        "median": 0.8994530098237782,
+        "std_population": 0.03129245274929223,
+        "min": 0.8579249839789257,
+        "max": 0.9344836785284751,
+        "valid_patients": 3
+      },
+      "IoU": {
+        "mean": 0.8151669592264342,
+        "median": 0.8172781515487639,
+        "std_population": 0.051389864384151246,
+        "min": 0.7511984518914427,
+        "max": 0.8770242742390958,
+        "valid_patients": 3
+      },
+      "precision": {
+        "mean": 0.9734621766917234,
+        "median": 0.9667480170835876,
+        "std_population": 0.011765753818259467,
+        "min": 0.9636344360595778,
+        "max": 0.9900040769320045,
+        "valid_patients": 3
+      },
+      "recall": {
+        "mean": 0.834967166752652,
+        "median": 0.8409170539679922,
+        "std_population": 0.06142443025129241,
+        "min": 0.7569396410499108,
+        "max": 0.9070448052400529,
+        "valid_patients": 3
+      },
+      "HD95_mm": {
+        "mean": 9.941543872727372,
+        "median": 7.106129066693061,
+        "std_population": 5.093219056424381,
+        "min": 5.625,
+        "max": 17.093502551489056,
+        "valid_patients": 3
+      },
+      "ASSD_mm": {
+        "mean": 2.4466806440274316,
+        "median": 2.2115718978963494,
+        "std_population": 0.941288071765577,
+        "min": 1.429520181025452,
+        "max": 3.698949853160493,
+        "valid_patients": 3
+      }
+    },
+    "6-11": {
+      "patients": 3,
+      "Dice": {
+        "mean": 0.9315278564073098,
+        "median": 0.9250808078353221,
+        "std_population": 0.02577606822113237,
+        "min": 0.9036799273487378,
+        "max": 0.9658228340378694,
+        "valid_patients": 3
+      },
+      "IoU": {
+        "mean": 0.8729314527856461,
+        "median": 0.8606049781029489,
+        "std_population": 0.04559301836959692,
+        "min": 0.8242847594346628,
+        "max": 0.9339046208193266,
+        "valid_patients": 3
+      },
+      "precision": {
+        "mean": 0.9274628737713311,
+        "median": 0.9521612038237577,
+        "std_population": 0.054573207015954736,
+        "min": 0.8517903579535224,
+        "max": 0.9784370595367129,
+        "valid_patients": 3
+      },
+      "recall": {
+        "mean": 0.939808915069294,
+        "median": 0.9623016501573126,
+        "std_population": 0.044819264273323584,
+        "min": 0.8772428892431197,
+        "max": 0.9798822058074498,
+        "valid_patients": 3
+      },
+      "HD95_mm": {
+        "mean": 30.59150135424282,
+        "median": 18.0,
+        "std_population": 28.968938445569382,
+        "min": 3.125,
+        "max": 70.64950406272845,
+        "valid_patients": 3
+      },
+      "ASSD_mm": {
+        "mean": 3.6396310891031867,
+        "median": 4.001172797717073,
+        "std_population": 0.9653479266914815,
+        "min": 2.3187678595692502,
+        "max": 4.598952610023236,
+        "valid_patients": 3
+      }
+    }
+  },
+  "by_scanner": {
+    "SOMATOM Definition AS+": {
+      "patients": 3,
+      "Dice": {
+        "mean": 0.9345489340085611,
+        "median": 0.9383709581640356,
+        "std_population": 0.02722981568105221,
+        "min": 0.8994530098237782,
+        "max": 0.9658228340378694,
+        "valid_patients": 3
+      },
+      "IoU": {
+        "mean": 0.8783599972720246,
+        "median": 0.8838972194479833,
+        "std_population": 0.04777327673988754,
+        "min": 0.8172781515487639,
+        "max": 0.9339046208193266,
+        "valid_patients": 3
+      },
+      "precision": {
+        "mean": 0.9570823600915208,
+        "median": 0.9523378593672172,
+        "std_population": 0.006835032095095378,
+        "min": 0.9521612038237577,
+        "max": 0.9667480170835876,
+        "valid_patients": 3
+      },
+      "recall": {
+        "mean": 0.9152023566520494,
+        "median": 0.9248078101807065,
+        "std_population": 0.0571374186183874,
+        "min": 0.8409170539679922,
+        "max": 0.9798822058074498,
+        "valid_patients": 3
+      },
+      "HD95_mm": {
+        "mean": 9.466617755627047,
+        "median": 7.106129066693061,
+        "std_population": 6.364345454209206,
+        "min": 3.125,
+        "max": 18.16872420018808,
+        "valid_patients": 3
+      },
+      "ASSD_mm": {
+        "mean": 2.7750012339843213,
+        "median": 2.3187678595692502,
+        "std_population": 0.7223373062231402,
+        "min": 2.2115718978963494,
+        "max": 3.794663944487364,
+        "valid_patients": 3
+      }
+    },
+    "LightSpeed VCT": {
+      "patients": 6,
+      "Dice": {
+        "mean": 0.9117779421595307,
+        "median": 0.9163270994556256,
+        "std_population": 0.027642813429037294,
+        "min": 0.8579249839789257,
+        "max": 0.9419248641897945,
+        "valid_patients": 6
+      },
+      "IoU": {
+        "mean": 0.839020666128909,
+        "median": 0.845695790378049,
+        "std_population": 0.04569777802524238,
+        "min": 0.7511984518914427,
+        "max": 0.8902249304521548,
+        "valid_patients": 6
+      },
+      "precision": {
+        "mean": 0.9422448372768577,
+        "median": 0.9640936283024213,
+        "std_population": 0.048496445654563965,
+        "min": 0.8517903579535224,
+        "max": 0.9900040769320045,
+        "valid_patients": 6
+      },
+      "recall": {
+        "mean": 0.8889956428626126,
+        "median": 0.9085777110466635,
+        "std_population": 0.06416698075421869,
+        "min": 0.7569396410499108,
+        "max": 0.9623016501573126,
+        "valid_patients": 6
+      },
+      "HD95_mm": {
+        "mean": 22.118141188049208,
+        "median": 15.546751275744528,
+        "std_population": 22.18781873218388,
+        "min": 5.625,
+        "max": 70.64950406272845,
+        "valid_patients": 6
+      },
+      "ASSD_mm": {
+        "mean": 3.124029401500637,
+        "median": 3.431441591723246,
+        "std_population": 1.1377771978199103,
+        "min": 1.429520181025452,
+        "max": 4.598952610023236,
+        "valid_patients": 6
+      }
+    }
+  },
+  "by_contrast": {
+    "contrast_agent_reported": {
+      "patients": 9,
+      "Dice": {
+        "mean": 0.9193682727758742,
+        "median": 0.9250808078353221,
+        "std_population": 0.029526213459464625,
+        "min": 0.8579249839789257,
+        "max": 0.9658228340378694,
+        "valid_patients": 9
+      },
+      "IoU": {
+        "mean": 0.8521337765099476,
+        "median": 0.8606049781029489,
+        "std_population": 0.04996859609310076,
+        "min": 0.7511984518914427,
+        "max": 0.9339046208193266,
+        "valid_patients": 9
+      },
+      "precision": {
+        "mean": 0.9471906782150786,
+        "median": 0.9636344360595778,
+        "std_population": 0.04040336702763866,
+        "min": 0.8517903579535224,
+        "max": 0.9900040769320045,
+        "valid_patients": 9
+      },
+      "recall": {
+        "mean": 0.8977312141257582,
+        "median": 0.9101106168532741,
+        "std_population": 0.06313305704715601,
+        "min": 0.7569396410499108,
+        "max": 0.9798822058074498,
+        "valid_patients": 9
+      },
+      "HD95_mm": {
+        "mean": 17.900966710575155,
+        "median": 14.0,
+        "std_population": 19.42344679921464,
+        "min": 3.125,
+        "max": 70.64950406272845,
+        "valid_patients": 9
+      },
+      "ASSD_mm": {
+        "mean": 3.0076866789951984,
+        "median": 3.1639333302859987,
+        "std_population": 1.031513267356819,
+        "min": 1.429520181025452,
+        "max": 4.598952610023236,
+        "valid_patients": 9
+      }
+    }
+  },
+  "by_native_z_spacing": {
+    "2.0": {
+      "patients": 7,
+      "Dice": {
+        "mean": 0.9163928526598673,
+        "median": 0.9075733910759292,
+        "std_population": 0.03278304245740138,
+        "min": 0.8579249839789257,
+        "max": 0.9658228340378694,
+        "valid_patients": 7
+      },
+      "IoU": {
+        "mean": 0.8473678194639263,
+        "median": 0.8307866026531491,
+        "std_population": 0.055576776753364664,
+        "min": 0.7511984518914427,
+        "max": 0.9339046208193266,
+        "valid_patients": 7
+      },
+      "precision": {
+        "mean": 0.9403778011913453,
+        "median": 0.9523378593672172,
+        "std_population": 0.043293430767598014,
+        "min": 0.8517903579535224,
+        "max": 0.9900040769320045,
+        "valid_patients": 7
+      },
+      "recall": {
+        "mean": 0.8993276046640931,
+        "median": 0.9203342546320051,
+        "std_population": 0.07106103247398181,
+        "min": 0.7569396410499108,
+        "max": 0.9798822058074498,
+        "valid_patients": 7
+      },
+      "HD95_mm": {
+        "mean": 12.11917090463542,
+        "median": 14.0,
+        "std_population": 5.711152990866158,
+        "min": 3.125,
+        "max": 18.16872420018808,
+        "valid_patients": 7
+      },
+      "ASSD_mm": {
+        "mean": 3.005815331415442,
+        "median": 3.1639333302859987,
+        "std_population": 0.8065283020843361,
+        "min": 1.8516476367915693,
+        "max": 4.001172797717073,
+        "valid_patients": 7
+      }
+    },
+    "0.625": {
+      "patients": 2,
+      "Dice": {
+        "mean": 0.9297822431818986,
+        "median": 0.9297822431818986,
+        "std_population": 0.004701435346576521,
+        "min": 0.9250808078353221,
+        "max": 0.9344836785284751,
+        "valid_patients": 2
+      },
+      "IoU": {
+        "mean": 0.8688146261710223,
+        "median": 0.8688146261710223,
+        "std_population": 0.00820964806807345,
+        "min": 0.8606049781029489,
+        "max": 0.8770242742390958,
+        "valid_patients": 2
+      },
+      "precision": {
+        "mean": 0.9710357477981453,
+        "median": 0.9710357477981453,
+        "std_population": 0.007401311738567562,
+        "min": 0.9636344360595778,
+        "max": 0.9784370595367129,
+        "valid_patients": 2
+      },
+      "recall": {
+        "mean": 0.8921438472415864,
+        "median": 0.8921438472415864,
+        "std_population": 0.014900957998466635,
+        "min": 0.8772428892431197,
+        "max": 0.9070448052400529,
+        "valid_patients": 2
+      },
+      "HD95_mm": {
+        "mean": 38.13725203136423,
+        "median": 38.13725203136423,
+        "std_population": 32.51225203136423,
+        "min": 5.625,
+        "max": 70.64950406272845,
+        "valid_patients": 2
+      },
+      "ASSD_mm": {
+        "mean": 3.0142363955243443,
+        "median": 3.0142363955243443,
+        "std_population": 1.584716214498892,
+        "min": 1.429520181025452,
+        "max": 4.598952610023236,
+        "valid_patients": 2
+      }
+    }
+  },
+  "test_records": [
+    {
+      "patient_id": "Pediatric-CT-SEG-423F282F",
+      "age_group": "12-17",
+      "scanner": "SOMATOM Definition AS+",
+      "contrast": "contrast_agent_reported",
+      "Dice": 0.9383709581640356,
+      "IoU": 0.8838972194479833,
+      "precision": 0.9523378593672172,
+      "recall": 0.9248078101807065,
+      "predicted_voxels": 525994,
+      "GT_voxels": 541652,
+      "predicted_volume_ml": 642.08251953125,
+      "GT_volume_ml": 661.1962890625,
+      "HD95_mm": 18.16872420018808,
+      "ASSD_mm": 3.794663944487364,
+      "surface_status": "ok",
+      "seconds": 8.938755999319255,
+      "age": 15.0,
+      "age_precision": "reported_Y",
+      "spacing_xyz_mm": [
+        0.78125,
+        0.78125,
+        2.0
+      ],
+      "native_z_spacing_mm": 2.0,
+      "original_slices": 314,
+      "CT_margins_below_above_OAR_slices": [
+        220,
+        48
+      ],
+      "source_Heart_target": "original expert Heart OAR",
+      "healthy_status": "unknown",
+      "relative_volume_error": -0.028907859658969248
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-54BC2D63",
+      "age_group": "2-5",
+      "scanner": "LightSpeed VCT",
+      "contrast": "contrast_agent_reported",
+      "Dice": 0.9344836785284751,
+      "IoU": 0.8770242742390958,
+      "precision": 0.9636344360595778,
+      "recall": 0.9070448052400529,
+      "predicted_voxels": 1094167,
+      "GT_voxels": 1162431,
+      "predicted_volume_ml": 150.26097106933594,
+      "GT_volume_ml": 159.63560485839844,
+      "HD95_mm": 5.625,
+      "ASSD_mm": 1.429520181025452,
+      "surface_status": "ok",
+      "seconds": 13.99820839241147,
+      "age": 2.0,
+      "age_precision": "reported_Y",
+      "spacing_xyz_mm": [
+        0.46875,
+        0.46875,
+        0.625
+      ],
+      "native_z_spacing_mm": 0.625,
+      "original_slices": 577,
+      "CT_margins_below_above_OAR_slices": [
+        385,
+        83
+      ],
+      "source_Heart_target": "original expert Heart OAR",
+      "healthy_status": "unknown",
+      "relative_volume_error": -0.05872520605524112
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-572C61DF",
+      "age_group": "12-17",
+      "scanner": "LightSpeed VCT",
+      "contrast": "contrast_agent_reported",
+      "Dice": 0.9075733910759292,
+      "IoU": 0.8307866026531491,
+      "precision": 0.9050502726340636,
+      "recall": 0.9101106168532741,
+      "predicted_voxels": 790987,
+      "GT_voxels": 786589,
+      "predicted_volume_ml": 543.1285542853049,
+      "GT_volume_ml": 540.1086824267954,
+      "HD95_mm": 14.0,
+      "ASSD_mm": 3.1639333302859987,
+      "surface_status": "ok",
+      "seconds": 7.530386381782591,
+      "age": 12.0,
+      "age_precision": "reported_Y",
+      "spacing_xyz_mm": [
+        0.585938,
+        0.585938,
+        2.0
+      ],
+      "native_z_spacing_mm": 2.0,
+      "original_slices": 287,
+      "CT_margins_below_above_OAR_slices": [
+        194,
+        51
+      ],
+      "source_Heart_target": "original expert Heart OAR",
+      "healthy_status": "unknown",
+      "relative_volume_error": 0.005591229981604107
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-792705D7",
+      "age_group": "6-11",
+      "scanner": "LightSpeed VCT",
+      "contrast": "contrast_agent_reported",
+      "Dice": 0.9250808078353221,
+      "IoU": 0.8606049781029489,
+      "precision": 0.9784370595367129,
+      "recall": 0.8772428892431197,
+      "predicted_voxels": 1167095,
+      "GT_voxels": 1301725,
+      "predicted_volume_ml": 321.66478215232775,
+      "GT_volume_ml": 358.7703559241012,
+      "HD95_mm": 70.64950406272845,
+      "ASSD_mm": 4.598952610023236,
+      "surface_status": "ok",
+      "seconds": 24.186134618707,
+      "age": 10.0,
+      "age_precision": "reported_Y",
+      "spacing_xyz_mm": [
+        0.664062,
+        0.664062,
+        0.625
+      ],
+      "native_z_spacing_mm": 0.625,
+      "original_slices": 921,
+      "CT_margins_below_above_OAR_slices": [
+        621,
+        180
+      ],
+      "source_Heart_target": "original expert Heart OAR",
+      "healthy_status": "unknown",
+      "relative_volume_error": -0.1034243023680117
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-9B29D191",
+      "age_group": "12-17",
+      "scanner": "LightSpeed VCT",
+      "contrast": "contrast_agent_reported",
+      "Dice": 0.9419248641897945,
+      "IoU": 0.8902249304521548,
+      "precision": 0.9645528205452647,
+      "recall": 0.9203342546320051,
+      "predicted_voxels": 442574,
+      "GT_voxels": 463838,
+      "predicted_volume_ml": 437.6036865234375,
+      "GT_volume_ml": 458.6288818359375,
+      "HD95_mm": 7.340840514077731,
+      "ASSD_mm": 1.8516476367915693,
+      "surface_status": "ok",
+      "seconds": 7.670186553150415,
+      "age": 15.0,
+      "age_precision": "reported_Y",
+      "spacing_xyz_mm": [
+        0.703125,
+        0.703125,
+        2.0
+      ],
+      "native_z_spacing_mm": 2.0,
+      "original_slices": 310,
+      "CT_margins_below_above_OAR_slices": [
+        211,
+        52
+      ],
+      "source_Heart_target": "original expert Heart OAR",
+      "healthy_status": "unknown",
+      "relative_volume_error": -0.04584359194373899
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-C26BBB5F",
+      "age_group": "6-11",
+      "scanner": "SOMATOM Definition AS+",
+      "contrast": "contrast_agent_reported",
+      "Dice": 0.9658228340378694,
+      "IoU": 0.9339046208193266,
+      "precision": 0.9521612038237577,
+      "recall": 0.9798822058074498,
+      "predicted_voxels": 430362,
+      "GT_voxels": 418187,
+      "predicted_volume_ml": 336.2203125,
+      "GT_volume_ml": 326.70859375,
+      "HD95_mm": 3.125,
+      "ASSD_mm": 2.3187678595692502,
+      "surface_status": "ok",
+      "seconds": 6.9514854261651635,
+      "age": 6.0,
+      "age_precision": "reported_Y",
+      "spacing_xyz_mm": [
+        0.625,
+        0.625,
+        2.0
+      ],
+      "native_z_spacing_mm": 2.0,
+      "original_slices": 244,
+      "CT_margins_below_above_OAR_slices": [
+        156,
+        46
+      ],
+      "source_Heart_target": "original expert Heart OAR",
+      "healthy_status": "unknown",
+      "relative_volume_error": 0.029113769677201917
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-CA967BD7",
+      "age_group": "2-5",
+      "scanner": "LightSpeed VCT",
+      "contrast": "contrast_agent_reported",
+      "Dice": 0.8579249839789257,
+      "IoU": 0.7511984518914427,
+      "precision": 0.9900040769320045,
+      "recall": 0.7569396410499108,
+      "predicted_voxels": 336037,
+      "GT_voxels": 439504,
+      "predicted_volume_ml": 124.08622096141822,
+      "GT_volume_ml": 162.29281435504765,
+      "HD95_mm": 17.093502551489056,
+      "ASSD_mm": 3.698949853160493,
+      "surface_status": "ok",
+      "seconds": 4.153233815915883,
+      "age": 2.0,
+      "age_precision": "reported_Y",
+      "spacing_xyz_mm": [
+        0.429688,
+        0.429688,
+        2.0
+      ],
+      "native_z_spacing_mm": 2.0,
+      "original_slices": 165,
+      "CT_margins_below_above_OAR_slices": [
+        113,
+        24
+      ],
+      "source_Heart_target": "original expert Heart OAR",
+      "healthy_status": "unknown",
+      "relative_volume_error": -0.2354176526265972
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-F22EFF95",
+      "age_group": "2-5",
+      "scanner": "SOMATOM Definition AS+",
+      "contrast": "contrast_agent_reported",
+      "Dice": 0.8994530098237782,
+      "IoU": 0.8172781515487639,
+      "precision": 0.9667480170835876,
+      "recall": 0.8409170539679922,
+      "predicted_voxels": 337634,
+      "GT_voxels": 388156,
+      "predicted_volume_ml": 148.37431640625,
+      "GT_volume_ml": 170.5763671875,
+      "HD95_mm": 7.106129066693061,
+      "ASSD_mm": 2.2115718978963494,
+      "surface_status": "ok",
+      "seconds": 7.830756429582834,
+      "age": 3.0,
+      "age_precision": "reported_Y",
+      "spacing_xyz_mm": [
+        0.46875,
+        0.46875,
+        2.0
+      ],
+      "native_z_spacing_mm": 2.0,
+      "original_slices": 183,
+      "CT_margins_below_above_OAR_slices": [
+        120,
+        34
+      ],
+      "source_Heart_target": "original expert Heart OAR",
+      "healthy_status": "unknown",
+      "relative_volume_error": -0.130159008233803
+    },
+    {
+      "patient_id": "Pediatric-CT-SEG-F50AD62F",
+      "age_group": "6-11",
+      "scanner": "LightSpeed VCT",
+      "contrast": "contrast_agent_reported",
+      "Dice": 0.9036799273487378,
+      "IoU": 0.8242847594346628,
+      "precision": 0.8517903579535224,
+      "recall": 0.9623016501573126,
+      "predicted_voxels": 677574,
+      "GT_voxels": 599761,
+      "predicted_volume_ml": 297.76201171875,
+      "GT_volume_ml": 263.566845703125,
+      "HD95_mm": 18.0,
+      "ASSD_mm": 4.001172797717073,
+      "surface_status": "ok",
+      "seconds": 10.399988415651023,
+      "age": 6.0,
+      "age_precision": "reported_Y",
+      "spacing_xyz_mm": [
+        0.46875,
+        0.46875,
+        2.0
+      ],
+      "native_z_spacing_mm": 2.0,
+      "original_slices": 232,
+      "CT_margins_below_above_OAR_slices": [
+        149,
+        47
+      ],
+      "source_Heart_target": "original expert Heart OAR",
+      "healthy_status": "unknown",
+      "relative_volume_error": 0.1297400131052202
+    }
+  ],
+  "test_review_order_by_Dice": [
+    "Pediatric-CT-SEG-CA967BD7",
+    "Pediatric-CT-SEG-F22EFF95",
+    "Pediatric-CT-SEG-F50AD62F",
+    "Pediatric-CT-SEG-572C61DF",
+    "Pediatric-CT-SEG-792705D7",
+    "Pediatric-CT-SEG-54BC2D63",
+    "Pediatric-CT-SEG-423F282F",
+    "Pediatric-CT-SEG-9B29D191",
+    "Pediatric-CT-SEG-C26BBB5F"
+  ],
+  "mean_absolute_relative_volume_error": 0.08521362596115417,
+  "checkpoints": {
+    "best.pt": {
+      "bytes": 5954592,
+      "SHA256": "e6b28f1b87d581fde2dbc2e055ec58f0353c98c913f62c10b96ba3338690e8f0"
+    },
+    "last.pt": {
+      "bytes": 5965984,
+      "SHA256": "080c57f1471bc6b93d268a28fc37a702353bd454f4949af3119cbc523f9e5489"
+    }
+  },
+  "all_downloaded_result_files_SHA256_verified": true,
+  "full_training_completed": true,
+  "test_evaluated_once_in_driver": true,
+  "healthy_pathological_classifier_trained": false,
+  "CT_MRI_joint_training": false,
+  "limitations": [
+    "original OAR annotation extent, not full chamber/vessel anatomy",
+    "technical QA, no new clinician sign-off",
+    "test n=9; ages 2-16, no age17",
+    "held-out only LightSpeed/SOMATOM and contrast-agent-reported cases",
+    "unknown clinical status; public IDs do not prove all repeat identities"
+  ]
+}
