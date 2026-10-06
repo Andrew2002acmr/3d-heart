@@ -5,14 +5,19 @@
 изменениями не переключался. **Обучение не запускалось.** Здесь зафиксирован
 подготовительный этап; результаты модели, test metrics и predictions отсутствуют.
 
-**Приостановлено по просьбе пользователя.** Сохранены 9 полных CT + RTSTRUCT;
-8/9 studies конвертированы и проверены SimpleITK/VTK, для них просмотрены native
-mosaics. В независимом NiiVue просмотрены первые два cases. Census завершён для
-171/327 пациентов: 166 metadata candidates, 2 требуют reference review,
-3 без Heart ROI. Осталось 156 census cases и QA девятого study. В пилоте три
-случая имеют неполное coverage, ещё пять требуют review объёма OAR-аннотации.
-Готовая training cohort и frozen split пока отсутствуют. Процессы остановлены.
-Продолжение: [pediatric_heart_segmentation_resume.md](pediatric_heart_segmentation_resume.md).
+**Подготовительный отчёт перед обучением.** Census завершён для **327/327**
+пациентов. У всех есть определение Heart ROI, у 324 — непустые контуры;
+322 проходят metadata/reference gate, 2 имеют неподтверждённые CT SOP references,
+3 имеют пустые Heart contours. Полные CT + оригинальные RTSTRUCT получены и
+независимо конвертированы для **9/9 пилотных исследований**; все девять просмотрены
+на native mosaics и в NiiVue. Три исключены из-за неполного scan coverage,
+ещё один требует coverage review, пять — проверки объёма OAR-аннотации.
+Готовая training cohort и frozen split отсутствуют: **0 полностью одобренных
+для обучения случаев**. Это результат проверки gates, а не отрицательная оценка
+качества всех исходных контуров. Предложение следующего эксперимента: 60 пациентов
+после полного QA, split 42/9/9, собственная 2.5D U-Net на CPU. Работа остановлена
+перед выбором полной когорты и обучением согласно заданному порядку этапа.
+Точка продолжения: [pediatric_heart_segmentation_resume.md](pediatric_heart_segmentation_resume.md).
 
 ## 1. Цель
 
@@ -28,7 +33,8 @@ Heart organ-at-risk (OAR), определённый экспертами ист�
 [TCIA Pediatric-CT-SEG](https://www.cancerimagingarchive.net/collection/pediatric-ct-seg/),
 DOI [10.7937/TCIA.X0H0-1706](https://doi.org/10.7937/TCIA.X0H0-1706).
 Возрастная выборка из предыдущего аудита: 327 пациентов с `2 <= reported age <= 17`:
-143 — группа 2–5, 105 — 6–11, 79 — 12–17. Это рабочие группы; DICOM `NNNY`
+143 — группа 2–5, 105 — 6–11, 79 — 12–17. Фактически сообщённые возраста —
+**2–16 лет**, случаев 17 лет нет. Это рабочие группы; DICOM `NNNY`
 указывает возраст с точностью до сообщённых лет, а не точную дату рождения.
 
 В [публикации источника](https://pmc.ncbi.nlm.nih.gov/articles/PMC9090951/)
@@ -91,7 +97,9 @@ SOP/Series UID и source receipt; они не выдаются за полные
 
 Исключение/отложенный review: missing/empty Heart; unmatched SOP/frame/series;
 нерегулярные или неполные grid; открытые/смешанные contours; маска вне FOV;
-Heart на scan boundary; внутренние пропуски контуров; неоднозначный annotation extent.
+Heart на scan boundary или в пределах одного неразмеченного CT slice от неё;
+внутренние пропуски контуров; неоднозначный annotation extent. Правило одного
+среза — технический сигнал для review, не медицинский критерий полноты сердца.
 Автоматического исправления GT нет. Техническая корректность rasterization,
 полнота scan coverage и анатомическая полнота разметки — три разные проверки.
 
@@ -106,15 +114,31 @@ Visual review: [heart_segmentation_visual_reviews.json](../metadata/pediatric/he
 в каждой представленной age/scanner cell плюс ранее проверенный E03568A6,
 без выбора по качеству target. Есть все три модели scanner и возрастные группы.
 
-План census для 327 пациентов использует live SOP inventory, одну полную CT probe
+Census для всех 327 пациентов использует live SOP inventory, одну полную CT probe
 и **полный Heart contour item**. HTTP prefix читается последовательно и ограничен
 64 MiB; может включать другие предшествующие ROI и небольшой read-ahead.
 Item delimiters/length проверяются, неполный item не принимается.
-На момент паузы metadata census выполнен для 171 пациентов; полные CT headers/pixels
-и исходные полные RTSTRUCT проверены для восьми studies пилота.
-Для остальных full-stack spacing, rasterization, coverage и suitability остаются
+Полные CT headers/pixels и оригинальные RTSTRUCT проверены для девяти studies.
+Дополнительно скачаны два полных оригинальных RTSTRUCT для проверки reference
+failures: всего **11 original RTSTRUCT**, из них 9 с полным CT. Для остальных
+318 пациентов full-stack spacing, rasterization, coverage и suitability остаются
 `null`/pending, а не автоматически подтверждёнными. Это census metadata,
 **не завершённая preparation всей возрастной когорты**.
+
+| Проверка | Результат |
+|---|---:|
+| Возрастной metadata census | 327/327 |
+| Определение Heart / непустые Heart contours | 327 / 324 |
+| Metadata/reference gate | 322 pass, 2 review, 3 empty |
+| Scanner: LightSpeed VCT / SOMATOM Definition AS+ / Revolution CT | 134 / 128 / 65 |
+| ContrastBolusAgent указан / не указан | 301 / 26 |
+| Полный CT + RT, HU/geometry/rasterization gate | 9/9 |
+| Native mosaics + независимый NiiVue | 9/9 |
+| Pilot: неполное coverage / coverage review / annotation scope review | 3 / 1 / 5 |
+| Полностью одобрены для обучения | 0 |
+
+ContrastBolusAgent — evidence введения контраста; пустой tag оставляет статус
+unknown. Scanner metadata здесь означают модель аппарата, а не независимые центры.
 
 CT всего возрастного inventory: 54,658,909,982 bytes; RT: 7,286,328,758 bytes.
 Свободного места на D недостаточно для всех raw CT. Пилот, raw originals,
@@ -137,7 +161,10 @@ seed `20261006`. Точные age/scanner квоты заданы в
 stratum при исключении. После этой проверки следует создать и зафиксировать
 `configs/splits/pediatric_ct_heart_v1.json`; сейчас frozen split отсутствует,
 чтобы не выдавать metadata candidates за готовый dataset. Уже inspected cases
-учитывать как development cases, не выбирать по ним гиперпараметры test.
+исключены из будущего test: они уже использованы для разработки loader и QA.
+Квоты — цели; если full coverage не даст нужного количества в stratum, пересмотреть
+их до фиксации split и документировать причину. Три пилотных Revolution studies
+с ограниченным coverage не доказывают непригодность всех 65 случаев этого scanner.
 
 ## 8. Preprocessing
 
@@ -213,8 +240,9 @@ PyTorch в использованном environment отсутствует. GPU 
 4–6 GB CPU RAM при batch 2 и дисковом/lazy cache; это оценка, не измеренное обучение.
 
 60 raw CT могут потребовать около 10–15 GB до archive duplication и prepared
-cache, точный объём надо суммировать по выбранным UID. На текущем D остаётся
-ограниченный запас; перед cohort download проверить место, не удалять существующие
+cache, точный объём надо суммировать по выбранным UID. При проверке свободно
+**28.07 GB на D**; этого недостаточно для всей возрастной raw cohort.
+Перед cohort download проверить место, не удалять существующие
 данные автоматически. Для всей когорты raw CT + RT + derived/cache рекомендуется
 отдельное хранилище с ≥150 GB свободного пространства; фактический бюджет зависит
 от retention архивов и формата cache. Полные float32 volumes не cache в RAM.
@@ -231,9 +259,14 @@ aggregation и empty-mask convention. Никаких выдуманных test s
 Синтетические проверки включают oblique/anisotropic landmarks, HU, RAS/LPS,
 unordered slices, duplicates/missing inventory, irregular spacing, ROI mismatch,
 XOR hole, off-plane/out-of-FOV contours, implicit/explicit stream и truncation.
-Независимое чтение реальных CT: SimpleITK ImageSeriesReader; проверены affine,
-dimensions и все HU pixels. Независимая rasterization: vtkPolyDataToImageStencil;
-различия допускаются только на voxel boundary, Dice ≥0.99.
+**73 tests passed** (GUI tests не запускались; существующие NumPy/scikit-image
+deprecation warnings сохранены). Независимое чтение девяти реальных CT:
+SimpleITK ImageSeriesReader с собственным GDCM discovery/sorting; проверены affine,
+dimensions и все HU pixels. Во всех девяти max HU difference = 0.
+Независимая rasterization: vtkPolyDataToImageStencil;
+различия допускаются только на voxel boundary, порог Dice ≥0.99. Фактический
+Dice двух rasterizers на пилоте: **0.999994727–1.0**, вне границы различий нет.
+Максимальный contour-to-slice residual: **0.005 mm**.
 Это **agreement двух способов конвертации**, не ML segmentation metric.
 
 ## 16. Failure cases и незавершённые gates
@@ -241,17 +274,28 @@ dimensions и все HU pixels. Независимая rasterization: vtkPolyDat
 BEC712BF, 4C1A38AE, 813E523C: Heart на последних CT slices 164/164, 184/184,
 188/188 соответственно, визуально superior coverage недостаточно; исключены
 из whole Heart cohort. Masks не достраивались.
-Другие пилотные cases имеют плоскую cranial границу исходного Heart ROI.
+E03568A6: Heart заканчивается за один CT slice (2 mm) до верхней границы.
+Контакт с voxel face отсутствует, но полное coverage не подтверждено; требуется
+review coverage и исходной аннотации.
+Пять остальных пилотных cases имеют плоскую cranial границу исходного Heart ROI.
 Она совпадает с source contours; нужно согласовать объём OAR target, а не
 автоматически объявлять это полной анатомической разметкой или исправлять.
-Unmatched RT→SOP references в census остаются requires-review, даже если часть
-Heart references выглядит пригодной. Их причины сохранены per patient.
+Reference failures подтверждены по **полным оригинальным RTSTRUCT**:
+272B6C5D — 211 global references и **17 Heart references** отсутствуют в
+published CT inventory; 34ECBB32 — 147 global и **8 Heart references**.
+Heart item и global references совпадают с census extracts; это не ошибка
+stream extraction. Причина несоответствия на стороне опубликованной пары требует
+выяснения; не подменять SOP ближайшими slices. Отчёт:
+[heart_segmentation_reference_review.json](../metadata/pediatric/heart_segmentation_reference_review.json).
+Три пустых Heart: наличие ROI definition не означает наличие segmentation.
 
 ## 17. Ground Truth vs Prediction
 
 Сейчас доступен независимый QA viewer **CT + GT Heart**, axial и multiplanar,
 toggle overlay. `scripts/view_pediatric_ct_qa.py` слушает только loopback и
-выдаёт только allowlisted prepared files. Нужен интернет для pinned NiiVue
+выдаёт только allowlisted prepared files. В `--reviews` можно передать сохранённые
+review statuses. NiiVue — независимый NIfTI viewer, визуальная техническая проверка
+не является clinical annotation sign-off. Нужен интернет для pinned NiiVue
 0.69.0 CDN. Нативный viewer проекта не переделан. Prediction/Comparison режимы
 добавлять после реального baseline; пока prediction отсутствует.
 
@@ -282,8 +326,9 @@ python scripts/fetch_tcia_inventory.py --out "$dataRoot/tcia_series_v1.json"
 python scripts/fetch_pediatric_ct_pilot.py --registry metadata/pediatric/registry.json --series "$dataRoot/tcia_series_v1.json" --data $dataRoot
 python scripts/prepare_pediatric_ct_pilot.py --data $dataRoot
 python scripts/census_pediatric_ct_heart.py --registry metadata/pediatric/registry.json --series "$dataRoot/tcia_series_v1.json" --data $dataRoot --out "$dataRoot/census.json" --workers 8
+python scripts/audit_pediatric_rt_references.py --data $dataRoot --out metadata/pediatric/heart_segmentation_reference_review.json
 python scripts/export_pediatric_heart_census.py --data $dataRoot --reviews metadata/pediatric/heart_segmentation_visual_reviews.json --out metadata/pediatric/heart_segmentation_candidates.json
-python scripts/view_pediatric_ct_qa.py --data $dataRoot
+python scripts/view_pediatric_ct_qa.py --data $dataRoot --reviews metadata/pediatric/heart_segmentation_visual_reviews.json
 python -m pytest tests --ignore=tests/test_viewer.py --ignore=tests/test_interactive_gui.py -q
 ```
 
