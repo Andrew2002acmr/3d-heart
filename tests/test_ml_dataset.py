@@ -4,6 +4,7 @@ import numpy as np
 import pytest
 import torch
 from heart3d.ml.dataset import HeartDataset
+from heart3d.ml.augmentation import augment
 from heart3d.ml.geometry import make_transform
 from heart3d.ml.splits import load_frozen_split
 from heart3d.pediatric import write_json
@@ -68,3 +69,16 @@ def test_split_rejects_duplicate_patient_and_changed_cohort(toy_experiment):
 def test_json_hashes_have_platform_independent_lf(tmp_path):
     path=tmp_path/'manifest.json';write_json(path,{'value':'pediatric','rows':[1,2]})
     assert b'\r\n' not in path.read_bytes()
+
+
+def test_spatial_augmentation_is_shared_across_context_and_binary_target():
+    mask=torch.zeros(1,32,32);mask[:,8:24,8:24]=1
+    image=(2*mask-1).repeat(5,1,1)
+    settings={'rotation_degrees':5,'scale_delta':.05,'intensity_shift':0,'noise_std':0}
+    transformed,target=augment(image,mask,settings,torch.Generator().manual_seed(20261006))
+    assert all(torch.equal(transformed[0],channel) for channel in transformed)
+    assert set(target.unique().tolist())=={0.,1.}
+    foreground=transformed[0]>0;truth=target[0]>0
+    assert (foreground & truth).sum()/(foreground | truth).sum()>.95
+    with pytest.raises(ValueError,match='Flips'):
+        augment(image,mask,dict(settings,flips=True),torch.Generator())

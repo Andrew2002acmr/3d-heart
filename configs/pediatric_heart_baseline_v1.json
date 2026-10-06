@@ -1,0 +1,46 @@
+{
+  "version": 1,
+  "data_root": "E:/3d-heart-data/pediatric_ct_heart",
+  "reserve_GB": 80,
+  "split": "configs/splits/pediatric_ct_heart_v1.json",
+  "cohort": "metadata/pediatric/heart_approved_cohort_v1.json",
+  "preprocessing": "configs/pediatric_heart_preprocessing_v1.json",
+  "cache_relative_path": "preprocessing/heart_v1",
+  "outputs_relative_path": "experiments/heart_baseline_v1",
+  "checkpoint_relative_path": "checkpoints/heart_baseline_v1",
+  "model": {
+    "input_channels": 5,
+    "encoder_channels": [
+      16,
+      32,
+      64,
+      128
+    ],
+    "norm_groups": 8
+  },
+  "batch_size": 2,
+  "cpu_threads": 6,
+  "num_workers": 0,
+  "seed": 20261006,
+  "sampling": "all_positive_equal_negative_per_patient",
+  "optimizer": "Adam",
+  "learning_rate": 0.001,
+  "scheduler": "none_for_benchmark",
+  "loss": {
+    "variant": "bce_dice",
+    "bce_weight": 1.0,
+    "dice_weight": 1.0
+  },
+  "augmentation": {
+    "rotation_degrees": 5.0,
+    "scale_delta": 0.05,
+    "intensity_shift": 0.03,
+    "noise_std": 0.01,
+    "flips": false
+  },
+  "benchmark_warmup_batches": 5,
+  "sanity_batches": 20,
+  "planned_full_epochs_for_estimation_only": 30,
+  "full_training_authorized": false,
+  "experiment_scope": "bounded train-only CPU resource benchmark, no validation or test evaluation"
+}

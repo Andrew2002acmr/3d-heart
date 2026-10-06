@@ -5,6 +5,7 @@ import torch.nn.functional as F
 
 
 def augment(image,target,settings,generator):
+    if settings.get('flips',False):raise ValueError('Flips require a separate orientation experiment')
     angle=(torch.rand((),generator=generator).item()*2-1)*settings['rotation_degrees']*math.pi/180
     scale=1+(torch.rand((),generator=generator).item()*2-1)*settings['scale_delta']
     if scale<=0:raise ValueError('Positive spatial scale required')
