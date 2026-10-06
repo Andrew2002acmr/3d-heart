@@ -13,6 +13,7 @@ import pydicom
 from pydicom.filereader import read_partial, read_dataset
 from pydicom.sequence import Sequence
 from pydicom.uid import generate_uid
+from heart3d.storage import require_space
 
 BASE = "https://services.cancerimagingarchive.net/nbia-api/services/v1/"
 
@@ -36,13 +37,17 @@ def json_get(endpoint, **params):
         return json.load(r)
 
 
-def download(url, path):
+def download(url, path, reserve_bytes=0):
     path = Path(path)
+    if reserve_bytes:
+        require_space(path.parent, 0, reserve_bytes)
     path.parent.mkdir(parents=True, exist_ok=True)
     if not path.exists():
         partial = path.with_suffix(path.suffix + ".part")
         with urllib.request.urlopen(url, timeout=90) as r, partial.open("wb") as f:
             while block := r.read(1 << 20):
+                if reserve_bytes:
+                    require_space(path.parent, len(block), reserve_bytes)
                 f.write(block)
         partial.replace(path)
     digest = hashlib.sha256()
@@ -184,10 +189,10 @@ def fetch_ct_probe(series_uid, destination):
     return pydicom.dcmread(path, stop_before_pixels=True), {r["SOPInstanceUID"] for r in sops}, receipt
 
 
-def fetch_full_series(series_uid, destination):
+def fetch_full_series(series_uid, destination, reserve_bytes=0):
     destination = Path(destination)
     archive = destination.parent / (destination.name + ".zip")
-    receipt = download(BASE + "getImage?SeriesInstanceUID=" + series_uid, archive)
+    receipt = download(BASE + "getImage?SeriesInstanceUID=" + series_uid, archive, reserve_bytes=reserve_bytes)
     destination.mkdir(parents=True, exist_ok=True)
     with zipfile.ZipFile(archive) as z:
         for item in z.infolist():
@@ -201,6 +206,8 @@ def fetch_full_series(series_uid, destination):
                 raise ValueError("Refuse to overwrite existing DICOM")
             target.parent.mkdir(parents=True, exist_ok=True)
             if not target.exists():
+                if reserve_bytes:
+                    require_space(destination, len(payload), reserve_bytes)
                 target.write_bytes(payload)
     receipt["original_zip_crc_verified"] = True
     return receipt

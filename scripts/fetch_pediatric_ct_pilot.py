@@ -7,6 +7,7 @@ import sys
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from heart3d.dicom.tcia import fetch_full_series
 from heart3d.pediatric import write_json
+from heart3d.storage import require_space
 
 
 def main():
@@ -14,6 +15,7 @@ def main():
     p.add_argument("--registry", type=Path, required=True)
     p.add_argument("--series", type=Path, required=True)
     p.add_argument("--data", type=Path, required=True)
+    p.add_argument("--reserve-gb", type=float, default=80, help="Minimum free decimal GB during download/extraction")
     args = p.parse_args()
     by = {r["patient_id"]: r for r in json.loads(args.registry.read_text(encoding="utf-8"))["records"]
           if r["dataset"] == "Pediatric-CT-SEG" and r["eligible_by_reported_age"] is True}
@@ -38,13 +40,18 @@ def main():
                          "scanner": s["ManufacturerModelName"], "ct_series_uid": s["SeriesInstanceUID"],
                          "rt_series_uid": rt[0]["SeriesInstanceUID"], "expected_slices": s["ImageCount"],
                          "published_CT_bytes": s["FileSize"], "published_RT_bytes": rt[0]["FileSize"]})
+    reserve_bytes = int(args.reserve_gb * 10**9)
+    # Includes source archive + extracted DICOM, with a small ZIP overhead allowance.
+    planned_bytes = int(2.1 * sum(r['published_CT_bytes'] + r['published_RT_bytes'] for r in manifest))
+    require_space(args.data, planned_bytes, reserve_bytes)
+    print('Storage preflight: conservative pilot bytes', planned_bytes, 'reserve', reserve_bytes, flush=True)
     write_json(args.data / "pilot_selection.json", {"method": "median-size CT per represented age/scanner cell + previously probed case; no outcome selection", "cases": manifest})
     for index, row in enumerate(manifest):
         pid = row["patient_id"]
         print("PILOT", index + 1, "/", len(manifest), pid, row["age"], row["scanner"], flush=True)
         destination = args.data / pid
-        ct_receipt = fetch_full_series(row["ct_series_uid"], destination / "ct")
-        rt_receipt = fetch_full_series(row["rt_series_uid"], destination / "rtstruct")
+        ct_receipt = fetch_full_series(row["ct_series_uid"], destination / "ct", reserve_bytes=reserve_bytes)
+        rt_receipt = fetch_full_series(row["rt_series_uid"], destination / "rtstruct", reserve_bytes=reserve_bytes)
         write_json(destination / "full_download_receipt.json", {"patient_id": pid, "CT": ct_receipt, "RTSTRUCT": rt_receipt})
         print("FULL CT + RTSTRUCT saved", pid, flush=True)
 

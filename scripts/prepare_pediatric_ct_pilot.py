@@ -42,7 +42,8 @@ def prepare_case(row, data):
         report.update(CT=geometry.report, Heart=mask_report, independent_reader=independent,
                       independent_rasterizer=independent_mask, full_CT_downloaded=True,
                       original_full_RTSTRUCT_downloaded=True, mask_rasterized=True,
-                      status=mask_report['initial_status'], output_directory=str(prepared),
+                      status=mask_report['initial_status'],
+                      output_directory_relative=prepared.relative_to(data).as_posix(),
                       CT_array_MiB=volume.nbytes / 2**20, mask_array_MiB=mask.nbytes / 2**20)
     except Exception as error:
         report['reason'] = f'{type(error).__name__}: {error}'
