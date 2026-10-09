@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "experiment_scope": "public CHD68 release multiclass scratch pilot; not an age-verified pediatric cohort",
+  "data_root": "/workspace/cardiac_chd68_v1",
+  "reserve_GB": 10,
+  "cohort": "metadata/pediatric/cardiac_chd68_cohort_v1.json",
+  "split": "configs/splits/cardiac_chd68_v1.json",
+  "preprocessing": "configs/cardiac_chd68_preprocessing_v1.json",
+  "cache_relative_path": "preprocessing/cardiac_chd68_v1",
+  "outputs_relative_path": "experiments/cardiac_chd68_v1",
+  "checkpoint_relative_path": "checkpoints/cardiac_chd68_v1",
+  "input_size": 256,
+  "model": {
+    "input_channels": 5,
+    "encoder_channels": [
+      16,
+      32,
+      64,
+      128
+    ],
+    "norm_groups": 8,
+    "output_channels": 8
+  },
+  "batch_size": 16,
+  "cpu_threads": 6,
+  "num_workers": 0,
+  "seed": 20261009,
+  "epochs": 30,
+  "learning_rate": 0.001,
+  "optimizer": "Adam",
+  "scheduler": "none_fixed_learning_rate",
+  "loss": {
+    "variant": "ce_dice",
+    "ignore_index": 255
+  },
+  "augmentation": {
+    "rotation_degrees": 5.0,
+    "scale_delta": 0.05,
+    "intensity_shift": 0.03,
+    "noise_std": 0.01,
+    "flips": false
+  },
+  "sampling": "all_foreground_slices_plus_at_most_equal_background_per_case",
+  "precision": "FP32",
+  "benchmark_warmup_batches": 5,
+  "sanity_batches": 20,
+  "full_training_authorized": false,
+  "external_NII_in_training": false,
+  "HD95_ASSD_mm_enabled": false
+}

@@ -1,0 +1,1383 @@
+{
+  "fitted_partition": "train",
+  "test_used": false,
+  "cases": [
+    {
+      "case_id": "ct_1001",
+      "shape": [
+        512,
+        512,
+        221
+      ],
+      "intensity_min": 0.0,
+      "intensity_max": 4095.0,
+      "sample_percentiles": [
+        7.0,
+        981.0,
+        2082.324999999997
+      ],
+      "heart_fraction": 0.11930498494282028,
+      "positive_slices": 219,
+      "negative_slices": 2,
+      "prepared_foreground_class_voxels": [
+        126471,
+        155166,
+        407569,
+        325068,
+        350323,
+        146438,
+        216865
+      ]
+    },
+    {
+      "case_id": "ct_1002",
+      "shape": [
+        512,
+        512,
+        137
+      ],
+      "intensity_min": 0.0,
+      "intensity_max": 4095.0,
+      "sample_percentiles": [
+        2.0,
+        505.0,
+        2223.9499999999825
+      ],
+      "heart_fraction": 0.05991360740940066,
+      "positive_slices": 131,
+      "negative_slices": 6,
+      "prepared_foreground_class_voxels": [
+        39014,
+        37070,
+        101496,
+        88320,
+        176784,
+        40312,
+        54994
+      ]
+    },
+    {
+      "case_id": "ct_1004",
+      "shape": [
+        512,
+        512,
+        344
+      ],
+      "intensity_min": 0.0,
+      "intensity_max": 4095.0,
+      "sample_percentiles": [
+        3.0,
+        890.0,
+        2267.324999999997
+      ],
+      "heart_fraction": 0.1590643705323685,
+      "positive_slices": 342,
+      "negative_slices": 2,
+      "prepared_foreground_class_voxels": [
+        116246,
+        378698,
+        439571,
+        1264977,
+        766886,
+        181979,
+        437936
+      ]
+    },
+    {
+      "case_id": "ct_1007",
+      "shape": [
+        512,
+        512,
+        275
+      ],
+      "intensity_min": 0.0,
+      "intensity_max": 4095.0,
+      "sample_percentiles": [
+        4.0,
+        375.0,
+        2071.649999999994
+      ],
+      "heart_fraction": 0.052280453768643466,
+      "positive_slices": 273,
+      "negative_slices": 2,
+      "prepared_foreground_class_voxels": [
+        69455,
+        39343,
+        189847,
+        171825,
+        245795,
+        109722,
+        116366
+      ]
+    },
+    {
+      "case_id": "ct_1008",
+      "shape": [
+        512,
+        512,
+        206
+      ],
+      "intensity_min": 0.0,
+      "intensity_max": 4095.0,
+      "sample_percentiles": [
+        2.0,
+        395.0,
+        1866.6499999999942
+      ],
+      "heart_fraction": 0.0354925914875512,
+      "positive_slices": 166,
+      "negative_slices": 40,
+      "prepared_foreground_class_voxels": [
+        29393,
+        22915,
+        68699,
+        65423,
+        160768,
+        59674,
+        72268
+      ]
+    },
+    {
+      "case_id": "ct_1010",
+      "shape": [
+        512,
+        512,
+        275
+      ],
+      "intensity_min": 0.0,
+      "intensity_max": 3713.0,
+      "sample_percentiles": [
+        3.0,
+        888.0,
+        2059.0
+      ],
+      "heart_fraction": 0.0568952803178267,
+      "positive_slices": 273,
+      "negative_slices": 2,
+      "prepared_foreground_class_voxels": [
+        48603,
+        33855,
+        171755,
+        231045,
+        323911,
+        136381,
+        79794
+      ]
+    },
+    {
+      "case_id": "ct_1012",
+      "shape": [
+        512,
+        512,
+        206
+      ],
+      "intensity_min": 0.0,
+      "intensity_max": 4095.0,
+      "sample_percentiles": [
+        2.0,
+        690.0,
+        1989.324999999997
+      ],
+      "heart_fraction": 0.03391075134277344,
+      "positive_slices": 154,
+      "negative_slices": 52,
+      "prepared_foreground_class_voxels": [
+        25806,
+        25019,
+        44641,
+        112567,
+        186452,
+        47988,
+        15366
+      ]
+    },
+    {
+      "case_id": "ct_1016",
+      "shape": [
+        512,
+        512,
+        342
+      ],
+      "intensity_min": 0.0,
+      "intensity_max": 4095.0,
+      "sample_percentiles": [
+        0.0,
+        113.0,
+        1604.324999999997
+      ],
+      "heart_fraction": 0.05081529226916575,
+      "positive_slices": 248,
+      "negative_slices": 94,
+      "prepared_foreground_class_voxels": [
+        86727,
+        189429,
+        194658,
+        138755,
+        290776,
+        92220,
+        146462
+      ]
+    },
+    {
+      "case_id": "ct_1021",
+      "shape": [
+        512,
+        512,
+        170
+      ],
+      "intensity_min": 0.0,
+      "intensity_max": 4095.0,
+      "sample_percentiles": [
+        2.0,
+        659.0,
+        1919.0
+      ],
+      "heart_fraction": 0.08485713285558363,
+      "positive_slices": 146,
+      "negative_slices": 24,
+      "prepared_foreground_class_voxels": [
+        53565,
+        75194,
+        175321,
+        203435,
+        335396,
+        41258,
+        61170
+      ]
+    },
+    {
+      "case_id": "ct_1024",
+      "shape": [
+        512,
+        512,
+        344
+      ],
+      "intensity_min": 0.0,
+      "intensity_max": 4095.0,
+      "sample_percentiles": [
+        4.0,
+        328.0,
+        1950.324999999997
+      ],
+      "heart_fraction": 0.07036237938459529,
+      "positive_slices": 292,
+      "negative_slices": 52,
+      "prepared_foreground_class_voxels": [
+        170483,
+        96369,
+        276912,
+        192827,
+        516338,
+        164431,
+        168941
+      ]
+    },
+    {
+      "case_id": "ct_1029",
+      "shape": [
+        512,
+        512,
+        206
+      ],
+      "intensity_min": 0.0,
+      "intensity_max": 4095.0,
+      "sample_percentiles": [
+        4.0,
+        378.0,
+        1918.324999999997
+      ],
+      "heart_fraction": 0.05378426857364988,
+      "positive_slices": 204,
+      "negative_slices": 2,
+      "prepared_foreground_class_voxels": [
+        38122,
+        35094,
+        143832,
+        101864,
+        258560,
+        54900,
+        93697
+      ]
+    },
+    {
+      "case_id": "ct_1030",
+      "shape": [
+        512,
+        512,
+        206
+      ],
+      "intensity_min": 0.0,
+      "intensity_max": 4095.0,
+      "sample_percentiles": [
+        2.0,
+        389.0,
+        2145.324999999997
+      ],
+      "heart_fraction": 0.03930180744060035,
+      "positive_slices": 204,
+      "negative_slices": 2,
+      "prepared_foreground_class_voxels": [
+        43556,
+        30218,
+        99231,
+        84966,
+        180330,
+        71011,
+        21118
+      ]
+    },
+    {
+      "case_id": "ct_1035",
+      "shape": [
+        512,
+        512,
+        275
+      ],
+      "intensity_min": 0.0,
+      "intensity_max": 4095.0,
+      "sample_percentiles": [
+        4.0,
+        446.0,
+        2032.0
+      ],
+      "heart_fraction": 0.06612831809303978,
+      "positive_slices": 273,
+      "negative_slices": 2,
+      "prepared_foreground_class_voxels": [
+        32026,
+        118888,
+        136295,
+        348667,
+        312662,
+        58414,
+        184885
+      ]
+    },
+    {
+      "case_id": "ct_1037",
+      "shape": [
+        512,
+        512,
+        383
+      ],
+      "intensity_min": 0.0,
+      "intensity_max": 4095.0,
+      "sample_percentiles": [
+        9.0,
+        943.0,
+        1525.0
+      ],
+      "heart_fraction": 0.1076194424542061,
+      "positive_slices": 381,
+      "negative_slices": 2,
+      "prepared_foreground_class_voxels": [
+        119957,
+        104031,
+        264382,
+        628897,
+        878388,
+        509314,
+        196051
+      ]
+    },
+    {
+      "case_id": "ct_1039",
+      "shape": [
+        512,
+        512,
+        174
+      ],
+      "intensity_min": 0.0,
+      "intensity_max": 4095.0,
+      "sample_percentiles": [
+        10.0,
+        1004.0,
+        2037.324999999997
+      ],
+      "heart_fraction": 0.052479053365773166,
+      "positive_slices": 172,
+      "negative_slices": 2,
+      "prepared_foreground_class_voxels": [
+        10477,
+        44040,
+        89035,
+        114474,
+        278810,
+        30684,
+        30971
+      ]
+    },
+    {
+      "case_id": "ct_1040",
+      "shape": [
+        512,
+        512,
+        275
+      ],
+      "intensity_min": 0.0,
+      "intensity_max": 4095.0,
+      "sample_percentiles": [
+        6.0,
+        928.5,
+        1954.0
+      ],
+      "heart_fraction": 0.0947776933149858,
+      "positive_slices": 273,
+      "negative_slices": 2,
+      "prepared_foreground_class_voxels": [
+        95195,
+        126449,
+        417479,
+        302456,
+        421116,
+        198038,
+        147233
+      ]
+    },
+    {
+      "case_id": "ct_1042",
+      "shape": [
+        512,
+        512,
+        275
+      ],
+      "intensity_min": 0.0,
+      "intensity_max": 4095.0,
+      "sample_percentiles": [
+        3.0,
+        313.0,
+        2128.0
+      ],
+      "heart_fraction": 0.04470327203924006,
+      "positive_slices": 273,
+      "negative_slices": 2,
+      "prepared_foreground_class_voxels": [
+        49720,
+        25226,
+        80434,
+        195852,
+        291413,
+        106443,
+        56686
+      ]
+    },
+    {
+      "case_id": "ct_1043",
+      "shape": [
+        512,
+        512,
+        206
+      ],
+      "intensity_min": 0.0,
+      "intensity_max": 3677.0,
+      "sample_percentiles": [
+        3.0,
+        928.0,
+        1992.0
+      ],
+      "heart_fraction": 0.08586674292110702,
+      "positive_slices": 184,
+      "negative_slices": 22,
+      "prepared_foreground_class_voxels": [
+        55178,
+        72358,
+        109603,
+        312048,
+        355451,
+        141969,
+        112339
+      ]
+    },
+    {
+      "case_id": "ct_1059",
+      "shape": [
+        512,
+        512,
+        206
+      ],
+      "intensity_min": 0.0,
+      "intensity_max": 4095.0,
+      "sample_percentiles": [
+        2.0,
+        693.0,
+        2207.649999999994
+      ],
+      "heart_fraction": 0.05616793586212455,
+      "positive_slices": 204,
+      "negative_slices": 2,
+      "prepared_foreground_class_voxels": [
+        42165,
+        33773,
+        116412,
+        207966,
+        171288,
+        132543,
+        54137
+      ]
+    },
+    {
+      "case_id": "ct_1060",
+      "shape": [
+        512,
+        512,
+        275
+      ],
+      "intensity_min": 0.0,
+      "intensity_max": 4095.0,
+      "sample_percentiles": [
+        3.0,
+        427.0,
+        1937.324999999997
+      ],
+      "heart_fraction": 0.04853879061612216,
+      "positive_slices": 202,
+      "negative_slices": 73,
+      "prepared_foreground_class_voxels": [
+        67309,
+        10281,
+        186358,
+        221995,
+        246464,
+        69557,
+        72883
+      ]
+    },
+    {
+      "case_id": "ct_1061",
+      "shape": [
+        512,
+        512,
+        206
+      ],
+      "intensity_min": 0.0,
+      "intensity_max": 3010.0,
+      "sample_percentiles": [
+        2.0,
+        753.0,
+        2005.0
+      ],
+      "heart_fraction": 0.09208018108479028,
+      "positive_slices": 186,
+      "negative_slices": 20,
+      "prepared_foreground_class_voxels": [
+        123034,
+        92410,
+        259243,
+        185308,
+        347392,
+        88426,
+        147560
+      ]
+    },
+    {
+      "case_id": "ct_1062",
+      "shape": [
+        512,
+        512,
+        197
+      ],
+      "intensity_min": 0.0,
+      "intensity_max": 2535.0,
+      "sample_percentiles": [
+        23.0,
+        1010.0,
+        1852.324999999997
+      ],
+      "heart_fraction": 0.13018969230845495,
+      "positive_slices": 190,
+      "negative_slices": 7,
+      "prepared_foreground_class_voxels": [
+        127934,
+        115475,
+        361728,
+        226931,
+        483747,
+        206789,
+        158001
+      ]
+    },
+    {
+      "case_id": "ct_1066",
+      "shape": [
+        512,
+        512,
+        206
+      ],
+      "intensity_min": 0.0,
+      "intensity_max": 3069.0,
+      "sample_percentiles": [
+        2.0,
+        764.0,
+        1970.324999999997
+      ],
+      "heart_fraction": 0.05327330283748293,
+      "positive_slices": 163,
+      "negative_slices": 43,
+      "prepared_foreground_class_voxels": [
+        46246,
+        64873,
+        132576,
+        156918,
+        161170,
+        71816,
+        85766
+      ]
+    },
+    {
+      "case_id": "ct_1070",
+      "shape": [
+        512,
+        512,
+        275
+      ],
+      "intensity_min": 0.0,
+      "intensity_max": 4095.0,
+      "sample_percentiles": [
+        3.0,
+        207.0,
+        1910.6499999999942
+      ],
+      "heart_fraction": 0.038528400767933235,
+      "positive_slices": 173,
+      "negative_slices": 102,
+      "prepared_foreground_class_voxels": [
+        46357,
+        28512,
+        126319,
+        116277,
+        238427,
+        61345,
+        77168
+      ]
+    },
+    {
+      "case_id": "ct_1072",
+      "shape": [
+        512,
+        512,
+        382
+      ],
+      "intensity_min": 0.0,
+      "intensity_max": 4095.0,
+      "sample_percentiles": [
+        8.0,
+        314.0,
+        2049.324999999997
+      ],
+      "heart_fraction": 0.047509428094194825,
+      "positive_slices": 294,
+      "negative_slices": 88,
+      "prepared_foreground_class_voxels": [
+        82100,
+        91420,
+        261792,
+        231510,
+        251737,
+        162005,
+        108705
+      ]
+    },
+    {
+      "case_id": "ct_1074",
+      "shape": [
+        512,
+        512,
+        206
+      ],
+      "intensity_min": 0.0,
+      "intensity_max": 4095.0,
+      "sample_percentiles": [
+        2.0,
+        864.0,
+        1933.0
+      ],
+      "heart_fraction": 0.039585243151025865,
+      "positive_slices": 203,
+      "negative_slices": 3,
+      "prepared_foreground_class_voxels": [
+        33625,
+        24271,
+        77351,
+        123488,
+        159001,
+        65255,
+        51345
+      ]
+    },
+    {
+      "case_id": "ct_1077",
+      "shape": [
+        512,
+        512,
+        170
+      ],
+      "intensity_min": 0.0,
+      "intensity_max": 4095.0,
+      "sample_percentiles": [
+        3.0,
+        487.0,
+        2010.9749999999913
+      ],
+      "heart_fraction": 0.06412194195915671,
+      "positive_slices": 159,
+      "negative_slices": 11,
+      "prepared_foreground_class_voxels": [
+        47462,
+        37654,
+        142016,
+        88255,
+        325847,
+        54668,
+        18360
+      ]
+    },
+    {
+      "case_id": "ct_1080",
+      "shape": [
+        512,
+        512,
+        206
+      ],
+      "intensity_min": 0.0,
+      "intensity_max": 4095.0,
+      "sample_percentiles": [
+        4.0,
+        911.0,
+        2007.0
+      ],
+      "heart_fraction": 0.12894911904936857,
+      "positive_slices": 188,
+      "negative_slices": 18,
+      "prepared_foreground_class_voxels": [
+        498071,
+        39934,
+        279949,
+        132849,
+        657537,
+        71296,
+        61222
+      ]
+    },
+    {
+      "case_id": "ct_1081",
+      "shape": [
+        181,
+        170,
+        249
+      ],
+      "intensity_min": 0.0,
+      "intensity_max": 4095.0,
+      "sample_percentiles": [
+        7.0,
+        1118.0,
+        2326.649999999994
+      ],
+      "heart_fraction": 0.2946673923513358,
+      "positive_slices": 246,
+      "negative_slices": 3,
+      "prepared_foreground_class_voxels": [
+        511806,
+        500085,
+        375616,
+        489476,
+        2100210,
+        235900,
+        294845
+      ]
+    },
+    {
+      "case_id": "ct_1085",
+      "shape": [
+        512,
+        512,
+        206
+      ],
+      "intensity_min": 0.0,
+      "intensity_max": 4095.0,
+      "sample_percentiles": [
+        1.0,
+        835.0,
+        2342.649999999994
+      ],
+      "heart_fraction": 0.047174361145612104,
+      "positive_slices": 204,
+      "negative_slices": 2,
+      "prepared_foreground_class_voxels": [
+        34606,
+        43958,
+        88559,
+        174699,
+        148535,
+        89871,
+        56696
+      ]
+    },
+    {
+      "case_id": "ct_1088",
+      "shape": [
+        512,
+        512,
+        206
+      ],
+      "intensity_min": 0.0,
+      "intensity_max": 3070.0,
+      "sample_percentiles": [
+        3.0,
+        345.5,
+        1981.324999999997
+      ],
+      "heart_fraction": 0.03287957941444175,
+      "positive_slices": 204,
+      "negative_slices": 2,
+      "prepared_foreground_class_voxels": [
+        40055,
+        6235,
+        65466,
+        88092,
+        158706,
+        47181,
+        38231
+      ]
+    },
+    {
+      "case_id": "ct_1089",
+      "shape": [
+        512,
+        512,
+        406
+      ],
+      "intensity_min": 0.0,
+      "intensity_max": 2668.0,
+      "sample_percentiles": [
+        0.0,
+        986.0,
+        1841.0
+      ],
+      "heart_fraction": 0.17667277105923357,
+      "positive_slices": 372,
+      "negative_slices": 34,
+      "prepared_foreground_class_voxels": [
+        482945,
+        416587,
+        825125,
+        490537,
+        1197936,
+        753895,
+        534075
+      ]
+    },
+    {
+      "case_id": "ct_1090",
+      "shape": [
+        512,
+        512,
+        206
+      ],
+      "intensity_min": 0.0,
+      "intensity_max": 2782.0,
+      "sample_percentiles": [
+        4.0,
+        376.0,
+        1879.324999999997
+      ],
+      "heart_fraction": 0.03788042531430143,
+      "positive_slices": 157,
+      "negative_slices": 49,
+      "prepared_foreground_class_voxels": [
+        6728,
+        9881,
+        91055,
+        102082,
+        249413,
+        20926,
+        31499
+      ]
+    },
+    {
+      "case_id": "ct_1092",
+      "shape": [
+        512,
+        512,
+        275
+      ],
+      "intensity_min": 0.0,
+      "intensity_max": 4095.0,
+      "sample_percentiles": [
+        3.0,
+        1034.0,
+        1904.324999999997
+      ],
+      "heart_fraction": 0.1184375,
+      "positive_slices": 202,
+      "negative_slices": 73,
+      "prepared_foreground_class_voxels": [
+        181657,
+        128524,
+        391902,
+        276907,
+        654268,
+        292844,
+        208589
+      ]
+    },
+    {
+      "case_id": "ct_1098",
+      "shape": [
+        512,
+        512,
+        206
+      ],
+      "intensity_min": 0.0,
+      "intensity_max": 4095.0,
+      "sample_percentiles": [
+        3.0,
+        660.5,
+        1945.324999999997
+      ],
+      "heart_fraction": 0.08415368459757092,
+      "positive_slices": 163,
+      "negative_slices": 43,
+      "prepared_foreground_class_voxels": [
+        62993,
+        36726,
+        192902,
+        191032,
+        386799,
+        139488,
+        126382
+      ]
+    },
+    {
+      "case_id": "ct_1101",
+      "shape": [
+        512,
+        512,
+        321
+      ],
+      "intensity_min": 0.0,
+      "intensity_max": 4095.0,
+      "sample_percentiles": [
+        6.0,
+        390.0,
+        2008.324999999997
+      ],
+      "heart_fraction": 0.06257850433064398,
+      "positive_slices": 299,
+      "negative_slices": 22,
+      "prepared_foreground_class_voxels": [
+        237841,
+        235697,
+        131080,
+        154346,
+        343478,
+        121815,
+        92336
+      ]
+    },
+    {
+      "case_id": "ct_1102",
+      "shape": [
+        512,
+        512,
+        205
+      ],
+      "intensity_min": 0.0,
+      "intensity_max": 4095.0,
+      "sample_percentiles": [
+        5.0,
+        1004.0,
+        2085.324999999997
+      ],
+      "heart_fraction": 0.07209764806235709,
+      "positive_slices": 140,
+      "negative_slices": 65,
+      "prepared_foreground_class_voxels": [
+        52651,
+        72016,
+        97010,
+        271734,
+        291284,
+        120660,
+        63204
+      ]
+    },
+    {
+      "case_id": "ct_1103",
+      "shape": [
+        512,
+        512,
+        206
+      ],
+      "intensity_min": 0.0,
+      "intensity_max": 4095.0,
+      "sample_percentiles": [
+        3.0,
+        205.0,
+        1886.324999999997
+      ],
+      "heart_fraction": 0.05915808446198991,
+      "positive_slices": 204,
+      "negative_slices": 2,
+      "prepared_foreground_class_voxels": [
+        43249,
+        33143,
+        199418,
+        102586,
+        256971,
+        36466,
+        126888
+      ]
+    },
+    {
+      "case_id": "ct_1106",
+      "shape": [
+        512,
+        512,
+        206
+      ],
+      "intensity_min": 0.0,
+      "intensity_max": 4095.0,
+      "sample_percentiles": [
+        2.0,
+        271.0,
+        1963.324999999997
+      ],
+      "heart_fraction": 0.03508049307517635,
+      "positive_slices": 184,
+      "negative_slices": 22,
+      "prepared_foreground_class_voxels": [
+        32192,
+        17253,
+        37377,
+        74414,
+        236190,
+        56560,
+        19593
+      ]
+    },
+    {
+      "case_id": "ct_1109",
+      "shape": [
+        512,
+        512,
+        275
+      ],
+      "intensity_min": 0.0,
+      "intensity_max": 4095.0,
+      "sample_percentiles": [
+        2.0,
+        273.0,
+        2080.649999999994
+      ],
+      "heart_fraction": 0.07008968006480824,
+      "positive_slices": 217,
+      "negative_slices": 58,
+      "prepared_foreground_class_voxels": [
+        99834,
+        51207,
+        298675,
+        159132,
+        402692,
+        149631,
+        101943
+      ]
+    },
+    {
+      "case_id": "ct_1111",
+      "shape": [
+        512,
+        512,
+        344
+      ],
+      "intensity_min": 0.0,
+      "intensity_max": 4095.0,
+      "sample_percentiles": [
+        6.0,
+        169.0,
+        1993.324999999997
+      ],
+      "heart_fraction": 0.038844374723212664,
+      "positive_slices": 253,
+      "negative_slices": 91,
+      "prepared_foreground_class_voxels": [
+        82272,
+        40349,
+        120989,
+        150868,
+        287645,
+        100907,
+        92838
+      ]
+    },
+    {
+      "case_id": "ct_1113",
+      "shape": [
+        512,
+        512,
+        275
+      ],
+      "intensity_min": 0.0,
+      "intensity_max": 4095.0,
+      "sample_percentiles": [
+        2.0,
+        392.5,
+        1893.0
+      ],
+      "heart_fraction": 0.05826252330433239,
+      "positive_slices": 178,
+      "negative_slices": 97,
+      "prepared_foreground_class_voxels": [
+        67419,
+        56918,
+        152694,
+        169357,
+        347815,
+        169445,
+        86305
+      ]
+    },
+    {
+      "case_id": "ct_1114",
+      "shape": [
+        512,
+        512,
+        344
+      ],
+      "intensity_min": 0.0,
+      "intensity_max": 4095.0,
+      "sample_percentiles": [
+        4.0,
+        575.0,
+        2375.0
+      ],
+      "heart_fraction": 0.06962444615918537,
+      "positive_slices": 233,
+      "negative_slices": 111,
+      "prepared_foreground_class_voxels": [
+        195373,
+        173654,
+        205189,
+        250071,
+        444211,
+        128504,
+        172691
+      ]
+    },
+    {
+      "case_id": "ct_1116",
+      "shape": [
+        512,
+        512,
+        341
+      ],
+      "intensity_min": 0.0,
+      "intensity_max": 3859.0,
+      "sample_percentiles": [
+        0.0,
+        31.0,
+        2015.0
+      ],
+      "heart_fraction": 0.0547148852753849,
+      "positive_slices": 280,
+      "negative_slices": 61,
+      "prepared_foreground_class_voxels": [
+        104997,
+        232879,
+        89874,
+        225910,
+        397213,
+        82966,
+        89044
+      ]
+    },
+    {
+      "case_id": "ct_1117",
+      "shape": [
+        512,
+        512,
+        385
+      ],
+      "intensity_min": 0.0,
+      "intensity_max": 4095.0,
+      "sample_percentiles": [
+        8.0,
+        393.0,
+        1784.0
+      ],
+      "heart_fraction": 0.053436209938742894,
+      "positive_slices": 318,
+      "negative_slices": 67,
+      "prepared_foreground_class_voxels": [
+        88843,
+        86023,
+        191396,
+        334844,
+        294074,
+        320947,
+        32226
+      ]
+    },
+    {
+      "case_id": "ct_1122",
+      "shape": [
+        512,
+        512,
+        170
+      ],
+      "intensity_min": 0.0,
+      "intensity_max": 4095.0,
+      "sample_percentiles": [
+        3.0,
+        906.0,
+        2056.0
+      ],
+      "heart_fraction": 0.0590174955480239,
+      "positive_slices": 126,
+      "negative_slices": 44,
+      "prepared_foreground_class_voxels": [
+        34528,
+        29402,
+        69303,
+        188645,
+        202179,
+        112625,
+        20773
+      ]
+    },
+    {
+      "case_id": "ct_1124",
+      "shape": [
+        512,
+        512,
+        206
+      ],
+      "intensity_min": 0.0,
+      "intensity_max": 4095.0,
+      "sample_percentiles": [
+        2.0,
+        354.0,
+        2010.6499999999942
+      ],
+      "heart_fraction": 0.035373539600557495,
+      "positive_slices": 164,
+      "negative_slices": 42,
+      "prepared_foreground_class_voxels": [
+        31068,
+        28773,
+        92891,
+        111720,
+        122917,
+        56040,
+        34184
+      ]
+    },
+    {
+      "case_id": "ct_1126",
+      "shape": [
+        512,
+        512,
+        500
+      ],
+      "intensity_min": 0.0,
+      "intensity_max": 4095.0,
+      "sample_percentiles": [
+        0.0,
+        28.0,
+        1552.324999999997
+      ],
+      "heart_fraction": 0.009609527587890625,
+      "positive_slices": 303,
+      "negative_slices": 197,
+      "prepared_foreground_class_voxels": [
+        28109,
+        39113,
+        20588,
+        39342,
+        121483,
+        44487,
+        21732
+      ]
+    }
+  ],
+  "preprocessing": {
+    "version": 1,
+    "fitted_partition": "train",
+    "fit_cases": [
+      "ct_1001",
+      "ct_1002",
+      "ct_1004",
+      "ct_1007",
+      "ct_1008",
+      "ct_1010",
+      "ct_1012",
+      "ct_1016",
+      "ct_1021",
+      "ct_1024",
+      "ct_1029",
+      "ct_1030",
+      "ct_1035",
+      "ct_1037",
+      "ct_1039",
+      "ct_1040",
+      "ct_1042",
+      "ct_1043",
+      "ct_1059",
+      "ct_1060",
+      "ct_1061",
+      "ct_1062",
+      "ct_1066",
+      "ct_1070",
+      "ct_1072",
+      "ct_1074",
+      "ct_1077",
+      "ct_1080",
+      "ct_1081",
+      "ct_1085",
+      "ct_1088",
+      "ct_1089",
+      "ct_1090",
+      "ct_1092",
+      "ct_1098",
+      "ct_1101",
+      "ct_1102",
+      "ct_1103",
+      "ct_1106",
+      "ct_1109",
+      "ct_1111",
+      "ct_1113",
+      "ct_1114",
+      "ct_1116",
+      "ct_1117",
+      "ct_1122",
+      "ct_1124",
+      "ct_1126"
+    ],
+    "split_SHA256": "a291dd9d1cb5ce9437191e0260e590235cd0c5d5a34223ae8bb6a73cd14e3bdc",
+    "cohort_SHA256": "bf60efae0c766af11893e7414361e66a09c78f325c2c658f61f88de8839244e0",
+    "clip_source_intensity": [
+      0.0,
+      2015.0
+    ],
+    "HU_claimed": false,
+    "normalization": "linear clip to [-1,1]; full-FOV padding=-1",
+    "fit_method": "65536 deterministic uniform original-grid samples per train case; equal case weight",
+    "percentile_probabilities": [
+      1,
+      99.5
+    ],
+    "input_size": 256,
+    "context_offsets_indices": [
+      -2,
+      -1,
+      0,
+      1,
+      2
+    ],
+    "physical_context_used": false,
+    "out_of_bounds_context": "replicate edge, explicitly flagged",
+    "image_interpolation": "linear XY, no Z resampling",
+    "mask_interpolation": "nearest XY, no Z resampling",
+    "ignore_index": 255,
+    "crop": "none; full-FOV index fit/pad; no GT-guided crop"
+  }
+}
