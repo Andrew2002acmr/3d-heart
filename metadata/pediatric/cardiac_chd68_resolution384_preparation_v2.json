@@ -1,0 +1,1547 @@
+{
+  "version": 1,
+  "source_bytes": 10924627741,
+  "cohort_SHA256": "bf60efae0c766af11893e7414361e66a09c78f325c2c658f61f88de8839244e0",
+  "split_SHA256": "a291dd9d1cb5ce9437191e0260e590235cd0c5d5a34223ae8bb6a73cd14e3bdc",
+  "preprocessing_SHA256": "7acf0d113f95e41408a905c5e924ea3dda3aea61e41db0af97bda84ea445decf",
+  "case_count": 58,
+  "prepared_partitions": [
+    "train",
+    "validation"
+  ],
+  "physical_geometry_verified": false,
+  "raw_DICOM_included": false,
+  "test_opened": false,
+  "preprocessing_refitted": false,
+  "baseline_prepared_manifest_SHA256": "053b5a92bf002939d161e3fdd118960946c03b54c7bb35f96b991c558c88aa6b",
+  "validation_reference": {
+    "checkpoint_relative_path": "remote_runs/cardiac_chd68_v1_full_20261009/artifacts/cardiac_chd68_v1/checkpoints/cardiac_chd68_v1/gpu_full_v1_20261009/best.pt",
+    "checkpoint_SHA256": "c946ae1787583ff323e1620d82f6d069742c180c40754efb414a18d21b7145ee",
+    "checkpoint_epoch": 23,
+    "config_SHA256": "7bf1064769004e0a24fa1ee49103dd5e7418d17576098ffb8848c8a24e9451a1",
+    "prepared_manifest_relative_path": "preprocessing/cardiac_chd68_resolution384_v2/baseline_validation_prepared_manifest.json"
+  },
+  "config_SHA256": "ebc9add57e812383028cab7e1ab01634d90832ee7430f362df950b93fddc3bfb",
+  "baseline_config_SHA256": "7bf1064769004e0a24fa1ee49103dd5e7418d17576098ffb8848c8a24e9451a1",
+  "prepared_manifest_SHA256": "b47e1c9435badfc958b5951c2a4d53b475b4d8553754531921abb006104d9b6f",
+  "train_cases": 48,
+  "validation_cases": 10,
+  "train_samples_per_epoch": 12381,
+  "free_bytes_before": 243836530688,
+  "free_bytes_after": 232909324288,
+  "reserve_bytes": 80000000000,
+  "cases": [
+    {
+      "case_id": "ct_1001",
+      "partition": "train",
+      "source_shape": [
+        512,
+        512,
+        221
+      ],
+      "prepared_shape": [
+        221,
+        384,
+        384
+      ],
+      "class_voxels": [
+        284516,
+        349419,
+        917005,
+        731407,
+        787964,
+        329365,
+        488031
+      ],
+      "baseline_positive_slices": 219,
+      "positive_slice_selection_unchanged": true,
+      "new_foreground_slice_difference": []
+    },
+    {
+      "case_id": "ct_1002",
+      "partition": "train",
+      "source_shape": [
+        512,
+        512,
+        137
+      ],
+      "prepared_shape": [
+        137,
+        384,
+        384
+      ],
+      "class_voxels": [
+        87688,
+        83428,
+        228369,
+        198668,
+        397667,
+        90747,
+        123745
+      ],
+      "baseline_positive_slices": 131,
+      "positive_slice_selection_unchanged": true,
+      "new_foreground_slice_difference": []
+    },
+    {
+      "case_id": "ct_1004",
+      "partition": "train",
+      "source_shape": [
+        512,
+        512,
+        344
+      ],
+      "prepared_shape": [
+        344,
+        384,
+        384
+      ],
+      "class_voxels": [
+        261249,
+        851682,
+        988728,
+        2846585,
+        1725183,
+        409119,
+        985252
+      ],
+      "baseline_positive_slices": 342,
+      "positive_slice_selection_unchanged": true,
+      "new_foreground_slice_difference": []
+    },
+    {
+      "case_id": "ct_1007",
+      "partition": "train",
+      "source_shape": [
+        512,
+        512,
+        275
+      ],
+      "prepared_shape": [
+        275,
+        384,
+        384
+      ],
+      "class_voxels": [
+        156500,
+        88449,
+        427077,
+        386726,
+        552627,
+        246554,
+        262081
+      ],
+      "baseline_positive_slices": 273,
+      "positive_slice_selection_unchanged": true,
+      "new_foreground_slice_difference": []
+    },
+    {
+      "case_id": "ct_1008",
+      "partition": "train",
+      "source_shape": [
+        512,
+        512,
+        206
+      ],
+      "prepared_shape": [
+        206,
+        384,
+        384
+      ],
+      "class_voxels": [
+        66159,
+        51556,
+        154576,
+        147111,
+        361791,
+        134214,
+        162617
+      ],
+      "baseline_positive_slices": 166,
+      "positive_slice_selection_unchanged": true,
+      "new_foreground_slice_difference": []
+    },
+    {
+      "case_id": "ct_1010",
+      "partition": "train",
+      "source_shape": [
+        512,
+        512,
+        275
+      ],
+      "prepared_shape": [
+        275,
+        384,
+        384
+      ],
+      "class_voxels": [
+        109287,
+        76184,
+        386552,
+        520049,
+        728996,
+        306987,
+        179473
+      ],
+      "baseline_positive_slices": 273,
+      "positive_slice_selection_unchanged": true,
+      "new_foreground_slice_difference": []
+    },
+    {
+      "case_id": "ct_1012",
+      "partition": "train",
+      "source_shape": [
+        512,
+        512,
+        206
+      ],
+      "prepared_shape": [
+        206,
+        384,
+        384
+      ],
+      "class_voxels": [
+        58191,
+        56304,
+        100372,
+        253149,
+        419576,
+        107776,
+        34593
+      ],
+      "baseline_positive_slices": 154,
+      "positive_slice_selection_unchanged": true,
+      "new_foreground_slice_difference": []
+    },
+    {
+      "case_id": "ct_1016",
+      "partition": "train",
+      "source_shape": [
+        512,
+        512,
+        342
+      ],
+      "prepared_shape": [
+        342,
+        384,
+        384
+      ],
+      "class_voxels": [
+        195147,
+        426190,
+        437678,
+        312516,
+        653537,
+        207619,
+        329767
+      ],
+      "baseline_positive_slices": 248,
+      "positive_slice_selection_unchanged": true,
+      "new_foreground_slice_difference": []
+    },
+    {
+      "case_id": "ct_1021",
+      "partition": "train",
+      "source_shape": [
+        512,
+        512,
+        170
+      ],
+      "prepared_shape": [
+        170,
+        384,
+        384
+      ],
+      "class_voxels": [
+        120449,
+        169156,
+        394237,
+        457811,
+        755164,
+        92677,
+        137684
+      ],
+      "baseline_positive_slices": 146,
+      "positive_slice_selection_unchanged": true,
+      "new_foreground_slice_difference": []
+    },
+    {
+      "case_id": "ct_1024",
+      "partition": "train",
+      "source_shape": [
+        512,
+        512,
+        344
+      ],
+      "prepared_shape": [
+        344,
+        384,
+        384
+      ],
+      "class_voxels": [
+        383772,
+        216976,
+        623040,
+        434079,
+        1160697,
+        370300,
+        380447
+      ],
+      "baseline_positive_slices": 292,
+      "positive_slice_selection_unchanged": true,
+      "new_foreground_slice_difference": []
+    },
+    {
+      "case_id": "ct_1029",
+      "partition": "train",
+      "source_shape": [
+        512,
+        512,
+        206
+      ],
+      "prepared_shape": [
+        206,
+        384,
+        384
+      ],
+      "class_voxels": [
+        85740,
+        79087,
+        323502,
+        229518,
+        580971,
+        123591,
+        210935
+      ],
+      "baseline_positive_slices": 204,
+      "positive_slice_selection_unchanged": true,
+      "new_foreground_slice_difference": []
+    },
+    {
+      "case_id": "ct_1030",
+      "partition": "train",
+      "source_shape": [
+        512,
+        512,
+        206
+      ],
+      "prepared_shape": [
+        206,
+        384,
+        384
+      ],
+      "class_voxels": [
+        97935,
+        68076,
+        223484,
+        191149,
+        405876,
+        159698,
+        47560
+      ],
+      "baseline_positive_slices": 204,
+      "positive_slice_selection_unchanged": true,
+      "new_foreground_slice_difference": []
+    },
+    {
+      "case_id": "ct_1035",
+      "partition": "train",
+      "source_shape": [
+        512,
+        512,
+        275
+      ],
+      "prepared_shape": [
+        275,
+        384,
+        384
+      ],
+      "class_voxels": [
+        71998,
+        267333,
+        306488,
+        784953,
+        703655,
+        131304,
+        416033
+      ],
+      "baseline_positive_slices": 273,
+      "positive_slice_selection_unchanged": true,
+      "new_foreground_slice_difference": []
+    },
+    {
+      "case_id": "ct_1037",
+      "partition": "train",
+      "source_shape": [
+        512,
+        512,
+        383
+      ],
+      "prepared_shape": [
+        383,
+        384,
+        384
+      ],
+      "class_voxels": [
+        269695,
+        233846,
+        595264,
+        1414953,
+        1977050,
+        1146194,
+        441293
+      ],
+      "baseline_positive_slices": 381,
+      "positive_slice_selection_unchanged": true,
+      "new_foreground_slice_difference": []
+    },
+    {
+      "case_id": "ct_1039",
+      "partition": "train",
+      "source_shape": [
+        512,
+        512,
+        174
+      ],
+      "prepared_shape": [
+        174,
+        384,
+        384
+      ],
+      "class_voxels": [
+        23539,
+        98942,
+        200233,
+        257501,
+        627445,
+        68948,
+        69583
+      ],
+      "baseline_positive_slices": 172,
+      "positive_slice_selection_unchanged": true,
+      "new_foreground_slice_difference": []
+    },
+    {
+      "case_id": "ct_1040",
+      "partition": "train",
+      "source_shape": [
+        512,
+        512,
+        275
+      ],
+      "prepared_shape": [
+        275,
+        384,
+        384
+      ],
+      "class_voxels": [
+        214012,
+        284403,
+        939628,
+        680613,
+        947525,
+        445538,
+        331401
+      ],
+      "baseline_positive_slices": 273,
+      "positive_slice_selection_unchanged": true,
+      "new_foreground_slice_difference": []
+    },
+    {
+      "case_id": "ct_1042",
+      "partition": "train",
+      "source_shape": [
+        512,
+        512,
+        275
+      ],
+      "prepared_shape": [
+        275,
+        384,
+        384
+      ],
+      "class_voxels": [
+        111774,
+        56853,
+        180841,
+        440790,
+        655180,
+        239480,
+        127527
+      ],
+      "baseline_positive_slices": 273,
+      "positive_slice_selection_unchanged": true,
+      "new_foreground_slice_difference": []
+    },
+    {
+      "case_id": "ct_1043",
+      "partition": "train",
+      "source_shape": [
+        512,
+        512,
+        206
+      ],
+      "prepared_shape": [
+        206,
+        384,
+        384
+      ],
+      "class_voxels": [
+        124087,
+        162907,
+        246670,
+        702173,
+        800095,
+        319688,
+        252800
+      ],
+      "baseline_positive_slices": 184,
+      "positive_slice_selection_unchanged": true,
+      "new_foreground_slice_difference": []
+    },
+    {
+      "case_id": "ct_1059",
+      "partition": "train",
+      "source_shape": [
+        512,
+        512,
+        206
+      ],
+      "prepared_shape": [
+        206,
+        384,
+        384
+      ],
+      "class_voxels": [
+        94700,
+        75810,
+        262156,
+        467999,
+        385389,
+        298549,
+        121629
+      ],
+      "baseline_positive_slices": 204,
+      "positive_slice_selection_unchanged": true,
+      "new_foreground_slice_difference": []
+    },
+    {
+      "case_id": "ct_1060",
+      "partition": "train",
+      "source_shape": [
+        512,
+        512,
+        275
+      ],
+      "prepared_shape": [
+        275,
+        384,
+        384
+      ],
+      "class_voxels": [
+        151186,
+        23059,
+        419428,
+        499167,
+        554607,
+        156625,
+        164049
+      ],
+      "baseline_positive_slices": 202,
+      "positive_slice_selection_unchanged": true,
+      "new_foreground_slice_difference": []
+    },
+    {
+      "case_id": "ct_1061",
+      "partition": "train",
+      "source_shape": [
+        512,
+        512,
+        206
+      ],
+      "prepared_shape": [
+        206,
+        384,
+        384
+      ],
+      "class_voxels": [
+        276744,
+        207905,
+        583732,
+        417041,
+        781003,
+        198956,
+        331875
+      ],
+      "baseline_positive_slices": 186,
+      "positive_slice_selection_unchanged": true,
+      "new_foreground_slice_difference": []
+    },
+    {
+      "case_id": "ct_1062",
+      "partition": "train",
+      "source_shape": [
+        512,
+        512,
+        197
+      ],
+      "prepared_shape": [
+        197,
+        384,
+        384
+      ],
+      "class_voxels": [
+        287651,
+        259825,
+        814268,
+        510494,
+        1088549,
+        465394,
+        355496
+      ],
+      "baseline_positive_slices": 190,
+      "positive_slice_selection_unchanged": true,
+      "new_foreground_slice_difference": []
+    },
+    {
+      "case_id": "ct_1066",
+      "partition": "train",
+      "source_shape": [
+        512,
+        512,
+        206
+      ],
+      "prepared_shape": [
+        206,
+        384,
+        384
+      ],
+      "class_voxels": [
+        104236,
+        145989,
+        298134,
+        352865,
+        362694,
+        161391,
+        192877
+      ],
+      "baseline_positive_slices": 163,
+      "positive_slice_selection_unchanged": true,
+      "new_foreground_slice_difference": []
+    },
+    {
+      "case_id": "ct_1070",
+      "partition": "train",
+      "source_shape": [
+        512,
+        512,
+        275
+      ],
+      "prepared_shape": [
+        275,
+        384,
+        384
+      ],
+      "class_voxels": [
+        104312,
+        64181,
+        284190,
+        261972,
+        536419,
+        137846,
+        173664
+      ],
+      "baseline_positive_slices": 173,
+      "positive_slice_selection_unchanged": true,
+      "new_foreground_slice_difference": []
+    },
+    {
+      "case_id": "ct_1072",
+      "partition": "train",
+      "source_shape": [
+        512,
+        512,
+        382
+      ],
+      "prepared_shape": [
+        382,
+        384,
+        384
+      ],
+      "class_voxels": [
+        184692,
+        205708,
+        589124,
+        520684,
+        566459,
+        364717,
+        244486
+      ],
+      "baseline_positive_slices": 294,
+      "positive_slice_selection_unchanged": true,
+      "new_foreground_slice_difference": []
+    },
+    {
+      "case_id": "ct_1074",
+      "partition": "train",
+      "source_shape": [
+        512,
+        512,
+        206
+      ],
+      "prepared_shape": [
+        206,
+        384,
+        384
+      ],
+      "class_voxels": [
+        75765,
+        54475,
+        174166,
+        277913,
+        357635,
+        146864,
+        115536
+      ],
+      "baseline_positive_slices": 203,
+      "positive_slice_selection_unchanged": true,
+      "new_foreground_slice_difference": []
+    },
+    {
+      "case_id": "ct_1077",
+      "partition": "train",
+      "source_shape": [
+        512,
+        512,
+        170
+      ],
+      "prepared_shape": [
+        170,
+        384,
+        384
+      ],
+      "class_voxels": [
+        106790,
+        84678,
+        319446,
+        198497,
+        733768,
+        123073,
+        41402
+      ],
+      "baseline_positive_slices": 159,
+      "positive_slice_selection_unchanged": true,
+      "new_foreground_slice_difference": []
+    },
+    {
+      "case_id": "ct_1080",
+      "partition": "train",
+      "source_shape": [
+        512,
+        512,
+        206
+      ],
+      "prepared_shape": [
+        206,
+        384,
+        384
+      ],
+      "class_voxels": [
+        1120944,
+        89852,
+        629582,
+        298922,
+        1479572,
+        160301,
+        137655
+      ],
+      "baseline_positive_slices": 188,
+      "positive_slice_selection_unchanged": true,
+      "new_foreground_slice_difference": []
+    },
+    {
+      "case_id": "ct_1081",
+      "partition": "train",
+      "source_shape": [
+        181,
+        170,
+        249
+      ],
+      "prepared_shape": [
+        249,
+        384,
+        384
+      ],
+      "class_voxels": [
+        1154900,
+        1128805,
+        849113,
+        1103305,
+        4739998,
+        533195,
+        664652
+      ],
+      "baseline_positive_slices": 246,
+      "positive_slice_selection_unchanged": true,
+      "new_foreground_slice_difference": []
+    },
+    {
+      "case_id": "ct_1085",
+      "partition": "train",
+      "source_shape": [
+        512,
+        512,
+        206
+      ],
+      "prepared_shape": [
+        206,
+        384,
+        384
+      ],
+      "class_voxels": [
+        77880,
+        98945,
+        199349,
+        392933,
+        334037,
+        202243,
+        127246
+      ],
+      "baseline_positive_slices": 204,
+      "positive_slice_selection_unchanged": true,
+      "new_foreground_slice_difference": []
+    },
+    {
+      "case_id": "ct_1088",
+      "partition": "train",
+      "source_shape": [
+        512,
+        512,
+        206
+      ],
+      "prepared_shape": [
+        206,
+        384,
+        384
+      ],
+      "class_voxels": [
+        90176,
+        14041,
+        147259,
+        198172,
+        356993,
+        105812,
+        85989
+      ],
+      "baseline_positive_slices": 204,
+      "positive_slice_selection_unchanged": true,
+      "new_foreground_slice_difference": []
+    },
+    {
+      "case_id": "ct_1089",
+      "partition": "train",
+      "source_shape": [
+        512,
+        512,
+        406
+      ],
+      "prepared_shape": [
+        406,
+        384,
+        384
+      ],
+      "class_voxels": [
+        1086654,
+        937675,
+        1856341,
+        1103707,
+        2693670,
+        1696693,
+        1201489
+      ],
+      "baseline_positive_slices": 372,
+      "positive_slice_selection_unchanged": true,
+      "new_foreground_slice_difference": []
+    },
+    {
+      "case_id": "ct_1090",
+      "partition": "train",
+      "source_shape": [
+        512,
+        512,
+        206
+      ],
+      "prepared_shape": [
+        206,
+        384,
+        384
+      ],
+      "class_voxels": [
+        15238,
+        22258,
+        204667,
+        229665,
+        560878,
+        47103,
+        70994
+      ],
+      "baseline_positive_slices": 157,
+      "positive_slice_selection_unchanged": true,
+      "new_foreground_slice_difference": []
+    },
+    {
+      "case_id": "ct_1092",
+      "partition": "train",
+      "source_shape": [
+        512,
+        512,
+        275
+      ],
+      "prepared_shape": [
+        275,
+        384,
+        384
+      ],
+      "class_voxels": [
+        408697,
+        289246,
+        881735,
+        623183,
+        1471171,
+        659445,
+        469250
+      ],
+      "baseline_positive_slices": 202,
+      "positive_slice_selection_unchanged": true,
+      "new_foreground_slice_difference": []
+    },
+    {
+      "case_id": "ct_1098",
+      "partition": "train",
+      "source_shape": [
+        512,
+        512,
+        206
+      ],
+      "prepared_shape": [
+        206,
+        384,
+        384
+      ],
+      "class_voxels": [
+        141734,
+        82718,
+        433955,
+        429948,
+        870115,
+        313633,
+        284088
+      ],
+      "baseline_positive_slices": 163,
+      "positive_slice_selection_unchanged": true,
+      "new_foreground_slice_difference": []
+    },
+    {
+      "case_id": "ct_1101",
+      "partition": "train",
+      "source_shape": [
+        512,
+        512,
+        321
+      ],
+      "prepared_shape": [
+        321,
+        384,
+        384
+      ],
+      "class_voxels": [
+        535184,
+        530491,
+        295358,
+        347153,
+        772435,
+        273851,
+        207576
+      ],
+      "baseline_positive_slices": 299,
+      "positive_slice_selection_unchanged": true,
+      "new_foreground_slice_difference": []
+    },
+    {
+      "case_id": "ct_1102",
+      "partition": "train",
+      "source_shape": [
+        512,
+        512,
+        205
+      ],
+      "prepared_shape": [
+        205,
+        384,
+        384
+      ],
+      "class_voxels": [
+        118631,
+        161814,
+        218551,
+        611570,
+        655527,
+        271197,
+        142327
+      ],
+      "baseline_positive_slices": 140,
+      "positive_slice_selection_unchanged": true,
+      "new_foreground_slice_difference": []
+    },
+    {
+      "case_id": "ct_1103",
+      "partition": "train",
+      "source_shape": [
+        512,
+        512,
+        206
+      ],
+      "prepared_shape": [
+        206,
+        384,
+        384
+      ],
+      "class_voxels": [
+        97326,
+        74688,
+        448875,
+        230903,
+        577768,
+        81999,
+        285386
+      ],
+      "baseline_positive_slices": 204,
+      "positive_slice_selection_unchanged": true,
+      "new_foreground_slice_difference": []
+    },
+    {
+      "case_id": "ct_1106",
+      "partition": "train",
+      "source_shape": [
+        512,
+        512,
+        206
+      ],
+      "prepared_shape": [
+        206,
+        384,
+        384
+      ],
+      "class_voxels": [
+        72507,
+        38862,
+        84019,
+        167473,
+        531533,
+        127195,
+        44089
+      ],
+      "baseline_positive_slices": 184,
+      "positive_slice_selection_unchanged": true,
+      "new_foreground_slice_difference": []
+    },
+    {
+      "case_id": "ct_1109",
+      "partition": "train",
+      "source_shape": [
+        512,
+        512,
+        275
+      ],
+      "prepared_shape": [
+        275,
+        384,
+        384
+      ],
+      "class_voxels": [
+        224545,
+        115312,
+        671982,
+        358130,
+        906567,
+        336325,
+        229429
+      ],
+      "baseline_positive_slices": 217,
+      "positive_slice_selection_unchanged": true,
+      "new_foreground_slice_difference": []
+    },
+    {
+      "case_id": "ct_1111",
+      "partition": "train",
+      "source_shape": [
+        512,
+        512,
+        344
+      ],
+      "prepared_shape": [
+        344,
+        384,
+        384
+      ],
+      "class_voxels": [
+        185032,
+        90825,
+        272085,
+        339937,
+        646808,
+        226996,
+        208793
+      ],
+      "baseline_positive_slices": 253,
+      "positive_slice_selection_unchanged": true,
+      "new_foreground_slice_difference": []
+    },
+    {
+      "case_id": "ct_1113",
+      "partition": "train",
+      "source_shape": [
+        512,
+        512,
+        275
+      ],
+      "prepared_shape": [
+        275,
+        384,
+        384
+      ],
+      "class_voxels": [
+        151477,
+        128064,
+        343850,
+        381035,
+        782662,
+        381047,
+        194278
+      ],
+      "baseline_positive_slices": 178,
+      "positive_slice_selection_unchanged": true,
+      "new_foreground_slice_difference": []
+    },
+    {
+      "case_id": "ct_1114",
+      "partition": "train",
+      "source_shape": [
+        512,
+        512,
+        344
+      ],
+      "prepared_shape": [
+        344,
+        384,
+        384
+      ],
+      "class_voxels": [
+        439859,
+        391054,
+        461735,
+        562476,
+        998842,
+        289119,
+        388516
+      ],
+      "baseline_positive_slices": 233,
+      "positive_slice_selection_unchanged": true,
+      "new_foreground_slice_difference": []
+    },
+    {
+      "case_id": "ct_1116",
+      "partition": "train",
+      "source_shape": [
+        512,
+        512,
+        341
+      ],
+      "prepared_shape": [
+        341,
+        384,
+        384
+      ],
+      "class_voxels": [
+        236172,
+        524486,
+        202204,
+        508421,
+        892577,
+        186859,
+        200685
+      ],
+      "baseline_positive_slices": 280,
+      "positive_slice_selection_unchanged": true,
+      "new_foreground_slice_difference": []
+    },
+    {
+      "case_id": "ct_1117",
+      "partition": "train",
+      "source_shape": [
+        512,
+        512,
+        385
+      ],
+      "prepared_shape": [
+        385,
+        384,
+        384
+      ],
+      "class_voxels": [
+        199704,
+        193440,
+        430675,
+        753128,
+        661757,
+        722240,
+        72638
+      ],
+      "baseline_positive_slices": 318,
+      "positive_slice_selection_unchanged": true,
+      "new_foreground_slice_difference": []
+    },
+    {
+      "case_id": "ct_1122",
+      "partition": "train",
+      "source_shape": [
+        512,
+        512,
+        170
+      ],
+      "prepared_shape": [
+        170,
+        384,
+        384
+      ],
+      "class_voxels": [
+        77821,
+        66054,
+        155973,
+        424463,
+        454800,
+        253469,
+        46814
+      ],
+      "baseline_positive_slices": 126,
+      "positive_slice_selection_unchanged": true,
+      "new_foreground_slice_difference": []
+    },
+    {
+      "case_id": "ct_1124",
+      "partition": "train",
+      "source_shape": [
+        512,
+        512,
+        206
+      ],
+      "prepared_shape": [
+        206,
+        384,
+        384
+      ],
+      "class_voxels": [
+        69768,
+        64798,
+        208990,
+        251192,
+        276860,
+        126034,
+        76874
+      ],
+      "baseline_positive_slices": 164,
+      "positive_slice_selection_unchanged": true,
+      "new_foreground_slice_difference": []
+    },
+    {
+      "case_id": "ct_1126",
+      "partition": "train",
+      "source_shape": [
+        512,
+        512,
+        500
+      ],
+      "prepared_shape": [
+        500,
+        384,
+        384
+      ],
+      "class_voxels": [
+        63288,
+        87802,
+        46268,
+        88305,
+        274215,
+        100216,
+        48747
+      ],
+      "baseline_positive_slices": 303,
+      "positive_slice_selection_unchanged": true,
+      "new_foreground_slice_difference": []
+    },
+    {
+      "case_id": "ct_1027",
+      "partition": "validation",
+      "source_shape": [
+        512,
+        512,
+        275
+      ],
+      "prepared_shape": [
+        275,
+        384,
+        384
+      ],
+      "class_voxels": [
+        293861,
+        1078452,
+        105196,
+        503682,
+        1373760,
+        206609,
+        81666
+      ],
+      "baseline_positive_slices": 188,
+      "positive_slice_selection_unchanged": true,
+      "new_foreground_slice_difference": []
+    },
+    {
+      "case_id": "ct_1028",
+      "partition": "validation",
+      "source_shape": [
+        512,
+        512,
+        199
+      ],
+      "prepared_shape": [
+        199,
+        384,
+        384
+      ],
+      "class_voxels": [
+        53395,
+        58572,
+        122431,
+        428834,
+        285091,
+        206128,
+        105303
+      ],
+      "baseline_positive_slices": 197,
+      "positive_slice_selection_unchanged": true,
+      "new_foreground_slice_difference": []
+    },
+    {
+      "case_id": "ct_1033",
+      "partition": "validation",
+      "source_shape": [
+        512,
+        512,
+        275
+      ],
+      "prepared_shape": [
+        275,
+        384,
+        384
+      ],
+      "class_voxels": [
+        63444,
+        174381,
+        299716,
+        622925,
+        621491,
+        106015,
+        205567
+      ],
+      "baseline_positive_slices": 225,
+      "positive_slice_selection_unchanged": true,
+      "new_foreground_slice_difference": [
+        48
+      ]
+    },
+    {
+      "case_id": "ct_1036",
+      "partition": "validation",
+      "source_shape": [
+        512,
+        512,
+        175
+      ],
+      "prepared_shape": [
+        175,
+        384,
+        384
+      ],
+      "class_voxels": [
+        66231,
+        82689,
+        230709,
+        282532,
+        420531,
+        118468,
+        132572
+      ],
+      "baseline_positive_slices": 173,
+      "positive_slice_selection_unchanged": true,
+      "new_foreground_slice_difference": []
+    },
+    {
+      "case_id": "ct_1046",
+      "partition": "validation",
+      "source_shape": [
+        512,
+        512,
+        206
+      ],
+      "prepared_shape": [
+        206,
+        384,
+        384
+      ],
+      "class_voxels": [
+        178237,
+        167520,
+        538559,
+        436476,
+        1088516,
+        223095,
+        275075
+      ],
+      "baseline_positive_slices": 204,
+      "positive_slice_selection_unchanged": true,
+      "new_foreground_slice_difference": []
+    },
+    {
+      "case_id": "ct_1056",
+      "partition": "validation",
+      "source_shape": [
+        512,
+        512,
+        344
+      ],
+      "prepared_shape": [
+        344,
+        384,
+        384
+      ],
+      "class_voxels": [
+        845637,
+        1195336,
+        827776,
+        739021,
+        2171949,
+        796496,
+        368343
+      ],
+      "baseline_positive_slices": 328,
+      "positive_slice_selection_unchanged": true,
+      "new_foreground_slice_difference": []
+    },
+    {
+      "case_id": "ct_1079",
+      "partition": "validation",
+      "source_shape": [
+        512,
+        512,
+        275
+      ],
+      "prepared_shape": [
+        275,
+        384,
+        384
+      ],
+      "class_voxels": [
+        482754,
+        490410,
+        391212,
+        490130,
+        623530,
+        212629,
+        304038
+      ],
+      "baseline_positive_slices": 241,
+      "positive_slice_selection_unchanged": true,
+      "new_foreground_slice_difference": []
+    },
+    {
+      "case_id": "ct_1099",
+      "partition": "validation",
+      "source_shape": [
+        512,
+        512,
+        275
+      ],
+      "prepared_shape": [
+        275,
+        384,
+        384
+      ],
+      "class_voxels": [
+        202649,
+        157624,
+        565893,
+        669768,
+        1112185,
+        713168,
+        46099
+      ],
+      "baseline_positive_slices": 245,
+      "positive_slice_selection_unchanged": true,
+      "new_foreground_slice_difference": []
+    },
+    {
+      "case_id": "ct_1125",
+      "partition": "validation",
+      "source_shape": [
+        512,
+        512,
+        137
+      ],
+      "prepared_shape": [
+        137,
+        384,
+        384
+      ],
+      "class_voxels": [
+        50957,
+        50998,
+        154904,
+        348133,
+        521436,
+        89207,
+        20825
+      ],
+      "baseline_positive_slices": 116,
+      "positive_slice_selection_unchanged": true,
+      "new_foreground_slice_difference": []
+    },
+    {
+      "case_id": "ct_1127",
+      "partition": "validation",
+      "source_shape": [
+        512,
+        512,
+        275
+      ],
+      "prepared_shape": [
+        275,
+        384,
+        384
+      ],
+      "class_voxels": [
+        134026,
+        111785,
+        268200,
+        769645,
+        737054,
+        305224,
+        167230
+      ],
+      "baseline_positive_slices": 247,
+      "positive_slice_selection_unchanged": true,
+      "new_foreground_slice_difference": []
+    }
+  ],
+  "full_training_started": false,
+  "GPU_benchmark_completed": false
+}

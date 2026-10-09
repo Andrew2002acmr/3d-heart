@@ -1,0 +1,52 @@
+{
+  "scope": "real train cache technical smoke only; no GPU timing or accuracy",
+  "train_case_ids": [
+    "ct_1001",
+    "ct_1002"
+  ],
+  "batches": 3,
+  "batch_size": 2,
+  "input_shape": [
+    2,
+    5,
+    384,
+    384
+  ],
+  "output_shape": [
+    2,
+    8,
+    384,
+    384
+  ],
+  "target_shape": [
+    2,
+    384,
+    384
+  ],
+  "history": [
+    {
+      "loss": 3.329031467437744,
+      "gradient_norm": 6.416675090789795
+    },
+    {
+      "loss": 3.091492176055908,
+      "gradient_norm": 4.420496940612793
+    },
+    {
+      "loss": 2.9850387573242188,
+      "gradient_norm": 3.722222089767456
+    }
+  ],
+  "weights_updated": true,
+  "finite_losses_gradients": true,
+  "validation_test_used": false,
+  "checkpoint_saved": false,
+  "config_SHA256": "ebc9add57e812383028cab7e1ab01634d90832ee7430f362df950b93fddc3bfb",
+  "GPU_benchmark_executed": false,
+  "loss_decreased_on_fixed_train_samples": true,
+  "full_training_started": false,
+  "GPU_training_time_estimated": false,
+  "source_report_SHA256": "76c1e8ca16bcbdcf4eadf94a18ab07deb19a2137903318f7002424ff7c04f559",
+  "preparation_code_commit": "85b1069",
+  "model_initialization": "scratch"
+}

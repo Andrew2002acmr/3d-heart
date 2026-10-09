@@ -303,3 +303,17 @@ Heartbeat cardiac-chd68-v1 PAUSED, GPU process завершён; Pod можно 
 [Итоговый отчёт](cardiac_chd68_results_v1.md),
 [машинные результаты](../metadata/pediatric/cardiac_chd68_results_v1.json).
 Старые разделы о launch/benchmark описывают состояние на соответствующий момент.
+
+
+## Подготовка resolution384 v2 — 2026-10-09
+
+По запросу пользователя подготовлен single-factor вариант: XY256 ->384,
+прочие architecture/normalization/loss/optimizer/sampling/seed сохранены.
+48train/10validation из original public CHD68, test sealed и отсутствует в bundle.
+Cache10.925GB, train samples12381/epoch. CPU real-cache3updates loss3.3290->2.9850,
+weights changed; 179tests passed, source/256/384 QA двух train cases просмотрена.
+Portable bundle7.847GB, 217payload SHA-verified плюс gzip CRC; включает только
+validation reference v1 для original-grid сравнения, не initialization.
+На E сохранён запас более80GB. Pod выключен, подключения/GPU benchmark/full training
+нового варианта не было; прирост Dice и время v2 пока неизвестны.
+[Resolution384 протокол и RunPod runbook](cardiac_chd68_resolution384_v2.md).

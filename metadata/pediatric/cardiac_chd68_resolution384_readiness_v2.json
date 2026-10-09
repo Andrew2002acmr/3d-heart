@@ -1,0 +1,109 @@
+{
+  "version": 2,
+  "experiment": "resolution-only 256 -> 384; training not started",
+  "preparation_code_commit": "85b10695869656c08542c31b04f9db19295d3319",
+  "preparation_script_SHA256": "fd194e444307e941c2b4ce006de5a1fd3b397b18dfddc345042b0933bdd7b9ec",
+  "config": "configs/cardiac_chd68_resolution384_v2.json",
+  "config_SHA256": "ebc9add57e812383028cab7e1ab01634d90832ee7430f362df950b93fddc3bfb",
+  "cohort_SHA256": "bf60efae0c766af11893e7414361e66a09c78f325c2c658f61f88de8839244e0",
+  "split_SHA256": "a291dd9d1cb5ce9437191e0260e590235cd0c5d5a34223ae8bb6a73cd14e3bdc",
+  "preprocessing_SHA256": "7acf0d113f95e41408a905c5e924ea3dda3aea61e41db0af97bda84ea445decf",
+  "split": {
+    "train": 48,
+    "validation": 10,
+    "test": 10,
+    "test_sealed": true
+  },
+  "prepared_cases": 58,
+  "prepared_payload_files": 174,
+  "prepared_cache_bytes": 10924627741,
+  "train_samples_per_epoch": 12381,
+  "train_batches_per_epoch": 774,
+  "parameters": 489112,
+  "preprocessing_refitted": false,
+  "slice_sampling_changed": false,
+  "archive_relative_path": "training_bundles/cardiac_chd68_resolution384_v2.tar.gz",
+  "receipt_relative_path": "training_bundles/cardiac_chd68_resolution384_v2.tar.receipt.json",
+  "bundle_receipt": {
+    "archive_bytes": 7847032263,
+    "archive_SHA256": "2135116d4e9bc770cfbedb948a0619f30b19d57ca27f9f0a21976caa385b4d02",
+    "manifest_SHA256": "26d75c55b12f60353406dbd59043c0a886ba916b6ac65bf3bac1a7cac37fb991",
+    "files": 217,
+    "source_bytes": 11732726492
+  },
+  "archive_verification": {
+    "archive_size_SHA256_verified": true,
+    "payload_files_verified": 217,
+    "gzip_CRC_verified": true
+  },
+  "repository_protocol_files_in_bundle": 6,
+  "baseline_reference": {
+    "scope": "10 validation cases only, original GT and best checkpoint23",
+    "checkpoint_relative_path": "remote_runs/cardiac_chd68_v1_full_20261009/artifacts/cardiac_chd68_v1/checkpoints/cardiac_chd68_v1/gpu_full_v1_20261009/best.pt",
+    "checkpoint_SHA256": "c946ae1787583ff323e1620d82f6d069742c180c40754efb414a18d21b7145ee",
+    "checkpoint_epoch": 23,
+    "config_SHA256": "7bf1064769004e0a24fa1ee49103dd5e7418d17576098ffb8848c8a24e9451a1",
+    "prepared_manifest_relative_path": "preprocessing/cardiac_chd68_resolution384_v2/baseline_validation_prepared_manifest.json"
+  },
+  "visual_QA": {
+    "scope": "train preprocessing only; no predictions",
+    "sampling": "25/50/75% of frozen positive-index list",
+    "records": [
+      {
+        "case_id": "ct_1001",
+        "partition": "train",
+        "slices": [
+          55,
+          110,
+          165
+        ],
+        "image_SHA256": "03c6c49cb914704b68672cc92f3327dd50304c24cbe8fdbdd0ef34fe7fcd8962",
+        "mask_SHA256": "a8d04123b65b782e38010ff3b0c168437a76ae086b2849b622373dcc4fe4a6c2",
+        "figure": "ct_1001_resolution_QA.png",
+        "figure_SHA256": "df65dbaefbb8f58a7e76e7889c7a46741e9f0f83fd1d72b007e813d84649ce86"
+      },
+      {
+        "case_id": "ct_1002",
+        "partition": "train",
+        "slices": [
+          33,
+          66,
+          99
+        ],
+        "image_SHA256": "d38ebf17f14db077dbd6101f17af6f959c4c3c6aa93a8abb8fd9d11ec1f945ab",
+        "mask_SHA256": "a7264680ac17d8a69c51f018a5779c209d92cc6bd9cfc7b4ed2c0788f012aa37",
+        "figure": "ct_1002_resolution_QA.png",
+        "figure_SHA256": "1327d2d1c256746217275220a6f7e2683378c4d9d91c016adc7fd3c789280085"
+      }
+    ],
+    "visually_reviewed": true,
+    "systematic_shift_observed": false
+  },
+  "checks": {
+    "full_suite_passed": 179,
+    "existing_warnings": 322,
+    "seconds": 42.24,
+    "bash_syntax_passed": true,
+    "original_grid_probability_restoration_test_passed": true,
+    "real_CPU_smoke_passed": true
+  },
+  "storage": {
+    "reserve_bytes": 80000000000,
+    "free_bytes_after_bundle": 225062244352,
+    "recommended_RunPod_volume_GB_min": 40,
+    "GB_definition": "10^9 bytes"
+  },
+  "GPU_benchmark_completed": false,
+  "GPU_training_time_estimated": false,
+  "full_training_started": false,
+  "validation_model_evaluation_performed": false,
+  "test_pixels_opened": false,
+  "raw_CT_in_bundle": false,
+  "test_data_in_bundle": false,
+  "clinical_NII_in_bundle": false,
+  "HU_claimed": false,
+  "physical_geometry_claimed": false,
+  "age_verified_pediatric_claim": false,
+  "Pod_contacted": false,
+  "Pod_state_reported_by_user": "stopped"
+}
