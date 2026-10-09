@@ -1,0 +1,92 @@
+{
+  "version": 1,
+  "scope": "public CHD68 release multiclass scratch pilot; not age-verified pediatric cohort",
+  "cohort_cases": 68,
+  "split_counts": {
+    "train": 48,
+    "validation": 10,
+    "test": 10
+  },
+  "parameters": 489112,
+  "train_samples_per_epoch": 12381,
+  "train_batches_at_batch_16": 774,
+  "source_intensity_clip": [
+    0.0,
+    2015.0
+  ],
+  "HU_claimed": false,
+  "physical_context_used": false,
+  "training_bundle_relative_path": "training_bundles/cardiac_chd68_v1_portable.tar.gz",
+  "bundle_receipt": {
+    "archive_bytes": 3332761224,
+    "archive_SHA256": "456fa3f28bae409c33665014d25325bdccbc17cd251b953208a1b88d057cd596",
+    "manifest_SHA256": "c89baa87c256ef276628a7cc09fd783c7ba87a941f80dc49ef16eb01c347f8c7",
+    "files": 225,
+    "source_bytes": 5750421761
+  },
+  "archive_all_payload_SHA256_verified": true,
+  "gzip_CRC_verified": true,
+  "windows_linux_config_bytes_verified": true,
+  "prior_archive_preserved": true,
+  "split_membership_changed_during_LF_normalization": false,
+  "real_train_cache_smoke": {
+    "scope": "real train cache technical smoke only; no GPU timing or accuracy",
+    "train_case_ids": [
+      "ct_1001",
+      "ct_1002"
+    ],
+    "batches": 3,
+    "batch_size": 2,
+    "input_shape": [
+      2,
+      5,
+      256,
+      256
+    ],
+    "output_shape": [
+      2,
+      8,
+      256,
+      256
+    ],
+    "target_shape": [
+      2,
+      256,
+      256
+    ],
+    "history": [
+      {
+        "loss": 3.338897466659546,
+        "gradient_norm": 5.920608997344971
+      },
+      {
+        "loss": 3.1288623809814453,
+        "gradient_norm": 3.596802234649658
+      },
+      {
+        "loss": 2.9905972480773926,
+        "gradient_norm": 3.2015535831451416
+      }
+    ],
+    "weights_updated": true,
+    "finite_losses_gradients": true,
+    "validation_test_used": false,
+    "checkpoint_saved": false,
+    "config_SHA256": "7bf1064769004e0a24fa1ee49103dd5e7418d17576098ffb8848c8a24e9451a1",
+    "GPU_benchmark_executed": false
+  },
+  "Pod_started": false,
+  "cloud_transfer_performed": false,
+  "GPU_benchmark_executed": false,
+  "full_training_executed": false,
+  "test_evaluated": false,
+  "suite_verification": {
+    "full_suite_passed": 174,
+    "existing_warnings": 322,
+    "full_suite_seconds": 62.81,
+    "focused_after_LF_passed": 7,
+    "focused_seconds": 15.1
+  },
+  "free_E_bytes_after_preparation": 243888234496,
+  "minimum_local_reserve_bytes": 80000000000
+}

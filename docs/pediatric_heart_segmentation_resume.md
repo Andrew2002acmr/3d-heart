@@ -183,3 +183,16 @@ voxels — только UI-probe, не анатомическая коррекц
 [Итог этого этапа](cardiac_structure_segmentation_pilot.md),
 [поставка НИИ](nii_ct_collection_plan.md),
 [запрос авторам](public_chd_metadata_request.md).
+
+## Подготовка multiclass training для будущего RTX4090 Pod
+
+По уточнению пользователя подготовлена исполняемая GPU-конфигурация, вместо
+ограничения эксперимента CPU sanity. Новые cohort/split **68 / 48-10-10** описывают
+public CHD68 release с непроверенными возрастами/physical units, не approved
+pediatric cohort. Frozen Heart v1 не меняется. Train-only clip [0,2015],
+256²/full FOV, 5 index contexts; actual train epoch 12381 samples.
+Реализованы lazy dataset, multiclass augmentation, CUDA benchmark, scratch trainer,
+original-grid evaluation, best/last/history/environment/provenance и integrity checks.
+Готовый минимальный training bundle 3.333 GB на E:, без raw CT/НИИ.
+Pod ещё не запущен, transfer/GPU benchmark/full training не выполнялись.
+[Инструкция и готовность](cardiac_chd68_runpod_readiness.md).
