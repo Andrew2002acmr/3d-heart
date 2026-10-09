@@ -36,3 +36,14 @@ checkpoints/
 *.npz
 tensorboard/
 predictions/
+
+# Clinical incoming data and private UID/path inventories stay outside Git.
+external_ct/
+source_locators.private.json
+clinical_import_report.md
+*.DCM
+*.DICOM
+*.nrrd
+*.3mf
+*.glb
+*.gltf

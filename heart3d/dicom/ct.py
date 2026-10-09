@@ -33,7 +33,8 @@ def require_vector(value, length, name):
     return vector
 
 
-def inspect_headers(headers, files=None, expected_sops=None, expected_series=None):
+def inspect_headers(headers, files=None, expected_sops=None, expected_series=None,
+                    require_demographic_metadata=True):
     if len(headers) < 2:
         raise ValueError("Need a complete CT stack with at least two slices")
     files = list(files) if files is not None else [None] * len(headers)
@@ -49,7 +50,16 @@ def inspect_headers(headers, files=None, expected_sops=None, expected_series=Non
         if len(values) != 1 or "" in values:
             raise ValueError(f"Missing/mixed {name}")
         return next(iter(values))
-    series, frame, patient, age = [same(k) for k in ("SeriesInstanceUID", "FrameOfReferenceUID", "PatientID", "PatientAge")]
+    series, frame = [same(k) for k in ("SeriesInstanceUID", "FrameOfReferenceUID")]
+    demographic_status = {}
+    def demographic(name):
+        if require_demographic_metadata:
+            return same(name)
+        values = {str(getattr(h, name, "") or "") for h in headers}
+        demographic_status[name] = ("consistent" if len(values) == 1 and "" not in values
+                                    else "missing" if values == {""} else "incomplete_or_mixed")
+        return next(iter(values)) if demographic_status[name] == "consistent" else None
+    patient, age = [demographic(k) for k in ("PatientID", "PatientAge")]
     if expected_series and series != expected_series:
         raise ValueError("CT series differs from manifest")
     sops = [str(h.SOPInstanceUID) for h in headers]
@@ -106,6 +116,8 @@ def inspect_headers(headers, files=None, expected_sops=None, expected_series=Non
     sorted_headers = [headers[i] for i in order]
     instance_numbers = [int(h.InstanceNumber) for h in sorted_headers if hasattr(h, "InstanceNumber")]
     report = {"patient_id": patient, "patient_age": age, "series_uid": series, "frame_of_reference_uid": frame,
+        "demographic_metadata_required": require_demographic_metadata,
+        "demographic_metadata_status": demographic_status,
         "shape_xyz": [dimensions[1], dimensions[0], len(headers)],
         "spacing_xyz_mm": [float(pixel_spacing[1]), float(pixel_spacing[0]), spacing_z],
         "coordinate_system": "LPS", "array_axes": ["column", "row", "slice"],
