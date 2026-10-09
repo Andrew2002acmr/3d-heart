@@ -23,6 +23,10 @@ def main():
     gui.add_argument("--data", type=Path, default=Path("data/imagechd"))
     gui.add_argument("--results", type=Path, default=Path("outputs"))
     gui.add_argument("--case", dest="case_id", default=None)
+    edit = commands.add_parser("edit", help="Original-grid research mask editor with linked CT/3D")
+    for name in ("ct", "mask", "geometry", "output"):
+        edit.add_argument("--"+name, type=Path, required=True)
+    edit.add_argument("--schema", choices=("heart", "cardiac7"), default="heart")
     args = parser.parse_args()
     try:
         if args.command == "scan":
@@ -34,6 +38,9 @@ def main():
             except ModuleNotFoundError as error:
                 parser.exit(2, f"GUI dependency missing: {error}. Install requirements-lock.txt.\n")
             return run_app(args.data, args.results, args.case_id)
+        elif args.command == "edit":
+            from .interactive.editor import run_editor
+            return run_editor(args.ct, args.mask, args.geometry, args.output, args.schema)
         elif args.command == "view":
             from .viewer import view_directory
             view_directory(args.directory)

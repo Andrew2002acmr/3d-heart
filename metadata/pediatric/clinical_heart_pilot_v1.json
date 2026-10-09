@@ -1,0 +1,41 @@
+{
+  "series_alias": "case_001/series_004",
+  "scope": "binary Heart OAR; no chamber prediction",
+  "annotation_status": "draft_prediction",
+  "expert_approval": false,
+  "clinical_status": "unknown",
+  "source_DICOM_unchanged": true,
+  "original_grid_shape": [
+    512,
+    512,
+    251
+  ],
+  "spacing_mm": [
+    0.22715234756469727,
+    0.22715234756469727,
+    0.5
+  ],
+  "predicted_voxels": 153405,
+  "empty_prediction": false,
+  "elapsed_seconds": 23.85063850000006,
+  "device": "cpu",
+  "checkpoint_SHA256": "e6b28f1b87d581fde2dbc2e055ec58f0353c98c913f62c10b96ba3338690e8f0",
+  "local_reference_accuracy_available": false,
+  "connected_components": 11,
+  "predicted_mask_volume_mm3": 3957.7100920910475,
+  "qualitative_findings": [
+    "severe undersegmentation",
+    "extra fragments"
+  ],
+  "manual_anatomical_correction_completed": false,
+  "editor_check": {
+    "widget_brush_undo_save_passed": true,
+    "picked_world_to_source_grid_passed": true,
+    "original_CT_and_draft_unchanged": true,
+    "original_grid_roundtrip": true,
+    "probe_changed_voxels": 15,
+    "probe_is_anatomical_correction": false,
+    "clinical_accuracy_assessed": false
+  },
+  "artifact_directory_relative_to_dataRoot": "external_ct/pilot_v1"
+}
