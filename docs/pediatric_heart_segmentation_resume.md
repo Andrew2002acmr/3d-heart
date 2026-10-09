@@ -227,3 +227,21 @@ Heartbeat cardiac-chd68-v1: после завершения скачать, пр
 results, подготовить сравнения и update docs/metadata/push; затем отключить
 heartbeat. Local backup root на E: remote_runs/cardiac_chd68_v1_full_20261009.
 Full train/test metrics ещё отсутствуют; Pod пока не останавливать.
+
+## CHD68 multiclass baseline v1 завершён — 2026-10-09
+
+Full training30epochs117.74min, execution d89ea28, best epoch23/val0.8021.
+Одна test evaluation10cases на original release grid: mean macro Dice0.7897,
+median0.8205; LV0.8298 RV0.7881 LA0.8384 RA0.7975 MYO0.8419 AO0.7474 PA0.6847.
+Диапазонcases0.5794–0.8783; worst ct_1083 сильно путает PA/AO/камеры.
+Это публичный pilot без подтверждения age/physical scale/patient independence,
+не neonatal/clinical validation и не результат на НИИ CT.
+
+Все39 critical results на E:/3d-heart-data/pediatric_ct_heart/remote_runs/
+cardiac_chd68_v1_full_20261009/artifacts SHA-verified; best/last separately verified.
+Images в visual_QA_v2: bestct_1032/upper-medianct_1026/worstct_1083,
+orthogonal GT/pred/error, PA failure, learning curves и metrics chart.
+Helper scripts/qa_cardiac_predictions.py; source CT/GT/pred SHA unchanged.
+Heartbeat cardiac-chd68-v1 PAUSED, GPU process завершён. Pod можно остановить.
+Новых trainings/tuning после просмотра test не было. Frozen protocol не менять.
+[Результаты и следующий этап](cardiac_chd68_results_v1.md).

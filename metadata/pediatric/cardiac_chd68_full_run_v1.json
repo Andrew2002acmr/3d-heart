@@ -14,11 +14,11 @@
     "status": "/workspace/exports/cardiac_chd68_gpu_full_v1_20261009_status.json",
     "private_NII_transferred": false
   },
-  "state": "training",
+  "state": "completed",
   "full_training_started": true,
-  "full_training_completed": false,
-  "test_evaluation_started": false,
-  "test_evaluation_completed": false,
+  "full_training_completed": true,
+  "test_evaluation_started": true,
+  "test_evaluation_completed": true,
   "model_parameters": 489112,
   "split_counts": {
     "train": 48,
@@ -36,8 +36,29 @@
   "GPU_training_process_verified": true,
   "observed_GPU_memory_MiB": 3188,
   "observed_GPU_utilization_percent": 67,
-  "test_results_available": false,
-  "critical_final_results_backup_verified": false,
+  "test_results_available": true,
+  "critical_final_results_backup_verified": true,
   "private_NII_transferred": false,
-  "source_data_unchanged": true
+  "source_data_unchanged": true,
+  "heartbeat_status": "PAUSED",
+  "heartbeat_disabled_after_completion": true,
+  "completion_status": {
+    "stage": "completed",
+    "detail": "training and one test evaluation complete; export ready for local SHA256-verified backup",
+    "updated_utc": "2026-10-09T14:59:21.654048+00:00",
+    "execution_commit": "d89ea289124501654232b8ed6333d671410244d4",
+    "full_training_explicitly_authorized": true
+  },
+  "results_summary": "metadata/pediatric/cardiac_chd68_results_v1.json",
+  "result_backup_receipt": {
+    "archive_bytes": 18315524,
+    "archive_SHA256": "5a34a297068dd0e97affc1cbf2864a2f6b2b07a39928a94b4eb3693d2731580e",
+    "manifest_SHA256": "1db5ba86a1b2ac0bb38210cba2d92d40160b0338a28a627474896ee265a6571f",
+    "files": 39,
+    "source_bytes": 28536207
+  },
+  "actual_training_seconds": 7064.18058404699,
+  "best_checkpoint_epoch": 23,
+  "best_validation_Dice": 0.8020908096047222,
+  "test_mean_case_macro_foreground_Dice": 0.7896922107353291
 }

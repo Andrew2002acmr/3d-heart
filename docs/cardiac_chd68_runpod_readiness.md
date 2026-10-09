@@ -3,7 +3,7 @@
 Дата: 09.10.2026. Ветка feature/pediatric-heart-segmentation.
 Обновлено после миграции Pod: SSH, RTX4090/CUDA и persistent /workspace проверены.
 Минимальный публичный bundle передан и проверен, короткий GPU benchmark выполнен.
-По последующему явному разрешению пользователя полное multiclass training запущено; test evaluation ещё предстоит.
+Полное multiclass training и одна test evaluation завершены; critical results на E: проверены SHA-256.
 Все тяжёлые локальные данные на E:, исходные CT и старый Heart baseline не изменены.
 
 ## Готовый эксперимент
@@ -289,3 +289,17 @@ remote_runs/cardiac_chd68_v1_full_20261009; final checkpoints/metrics ещё н�
 чате каждые 5 минут (cardiac-chd68-v1), с уведомлением об ошибке/итоге и отключением
 после результата. После verified backup будут подготовлены CT/GT/prediction
 примеры и отчёт. Пока обучение работает, Pod не останавливать.
+
+## Завершение full run и test evaluation
+
+30 epochs завершены, best epoch23 по validation0.8021. Full training117.74min.
+Одна original-grid evaluation10test: mean case macro foreground Dice0.7897,
+median0.8205, range0.5794–0.8783. PA0.6847, AO0.7474 в среднем;
+ct_1083 PA0.3375 и выраженное смешение структур. Клиническую готовность не заявлять.
+Все39 critical файлов на E SHA-verified, best/last hashes отдельно совпали.
+Визуально проверены best/upper-median/worst examples, orthogonal/error panels
+и train/test charts; helper scripts/qa_cardiac_predictions.py.
+Heartbeat cardiac-chd68-v1 PAUSED, GPU process завершён; Pod можно остановить.
+[Итоговый отчёт](cardiac_chd68_results_v1.md),
+[машинные результаты](../metadata/pediatric/cardiac_chd68_results_v1.json).
+Старые разделы о launch/benchmark описывают состояние на соответствующий момент.

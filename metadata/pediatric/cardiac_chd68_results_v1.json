@@ -1,0 +1,781 @@
+{
+  "version": 1,
+  "scope": "public CHD68 release multiclass pilot; age/physical scale/patient independence unverified",
+  "execution_commit": "d89ea289124501654232b8ed6333d671410244d4",
+  "training": {
+    "git_revision": "d89ea289124501654232b8ed6333d671410244d4",
+    "config_SHA256": "7bf1064769004e0a24fa1ee49103dd5e7418d17576098ffb8848c8a24e9451a1",
+    "cohort_SHA256": "bf60efae0c766af11893e7414361e66a09c78f325c2c658f61f88de8839244e0",
+    "split_SHA256": "a291dd9d1cb5ce9437191e0260e590235cd0c5d5a34223ae8bb6a73cd14e3bdc",
+    "preprocessing_SHA256": "a7e1252702113aac3b79ac505293c5d9e5db7807e4bf0da03b4635d2ba7bdf2c",
+    "model_version": "own_cardiac_25d_unet_v1",
+    "prepared_manifest_SHA256": "053b5a92bf002939d161e3fdd118960946c03b54c7bb35f96b991c558c88aa6b",
+    "epochs": 30,
+    "seconds": 7064.18058404699,
+    "best_validation_Dice_prepared_grid": 0.8020908096047222,
+    "best_epoch": 23,
+    "resources": {
+      "samples": 35255,
+      "sampling_interval_seconds": 0.2,
+      "peak_process_RSS_bytes": 2164199424,
+      "mean_process_CPU_percent": 217.99091760034037,
+      "mean_process_CPU_percent_of_logical_machine": 6.8122161750106365,
+      "minimum_system_available_RAM_bytes": 95172128768,
+      "maximum_system_RAM_percent": 29.0,
+      "CPU_percent_definition": "100% process = one logical CPU; all process threads included",
+      "memory_definition": "sampled working-set RSS; excludes OS file cache, includes Python/torch/cache pages"
+    },
+    "GPU_memory": {
+      "peak_allocated_bytes": 1918544896,
+      "peak_reserved_bytes": 2852126720
+    },
+    "test_evaluated": false,
+    "checkpoints": {
+      "best.pt": {
+        "bytes": 6094048,
+        "SHA256": "c946ae1787583ff323e1620d82f6d069742c180c40754efb414a18d21b7145ee"
+      },
+      "last.pt": {
+        "bytes": 6141664,
+        "SHA256": "cfb0933d596e18fd8f95bf6b268834de32b5487e41f7aed7aca19a4303f50a91"
+      }
+    }
+  },
+  "test_metrics": {
+    "git_revision": "d89ea289124501654232b8ed6333d671410244d4",
+    "config_SHA256": "7bf1064769004e0a24fa1ee49103dd5e7418d17576098ffb8848c8a24e9451a1",
+    "cohort_SHA256": "bf60efae0c766af11893e7414361e66a09c78f325c2c658f61f88de8839244e0",
+    "split_SHA256": "a291dd9d1cb5ce9437191e0260e590235cd0c5d5a34223ae8bb6a73cd14e3bdc",
+    "preprocessing_SHA256": "a7e1252702113aac3b79ac505293c5d9e5db7807e4bf0da03b4635d2ba7bdf2c",
+    "model_version": "own_cardiac_25d_unet_v1",
+    "prepared_manifest_SHA256": "053b5a92bf002939d161e3fdd118960946c03b54c7bb35f96b991c558c88aa6b",
+    "partition": "test",
+    "checkpoint_SHA256": "c946ae1787583ff323e1620d82f6d069742c180c40754efb414a18d21b7145ee",
+    "checkpoint_epoch": 23,
+    "grid": "original release NIfTI grid, probabilities restored before argmax",
+    "case_count": 10,
+    "records": [
+      {
+        "case_id": "ct_1022",
+        "classes": {
+          "LV": {
+            "target_voxels": 57687,
+            "predicted_voxels": 67226,
+            "Dice": 0.7922634153370746,
+            "IoU": 0.6559902427383967,
+            "precision": 0.7360545027221611,
+            "recall": 0.8577669145561392
+          },
+          "RV": {
+            "target_voxels": 103308,
+            "predicted_voxels": 107639,
+            "Dice": 0.8392724238789838,
+            "IoU": 0.7230571937333573,
+            "precision": 0.8223877962448555,
+            "recall": 0.856864908816355
+          },
+          "LA": {
+            "target_voxels": 284175,
+            "predicted_voxels": 228968,
+            "Dice": 0.7078143909202698,
+            "IoU": 0.547765263710344,
+            "precision": 0.7931457670940918,
+            "recall": 0.6390604381103193
+          },
+          "RA": {
+            "target_voxels": 485649,
+            "predicted_voxels": 209587,
+            "Dice": 0.5828783319620964,
+            "IoU": 0.4113114244940796,
+            "precision": 0.966753663156589,
+            "recall": 0.4172128430203707
+          },
+          "MYO": {
+            "target_voxels": 624814,
+            "predicted_voxels": 496124,
+            "Dice": 0.7976444727540685,
+            "IoU": 0.6634015103512034,
+            "precision": 0.9010952906934556,
+            "recall": 0.7155009330776839
+          },
+          "AO": {
+            "target_voxels": 143159,
+            "predicted_voxels": 184934,
+            "Dice": 0.5757879625593962,
+            "IoU": 0.40428528015682447,
+            "precision": 0.5107551883374609,
+            "recall": 0.6597978471489743
+          },
+          "PA": {
+            "target_voxels": 97375,
+            "predicted_voxels": 76711,
+            "Dice": 0.45309789414427354,
+            "IoU": 0.29290663735545536,
+            "precision": 0.5141244410840687,
+            "recall": 0.4050218228498074
+          }
+        },
+        "macro_foreground_Dice": 0.6783941273651662,
+        "macro_policy": "reference-present foreground classes only; no empty-empty reward"
+      },
+      {
+        "case_id": "ct_1026",
+        "classes": {
+          "LV": {
+            "target_voxels": 800792,
+            "predicted_voxels": 928014,
+            "Dice": 0.9017009427315731,
+            "IoU": 0.8209976479213122,
+            "precision": 0.8398935791916933,
+            "recall": 0.9733276556209353
+          },
+          "RV": {
+            "target_voxels": 337163,
+            "predicted_voxels": 473448,
+            "Dice": 0.7945093269151294,
+            "IoU": 0.6590754658283394,
+            "precision": 0.6801570605430797,
+            "recall": 0.9550840394705231
+          },
+          "LA": {
+            "target_voxels": 826705,
+            "predicted_voxels": 929927,
+            "Dice": 0.908298380081884,
+            "IoU": 0.832002411199144,
+            "precision": 0.8578877696851473,
+            "recall": 0.9650032357370525
+          },
+          "RA": {
+            "target_voxels": 593685,
+            "predicted_voxels": 1051871,
+            "Dice": 0.6769189258828019,
+            "IoU": 0.5116231643888216,
+            "precision": 0.5294888821918277,
+            "recall": 0.938130490074703
+          },
+          "MYO": {
+            "target_voxels": 2003759,
+            "predicted_voxels": 1951667,
+            "Dice": 0.8437164543085878,
+            "IoU": 0.7296795474193818,
+            "precision": 0.8549762843763818,
+            "recall": 0.8327493476011836
+          },
+          "AO": {
+            "target_voxels": 1282826,
+            "predicted_voxels": 1106116,
+            "Dice": 0.8439911894051844,
+            "IoU": 0.7300906201319651,
+            "precision": 0.911408025921332,
+            "recall": 0.7858610598787364
+          },
+          "PA": {
+            "target_voxels": 416841,
+            "predicted_voxels": 470581,
+            "Dice": 0.7943278395171632,
+            "IoU": 0.6588257285455259,
+            "precision": 0.7489720154447375,
+            "recall": 0.8455310298171245
+          }
+        },
+        "macro_foreground_Dice": 0.8233518655489034,
+        "macro_policy": "reference-present foreground classes only; no empty-empty reward"
+      },
+      {
+        "case_id": "ct_1032",
+        "classes": {
+          "LV": {
+            "target_voxels": 69759,
+            "predicted_voxels": 70834,
+            "Dice": 0.914640131443244,
+            "IoU": 0.8427067905684366,
+            "precision": 0.9076996922381907,
+            "recall": 0.921687524190427
+          },
+          "RV": {
+            "target_voxels": 75846,
+            "predicted_voxels": 83525,
+            "Dice": 0.9047442759347686,
+            "IoU": 0.8260575645079976,
+            "precision": 0.8631547440885963,
+            "recall": 0.9505445244310841
+          },
+          "LA": {
+            "target_voxels": 155728,
+            "predicted_voxels": 158513,
+            "Dice": 0.9362750245830429,
+            "IoU": 0.8801852416937409,
+            "precision": 0.9280500652943292,
+            "recall": 0.9446470769546902
+          },
+          "RA": {
+            "target_voxels": 313480,
+            "predicted_voxels": 286040,
+            "Dice": 0.8963370696557246,
+            "IoU": 0.8121474818186765,
+            "precision": 0.9393301636134807,
+            "recall": 0.8571073114712262
+          },
+          "MYO": {
+            "target_voxels": 463802,
+            "predicted_voxels": 511200,
+            "Dice": 0.8987981563114742,
+            "IoU": 0.8161974677602326,
+            "precision": 0.8571302816901408,
+            "recall": 0.9447242573339485
+          },
+          "AO": {
+            "target_voxels": 122111,
+            "predicted_voxels": 123773,
+            "Dice": 0.8052252281563664,
+            "IoU": 0.6739556669026742,
+            "precision": 0.7998190235350198,
+            "recall": 0.8107050142902769
+          },
+          "PA": {
+            "target_voxels": 34557,
+            "predicted_voxels": 39267,
+            "Dice": 0.7922626788036411,
+            "IoU": 0.6559892328398385,
+            "precision": 0.7447474978989992,
+            "recall": 0.8462540151054779
+          }
+        },
+        "macro_foreground_Dice": 0.8783260806983231,
+        "macro_policy": "reference-present foreground classes only; no empty-empty reward"
+      },
+      {
+        "case_id": "ct_1041",
+        "classes": {
+          "LV": {
+            "target_voxels": 288761,
+            "predicted_voxels": 348813,
+            "Dice": 0.8605840263247874,
+            "IoU": 0.7552852041813611,
+            "precision": 0.7865045167467956,
+            "recall": 0.9500694345843103
+          },
+          "RV": {
+            "target_voxels": 266434,
+            "predicted_voxels": 379933,
+            "Dice": 0.8194787171993619,
+            "IoU": 0.6941668304829304,
+            "precision": 0.6970755370025767,
+            "recall": 0.9940247866263314
+          },
+          "LA": {
+            "target_voxels": 849048,
+            "predicted_voxels": 991963,
+            "Dice": 0.8232900292285055,
+            "IoU": 0.6996541626045083,
+            "precision": 0.7639831324353832,
+            "recall": 0.8925796892519622
+          },
+          "RA": {
+            "target_voxels": 1395724,
+            "predicted_voxels": 1426352,
+            "Dice": 0.9151730853456816,
+            "IoU": 0.8436120757911901,
+            "precision": 0.9053473476392924,
+            "recall": 0.9252144406773832
+          },
+          "MYO": {
+            "target_voxels": 2399618,
+            "predicted_voxels": 2208929,
+            "Dice": 0.9035390113196198,
+            "IoU": 0.8240503042493587,
+            "precision": 0.9425386691921741,
+            "recall": 0.8676385157970977
+          },
+          "AO": {
+            "target_voxels": 226382,
+            "predicted_voxels": 256281,
+            "Dice": 0.7772545233423734,
+            "IoU": 0.6356633806301193,
+            "precision": 0.7319153585322361,
+            "recall": 0.8285817777031743
+          },
+          "PA": {
+            "target_voxels": 713764,
+            "predicted_voxels": 838193,
+            "Dice": 0.7776104621455362,
+            "IoU": 0.6361396576662436,
+            "precision": 0.719892673882984,
+            "recall": 0.8453900729092529
+          }
+        },
+        "macro_foreground_Dice": 0.8395614078436949,
+        "macro_policy": "reference-present foreground classes only; no empty-empty reward"
+      },
+      {
+        "case_id": "ct_1044",
+        "classes": {
+          "LV": {
+            "target_voxels": 251528,
+            "predicted_voxels": 240287,
+            "Dice": 0.8779317426268007,
+            "IoU": 0.7824227598079189,
+            "precision": 0.8984672495807098,
+            "recall": 0.8583139849241437
+          },
+          "RV": {
+            "target_voxels": 395540,
+            "predicted_voxels": 292384,
+            "Dice": 0.8113250882364912,
+            "IoU": 0.6825458165284365,
+            "precision": 0.954446891758783,
+            "recall": 0.7055291500227537
+          },
+          "LA": {
+            "target_voxels": 504214,
+            "predicted_voxels": 466193,
+            "Dice": 0.7377110841121303,
+            "IoU": 0.5844233240321519,
+            "precision": 0.7677935962144433,
+            "recall": 0.7098969881835887
+          },
+          "RA": {
+            "target_voxels": 1337795,
+            "predicted_voxels": 979006,
+            "Dice": 0.8283974324942022,
+            "IoU": 0.7070635175012986,
+            "precision": 0.9801941969712137,
+            "recall": 0.7173116957381362
+          },
+          "MYO": {
+            "target_voxels": 1127254,
+            "predicted_voxels": 1384579,
+            "Dice": 0.8202368549183007,
+            "IoU": 0.6952555335685612,
+            "precision": 0.7440160510884536,
+            "recall": 0.9138570366572218
+          },
+          "AO": {
+            "target_voxels": 661979,
+            "predicted_voxels": 607102,
+            "Dice": 0.8874768434796518,
+            "IoU": 0.7977153898130297,
+            "precision": 0.9275871270396079,
+            "recall": 0.8506916382543858
+          },
+          "PA": {
+            "target_voxels": 370283,
+            "predicted_voxels": 346111,
+            "Dice": 0.7144476363565301,
+            "IoU": 0.5557514859462171,
+            "precision": 0.7393957429841872,
+            "recall": 0.6911281371275484
+          }
+        },
+        "macro_foreground_Dice": 0.8110752403177296,
+        "macro_policy": "reference-present foreground classes only; no empty-empty reward"
+      },
+      {
+        "case_id": "ct_1048",
+        "classes": {
+          "LV": {
+            "target_voxels": 166048,
+            "predicted_voxels": 155976,
+            "Dice": 0.9175154646858619,
+            "IoU": 0.8476014527261565,
+            "precision": 0.947139303482587,
+            "recall": 0.8896885238003469
+          },
+          "RV": {
+            "target_voxels": 295041,
+            "predicted_voxels": 203804,
+            "Dice": 0.7825957962894285,
+            "IoU": 0.6428397354831911,
+            "precision": 0.9577682479244765,
+            "recall": 0.6615927955775638
+          },
+          "LA": {
+            "target_voxels": 608877,
+            "predicted_voxels": 503918,
+            "Dice": 0.8481831783931452,
+            "IoU": 0.7363872123432594,
+            "precision": 0.9365154648176885,
+            "recall": 0.7750777250577703
+          },
+          "RA": {
+            "target_voxels": 775375,
+            "predicted_voxels": 566362,
+            "Dice": 0.8123112055492246,
+            "IoU": 0.6839428050046249,
+            "precision": 0.9622008538708459,
+            "recall": 0.7028263743349992
+          },
+          "MYO": {
+            "target_voxels": 866272,
+            "predicted_voxels": 895616,
+            "Dice": 0.8403723732723078,
+            "IoU": 0.7246915767639323,
+            "precision": 0.8266053755180792,
+            "recall": 0.854605712755347
+          },
+          "AO": {
+            "target_voxels": 508862,
+            "predicted_voxels": 389283,
+            "Dice": 0.7412433404405747,
+            "IoU": 0.5888694489211408,
+            "precision": 0.8550899987926521,
+            "recall": 0.6541498480924102
+          },
+          "PA": {
+            "target_voxels": 478413,
+            "predicted_voxels": 336275,
+            "Dice": 0.7807013236969245,
+            "IoU": 0.6402871903904774,
+            "precision": 0.9456962307635121,
+            "recall": 0.664726920046069
+          }
+        },
+        "macro_foreground_Dice": 0.817560383189638,
+        "macro_policy": "reference-present foreground classes only; no empty-empty reward"
+      },
+      {
+        "case_id": "ct_1053",
+        "classes": {
+          "LV": {
+            "target_voxels": 37682,
+            "predicted_voxels": 46639,
+            "Dice": 0.8565363314002443,
+            "IoU": 0.7490717500881579,
+            "precision": 0.7742876133707841,
+            "recall": 0.9583355448224616
+          },
+          "RV": {
+            "target_voxels": 87213,
+            "predicted_voxels": 109891,
+            "Dice": 0.8150823930513841,
+            "IoU": 0.6878810714530383,
+            "precision": 0.7309788790710795,
+            "recall": 0.9210553472532764
+          },
+          "LA": {
+            "target_voxels": 259355,
+            "predicted_voxels": 231163,
+            "Dice": 0.910343759046559,
+            "IoU": 0.83544123810094,
+            "precision": 0.9658552623040885,
+            "recall": 0.8608663800582214
+          },
+          "RA": {
+            "target_voxels": 403259,
+            "predicted_voxels": 359718,
+            "Dice": 0.9088425994492626,
+            "IoU": 0.8329161301481752,
+            "precision": 0.9638466798992544,
+            "recall": 0.859777463119236
+          },
+          "MYO": {
+            "target_voxels": 513420,
+            "predicted_voxels": 495587,
+            "Dice": 0.8718452894776746,
+            "IoU": 0.7728064966142969,
+            "precision": 0.8875313517101941,
+            "recall": 0.856704062950411
+          },
+          "AO": {
+            "target_voxels": 116547,
+            "predicted_voxels": 108746,
+            "Dice": 0.8019601141624463,
+            "IoU": 0.6693935015375495,
+            "precision": 0.8307248082688099,
+            "recall": 0.7751207667293023
+          },
+          "PA": {
+            "target_voxels": 105355,
+            "predicted_voxels": 125803,
+            "Dice": 0.8342951574247917,
+            "IoU": 0.7157001729371859,
+            "precision": 0.7664920550384331,
+            "recall": 0.9152579374495753
+          }
+        },
+        "macro_foreground_Dice": 0.8569865205731946,
+        "macro_policy": "reference-present foreground classes only; no empty-empty reward"
+      },
+      {
+        "case_id": "ct_1083",
+        "classes": {
+          "LV": {
+            "target_voxels": 1976226,
+            "predicted_voxels": 979662,
+            "Dice": 0.6259587643374851,
+            "IoU": 0.4555603922874043,
+            "precision": 0.9443379451280135,
+            "recall": 0.4681306692655597
+          },
+          "RV": {
+            "target_voxels": 1416674,
+            "predicted_voxels": 1339912,
+            "Dice": 0.5948016858534434,
+            "IoU": 0.4232866491977643,
+            "precision": 0.6118394342315018,
+            "recall": 0.5786871220901916
+          },
+          "LA": {
+            "target_voxels": 3806577,
+            "predicted_voxels": 2725124,
+            "Dice": 0.7938841658551119,
+            "IoU": 0.6582155240652816,
+            "precision": 0.951408816626326,
+            "recall": 0.6811124535245182
+          },
+          "RA": {
+            "target_voxels": 1723717,
+            "predicted_voxels": 2371705,
+            "Dice": 0.596545117939006,
+            "IoU": 0.42505471715839616,
+            "precision": 0.5150522514393654,
+            "recall": 0.7086731754690591
+          },
+          "MYO": {
+            "target_voxels": 2833696,
+            "predicted_voxels": 3256412,
+            "Dice": 0.6692456028694401,
+            "IoU": 0.5029069258102783,
+            "precision": 0.6258080979925145,
+            "recall": 0.7191628883267648
+          },
+          "AO": {
+            "target_voxels": 711143,
+            "predicted_voxels": 1560568,
+            "Dice": 0.43805131902781647,
+            "IoU": 0.2804517999625736,
+            "precision": 0.31883455254753396,
+            "recall": 0.6996665930762167
+          },
+          "PA": {
+            "target_voxels": 1308644,
+            "predicted_voxels": 484635,
+            "Dice": 0.3375113409569844,
+            "IoU": 0.2030157253230631,
+            "precision": 0.6244410742104883,
+            "recall": 0.23125158561075435
+          }
+        },
+        "macro_foreground_Dice": 0.5794282852627554,
+        "macro_policy": "reference-present foreground classes only; no empty-empty reward"
+      },
+      {
+        "case_id": "ct_1091",
+        "classes": {
+          "LV": {
+            "target_voxels": 514244,
+            "predicted_voxels": 422521,
+            "Dice": 0.8539238763190341,
+            "IoU": 0.7450847798629663,
+            "precision": 0.946610937681204,
+            "recall": 0.7777689190345439
+          },
+          "RV": {
+            "target_voxels": 255767,
+            "predicted_voxels": 300681,
+            "Dice": 0.8247706883662085,
+            "IoU": 0.7017955391357802,
+            "precision": 0.7631709353101792,
+            "recall": 0.897187674719569
+          },
+          "LA": {
+            "target_voxels": 1194736,
+            "predicted_voxels": 1120217,
+            "Dice": 0.7879762569693639,
+            "IoU": 0.6501326904694527,
+            "precision": 0.8141851087780314,
+            "recall": 0.763402123983876
+          },
+          "RA": {
+            "target_voxels": 807535,
+            "predicted_voxels": 837761,
+            "Dice": 0.8866453209635227,
+            "IoU": 0.796372744156288,
+            "precision": 0.8706504599760552,
+            "recall": 0.903238868903515
+          },
+          "MYO": {
+            "target_voxels": 1973785,
+            "predicted_voxels": 1746267,
+            "Dice": 0.8767054869125486,
+            "IoU": 0.7804769601365397,
+            "precision": 0.9338176808013895,
+            "recall": 0.8261766099144537
+          },
+          "AO": {
+            "target_voxels": 1381033,
+            "predicted_voxels": 843969,
+            "Dice": 0.6916793782657275,
+            "IoU": 0.5286772728147149,
+            "precision": 0.9117562374921354,
+            "recall": 0.5571872648951908
+          },
+          "PA": {
+            "target_voxels": 610530,
+            "predicted_voxels": 689150,
+            "Dice": 0.4733457466453281,
+            "IoU": 0.3100543201613578,
+            "precision": 0.44634549807734164,
+            "recall": 0.5038229079652106
+          }
+        },
+        "macro_foreground_Dice": 0.7707209649202477,
+        "macro_policy": "reference-present foreground classes only; no empty-empty reward"
+      },
+      {
+        "case_id": "ct_1128",
+        "classes": {
+          "LV": {
+            "target_voxels": 103103,
+            "predicted_voxels": 191800,
+            "Dice": 0.6973208139625572,
+            "IoU": 0.5352974250580481,
+            "precision": 0.5360844629822732,
+            "recall": 0.9972648710512788
+          },
+          "RV": {
+            "target_voxels": 184464,
+            "predicted_voxels": 343581,
+            "Dice": 0.6947551818500317,
+            "IoU": 0.5322795939805115,
+            "precision": 0.53387992933253,
+            "recall": 0.9943999913262208
+          },
+          "LA": {
+            "target_voxels": 1072328,
+            "predicted_voxels": 976231,
+            "Dice": 0.9299248886656425,
+            "IoU": 0.8690276774179422,
+            "precision": 0.9756942772765872,
+            "recall": 0.8882571377414373
+          },
+          "RA": {
+            "target_voxels": 947959,
+            "predicted_voxels": 809505,
+            "Dice": 0.8705782878056109,
+            "IoU": 0.7708177365513336,
+            "precision": 0.9450281344772422,
+            "recall": 0.807002201572009
+          },
+          "MYO": {
+            "target_voxels": 2227380,
+            "predicted_voxels": 2136700,
+            "Dice": 0.8972383640996499,
+            "IoU": 0.8136285620483155,
+            "precision": 0.916277437169467,
+            "recall": 0.878974400416633
+          },
+          "AO": {
+            "target_voxels": 565417,
+            "predicted_voxels": 548110,
+            "Dice": 0.911284593907467,
+            "IoU": 0.8370273707966748,
+            "precision": 0.9256718541898524,
+            "recall": 0.8973377171185161
+          },
+          "PA": {
+            "target_voxels": 416499,
+            "predicted_voxels": 387183,
+            "Dice": 0.8895184911445074,
+            "IoU": 0.8010205339315207,
+            "precision": 0.9231939418827789,
+            "recall": 0.8582133450500481
+          }
+        },
+        "macro_foreground_Dice": 0.8415172316336381,
+        "macro_policy": "reference-present foreground classes only; no empty-empty reward"
+      }
+    ],
+    "mean_case_macro_foreground_Dice": 0.789692210735329,
+    "per_class_mean_Dice": {
+      "LV": 0.8298375509168663,
+      "RV": 0.7881335577575231,
+      "LA": 0.8383701157855654,
+      "RA": 0.7974627377047134,
+      "MYO": 0.8419342066243672,
+      "AO": 0.7473954492747005,
+      "PA": 0.684711857083568
+    },
+    "HD95_ASSD_mm_calculated": false,
+    "age_verified_pediatric_claim": false,
+    "patient_identity_independently_verified": false,
+    "external_NII_evaluation": false
+  },
+  "aggregate_case_macro_foreground_Dice": {
+    "mean": 0.7896922107353291,
+    "median": 0.8204561243692707,
+    "population_std": 0.08768248849658218,
+    "minimum": 0.5794282852627554,
+    "maximum": 0.8783260806983231,
+    "case_count": 10
+  },
+  "per_class_mean_metrics": {
+    "LV": {
+      "Dice": 0.8298375509168663,
+      "IoU": 0.7190018445240158,
+      "precision": 0.8317079803124412,
+      "recall": 0.8652354041850147
+    },
+    "RV": {
+      "Dice": 0.7881335577575231,
+      "IoU": 0.6572985460331346,
+      "precision": 0.7614859455507658,
+      "recall": 0.851497034033387
+    },
+    "LA": {
+      "Dice": 0.8383701157855655,
+      "IoU": 0.7293234745636765,
+      "precision": 0.8754519260526117,
+      "recall": 0.8119903248603436
+    },
+    "RA": {
+      "Dice": 0.7974627377047133,
+      "IoU": 0.6794861797012884,
+      "precision": 0.8577892633235167,
+      "recall": 0.7836494864380638
+    },
+    "MYO": {
+      "Dice": 0.8419342066243671,
+      "IoU": 0.73230948847221,
+      "precision": 0.848979652023225,
+      "recall": 0.8410093764830745
+    },
+    "AO": {
+      "Dice": 0.7473954492747004,
+      "IoU": 0.6146129731667266,
+      "precision": 0.7723562174656641,
+      "recall": 0.7519099527187184
+    },
+    "PA": {
+      "Dice": 0.684711857083568,
+      "IoU": 0.5469690685096885,
+      "precision": 0.7173301171267531,
+      "recall": 0.6806597773930868
+    }
+  },
+  "backup_receipt": {
+    "archive_bytes": 18315524,
+    "archive_SHA256": "5a34a297068dd0e97affc1cbf2864a2f6b2b07a39928a94b4eb3693d2731580e",
+    "manifest_SHA256": "1db5ba86a1b2ac0bb38210cba2d92d40160b0338a28a627474896ee265a6571f",
+    "files": 39,
+    "source_bytes": 28536207
+  },
+  "archive_and_all_payload_SHA256_verified": true,
+  "payload_files_verified": 39,
+  "checkpoint_SHA256_verified_separately": true,
+  "local_backup_relative_path": "remote_runs/cardiac_chd68_v1_full_20261009",
+  "visual_QA_relative_path": "remote_runs/cardiac_chd68_v1_full_20261009/visual_QA_v2",
+  "visual_QA_case_ids": [
+    "ct_1032",
+    "ct_1026",
+    "ct_1083"
+  ],
+  "visual_QA_selection": "post-hoc best, upper-median and worst test macro Dice; not representative cohort sampling",
+  "visual_QA_sampling": "GT-positive axial 20/50/80%; coronal/sagittal bbox center; PA maximal missed-class plane",
+  "visual_QA_inspected": true,
+  "physical_geometry_verified": false,
+  "test_tuning_performed": false,
+  "private_NII_in_training_or_cloud": false,
+  "heartbeat_status": "PAUSED",
+  "new_training_after_test_performed": false
+}

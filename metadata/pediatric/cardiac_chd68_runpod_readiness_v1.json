@@ -79,7 +79,7 @@
   "cloud_transfer_performed": true,
   "GPU_benchmark_executed": true,
   "full_training_executed": true,
-  "test_evaluated": false,
+  "test_evaluated": true,
   "suite_verification": {
     "full_suite_passed": 174,
     "existing_warnings": 322,
@@ -100,6 +100,9 @@
     "sanity_passed": true
   },
   "full_training_started": true,
-  "full_training_completed": false,
-  "full_run_report": "metadata/pediatric/cardiac_chd68_full_run_v1.json"
+  "full_training_completed": true,
+  "full_run_report": "metadata/pediatric/cardiac_chd68_full_run_v1.json",
+  "local_full_results_backup_verified": true,
+  "results_report": "metadata/pediatric/cardiac_chd68_results_v1.json",
+  "heartbeat_status": "PAUSED"
 }
