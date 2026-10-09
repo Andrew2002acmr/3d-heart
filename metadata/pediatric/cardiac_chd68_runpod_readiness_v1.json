@@ -75,9 +75,9 @@
     "config_SHA256": "7bf1064769004e0a24fa1ee49103dd5e7418d17576098ffb8848c8a24e9451a1",
     "GPU_benchmark_executed": false
   },
-  "Pod_started": false,
-  "cloud_transfer_performed": false,
-  "GPU_benchmark_executed": false,
+  "Pod_started": true,
+  "cloud_transfer_performed": true,
+  "GPU_benchmark_executed": true,
   "full_training_executed": false,
   "test_evaluated": false,
   "suite_verification": {
@@ -88,5 +88,15 @@
     "focused_seconds": 15.1
   },
   "free_E_bytes_after_preparation": 243888234496,
-  "minimum_local_reserve_bytes": 80000000000
+  "minimum_local_reserve_bytes": 80000000000,
+  "execution_commit": "d89ea289124501654232b8ed6333d671410244d4",
+  "GPU_benchmark_report": "metadata/pediatric/cardiac_chd68_gpu_benchmark_v1.json",
+  "local_GPU_results_backup_verified": true,
+  "GPU_benchmark_summary": {
+    "mean_seconds_per_batch": 0.30310183204710484,
+    "samples_per_second": 52.787539725307404,
+    "estimated_train_epoch_seconds": 234.60081800445914,
+    "estimated_30_train_epochs_seconds": 7038.024540133774,
+    "sanity_passed": true
+  }
 }

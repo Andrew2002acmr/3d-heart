@@ -196,3 +196,19 @@ original-grid evaluation, best/last/history/environment/provenance и integrity 
 Готовый минимальный training bundle 3.333 GB на E:, без raw CT/НИИ.
 Pod ещё не запущен, transfer/GPU benchmark/full training не выполнялись.
 [Инструкция и готовность](cardiac_chd68_runpod_readiness.md).
+
+## Обновление после миграции RunPod — 2026-10-09
+
+Endpoint 213.173.109.80:12476: SSH прежним RunPod key работает.
+RTX4090/CUDA и persistent /workspace проверены; старый Heart v1 сохранён.
+Для нового multiclass baseline отдельный checkout d89ea28 и публичный bundle
+3.333 GB; archive/225 files/repository configs SHA-256 совпали.
+Linux targeted tests: 7 passed. Короткий GPU benchmark: 0.3031 s/batch,
+3.91 min/train epoch, 117.30 min/30 train epochs без validation/checkpoint I/O.
+Sanity loss 3.3389→1.8332; peak RSS1.883 GB, CUDA reserve3.127 GB.
+Это не segmentation quality; test не использован. Full training не запускалось.
+Results backup (8 files) на E:/3d-heart-data/pediatric_ct_heart/remote_runs/
+cardiac_chd68_v1_20261009 полностью проверен SHA-256. Pod можно остановить.
+Для full launch сохранить execution commit d89ea28 и matching benchmark receipt;
+после обновления HEAD требуется повторный benchmark. Frozen split не менять.
+[Подробности и ограничения](cardiac_chd68_runpod_readiness.md).

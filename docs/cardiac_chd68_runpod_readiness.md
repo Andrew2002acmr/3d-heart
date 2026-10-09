@@ -1,7 +1,9 @@
 # Подготовка multiclass CHD68 v1 к RunPod RTX 4090
 
 Дата: 09.10.2026. Ветка feature/pediatric-heart-segmentation.
-Pod ещё не запущен; никаких SSH/cloud transfers или GPU runs в этом этапе нет.
+Обновлено после миграции Pod: SSH, RTX4090/CUDA и persistent /workspace проверены.
+Минимальный публичный bundle передан и проверен, короткий GPU benchmark выполнен.
+Полное multiclass training и test evaluation не запускались.
 Все тяжёлые локальные данные на E:, исходные CT и старый Heart baseline не изменены.
 
 ## Готовый эксперимент
@@ -74,7 +76,7 @@ Empty-reference class не получает автоматическую наг�
 Benchmark: 5 warmup + 50 measured training batches + 20 fixed-train sanity steps;
 validation/test не используются. Реальное CUDA время измеряется с synchronize,
 сохраняются peak allocated/reserved VRAM, RSS/CPU, environment, config и history.
-Оценка времени epoch/30 train epochs появится после benchmark, без validation/save I/O.
+Измеренная оценка: 3.91 min/train epoch, 117.30 min/30 train epochs; validation/save I/O не включены.
 [CUDA timing](https://docs.pytorch.org/docs/2.14/notes/cuda.html) требует учёта
 асинхронного выполнения; CPU smoke timings для GPU estimates не используются.
 
@@ -162,7 +164,7 @@ Shared volume df может показывать pool size — отдельно 
 квоту Pod volume. Для bundle+unpack+checkpoints нужен volume хотя бы около 25 GB;
 реальный free/quota проверить до transfer. Весь код и data/output — /workspace.
 
-После просмотра успешного GPU benchmark (эту команду сейчас не выполняли):
+После отдельного решения о полном запуске (эти команды пока не выполнялись):
 
 ```bash
 source /workspace/venvs/cardiac_chd68_v1/bin/activate
@@ -181,7 +183,8 @@ python -m heart3d.ml.cardiac_train evaluate \
 Не использовать test для подбора параметров. Новая evaluation не перезапишет GT
 или существующий output. До остановки Pod выгрузить critical checkpoints,
 experiments и evaluation в новый каталог E:; сопоставить SHA-256 всех файлов.
-Пока этих артефактов нет: training/metrics/test predictions ещё не выполнялись.
+Full-training checkpoints/quality metrics/test predictions ещё отсутствуют.
+Benchmark receipt/environment/history/logs уже сохранены локально и проверены SHA-256.
 
 ## Проверки готовности
 
@@ -190,4 +193,70 @@ experiments и evaluation в новый каталог E:; сопоставит�
 семь focused regression tests, включая Windows/Linux serialization.
 Реальный cache smoke: 3 batches, 2 train development cases; input 2×5×256×256,
 output 2×8×256×256, target 2×256×256; finite loss/gradients, weights обновлены.
-Это только техническая проверка. GPU benchmark и full training предстоят на Pod.
+Это была локальная техническая проверка; последующий GPU benchmark описан ниже. Full training ещё предстоит.
+
+## Миграция Pod и фактический GPU benchmark — 09.10.2026
+
+Новый endpoint пользователя: 213.173.109.80:12476, root; доступ подтверждён
+только прежним явно заданным RunPod ключом. Новый host key сохранён для этого
+endpoint; глобальная SSH-проверка не отключалась. Старый /workspace/3d-heart
+остался на 7c93cb9, его данные и результаты binary Heart v1 не изменены.
+Новый чистый checkout /workspace/3d-heart-cardiac-v1:
+**d89ea289124501654232b8ed6333d671410244d4**, feature/pediatric-heart-segmentation.
+
+RTX4090 24564 MiB, driver 580.95.05; Python 3.12.3,
+PyTorch 2.8.0+cu128 / CUDA12.8. Доступны 32 logical CPU, 16 physical CPU,
+134.12 GB RAM. /workspace — отдельный persistent FUSE network mount.
+df отражает общий pool, не индивидуальную купленную квоту; её значение независимо
+не проверено. Дополнительно переданы archive 3.333 GB и unpacked payload 5.750 GB.
+Все записи и integrity checks завершились успешно; GPU environment/temp/cache
+и результаты находятся под /workspace. НИИ CT не передавались.
+Локально E: остаётся около 243.89 GB свободно, резерв 80 GB соблюдён.
+
+SHA-256 archive совпал с локальным receipt; 225 payload files и четыре
+repository configs/manifests проверены. Prepared cache дополнительно прошёл
+проверку 204 файлов. Linux targeted suite: **7 passed, 33.18 s**.
+Модель, preprocessing и frozen split 48/10/10 не менялись.
+
+[Machine-readable GPU report](../metadata/pediatric/cardiac_chd68_gpu_benchmark_v1.json).
+FP32/batch16: 5 warmup, 50 measured batches, 20 fixed-train sanity updates;
+validation/test не использовались, benchmark weights не сохранялись.
+
+| Показатель | Измеренное значение |
+|---|---:|
+| Mean sec/batch, включая загрузку/augmentation | 0.303102 |
+| Median sec/batch | 0.301406 |
+| Samples/sec | 52.79 |
+| Train batches/epoch | 774 |
+| Estimated train epoch | 234.60 s / 3.91 min |
+| Estimated 30 train epochs | 7038.02 s / 117.30 min |
+| Peak process RSS | 1.883 GB |
+| Peak CUDA allocated | 1.921 GB |
+| Peak CUDA reserved | 3.127 GB |
+| Mean process CPU | 193.68% / около 1.94 logical CPU |
+| Fixed-train loss before → after | 3.33890 → 1.83319 |
+
+Loss/gradients конечны, weights обновились, sanity_passed=true.
+Это технический learning check, не результат качества segmentation.
+Оценка около **1 h 57 min** относится только к train batches; validation,
+checkpoint I/O и изменение нагрузки network filesystem требуют дополнительного
+времени. Benchmark использовал уже прочитанный для SHA cache; будущая нагрузка
+сетевого тома может отличаться. Проверку quota проводить перед full launch.
+
+CUDA nll_loss2d в torch2.8 выдаёт предупреждение о недетерминированной реализации
+при deterministic warn_only. Seed/config/environment фиксированы, но побитовая
+идентичность повторных запусков не гарантируется. Age/patient identity/physical
+scale ограничения CHD68 остаются: neonatal accuracy и mm метрики не заявляются.
+
+Восемь критичных файлов (summary/history/config/environment/resources/pip freeze,
+preflight/log) выгружены в новый локальный каталог
+E:/3d-heart-data/pediatric_ct_heart/remote_runs/cardiac_chd68_v1_20261009.
+Archive и каждый payload проверены SHA-256. Results archive SHA:
+e034ebb090d3a937bb93089b1926863c94f2f2275c7651045c54aa54d3488b5e.
+
+**Рекомендация:** технически можно запускать полный публичный multiclass baseline.
+Текущий этап остановлен после benchmark; full training/test не запускались.
+Pod после backup verification свободен и может быть остановлен пользователем.
+При запуске использовать matching receipt и execution commit d89ea28 в оставленном
+checkout. Более поздний docs-only commit не является execution commit; после
+обновления Git HEAD safety gate потребует новый короткий benchmark.
