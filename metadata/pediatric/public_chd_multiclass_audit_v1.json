@@ -1,0 +1,4935 @@
+{
+  "version": 1,
+  "dataset": "CHD68",
+  "cases": [
+    {
+      "case_id": "ct_1001",
+      "source": "CHD68",
+      "modality": "CT",
+      "age": null,
+      "age_verified": false,
+      "diagnosis_codes": [
+        "AVSD"
+      ],
+      "diagnosis_source": "https://raw.githubusercontent.com/XiaoweiXu/Whole-heart-and-great-vessel-segmentation-of-chd_segmentation/master/README.md",
+      "patient_linkage_independently_verified": false,
+      "duplicate_group": "chd68_imagechd::ct_1001",
+      "split_eligible_0_17": false,
+      "physical_context_eligible": false,
+      "healthy_status": "pathological",
+      "pair_grid_gate": "passed",
+      "image_SHA256": "03c6c49cb914704b68672cc92f3327dd50304c24cbe8fdbdd0ef34fe7fcd8962",
+      "mask_SHA256": "a8d04123b65b782e38010ff3b0c168437a76ae086b2849b622373dcc4fe4a6c2",
+      "shape": [
+        512,
+        512,
+        221
+      ],
+      "spacing": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "spatial_unit": "unknown",
+      "physical_scale_verified": false,
+      "label_counts": {
+        "0": 51022030,
+        "1": 505966,
+        "2": 621080,
+        "3": 1630279,
+        "4": 1299938,
+        "5": 1401209,
+        "6": 585851,
+        "7": 867471
+      },
+      "noncardiac_labels": [],
+      "missing_cardiac_labels": [],
+      "intensity_min_max": [
+        0.0,
+        4095.0
+      ],
+      "HU_independently_verified": false,
+      "imagechd_same_name_in_archive": [
+        "ct_1001_image.nii.gz",
+        "ct_1001_label.nii.gz"
+      ],
+      "imagechd_SHA256_identical_available_files": [
+        "ct_1001_image.nii.gz",
+        "ct_1001_label.nii.gz"
+      ],
+      "imagechd_SHA256_complete_pair": true,
+      "readiness": "requires_age_and_physical_scale_review",
+      "metadata_candidate": {
+        "metadata_index": 1,
+        "release_case_candidate": "ct_1001",
+        "linkage_rule": "idx + 1000",
+        "linkage_author_confirmed": false,
+        "age_verified_for_release": false,
+        "age_candidate_days": 751,
+        "age_candidate_completed_years": 2,
+        "candidate_in_0_17": true,
+        "source_pixel_spacing_candidate_mm": [
+          0.29102,
+          0.29102
+        ],
+        "source_calculated_z_candidate_mm": 0.75,
+        "scanner_model": "SOMATOM Definition Flash"
+      },
+      "metadata_conflicts_with_published_age_range": false
+    },
+    {
+      "case_id": "ct_1002",
+      "source": "CHD68",
+      "modality": "CT",
+      "age": null,
+      "age_verified": false,
+      "diagnosis_codes": [
+        "VSD"
+      ],
+      "diagnosis_source": "https://raw.githubusercontent.com/XiaoweiXu/Whole-heart-and-great-vessel-segmentation-of-chd_segmentation/master/README.md",
+      "patient_linkage_independently_verified": false,
+      "duplicate_group": "chd68_imagechd::ct_1002",
+      "split_eligible_0_17": false,
+      "physical_context_eligible": false,
+      "healthy_status": "pathological",
+      "pair_grid_gate": "passed",
+      "image_SHA256": "d38ebf17f14db077dbd6101f17af6f959c4c3c6aa93a8abb8fd9d11ec1f945ab",
+      "mask_SHA256": "a7264680ac17d8a69c51f018a5779c209d92cc6bd9cfc7b4ed2c0788f012aa37",
+      "shape": [
+        512,
+        512,
+        137
+      ],
+      "spacing": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "spatial_unit": "unknown",
+      "physical_scale_verified": false,
+      "label_counts": {
+        "0": 33762007,
+        "1": 155841,
+        "2": 148308,
+        "3": 406018,
+        "4": 353367,
+        "5": 706888,
+        "6": 161247,
+        "7": 220052
+      },
+      "noncardiac_labels": [],
+      "missing_cardiac_labels": [],
+      "intensity_min_max": [
+        0.0,
+        4095.0
+      ],
+      "HU_independently_verified": false,
+      "imagechd_same_name_in_archive": [
+        "ct_1002_image.nii.gz",
+        "ct_1002_label.nii.gz"
+      ],
+      "imagechd_SHA256_identical_available_files": [
+        "ct_1002_image.nii.gz",
+        "ct_1002_label.nii.gz"
+      ],
+      "imagechd_SHA256_complete_pair": true,
+      "readiness": "requires_age_and_physical_scale_review",
+      "metadata_candidate": {
+        "metadata_index": 2,
+        "release_case_candidate": "ct_1002",
+        "linkage_rule": "idx + 1000",
+        "linkage_author_confirmed": false,
+        "age_verified_for_release": false,
+        "age_candidate_days": 8,
+        "age_candidate_completed_years": 0,
+        "candidate_in_0_17": true,
+        "source_pixel_spacing_candidate_mm": [
+          0.23438,
+          0.23438
+        ],
+        "source_calculated_z_candidate_mm": 0.75,
+        "scanner_model": "SOMATOM Definition Flash"
+      },
+      "metadata_conflicts_with_published_age_range": false
+    },
+    {
+      "case_id": "ct_1004",
+      "source": "CHD68",
+      "modality": "CT",
+      "age": null,
+      "age_verified": false,
+      "diagnosis_codes": [
+        "AD"
+      ],
+      "diagnosis_source": "https://raw.githubusercontent.com/XiaoweiXu/Whole-heart-and-great-vessel-segmentation-of-chd_segmentation/master/README.md",
+      "patient_linkage_independently_verified": false,
+      "duplicate_group": "chd68_imagechd::ct_1004",
+      "split_eligible_0_17": false,
+      "physical_context_eligible": false,
+      "healthy_status": "pathological",
+      "pair_grid_gate": "passed",
+      "image_SHA256": "13a83c7f33e7250578bb65b9efb434dd6e45d186c2f35f25a48260975682d221",
+      "mask_SHA256": "30bf87b93d2bb23ec7f93727ad3c4536f3e55fb689376136e4db0735ed0ebf9e",
+      "shape": [
+        512,
+        512,
+        344
+      ],
+      "spacing": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "spatial_unit": "unknown",
+      "physical_scale_verified": false,
+      "label_counts": {
+        "0": 75833503,
+        "1": 464609,
+        "2": 1514382,
+        "3": 1757790,
+        "4": 5060546,
+        "5": 3067116,
+        "6": 727942,
+        "7": 1751648
+      },
+      "noncardiac_labels": [],
+      "missing_cardiac_labels": [],
+      "intensity_min_max": [
+        0.0,
+        4095.0
+      ],
+      "HU_independently_verified": false,
+      "imagechd_same_name_in_archive": [
+        "ct_1004_image.nii.gz",
+        "ct_1004_label.nii.gz"
+      ],
+      "imagechd_SHA256_identical_available_files": [
+        "ct_1004_image.nii.gz",
+        "ct_1004_label.nii.gz"
+      ],
+      "imagechd_SHA256_complete_pair": true,
+      "readiness": "requires_age_and_physical_scale_review",
+      "metadata_candidate": {
+        "metadata_index": 4,
+        "release_case_candidate": "ct_1004",
+        "linkage_rule": "idx + 1000",
+        "linkage_author_confirmed": false,
+        "age_verified_for_release": false,
+        "age_candidate_days": 3661,
+        "age_candidate_completed_years": 10,
+        "candidate_in_0_17": true,
+        "source_pixel_spacing_candidate_mm": [
+          0.31836,
+          0.31836
+        ],
+        "source_calculated_z_candidate_mm": 0.75,
+        "scanner_model": "SOMATOM Definition Flash"
+      },
+      "metadata_conflicts_with_published_age_range": false
+    },
+    {
+      "case_id": "ct_1007",
+      "source": "CHD68",
+      "modality": "CT",
+      "age": null,
+      "age_verified": false,
+      "diagnosis_codes": [
+        "ASD"
+      ],
+      "diagnosis_source": "https://raw.githubusercontent.com/XiaoweiXu/Whole-heart-and-great-vessel-segmentation-of-chd_segmentation/master/README.md",
+      "patient_linkage_independently_verified": false,
+      "duplicate_group": "chd68_imagechd::ct_1007",
+      "split_eligible_0_17": false,
+      "physical_context_eligible": false,
+      "healthy_status": "pathological",
+      "pair_grid_gate": "passed",
+      "image_SHA256": "84f8572037fe4779cb9f40a58cd749eff36d4cd2b698b7a09ecb225258ce6f50",
+      "mask_SHA256": "615b25e5da3ac58144fcd9f016ef69bc193289f6edb0f81865298d87ef74822f",
+      "shape": [
+        512,
+        512,
+        275
+      ],
+      "spacing": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "spatial_unit": "unknown",
+      "physical_scale_verified": false,
+      "label_counts": {
+        "0": 68320723,
+        "1": 278020,
+        "2": 157211,
+        "3": 759169,
+        "4": 687439,
+        "5": 982878,
+        "6": 438370,
+        "7": 465790
+      },
+      "noncardiac_labels": [],
+      "missing_cardiac_labels": [],
+      "intensity_min_max": [
+        0.0,
+        4095.0
+      ],
+      "HU_independently_verified": false,
+      "imagechd_same_name_in_archive": [
+        "ct_1007_image.nii.gz",
+        "ct_1007_label.nii.gz"
+      ],
+      "imagechd_SHA256_identical_available_files": [],
+      "imagechd_SHA256_complete_pair": false,
+      "readiness": "requires_age_and_physical_scale_review",
+      "metadata_candidate": {
+        "metadata_index": 7,
+        "release_case_candidate": "ct_1007",
+        "linkage_rule": "idx + 1000",
+        "linkage_author_confirmed": false,
+        "age_verified_for_release": false,
+        "age_candidate_days": 2228,
+        "age_candidate_completed_years": 6,
+        "candidate_in_0_17": true,
+        "source_pixel_spacing_candidate_mm": [
+          0.38672,
+          0.38672
+        ],
+        "source_calculated_z_candidate_mm": 0.75,
+        "scanner_model": "SOMATOM Definition Flash"
+      },
+      "metadata_conflicts_with_published_age_range": false
+    },
+    {
+      "case_id": "ct_1008",
+      "source": "CHD68",
+      "modality": "CT",
+      "age": null,
+      "age_verified": false,
+      "diagnosis_codes": [
+        "AD"
+      ],
+      "diagnosis_source": "https://raw.githubusercontent.com/XiaoweiXu/Whole-heart-and-great-vessel-segmentation-of-chd_segmentation/master/README.md",
+      "patient_linkage_independently_verified": false,
+      "duplicate_group": "chd68_imagechd::ct_1008",
+      "split_eligible_0_17": false,
+      "physical_context_eligible": false,
+      "healthy_status": "pathological",
+      "pair_grid_gate": "passed",
+      "image_SHA256": "514c8a080707dbe5c4c75a2a5ed9e1808e6d5f2f267aa4e3edfc5f5faa5113e1",
+      "mask_SHA256": "810a685b21463089b41702dda33cead9db7784dbdcb6d308f7469c6223578b03",
+      "shape": [
+        512,
+        512,
+        206
+      ],
+      "spacing": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "spatial_unit": "unknown",
+      "physical_scale_verified": false,
+      "label_counts": {
+        "0": 52085005,
+        "1": 117549,
+        "2": 91654,
+        "3": 274907,
+        "4": 261708,
+        "5": 643079,
+        "6": 238595,
+        "7": 289167
+      },
+      "noncardiac_labels": [],
+      "missing_cardiac_labels": [],
+      "intensity_min_max": [
+        0.0,
+        4095.0
+      ],
+      "HU_independently_verified": false,
+      "imagechd_same_name_in_archive": [
+        "ct_1008_image.nii.gz",
+        "ct_1008_label.nii.gz"
+      ],
+      "imagechd_SHA256_identical_available_files": [],
+      "imagechd_SHA256_complete_pair": false,
+      "readiness": "requires_age_and_physical_scale_review",
+      "metadata_candidate": {
+        "metadata_index": 8,
+        "release_case_candidate": "ct_1008",
+        "linkage_rule": "idx + 1000",
+        "linkage_author_confirmed": false,
+        "age_verified_for_release": false,
+        "age_candidate_days": 642,
+        "age_candidate_completed_years": 1,
+        "candidate_in_0_17": true,
+        "source_pixel_spacing_candidate_mm": [
+          0.30859,
+          0.30859
+        ],
+        "source_calculated_z_candidate_mm": 0.75,
+        "scanner_model": "SOMATOM Definition Flash"
+      },
+      "metadata_conflicts_with_published_age_range": false
+    },
+    {
+      "case_id": "ct_1010",
+      "source": "CHD68",
+      "modality": "CT",
+      "age": null,
+      "age_verified": false,
+      "diagnosis_codes": [
+        "ToF"
+      ],
+      "diagnosis_source": "https://raw.githubusercontent.com/XiaoweiXu/Whole-heart-and-great-vessel-segmentation-of-chd_segmentation/master/README.md",
+      "patient_linkage_independently_verified": false,
+      "duplicate_group": "chd68_imagechd::ct_1010",
+      "split_eligible_0_17": false,
+      "physical_context_eligible": false,
+      "healthy_status": "pathological",
+      "pair_grid_gate": "passed",
+      "image_SHA256": "e39509178e1c215e549d7596175062d909d25cccb0f5fee52460f81d320e92c3",
+      "mask_SHA256": "f483f7157b680439e33d833e3786b48250c20c235940ebd3b4dd4b53fb051427",
+      "shape": [
+        512,
+        512,
+        275
+      ],
+      "spacing": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "spatial_unit": "unknown",
+      "physical_scale_verified": false,
+      "label_counts": {
+        "0": 67891556,
+        "1": 194339,
+        "2": 135432,
+        "3": 686842,
+        "4": 924265,
+        "5": 1296157,
+        "6": 545620,
+        "7": 318903,
+        "15": 96486
+      },
+      "noncardiac_labels": [
+        15
+      ],
+      "missing_cardiac_labels": [],
+      "intensity_min_max": [
+        0.0,
+        3713.0
+      ],
+      "HU_independently_verified": false,
+      "imagechd_same_name_in_archive": [
+        "ct_1010_image.nii.gz",
+        "ct_1010_label.nii.gz"
+      ],
+      "imagechd_SHA256_identical_available_files": [],
+      "imagechd_SHA256_complete_pair": false,
+      "readiness": "requires_age_and_physical_scale_review",
+      "metadata_candidate": {
+        "metadata_index": 10,
+        "release_case_candidate": "ct_1010",
+        "linkage_rule": "idx + 1000",
+        "linkage_author_confirmed": false,
+        "age_verified_for_release": false,
+        "age_candidate_days": 998,
+        "age_candidate_completed_years": 2,
+        "candidate_in_0_17": true,
+        "source_pixel_spacing_candidate_mm": [
+          0.30469,
+          0.30469
+        ],
+        "source_calculated_z_candidate_mm": 0.75,
+        "scanner_model": "SOMATOM Definition Flash"
+      },
+      "metadata_conflicts_with_published_age_range": false
+    },
+    {
+      "case_id": "ct_1012",
+      "source": "CHD68",
+      "modality": "CT",
+      "age": null,
+      "age_verified": false,
+      "diagnosis_codes": [
+        "ToF"
+      ],
+      "diagnosis_source": "https://raw.githubusercontent.com/XiaoweiXu/Whole-heart-and-great-vessel-segmentation-of-chd_segmentation/master/README.md",
+      "patient_linkage_independently_verified": false,
+      "duplicate_group": "chd68_imagechd::ct_1012",
+      "split_eligible_0_17": false,
+      "physical_context_eligible": false,
+      "healthy_status": "pathological",
+      "pair_grid_gate": "passed",
+      "image_SHA256": "d96f9a1206840100f66d68138d5829652c808050888fe65ab458a0e509e03e7d",
+      "mask_SHA256": "e46be754a9beaf224d848562bb8d9fef6fba373f4e2934e81bfa61198f462948",
+      "shape": [
+        512,
+        512,
+        206
+      ],
+      "spacing": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "spatial_unit": "unknown",
+      "physical_scale_verified": false,
+      "label_counts": {
+        "0": 52170427,
+        "1": 103324,
+        "2": 99992,
+        "3": 178501,
+        "4": 450013,
+        "5": 745971,
+        "6": 191970,
+        "7": 61466
+      },
+      "noncardiac_labels": [],
+      "missing_cardiac_labels": [],
+      "intensity_min_max": [
+        0.0,
+        4095.0
+      ],
+      "HU_independently_verified": false,
+      "imagechd_same_name_in_archive": [
+        "ct_1012_image.nii.gz",
+        "ct_1012_label.nii.gz"
+      ],
+      "imagechd_SHA256_identical_available_files": [],
+      "imagechd_SHA256_complete_pair": false,
+      "readiness": "requires_age_and_physical_scale_review",
+      "metadata_candidate": {
+        "metadata_index": 12,
+        "release_case_candidate": "ct_1012",
+        "linkage_rule": "idx + 1000",
+        "linkage_author_confirmed": false,
+        "age_verified_for_release": false,
+        "age_candidate_days": 204,
+        "age_candidate_completed_years": 0,
+        "candidate_in_0_17": true,
+        "source_pixel_spacing_candidate_mm": [
+          0.31055,
+          0.31055
+        ],
+        "source_calculated_z_candidate_mm": 0.75,
+        "scanner_model": "SOMATOM Definition Flash"
+      },
+      "metadata_conflicts_with_published_age_range": false
+    },
+    {
+      "case_id": "ct_1016",
+      "source": "CHD68",
+      "modality": "CT",
+      "age": null,
+      "age_verified": false,
+      "diagnosis_codes": [
+        "ASD",
+        "AD"
+      ],
+      "diagnosis_source": "https://raw.githubusercontent.com/XiaoweiXu/Whole-heart-and-great-vessel-segmentation-of-chd_segmentation/master/README.md",
+      "patient_linkage_independently_verified": false,
+      "duplicate_group": "chd68_imagechd::ct_1016",
+      "split_eligible_0_17": false,
+      "physical_context_eligible": false,
+      "healthy_status": "pathological",
+      "pair_grid_gate": "passed",
+      "image_SHA256": "678df021f86a1ea35fff0a082c7592f71b2463d602afc4fbf6535cf7f68b9905",
+      "mask_SHA256": "67f6208346addc6851db379060e1182ecd4bed45e489a06267970ad9e89f82a8",
+      "shape": [
+        512,
+        512,
+        342
+      ],
+      "spacing": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "spatial_unit": "unknown",
+      "physical_scale_verified": false,
+      "label_counts": {
+        "0": 85063220,
+        "1": 347078,
+        "2": 757773,
+        "3": 778141,
+        "4": 555347,
+        "5": 1162040,
+        "6": 369040,
+        "7": 586337,
+        "8": 34272
+      },
+      "noncardiac_labels": [
+        8
+      ],
+      "missing_cardiac_labels": [],
+      "intensity_min_max": [
+        0.0,
+        4095.0
+      ],
+      "HU_independently_verified": false,
+      "imagechd_same_name_in_archive": [
+        "ct_1016_image.nii.gz",
+        "ct_1016_label.nii.gz"
+      ],
+      "imagechd_SHA256_identical_available_files": [],
+      "imagechd_SHA256_complete_pair": false,
+      "readiness": "requires_age_and_physical_scale_review",
+      "metadata_candidate": {
+        "metadata_index": 16,
+        "release_case_candidate": "ct_1016",
+        "linkage_rule": "idx + 1000",
+        "linkage_author_confirmed": false,
+        "age_verified_for_release": false,
+        "age_candidate_days": 14841,
+        "age_candidate_completed_years": 40,
+        "candidate_in_0_17": false,
+        "source_pixel_spacing_candidate_mm": [
+          0.64258,
+          0.64258
+        ],
+        "source_calculated_z_candidate_mm": 1.5,
+        "scanner_model": "iCT 256"
+      },
+      "metadata_conflicts_with_published_age_range": true
+    },
+    {
+      "case_id": "ct_1021",
+      "source": "CHD68",
+      "modality": "CT",
+      "age": null,
+      "age_verified": false,
+      "diagnosis_codes": [
+        "VSD",
+        "AD"
+      ],
+      "diagnosis_source": "https://raw.githubusercontent.com/XiaoweiXu/Whole-heart-and-great-vessel-segmentation-of-chd_segmentation/master/README.md",
+      "patient_linkage_independently_verified": false,
+      "duplicate_group": "chd68_imagechd::ct_1021",
+      "split_eligible_0_17": false,
+      "physical_context_eligible": false,
+      "healthy_status": "pathological",
+      "pair_grid_gate": "passed",
+      "image_SHA256": "36e147c8e412c9377f58c6a6a04c6f240b04b95a8e61cb571cc8b5f65023ac4e",
+      "mask_SHA256": "21dc975f81b34781fef792d08c9006c356dc5d5a4a0b30140fb953779aad931b",
+      "shape": [
+        512,
+        512,
+        170
+      ],
+      "spacing": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "spatial_unit": "unknown",
+      "physical_scale_verified": false,
+      "label_counts": {
+        "0": 40782866,
+        "1": 214162,
+        "2": 300750,
+        "3": 701005,
+        "4": 813826,
+        "5": 1342174,
+        "6": 164896,
+        "7": 244801
+      },
+      "noncardiac_labels": [],
+      "missing_cardiac_labels": [],
+      "intensity_min_max": [
+        0.0,
+        4095.0
+      ],
+      "HU_independently_verified": false,
+      "imagechd_same_name_in_archive": [
+        "ct_1021_image.nii.gz",
+        "ct_1021_label.nii.gz"
+      ],
+      "imagechd_SHA256_identical_available_files": [],
+      "imagechd_SHA256_complete_pair": false,
+      "readiness": "requires_age_and_physical_scale_review",
+      "metadata_candidate": {
+        "metadata_index": 21,
+        "release_case_candidate": "ct_1021",
+        "linkage_rule": "idx + 1000",
+        "linkage_author_confirmed": false,
+        "age_verified_for_release": false,
+        "age_candidate_days": 41,
+        "age_candidate_completed_years": 0,
+        "candidate_in_0_17": true,
+        "source_pixel_spacing_candidate_mm": [
+          0.20703,
+          0.20703
+        ],
+        "source_calculated_z_candidate_mm": 0.75,
+        "scanner_model": "SOMATOM Definition Flash"
+      },
+      "metadata_conflicts_with_published_age_range": false
+    },
+    {
+      "case_id": "ct_1022",
+      "source": "CHD68",
+      "modality": "CT",
+      "age": null,
+      "age_verified": false,
+      "diagnosis_codes": [
+        "ASD",
+        "PAS"
+      ],
+      "diagnosis_source": "https://raw.githubusercontent.com/XiaoweiXu/Whole-heart-and-great-vessel-segmentation-of-chd_segmentation/master/README.md",
+      "patient_linkage_independently_verified": false,
+      "duplicate_group": "chd68_imagechd::ct_1022",
+      "split_eligible_0_17": false,
+      "physical_context_eligible": false,
+      "healthy_status": "pathological",
+      "pair_grid_gate": "passed",
+      "image_SHA256": "6a35cad193a3b12e978b25b3166acb6240d7245f7f0fbfaf65ae28978587678e",
+      "mask_SHA256": "48edf5fc35fefa9540968b4f3b9d180b3e0963e4b9bd9321ed38b9ef67fb4f89",
+      "shape": [
+        512,
+        512,
+        137
+      ],
+      "spacing": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "spatial_unit": "unknown",
+      "physical_scale_verified": false,
+      "label_counts": {
+        "0": 34117561,
+        "1": 57687,
+        "2": 103308,
+        "3": 284175,
+        "4": 485649,
+        "5": 624814,
+        "6": 143159,
+        "7": 97375
+      },
+      "noncardiac_labels": [],
+      "missing_cardiac_labels": [],
+      "intensity_min_max": [
+        0.0,
+        4095.0
+      ],
+      "HU_independently_verified": false,
+      "imagechd_same_name_in_archive": [
+        "ct_1022_image.nii.gz",
+        "ct_1022_label.nii.gz"
+      ],
+      "imagechd_SHA256_identical_available_files": [],
+      "imagechd_SHA256_complete_pair": false,
+      "readiness": "requires_age_and_physical_scale_review",
+      "metadata_candidate": {
+        "metadata_index": 22,
+        "release_case_candidate": "ct_1022",
+        "linkage_rule": "idx + 1000",
+        "linkage_author_confirmed": false,
+        "age_verified_for_release": false,
+        "age_candidate_days": 18,
+        "age_candidate_completed_years": 0,
+        "candidate_in_0_17": true,
+        "source_pixel_spacing_candidate_mm": [
+          0.24414,
+          0.24414
+        ],
+        "source_calculated_z_candidate_mm": 0.75,
+        "scanner_model": "SOMATOM Definition Flash"
+      },
+      "metadata_conflicts_with_published_age_range": false
+    },
+    {
+      "case_id": "ct_1024",
+      "source": "CHD68",
+      "modality": "CT",
+      "age": null,
+      "age_verified": false,
+      "diagnosis_codes": [
+        "VSD",
+        "AD",
+        "PDA",
+        "CA"
+      ],
+      "diagnosis_source": "https://raw.githubusercontent.com/XiaoweiXu/Whole-heart-and-great-vessel-segmentation-of-chd_segmentation/master/README.md",
+      "patient_linkage_independently_verified": false,
+      "duplicate_group": "chd68_imagechd::ct_1024",
+      "split_eligible_0_17": false,
+      "physical_context_eligible": false,
+      "healthy_status": "pathological",
+      "pair_grid_gate": "passed",
+      "image_SHA256": "bfbdb65f646793bec254acdd93da4c897acbd92c2aa6a3b08d75bcef1ee901a0",
+      "mask_SHA256": "6b8366d5333957e613f5d92a1f007c446258211ed028b3312f0881e8ae69f4d7",
+      "shape": [
+        512,
+        512,
+        344
+      ],
+      "spacing": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "spatial_unit": "unknown",
+      "physical_scale_verified": false,
+      "label_counts": {
+        "0": 83832430,
+        "1": 681960,
+        "2": 385601,
+        "3": 1107696,
+        "4": 771397,
+        "5": 2064428,
+        "6": 657787,
+        "7": 676237
+      },
+      "noncardiac_labels": [],
+      "missing_cardiac_labels": [],
+      "intensity_min_max": [
+        0.0,
+        4095.0
+      ],
+      "HU_independently_verified": false,
+      "imagechd_same_name_in_archive": [
+        "ct_1024_image.nii.gz",
+        "ct_1024_label.nii.gz"
+      ],
+      "imagechd_SHA256_identical_available_files": [],
+      "imagechd_SHA256_complete_pair": false,
+      "readiness": "requires_age_and_physical_scale_review",
+      "metadata_candidate": {
+        "metadata_index": 24,
+        "release_case_candidate": "ct_1024",
+        "linkage_rule": "idx + 1000",
+        "linkage_author_confirmed": false,
+        "age_verified_for_release": false,
+        "age_candidate_days": 2779,
+        "age_candidate_completed_years": 7,
+        "candidate_in_0_17": true,
+        "source_pixel_spacing_candidate_mm": [
+          0.41016,
+          0.41016
+        ],
+        "source_calculated_z_candidate_mm": 0.75,
+        "scanner_model": "SOMATOM Definition Flash"
+      },
+      "metadata_conflicts_with_published_age_range": false
+    },
+    {
+      "case_id": "ct_1026",
+      "source": "CHD68",
+      "modality": "CT",
+      "age": null,
+      "age_verified": false,
+      "diagnosis_codes": [
+        "AD"
+      ],
+      "diagnosis_source": "https://raw.githubusercontent.com/XiaoweiXu/Whole-heart-and-great-vessel-segmentation-of-chd_segmentation/master/README.md",
+      "patient_linkage_independently_verified": false,
+      "duplicate_group": "chd68_imagechd::ct_1026",
+      "split_eligible_0_17": false,
+      "physical_context_eligible": false,
+      "healthy_status": "pathological",
+      "pair_grid_gate": "passed",
+      "image_SHA256": "c149677d57018a694646ebb62816708840a60b3646c19170c031593cdae41c1f",
+      "mask_SHA256": "7afeedc317cb8d8a757790d1a09eb45420af97f3baffee491e08e08bab8ece23",
+      "shape": [
+        512,
+        512,
+        282
+      ],
+      "spacing": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "spatial_unit": "unknown",
+      "physical_scale_verified": false,
+      "label_counts": {
+        "0": 67662837,
+        "1": 800792,
+        "2": 337163,
+        "3": 826705,
+        "4": 593685,
+        "5": 2003759,
+        "6": 1282826,
+        "7": 416841
+      },
+      "noncardiac_labels": [],
+      "missing_cardiac_labels": [],
+      "intensity_min_max": [
+        0.0,
+        4095.0
+      ],
+      "HU_independently_verified": false,
+      "imagechd_same_name_in_archive": [],
+      "imagechd_SHA256_identical_available_files": [],
+      "imagechd_SHA256_complete_pair": false,
+      "readiness": "requires_age_and_physical_scale_review",
+      "metadata_candidate": null,
+      "metadata_conflicts_with_published_age_range": false
+    },
+    {
+      "case_id": "ct_1027",
+      "source": "CHD68",
+      "modality": "CT",
+      "age": null,
+      "age_verified": false,
+      "diagnosis_codes": [
+        "VSD",
+        "ToF"
+      ],
+      "diagnosis_source": "https://raw.githubusercontent.com/XiaoweiXu/Whole-heart-and-great-vessel-segmentation-of-chd_segmentation/master/README.md",
+      "patient_linkage_independently_verified": false,
+      "duplicate_group": "chd68_imagechd::ct_1027",
+      "split_eligible_0_17": false,
+      "physical_context_eligible": false,
+      "healthy_status": "pathological",
+      "pair_grid_gate": "passed",
+      "image_SHA256": "5b50fccbbf9c60cac53e2a9e874d28f05b4fc06716fb1d08c40e574a6fe1fa41",
+      "mask_SHA256": "b26d7ed3fb05a2b017f5ef633cbd4b0f008775415daa156c1bcdd1836576d91b",
+      "shape": [
+        512,
+        512,
+        275
+      ],
+      "spacing": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "spatial_unit": "unknown",
+      "physical_scale_verified": false,
+      "label_counts": {
+        "0": 65594660,
+        "1": 522359,
+        "2": 1917580,
+        "3": 187147,
+        "4": 895628,
+        "5": 2442659,
+        "6": 367354,
+        "7": 145250,
+        "11": 16963
+      },
+      "noncardiac_labels": [
+        11
+      ],
+      "missing_cardiac_labels": [],
+      "intensity_min_max": [
+        0.0,
+        4095.0
+      ],
+      "HU_independently_verified": false,
+      "imagechd_same_name_in_archive": [],
+      "imagechd_SHA256_identical_available_files": [],
+      "imagechd_SHA256_complete_pair": false,
+      "readiness": "requires_age_and_physical_scale_review",
+      "metadata_candidate": null,
+      "metadata_conflicts_with_published_age_range": false
+    },
+    {
+      "case_id": "ct_1028",
+      "source": "CHD68",
+      "modality": "CT",
+      "age": null,
+      "age_verified": false,
+      "diagnosis_codes": [
+        "ToF"
+      ],
+      "diagnosis_source": "https://raw.githubusercontent.com/XiaoweiXu/Whole-heart-and-great-vessel-segmentation-of-chd_segmentation/master/README.md",
+      "patient_linkage_independently_verified": false,
+      "duplicate_group": "chd68_imagechd::ct_1028",
+      "split_eligible_0_17": false,
+      "physical_context_eligible": false,
+      "healthy_status": "pathological",
+      "pair_grid_gate": "passed",
+      "image_SHA256": "7a0201ddda6bc1da5bd96251bc90c45d6abbb6bc8cd92138052bf34e83041cdf",
+      "mask_SHA256": "3ce9a42cf77f0c52301df32c52c98cb1f68385bbc524817ae546ce312e05733d",
+      "shape": [
+        512,
+        512,
+        199
+      ],
+      "spacing": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "spatial_unit": "unknown",
+      "physical_scale_verified": false,
+      "label_counts": {
+        "0": 49927067,
+        "1": 94963,
+        "2": 104366,
+        "3": 217777,
+        "4": 762638,
+        "5": 506779,
+        "6": 365971,
+        "7": 187095
+      },
+      "noncardiac_labels": [],
+      "missing_cardiac_labels": [],
+      "intensity_min_max": [
+        0.0,
+        4095.0
+      ],
+      "HU_independently_verified": false,
+      "imagechd_same_name_in_archive": [
+        "ct_1028_image.nii.gz",
+        "ct_1028_label.nii.gz"
+      ],
+      "imagechd_SHA256_identical_available_files": [],
+      "imagechd_SHA256_complete_pair": false,
+      "readiness": "requires_age_and_physical_scale_review",
+      "metadata_candidate": {
+        "metadata_index": 28,
+        "release_case_candidate": "ct_1028",
+        "linkage_rule": "idx + 1000",
+        "linkage_author_confirmed": false,
+        "age_verified_for_release": false,
+        "age_candidate_days": 858,
+        "age_candidate_completed_years": 2,
+        "candidate_in_0_17": true,
+        "source_pixel_spacing_candidate_mm": [
+          0.32617,
+          0.32617
+        ],
+        "source_calculated_z_candidate_mm": 0.75,
+        "scanner_model": "SOMATOM Definition Flash"
+      },
+      "metadata_conflicts_with_published_age_range": false
+    },
+    {
+      "case_id": "ct_1029",
+      "source": "CHD68",
+      "modality": "CT",
+      "age": null,
+      "age_verified": false,
+      "diagnosis_codes": [
+        "VSD"
+      ],
+      "diagnosis_source": "https://raw.githubusercontent.com/XiaoweiXu/Whole-heart-and-great-vessel-segmentation-of-chd_segmentation/master/README.md",
+      "patient_linkage_independently_verified": false,
+      "duplicate_group": "chd68_imagechd::ct_1029",
+      "split_eligible_0_17": false,
+      "physical_context_eligible": false,
+      "healthy_status": "pathological",
+      "pair_grid_gate": "passed",
+      "image_SHA256": "ed5850a217de29f18bfa6732441110fd349ae39f7e84cff4c504940900a70e2a",
+      "mask_SHA256": "d0c940eb601a0fac3704e3652b4ace3cd5e718299038094da892fe54f955886a",
+      "shape": [
+        512,
+        512,
+        206
+      ],
+      "spacing": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "spatial_unit": "unknown",
+      "physical_scale_verified": false,
+      "label_counts": {
+        "0": 51097224,
+        "1": 152380,
+        "2": 140459,
+        "3": 575140,
+        "4": 407819,
+        "5": 1033870,
+        "6": 219796,
+        "7": 374976
+      },
+      "noncardiac_labels": [],
+      "missing_cardiac_labels": [],
+      "intensity_min_max": [
+        0.0,
+        4095.0
+      ],
+      "HU_independently_verified": false,
+      "imagechd_same_name_in_archive": [
+        "ct_1029_image.nii.gz",
+        "ct_1029_label.nii.gz"
+      ],
+      "imagechd_SHA256_identical_available_files": [],
+      "imagechd_SHA256_complete_pair": false,
+      "readiness": "requires_age_and_physical_scale_review",
+      "metadata_candidate": {
+        "metadata_index": 29,
+        "release_case_candidate": "ct_1029",
+        "linkage_rule": "idx + 1000",
+        "linkage_author_confirmed": false,
+        "age_verified_for_release": false,
+        "age_candidate_days": 126,
+        "age_candidate_completed_years": 0,
+        "candidate_in_0_17": true,
+        "source_pixel_spacing_candidate_mm": [
+          0.31836,
+          0.31836
+        ],
+        "source_calculated_z_candidate_mm": 0.75,
+        "scanner_model": "SOMATOM Definition Flash"
+      },
+      "metadata_conflicts_with_published_age_range": false
+    },
+    {
+      "case_id": "ct_1030",
+      "source": "CHD68",
+      "modality": "CT",
+      "age": null,
+      "age_verified": false,
+      "diagnosis_codes": [
+        "CAT"
+      ],
+      "diagnosis_source": "https://raw.githubusercontent.com/XiaoweiXu/Whole-heart-and-great-vessel-segmentation-of-chd_segmentation/master/README.md",
+      "patient_linkage_independently_verified": false,
+      "duplicate_group": "chd68_imagechd::ct_1030",
+      "split_eligible_0_17": false,
+      "physical_context_eligible": false,
+      "healthy_status": "pathological",
+      "pair_grid_gate": "passed",
+      "image_SHA256": "3920cae438a2fa48de76a590681224171da0b61a839e485ff5e048d851481031",
+      "mask_SHA256": "5a69a8ec3c1be2321b6fa608e6250afd3b113ccf6cb43294f96244095d0aa038",
+      "shape": [
+        512,
+        512,
+        206
+      ],
+      "spacing": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "spatial_unit": "unknown",
+      "physical_scale_verified": false,
+      "label_counts": {
+        "0": 51879301,
+        "1": 174231,
+        "2": 121001,
+        "3": 397176,
+        "4": 339882,
+        "5": 721470,
+        "6": 284057,
+        "7": 84546
+      },
+      "noncardiac_labels": [],
+      "missing_cardiac_labels": [],
+      "intensity_min_max": [
+        0.0,
+        4095.0
+      ],
+      "HU_independently_verified": false,
+      "imagechd_same_name_in_archive": [
+        "ct_1030_image.nii.gz",
+        "ct_1030_label.nii.gz"
+      ],
+      "imagechd_SHA256_identical_available_files": [],
+      "imagechd_SHA256_complete_pair": false,
+      "readiness": "requires_age_and_physical_scale_review",
+      "metadata_candidate": {
+        "metadata_index": 30,
+        "release_case_candidate": "ct_1030",
+        "linkage_rule": "idx + 1000",
+        "linkage_author_confirmed": false,
+        "age_verified_for_release": false,
+        "age_candidate_days": 6,
+        "age_candidate_completed_years": 0,
+        "candidate_in_0_17": true,
+        "source_pixel_spacing_candidate_mm": [
+          0.24414,
+          0.24414
+        ],
+        "source_calculated_z_candidate_mm": 0.75,
+        "scanner_model": "SOMATOM Definition Flash"
+      },
+      "metadata_conflicts_with_published_age_range": false
+    },
+    {
+      "case_id": "ct_1032",
+      "source": "CHD68",
+      "modality": "CT",
+      "age": null,
+      "age_verified": false,
+      "diagnosis_codes": [
+        "PS"
+      ],
+      "diagnosis_source": "https://raw.githubusercontent.com/XiaoweiXu/Whole-heart-and-great-vessel-segmentation-of-chd_segmentation/master/README.md",
+      "patient_linkage_independently_verified": false,
+      "duplicate_group": "chd68_imagechd::ct_1032",
+      "split_eligible_0_17": false,
+      "physical_context_eligible": false,
+      "healthy_status": "pathological",
+      "pair_grid_gate": "passed",
+      "image_SHA256": "5ffa0c53cbb94fbfe1fcb0e58fafdcf73efa7d63504ad63665ef7322b7b79a89",
+      "mask_SHA256": "b90bc6b1cc560a9644d1dc2150ac423561d3a89a0e66c03a827b5c53f7ea2962",
+      "shape": [
+        512,
+        512,
+        137
+      ],
+      "spacing": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "spatial_unit": "unknown",
+      "physical_scale_verified": false,
+      "label_counts": {
+        "0": 34660868,
+        "1": 69759,
+        "2": 75846,
+        "3": 155728,
+        "4": 313480,
+        "5": 463802,
+        "6": 122111,
+        "7": 34557,
+        "15": 17577
+      },
+      "noncardiac_labels": [
+        15
+      ],
+      "missing_cardiac_labels": [],
+      "intensity_min_max": [
+        0.0,
+        4095.0
+      ],
+      "HU_independently_verified": false,
+      "imagechd_same_name_in_archive": [
+        "ct_1032_image.nii.gz",
+        "ct_1032_label.nii.gz"
+      ],
+      "imagechd_SHA256_identical_available_files": [],
+      "imagechd_SHA256_complete_pair": false,
+      "readiness": "requires_age_and_physical_scale_review",
+      "metadata_candidate": {
+        "metadata_index": 32,
+        "release_case_candidate": "ct_1032",
+        "linkage_rule": "idx + 1000",
+        "linkage_author_confirmed": false,
+        "age_verified_for_release": false,
+        "age_candidate_days": 5,
+        "age_candidate_completed_years": 0,
+        "candidate_in_0_17": true,
+        "source_pixel_spacing_candidate_mm": [
+          0.21484,
+          0.21484
+        ],
+        "source_calculated_z_candidate_mm": 0.75,
+        "scanner_model": "SOMATOM Definition Flash"
+      },
+      "metadata_conflicts_with_published_age_range": false
+    },
+    {
+      "case_id": "ct_1033",
+      "source": "CHD68",
+      "modality": "CT",
+      "age": null,
+      "age_verified": false,
+      "diagnosis_codes": [
+        "ASD"
+      ],
+      "diagnosis_source": "https://raw.githubusercontent.com/XiaoweiXu/Whole-heart-and-great-vessel-segmentation-of-chd_segmentation/master/README.md",
+      "patient_linkage_independently_verified": false,
+      "duplicate_group": "chd68_imagechd::ct_1033",
+      "split_eligible_0_17": false,
+      "physical_context_eligible": false,
+      "healthy_status": "pathological",
+      "pair_grid_gate": "passed",
+      "image_SHA256": "01d9ffc1c806c9fdd1671c9fe335249b4adbed57fddcaae341df9ed9ad5389cc",
+      "mask_SHA256": "6b34151d99015aa4dd7a5800a0e34ed3b7e67730b898a256f82f66814239b323",
+      "shape": [
+        512,
+        512,
+        275
+      ],
+      "spacing": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "spatial_unit": "unknown",
+      "physical_scale_verified": false,
+      "label_counts": {
+        "0": 68367606,
+        "1": 112827,
+        "2": 309988,
+        "3": 532829,
+        "4": 1107534,
+        "5": 1104882,
+        "6": 188422,
+        "7": 365512
+      },
+      "noncardiac_labels": [],
+      "missing_cardiac_labels": [],
+      "intensity_min_max": [
+        0.0,
+        4095.0
+      ],
+      "HU_independently_verified": false,
+      "imagechd_same_name_in_archive": [
+        "ct_1033_image.nii.gz",
+        "ct_1033_label.nii.gz"
+      ],
+      "imagechd_SHA256_identical_available_files": [],
+      "imagechd_SHA256_complete_pair": false,
+      "readiness": "requires_age_and_physical_scale_review",
+      "metadata_candidate": {
+        "metadata_index": 33,
+        "release_case_candidate": "ct_1033",
+        "linkage_rule": "idx + 1000",
+        "linkage_author_confirmed": false,
+        "age_verified_for_release": false,
+        "age_candidate_days": 564,
+        "age_candidate_completed_years": 1,
+        "candidate_in_0_17": true,
+        "source_pixel_spacing_candidate_mm": [
+          0.33594,
+          0.33594
+        ],
+        "source_calculated_z_candidate_mm": 0.75,
+        "scanner_model": "SOMATOM Definition Flash"
+      },
+      "metadata_conflicts_with_published_age_range": false
+    },
+    {
+      "case_id": "ct_1035",
+      "source": "CHD68",
+      "modality": "CT",
+      "age": null,
+      "age_verified": false,
+      "diagnosis_codes": [
+        "ASD"
+      ],
+      "diagnosis_source": "https://raw.githubusercontent.com/XiaoweiXu/Whole-heart-and-great-vessel-segmentation-of-chd_segmentation/master/README.md",
+      "patient_linkage_independently_verified": false,
+      "duplicate_group": "chd68_imagechd::ct_1035",
+      "split_eligible_0_17": false,
+      "physical_context_eligible": false,
+      "healthy_status": "pathological",
+      "pair_grid_gate": "passed",
+      "image_SHA256": "538328240462a9c64ab8c0ec634c813175a0345d23baad25e51dd001ac7bd565",
+      "mask_SHA256": "2b661f4ffd6e5a5f93d381088b0c1bef53f627595e131d2a31d74cd60a669a7c",
+      "shape": [
+        512,
+        512,
+        275
+      ],
+      "spacing": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "spatial_unit": "unknown",
+      "physical_scale_verified": false,
+      "label_counts": {
+        "0": 67322436,
+        "1": 127983,
+        "2": 475174,
+        "3": 545146,
+        "4": 1394923,
+        "5": 1250910,
+        "6": 233559,
+        "7": 739469
+      },
+      "noncardiac_labels": [],
+      "missing_cardiac_labels": [],
+      "intensity_min_max": [
+        0.0,
+        4095.0
+      ],
+      "HU_independently_verified": false,
+      "imagechd_same_name_in_archive": [
+        "ct_1035_image.nii.gz",
+        "ct_1035_label.nii.gz"
+      ],
+      "imagechd_SHA256_identical_available_files": [],
+      "imagechd_SHA256_complete_pair": false,
+      "readiness": "requires_age_and_physical_scale_review",
+      "metadata_candidate": {
+        "metadata_index": 35,
+        "release_case_candidate": "ct_1035",
+        "linkage_rule": "idx + 1000",
+        "linkage_author_confirmed": false,
+        "age_verified_for_release": false,
+        "age_candidate_days": 1081,
+        "age_candidate_completed_years": 2,
+        "candidate_in_0_17": true,
+        "source_pixel_spacing_candidate_mm": [
+          0.35742,
+          0.35742
+        ],
+        "source_calculated_z_candidate_mm": 0.75,
+        "scanner_model": "SOMATOM Definition Flash"
+      },
+      "metadata_conflicts_with_published_age_range": false
+    },
+    {
+      "case_id": "ct_1036",
+      "source": "CHD68",
+      "modality": "CT",
+      "age": null,
+      "age_verified": false,
+      "diagnosis_codes": [
+        "ASD"
+      ],
+      "diagnosis_source": "https://raw.githubusercontent.com/XiaoweiXu/Whole-heart-and-great-vessel-segmentation-of-chd_segmentation/master/README.md",
+      "patient_linkage_independently_verified": false,
+      "duplicate_group": "chd68_imagechd::ct_1036",
+      "split_eligible_0_17": false,
+      "physical_context_eligible": false,
+      "healthy_status": "pathological",
+      "pair_grid_gate": "passed",
+      "image_SHA256": "61fd1e5abe4619793b8ad27e3794b270912df741bba7e5011c599ed8527e384a",
+      "mask_SHA256": "d6e20f3c2d3b7d89eeb52b86665c0690bcdbfd2c16edfa13ca7411e65e8d0ddb",
+      "shape": [
+        512,
+        512,
+        175
+      ],
+      "spacing": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "spatial_unit": "unknown",
+      "physical_scale_verified": false,
+      "label_counts": {
+        "0": 43503896,
+        "1": 117755,
+        "2": 146859,
+        "3": 410110,
+        "4": 502498,
+        "5": 747931,
+        "6": 210595,
+        "7": 235556
+      },
+      "noncardiac_labels": [],
+      "missing_cardiac_labels": [],
+      "intensity_min_max": [
+        0.0,
+        4095.0
+      ],
+      "HU_independently_verified": false,
+      "imagechd_same_name_in_archive": [
+        "ct_1036_image.nii.gz",
+        "ct_1036_label.nii.gz"
+      ],
+      "imagechd_SHA256_identical_available_files": [],
+      "imagechd_SHA256_complete_pair": false,
+      "readiness": "requires_age_and_physical_scale_review",
+      "metadata_candidate": {
+        "metadata_index": 36,
+        "release_case_candidate": "ct_1036",
+        "linkage_rule": "idx + 1000",
+        "linkage_author_confirmed": false,
+        "age_verified_for_release": false,
+        "age_candidate_days": 116,
+        "age_candidate_completed_years": 0,
+        "candidate_in_0_17": true,
+        "source_pixel_spacing_candidate_mm": [
+          0.24414,
+          0.24414
+        ],
+        "source_calculated_z_candidate_mm": 0.75,
+        "scanner_model": "SOMATOM Definition Flash"
+      },
+      "metadata_conflicts_with_published_age_range": false
+    },
+    {
+      "case_id": "ct_1037",
+      "source": "CHD68",
+      "modality": "CT",
+      "age": null,
+      "age_verified": false,
+      "diagnosis_codes": [
+        "ToF"
+      ],
+      "diagnosis_source": "https://raw.githubusercontent.com/XiaoweiXu/Whole-heart-and-great-vessel-segmentation-of-chd_segmentation/master/README.md",
+      "patient_linkage_independently_verified": false,
+      "duplicate_group": "chd68_imagechd::ct_1037",
+      "split_eligible_0_17": false,
+      "physical_context_eligible": false,
+      "healthy_status": "pathological",
+      "pair_grid_gate": "passed",
+      "image_SHA256": "b3b514efc98155566c68464e84fabca0a87acc1df7566deb903a713a67ba4649",
+      "mask_SHA256": "2335dc2ff2bd0a5f199776d570fb51c04aaa3515ff6c437c90159d668a87d045",
+      "shape": [
+        512,
+        512,
+        383
+      ],
+      "spacing": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "spatial_unit": "unknown",
+      "physical_scale_verified": false,
+      "label_counts": {
+        "0": 89563567,
+        "1": 479477,
+        "2": 415845,
+        "3": 1058009,
+        "4": 2515516,
+        "5": 3514480,
+        "6": 2037343,
+        "7": 784446,
+        "13": 32469
+      },
+      "noncardiac_labels": [
+        13
+      ],
+      "missing_cardiac_labels": [],
+      "intensity_min_max": [
+        0.0,
+        4095.0
+      ],
+      "HU_independently_verified": false,
+      "imagechd_same_name_in_archive": [
+        "ct_1037_image.nii.gz",
+        "ct_1037_label.nii.gz"
+      ],
+      "imagechd_SHA256_identical_available_files": [],
+      "imagechd_SHA256_complete_pair": false,
+      "readiness": "requires_age_and_physical_scale_review",
+      "metadata_candidate": {
+        "metadata_index": 37,
+        "release_case_candidate": "ct_1037",
+        "linkage_rule": "idx + 1000",
+        "linkage_author_confirmed": false,
+        "age_verified_for_release": false,
+        "age_candidate_days": 14647,
+        "age_candidate_completed_years": 40,
+        "candidate_in_0_17": false,
+        "source_pixel_spacing_candidate_mm": [
+          0.46289,
+          0.46289
+        ],
+        "source_calculated_z_candidate_mm": 0.75,
+        "scanner_model": "SOMATOM Definition Flash"
+      },
+      "metadata_conflicts_with_published_age_range": true
+    },
+    {
+      "case_id": "ct_1039",
+      "source": "CHD68",
+      "modality": "CT",
+      "age": null,
+      "age_verified": false,
+      "diagnosis_codes": [
+        "AAA"
+      ],
+      "diagnosis_source": "https://raw.githubusercontent.com/XiaoweiXu/Whole-heart-and-great-vessel-segmentation-of-chd_segmentation/master/README.md",
+      "patient_linkage_independently_verified": false,
+      "duplicate_group": "chd68_imagechd::ct_1039",
+      "split_eligible_0_17": false,
+      "physical_context_eligible": false,
+      "healthy_status": "pathological",
+      "pair_grid_gate": "passed",
+      "image_SHA256": "0051ca654b33d8cf90e324fb56667892b6d47b40d25c8cea97a27ec2c76cde0f",
+      "mask_SHA256": "6d9fad55e6cbc60c57f9cea0d906a5cad05f9b2a824fce674d5fada59b8a788c",
+      "shape": [
+        512,
+        512,
+        174
+      ],
+      "spacing": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "spatial_unit": "unknown",
+      "physical_scale_verified": false,
+      "label_counts": {
+        "0": 43219326,
+        "1": 41852,
+        "2": 175927,
+        "3": 355998,
+        "4": 457868,
+        "5": 1115654,
+        "6": 122590,
+        "7": 123841
+      },
+      "noncardiac_labels": [],
+      "missing_cardiac_labels": [],
+      "intensity_min_max": [
+        0.0,
+        4095.0
+      ],
+      "HU_independently_verified": false,
+      "imagechd_same_name_in_archive": [
+        "ct_1039_image.nii.gz",
+        "ct_1039_label.nii.gz"
+      ],
+      "imagechd_SHA256_identical_available_files": [],
+      "imagechd_SHA256_complete_pair": false,
+      "readiness": "requires_age_and_physical_scale_review",
+      "metadata_candidate": {
+        "metadata_index": 39,
+        "release_case_candidate": "ct_1039",
+        "linkage_rule": "idx + 1000",
+        "linkage_author_confirmed": false,
+        "age_verified_for_release": false,
+        "age_candidate_days": 14,
+        "age_candidate_completed_years": 0,
+        "candidate_in_0_17": true,
+        "source_pixel_spacing_candidate_mm": [
+          0.24414,
+          0.24414
+        ],
+        "source_calculated_z_candidate_mm": 0.75,
+        "scanner_model": "SOMATOM Definition Flash"
+      },
+      "metadata_conflicts_with_published_age_range": false
+    },
+    {
+      "case_id": "ct_1040",
+      "source": "CHD68",
+      "modality": "CT",
+      "age": null,
+      "age_verified": false,
+      "diagnosis_codes": [
+        "Normal"
+      ],
+      "diagnosis_source": "https://raw.githubusercontent.com/XiaoweiXu/Whole-heart-and-great-vessel-segmentation-of-chd_segmentation/master/README.md",
+      "patient_linkage_independently_verified": false,
+      "duplicate_group": "chd68_imagechd::ct_1040",
+      "split_eligible_0_17": false,
+      "physical_context_eligible": false,
+      "healthy_status": "no_structural_cardiac_abnormality_reported",
+      "pair_grid_gate": "passed",
+      "image_SHA256": "47af501e953a48fd3846a1ce7cb58b3c9f3389e45a6c0ae4e665c3b7db1b846e",
+      "mask_SHA256": "950e9319ffce716cca0f278caad07173f191c7a7cf5b40a6641c13f9a815a57b",
+      "shape": [
+        512,
+        512,
+        275
+      ],
+      "spacing": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "spatial_unit": "unknown",
+      "physical_scale_verified": false,
+      "label_counts": {
+        "0": 65257114,
+        "1": 380529,
+        "2": 505608,
+        "3": 1670293,
+        "4": 1210066,
+        "5": 1684405,
+        "6": 792410,
+        "7": 589175
+      },
+      "noncardiac_labels": [],
+      "missing_cardiac_labels": [],
+      "intensity_min_max": [
+        0.0,
+        4095.0
+      ],
+      "HU_independently_verified": false,
+      "imagechd_same_name_in_archive": [],
+      "imagechd_SHA256_identical_available_files": [],
+      "imagechd_SHA256_complete_pair": false,
+      "readiness": "requires_age_and_physical_scale_review",
+      "metadata_candidate": null,
+      "metadata_conflicts_with_published_age_range": false
+    },
+    {
+      "case_id": "ct_1041",
+      "source": "CHD68",
+      "modality": "CT",
+      "age": null,
+      "age_verified": false,
+      "diagnosis_codes": [
+        "VSD"
+      ],
+      "diagnosis_source": "https://raw.githubusercontent.com/XiaoweiXu/Whole-heart-and-great-vessel-segmentation-of-chd_segmentation/master/README.md",
+      "patient_linkage_independently_verified": false,
+      "duplicate_group": "chd68_imagechd::ct_1041",
+      "split_eligible_0_17": false,
+      "physical_context_eligible": false,
+      "healthy_status": "pathological",
+      "pair_grid_gate": "passed",
+      "image_SHA256": "7afb8523db0b1ed5fb25c155e919486281408b7f3740bc19ff69c19f5b12d831",
+      "mask_SHA256": "3d1f69d210958cd61eb4a1118bf748df0c4d759b4144795bbc15403695577401",
+      "shape": [
+        512,
+        512,
+        275
+      ],
+      "spacing": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "spatial_unit": "unknown",
+      "physical_scale_verified": false,
+      "label_counts": {
+        "0": 65949869,
+        "1": 288761,
+        "2": 266434,
+        "3": 849048,
+        "4": 1395724,
+        "5": 2399618,
+        "6": 226382,
+        "7": 713764
+      },
+      "noncardiac_labels": [],
+      "missing_cardiac_labels": [],
+      "intensity_min_max": [
+        0.0,
+        4095.0
+      ],
+      "HU_independently_verified": false,
+      "imagechd_same_name_in_archive": [
+        "ct_1041_image.nii.gz",
+        "ct_1041_label.nii.gz"
+      ],
+      "imagechd_SHA256_identical_available_files": [],
+      "imagechd_SHA256_complete_pair": false,
+      "readiness": "requires_age_and_physical_scale_review",
+      "metadata_candidate": {
+        "metadata_index": 41,
+        "release_case_candidate": "ct_1041",
+        "linkage_rule": "idx + 1000",
+        "linkage_author_confirmed": false,
+        "age_verified_for_release": false,
+        "age_candidate_days": 216,
+        "age_candidate_completed_years": 0,
+        "candidate_in_0_17": true,
+        "source_pixel_spacing_candidate_mm": [
+          0.25391,
+          0.25391
+        ],
+        "source_calculated_z_candidate_mm": 0.75,
+        "scanner_model": "SOMATOM Definition Flash"
+      },
+      "metadata_conflicts_with_published_age_range": false
+    },
+    {
+      "case_id": "ct_1042",
+      "source": "CHD68",
+      "modality": "CT",
+      "age": null,
+      "age_verified": false,
+      "diagnosis_codes": [
+        "VSD",
+        "AD"
+      ],
+      "diagnosis_source": "https://raw.githubusercontent.com/XiaoweiXu/Whole-heart-and-great-vessel-segmentation-of-chd_segmentation/master/README.md",
+      "patient_linkage_independently_verified": false,
+      "duplicate_group": "chd68_imagechd::ct_1042",
+      "split_eligible_0_17": false,
+      "physical_context_eligible": false,
+      "healthy_status": "pathological",
+      "pair_grid_gate": "passed",
+      "image_SHA256": "2e1af066f53b95dc15667bd4ed6ef4d61b5ac237f7aa4fe1de266c063eb15ec6",
+      "mask_SHA256": "c506bb3a24e9a5c2a47b1e5786cd79a149fa064aa0106a5f44353d40550474d5",
+      "shape": [
+        512,
+        512,
+        275
+      ],
+      "spacing": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "spatial_unit": "unknown",
+      "physical_scale_verified": false,
+      "label_counts": {
+        "0": 68866959,
+        "1": 198745,
+        "2": 101045,
+        "3": 321692,
+        "4": 783334,
+        "5": 1165245,
+        "6": 425702,
+        "7": 226878
+      },
+      "noncardiac_labels": [],
+      "missing_cardiac_labels": [],
+      "intensity_min_max": [
+        0.0,
+        4095.0
+      ],
+      "HU_independently_verified": false,
+      "imagechd_same_name_in_archive": [
+        "ct_1042_image.nii.gz",
+        "ct_1042_label.nii.gz"
+      ],
+      "imagechd_SHA256_identical_available_files": [],
+      "imagechd_SHA256_complete_pair": false,
+      "readiness": "requires_age_and_physical_scale_review",
+      "metadata_candidate": {
+        "metadata_index": 42,
+        "release_case_candidate": "ct_1042",
+        "linkage_rule": "idx + 1000",
+        "linkage_author_confirmed": false,
+        "age_verified_for_release": false,
+        "age_candidate_days": 1323,
+        "age_candidate_completed_years": 3,
+        "candidate_in_0_17": true,
+        "source_pixel_spacing_candidate_mm": [
+          0.37891,
+          0.37891
+        ],
+        "source_calculated_z_candidate_mm": 0.75,
+        "scanner_model": "SOMATOM Definition Flash"
+      },
+      "metadata_conflicts_with_published_age_range": false
+    },
+    {
+      "case_id": "ct_1043",
+      "source": "CHD68",
+      "modality": "CT",
+      "age": null,
+      "age_verified": false,
+      "diagnosis_codes": [
+        "ASD",
+        "VSD",
+        "AD",
+        "TGA"
+      ],
+      "diagnosis_source": "https://raw.githubusercontent.com/XiaoweiXu/Whole-heart-and-great-vessel-segmentation-of-chd_segmentation/master/README.md",
+      "patient_linkage_independently_verified": false,
+      "duplicate_group": "chd68_imagechd::ct_1043",
+      "split_eligible_0_17": false,
+      "physical_context_eligible": false,
+      "healthy_status": "pathological",
+      "pair_grid_gate": "passed",
+      "image_SHA256": "856d469a519bda1f02a89e0b73488ac6a793176e40fa78d28dd86fad43c7b96b",
+      "mask_SHA256": "f9b5f17a2385fb12256c0310714c5752c959f6babb12944e98fbbc0c4231e061",
+      "shape": [
+        512,
+        512,
+        206
+      ],
+      "spacing": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "spatial_unit": "unknown",
+      "physical_scale_verified": false,
+      "label_counts": {
+        "0": 49364717,
+        "1": 220643,
+        "2": 289500,
+        "3": 438384,
+        "4": 1248243,
+        "5": 1422539,
+        "6": 568192,
+        "7": 449446
+      },
+      "noncardiac_labels": [],
+      "missing_cardiac_labels": [],
+      "intensity_min_max": [
+        0.0,
+        3677.0
+      ],
+      "HU_independently_verified": false,
+      "imagechd_same_name_in_archive": [
+        "ct_1043_image.nii.gz",
+        "ct_1043_label.nii.gz"
+      ],
+      "imagechd_SHA256_identical_available_files": [],
+      "imagechd_SHA256_complete_pair": false,
+      "readiness": "requires_age_and_physical_scale_review",
+      "metadata_candidate": {
+        "metadata_index": 43,
+        "release_case_candidate": "ct_1043",
+        "linkage_rule": "idx + 1000",
+        "linkage_author_confirmed": false,
+        "age_verified_for_release": false,
+        "age_candidate_days": 493,
+        "age_candidate_completed_years": 1,
+        "candidate_in_0_17": true,
+        "source_pixel_spacing_candidate_mm": [
+          0.24414,
+          0.24414
+        ],
+        "source_calculated_z_candidate_mm": 0.75,
+        "scanner_model": "SOMATOM Definition Flash"
+      },
+      "metadata_conflicts_with_published_age_range": false
+    },
+    {
+      "case_id": "ct_1044",
+      "source": "CHD68",
+      "modality": "CT",
+      "age": null,
+      "age_verified": false,
+      "diagnosis_codes": [
+        "ASD",
+        "VSD",
+        "AD"
+      ],
+      "diagnosis_source": "https://raw.githubusercontent.com/XiaoweiXu/Whole-heart-and-great-vessel-segmentation-of-chd_segmentation/master/README.md",
+      "patient_linkage_independently_verified": false,
+      "duplicate_group": "chd68_imagechd::ct_1044",
+      "split_eligible_0_17": false,
+      "physical_context_eligible": false,
+      "healthy_status": "pathological",
+      "pair_grid_gate": "passed",
+      "image_SHA256": "a92aa1a8e4e5e31aafabd018f6a02c76af5e7b1e489f402d5254f0bb295f61c7",
+      "mask_SHA256": "903f2b8103b3d6619f3966ddca7cd7560286ffcf7be15d193ea84275acc7b00e",
+      "shape": [
+        512,
+        512,
+        275
+      ],
+      "spacing": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "spatial_unit": "unknown",
+      "physical_scale_verified": false,
+      "label_counts": {
+        "0": 67441007,
+        "1": 251528,
+        "2": 395540,
+        "3": 504214,
+        "4": 1337795,
+        "5": 1127254,
+        "6": 661979,
+        "7": 370283
+      },
+      "noncardiac_labels": [],
+      "missing_cardiac_labels": [],
+      "intensity_min_max": [
+        0.0,
+        4095.0
+      ],
+      "HU_independently_verified": false,
+      "imagechd_same_name_in_archive": [
+        "ct_1044_image.nii.gz",
+        "ct_1044_label.nii.gz"
+      ],
+      "imagechd_SHA256_identical_available_files": [],
+      "imagechd_SHA256_complete_pair": false,
+      "readiness": "requires_age_and_physical_scale_review",
+      "metadata_candidate": {
+        "metadata_index": 44,
+        "release_case_candidate": "ct_1044",
+        "linkage_rule": "idx + 1000",
+        "linkage_author_confirmed": false,
+        "age_verified_for_release": false,
+        "age_candidate_days": 1212,
+        "age_candidate_completed_years": 3,
+        "candidate_in_0_17": true,
+        "source_pixel_spacing_candidate_mm": [
+          0.32422,
+          0.32422
+        ],
+        "source_calculated_z_candidate_mm": 0.75,
+        "scanner_model": "SOMATOM Definition Flash"
+      },
+      "metadata_conflicts_with_published_age_range": false
+    },
+    {
+      "case_id": "ct_1046",
+      "source": "CHD68",
+      "modality": "CT",
+      "age": null,
+      "age_verified": false,
+      "diagnosis_codes": [
+        "ToF"
+      ],
+      "diagnosis_source": "https://raw.githubusercontent.com/XiaoweiXu/Whole-heart-and-great-vessel-segmentation-of-chd_segmentation/master/README.md",
+      "patient_linkage_independently_verified": false,
+      "duplicate_group": "chd68_imagechd::ct_1046",
+      "split_eligible_0_17": false,
+      "physical_context_eligible": false,
+      "healthy_status": "pathological",
+      "pair_grid_gate": "passed",
+      "image_SHA256": "2f33628f9274dda6b4e6083fc18f1812413288d788e73b7eeacc239b28e1a127",
+      "mask_SHA256": "2a3bfec038f67ff4c4820e0e7dd16e9e6beaee77676412c554d988b46dc965a8",
+      "shape": [
+        512,
+        512,
+        206
+      ],
+      "spacing": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "spatial_unit": "unknown",
+      "physical_scale_verified": false,
+      "label_counts": {
+        "0": 48832709,
+        "1": 316920,
+        "2": 297911,
+        "3": 957105,
+        "4": 776294,
+        "5": 1934881,
+        "6": 396521,
+        "7": 489323
+      },
+      "noncardiac_labels": [],
+      "missing_cardiac_labels": [],
+      "intensity_min_max": [
+        0.0,
+        4095.0
+      ],
+      "HU_independently_verified": false,
+      "imagechd_same_name_in_archive": [
+        "ct_1046_image.nii.gz",
+        "ct_1046_label.nii.gz"
+      ],
+      "imagechd_SHA256_identical_available_files": [],
+      "imagechd_SHA256_complete_pair": false,
+      "readiness": "requires_age_and_physical_scale_review",
+      "metadata_candidate": {
+        "metadata_index": 46,
+        "release_case_candidate": "ct_1046",
+        "linkage_rule": "idx + 1000",
+        "linkage_author_confirmed": false,
+        "age_verified_for_release": false,
+        "age_candidate_days": 313,
+        "age_candidate_completed_years": 0,
+        "candidate_in_0_17": true,
+        "source_pixel_spacing_candidate_mm": [
+          0.24414,
+          0.24414
+        ],
+        "source_calculated_z_candidate_mm": 0.75,
+        "scanner_model": "SOMATOM Definition Flash"
+      },
+      "metadata_conflicts_with_published_age_range": false
+    },
+    {
+      "case_id": "ct_1048",
+      "source": "CHD68",
+      "modality": "CT",
+      "age": null,
+      "age_verified": false,
+      "diagnosis_codes": [
+        "ASD",
+        "AAA"
+      ],
+      "diagnosis_source": "https://raw.githubusercontent.com/XiaoweiXu/Whole-heart-and-great-vessel-segmentation-of-chd_segmentation/master/README.md",
+      "patient_linkage_independently_verified": false,
+      "duplicate_group": "chd68_imagechd::ct_1048",
+      "split_eligible_0_17": false,
+      "physical_context_eligible": false,
+      "healthy_status": "pathological",
+      "pair_grid_gate": "passed",
+      "image_SHA256": "e7978de99525dc0cc2f90f53e7aba062f650a8065d597243042fafe4ef5f0a0e",
+      "mask_SHA256": "d7b03b2facb6ec0e6cb9e0b0b1385377ca615a31c56e1a933db2bf012a2beb39",
+      "shape": [
+        512,
+        512,
+        206
+      ],
+      "spacing": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "spatial_unit": "unknown",
+      "physical_scale_verified": false,
+      "label_counts": {
+        "0": 50302776,
+        "1": 166048,
+        "2": 295041,
+        "3": 608877,
+        "4": 775375,
+        "5": 866272,
+        "6": 508862,
+        "7": 478413
+      },
+      "noncardiac_labels": [],
+      "missing_cardiac_labels": [],
+      "intensity_min_max": [
+        0.0,
+        3189.0
+      ],
+      "HU_independently_verified": false,
+      "imagechd_same_name_in_archive": [
+        "ct_1048_image.nii.gz",
+        "ct_1048_label.nii.gz"
+      ],
+      "imagechd_SHA256_identical_available_files": [],
+      "imagechd_SHA256_complete_pair": false,
+      "readiness": "requires_age_and_physical_scale_review",
+      "metadata_candidate": {
+        "metadata_index": 48,
+        "release_case_candidate": "ct_1048",
+        "linkage_rule": "idx + 1000",
+        "linkage_author_confirmed": false,
+        "age_verified_for_release": false,
+        "age_candidate_days": 245,
+        "age_candidate_completed_years": 0,
+        "candidate_in_0_17": true,
+        "source_pixel_spacing_candidate_mm": [
+          0.24414,
+          0.24414
+        ],
+        "source_calculated_z_candidate_mm": 0.75,
+        "scanner_model": "SOMATOM Definition Flash"
+      },
+      "metadata_conflicts_with_published_age_range": false
+    },
+    {
+      "case_id": "ct_1053",
+      "source": "CHD68",
+      "modality": "CT",
+      "age": null,
+      "age_verified": false,
+      "diagnosis_codes": [
+        "ASD",
+        "AAA"
+      ],
+      "diagnosis_source": "https://raw.githubusercontent.com/XiaoweiXu/Whole-heart-and-great-vessel-segmentation-of-chd_segmentation/master/README.md",
+      "patient_linkage_independently_verified": false,
+      "duplicate_group": "chd68_imagechd::ct_1053",
+      "split_eligible_0_17": false,
+      "physical_context_eligible": false,
+      "healthy_status": "pathological",
+      "pair_grid_gate": "passed",
+      "image_SHA256": "92257db13daecadab1ee370569b57661810a5c5509d844ef2515d2b104dedc40",
+      "mask_SHA256": "e493f7e3f8651c7e279c081fc5b40e6cc48eeef401ed0cae03d5f018adfdce6a",
+      "shape": [
+        512,
+        512,
+        206
+      ],
+      "spacing": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "spatial_unit": "unknown",
+      "physical_scale_verified": false,
+      "label_counts": {
+        "0": 52478833,
+        "1": 37682,
+        "2": 87213,
+        "3": 259355,
+        "4": 403259,
+        "5": 513420,
+        "6": 116547,
+        "7": 105355
+      },
+      "noncardiac_labels": [],
+      "missing_cardiac_labels": [],
+      "intensity_min_max": [
+        0.0,
+        2716.0
+      ],
+      "HU_independently_verified": false,
+      "imagechd_same_name_in_archive": [
+        "ct_1053_image.nii.gz",
+        "ct_1053_label.nii.gz"
+      ],
+      "imagechd_SHA256_identical_available_files": [],
+      "imagechd_SHA256_complete_pair": false,
+      "readiness": "requires_age_and_physical_scale_review",
+      "metadata_candidate": {
+        "metadata_index": 53,
+        "release_case_candidate": "ct_1053",
+        "linkage_rule": "idx + 1000",
+        "linkage_author_confirmed": false,
+        "age_verified_for_release": false,
+        "age_candidate_days": 163,
+        "age_candidate_completed_years": 0,
+        "candidate_in_0_17": true,
+        "source_pixel_spacing_candidate_mm": [
+          0.31836,
+          0.31836
+        ],
+        "source_calculated_z_candidate_mm": 0.75,
+        "scanner_model": "SOMATOM Definition Flash"
+      },
+      "metadata_conflicts_with_published_age_range": false
+    },
+    {
+      "case_id": "ct_1056",
+      "source": "CHD68",
+      "modality": "CT",
+      "age": null,
+      "age_verified": false,
+      "diagnosis_codes": [
+        "VSD",
+        "AD"
+      ],
+      "diagnosis_source": "https://raw.githubusercontent.com/XiaoweiXu/Whole-heart-and-great-vessel-segmentation-of-chd_segmentation/master/README.md",
+      "patient_linkage_independently_verified": false,
+      "duplicate_group": "chd68_imagechd::ct_1056",
+      "split_eligible_0_17": false,
+      "physical_context_eligible": false,
+      "healthy_status": "pathological",
+      "pair_grid_gate": "passed",
+      "image_SHA256": "485691db14ab684cdf5798c4164b1652792501cde2cc3c658b2b1aa112e9284b",
+      "mask_SHA256": "efadc715f8ac7314f6d3d47c1f5b0f32dae86742a7f7a8f2c10d15779f29aa7e",
+      "shape": [
+        512,
+        512,
+        344
+      ],
+      "spacing": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "spatial_unit": "unknown",
+      "physical_scale_verified": false,
+      "label_counts": {
+        "0": 77826233,
+        "1": 1503245,
+        "2": 2125399,
+        "3": 1471606,
+        "4": 1313922,
+        "5": 3861247,
+        "6": 1416507,
+        "7": 655012,
+        "12": 4365
+      },
+      "noncardiac_labels": [
+        12
+      ],
+      "missing_cardiac_labels": [],
+      "intensity_min_max": [
+        0.0,
+        3412.0
+      ],
+      "HU_independently_verified": false,
+      "imagechd_same_name_in_archive": [
+        "ct_1056_image.nii.gz",
+        "ct_1056_label.nii.gz"
+      ],
+      "imagechd_SHA256_identical_available_files": [],
+      "imagechd_SHA256_complete_pair": false,
+      "readiness": "requires_age_and_physical_scale_review",
+      "metadata_candidate": {
+        "metadata_index": 56,
+        "release_case_candidate": "ct_1056",
+        "linkage_rule": "idx + 1000",
+        "linkage_author_confirmed": false,
+        "age_verified_for_release": false,
+        "age_candidate_days": 4229,
+        "age_candidate_completed_years": 11,
+        "candidate_in_0_17": true,
+        "source_pixel_spacing_candidate_mm": [
+          0.31836,
+          0.31836
+        ],
+        "source_calculated_z_candidate_mm": 0.75,
+        "scanner_model": "SOMATOM Definition Flash"
+      },
+      "metadata_conflicts_with_published_age_range": false
+    },
+    {
+      "case_id": "ct_1059",
+      "source": "CHD68",
+      "modality": "CT",
+      "age": null,
+      "age_verified": false,
+      "diagnosis_codes": [
+        "CAT"
+      ],
+      "diagnosis_source": "https://raw.githubusercontent.com/XiaoweiXu/Whole-heart-and-great-vessel-segmentation-of-chd_segmentation/master/README.md",
+      "patient_linkage_independently_verified": false,
+      "duplicate_group": "chd68_imagechd::ct_1059",
+      "split_eligible_0_17": false,
+      "physical_context_eligible": false,
+      "healthy_status": "pathological",
+      "pair_grid_gate": "passed",
+      "image_SHA256": "33be07074798d8443a6fd0a2a539a0816a4531ecf80b506d0c7f89f04d7b7ba9",
+      "mask_SHA256": "db762540f0155382d5be65b8d29c0975a6248fe3501036585af8f691a1d6c16c",
+      "shape": [
+        512,
+        512,
+        206
+      ],
+      "spacing": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "spatial_unit": "unknown",
+      "physical_scale_verified": false,
+      "label_counts": {
+        "0": 50968502,
+        "1": 168405,
+        "2": 134911,
+        "3": 465780,
+        "4": 832054,
+        "5": 685259,
+        "6": 530409,
+        "7": 216344
+      },
+      "noncardiac_labels": [],
+      "missing_cardiac_labels": [],
+      "intensity_min_max": [
+        0.0,
+        4095.0
+      ],
+      "HU_independently_verified": false,
+      "imagechd_same_name_in_archive": [
+        "ct_1059_image.nii.gz",
+        "ct_1059_label.nii.gz"
+      ],
+      "imagechd_SHA256_identical_available_files": [],
+      "imagechd_SHA256_complete_pair": false,
+      "readiness": "requires_age_and_physical_scale_review",
+      "metadata_candidate": {
+        "metadata_index": 59,
+        "release_case_candidate": "ct_1059",
+        "linkage_rule": "idx + 1000",
+        "linkage_author_confirmed": false,
+        "age_verified_for_release": false,
+        "age_candidate_days": 6,
+        "age_candidate_completed_years": 0,
+        "candidate_in_0_17": true,
+        "source_pixel_spacing_candidate_mm": [
+          0.24414,
+          0.24414
+        ],
+        "source_calculated_z_candidate_mm": 0.75,
+        "scanner_model": "SOMATOM Definition Flash"
+      },
+      "metadata_conflicts_with_published_age_range": false
+    },
+    {
+      "case_id": "ct_1060",
+      "source": "CHD68",
+      "modality": "CT",
+      "age": null,
+      "age_verified": false,
+      "diagnosis_codes": [
+        "ASD",
+        "VSD",
+        "PDA",
+        "TGA",
+        "SV"
+      ],
+      "diagnosis_source": "https://raw.githubusercontent.com/XiaoweiXu/Whole-heart-and-great-vessel-segmentation-of-chd_segmentation/master/README.md",
+      "patient_linkage_independently_verified": false,
+      "duplicate_group": "chd68_imagechd::ct_1060",
+      "split_eligible_0_17": false,
+      "physical_context_eligible": false,
+      "healthy_status": "pathological",
+      "pair_grid_gate": "passed",
+      "image_SHA256": "a166c2afdf6cbeabcf6b2e9056415c13252741c2c46f84002e39f3b9eabb2c2e",
+      "mask_SHA256": "a0791a91ba12f10e847859821ebdfb85c5403b046a2bed40626ca16569046d09",
+      "shape": [
+        512,
+        512,
+        275
+      ],
+      "spacing": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "spatial_unit": "unknown",
+      "physical_scale_verified": false,
+      "label_counts": {
+        "0": 68590458,
+        "1": 268882,
+        "2": 40980,
+        "3": 745612,
+        "4": 887415,
+        "5": 986036,
+        "6": 278448,
+        "7": 291769
+      },
+      "noncardiac_labels": [],
+      "missing_cardiac_labels": [],
+      "intensity_min_max": [
+        0.0,
+        4095.0
+      ],
+      "HU_independently_verified": false,
+      "imagechd_same_name_in_archive": [
+        "ct_1060_image.nii.gz",
+        "ct_1060_label.nii.gz"
+      ],
+      "imagechd_SHA256_identical_available_files": [],
+      "imagechd_SHA256_complete_pair": false,
+      "readiness": "requires_age_and_physical_scale_review",
+      "metadata_candidate": {
+        "metadata_index": 60,
+        "release_case_candidate": "ct_1060",
+        "linkage_rule": "idx + 1000",
+        "linkage_author_confirmed": false,
+        "age_verified_for_release": false,
+        "age_candidate_days": 572,
+        "age_candidate_completed_years": 1,
+        "candidate_in_0_17": true,
+        "source_pixel_spacing_candidate_mm": [
+          0.30664,
+          0.30664
+        ],
+        "source_calculated_z_candidate_mm": 0.75,
+        "scanner_model": "SOMATOM Definition Flash"
+      },
+      "metadata_conflicts_with_published_age_range": false
+    },
+    {
+      "case_id": "ct_1061",
+      "source": "CHD68",
+      "modality": "CT",
+      "age": null,
+      "age_verified": false,
+      "diagnosis_codes": [
+        "PAS",
+        "PDA"
+      ],
+      "diagnosis_source": "https://raw.githubusercontent.com/XiaoweiXu/Whole-heart-and-great-vessel-segmentation-of-chd_segmentation/master/README.md",
+      "patient_linkage_independently_verified": false,
+      "duplicate_group": "chd68_imagechd::ct_1061",
+      "split_eligible_0_17": false,
+      "physical_context_eligible": false,
+      "healthy_status": "pathological",
+      "pair_grid_gate": "passed",
+      "image_SHA256": "7f6d790026bfef5bacbde6730f94faf539c628d680b8e5d3e8850f19400457dd",
+      "mask_SHA256": "4368fcf0d325948672d0a1abcf51a44f8c0d11ebfece2152a7b97649a8aafe32",
+      "shape": [
+        512,
+        512,
+        206
+      ],
+      "spacing": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "spatial_unit": "unknown",
+      "physical_scale_verified": false,
+      "label_counts": {
+        "0": 49029181,
+        "1": 492038,
+        "2": 369618,
+        "3": 1037348,
+        "4": 741223,
+        "5": 1388506,
+        "6": 353744,
+        "7": 590006
+      },
+      "noncardiac_labels": [],
+      "missing_cardiac_labels": [],
+      "intensity_min_max": [
+        0.0,
+        3010.0
+      ],
+      "HU_independently_verified": false,
+      "imagechd_same_name_in_archive": [
+        "ct_1061_image.nii.gz",
+        "ct_1061_label.nii.gz"
+      ],
+      "imagechd_SHA256_identical_available_files": [],
+      "imagechd_SHA256_complete_pair": false,
+      "readiness": "requires_age_and_physical_scale_review",
+      "metadata_candidate": {
+        "metadata_index": 61,
+        "release_case_candidate": "ct_1061",
+        "linkage_rule": "idx + 1000",
+        "linkage_author_confirmed": false,
+        "age_verified_for_release": false,
+        "age_candidate_days": 423,
+        "age_candidate_completed_years": 1,
+        "candidate_in_0_17": true,
+        "source_pixel_spacing_candidate_mm": [
+          0.26953,
+          0.26953
+        ],
+        "source_calculated_z_candidate_mm": 0.75,
+        "scanner_model": "SOMATOM Definition Flash"
+      },
+      "metadata_conflicts_with_published_age_range": false
+    },
+    {
+      "case_id": "ct_1062",
+      "source": "CHD68",
+      "modality": "CT",
+      "age": null,
+      "age_verified": false,
+      "diagnosis_codes": [
+        "AD"
+      ],
+      "diagnosis_source": "https://raw.githubusercontent.com/XiaoweiXu/Whole-heart-and-great-vessel-segmentation-of-chd_segmentation/master/README.md",
+      "patient_linkage_independently_verified": false,
+      "duplicate_group": "chd68_imagechd::ct_1062",
+      "split_eligible_0_17": false,
+      "physical_context_eligible": false,
+      "healthy_status": "pathological",
+      "pair_grid_gate": "passed",
+      "image_SHA256": "61337ff972008f169ef4e25f34b4d39690e848e2c96f02c0e79804136b3a9245",
+      "mask_SHA256": "f2d80894b965c773711291c5043f222a8e85e1fc850da73d3ec9b3e881e87bd6",
+      "shape": [
+        512,
+        512,
+        197
+      ],
+      "spacing": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "spatial_unit": "unknown",
+      "physical_scale_verified": false,
+      "label_counts": {
+        "0": 44919064,
+        "1": 511520,
+        "2": 461916,
+        "3": 1447417,
+        "4": 907618,
+        "5": 1935387,
+        "6": 827286,
+        "7": 632160
+      },
+      "noncardiac_labels": [],
+      "missing_cardiac_labels": [],
+      "intensity_min_max": [
+        0.0,
+        2535.0
+      ],
+      "HU_independently_verified": false,
+      "imagechd_same_name_in_archive": [
+        "ct_1062_image.nii.gz",
+        "ct_1062_label.nii.gz"
+      ],
+      "imagechd_SHA256_identical_available_files": [],
+      "imagechd_SHA256_complete_pair": false,
+      "readiness": "requires_age_and_physical_scale_review",
+      "metadata_candidate": {
+        "metadata_index": 62,
+        "release_case_candidate": "ct_1062",
+        "linkage_rule": "idx + 1000",
+        "linkage_author_confirmed": false,
+        "age_verified_for_release": false,
+        "age_candidate_days": 10607,
+        "age_candidate_completed_years": 29,
+        "candidate_in_0_17": false,
+        "source_pixel_spacing_candidate_mm": [
+          0.42188,
+          0.42188
+        ],
+        "source_calculated_z_candidate_mm": 0.75,
+        "scanner_model": "SOMATOM Definition Flash"
+      },
+      "metadata_conflicts_with_published_age_range": true
+    },
+    {
+      "case_id": "ct_1066",
+      "source": "CHD68",
+      "modality": "CT",
+      "age": null,
+      "age_verified": false,
+      "diagnosis_codes": [
+        "AVSD"
+      ],
+      "diagnosis_source": "https://raw.githubusercontent.com/XiaoweiXu/Whole-heart-and-great-vessel-segmentation-of-chd_segmentation/master/README.md",
+      "patient_linkage_independently_verified": false,
+      "duplicate_group": "chd68_imagechd::ct_1066",
+      "split_eligible_0_17": false,
+      "physical_context_eligible": false,
+      "healthy_status": "pathological",
+      "pair_grid_gate": "passed",
+      "image_SHA256": "2f031bb249d7f33191f95f4109243bb3be1e8f376f4aff0b576facd9feb27bd5",
+      "mask_SHA256": "15f19fe9613807a7f79d4fafacbb14ccd184c96a1f014bf7fda033bbf2b13400",
+      "shape": [
+        512,
+        512,
+        206
+      ],
+      "spacing": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "spatial_unit": "unknown",
+      "physical_scale_verified": false,
+      "label_counts": {
+        "0": 51124817,
+        "1": 185148,
+        "2": 259518,
+        "3": 530140,
+        "4": 627291,
+        "5": 644776,
+        "6": 286945,
+        "7": 343029
+      },
+      "noncardiac_labels": [],
+      "missing_cardiac_labels": [],
+      "intensity_min_max": [
+        0.0,
+        3069.0
+      ],
+      "HU_independently_verified": false,
+      "imagechd_same_name_in_archive": [
+        "ct_1066_image.nii.gz",
+        "ct_1066_label.nii.gz"
+      ],
+      "imagechd_SHA256_identical_available_files": [],
+      "imagechd_SHA256_complete_pair": false,
+      "readiness": "requires_age_and_physical_scale_review",
+      "metadata_candidate": {
+        "metadata_index": 66,
+        "release_case_candidate": "ct_1066",
+        "linkage_rule": "idx + 1000",
+        "linkage_author_confirmed": false,
+        "age_verified_for_release": false,
+        "age_candidate_days": 327,
+        "age_candidate_completed_years": 0,
+        "candidate_in_0_17": true,
+        "source_pixel_spacing_candidate_mm": [
+          0.29688,
+          0.29688
+        ],
+        "source_calculated_z_candidate_mm": 0.75,
+        "scanner_model": "SOMATOM Definition Flash"
+      },
+      "metadata_conflicts_with_published_age_range": false
+    },
+    {
+      "case_id": "ct_1070",
+      "source": "CHD68",
+      "modality": "CT",
+      "age": null,
+      "age_verified": false,
+      "diagnosis_codes": [
+        "ASD"
+      ],
+      "diagnosis_source": "https://raw.githubusercontent.com/XiaoweiXu/Whole-heart-and-great-vessel-segmentation-of-chd_segmentation/master/README.md",
+      "patient_linkage_independently_verified": false,
+      "duplicate_group": "chd68_imagechd::ct_1070",
+      "split_eligible_0_17": false,
+      "physical_context_eligible": false,
+      "healthy_status": "pathological",
+      "pair_grid_gate": "passed",
+      "image_SHA256": "006e991ae41f3bde96bd9c2c54767da46754819b8d745c0153eea4968faf177b",
+      "mask_SHA256": "4c41c71b3c1bf82f3dc6eb4659cf2c9072cc023c3fce427263ffb9c55377f2aa",
+      "shape": [
+        512,
+        512,
+        275
+      ],
+      "spacing": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "spatial_unit": "unknown",
+      "physical_scale_verified": false,
+      "label_counts": {
+        "0": 69312103,
+        "1": 185340,
+        "2": 114069,
+        "3": 505090,
+        "4": 465580,
+        "5": 953526,
+        "6": 245169,
+        "7": 308723
+      },
+      "noncardiac_labels": [],
+      "missing_cardiac_labels": [],
+      "intensity_min_max": [
+        0.0,
+        4095.0
+      ],
+      "HU_independently_verified": false,
+      "imagechd_same_name_in_archive": [
+        "ct_1070_image.nii.gz",
+        "ct_1070_label.nii.gz"
+      ],
+      "imagechd_SHA256_identical_available_files": [],
+      "imagechd_SHA256_complete_pair": false,
+      "readiness": "requires_age_and_physical_scale_review",
+      "metadata_candidate": {
+        "metadata_index": 70,
+        "release_case_candidate": "ct_1070",
+        "linkage_rule": "idx + 1000",
+        "linkage_author_confirmed": false,
+        "age_verified_for_release": false,
+        "age_candidate_days": 123,
+        "age_candidate_completed_years": 0,
+        "candidate_in_0_17": true,
+        "source_pixel_spacing_candidate_mm": [
+          0.31836,
+          0.31836
+        ],
+        "source_calculated_z_candidate_mm": 0.75,
+        "scanner_model": "SOMATOM Definition Flash"
+      },
+      "metadata_conflicts_with_published_age_range": false
+    },
+    {
+      "case_id": "ct_1072",
+      "source": "CHD68",
+      "modality": "CT",
+      "age": null,
+      "age_verified": false,
+      "diagnosis_codes": [
+        "Normal"
+      ],
+      "diagnosis_source": "https://raw.githubusercontent.com/XiaoweiXu/Whole-heart-and-great-vessel-segmentation-of-chd_segmentation/master/README.md",
+      "patient_linkage_independently_verified": false,
+      "duplicate_group": "chd68_imagechd::ct_1072",
+      "split_eligible_0_17": false,
+      "physical_context_eligible": false,
+      "healthy_status": "no_structural_cardiac_abnormality_reported",
+      "pair_grid_gate": "passed",
+      "image_SHA256": "66bd9de87e14a07c2c748e704c544644e11ff92804564278f08dfe58f959cd67",
+      "mask_SHA256": "eac51772e46d84b7985bb6e7cabec7cea5070bf5d08b303478fd2a6eb9d927fa",
+      "shape": [
+        512,
+        512,
+        382
+      ],
+      "spacing": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "spatial_unit": "unknown",
+      "physical_scale_verified": false,
+      "label_counts": {
+        "0": 95381461,
+        "1": 328456,
+        "2": 365754,
+        "3": 1047193,
+        "4": 925870,
+        "5": 1006883,
+        "6": 648480,
+        "7": 434911
+      },
+      "noncardiac_labels": [],
+      "missing_cardiac_labels": [],
+      "intensity_min_max": [
+        0.0,
+        4095.0
+      ],
+      "HU_independently_verified": false,
+      "imagechd_same_name_in_archive": [
+        "ct_1072_image.nii.gz",
+        "ct_1072_label.nii.gz"
+      ],
+      "imagechd_SHA256_identical_available_files": [],
+      "imagechd_SHA256_complete_pair": false,
+      "readiness": "requires_age_and_physical_scale_review",
+      "metadata_candidate": {
+        "metadata_index": 72,
+        "release_case_candidate": "ct_1072",
+        "linkage_rule": "idx + 1000",
+        "linkage_author_confirmed": false,
+        "age_verified_for_release": false,
+        "age_candidate_days": 3502,
+        "age_candidate_completed_years": 9,
+        "candidate_in_0_17": true,
+        "source_pixel_spacing_candidate_mm": [
+          0.43359,
+          0.43359
+        ],
+        "source_calculated_z_candidate_mm": 0.75,
+        "scanner_model": "SOMATOM Definition Flash"
+      },
+      "metadata_conflicts_with_published_age_range": false
+    },
+    {
+      "case_id": "ct_1074",
+      "source": "CHD68",
+      "modality": "CT",
+      "age": null,
+      "age_verified": false,
+      "diagnosis_codes": [
+        "VSD",
+        "ToF"
+      ],
+      "diagnosis_source": "https://raw.githubusercontent.com/XiaoweiXu/Whole-heart-and-great-vessel-segmentation-of-chd_segmentation/master/README.md",
+      "patient_linkage_independently_verified": false,
+      "duplicate_group": "chd68_imagechd::ct_1074",
+      "split_eligible_0_17": false,
+      "physical_context_eligible": false,
+      "healthy_status": "pathological",
+      "pair_grid_gate": "passed",
+      "image_SHA256": "827bf7052be92d1b6b30a92e2bdb29b4e6f91326de6f0780f6adbbb4b5a0d2d4",
+      "mask_SHA256": "ab118f8012145dc88efd4e1b1f68d94af33dbc8d941fa1c5d1ea826cf9d70032",
+      "shape": [
+        512,
+        512,
+        206
+      ],
+      "spacing": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "spatial_unit": "unknown",
+      "physical_scale_verified": false,
+      "label_counts": {
+        "0": 51863995,
+        "1": 134652,
+        "2": 96937,
+        "3": 309434,
+        "4": 494027,
+        "5": 635958,
+        "6": 261309,
+        "7": 205352
+      },
+      "noncardiac_labels": [],
+      "missing_cardiac_labels": [],
+      "intensity_min_max": [
+        0.0,
+        4095.0
+      ],
+      "HU_independently_verified": false,
+      "imagechd_same_name_in_archive": [
+        "ct_1074_image.nii.gz",
+        "ct_1074_label.nii.gz"
+      ],
+      "imagechd_SHA256_identical_available_files": [],
+      "imagechd_SHA256_complete_pair": false,
+      "readiness": "requires_age_and_physical_scale_review",
+      "metadata_candidate": {
+        "metadata_index": 74,
+        "release_case_candidate": "ct_1074",
+        "linkage_rule": "idx + 1000",
+        "linkage_author_confirmed": false,
+        "age_verified_for_release": false,
+        "age_candidate_days": 208,
+        "age_candidate_completed_years": 0,
+        "candidate_in_0_17": true,
+        "source_pixel_spacing_candidate_mm": [
+          0.30859,
+          0.30859
+        ],
+        "source_calculated_z_candidate_mm": 0.75,
+        "scanner_model": "SOMATOM Definition Flash"
+      },
+      "metadata_conflicts_with_published_age_range": false
+    },
+    {
+      "case_id": "ct_1077",
+      "source": "CHD68",
+      "modality": "CT",
+      "age": null,
+      "age_verified": false,
+      "diagnosis_codes": [
+        "ASD",
+        "VSD",
+        "AAA"
+      ],
+      "diagnosis_source": "https://raw.githubusercontent.com/XiaoweiXu/Whole-heart-and-great-vessel-segmentation-of-chd_segmentation/master/README.md",
+      "patient_linkage_independently_verified": false,
+      "duplicate_group": "chd68_imagechd::ct_1077",
+      "split_eligible_0_17": false,
+      "physical_context_eligible": false,
+      "healthy_status": "pathological",
+      "pair_grid_gate": "passed",
+      "image_SHA256": "e1d13d99767be08f75a02c01749155e634a1c93b9c03f2066aaab7cd3d464050",
+      "mask_SHA256": "d80ed1a7a1e57a01082136f21c335b5e0a5f96b8c4087ad3e8c54b73eb2cd4d6",
+      "shape": [
+        512,
+        512,
+        170
+      ],
+      "spacing": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "spatial_unit": "unknown",
+      "physical_scale_verified": false,
+      "label_counts": {
+        "0": 41706919,
+        "1": 189872,
+        "2": 150675,
+        "3": 567877,
+        "4": 353035,
+        "5": 1303850,
+        "6": 218844,
+        "7": 73408
+      },
+      "noncardiac_labels": [],
+      "missing_cardiac_labels": [],
+      "intensity_min_max": [
+        0.0,
+        4095.0
+      ],
+      "HU_independently_verified": false,
+      "imagechd_same_name_in_archive": [
+        "ct_1077_image.nii.gz",
+        "ct_1077_label.nii.gz"
+      ],
+      "imagechd_SHA256_identical_available_files": [],
+      "imagechd_SHA256_complete_pair": false,
+      "readiness": "requires_age_and_physical_scale_review",
+      "metadata_candidate": {
+        "metadata_index": 77,
+        "release_case_candidate": "ct_1077",
+        "linkage_rule": "idx + 1000",
+        "linkage_author_confirmed": false,
+        "age_verified_for_release": false,
+        "age_candidate_days": 42,
+        "age_candidate_completed_years": 0,
+        "candidate_in_0_17": true,
+        "source_pixel_spacing_candidate_mm": [
+          0.2207,
+          0.2207
+        ],
+        "source_calculated_z_candidate_mm": 0.75,
+        "scanner_model": "SOMATOM Definition Flash"
+      },
+      "metadata_conflicts_with_published_age_range": false
+    },
+    {
+      "case_id": "ct_1079",
+      "source": "CHD68",
+      "modality": "CT",
+      "age": null,
+      "age_verified": false,
+      "diagnosis_codes": [
+        "AVSD"
+      ],
+      "diagnosis_source": "https://raw.githubusercontent.com/XiaoweiXu/Whole-heart-and-great-vessel-segmentation-of-chd_segmentation/master/README.md",
+      "patient_linkage_independently_verified": false,
+      "duplicate_group": "chd68_imagechd::ct_1079",
+      "split_eligible_0_17": false,
+      "physical_context_eligible": false,
+      "healthy_status": "pathological",
+      "pair_grid_gate": "passed",
+      "image_SHA256": "8fcd4399ba667e03b4844cdbd9df6d06691348cf4ede975d7614b2784d2de024",
+      "mask_SHA256": "5b87e843a07604bfced05eeb6f3c6390a4507bb6ba61fbf060acbaf1126a7d52",
+      "shape": [
+        512,
+        512,
+        275
+      ],
+      "spacing": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "spatial_unit": "unknown",
+      "physical_scale_verified": false,
+      "label_counts": {
+        "0": 66765779,
+        "1": 858334,
+        "2": 872088,
+        "3": 695627,
+        "4": 871135,
+        "5": 1108146,
+        "6": 378218,
+        "7": 540273
+      },
+      "noncardiac_labels": [],
+      "missing_cardiac_labels": [],
+      "intensity_min_max": [
+        0.0,
+        4095.0
+      ],
+      "HU_independently_verified": false,
+      "imagechd_same_name_in_archive": [
+        "ct_1079_image.nii.gz",
+        "ct_1079_label.nii.gz"
+      ],
+      "imagechd_SHA256_identical_available_files": [],
+      "imagechd_SHA256_complete_pair": false,
+      "readiness": "requires_age_and_physical_scale_review",
+      "metadata_candidate": {
+        "metadata_index": 79,
+        "release_case_candidate": "ct_1079",
+        "linkage_rule": "idx + 1000",
+        "linkage_author_confirmed": false,
+        "age_verified_for_release": false,
+        "age_candidate_days": 1660,
+        "age_candidate_completed_years": 4,
+        "candidate_in_0_17": true,
+        "source_pixel_spacing_candidate_mm": [
+          0.375,
+          0.375
+        ],
+        "source_calculated_z_candidate_mm": 0.75,
+        "scanner_model": "SOMATOM Definition Flash"
+      },
+      "metadata_conflicts_with_published_age_range": false
+    },
+    {
+      "case_id": "ct_1080",
+      "source": "CHD68",
+      "modality": "CT",
+      "age": null,
+      "age_verified": false,
+      "diagnosis_codes": [
+        "AD"
+      ],
+      "diagnosis_source": "https://raw.githubusercontent.com/XiaoweiXu/Whole-heart-and-great-vessel-segmentation-of-chd_segmentation/master/README.md",
+      "patient_linkage_independently_verified": false,
+      "duplicate_group": "chd68_imagechd::ct_1080",
+      "split_eligible_0_17": false,
+      "physical_context_eligible": false,
+      "healthy_status": "pathological",
+      "pair_grid_gate": "passed",
+      "image_SHA256": "949746bc8b3de5e12b7f9e9ec71f85c8c374473cc3dc0c846314ddd5c7c33855",
+      "mask_SHA256": "72105b37f5378e9581209400393e5562925136e2c864b324b612468102cefdff",
+      "shape": [
+        512,
+        512,
+        206
+      ],
+      "spacing": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "spatial_unit": "unknown",
+      "physical_scale_verified": false,
+      "label_counts": {
+        "0": 47036753,
+        "1": 1992607,
+        "2": 159705,
+        "3": 1119712,
+        "4": 531359,
+        "5": 2630290,
+        "6": 285019,
+        "7": 244775,
+        "12": 1444
+      },
+      "noncardiac_labels": [
+        12
+      ],
+      "missing_cardiac_labels": [],
+      "intensity_min_max": [
+        0.0,
+        4095.0
+      ],
+      "HU_independently_verified": false,
+      "imagechd_same_name_in_archive": [
+        "ct_1080_image.nii.gz",
+        "ct_1080_label.nii.gz"
+      ],
+      "imagechd_SHA256_identical_available_files": [],
+      "imagechd_SHA256_complete_pair": false,
+      "readiness": "requires_age_and_physical_scale_review",
+      "metadata_candidate": {
+        "metadata_index": 80,
+        "release_case_candidate": "ct_1080",
+        "linkage_rule": "idx + 1000",
+        "linkage_author_confirmed": false,
+        "age_verified_for_release": false,
+        "age_candidate_days": 133,
+        "age_candidate_completed_years": 0,
+        "candidate_in_0_17": true,
+        "source_pixel_spacing_candidate_mm": [
+          0.24414,
+          0.24414
+        ],
+        "source_calculated_z_candidate_mm": 0.75,
+        "scanner_model": "SOMATOM Definition Flash"
+      },
+      "metadata_conflicts_with_published_age_range": false
+    },
+    {
+      "case_id": "ct_1081",
+      "source": "CHD68",
+      "modality": "CT",
+      "age": null,
+      "age_verified": false,
+      "diagnosis_codes": [
+        "ASD",
+        "VSD",
+        "PDA",
+        "AAA"
+      ],
+      "diagnosis_source": "https://raw.githubusercontent.com/XiaoweiXu/Whole-heart-and-great-vessel-segmentation-of-chd_segmentation/master/README.md",
+      "patient_linkage_independently_verified": false,
+      "duplicate_group": "chd68_imagechd::ct_1081",
+      "split_eligible_0_17": false,
+      "physical_context_eligible": false,
+      "healthy_status": "pathological",
+      "pair_grid_gate": "passed",
+      "image_SHA256": "2eaf13d3afeefc34550b6cb4fcacebb8ecfb8d3c2152c95a9e873c8d84034536",
+      "mask_SHA256": "23b53976575c6da4a3eab620ec74552a8584085871480e74065a40d89a188e97",
+      "shape": [
+        181,
+        170,
+        249
+      ],
+      "spacing": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "spatial_unit": "unknown",
+      "physical_scale_verified": false,
+      "label_counts": {
+        "0": 5404068,
+        "1": 256522,
+        "2": 250361,
+        "3": 188170,
+        "4": 245039,
+        "5": 1051667,
+        "6": 118319,
+        "7": 147584
+      },
+      "noncardiac_labels": [],
+      "missing_cardiac_labels": [],
+      "intensity_min_max": [
+        0.0,
+        4095.0
+      ],
+      "HU_independently_verified": false,
+      "imagechd_same_name_in_archive": [
+        "ct_1081_image.nii.gz",
+        "ct_1081_label.nii.gz"
+      ],
+      "imagechd_SHA256_identical_available_files": [],
+      "imagechd_SHA256_complete_pair": false,
+      "readiness": "requires_age_and_physical_scale_review",
+      "metadata_candidate": {
+        "metadata_index": 81,
+        "release_case_candidate": "ct_1081",
+        "linkage_rule": "idx + 1000",
+        "linkage_author_confirmed": false,
+        "age_verified_for_release": false,
+        "age_candidate_days": 54,
+        "age_candidate_completed_years": 0,
+        "candidate_in_0_17": true,
+        "source_pixel_spacing_candidate_mm": [
+          0.41016,
+          0.41016
+        ],
+        "source_calculated_z_candidate_mm": 0.8,
+        "scanner_model": "iCT 256"
+      },
+      "metadata_conflicts_with_published_age_range": false
+    },
+    {
+      "case_id": "ct_1083",
+      "source": "CHD68",
+      "modality": "CT",
+      "age": null,
+      "age_verified": false,
+      "diagnosis_codes": [
+        "TGA"
+      ],
+      "diagnosis_source": "https://raw.githubusercontent.com/XiaoweiXu/Whole-heart-and-great-vessel-segmentation-of-chd_segmentation/master/README.md",
+      "patient_linkage_independently_verified": false,
+      "duplicate_group": "chd68_imagechd::ct_1083",
+      "split_eligible_0_17": false,
+      "physical_context_eligible": false,
+      "healthy_status": "pathological",
+      "pair_grid_gate": "passed",
+      "image_SHA256": "f1714954a75b2e15dbfdad47d252c285b4a0d1335d07998c9e862e9502e6b25f",
+      "mask_SHA256": "5b4dce07e6e187ad0a40bcc6ba947bb946539b988655a4e8f899240b4af6b6f1",
+      "shape": [
+        512,
+        512,
+        551
+      ],
+      "spacing": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "spatial_unit": "unknown",
+      "physical_scale_verified": false,
+      "label_counts": {
+        "0": 130664667,
+        "1": 1976226,
+        "2": 1416674,
+        "3": 3806577,
+        "4": 1723717,
+        "5": 2833696,
+        "6": 711143,
+        "7": 1308644
+      },
+      "noncardiac_labels": [],
+      "missing_cardiac_labels": [],
+      "intensity_min_max": [
+        0.0,
+        4095.0
+      ],
+      "HU_independently_verified": false,
+      "imagechd_same_name_in_archive": [
+        "ct_1083_image.nii.gz",
+        "ct_1083_label.nii.gz"
+      ],
+      "imagechd_SHA256_identical_available_files": [],
+      "imagechd_SHA256_complete_pair": false,
+      "readiness": "requires_age_and_physical_scale_review",
+      "metadata_candidate": {
+        "metadata_index": 83,
+        "release_case_candidate": "ct_1083",
+        "linkage_rule": "idx + 1000",
+        "linkage_author_confirmed": false,
+        "age_verified_for_release": false,
+        "age_candidate_days": 17450,
+        "age_candidate_completed_years": 47,
+        "candidate_in_0_17": false,
+        "source_pixel_spacing_candidate_mm": [
+          0.61133,
+          0.61133
+        ],
+        "source_calculated_z_candidate_mm": 0.75,
+        "scanner_model": "SOMATOM Definition Flash"
+      },
+      "metadata_conflicts_with_published_age_range": true
+    },
+    {
+      "case_id": "ct_1085",
+      "source": "CHD68",
+      "modality": "CT",
+      "age": null,
+      "age_verified": false,
+      "diagnosis_codes": [
+        "AVSD",
+        "TGA"
+      ],
+      "diagnosis_source": "https://raw.githubusercontent.com/XiaoweiXu/Whole-heart-and-great-vessel-segmentation-of-chd_segmentation/master/README.md",
+      "patient_linkage_independently_verified": false,
+      "duplicate_group": "chd68_imagechd::ct_1085",
+      "split_eligible_0_17": false,
+      "physical_context_eligible": false,
+      "healthy_status": "pathological",
+      "pair_grid_gate": "passed",
+      "image_SHA256": "d1e917adcdf77c53744a650bb6989b9da25e07737350198460f0ecfe2147f065",
+      "mask_SHA256": "db85f517c6e2c1a8243dc6445be93c87787c7cb4756d4249e85f58a422bab9d0",
+      "shape": [
+        512,
+        512,
+        206
+      ],
+      "spacing": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "spatial_unit": "unknown",
+      "physical_scale_verified": false,
+      "label_counts": {
+        "0": 51454170,
+        "1": 138439,
+        "2": 175819,
+        "3": 354310,
+        "4": 698753,
+        "5": 594058,
+        "6": 359551,
+        "7": 226564
+      },
+      "noncardiac_labels": [],
+      "missing_cardiac_labels": [],
+      "intensity_min_max": [
+        0.0,
+        4095.0
+      ],
+      "HU_independently_verified": false,
+      "imagechd_same_name_in_archive": [
+        "ct_1085_image.nii.gz",
+        "ct_1085_label.nii.gz"
+      ],
+      "imagechd_SHA256_identical_available_files": [],
+      "imagechd_SHA256_complete_pair": false,
+      "readiness": "requires_age_and_physical_scale_review",
+      "metadata_candidate": {
+        "metadata_index": 85,
+        "release_case_candidate": "ct_1085",
+        "linkage_rule": "idx + 1000",
+        "linkage_author_confirmed": false,
+        "age_verified_for_release": false,
+        "age_candidate_days": 3,
+        "age_candidate_completed_years": 0,
+        "candidate_in_0_17": true,
+        "source_pixel_spacing_candidate_mm": [
+          0.24414,
+          0.24414
+        ],
+        "source_calculated_z_candidate_mm": 0.75,
+        "scanner_model": "SOMATOM Definition Flash"
+      },
+      "metadata_conflicts_with_published_age_range": false
+    },
+    {
+      "case_id": "ct_1088",
+      "source": "CHD68",
+      "modality": "CT",
+      "age": null,
+      "age_verified": false,
+      "diagnosis_codes": [
+        "CA"
+      ],
+      "diagnosis_source": "https://raw.githubusercontent.com/XiaoweiXu/Whole-heart-and-great-vessel-segmentation-of-chd_segmentation/master/README.md",
+      "patient_linkage_independently_verified": false,
+      "duplicate_group": "chd68_imagechd::ct_1088",
+      "split_eligible_0_17": false,
+      "physical_context_eligible": false,
+      "healthy_status": "pathological",
+      "pair_grid_gate": "passed",
+      "image_SHA256": "2678473a89dfbd6dcaf45c258fa8dc0a1020dbcb2ba6e0f95a8d487ffa36ec6f",
+      "mask_SHA256": "a0961783f850cf3855f75cb6579d2aa60895c4668d9b011430a3e48e44936929",
+      "shape": [
+        512,
+        512,
+        206
+      ],
+      "spacing": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "spatial_unit": "unknown",
+      "physical_scale_verified": false,
+      "label_counts": {
+        "0": 52226112,
+        "1": 160321,
+        "2": 24888,
+        "3": 261780,
+        "4": 352307,
+        "5": 634767,
+        "6": 188583,
+        "7": 152906
+      },
+      "noncardiac_labels": [],
+      "missing_cardiac_labels": [],
+      "intensity_min_max": [
+        0.0,
+        3070.0
+      ],
+      "HU_independently_verified": false,
+      "imagechd_same_name_in_archive": [
+        "ct_1088_image.nii.gz",
+        "ct_1088_label.nii.gz"
+      ],
+      "imagechd_SHA256_identical_available_files": [],
+      "imagechd_SHA256_complete_pair": false,
+      "readiness": "requires_age_and_physical_scale_review",
+      "metadata_candidate": {
+        "metadata_index": 88,
+        "release_case_candidate": "ct_1088",
+        "linkage_rule": "idx + 1000",
+        "linkage_author_confirmed": false,
+        "age_verified_for_release": false,
+        "age_candidate_days": 57,
+        "age_candidate_completed_years": 0,
+        "candidate_in_0_17": true,
+        "source_pixel_spacing_candidate_mm": [
+          0.28516,
+          0.28516
+        ],
+        "source_calculated_z_candidate_mm": 0.75,
+        "scanner_model": "SOMATOM Definition Flash"
+      },
+      "metadata_conflicts_with_published_age_range": false
+    },
+    {
+      "case_id": "ct_1089",
+      "source": "CHD68",
+      "modality": "CT",
+      "age": null,
+      "age_verified": false,
+      "diagnosis_codes": [
+        "AD"
+      ],
+      "diagnosis_source": "https://raw.githubusercontent.com/XiaoweiXu/Whole-heart-and-great-vessel-segmentation-of-chd_segmentation/master/README.md",
+      "patient_linkage_independently_verified": false,
+      "duplicate_group": "chd68_imagechd::ct_1089",
+      "split_eligible_0_17": false,
+      "physical_context_eligible": false,
+      "healthy_status": "pathological",
+      "pair_grid_gate": "passed",
+      "image_SHA256": "c1aa047230e03a93b650dd3d4882143dd189023b3d5cefa54419f5eb7c625588",
+      "mask_SHA256": "511dd6a3dc8b04d7a380ca94009c9577b3bc932ca5ea9dec8e6b39f2279caaa4",
+      "shape": [
+        512,
+        512,
+        406
+      ],
+      "spacing": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "spatial_unit": "unknown",
+      "physical_scale_verified": false,
+      "label_counts": {
+        "0": 87627099,
+        "1": 1931825,
+        "2": 1666452,
+        "3": 3300812,
+        "4": 1961968,
+        "5": 4789964,
+        "6": 3016137,
+        "7": 2136207
+      },
+      "noncardiac_labels": [],
+      "missing_cardiac_labels": [],
+      "intensity_min_max": [
+        0.0,
+        2668.0
+      ],
+      "HU_independently_verified": false,
+      "imagechd_same_name_in_archive": [],
+      "imagechd_SHA256_identical_available_files": [],
+      "imagechd_SHA256_complete_pair": false,
+      "readiness": "requires_age_and_physical_scale_review",
+      "metadata_candidate": null,
+      "metadata_conflicts_with_published_age_range": false
+    },
+    {
+      "case_id": "ct_1090",
+      "source": "CHD68",
+      "modality": "CT",
+      "age": null,
+      "age_verified": false,
+      "diagnosis_codes": [
+        "AD",
+        "CA",
+        "PS"
+      ],
+      "diagnosis_source": "https://raw.githubusercontent.com/XiaoweiXu/Whole-heart-and-great-vessel-segmentation-of-chd_segmentation/master/README.md",
+      "patient_linkage_independently_verified": false,
+      "duplicate_group": "chd68_imagechd::ct_1090",
+      "split_eligible_0_17": false,
+      "physical_context_eligible": false,
+      "healthy_status": "pathological",
+      "pair_grid_gate": "passed",
+      "image_SHA256": "93e7f321420f7bb5dace231a187b1eba44ac76186817b83b019325a90a0a41d3",
+      "mask_SHA256": "805c0442501aa7a53d74277ac49b4001bc4eb01fa8e2e292897f15f9851ca663",
+      "shape": [
+        512,
+        512,
+        206
+      ],
+      "spacing": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "spatial_unit": "unknown",
+      "physical_scale_verified": false,
+      "label_counts": {
+        "0": 51956058,
+        "1": 26997,
+        "2": 39546,
+        "3": 363913,
+        "4": 408194,
+        "5": 997180,
+        "6": 83752,
+        "7": 126024
+      },
+      "noncardiac_labels": [],
+      "missing_cardiac_labels": [],
+      "intensity_min_max": [
+        0.0,
+        2782.0
+      ],
+      "HU_independently_verified": false,
+      "imagechd_same_name_in_archive": [],
+      "imagechd_SHA256_identical_available_files": [],
+      "imagechd_SHA256_complete_pair": false,
+      "readiness": "requires_age_and_physical_scale_review",
+      "metadata_candidate": null,
+      "metadata_conflicts_with_published_age_range": false
+    },
+    {
+      "case_id": "ct_1091",
+      "source": "CHD68",
+      "modality": "CT",
+      "age": null,
+      "age_verified": false,
+      "diagnosis_codes": [
+        "VSD",
+        "PDA",
+        "CAT",
+        "AAA"
+      ],
+      "diagnosis_source": "https://raw.githubusercontent.com/XiaoweiXu/Whole-heart-and-great-vessel-segmentation-of-chd_segmentation/master/README.md",
+      "patient_linkage_independently_verified": false,
+      "duplicate_group": "chd68_imagechd::ct_1091",
+      "split_eligible_0_17": false,
+      "physical_context_eligible": false,
+      "healthy_status": "pathological",
+      "pair_grid_gate": "passed",
+      "image_SHA256": "612b9aedd9a9ba688d7a991306a7a4dc3f5e16b00137f36c56c25c5695ade69f",
+      "mask_SHA256": "aa1c66c045e76b5429c2c56ac8d5e763190ff504170dc0cd1c7bea931b002223",
+      "shape": [
+        512,
+        512,
+        344
+      ],
+      "spacing": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "spatial_unit": "unknown",
+      "physical_scale_verified": false,
+      "label_counts": {
+        "0": 83439906,
+        "1": 514244,
+        "2": 255767,
+        "3": 1194736,
+        "4": 807535,
+        "5": 1973785,
+        "6": 1381033,
+        "7": 610530
+      },
+      "noncardiac_labels": [],
+      "missing_cardiac_labels": [],
+      "intensity_min_max": [
+        0.0,
+        3268.0
+      ],
+      "HU_independently_verified": false,
+      "imagechd_same_name_in_archive": [
+        "ct_1091_image.nii.gz",
+        "ct_1091_label.nii.gz"
+      ],
+      "imagechd_SHA256_identical_available_files": [],
+      "imagechd_SHA256_complete_pair": false,
+      "readiness": "requires_age_and_physical_scale_review",
+      "metadata_candidate": {
+        "metadata_index": 91,
+        "release_case_candidate": "ct_1091",
+        "linkage_rule": "idx + 1000",
+        "linkage_author_confirmed": false,
+        "age_verified_for_release": false,
+        "age_candidate_days": 1575,
+        "age_candidate_completed_years": 4,
+        "candidate_in_0_17": true,
+        "source_pixel_spacing_candidate_mm": [
+          0.38672,
+          0.38672
+        ],
+        "source_calculated_z_candidate_mm": 0.75,
+        "scanner_model": "SOMATOM Definition Flash"
+      },
+      "metadata_conflicts_with_published_age_range": false
+    },
+    {
+      "case_id": "ct_1092",
+      "source": "CHD68",
+      "modality": "CT",
+      "age": null,
+      "age_verified": false,
+      "diagnosis_codes": [
+        "VSD",
+        "AD",
+        "PuA"
+      ],
+      "diagnosis_source": "https://raw.githubusercontent.com/XiaoweiXu/Whole-heart-and-great-vessel-segmentation-of-chd_segmentation/master/README.md",
+      "patient_linkage_independently_verified": false,
+      "duplicate_group": "chd68_imagechd::ct_1092",
+      "split_eligible_0_17": false,
+      "physical_context_eligible": false,
+      "healthy_status": "pathological",
+      "pair_grid_gate": "passed",
+      "image_SHA256": "7234ceaf2f57467eaae0085e87bcdcd1d21d9ba8a978dd1db494af4390a6d814",
+      "mask_SHA256": "33d00373900dd23cb15e01353810a6ee7b35bca3c480c82726e62bb69323f359",
+      "shape": [
+        512,
+        512,
+        275
+      ],
+      "spacing": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "spatial_unit": "unknown",
+      "physical_scale_verified": false,
+      "label_counts": {
+        "0": 63550262,
+        "1": 726748,
+        "2": 514040,
+        "3": 1567604,
+        "4": 1107689,
+        "5": 2615687,
+        "6": 1171770,
+        "7": 834574,
+        "13": 1226
+      },
+      "noncardiac_labels": [
+        13
+      ],
+      "missing_cardiac_labels": [],
+      "intensity_min_max": [
+        0.0,
+        4095.0
+      ],
+      "HU_independently_verified": false,
+      "imagechd_same_name_in_archive": [
+        "ct_1092_image.nii.gz",
+        "ct_1092_label.nii.gz"
+      ],
+      "imagechd_SHA256_identical_available_files": [],
+      "imagechd_SHA256_complete_pair": false,
+      "readiness": "requires_age_and_physical_scale_review",
+      "metadata_candidate": {
+        "metadata_index": 92,
+        "release_case_candidate": "ct_1092",
+        "linkage_rule": "idx + 1000",
+        "linkage_author_confirmed": false,
+        "age_verified_for_release": false,
+        "age_candidate_days": 746,
+        "age_candidate_completed_years": 2,
+        "candidate_in_0_17": true,
+        "source_pixel_spacing_candidate_mm": [
+          0.25977,
+          0.25977
+        ],
+        "source_calculated_z_candidate_mm": 0.75,
+        "scanner_model": "SOMATOM Definition Flash"
+      },
+      "metadata_conflicts_with_published_age_range": false
+    },
+    {
+      "case_id": "ct_1098",
+      "source": "CHD68",
+      "modality": "CT",
+      "age": null,
+      "age_verified": false,
+      "diagnosis_codes": [
+        "CAT"
+      ],
+      "diagnosis_source": "https://raw.githubusercontent.com/XiaoweiXu/Whole-heart-and-great-vessel-segmentation-of-chd_segmentation/master/README.md",
+      "patient_linkage_independently_verified": false,
+      "duplicate_group": "chd68_imagechd::ct_1098",
+      "split_eligible_0_17": false,
+      "physical_context_eligible": false,
+      "healthy_status": "pathological",
+      "pair_grid_gate": "passed",
+      "image_SHA256": "741f53e36877e68c8a284514c5319d3bf3af458c240891e21b4f874a152e8a14",
+      "mask_SHA256": "6463aafbacdda4f6e0e4df5834227a99e5b3e90951c5afc7f5129eb63a61816a",
+      "shape": [
+        512,
+        512,
+        206
+      ],
+      "spacing": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "spatial_unit": "unknown",
+      "physical_scale_verified": false,
+      "label_counts": {
+        "0": 49457225,
+        "1": 251959,
+        "2": 147022,
+        "3": 771365,
+        "4": 764117,
+        "5": 1547024,
+        "6": 557717,
+        "7": 505235
+      },
+      "noncardiac_labels": [],
+      "missing_cardiac_labels": [],
+      "intensity_min_max": [
+        0.0,
+        4095.0
+      ],
+      "HU_independently_verified": false,
+      "imagechd_same_name_in_archive": [
+        "ct_1098_image.nii.gz",
+        "ct_1098_label.nii.gz"
+      ],
+      "imagechd_SHA256_identical_available_files": [],
+      "imagechd_SHA256_complete_pair": false,
+      "readiness": "requires_age_and_physical_scale_review",
+      "metadata_candidate": {
+        "metadata_index": 98,
+        "release_case_candidate": "ct_1098",
+        "linkage_rule": "idx + 1000",
+        "linkage_author_confirmed": false,
+        "age_verified_for_release": false,
+        "age_candidate_days": 125,
+        "age_candidate_completed_years": 0,
+        "candidate_in_0_17": true,
+        "source_pixel_spacing_candidate_mm": [
+          0.27734,
+          0.27734
+        ],
+        "source_calculated_z_candidate_mm": 0.75,
+        "scanner_model": "SOMATOM Definition Flash"
+      },
+      "metadata_conflicts_with_published_age_range": false
+    },
+    {
+      "case_id": "ct_1099",
+      "source": "CHD68",
+      "modality": "CT",
+      "age": null,
+      "age_verified": false,
+      "diagnosis_codes": [
+        "VSD",
+        "AD",
+        "PuA"
+      ],
+      "diagnosis_source": "https://raw.githubusercontent.com/XiaoweiXu/Whole-heart-and-great-vessel-segmentation-of-chd_segmentation/master/README.md",
+      "patient_linkage_independently_verified": false,
+      "duplicate_group": "chd68_imagechd::ct_1099",
+      "split_eligible_0_17": false,
+      "physical_context_eligible": false,
+      "healthy_status": "pathological",
+      "pair_grid_gate": "passed",
+      "image_SHA256": "e2bf7bdde6af7d9ecb232dcbfa12dd202bb997f9f4b3ffde6f801ccfa29df408",
+      "mask_SHA256": "3aa511c6890e13ef379e37d6be051cb8ba0c009cc18cceca7cf4f332771ce8f8",
+      "shape": [
+        512,
+        512,
+        275
+      ],
+      "spacing": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "spatial_unit": "unknown",
+      "physical_scale_verified": false,
+      "label_counts": {
+        "0": 65836197,
+        "1": 360554,
+        "2": 280060,
+        "3": 1006065,
+        "4": 1190854,
+        "5": 1976934,
+        "6": 1267664,
+        "7": 81970,
+        "13": 89302
+      },
+      "noncardiac_labels": [
+        13
+      ],
+      "missing_cardiac_labels": [],
+      "intensity_min_max": [
+        0.0,
+        4095.0
+      ],
+      "HU_independently_verified": false,
+      "imagechd_same_name_in_archive": [
+        "ct_1099_image.nii.gz",
+        "ct_1099_label.nii.gz"
+      ],
+      "imagechd_SHA256_identical_available_files": [],
+      "imagechd_SHA256_complete_pair": false,
+      "readiness": "requires_age_and_physical_scale_review",
+      "metadata_candidate": {
+        "metadata_index": 99,
+        "release_case_candidate": "ct_1099",
+        "linkage_rule": "idx + 1000",
+        "linkage_author_confirmed": false,
+        "age_verified_for_release": false,
+        "age_candidate_days": 2023,
+        "age_candidate_completed_years": 5,
+        "candidate_in_0_17": true,
+        "source_pixel_spacing_candidate_mm": [
+          0.3418,
+          0.3418
+        ],
+        "source_calculated_z_candidate_mm": 0.75,
+        "scanner_model": "SOMATOM Definition Flash"
+      },
+      "metadata_conflicts_with_published_age_range": false
+    },
+    {
+      "case_id": "ct_1101",
+      "source": "CHD68",
+      "modality": "CT",
+      "age": null,
+      "age_verified": false,
+      "diagnosis_codes": [
+        "Normal"
+      ],
+      "diagnosis_source": "https://raw.githubusercontent.com/XiaoweiXu/Whole-heart-and-great-vessel-segmentation-of-chd_segmentation/master/README.md",
+      "patient_linkage_independently_verified": false,
+      "duplicate_group": "chd68_imagechd::ct_1101",
+      "split_eligible_0_17": false,
+      "physical_context_eligible": false,
+      "healthy_status": "no_structural_cardiac_abnormality_reported",
+      "pair_grid_gate": "passed",
+      "image_SHA256": "df449fe92ec5f75142b2111d0845cd43403d4dd54086aa64a24e9370ae1673ed",
+      "mask_SHA256": "8a18ce7ea3e8926949db4e5e7b01db59b4b556b00a3e4f4c6f8cf94cbc6f4af6",
+      "shape": [
+        512,
+        512,
+        321
+      ],
+      "spacing": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "spatial_unit": "unknown",
+      "physical_scale_verified": false,
+      "label_counts": {
+        "0": 78875465,
+        "1": 951253,
+        "2": 942670,
+        "3": 524706,
+        "4": 617600,
+        "5": 1373617,
+        "6": 486895,
+        "7": 369129,
+        "14": 6889
+      },
+      "noncardiac_labels": [
+        14
+      ],
+      "missing_cardiac_labels": [],
+      "intensity_min_max": [
+        0.0,
+        4095.0
+      ],
+      "HU_independently_verified": false,
+      "imagechd_same_name_in_archive": [
+        "ct_1101_image.nii.gz",
+        "ct_1101_label.nii.gz"
+      ],
+      "imagechd_SHA256_identical_available_files": [],
+      "imagechd_SHA256_complete_pair": false,
+      "readiness": "requires_age_and_physical_scale_review",
+      "metadata_candidate": {
+        "metadata_index": 101,
+        "release_case_candidate": "ct_1101",
+        "linkage_rule": "idx + 1000",
+        "linkage_author_confirmed": false,
+        "age_verified_for_release": false,
+        "age_candidate_days": 2675,
+        "age_candidate_completed_years": 7,
+        "candidate_in_0_17": true,
+        "source_pixel_spacing_candidate_mm": [
+          0.41602,
+          0.41602
+        ],
+        "source_calculated_z_candidate_mm": 0.75,
+        "scanner_model": "SOMATOM Definition Flash"
+      },
+      "metadata_conflicts_with_published_age_range": false
+    },
+    {
+      "case_id": "ct_1102",
+      "source": "CHD68",
+      "modality": "CT",
+      "age": null,
+      "age_verified": false,
+      "diagnosis_codes": [
+        "ASD",
+        "VSD",
+        "AD",
+        "PDA",
+        "PuA"
+      ],
+      "diagnosis_source": "https://raw.githubusercontent.com/XiaoweiXu/Whole-heart-and-great-vessel-segmentation-of-chd_segmentation/master/README.md",
+      "patient_linkage_independently_verified": false,
+      "duplicate_group": "chd68_imagechd::ct_1102",
+      "split_eligible_0_17": false,
+      "physical_context_eligible": false,
+      "healthy_status": "pathological",
+      "pair_grid_gate": "passed",
+      "image_SHA256": "8c53373a0a069db740d948ea6cc7f0ef15763158192254e8f8f78c22342b7096",
+      "mask_SHA256": "e54784a149be71919872c801bc82540a6179be853b0f2aaf60db2c3366abdd82",
+      "shape": [
+        512,
+        512,
+        205
+      ],
+      "spacing": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "spatial_unit": "unknown",
+      "physical_scale_verified": false,
+      "label_counts": {
+        "0": 49865027,
+        "1": 210666,
+        "2": 287840,
+        "3": 388143,
+        "4": 1087104,
+        "5": 1165443,
+        "6": 482358,
+        "7": 252939
+      },
+      "noncardiac_labels": [],
+      "missing_cardiac_labels": [],
+      "intensity_min_max": [
+        0.0,
+        4095.0
+      ],
+      "HU_independently_verified": false,
+      "imagechd_same_name_in_archive": [
+        "ct_1102_image.nii.gz",
+        "ct_1102_label.nii.gz"
+      ],
+      "imagechd_SHA256_identical_available_files": [],
+      "imagechd_SHA256_complete_pair": false,
+      "readiness": "requires_age_and_physical_scale_review",
+      "metadata_candidate": {
+        "metadata_index": 102,
+        "release_case_candidate": "ct_1102",
+        "linkage_rule": "idx + 1000",
+        "linkage_author_confirmed": false,
+        "age_verified_for_release": false,
+        "age_candidate_days": 189,
+        "age_candidate_completed_years": 0,
+        "candidate_in_0_17": true,
+        "source_pixel_spacing_candidate_mm": [
+          0.24414,
+          0.24414
+        ],
+        "source_calculated_z_candidate_mm": 0.75,
+        "scanner_model": "SOMATOM Definition Flash"
+      },
+      "metadata_conflicts_with_published_age_range": false
+    },
+    {
+      "case_id": "ct_1103",
+      "source": "CHD68",
+      "modality": "CT",
+      "age": null,
+      "age_verified": false,
+      "diagnosis_codes": [
+        "VSD"
+      ],
+      "diagnosis_source": "https://raw.githubusercontent.com/XiaoweiXu/Whole-heart-and-great-vessel-segmentation-of-chd_segmentation/master/README.md",
+      "patient_linkage_independently_verified": false,
+      "duplicate_group": "chd68_imagechd::ct_1103",
+      "split_eligible_0_17": false,
+      "physical_context_eligible": false,
+      "healthy_status": "pathological",
+      "pair_grid_gate": "passed",
+      "image_SHA256": "2492720918eabcce4b6800e7ac4e06a35eeacade5acedd682b0cf7dddb60d142",
+      "mask_SHA256": "2b9b4080173c39ebe1f05af2f486a5b57c3bf30725492494cc72e2a5d8230230",
+      "shape": [
+        512,
+        512,
+        206
+      ],
+      "spacing": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "spatial_unit": "unknown",
+      "physical_scale_verified": false,
+      "label_counts": {
+        "0": 50807029,
+        "1": 172976,
+        "2": 132641,
+        "3": 797973,
+        "4": 410586,
+        "5": 1027256,
+        "6": 145821,
+        "7": 507382
+      },
+      "noncardiac_labels": [],
+      "missing_cardiac_labels": [],
+      "intensity_min_max": [
+        0.0,
+        4095.0
+      ],
+      "HU_independently_verified": false,
+      "imagechd_same_name_in_archive": [
+        "ct_1103_image.nii.gz",
+        "ct_1103_label.nii.gz"
+      ],
+      "imagechd_SHA256_identical_available_files": [],
+      "imagechd_SHA256_complete_pair": false,
+      "readiness": "requires_age_and_physical_scale_review",
+      "metadata_candidate": {
+        "metadata_index": 103,
+        "release_case_candidate": "ct_1103",
+        "linkage_rule": "idx + 1000",
+        "linkage_author_confirmed": false,
+        "age_verified_for_release": false,
+        "age_candidate_days": 15957,
+        "age_candidate_completed_years": 43,
+        "candidate_in_0_17": false,
+        "source_pixel_spacing_candidate_mm": [
+          0.3418,
+          0.3418
+        ],
+        "source_calculated_z_candidate_mm": 0.75,
+        "scanner_model": "SOMATOM Definition Flash"
+      },
+      "metadata_conflicts_with_published_age_range": true
+    },
+    {
+      "case_id": "ct_1106",
+      "source": "CHD68",
+      "modality": "CT",
+      "age": null,
+      "age_verified": false,
+      "diagnosis_codes": [
+        "ASD",
+        "AD",
+        "AAA"
+      ],
+      "diagnosis_source": "https://raw.githubusercontent.com/XiaoweiXu/Whole-heart-and-great-vessel-segmentation-of-chd_segmentation/master/README.md",
+      "patient_linkage_independently_verified": false,
+      "duplicate_group": "chd68_imagechd::ct_1106",
+      "split_eligible_0_17": false,
+      "physical_context_eligible": false,
+      "healthy_status": "pathological",
+      "pair_grid_gate": "passed",
+      "image_SHA256": "aaec621765924fae8a3c7c9c869e3918931cabd7ba618aea6a4eb0dc6401e20e",
+      "mask_SHA256": "5c0c9e7f059f027bd3bfe76e831613c5109ad8c93e7d82095590841245140f08",
+      "shape": [
+        512,
+        512,
+        206
+      ],
+      "spacing": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "spatial_unit": "unknown",
+      "physical_scale_verified": false,
+      "label_counts": {
+        "0": 52107259,
+        "1": 128838,
+        "2": 69006,
+        "3": 149387,
+        "4": 297671,
+        "5": 945008,
+        "6": 226096,
+        "7": 78399
+      },
+      "noncardiac_labels": [],
+      "missing_cardiac_labels": [],
+      "intensity_min_max": [
+        0.0,
+        4095.0
+      ],
+      "HU_independently_verified": false,
+      "imagechd_same_name_in_archive": [
+        "ct_1106_image.nii.gz",
+        "ct_1106_label.nii.gz"
+      ],
+      "imagechd_SHA256_identical_available_files": [],
+      "imagechd_SHA256_complete_pair": false,
+      "readiness": "requires_age_and_physical_scale_review",
+      "metadata_candidate": {
+        "metadata_index": 106,
+        "release_case_candidate": "ct_1106",
+        "linkage_rule": "idx + 1000",
+        "linkage_author_confirmed": false,
+        "age_verified_for_release": false,
+        "age_candidate_days": 1,
+        "age_candidate_completed_years": 0,
+        "candidate_in_0_17": true,
+        "source_pixel_spacing_candidate_mm": [
+          0.2793,
+          0.2793
+        ],
+        "source_calculated_z_candidate_mm": 0.75,
+        "scanner_model": "SOMATOM Definition Flash"
+      },
+      "metadata_conflicts_with_published_age_range": false
+    },
+    {
+      "case_id": "ct_1109",
+      "source": "CHD68",
+      "modality": "CT",
+      "age": null,
+      "age_verified": false,
+      "diagnosis_codes": [
+        "AD",
+        "PDA"
+      ],
+      "diagnosis_source": "https://raw.githubusercontent.com/XiaoweiXu/Whole-heart-and-great-vessel-segmentation-of-chd_segmentation/master/README.md",
+      "patient_linkage_independently_verified": false,
+      "duplicate_group": "chd68_imagechd::ct_1109",
+      "split_eligible_0_17": false,
+      "physical_context_eligible": false,
+      "healthy_status": "pathological",
+      "pair_grid_gate": "passed",
+      "image_SHA256": "14faf67092948c7a460846821d580088f4752e123960f33e3167c5b42e1b874f",
+      "mask_SHA256": "80af565c2cbaa3d785af5dbdb07bfb444a9a256e04d8e1a2bdf0e1b8936d61f2",
+      "shape": [
+        512,
+        512,
+        275
+      ],
+      "spacing": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "spatial_unit": "unknown",
+      "physical_scale_verified": false,
+      "label_counts": {
+        "0": 67036863,
+        "1": 399192,
+        "2": 204989,
+        "3": 1194488,
+        "4": 636623,
+        "5": 1611453,
+        "6": 598227,
+        "7": 407765
+      },
+      "noncardiac_labels": [],
+      "missing_cardiac_labels": [],
+      "intensity_min_max": [
+        0.0,
+        4095.0
+      ],
+      "HU_independently_verified": false,
+      "imagechd_same_name_in_archive": [
+        "ct_1109_image.nii.gz",
+        "ct_1109_label.nii.gz"
+      ],
+      "imagechd_SHA256_identical_available_files": [],
+      "imagechd_SHA256_complete_pair": false,
+      "readiness": "requires_age_and_physical_scale_review",
+      "metadata_candidate": {
+        "metadata_index": 109,
+        "release_case_candidate": "ct_1109",
+        "linkage_rule": "idx + 1000",
+        "linkage_author_confirmed": false,
+        "age_verified_for_release": false,
+        "age_candidate_days": 746,
+        "age_candidate_completed_years": 2,
+        "candidate_in_0_17": true,
+        "source_pixel_spacing_candidate_mm": [
+          0.34375,
+          0.34375
+        ],
+        "source_calculated_z_candidate_mm": 0.75,
+        "scanner_model": "SOMATOM Definition Flash"
+      },
+      "metadata_conflicts_with_published_age_range": false
+    },
+    {
+      "case_id": "ct_1111",
+      "source": "CHD68",
+      "modality": "CT",
+      "age": null,
+      "age_verified": false,
+      "diagnosis_codes": [
+        "PS"
+      ],
+      "diagnosis_source": "https://raw.githubusercontent.com/XiaoweiXu/Whole-heart-and-great-vessel-segmentation-of-chd_segmentation/master/README.md",
+      "patient_linkage_independently_verified": false,
+      "duplicate_group": "chd68_imagechd::ct_1111",
+      "split_eligible_0_17": false,
+      "physical_context_eligible": false,
+      "healthy_status": "pathological",
+      "pair_grid_gate": "passed",
+      "image_SHA256": "bfe7b62d61c00d41a71fb26b6460bc4421f591ee03844e1adec3234a9ec766d2",
+      "mask_SHA256": "8fdb55cf8c615a862dfa1dc3681894836fbc3552de93aa217e245c516b975b16",
+      "shape": [
+        512,
+        512,
+        344
+      ],
+      "spacing": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "spatial_unit": "unknown",
+      "physical_scale_verified": false,
+      "label_counts": {
+        "0": 86674646,
+        "1": 328867,
+        "2": 161508,
+        "3": 483875,
+        "4": 603659,
+        "5": 1149819,
+        "6": 403862,
+        "7": 371300
+      },
+      "noncardiac_labels": [],
+      "missing_cardiac_labels": [],
+      "intensity_min_max": [
+        0.0,
+        4095.0
+      ],
+      "HU_independently_verified": false,
+      "imagechd_same_name_in_archive": [
+        "ct_1111_image.nii.gz",
+        "ct_1111_label.nii.gz"
+      ],
+      "imagechd_SHA256_identical_available_files": [],
+      "imagechd_SHA256_complete_pair": false,
+      "readiness": "requires_age_and_physical_scale_review",
+      "metadata_candidate": {
+        "metadata_index": 111,
+        "release_case_candidate": "ct_1111",
+        "linkage_rule": "idx + 1000",
+        "linkage_author_confirmed": false,
+        "age_verified_for_release": false,
+        "age_candidate_days": 2342,
+        "age_candidate_completed_years": 6,
+        "candidate_in_0_17": true,
+        "source_pixel_spacing_candidate_mm": [
+          0.4375,
+          0.4375
+        ],
+        "source_calculated_z_candidate_mm": 0.75,
+        "scanner_model": "SOMATOM Definition Flash"
+      },
+      "metadata_conflicts_with_published_age_range": false
+    },
+    {
+      "case_id": "ct_1113",
+      "source": "CHD68",
+      "modality": "CT",
+      "age": null,
+      "age_verified": false,
+      "diagnosis_codes": [
+        "VSD",
+        "AD",
+        "PuA"
+      ],
+      "diagnosis_source": "https://raw.githubusercontent.com/XiaoweiXu/Whole-heart-and-great-vessel-segmentation-of-chd_segmentation/master/README.md",
+      "patient_linkage_independently_verified": false,
+      "duplicate_group": "chd68_imagechd::ct_1113",
+      "split_eligible_0_17": false,
+      "physical_context_eligible": false,
+      "healthy_status": "pathological",
+      "pair_grid_gate": "passed",
+      "image_SHA256": "7cbbc22101d9ffa36cf899b11821c1aa0288e1a06413650628f01b07f2b2bd67",
+      "mask_SHA256": "fd698eb4104f13413864505793b9bc754e70cd4c8bfa9c66a90b376507da39a8",
+      "shape": [
+        512,
+        512,
+        275
+      ],
+      "spacing": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "spatial_unit": "unknown",
+      "physical_scale_verified": false,
+      "label_counts": {
+        "0": 67870216,
+        "1": 269430,
+        "2": 227718,
+        "3": 610999,
+        "4": 677389,
+        "5": 1391327,
+        "6": 677845,
+        "7": 345414,
+        "13": 19262
+      },
+      "noncardiac_labels": [
+        13
+      ],
+      "missing_cardiac_labels": [],
+      "intensity_min_max": [
+        0.0,
+        4095.0
+      ],
+      "HU_independently_verified": false,
+      "imagechd_same_name_in_archive": [
+        "ct_1113_image.nii.gz",
+        "ct_1113_label.nii.gz"
+      ],
+      "imagechd_SHA256_identical_available_files": [],
+      "imagechd_SHA256_complete_pair": false,
+      "readiness": "requires_age_and_physical_scale_review",
+      "metadata_candidate": {
+        "metadata_index": 113,
+        "release_case_candidate": "ct_1113",
+        "linkage_rule": "idx + 1000",
+        "linkage_author_confirmed": false,
+        "age_verified_for_release": false,
+        "age_candidate_days": 331,
+        "age_candidate_completed_years": 0,
+        "candidate_in_0_17": true,
+        "source_pixel_spacing_candidate_mm": [
+          0.28516,
+          0.28516
+        ],
+        "source_calculated_z_candidate_mm": 0.75,
+        "scanner_model": "SOMATOM Definition Flash"
+      },
+      "metadata_conflicts_with_published_age_range": false
+    },
+    {
+      "case_id": "ct_1114",
+      "source": "CHD68",
+      "modality": "CT",
+      "age": null,
+      "age_verified": false,
+      "diagnosis_codes": [
+        "PAS"
+      ],
+      "diagnosis_source": "https://raw.githubusercontent.com/XiaoweiXu/Whole-heart-and-great-vessel-segmentation-of-chd_segmentation/master/README.md",
+      "patient_linkage_independently_verified": false,
+      "duplicate_group": "chd68_imagechd::ct_1114",
+      "split_eligible_0_17": false,
+      "physical_context_eligible": false,
+      "healthy_status": "pathological",
+      "pair_grid_gate": "passed",
+      "image_SHA256": "e6aeb6236fe6b2cad9f539bd46815afbb7b884f550cb1bd688248537a58298fb",
+      "mask_SHA256": "4ccc3bd889f8627c6d212e7aadabf3c441738dbd2acfd832815e131abfaff145",
+      "shape": [
+        512,
+        512,
+        344
+      ],
+      "spacing": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "spatial_unit": "unknown",
+      "physical_scale_verified": false,
+      "label_counts": {
+        "0": 83898975,
+        "1": 781843,
+        "2": 694984,
+        "3": 820881,
+        "4": 999958,
+        "5": 1776138,
+        "6": 514139,
+        "7": 690618
+      },
+      "noncardiac_labels": [],
+      "missing_cardiac_labels": [],
+      "intensity_min_max": [
+        0.0,
+        4095.0
+      ],
+      "HU_independently_verified": false,
+      "imagechd_same_name_in_archive": [
+        "ct_1114_image.nii.gz",
+        "ct_1114_label.nii.gz"
+      ],
+      "imagechd_SHA256_identical_available_files": [],
+      "imagechd_SHA256_complete_pair": false,
+      "readiness": "requires_age_and_physical_scale_review",
+      "metadata_candidate": {
+        "metadata_index": 114,
+        "release_case_candidate": "ct_1114",
+        "linkage_rule": "idx + 1000",
+        "linkage_author_confirmed": false,
+        "age_verified_for_release": false,
+        "age_candidate_days": 2894,
+        "age_candidate_completed_years": 7,
+        "candidate_in_0_17": true,
+        "source_pixel_spacing_candidate_mm": [
+          0.33008,
+          0.33008
+        ],
+        "source_calculated_z_candidate_mm": 0.75,
+        "scanner_model": "SOMATOM Definition Flash"
+      },
+      "metadata_conflicts_with_published_age_range": false
+    },
+    {
+      "case_id": "ct_1116",
+      "source": "CHD68",
+      "modality": "CT",
+      "age": null,
+      "age_verified": false,
+      "diagnosis_codes": [
+        "SV"
+      ],
+      "diagnosis_source": "https://raw.githubusercontent.com/XiaoweiXu/Whole-heart-and-great-vessel-segmentation-of-chd_segmentation/master/README.md",
+      "patient_linkage_independently_verified": false,
+      "duplicate_group": "chd68_imagechd::ct_1116",
+      "split_eligible_0_17": false,
+      "physical_context_eligible": false,
+      "healthy_status": "pathological",
+      "pair_grid_gate": "passed",
+      "image_SHA256": "f2d7ca2ae28e5a76cf50d74234c4b6e72fd6098b3cb5d7dc3f12d50b18f7b254",
+      "mask_SHA256": "675d45738760b554203d4cc27f7d2b42adc8d26610ffb41e5d3bc8872c447e9e",
+      "shape": [
+        512,
+        512,
+        341
+      ],
+      "spacing": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "spatial_unit": "unknown",
+      "physical_scale_verified": false,
+      "label_counts": {
+        "0": 84500080,
+        "1": 419893,
+        "2": 931911,
+        "3": 359609,
+        "4": 903704,
+        "5": 1587519,
+        "6": 331922,
+        "7": 356466
+      },
+      "noncardiac_labels": [],
+      "missing_cardiac_labels": [],
+      "intensity_min_max": [
+        0.0,
+        3859.0
+      ],
+      "HU_independently_verified": false,
+      "imagechd_same_name_in_archive": [
+        "ct_1116_image.nii.gz",
+        "ct_1116_label.nii.gz"
+      ],
+      "imagechd_SHA256_identical_available_files": [],
+      "imagechd_SHA256_complete_pair": false,
+      "readiness": "requires_age_and_physical_scale_review",
+      "metadata_candidate": {
+        "metadata_index": 116,
+        "release_case_candidate": "ct_1116",
+        "linkage_rule": "idx + 1000",
+        "linkage_author_confirmed": false,
+        "age_verified_for_release": false,
+        "age_candidate_days": 1095,
+        "age_candidate_completed_years": 2,
+        "candidate_in_0_17": true,
+        "source_pixel_spacing_candidate_mm": [
+          0.48828,
+          0.48828
+        ],
+        "source_calculated_z_candidate_mm": 0.8,
+        "scanner_model": "iCT 256"
+      },
+      "metadata_conflicts_with_published_age_range": false
+    },
+    {
+      "case_id": "ct_1117",
+      "source": "CHD68",
+      "modality": "CT",
+      "age": null,
+      "age_verified": false,
+      "diagnosis_codes": [
+        "VSD",
+        "PuA"
+      ],
+      "diagnosis_source": "https://raw.githubusercontent.com/XiaoweiXu/Whole-heart-and-great-vessel-segmentation-of-chd_segmentation/master/README.md",
+      "patient_linkage_independently_verified": false,
+      "duplicate_group": "chd68_imagechd::ct_1117",
+      "split_eligible_0_17": false,
+      "physical_context_eligible": false,
+      "healthy_status": "pathological",
+      "pair_grid_gate": "passed",
+      "image_SHA256": "ca4fd7a2908b21af50f286057c6dea5605503b0ea46d53c3fb9d1946f1db5f14",
+      "mask_SHA256": "cee5458467ab2e0a341c0707a9ac417d80042fcbd41d7cf1d47397c4c7ed6c62",
+      "shape": [
+        512,
+        512,
+        385
+      ],
+      "spacing": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "spatial_unit": "unknown",
+      "physical_scale_verified": false,
+      "label_counts": {
+        "0": 95443969,
+        "1": 354966,
+        "2": 344060,
+        "3": 765633,
+        "4": 1339186,
+        "5": 1176608,
+        "6": 1283604,
+        "7": 129016,
+        "13": 4074,
+        "15": 84324
+      },
+      "noncardiac_labels": [
+        13,
+        15
+      ],
+      "missing_cardiac_labels": [],
+      "intensity_min_max": [
+        0.0,
+        4095.0
+      ],
+      "HU_independently_verified": false,
+      "imagechd_same_name_in_archive": [
+        "ct_1117_image.nii.gz",
+        "ct_1117_label.nii.gz"
+      ],
+      "imagechd_SHA256_identical_available_files": [],
+      "imagechd_SHA256_complete_pair": false,
+      "readiness": "requires_age_and_physical_scale_review",
+      "metadata_candidate": {
+        "metadata_index": 117,
+        "release_case_candidate": "ct_1117",
+        "linkage_rule": "idx + 1000",
+        "linkage_author_confirmed": false,
+        "age_verified_for_release": false,
+        "age_candidate_days": 3602,
+        "age_candidate_completed_years": 9,
+        "candidate_in_0_17": true,
+        "source_pixel_spacing_candidate_mm": [
+          0.40039,
+          0.40039
+        ],
+        "source_calculated_z_candidate_mm": 0.75,
+        "scanner_model": "SOMATOM Definition Flash"
+      },
+      "metadata_conflicts_with_published_age_range": false
+    },
+    {
+      "case_id": "ct_1122",
+      "source": "CHD68",
+      "modality": "CT",
+      "age": null,
+      "age_verified": false,
+      "diagnosis_codes": [
+        "VSD",
+        "PuA"
+      ],
+      "diagnosis_source": "https://raw.githubusercontent.com/XiaoweiXu/Whole-heart-and-great-vessel-segmentation-of-chd_segmentation/master/README.md",
+      "patient_linkage_independently_verified": false,
+      "duplicate_group": "chd68_imagechd::ct_1122",
+      "split_eligible_0_17": false,
+      "physical_context_eligible": false,
+      "healthy_status": "pathological",
+      "pair_grid_gate": "passed",
+      "image_SHA256": "997fa6cc1471a2120314dbeb1ce97f3654277f521547e224572c62b45f51d9a8",
+      "mask_SHA256": "2a50553feb1c923b8576a389ab2de478499e79ee4345f51e807f00c67fb5a278",
+      "shape": [
+        512,
+        512,
+        170
+      ],
+      "spacing": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "spatial_unit": "unknown",
+      "physical_scale_verified": false,
+      "label_counts": {
+        "0": 41900858,
+        "1": 138289,
+        "2": 117439,
+        "3": 277213,
+        "4": 754706,
+        "5": 808667,
+        "6": 450591,
+        "7": 83179,
+        "13": 33538
+      },
+      "noncardiac_labels": [
+        13
+      ],
+      "missing_cardiac_labels": [],
+      "intensity_min_max": [
+        0.0,
+        4095.0
+      ],
+      "HU_independently_verified": false,
+      "imagechd_same_name_in_archive": [
+        "ct_1122_image.nii.gz",
+        "ct_1122_label.nii.gz"
+      ],
+      "imagechd_SHA256_identical_available_files": [],
+      "imagechd_SHA256_complete_pair": false,
+      "readiness": "requires_age_and_physical_scale_review",
+      "metadata_candidate": {
+        "metadata_index": 122,
+        "release_case_candidate": "ct_1122",
+        "linkage_rule": "idx + 1000",
+        "linkage_author_confirmed": false,
+        "age_verified_for_release": false,
+        "age_candidate_days": 125,
+        "age_candidate_completed_years": 0,
+        "candidate_in_0_17": true,
+        "source_pixel_spacing_candidate_mm": [
+          0.24805,
+          0.24805
+        ],
+        "source_calculated_z_candidate_mm": 0.75,
+        "scanner_model": "SOMATOM Definition Flash"
+      },
+      "metadata_conflicts_with_published_age_range": false
+    },
+    {
+      "case_id": "ct_1124",
+      "source": "CHD68",
+      "modality": "CT",
+      "age": null,
+      "age_verified": false,
+      "diagnosis_codes": [
+        "ASD",
+        "VSD",
+        "AAA"
+      ],
+      "diagnosis_source": "https://raw.githubusercontent.com/XiaoweiXu/Whole-heart-and-great-vessel-segmentation-of-chd_segmentation/master/README.md",
+      "patient_linkage_independently_verified": false,
+      "duplicate_group": "chd68_imagechd::ct_1124",
+      "split_eligible_0_17": false,
+      "physical_context_eligible": false,
+      "healthy_status": "pathological",
+      "pair_grid_gate": "passed",
+      "image_SHA256": "ea2d003f038c982fd0cc279aac48be5a038193177185f4d56822a5b73ead76a3",
+      "mask_SHA256": "55098e9f12e01de89ef9f94f05a3fef9f70932eaf489a5523cd16c6be96c8cd1",
+      "shape": [
+        512,
+        512,
+        206
+      ],
+      "spacing": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "spatial_unit": "unknown",
+      "physical_scale_verified": false,
+      "label_counts": {
+        "0": 52091434,
+        "1": 124091,
+        "2": 115156,
+        "3": 371511,
+        "4": 446817,
+        "5": 491997,
+        "6": 224027,
+        "7": 136631
+      },
+      "noncardiac_labels": [],
+      "missing_cardiac_labels": [],
+      "intensity_min_max": [
+        0.0,
+        4095.0
+      ],
+      "HU_independently_verified": false,
+      "imagechd_same_name_in_archive": [
+        "ct_1124_image.nii.gz",
+        "ct_1124_label.nii.gz"
+      ],
+      "imagechd_SHA256_identical_available_files": [],
+      "imagechd_SHA256_complete_pair": false,
+      "readiness": "requires_age_and_physical_scale_review",
+      "metadata_candidate": {
+        "metadata_index": 124,
+        "release_case_candidate": "ct_1124",
+        "linkage_rule": "idx + 1000",
+        "linkage_author_confirmed": false,
+        "age_verified_for_release": false,
+        "age_candidate_days": 12,
+        "age_candidate_completed_years": 0,
+        "candidate_in_0_17": true,
+        "source_pixel_spacing_candidate_mm": [
+          0.24414,
+          0.24414
+        ],
+        "source_calculated_z_candidate_mm": 0.75,
+        "scanner_model": "SOMATOM Definition Flash"
+      },
+      "metadata_conflicts_with_published_age_range": false
+    },
+    {
+      "case_id": "ct_1125",
+      "source": "CHD68",
+      "modality": "CT",
+      "age": null,
+      "age_verified": false,
+      "diagnosis_codes": [
+        "VSD",
+        "PuA"
+      ],
+      "diagnosis_source": "https://raw.githubusercontent.com/XiaoweiXu/Whole-heart-and-great-vessel-segmentation-of-chd_segmentation/master/README.md",
+      "patient_linkage_independently_verified": false,
+      "duplicate_group": "chd68_imagechd::ct_1125",
+      "split_eligible_0_17": false,
+      "physical_context_eligible": false,
+      "healthy_status": "pathological",
+      "pair_grid_gate": "passed",
+      "image_SHA256": "68d86d3ddc9d48f5a0bced00f0a863daf9973c8d91457a69fdb7b0ba4912b99f",
+      "mask_SHA256": "402aff2738876a04bd3cd9c7e200865f6b34e7f20acb30f0caa85a5f98f9600c",
+      "shape": [
+        512,
+        512,
+        137
+      ],
+      "spacing": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "spatial_unit": "unknown",
+      "physical_scale_verified": false,
+      "label_counts": {
+        "0": 33715723,
+        "1": 90510,
+        "2": 90659,
+        "3": 275379,
+        "4": 618998,
+        "5": 926942,
+        "6": 158671,
+        "7": 36846
+      },
+      "noncardiac_labels": [],
+      "missing_cardiac_labels": [],
+      "intensity_min_max": [
+        0.0,
+        4095.0
+      ],
+      "HU_independently_verified": false,
+      "imagechd_same_name_in_archive": [
+        "ct_1125_image.nii.gz",
+        "ct_1125_label.nii.gz"
+      ],
+      "imagechd_SHA256_identical_available_files": [],
+      "imagechd_SHA256_complete_pair": false,
+      "readiness": "requires_age_and_physical_scale_review",
+      "metadata_candidate": {
+        "metadata_index": 125,
+        "release_case_candidate": "ct_1125",
+        "linkage_rule": "idx + 1000",
+        "linkage_author_confirmed": false,
+        "age_verified_for_release": false,
+        "age_candidate_days": 94,
+        "age_candidate_completed_years": 0,
+        "candidate_in_0_17": true,
+        "source_pixel_spacing_candidate_mm": [
+          0.24414,
+          0.24414
+        ],
+        "source_calculated_z_candidate_mm": 0.75,
+        "scanner_model": "SOMATOM Definition Flash"
+      },
+      "metadata_conflicts_with_published_age_range": false
+    },
+    {
+      "case_id": "ct_1126",
+      "source": "CHD68",
+      "modality": "CT",
+      "age": null,
+      "age_verified": false,
+      "diagnosis_codes": [
+        "CA"
+      ],
+      "diagnosis_source": "https://raw.githubusercontent.com/XiaoweiXu/Whole-heart-and-great-vessel-segmentation-of-chd_segmentation/master/README.md",
+      "patient_linkage_independently_verified": false,
+      "duplicate_group": "chd68_imagechd::ct_1126",
+      "split_eligible_0_17": false,
+      "physical_context_eligible": false,
+      "healthy_status": "pathological",
+      "pair_grid_gate": "passed",
+      "image_SHA256": "e6a383f7ab44f17c3ac646dcdfea585441e9ccc294a7fe5cd29e18d76563f1ac",
+      "mask_SHA256": "464df68c6ab495276d77f0f9734b5912d5df3020dfd3f83e3c0a54e1b55d3ef8",
+      "shape": [
+        512,
+        512,
+        500
+      ],
+      "spacing": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "spatial_unit": "unknown",
+      "physical_scale_verified": false,
+      "label_counts": {
+        "0": 129812460,
+        "1": 112548,
+        "2": 156131,
+        "3": 82196,
+        "4": 157106,
+        "5": 486678,
+        "6": 178140,
+        "7": 86741
+      },
+      "noncardiac_labels": [],
+      "missing_cardiac_labels": [],
+      "intensity_min_max": [
+        0.0,
+        4095.0
+      ],
+      "HU_independently_verified": false,
+      "imagechd_same_name_in_archive": [
+        "ct_1126_image.nii.gz",
+        "ct_1126_label.nii.gz"
+      ],
+      "imagechd_SHA256_identical_available_files": [],
+      "imagechd_SHA256_complete_pair": false,
+      "readiness": "requires_age_and_physical_scale_review",
+      "metadata_candidate": {
+        "metadata_index": 126,
+        "release_case_candidate": "ct_1126",
+        "linkage_rule": "idx + 1000",
+        "linkage_author_confirmed": false,
+        "age_verified_for_release": false,
+        "age_candidate_days": 5518,
+        "age_candidate_completed_years": 15,
+        "candidate_in_0_17": true,
+        "source_pixel_spacing_candidate_mm": [
+          0.91797,
+          0.91797
+        ],
+        "source_calculated_z_candidate_mm": 1.5,
+        "scanner_model": "iCT 256"
+      },
+      "metadata_conflicts_with_published_age_range": false
+    },
+    {
+      "case_id": "ct_1127",
+      "source": "CHD68",
+      "modality": "CT",
+      "age": null,
+      "age_verified": false,
+      "diagnosis_codes": [
+        "VSD",
+        "PS"
+      ],
+      "diagnosis_source": "https://raw.githubusercontent.com/XiaoweiXu/Whole-heart-and-great-vessel-segmentation-of-chd_segmentation/master/README.md",
+      "patient_linkage_independently_verified": false,
+      "duplicate_group": "chd68_imagechd::ct_1127",
+      "split_eligible_0_17": false,
+      "physical_context_eligible": false,
+      "healthy_status": "pathological",
+      "pair_grid_gate": "passed",
+      "image_SHA256": "6b96ecd85a04afb512670385bc352b8b8672c9d19eba6c4af2e1cf8868c21c1c",
+      "mask_SHA256": "25f5c9ba0709a830641865bbf76d20fd15e2f0f10d13811fe2acb5c11b4abb3a",
+      "shape": [
+        512,
+        512,
+        275
+      ],
+      "spacing": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "spatial_unit": "unknown",
+      "physical_scale_verified": false,
+      "label_counts": {
+        "0": 67657693,
+        "1": 238200,
+        "2": 198513,
+        "3": 477083,
+        "4": 1368396,
+        "5": 1309952,
+        "6": 542298,
+        "7": 297465
+      },
+      "noncardiac_labels": [],
+      "missing_cardiac_labels": [],
+      "intensity_min_max": [
+        0.0,
+        4095.0
+      ],
+      "HU_independently_verified": false,
+      "imagechd_same_name_in_archive": [
+        "ct_1127_image.nii.gz",
+        "ct_1127_label.nii.gz"
+      ],
+      "imagechd_SHA256_identical_available_files": [],
+      "imagechd_SHA256_complete_pair": false,
+      "readiness": "requires_age_and_physical_scale_review",
+      "metadata_candidate": {
+        "metadata_index": 127,
+        "release_case_candidate": "ct_1127",
+        "linkage_rule": "idx + 1000",
+        "linkage_author_confirmed": false,
+        "age_verified_for_release": false,
+        "age_candidate_days": 1041,
+        "age_candidate_completed_years": 2,
+        "candidate_in_0_17": true,
+        "source_pixel_spacing_candidate_mm": [
+          0.31445,
+          0.31445
+        ],
+        "source_calculated_z_candidate_mm": 0.75,
+        "scanner_model": "SOMATOM Definition Flash"
+      },
+      "metadata_conflicts_with_published_age_range": false
+    },
+    {
+      "case_id": "ct_1128",
+      "source": "CHD68",
+      "modality": "CT",
+      "age": null,
+      "age_verified": false,
+      "diagnosis_codes": [
+        "VSD"
+      ],
+      "diagnosis_source": "https://raw.githubusercontent.com/XiaoweiXu/Whole-heart-and-great-vessel-segmentation-of-chd_segmentation/master/README.md",
+      "patient_linkage_independently_verified": false,
+      "duplicate_group": "chd68_imagechd::ct_1128",
+      "split_eligible_0_17": false,
+      "physical_context_eligible": false,
+      "healthy_status": "pathological",
+      "pair_grid_gate": "passed",
+      "image_SHA256": "93abd3eda8934b4e3712a000ea40e838743d953f439e142da655ce3c877ab5d2",
+      "mask_SHA256": "bf604ad14e92f8e9000530ff74d7cd7ddd142017378ed084a25035a6d4b085e6",
+      "shape": [
+        512,
+        512,
+        295
+      ],
+      "spacing": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "spatial_unit": "unknown",
+      "physical_scale_verified": false,
+      "label_counts": {
+        "0": 71815330,
+        "1": 103103,
+        "2": 184464,
+        "3": 1072328,
+        "4": 947959,
+        "5": 2227380,
+        "6": 565417,
+        "7": 416499
+      },
+      "noncardiac_labels": [],
+      "missing_cardiac_labels": [],
+      "intensity_min_max": [
+        0.0,
+        4095.0
+      ],
+      "HU_independently_verified": false,
+      "imagechd_same_name_in_archive": [
+        "ct_1128_image.nii.gz",
+        "ct_1128_label.nii.gz"
+      ],
+      "imagechd_SHA256_identical_available_files": [],
+      "imagechd_SHA256_complete_pair": false,
+      "readiness": "requires_age_and_physical_scale_review",
+      "metadata_candidate": {
+        "metadata_index": 128,
+        "release_case_candidate": "ct_1128",
+        "linkage_rule": "idx + 1000",
+        "linkage_author_confirmed": false,
+        "age_verified_for_release": false,
+        "age_candidate_days": 1397,
+        "age_candidate_completed_years": 3,
+        "candidate_in_0_17": true,
+        "source_pixel_spacing_candidate_mm": [
+          0.33398,
+          0.33398
+        ],
+        "source_calculated_z_candidate_mm": 0.75,
+        "scanner_model": "SOMATOM Definition Flash"
+      },
+      "metadata_conflicts_with_published_age_range": false
+    }
+  ],
+  "pair_count": 68,
+  "pair_gate_passed": 68,
+  "complete_pair_SHA_overlap_verified": 3,
+  "declared_units": {
+    "unknown": 68
+  },
+  "diagnosis_source_SHA256": "a950ed0264c20e28c8797b2c142b414e0a8400855c7177520a751d4673418746",
+  "diagnosis_rows_found": 68,
+  "training_started": false,
+  "frozen_split_created": false,
+  "blocking_reasons": [
+    "Per-case metadata linkage to release requires confirmation",
+    "NIfTI grid may differ from source spacing; physical scale not verified"
+  ],
+  "deduplication_policy": "Group same release case and all CRC/name overlap before any split; available pair SHA checks do not establish all-patient linkage.",
+  "source_readme": "https://raw.githubusercontent.com/XiaoweiXu/Whole-heart-and-great-vessel-segmentation-of-chd_segmentation/master/README.md",
+  "metadata_candidates_present": 63,
+  "metadata_table_sha256": "f780f0775608ab2bee583371a3e0959ce20d05e75056d44d02ddc5848ec4ec1d",
+  "metadata_linkage_rule": "idx + 1000; case-set identity verified; author linkage not confirmed",
+  "metadata_case_set_equals_imagechd_release": true,
+  "metadata_published_age_range_conflicts": 5
+}
