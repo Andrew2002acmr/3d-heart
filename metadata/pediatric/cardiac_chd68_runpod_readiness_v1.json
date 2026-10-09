@@ -78,7 +78,7 @@
   "Pod_started": true,
   "cloud_transfer_performed": true,
   "GPU_benchmark_executed": true,
-  "full_training_executed": false,
+  "full_training_executed": true,
   "test_evaluated": false,
   "suite_verification": {
     "full_suite_passed": 174,
@@ -98,5 +98,8 @@
     "estimated_train_epoch_seconds": 234.60081800445914,
     "estimated_30_train_epochs_seconds": 7038.024540133774,
     "sanity_passed": true
-  }
+  },
+  "full_training_started": true,
+  "full_training_completed": false,
+  "full_run_report": "metadata/pediatric/cardiac_chd68_full_run_v1.json"
 }

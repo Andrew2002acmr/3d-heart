@@ -3,7 +3,7 @@
 Дата: 09.10.2026. Ветка feature/pediatric-heart-segmentation.
 Обновлено после миграции Pod: SSH, RTX4090/CUDA и persistent /workspace проверены.
 Минимальный публичный bundle передан и проверен, короткий GPU benchmark выполнен.
-Полное multiclass training и test evaluation не запускались.
+По последующему явному разрешению пользователя полное multiclass training запущено; test evaluation ещё предстоит.
 Все тяжёлые локальные данные на E:, исходные CT и старый Heart baseline не изменены.
 
 ## Готовый эксперимент
@@ -260,3 +260,32 @@ Pod после backup verification свободен и может быть ос�
 При запуске использовать matching receipt и execution commit d89ea28 в оставленном
 checkout. Более поздний docs-only commit не является execution commit; после
 обновления Git HEAD safety gate потребует новый короткий benchmark.
+
+## Разрешённый полный запуск — 09.10.2026
+
+После команды пользователя «Запускай обучение» стартовал отдельный процесс
+**gpu_full_v1_20261009**: 30 epochs с нуля, прежние config/split/preprocessing,
+execution commit d89ea28. Benchmark weights не загружались, test не участвует
+в выборе checkpoints. PID runner1487 / trainer1526; detached process сохраняется
+при закрытии SSH. Наблюдались GPU67%, 3188 MiB, stage training.
+Это подтверждение работы, а не segmentation quality.
+
+Run outputs:
+/workspace/cardiac_chd68_v1/experiments/cardiac_chd68_v1/gpu_full_v1_20261009;
+checkpoints:
+/workspace/cardiac_chd68_v1/checkpoints/cardiac_chd68_v1/gpu_full_v1_20261009.
+После training runner автоматически выполнит **одну** evaluation best checkpoint
+на 10 frozen test cases в original release grid, затем SHA-256 export.
+Test evaluation output: /workspace/cardiac_chd68_v1/evaluation/test_v1_20261009.
+Results archive prefix:
+/workspace/exports/cardiac_chd68_gpu_full_v1_20261009_results.
+При ошибке runner отметит failed и сохранит созданные артефакты; повторный запуск
+в тот же output не предусмотрен.
+
+[Launch/state summary](../metadata/pediatric/cardiac_chd68_full_run_v1.json).
+Launch receipt и runner script скопированы на E: в
+remote_runs/cardiac_chd68_v1_full_20261009; final checkpoints/metrics ещё не готовы.
+После отдельного разрешения пользователя настроена временная проверка в этом
+чате каждые 5 минут (cardiac-chd68-v1), с уведомлением об ошибке/итоге и отключением
+после результата. После verified backup будут подготовлены CT/GT/prediction
+примеры и отчёт. Пока обучение работает, Pod не останавливать.

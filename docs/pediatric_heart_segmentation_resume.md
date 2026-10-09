@@ -212,3 +212,18 @@ cardiac_chd68_v1_20261009 полностью проверен SHA-256. Pod мо�
 Для full launch сохранить execution commit d89ea28 и matching benchmark receipt;
 после обновления HEAD требуется повторный benchmark. Frozen split не менять.
 [Подробности и ограничения](cardiac_chd68_runpod_readiness.md).
+
+## Full multiclass training запущено — 2026-10-09
+
+Пользователь явно разрешил полное обучение и временную проверку каждые 5 минут.
+Detached runner PID1487, trainer1526, run gpu_full_v1_20261009; execution commit
+остаётся d89ea28, config/split/preprocessing неизменны. 30 epochs с нуля,
+затем одна evaluation best validation checkpoint на frozen test10 и SHA export.
+Статус /workspace/exports/cardiac_chd68_gpu_full_v1_20261009_status.json;
+log с тем же префиксом .log. GPU-вычисления подтверждены: 67%, 3188 MiB.
+Не запускать второй процесс и не обновлять remote execution HEAD во время run.
+
+Heartbeat cardiac-chd68-v1: после завершения скачать, проверить SHA всех critical
+results, подготовить сравнения и update docs/metadata/push; затем отключить
+heartbeat. Local backup root на E: remote_runs/cardiac_chd68_v1_full_20261009.
+Full train/test metrics ещё отсутствуют; Pod пока не останавливать.

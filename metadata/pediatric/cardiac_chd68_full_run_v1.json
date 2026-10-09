@@ -1,0 +1,43 @@
+{
+  "version": 1,
+  "scope": "public CHD68 multiclass scratch pilot, not age/physical-scale verified",
+  "launch": {
+    "pid": 1487,
+    "created_utc": "2026-10-09T12:58:20.477947+00:00",
+    "execution_commit": "d89ea289124501654232b8ed6333d671410244d4",
+    "branch": "feature/pediatric-heart-segmentation",
+    "full_training_explicitly_authorized": true,
+    "epochs": 30,
+    "run_name": "gpu_full_v1_20261009",
+    "test_evaluation": "once, best validation checkpoint, no test tuning",
+    "log": "/workspace/exports/cardiac_chd68_gpu_full_v1_20261009.log",
+    "status": "/workspace/exports/cardiac_chd68_gpu_full_v1_20261009_status.json",
+    "private_NII_transferred": false
+  },
+  "state": "training",
+  "full_training_started": true,
+  "full_training_completed": false,
+  "test_evaluation_started": false,
+  "test_evaluation_completed": false,
+  "model_parameters": 489112,
+  "split_counts": {
+    "train": 48,
+    "validation": 10,
+    "test": 10
+  },
+  "configuration": "configs/cardiac_chd68_runpod_v1.json",
+  "test_output_relative_path": "evaluation/test_v1_20261009",
+  "remote_export_prefix": "exports/cardiac_chd68_gpu_full_v1_20261009_results",
+  "local_backup_relative_path": "remote_runs/cardiac_chd68_v1_full_20261009",
+  "temporary_monitoring_explicitly_authorized": true,
+  "heartbeat_id": "cardiac-chd68-v1",
+  "monitor_interval_minutes": 5,
+  "disable_monitor_after_completion": true,
+  "GPU_training_process_verified": true,
+  "observed_GPU_memory_MiB": 3188,
+  "observed_GPU_utilization_percent": 67,
+  "test_results_available": false,
+  "critical_final_results_backup_verified": false,
+  "private_NII_transferred": false,
+  "source_data_unchanged": true
+}
