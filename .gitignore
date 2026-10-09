@@ -47,3 +47,11 @@ clinical_import_report.md
 *.3mf
 *.glb
 *.gltf
+
+# Training bundles and runtime caches remain outside the repository.
+*.tar
+*.tar.gz
+*.tgz
+/training_bundles/
+/preprocessing/
+/experiments/
