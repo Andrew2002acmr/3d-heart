@@ -1,0 +1,49 @@
+{
+  "audit_version": "external_ct_import_v1",
+  "date": "2026-10-09",
+  "purpose": "technical_format_and_geometry_audit",
+  "clinical_approval": false,
+  "target_age_years": {
+    "minimum_inclusive": 0,
+    "maximum_exclusive": 18
+  },
+  "younger_groups_require_separate_validation": true,
+  "frozen_baseline_v1_changed": false,
+  "files": 5273,
+  "input_bytes": 3009823376,
+  "modalities": {
+    "CT": 5241,
+    "SEG": 24,
+    "SR": 8
+  },
+  "studies": 2,
+  "series": 50,
+  "patient_identity_verified": false,
+  "deidentification_certified": false,
+  "healthy_status": "unknown",
+  "geometry_status_counts": {
+    "passed_header_geometry": 13,
+    "not_volume_candidate": 32,
+    "requires_review": 5
+  },
+  "prepared_single_series_volumes": 2,
+  "independent_CT_reader_match": true,
+  "seg_objects": 24,
+  "seg_original_grid_import_passed": 22,
+  "seg_reference_review": 2,
+  "nonempty_imported_segments": 21,
+  "expert_approved_training_segments": 0,
+  "source_variant_meshes": 4,
+  "mesh_nonmanifold_variants": 2,
+  "self_intersections_checked": false,
+  "full_training_started_on_external_cases": false,
+  "original_sha256_unchanged": true,
+  "tests": {
+    "passed": 148,
+    "warnings": 322,
+    "duration_s": 27.93,
+    "windows_python_utf8_required": true
+  },
+  "private_case_level_metadata_location": "<dataRoot>/external_ct/audit_v1",
+  "report": "docs/external_ct_import_audit.md"
+}

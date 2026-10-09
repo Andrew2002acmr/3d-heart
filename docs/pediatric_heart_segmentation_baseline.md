@@ -18,6 +18,12 @@ original RTSTRUCT Heart → original-grid GT → QA → patient split → train-
 preprocessing → собственная модель → benchmark → full training → original-grid evaluation. Камеры, сосуды, диагнозы
 и clinical decision logic не входят в этот эксперимент.
 
+Уточнение цели от 2026-10-09: **0–17 лет**, с отдельной проверкой новорождённых
+и младенцев. Baseline v1 остаётся 2–16/Heart OAR; split, preprocessing,
+checkpoints и оценки не менялись.
+[Clinical workflow](clinical_reconstruction_workflow.md) и
+[аудит внешних CT/SEG](external_ct_import_audit.md) — отдельный engineering этап.
+
 ## 2. Источник
 
 [TCIA Pediatric-CT-SEG](https://www.cancerimagingarchive.net/collection/pediatric-ct-seg/),

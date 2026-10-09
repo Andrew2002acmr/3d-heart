@@ -1,6 +1,6 @@
 # Pediatric Heart: точка продолжения после baseline v1
 
-Дата: 2026-10-06. **Один полный baseline завершён. Все критичные результаты
+Дата обновления: 2026-10-09. **Один полный baseline завершён. Все критичные результаты
 скачаны на E: и проверены по SHA-256. Pod можно остановить.**
 Автоматическая остановка не выполнялась.
 Работа остаётся в `feature/pediatric-heart-segmentation`.
@@ -91,3 +91,34 @@ server; второй на том же порту не стартовать. Об
 У НИИ запросить cardiac CT с согласованными anatomical и clinical labels для
 будущей многоклассовой задачи. MRI/Atlas/diagnosis/healthy classifiers и СППР
 здесь не начинались. Не merge main, не force push/reset --hard/clean -fd.
+
+## Обновление 2026-10-09: клинические CT и цель 0–17
+
+Пользователь подтвердил 0–17 лет, новорождённых и младенцев проверять отдельно.
+Frozen v1 (2–16/Heart OAR) не менять. Полуручной редактор — requirement,
+Astra Linux/ClearCanvas версии неизвестны, VR/печать — будущие exports.
+
+Input: <dataRoot>/external_ct/incoming. 5273DICOM (5241CT,24SEG,8SR),
+2studies/50series. После работы все5273original SHA совпали.
+Один distinct PatientID: нельзя автоматически утверждать два разных patients;
+identity/de-identification не подтверждены.
+13classic CT series header geometry passed;5review, включая multiphase.
+Два native volumes decoded и независимо проверены SimpleITK.
+22/24BINARY SEG imported;2FrameOfReference failures оставлены review.
+Labels Heart/LV визуально не подтверждены как final anatomy.
+4source masks прошли mask→mesh, без clinical/print-ready approval.
+
+Private reports/volumes/masks/meshes/PNG: <dataRoot>/external_ct/audit_v1.
+Реальный dataRoot указан выше; пути CLI. Данные не отправлялись RunPod/cloud.
+GT не сертифицирован, новые training/inference runs не выполнялись.
+Независимый Slicer GUI review SEG ещё предстоит.
+
+Итоговый suite: 148 passed, 322 existing NumPy/skimage warnings, 27.93 s (UTF-8 mode).
+Windows: PYTHONUTF8=1. Без него существующие ML read_text()/write_text()
+и non-ASCII profile paths дали6FileNotFound failures. Это locale limitation;
+клинические данные ради устранения ошибки не менялись.
+
+Next: согласовать selected phase/структуры/purpose SEG, получить final
+reference masks/meshes и проверить deployment на конкретной Astra.
+[Import audit](external_ct_import_audit.md),
+[clinical workflow](clinical_reconstruction_workflow.md).
