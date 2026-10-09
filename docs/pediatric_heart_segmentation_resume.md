@@ -149,3 +149,37 @@ Frozen v1 неизменен. Новая local research annotation не expert G
 и работу с публичной разметкой продолжать.
 Название не менялось, Word-файлы основного checkout не редактировались.
 Новых медицинских экспериментов, обучения или inference не запускалось; v1 неизменен.
+
+## Обновление 2026-10-09: public multiclass audit и клинический pilot
+
+Продолжение по подтверждённому пользователем плану. Полный CHD68 release:
+68 CT/label pairs скачаны на E:, CRC/SHA подтверждены, все pair-grid gates прошли.
+13 масок имеют дополнительные несердечные labels. 63 пересекаются с ImageCHD;
+для трёх доступных пар полная идентичность проверена SHA. Не считать независимыми
+пациентами только из-за разных названий dataset.
+
+В ImageCHD XLSX найдены metadata candidates для 63 CHD68 случаев. У 58 возраст
+кандидата 0–17, у пяти 29–47; это противоречит опубликованному максимуму 21 год.
+Linkage не подтверждена авторами, age остаётся unverified. Все release headers
+1×1×1/unknown units: source spacing пока не назначать release arrays.
+Новой frozen pediatric cohort нет. Черновик письма авторам подготовлен, не отправлен.
+
+Собственная U-Net получила optional 8-output layer; бинарный v1 совместим.
+CE/собственный multiclass Dice/CE+Dice поддержаны. 12 CPU batches на одной
+development-плоскости: loss 3.4012→2.4178, finite gradients/weight updates.
+489112 parameters; median 0.0784 s/batch — только tiny in-memory sanity,
+без научной accuracy, cohort/test run или оценки времени большого обучения.
+
+Локальная inference бинарного Heart v1 на case_001/series_004 и mask→mesh:
+23.85 s после staging, source DICOM unchanged. Визуально маска сильно неполна,
+11 компонентов; GT отсутствует. Это development failure case, не external accuracy.
+Реализован редактор original grid: три плоскости, кисть/ластик/undo, отдельные
+версии, сравнение и поверхность→КТ. Реальный widget check прошёл; 15 изменённых
+voxels — только UI-probe, не анатомическая коррекция. Полная local разметка впереди.
+
+Все новые данные/weights/PNG на E:, резерв 80 GB сохранён. НИИ CT никуда
+не отправлялись. RunPod/full training не использовались. Astra/VR/печать отложены.
+Полный suite: 168 passed, 322 существующих warnings, 19.83 s (PYTHONUTF8=1).
+[Итог этого этапа](cardiac_structure_segmentation_pilot.md),
+[поставка НИИ](nii_ct_collection_plan.md),
+[запрос авторам](public_chd_metadata_request.md).
