@@ -1,0 +1,159 @@
+# План реконструкции без готовой разметки НИИ
+
+Дата: 2026-10-09. Цель проекта 0–17 лет; новорождённых и младенцев проверять отдельно.
+Пользователь сообщил, что хирург сильно занят и готовые маски, вероятно,
+предоставить не сможет. Регулярная разметка хирургом исключается как зависимость
+разработки. Frozen Heart baseline v1 и его результаты не изменяются.
+
+## Основное решение
+
+Работу продолжаем двумя связанными путями:
+
+1. Собственная модель и количественные эксперименты — на открытых CT с исходной
+   разметкой после проверки labels, overlap и допустимой геометрии.
+2. Реальные CT НИИ — предварительные маски моделью или полуавтоматическими
+   инструментами, наша ручная правка, прозрачный статус анатомической уверенности,
+   реконструкция и оценка удобства/ресурсов.
+
+Собственная модель остаётся научной частью проекта. Готовая сторонняя модель
+может ускорить подготовку черновых масок и служить сравнением; её результат
+нельзя выдавать за собственную архитектуру/обучение.
+Псевдоразметка — предсказание модели, а не независимый ground truth.
+Согласие двух алгоритмов тоже не доказывает правильность анатомии.
+
+## Открытая разметка для собственной модели
+
+[CHD68 publication](https://www.nature.com/articles/s41598-023-34013-1)
+описывает 68 CT с LV/RV/LA/RA/MYO/AO/PA, возрастом 1 месяц–21 год,
+преимущественно младше 2 лет. После расширения общей цели до 0–17 этот источник
+лучше соответствует младшей части задачи, чем при прежнем ограничении 2–17.
+Новорождённый 2 недель младше нижней границы, указанной авторами.
+
+Это не снимает уже выявленные локальным аудитом ограничения:
+индивидуальные ages не найдены; у трёх checked NIfTI spacing1×1×1/units unknown;
+63 пары пересекаются с ImageCHD по ZIP names/size/CRC.
+Источник авторов: [CHD68 repository](https://github.com/XiaoweiXu/Whole-heart-and-great-vessel-segmentation-of-chd_segmentation).
+Перед новым quantitative experiment: SHA/linkage deduplication, label map,
+group split, нормализация только по train и geometry protocol.
+Не использовать CHD68/ImageCHD как независимые train/test datasets.
+До подтверждения масштаба не вычислять mm distances/physical offsets для этих
+release-файлов и не заимствовать typical spacing из статьи.
+Нельзя объявить всю CHD68 проверенной когортой0–17 или neonatal validation.
+
+Pediatric-CT-SEG остаётся источником общего Heart OAR, не камер/сосудов.
+Отдельно запланировать аудит доступных возрастов до2лет для новой младшей
+когорты с собственными QA/split; frozen v1 не расширять задним числом.
+Atlas и MRI не заменяют CT chamber labels и не объединяются с CT intensities.
+
+## Автоматическая начальная маска
+
+Конкретный кандидат — [TotalSegmentator](https://github.com/wasserth/TotalSegmentator),
+задача heartchambers_highres: четыре камеры, myocardium, aorta и pulmonary artery.
+По текущему README задача лицензируемая, для некоммерческого использования
+предлагаются бесплатные licenses. Default total и heartchambers_highres —
+разные задачи; нельзя обещать chambers только из default total.
+[Описание модели](https://github.com/wasserth/TotalSegmentator/blob/master/resources/heartchambers_highres_details.md)
+указывает рабочую сетку около0.727×0.723×1mm и обучение на paired
+contrast/noncontrast. Подтверждённой neonatal/complex-CHD validation в прочитанном
+описании нет. Published validation Dice не является ожидаемой точностью на
+наших двух studies.
+
+Предлагаемый pilot после выбора локального runtime/проверки лицензии:
+сначала один проверенный CT volume, original data неизменны; output отдельно.
+Записать version/task/weights hash, выбранную series/phase, image transforms,
+восстановить маски на original grid и посмотреть все структуры в трёх плоскостях.
+Любой output получает статус draft_prediction.
+Не выполнять новую cloud передачу этих CT или покупать license автоматически.
+Runtime/weights/cache на выбранном внешнем data root, reserve80GB.
+Сторонний пакет не заменяет dependency lock существующей собственной модели.
+
+## Ручной путь без зависимости от готовой модели
+
+[3D Slicer Segment Editor](https://slicer.readthedocs.io/en/latest/user_guide/modules/segmenteditor.html)
+предоставляет paint/erase, пороги, Grow from seeds и Fill between slices.
+Его можно использовать как внешний инструмент для начала работы/QA либо
+как референс для постепенного расширения собственного viewer.
+
+Наш первый research prototype должен позволять:
+выбрать series/phase → выделить нужную область → задать seeds/порог →
+исправить границы в связанных плоскостях → сохранить версию → построить surface.
+Для контрастированного CT отдельно проверить выделение blood pool как
+геометрической основы. Такое выделение само по себе не разделяет камеры,
+не определяет стенки/клапаны и не идентифицирует врождённый порок.
+Границы, которые нельзя уверенно определить, сохранять как requires_review.
+Не исправлять сомнительную анатомию принудительно под «нормальные» четыре камеры.
+
+Две local CT пригодны для проверки этой цепочки на младших возрастах.
+Переданные SEG по текущему аудиту не сертифицированы как anatomical GT.
+Research annotation создаётся нами и обозначается соответствующим статусом;
+её нельзя переименовать в экспертную только после технической проверки.
+
+## Версии и статусы разметки
+
+Clinical/healthy status и annotation status — независимые поля.
+Прошедшая geometry QA маска не доказывает healthy/pathological label.
+
+| Статус | Смысл |
+|---|---|
+| imported_source_unverified | Импортированный SEG/RTSTRUCT без подтверждённого назначения |
+| draft_prediction | Неисправленное предсказание/псевдомаска |
+| research_edited | Наша исследовательская ручная коррекция |
+| expert_reviewed | Явная анатомическая проверка соответствующим специалистом |
+| requires_review | Спорная граница, structure identity или coverage |
+
+Предлагаемые поля: source series/phase и input hashes; algorithm/checkpoint hash;
+structure namespace/protocol; label origin; editor/операции/время; geometry QA;
+annotation status; expert review status; uncertainty/review notes.
+Это схема следующего этапа, не реализованная система versioned editor.
+Сохранять raw prediction/source SEG и edited mask отдельно.
+Существующую bad-reference SEG не ремонтировать молча.
+
+Для саморазметки: использовать открытые annotated cases как учебные примеры,
+зафиксировать правило каждой границы, проверять в трёх плоскостях;
+повторить независимую коррекцию части slices/случаев после перерыва,
+по возможности второй reviewer. Это оценивает воспроизводимость,
+но без анатомически компетентного review не подтверждает истинность.
+
+## Оценка без локального ground truth
+
+На открытом held-out наборе: Dice/IoU и ошибки каждой структуры; HD95/ASSD вmm
+только при подтверждённом масштабе. Split строго по patient/group.
+Сторонний pretrained comparator с неизвестным training overlap нельзя выдавать
+за гарантированно независимую внешнюю оценку.
+
+На неразмеченных CT НИИ: geometry/coverage, artifacts и phase evidence,
+components/border contact/topology, runtime/RAM, время и объём manual edits,
+проверка сохранения/экспорта, review видимых границ и неопределённости.
+Нет основания сообщать истинный Dice/HD95 accuracy на этих случаях.
+Расстояние между авто- и edited mask описывает коррекцию, не автоматически
+качество относительно независимого GT. Closed mesh не доказывает anatomy.
+Эти два studies — qualitative engineering cases, не статистическая neonatal cohort.
+
+Исследовательский prototype и демонстрационные3D можно получить самостоятельно.
+Утверждение пригодности для surgical planning/clinical print требует отдельной
+анатомической проверки; развитие кода и эксперименты на public GT от неё не зависят.
+
+## Минимальное участие клиники — если удастся
+
+Не просить хирурга вручную размечать десятки volumes.
+Подготовить несколько compact CT+overlay panels и вопросы по спорным boundaries,
+по возможности получить отдельный review кардиорадиолога/другого специалиста.
+Если review недоступен полностью, продолжать technical prototype и явно
+сохранить ограничение local anatomical validation в научном отчёте.
+Final masks/meshes другой клиники полезны, но не обязательны для старта.
+
+## Ближайший этап без большого обучения
+
+1. Согласовать небольшой annotation protocol и выбрать одну source CT series/phase
+   для engineering pilot, без утверждения «лучшей» диагностической фазы.
+2. Подготовить первый полуавтоматический/manual annotation workflow на local CT.
+   Сторонний chamber predictor — дополнительный pilot после проверки runtime/license.
+3. Сохранить research masks, правки/неопределённость и source-grid provenance.
+4. Построить демонстрационные3D и проверить anatomy overlays/mesh diagnostics.
+5. Отдельно составить protocol собственной многоклассовой модели на public labels,
+   включая CHD68/ImageCHD deduplication/geometry и возрастные ограничения.
+
+Многочасовое обучение, installation/model download и новая segmentation этих CT
+этим документационным этапом не запускались.
+Astra compatibility проверять отдельно на реальной версии/оборудовании клиники.
+Старые approved cohort/split/scores и экспертные source labels не изменялись.

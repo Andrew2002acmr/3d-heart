@@ -122,3 +122,14 @@ Next: согласовать selected phase/структуры/purpose SEG, по
 reference masks/meshes и проверить deployment на конкретной Astra.
 [Import audit](external_ct_import_audit.md),
 [clinical workflow](clinical_reconstruction_workflow.md).
+
+## Уточнение следующего этапа: НИИ не готовит training masks
+
+По сообщению пользователя получение ручной разметки от занятого хирурга
+маловероятно. Не блокировать разработку на expert segmentation delivery.
+Принят новый план: public annotated CT для собственной модели и research manual/
+semi-automatic correction для local NII CT; optional точечный anatomical review
+по готовым panels вместо разметки всей cohort.
+[План](annotation_without_clinician_plan.md) — proposal, без нового training,
+model download, RunPod transfer или predictions.
+Frozen v1 неизменен. Новая local research annotation не expert GT.

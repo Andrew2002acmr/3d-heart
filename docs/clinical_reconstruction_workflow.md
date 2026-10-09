@@ -92,14 +92,14 @@ self-intersections/normals, thickness/scale и review в print slicer.
 Watertight topology не гарантирует cardiac anatomy.
 VR/печать пока не являются реализованным clinical workflow.
 
-## Запросить у НИИ
+## Данные и уточнения у НИИ по возможности
 
 | Нужно | Для чего |
 |---|---|
 | Selected native CT series/phase | Исключить mixing scouts/MPR/фаз |
 | Age/diagnosis/surgery и stable pseudonymous patient ID | Strata/leakage/clinical labels |
-| Final masks камер/сосудов и annotation protocol | Многоклассовый GT и expert review |
-| Masks/meshes ПО другой клиники с source/phase/units | Сопоставление на тех же CT |
+| Final masks/annotation protocol, если уже имеются | Дополнительный reference; не обязательны для старта |
+| Masks/meshes ПО другой клиники, если доступны | Сопоставление на тех же CT, не зависимость разработки |
 | Purpose каждого переданного SEG | Отличить anatomy от VOI/state |
 | Astra release/hardware, рабочий сценарий | Deployment/UX acceptance |
 | VR/printing requirements, важные детали | Geometry/export acceptance |
@@ -110,3 +110,15 @@ Clinical/healthy labels не выводятся из отсутствия CHD.
 
 [Аудит файлов](external_ct_import_audit.md),
 [baseline resume](pediatric_heart_segmentation_resume.md).
+
+## Уточнение: готовой разметки от хирурга может не быть
+
+Пользователь сообщил о высокой занятости хирурга. Разработка не должна зависеть
+от регулярного получения expert masks НИИ. Использовать public GT для
+собственной модели, initial predictions/seeds и нашу ручную правку для
+исследовательского clinical prototype. Наши edited masks и model predictions
+не объявлять independent expert GT.
+[План без готовой разметки НИИ](annotation_without_clinician_plan.md) описывает
+annotation statuses, оценку без local GT и минимальный optional clinical review.
+Без этого review можно продвигать research prototype, но локальная анатомическая
+точность для surgical planning остаётся неподтверждённой.
