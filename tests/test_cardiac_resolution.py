@@ -143,3 +143,21 @@ def test_bundle_reference_validation_only_and_sha_roundtrip(resolution_toy):
     baseline.close()
     with pytest.raises(ValueError, match="overwrite"):
         resolution.stage_reference("variant.json", restored)
+
+
+def test_384_probability_restoration_keeps_original_axes_and_landmarks():
+    from heart3d.ml.cardiac_data import restore_probability_plane
+    transform = index_transform((512, 400, 3), 384)
+    source = np.linspace(0, 1, 512)[:, None] + np.zeros((512, 400))
+    fitted = resize_plane(source, transform, 1, 0)
+    probabilities = np.zeros((8, 384, 384), dtype=np.float32)
+    probabilities[1] = fitted
+    probabilities[0] = 1 - fitted
+    restored = restore_probability_plane(probabilities, transform)
+    assert restored.shape == (8, 512, 400)
+    assert np.allclose(restored.sum(0), 1, atol=1e-6)
+    assert np.allclose(restored[1, 1:-1, 1:-1], source[1:-1, 1:-1], atol=1e-6)
+    # Probability restoration precedes argmax; the x landmark cannot transpose to y.
+    assert (restored.argmax(0)[250] == 0).all()
+    assert (restored.argmax(0)[260] == 1).all()
+    assert transform["physical_geometry_used"] is False
