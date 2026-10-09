@@ -85,6 +85,8 @@ def index_neighbors(center, count, offsets):
 class CardiacDataset(Dataset):
     def __init__(self, config_path, partition="train", data_root=None, augmentation=True):
         self.config=read_json(config_path); self.root=Path(data_root or self.config["data_root"])
+        if partition not in self.config.get("allowed_partitions", ("train", "validation", "test")):
+            raise ValueError("Partition is sealed for this experiment")
         rows,self.split=load_protocol(self.config)
         self.preproc=read_json(self.config["preprocessing"])
         if self.preproc["fitted_partition"]!="train" or self.preproc["split_SHA256"]!=sha256_file(self.config["split"]):
