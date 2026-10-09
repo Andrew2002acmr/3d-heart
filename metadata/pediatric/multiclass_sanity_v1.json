@@ -1,0 +1,39 @@
+{
+  "scope": "single development CT plane repeated; technical sanity only",
+  "source_CT_SHA256": "514c8a080707dbe5c4c75a2a5ed9e1808e6d5f2f267aa4e3edfc5f5faa5113e1",
+  "source_mask_SHA256": "810a685b21463089b41702dda33cead9db7784dbdcb6d308f7469c6223578b03",
+  "patient_split": null,
+  "cohort_training": false,
+  "validation_or_test_used": false,
+  "physical_geometry_used": false,
+  "input_size": [
+    128,
+    128
+  ],
+  "parameters": 489112,
+  "input_channels": 5,
+  "output_channels": 8,
+  "loss": "CE + own foreground multiclass Dice; ignore_index=255",
+  "batches": 12,
+  "loss_before": 3.4011945724487305,
+  "loss_after": 2.417837381362915,
+  "weights_updated": true,
+  "elapsed_seconds": 1.4362920999992639,
+  "median_sec_per_batch": 0.07837900000049558,
+  "resources": {
+    "samples": 6,
+    "sampling_interval_seconds": 0.2,
+    "peak_process_RSS_bytes": 653815808,
+    "mean_process_CPU_percent": 326.3,
+    "mean_process_CPU_percent_of_logical_machine": 27.191666666666666,
+    "minimum_system_available_RAM_bytes": 4344934400,
+    "maximum_system_RAM_percent": 74.5,
+    "CPU_percent_definition": "100% process = one logical CPU; all process threads included",
+    "memory_definition": "sampled working-set RSS; excludes OS file cache, includes Python/torch/cache pages"
+  },
+  "checkpoint_SHA256": "68d305be9af4595e5ef73def723f79b65ad1f277e9ef69dbe4776d9c4772f741",
+  "checkpoint_bytes": 1977141,
+  "not_an_accuracy_experiment": true,
+  "full_training_started": false,
+  "artifact_directory_relative_to_dataRoot": "public_chd/multiclass_sanity_v1_retry1"
+}

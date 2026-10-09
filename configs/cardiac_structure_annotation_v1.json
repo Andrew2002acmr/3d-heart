@@ -1,0 +1,43 @@
+{
+  "version": 1,
+  "status": "proposed_protocol_not_frozen_cohort",
+  "labels": {
+    "0": "background",
+    "1": "LV",
+    "2": "RV",
+    "3": "LA",
+    "4": "RA",
+    "5": "MYO",
+    "6": "AO",
+    "7": "PA"
+  },
+  "noncardiac_or_unmapped_label_policy": "ignore_index_255_in_multiclass_sanity; preserve original labels",
+  "source_protocol": "CHD68 authors: venae cavae included in RA; pulmonary veins included in LA",
+  "binary_heart_namespace": "Heart OAR is a separate target; never interpret binary label 1 as LV",
+  "model": {
+    "input_channels": 5,
+    "encoder_channels": [
+      16,
+      32,
+      64,
+      128
+    ],
+    "norm_groups": 8,
+    "output_channels": 8
+  },
+  "loss": {
+    "variant": "ce_dice",
+    "include_background_in_dice": false,
+    "ignore_index": 255
+  },
+  "augmentation": {
+    "spatial_shared_with_mask": true,
+    "flips": false,
+    "train_only": true,
+    "ranges_status": "fit after frozen train cohort; current binary v1 ranges not automatically adopted"
+  },
+  "context_status": "physical offsets require confirmed release spacing; technical sanity uses voxel-index offsets only",
+  "full_training_authorized": false,
+  "pediatric_cohort_frozen": false,
+  "clinical_data_as_training_GT": false
+}
