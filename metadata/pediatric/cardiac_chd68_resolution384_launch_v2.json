@@ -1,7 +1,7 @@
 {
   "version": 2,
   "client_date": "2026-10-10",
-  "stage": "training",
+  "stage": "completed_verified_backup",
   "full_training_explicitly_authorized": true,
   "SSH": {
     "host": "213.173.109.80",
@@ -114,5 +114,11 @@
   "test_evaluated": false,
   "training_GPU_process_verified": true,
   "initial_training_GPU_utilization_percent": 78,
-  "initial_training_GPU_process_memory_MiB": 6528
+  "initial_training_GPU_process_memory_MiB": 6528,
+  "full_training_completed": true,
+  "paired_validation_completed": true,
+  "local_results_SHA256_verified": true,
+  "verified_payload_files": 64,
+  "completion_UTC": "2026-10-10T07:26:58.926598+00:00",
+  "results_summary": "metadata/pediatric/cardiac_chd68_resolution384_results_v2.json"
 }
