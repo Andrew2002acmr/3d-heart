@@ -1,7 +1,7 @@
 {
   "version": 2,
   "client_date": "2026-10-10",
-  "stage": "awaiting_persistent_volume_capacity",
+  "stage": "transferring_verified_local_bundle",
   "full_training_explicitly_authorized": true,
   "SSH": {
     "host": "213.173.109.80",
@@ -36,7 +36,10 @@
     "preferred_capacity_GB": 60,
     "personal_quota_verified": false,
     "shared_pool_df_not_personal_capacity": true,
-    "old_data_deleted_or_moved": false
+    "old_data_deleted_or_moved": false,
+    "allocated_capacity_GB_user_confirmed": 120,
+    "capacity_confirmation_source": "human user: increased separate disk from 50 to 120 GB",
+    "capacity_sufficient": true
   },
   "runtime_plan": {
     "source_code_commit": "55bf78f",
@@ -57,7 +60,7 @@
     "focused_tests_passed": 17,
     "bash_full_runner_syntax_passed": true
   },
-  "bundle_transfer_started": false,
+  "bundle_transfer_started": true,
   "GPU_benchmark_started": false,
   "full_training_started": false,
   "background_monitor_started": false,

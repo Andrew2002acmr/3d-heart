@@ -195,3 +195,7 @@ paired metrics, SHA export. Test не оценивается. Comparator про�
 split/cohort/cases/GT voxel counts и original grid. 185 tests passed;17focused passed;
 bash -n passed. Actual execution commit будет зафиксирован при benchmark/launch;
 не обновлять checkout между ними. [Preflight/launch metadata](../metadata/pediatric/cardiac_chd68_resolution384_launch_v2.json).
+
+## Capacity confirmed and transfer started — 2026-10-10
+
+Пользователь подтвердил увеличение выделенного volume до **120 GB**. Этого достаточно для рассчитанных48.0GB и дополнительного environment/results. Начата передача только публичного prepared CHD68 train/validation bundle; clinical data не передаются. До запуска исправлена подстановка Bash `${PREFIX}_status.json`: runtime regression проверяет отказ повторного запуска с сохранением существующего status до ERR trap.

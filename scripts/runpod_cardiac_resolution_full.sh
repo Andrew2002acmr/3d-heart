@@ -31,7 +31,7 @@ STATE
 }
 exec 9>"$PREFIX.lock"
 flock -n 9 || { echo "Another runner owns this export prefix"; exit 1; }
-test ! -e "$PREFIX_status.json" || { echo "Export status exists; inspect it and use a new prefix"; exit 1; }
+test ! -e "${PREFIX}_status.json" || { echo "Export status exists; inspect it and use a new prefix"; exit 1; }
 trap 'rc=$?; state failed "exit code $rc; preserve checkpoints and inspect log"; exit "$rc"' ERR
 test "$(git branch --show-current)" = feature/pediatric-heart-segmentation
 test -z "$(git status --porcelain)"
