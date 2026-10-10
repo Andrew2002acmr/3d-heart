@@ -1,0 +1,38 @@
+{
+  "version": 1,
+  "scope": "limited exploratory validation-only postprocessing of frozen v1 masks",
+  "partition": "validation",
+  "cohort": "metadata/pediatric/cardiac_chd68_cohort_v1.json",
+  "split": "configs/splits/cardiac_chd68_v1.json",
+  "baseline_checkpoint_SHA256": "c946ae1787583ff323e1620d82f6d069742c180c40754efb414a18d21b7145ee",
+  "remove_labels": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "fill_labels": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "preserved_labels": [
+    6,
+    7
+  ],
+  "foreground_connectivity": 26,
+  "background_connectivity": 6,
+  "maximum_component_voxels": 128,
+  "maximum_fraction_of_largest_component": 0.001,
+  "variants": [
+    "remove_small",
+    "fill_small",
+    "combined"
+  ],
+  "reserve_GB": 80,
+  "physical_thresholds_mm_claimed": false,
+  "parameters_chosen_before_evaluation": true,
+  "selection_policy": "recommend only variants with positive mean macro Dice, no class mean Dice regression and no case macro regression; report all candidates"
+}
