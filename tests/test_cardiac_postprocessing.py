@@ -80,3 +80,31 @@ def test_unknown_gt_labels_match_baseline_ignore_policy():
     assert metrics['classes']['LV']['target_voxels']==1
     assert metrics['classes']['LV']['predicted_voxels']==1
     assert metrics['classes']['LV']['Dice']==1
+
+
+@pytest.fixture
+def baseline_contract(config):
+    from heart3d.ml.cardiac_data import read_json
+    from heart3d.storage import sha256_file
+    split=read_json(config['split'])
+    return {'partition':'validation','cohort_SHA256':sha256_file(config['cohort']),
+            'split_SHA256':sha256_file(config['split']),'checkpoint_SHA256':config['baseline_checkpoint_SHA256'],
+            'records':[{'case_id':c} for c in split['partitions']['validation']]}
+
+
+def test_gate_accepts_exact_frozen_validation(config,baseline_contract):
+    _,cases=gate(config,baseline_contract)
+    assert len(cases)==10
+
+
+def test_gate_rejects_test_case_in_validation(config,baseline_contract):
+    from heart3d.ml.cardiac_data import read_json
+    baseline_contract['records'][0]['case_id']=read_json(config['split'])['partitions']['test'][0]
+    with pytest.raises(ValueError,match='exactly frozen validation'):gate(config,baseline_contract)
+
+
+def test_gate_rejects_duplicate_case_and_changed_hash(config,baseline_contract):
+    baseline_contract['records'][0]=baseline_contract['records'][1]
+    with pytest.raises(ValueError,match='exactly frozen validation'):gate(config,baseline_contract)
+    baseline_contract['split_SHA256']='changed'
+    with pytest.raises(ValueError,match='protocol mismatch'):gate(config,baseline_contract)
