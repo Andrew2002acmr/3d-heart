@@ -51,19 +51,25 @@
     "evaluation": "both best checkpoints on original-grid validation only",
     "test_evaluation_allowed": false,
     "matching_GPU_benchmark_required": true,
-    "execution_commit": null
+    "execution_commit": "948c4bb70da7c9f494e7dbfe84bcf09c8446271b",
+    "preparation_PID": 9540
   },
   "checks": {
     "full_suite_passed": 185,
     "seconds": 82.4,
     "existing_warnings": 322,
     "focused_tests_passed": 17,
-    "bash_full_runner_syntax_passed": true
+    "bash_full_runner_syntax_passed": true,
+    "runner_guard_runtime_tests_passed": 7,
+    "remote_focused_tests_passed": 11,
+    "CUDA_after_environment_setup": true,
+    "paired_QA_synthetic_render_checked": true
   },
   "bundle_transfer_started": true,
   "GPU_benchmark_started": false,
   "full_training_started": false,
-  "background_monitor_started": false,
-  "new_repo_created_on_Pod": false,
-  "new_empty_transfer_directory": "/workspace/incoming/resolution384_20261010"
+  "background_monitor_started": true,
+  "new_repo_created_on_Pod": true,
+  "new_empty_transfer_directory": "/workspace/incoming/resolution384_20261010",
+  "background_monitor_user_authorized": true
 }

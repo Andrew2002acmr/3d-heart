@@ -199,3 +199,5 @@ bash -n passed. Actual execution commit будет зафиксирован пр
 ## Capacity confirmed and transfer started — 2026-10-10
 
 Пользователь подтвердил увеличение выделенного volume до **120 GB**. Этого достаточно для рассчитанных48.0GB и дополнительного environment/results. Начата передача только публичного prepared CHD68 train/validation bundle; clinical data не передаются. До запуска исправлена подстановка Bash `${PREFIX}_status.json`: runtime regression проверяет отказ повторного запуска с сохранением существующего status до ERR trap.
+
+Подготовлен `python -m scripts.qa_cardiac_validation_pair --data DATA --baseline V1_VALIDATION --variant V2_VALIDATION --output NEW_QA_DIR`: одинаковые CT/GT/v1/v2 original-grid panels, fixed20/50/80% axial plus central coronal/sagittal, best/middle/worst v2 validation ranks. Проверяет SHA и grid, test не принимает, output не перезаписывает. Synthetic renderer smoke визуально проверен. Remote focused11tests passed, torch CUDA сохранился после установки зависимостей. Execution pin948c4bb70da7c9f494e7dbfe84bcf09c8446271b; последующие documentation/QA helper commits не обновляют remote execution checkout.
