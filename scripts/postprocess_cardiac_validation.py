@@ -30,7 +30,10 @@ def gate(config,baseline):
 def score(prediction,target):
     counts=np.zeros((8,8),dtype=np.int64)
     for z in range(0,target.shape[2],8):
-        counts+=confusion_counts(prediction[:,:,z:z+8],target[:,:,z:z+8])
+        chunk=target[:,:,z:z+8]
+        # Match original baseline evaluation: labels above 7 are ignored, not background.
+        valid_target=np.where(chunk<=7,chunk.astype(np.uint8),255).astype(np.uint8)
+        counts+=confusion_counts(prediction[:,:,z:z+8],valid_target)
     return scores_from_confusion(counts)
 
 

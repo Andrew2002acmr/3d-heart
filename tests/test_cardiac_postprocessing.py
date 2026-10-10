@@ -70,3 +70,13 @@ def test_prediction_roundtrip_and_chunked_metrics(config,tmp_path):
     assert metrics['classes']['LV']['target_voxels']==8001
     assert metrics['classes']['LV']['predicted_voxels']==8000
     assert metrics['classes']['LV']['Dice']==16000/16001
+
+
+def test_unknown_gt_labels_match_baseline_ignore_policy():
+    p=np.zeros((2,2,2),np.uint8);t=p.copy()
+    t[0,0,0]=8;p[0,0,0]=1
+    t[1,1,1]=1;p[1,1,1]=1
+    metrics=score(p,t)
+    assert metrics['classes']['LV']['target_voxels']==1
+    assert metrics['classes']['LV']['predicted_voxels']==1
+    assert metrics['classes']['LV']['Dice']==1
