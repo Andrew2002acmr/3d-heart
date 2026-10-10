@@ -287,3 +287,5 @@ bash -n passed. Actual execution commit будет зафиксирован пр
 ## Resolution384 launch preparation — 2026-10-10
 
 Volume увеличен пользователем до120GB. SCP передаёт verified7.847GB public train/validation bundle. Remote cleanfeature checkout `/workspace/3d-heart-resolution384-v2` pinned948c4bb70da7c9f494e7dbfe84bcf09c8446271b. Preparation PID9540 ждёт завершения передачи, затем SHA/unpack/verify/GPU benchmark; full30epochs разрешены после sanity. Временная heartbeat обновлена на новый port15827 и разрешена пользователем; testsealed. Prefix `/workspace/exports/cardiac_chd68_resolution384_v2_20261010`; читать `_preparation_status.json` до full runner и `_status.json` после него. Не дублировать работающие процессы.
+
+Fullresolution384 runner started04:48:22UTC, PID9970; trainPID10077, state training. Actualbenchmark0.34384s/batch, estimated30train epochs2h13m excludingvalidation/save, technicalsanitypassed. 217payloadSHA verified; benchmark backed up onEwithSHA. No newtest evaluation. See resolution384 report and launchmetadata for exactrun/prefix/pin. Monitoractive, disableonlyafter verifiedresults/report.

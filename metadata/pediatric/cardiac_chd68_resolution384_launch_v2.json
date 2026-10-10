@@ -1,7 +1,7 @@
 {
   "version": 2,
   "client_date": "2026-10-10",
-  "stage": "transferring_verified_local_bundle",
+  "stage": "training",
   "full_training_explicitly_authorized": true,
   "SSH": {
     "host": "213.173.109.80",
@@ -66,10 +66,53 @@
     "paired_QA_synthetic_render_checked": true
   },
   "bundle_transfer_started": true,
-  "GPU_benchmark_started": false,
-  "full_training_started": false,
+  "GPU_benchmark_started": true,
+  "full_training_started": true,
   "background_monitor_started": true,
   "new_repo_created_on_Pod": true,
   "new_empty_transfer_directory": "/workspace/incoming/resolution384_20261010",
-  "background_monitor_user_authorized": true
+  "background_monitor_user_authorized": true,
+  "GPU_benchmark_completed": true,
+  "archive_transfer_completed": true,
+  "remote_payloads_SHA256_verified": 217,
+  "runner_PID": 9970,
+  "trainer_PID_initial": 10077,
+  "run_name": "gpu_full_resolution384_v2_20261010",
+  "export_prefix": "/workspace/exports/cardiac_chd68_resolution384_v2_20261010",
+  "benchmark": {
+    "measured_batches": 50,
+    "warmup_batches": 5,
+    "mean_seconds_per_batch": 0.34384085051715374,
+    "samples_per_second": 46.53315618529678,
+    "parameters": 489112,
+    "train_samples_per_epoch": 12381,
+    "train_batches_per_epoch": 774,
+    "estimated_train_epoch_seconds": 266.132818300277,
+    "estimated_30_train_epochs_seconds": 7983.98454900831,
+    "estimate_scope": "measured train batches extrapolated; excludes validation/checkpoints and contention",
+    "fixed_loss_before": 3.329031467437744,
+    "fixed_loss_after_sanity": 1.8320105075836182,
+    "sanity_passed": true,
+    "resources": {
+      "samples": 100,
+      "sampling_interval_seconds": 0.2,
+      "peak_process_RSS_bytes": 2130153472,
+      "mean_process_CPU_percent": 263.048,
+      "mean_process_CPU_percent_of_logical_machine": 8.22025,
+      "minimum_system_available_RAM_bytes": 123431710720,
+      "maximum_system_RAM_percent": 8.0,
+      "CPU_percent_definition": "100% process = one logical CPU; all process threads included",
+      "memory_definition": "sampled working-set RSS; excludes OS file cache, includes Python/torch/cache pages"
+    },
+    "GPU_memory": {
+      "peak_allocated_bytes": 4311279104,
+      "peak_reserved_bytes": 6486491136
+    },
+    "local_backup_SHA256_verified": true,
+    "summary_SHA256": "5fb638b205b0a3b80ad527a5e70093f92cbd569ef8ca628d418731cf84cf4eea"
+  },
+  "test_evaluated": false,
+  "training_GPU_process_verified": true,
+  "initial_training_GPU_utilization_percent": 78,
+  "initial_training_GPU_process_memory_MiB": 6528
 }
