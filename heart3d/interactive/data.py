@@ -7,14 +7,14 @@ import numpy as np
 import pyvista as pv
 
 from ..labels import LABELS
-from ..volume import Case, discover, load_case
+from ..volume import Case, discover, load_case, load_ct_only
 
 
 @dataclass
 class CaseSource:
     case_id: str
     ct: Path
-    mask: Path
+    mask: Path | None
     reports: list[tuple[Path, dict]]
     experiments: list[tuple[Path, dict]]
 
@@ -79,6 +79,11 @@ def variant_allowed(baseline, candidate):
 
 
 def load_source(source):
+    if source.mask is None:
+        volume = load_ct_only(source.ct)
+        low, high = np.percentile(volume.ct[::4, ::4, ::4], [1, 99])
+        return LoadedCase(source, volume, {}, volume.report["warnings"], None,
+                          (float(low), float(max(high, low+1))))
     volume = load_case(source.ct, source.mask)
     warnings = list(volume.report["warnings"])
     available = {int(k) for k in volume.report["label_counts"]} & LABELS.keys()
@@ -148,3 +153,14 @@ def load_source(source):
         low, high = np.percentile(volume.ct[::4, ::4, ::4], [1, 99])
         initial_window = (float(low), float(max(high, low + 1)))
     return LoadedCase(source, volume, meshes, list(dict.fromkeys(warnings)), report_path, tuple(initial_window))
+
+
+def catalog_ct(ct_paths):
+    """Explicit CT-only selection; local display aliases are not patient IDs."""
+    sources = []
+    for index, value in enumerate(ct_paths, 1):
+        path = Path(value)
+        if not path.is_file():
+            raise ValueError(f"CT file not found: {path}")
+        sources.append(CaseSource(f"CT_{index:03d}", path, None, [], []))
+    return sources, []

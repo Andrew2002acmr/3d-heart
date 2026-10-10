@@ -139,3 +139,27 @@ def discover(root):
             issues.append(f"No paired mask: {ct}")
     issues.extend(f"Unpaired/unrecognized NIfTI: {p}" for p in files if p not in seen and "_image.nii" not in p.name)
     return {"root": str(Path(root).resolve()), "pairs": pairs, "issues": issues}
+
+
+def load_ct_only(ct_path):
+    """Read CT alone; no mask file, inference, resampling or source writes.
+
+    The zero-valued in-memory display buffer is NOT a segmentation/reference.
+    """
+    warnings = []
+    image = nib.load(str(ct_path))
+    info, affine, unit = image_geometry(image, "CT", warnings)
+    ct = image.get_fdata(dtype=np.float32)
+    if not np.isfinite(ct).all():
+        raise ValueError("CT contains NaN or infinity")
+    canonical = nib.as_closest_canonical(nib.Nifti1Image(ct, affine))
+    ct = np.asarray(canonical.dataobj)
+    if np.max(nib.affines.obliquity(canonical.affine)) > np.deg2rad(.1):
+        warnings.append("Oblique acquisition: showing native reoriented planes, not resampled anatomical MPR")
+    report = {"ct": {"path": str(Path(ct_path).resolve()), "sha256": sha256(ct_path), **info},
+              "mask": None, "segmentation_available": False, "mode": "ct_only",
+              "geometry": {"shape": list(ct.shape), "affine": canonical.affine.tolist(),
+                           "spacing": nib.affines.voxel_sizes(canonical.affine).tolist(),
+                           "unit": unit, "resampled": False},
+              "label_counts": {}, "warnings": warnings}
+    return Case(ct, np.zeros(ct.shape, dtype=np.uint8), canonical.affine, unit, report)

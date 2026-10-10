@@ -23,6 +23,7 @@ def main():
     gui.add_argument("--data", type=Path, default=Path("data/imagechd"))
     gui.add_argument("--results", type=Path, default=Path("outputs"))
     gui.add_argument("--case", dest="case_id", default=None)
+    gui.add_argument("--ct", type=Path, action="append", help="CT-only NIfTI; repeat for several volumes. No mask or inference.")
     edit = commands.add_parser("edit", help="Original-grid research mask editor with linked CT/3D")
     for name in ("ct", "mask", "geometry", "output"):
         edit.add_argument("--"+name, type=Path, required=True)
@@ -37,7 +38,7 @@ def main():
                 from .interactive.window import run_app
             except ModuleNotFoundError as error:
                 parser.exit(2, f"GUI dependency missing: {error}. Install requirements-lock.txt.\n")
-            return run_app(args.data, args.results, args.case_id)
+            return run_app(args.data, args.results, args.case_id, ct_paths=args.ct)
         elif args.command == "edit":
             from .interactive.editor import run_editor
             return run_editor(args.ct, args.mask, args.geometry, args.output, args.schema)

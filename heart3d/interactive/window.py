@@ -5,7 +5,7 @@ import sys
 from PySide6 import QtCore, QtWidgets
 
 from ..labels import LABELS
-from .data import catalog, load_source
+from .data import catalog, catalog_ct, load_source
 from .scene import ScenePanel
 from .slices import SlicePanel
 from .state import ViewState
@@ -33,8 +33,11 @@ class ViewerWindow(QtWidgets.QMainWindow):
     def __init__(self, sources, notes=(), initial_case=None, autoload=True, off_screen=False):
         super().__init__()
         self.sources, self.notes = sources, notes
+        self.ct_only = bool(sources) and all(s.mask is None for s in sources)
         self.state, self.worker, self.closing = None, None, False
         self.setWindowTitle("ImageCHD · КТ → сегментация → 3D")
+        if self.ct_only:
+            self.setWindowTitle("Heart3D · просмотр КТ")
         self.resize(1440, 940)
         self.setMinimumSize(1050, 700)
         self.refresh_timer = QtCore.QTimer(self)
@@ -57,6 +60,8 @@ class ViewerWindow(QtWidgets.QMainWindow):
         header.addWidget(self.progress)
         header.addStretch()
         notice = QtWidgets.QLabel("Исследовательский прототип · масштаб и ориентация пациента не подтверждены")
+        if self.ct_only:
+            notice.setText("Только КТ")
         notice.setWordWrap(True)
         notice.setStyleSheet("color: #ffc875; font-weight: 600")
         header.addWidget(notice)
@@ -100,6 +105,10 @@ class ViewerWindow(QtWidgets.QMainWindow):
             variant.currentTextChanged.connect(lambda value, n=label: self.set_variant(n, value))
             opacity.valueChanged.connect(lambda value, n=label: self.set_opacity(n, value))
         side.addWidget(structures)
+        if self.ct_only:
+            structures.hide()
+            self.mask_all.hide()
+            self.plane_toggle.hide()
         window_group = QtWidgets.QGroupBox("Окно КТ · значения файла, не HU")
         window_layout = QtWidgets.QHBoxLayout(window_group)
         self.window_low, self.window_high = QtWidgets.QDoubleSpinBox(), QtWidgets.QDoubleSpinBox()
@@ -130,6 +139,9 @@ class ViewerWindow(QtWidgets.QMainWindow):
             panel.set_state(None)
         self.scene = ScenePanel(off_screen=off_screen)
         panels_layout.addWidget(self.scene, 1, 1)
+        if self.ct_only:
+            self.scene.hide()
+            panels_layout.addWidget(self.slices[0], 1, 0, 1, 2)
         for i in range(2):
             panels_layout.setColumnStretch(i, 1)
             panels_layout.setRowStretch(i, 1)
@@ -162,7 +174,7 @@ class ViewerWindow(QtWidgets.QMainWindow):
         self.progress.show()
         self.info.setText(f"{self.sources[index].case_id}\nЗагрузка…")
         self.warnings.clear()
-        self.statusBar().showMessage("Чтение КТ, маски и готовых VTP. Реконструкция не запускается.")
+        self.statusBar().showMessage("Чтение КТ…" if self.ct_only else "Чтение КТ, маски и готовых VTP. Реконструкция не запускается.")
         self.worker = Loader(self.sources[index], self)
         self.worker.loaded.connect(self.accept_case)
         self.worker.failed.connect(self.fail_load)
@@ -174,6 +186,9 @@ class ViewerWindow(QtWidgets.QMainWindow):
             return
         self.state = ViewState(loaded)
         present = set(loaded.meshes)
+        if self.ct_only:
+            self.state.overlay = False
+            self.state.plane_overlays = [False, False, False]
         for label in LABELS:
             check, selector, opacity = self.structure_checks[label], self.variant_selectors[label], self.opacity_controls[label]
             blockers = [QtCore.QSignalBlocker(w) for w in (check, selector, opacity)]
@@ -198,7 +213,8 @@ class ViewerWindow(QtWidgets.QMainWindow):
         del blockers
         for panel in self.slices.values():
             panel.set_state(self.state)
-        self.scene.set_state(self.state)
+        if not self.ct_only:
+            self.scene.set_state(self.state)
         shape = " × ".join(str(n) for n in loaded.volume.ct.shape)
         count3d = sum(bool(v) for v in loaded.meshes.values())
         self.info.setText(f"{loaded.source.case_id}\n{shape} вокселей\nСтруктуры: {len(present)}/7 · поверхности 3D: {count3d}")
@@ -212,6 +228,14 @@ class ViewerWindow(QtWidgets.QMainWindow):
         self.warnings.setPlainText("\n\n".join(warnings))
         self.sidebar.setEnabled(True)
         self.statusBar().showMessage("Готово · Original выбран по умолчанию · координаты по заголовку")
+        if self.ct_only:
+            spacing = loaded.volume.report["geometry"]["spacing"]
+            self.info.setText(f"{loaded.source.case_id}\n{shape} вокселей\nШаг: " + " × ".join(f"{v:.3f}" for v in spacing) + f" {loaded.volume.unit}\nТолько КТ · маска отсутствует")
+            self.warnings.setPlainText("\n\n".join(loaded.warnings))
+            self.statusBar().showMessage("КТ загружена · листайте срезы и настройте окно яркости")
+            for panel in self.slices.values():
+                panel.mask.hide()
+                panel.alpha.hide()
         self.case_ready.emit(loaded.source.case_id)
 
     def finish_load(self):
@@ -291,10 +315,10 @@ def configure_app(app):
     """)
 
 
-def run_app(data_root, results_root, initial_case=None):
+def run_app(data_root, results_root, initial_case=None, ct_paths=None):
     app = QtWidgets.QApplication.instance() or QtWidgets.QApplication(sys.argv[:1])
     configure_app(app)
-    sources, notes = catalog(Path(data_root), Path(results_root))
+    sources, notes = catalog_ct(ct_paths) if ct_paths else catalog(Path(data_root), Path(results_root))
     window = ViewerWindow(sources, notes, initial_case)
     size = app.primaryScreen().availableGeometry()
     window.resize(min(1440, size.width()-40), min(940, size.height()-60))
