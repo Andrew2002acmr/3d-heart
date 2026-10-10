@@ -32,7 +32,7 @@ def small_changes(prediction, config):
     for label in sorted(remove_labels | fill_labels):
         box = _box(p == label)
         if box is None:
-            records[str(label)] = {'components_before':0,'removed_components':0,'filled_holes':0,'threshold_voxels':0}
+            records[str(label)] = {'components_before':0,'removed_components':0,'eligible_hole_components':0,'threshold_voxels':0}
             continue
         region = p[box]
         mask = region == label
@@ -58,7 +58,7 @@ def small_changes(prediction, config):
             fill[box][candidate] = label
             holes_count = int(np.count_nonzero(allowed))
         records[str(label)] = {'components_before':int(count),'largest_component_voxels':int(sizes[largest]),
-                              'threshold_voxels':threshold,'removed_components':int(drop.sum()),'filled_holes':holes_count}
+                              'threshold_voxels':threshold,'removed_components':int(drop.sum()),'eligible_hole_components':holes_count}
     fill[conflicts] = 0
     return removed, fill, records
 

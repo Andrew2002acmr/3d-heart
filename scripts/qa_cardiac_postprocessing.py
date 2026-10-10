@@ -7,6 +7,7 @@ import matplotlib.pyplot as plt
 from matplotlib.patches import Patch
 import numpy as np
 import nibabel as nib
+from heart3d.labels import LABELS
 from heart3d.ml.cardiac_data import read_json,write_json
 from heart3d.storage import sha256_file,require_space
 from scripts.qa_cardiac_predictions import overlay
@@ -16,11 +17,12 @@ def main():
     p=argparse.ArgumentParser(description=__doc__)
     for k in ('data','baseline','experiment','output'):p.add_argument('--'+k,type=Path,required=True)
     p.add_argument('--cohort',type=Path,default=Path('metadata/pediatric/cardiac_chd68_cohort_v1.json'))
+    p.add_argument('--variant',choices=['remove_small','fill_small','combined'],default='remove_small')
     a=p.parse_args();summary=read_json(a.experiment/'summary.json')
     if summary['partition']!='validation' or summary['test_evaluated']:raise ValueError('Validation only')
     if a.output.exists():raise ValueError('New QA output required')
     require_space(a.output,100_000_000,80_000_000_000);a.output.mkdir(parents=True)
-    variant='combined';comparison=summary['comparisons'][variant]
+    variant=a.variant;comparison=summary['comparisons'][variant]
     cohort={r['case_id']:r for r in read_json(a.cohort)['records']}
     if sha256_file(a.cohort)!=comparison['cohort_SHA256']:raise ValueError('Cohort mismatch')
     audits=read_json(a.experiment/'audit_progress.json');audits={r['case_id']:r for r in audits if r['variant']==variant}
@@ -42,7 +44,7 @@ def main():
         xy=np.argwhere(changed[:,:,z]);center=xy[len(xy)//2] if len(xy) else np.array(vols[0].shape[:2])//2
         box=tuple(slice(max(0,int(v)-28),min(vols[0].shape[i],int(v)+29)) for i,v in enumerate(center))
         ct=np.asarray(vols[0].dataobj[:,:,z],dtype=np.float32)
-        fig,axes=plt.subplots(2,5,figsize=(16,7))
+        fig,axes=plt.subplots(2,5,figsize=(16,9))
         legend=[Patch(color='#ef476f',label='Correct class removed'),Patch(color='#20c997',label='Incorrect class removed'),Patch(color='#118ab2',label='Correct class added'),Patch(color='#ffd166',label='Incorrect class added')]
         diff=np.zeros((*ct.shape,4),np.float32)
         valid_gt=gt[:,:,z]<=7
@@ -56,10 +58,12 @@ def main():
                 ax.imshow(ct[crop].T,cmap='gray',vmin=0,vmax=2015,origin='lower',interpolation='nearest')
                 if col in (1,2,3):ax.imshow(overlay((gt,before,after)[col-1][crop+(z,)].T),origin='lower',interpolation='nearest')
                 if col==4:ax.imshow(np.transpose(diff[crop],(1,0,2)),origin='lower',interpolation='nearest')
-                ax.set_title(['CT','GT','v1 original','Combined candidate','Changes'][col]);ax.axis('off')
-        fig.suptitle(f'{role}: {case}; macro delta {r["delta"]:+.6f}; axial index {z}\nFull slice and detail; exploratory candidate, not approved; physical scale unverified')
-        fig.legend(handles=legend,loc='lower center',ncol=4,fontsize=9)
-        fig.tight_layout(rect=(0,.06,1,.90));dst=a.output/f'{case}_postprocessing_changes.png';fig.savefig(dst,dpi=120);plt.close(fig)
+                if i == 0: ax.set_title(['CT','GT','v1 original',variant,'Changes'][col])
+                ax.axis('off')
+        fig.suptitle(f'{role}: {case}; macro delta {r["delta"]:+.6f}; axial index {z}\nFull slice (top), detail (bottom); validation experiment; physical scale unverified', fontsize=11)
+        fig.legend(handles=[Patch(color=color,label=short) for short,_,color in LABELS.values()],loc='lower center',bbox_to_anchor=(.5,.045),ncol=7,fontsize=9)
+        fig.legend(handles=legend,loc='lower center',bbox_to_anchor=(.5,.002),ncol=4,fontsize=9)
+        fig.tight_layout(rect=(0,.12,1,.90),h_pad=3,w_pad=1);dst=a.output/f'{case}_postprocessing_changes.png';fig.savefig(dst,dpi=120);plt.close(fig)
         qa.append({'case_id':case,'role':role,'variant':variant,'axial_index':z,'display_crop':[{'start':s.start,'stop':s.stop} for s in box],
                    'delta':r['delta'],'image':dst.name,'image_SHA256':sha256_file(dst),'GT_used_only_for_metrics_and_QA':True})
     write_json(a.output/'QA_summary.json',{'partition':'validation','test_used':False,'cases':qa})
