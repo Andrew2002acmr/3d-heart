@@ -1,0 +1,502 @@
+{
+  "date": "2026-10-10",
+  "status": "audited design; no training started",
+  "agents_reviewed": [
+    "architecture/training",
+    "data/preprocessing",
+    "evaluation/failures"
+  ],
+  "data_cases": {
+    "train": 48,
+    "development_validation": 10,
+    "historical_test_not_new_unbiased_holdout": 10
+  },
+  "frozen_split_SHA256": "a291dd9d1cb5ce9437191e0260e590235cd0c5d5a34223ae8bb6a73cd14e3bdc",
+  "cohort_SHA256": "bf60efae0c766af11893e7414361e66a09c78f325c2c658f61f88de8839244e0",
+  "train_only_geometry_summary": {
+    "case_count": 48,
+    "original_fg_extent_percentiles_XYZ": {
+      "percentiles": [
+        0,
+        25,
+        50,
+        75,
+        90,
+        100
+      ],
+      "values": [
+        [
+          180.0,
+          146.0,
+          126.0
+        ],
+        [
+          318.5,
+          234.75,
+          172.75
+        ],
+        [
+          345.5,
+          268.5,
+          204.0
+        ],
+        [
+          394.25,
+          293.75,
+          273.0
+        ],
+        [
+          439.6,
+          369.3,
+          300.20000000000005
+        ],
+        [
+          477.0,
+          391.0,
+          381.0
+        ]
+      ]
+    },
+    "class_extent_percentiles_XYZ": {
+      "1": {
+        "percentiles": [
+          0,
+          50,
+          90,
+          100
+        ],
+        "values": [
+          [
+            68.0,
+            46.0,
+            35.0
+          ],
+          [
+            128.0,
+            119.0,
+            68.5
+          ],
+          [
+            177.60000000000002,
+            155.3,
+            119.40000000000003
+          ],
+          [
+            262.0,
+            221.0,
+            214.0
+          ]
+        ]
+      },
+      "2": {
+        "percentiles": [
+          0,
+          50,
+          90,
+          100
+        ],
+        "values": [
+          [
+            71.0,
+            50.0,
+            33.0
+          ],
+          [
+            134.5,
+            97.0,
+            89.0
+          ],
+          [
+            201.20000000000002,
+            128.0,
+            161.40000000000003
+          ],
+          [
+            216.0,
+            144.0,
+            263.0
+          ]
+        ]
+      },
+      "3": {
+        "percentiles": [
+          0,
+          50,
+          90,
+          100
+        ],
+        "values": [
+          [
+            137.0,
+            77.0,
+            60.0
+          ],
+          [
+            330.0,
+            212.0,
+            146.0
+          ],
+          [
+            439.6,
+            325.3,
+            238.20000000000002
+          ],
+          [
+            477.0,
+            336.0,
+            315.0
+          ]
+        ]
+      },
+      "4": {
+        "percentiles": [
+          0,
+          50,
+          90,
+          100
+        ],
+        "values": [
+          [
+            78.0,
+            54.0,
+            88.0
+          ],
+          [
+            155.5,
+            168.0,
+            180.5
+          ],
+          [
+            217.20000000000002,
+            213.8,
+            265.30000000000007
+          ],
+          [
+            313.0,
+            278.0,
+            303.0
+          ]
+        ]
+      },
+      "5": {
+        "percentiles": [
+          0,
+          50,
+          90,
+          100
+        ],
+        "values": [
+          [
+            105.0,
+            102.0,
+            67.0
+          ],
+          [
+            191.5,
+            180.5,
+            112.5
+          ],
+          [
+            265.90000000000003,
+            231.8,
+            185.60000000000002
+          ],
+          [
+            324.0,
+            267.0,
+            281.0
+          ]
+        ]
+      },
+      "6": {
+        "percentiles": [
+          0,
+          50,
+          90,
+          100
+        ],
+        "values": [
+          [
+            58.0,
+            81.0,
+            126.0
+          ],
+          [
+            187.5,
+            195.0,
+            204.0
+          ],
+          [
+            313.3,
+            267.0,
+            292.6
+          ],
+          [
+            395.0,
+            319.0,
+            381.0
+          ]
+        ]
+      },
+      "7": {
+        "percentiles": [
+          0,
+          50,
+          90,
+          100
+        ],
+        "values": [
+          [
+            116.0,
+            105.0,
+            36.0
+          ],
+          [
+            319.0,
+            217.0,
+            143.5
+          ],
+          [
+            416.00000000000006,
+            301.20000000000005,
+            233.00000000000009
+          ],
+          [
+            464.0,
+            345.0,
+            309.0
+          ]
+        ]
+      }
+    },
+    "AO_positive_Z_slices_percentiles": [
+      126.0,
+      204.0,
+      292.6,
+      381.0
+    ],
+    "PA_positive_Z_slices_percentiles": [
+      36.0,
+      143.5,
+      233.00000000000009,
+      309.0
+    ],
+    "train_cases_with_ignored_GT": 9,
+    "ignored_GT_voxels": 313984,
+    "runtime_seconds": 52.16634464263916
+  },
+  "PA_validation_conditional_summary": {
+    "true_PA_prediction_class_fractions": {
+      "background": 0.19808402605211822,
+      "LV": 0.0009984232609102329,
+      "RV": 0.011525553274892318,
+      "LA": 0.10748696233917106,
+      "RA": 0.002076338102173611,
+      "MYO": 0.004239351198765365,
+      "AO": 0.024229859470173497,
+      "PA": 0.6513594863017957
+    },
+    "predicted_PA_true_GT_class_fractions": {
+      "background": 0.10518672735059231,
+      "LV": 0.004600210558591552,
+      "RV": 0.08555046881053215,
+      "LA": 0.13989047458476075,
+      "RA": 0.036956951200766544,
+      "MYO": 0.003106044511369871,
+      "AO": 0.013868221183767996,
+      "PA": 0.6108409017996188
+    }
+  },
+  "train_sampling_ratio": 3.6496350364963503,
+  "baseline_original_grid_mean_macro_Dice": 0.7978329433197989,
+  "proposed_recipe": {
+    "status": "design only; own3D implementation, GPU benchmark and execution config not yet created",
+    "scope": "one engineering package, not an isolated architecture ablation",
+    "model": {
+      "family": "project-owned residual 3D U-Net, scratch",
+      "input_channels": 1,
+      "output_channels": 8,
+      "channels": [
+        24,
+        48,
+        96,
+        192,
+        256
+      ],
+      "normalization": "GroupNorm8",
+      "block": "two bias-free Conv3d3 + LeakyReLU with residual projection",
+      "decoder": "trilinear upsample + skip concatenation",
+      "parameters_estimate": "about10M; count after implementation",
+      "deep_supervision": "full head2/3 + half head1/3, aux logits restored to full patch before loss"
+    },
+    "grid": {
+      "XY": 256,
+      "Z": "native release indices, no physical resampling",
+      "clip": [
+        0,
+        2015
+      ],
+      "normalization": "retain v1 train-fitted linear clip for first candidate",
+      "physical_units_verified": false
+    },
+    "GPU_memory_only_planning": {
+      "initial_patch_ZYX": [
+        128,
+        192,
+        192
+      ],
+      "batch_size": 2,
+      "target_peak_reserved_bytes": 20000000000,
+      "fallback_if_actual_OOM_or_peak_above_limit": [
+        {
+          "patch_ZYX": [
+            128,
+            160,
+            160
+          ],
+          "channels": [
+            24,
+            48,
+            96,
+            192,
+            256
+          ]
+        },
+        {
+          "patch_ZYX": [
+            128,
+            160,
+            160
+          ],
+          "channels": [
+            16,
+            32,
+            64,
+            128,
+            256
+          ]
+        }
+      ],
+      "select_before_quality_evaluation": true,
+      "no_fixed_patch_captures_full_aorta_context_claim": true
+    },
+    "sampling": {
+      "case_weight": "uniform over48train cases",
+      "batch_slots": [
+        "uniform full-FOV patch",
+        "uniform present cardiac class then foreground coordinate with jitter"
+      ],
+      "training_GT_centres_only": true,
+      "padding_target": 255,
+      "logging": "case/class/foreground coverage histograms"
+    },
+    "training": {
+      "seed": 20261010,
+      "confirmatory_seeds": [
+        20261011,
+        20261012
+      ],
+      "optimizer": "AdamW",
+      "learning_rate": 0.0003,
+      "weight_decay": 0.0001,
+      "warmup_updates": 500,
+      "schedule": "cosine to1e-6",
+      "maximum_updates": 30000,
+      "validation_updates": [
+        1000,
+        2000,
+        4000,
+        6000,
+        8000,
+        10000,
+        12000,
+        14000,
+        16000,
+        18000,
+        20000,
+        22000,
+        24000,
+        26000,
+        28000,
+        30000
+      ],
+      "early_stopping": "none in first fixed-budget experiment; abort only technical failure or explicit user stop",
+      "loss": "unweighted CE + soft foreground Dice over reference-present batch classes, valid255 masked; absent-class false positives penalized byCE",
+      "AMP": "BF16 if measured supported, otherwiseFP16+GradScaler; FP32 loss reductions",
+      "augmentation": {
+        "XY_rotation_degrees": 15,
+        "other_axis_tilt_degrees": 5,
+        "scale_range": [
+          0.85,
+          1.15
+        ],
+        "intensity": "bounded contrast/gamma/shift/noise/weakblur; QA before freeze",
+        "flips": false,
+        "large_elastic": false
+      },
+      "resume_requires": "model/optimizer/scheduler/RNG/CUDA_RNG/sampler/step/AMP state plus data/config/commit hashes"
+    },
+    "inference": {
+      "full_FOV": true,
+      "GT_ROI": false,
+      "overlap": 0.5,
+      "blending": "Gaussian probability blending, all weights positive",
+      "restore": "original-grid probabilities before argmax",
+      "checkpoint_selection": "maximum raw mean-case macro Dice over same10 full-volume original-grid validation cases; tie earlier step",
+      "postprocessing_during_selection": false
+    },
+    "engineering_acceptance_goals": {
+      "mean_macro_Dice_at_least": 0.8078329433197989,
+      "PA_mean_Dice_at_least": 0.6054922284064216,
+      "PA_mean_recall_at_least": 0.6313594863017957,
+      "other_class_mean_Dice_maximum_drop": 0.01,
+      "case_macro_lower_quartile": "nonregression vs baseline, np.quantile(method=linear)",
+      "every_case_macro_drop_below_minus_0_03": "flag and inspect; blocks replacement until explained",
+      "not_a_medical_standard_or_significance_claim": true,
+      "baseline_case_macro_lower_quartile": 0.7750920830184814
+    },
+    "next_if_accepted": "two additional fixed seeds, report each and mean/range; no bestseed cherry-pick",
+    "next_if_failure": "one diagnostic factor only, chosen from data representation/normalization/global context; no broad validation sweep",
+    "conditional_global_context": "own coarse full-volume3D + fine high-resolution3D; refiner training uses OOF coarse predictions, never GT context at validation",
+    "full_training_started": false,
+    "test_evaluation_planned": false
+  },
+  "audit_artifacts": [
+    {
+      "path": "E:\\3d-heart-data\\pediatric_ct_heart\\experiments\\cardiac_chd68_next_training_design_20261010\\train_geometry_audit.json",
+      "bytes": 218403,
+      "SHA256": "3289a5ddbb92818a02f3d80d3c582278f79b4779600ed9aa48aec65bec78c9d1"
+    },
+    {
+      "path": "E:\\3d-heart-data\\pediatric_ct_heart\\experiments\\cardiac_chd68_next_training_design_20261010\\training_convergence_diagnostics.png",
+      "bytes": 133297,
+      "SHA256": "0317fb182f1594ef4832a437f2a2790e295a1436d0fed3d5b5147363ab7fa4df"
+    },
+    {
+      "path": "E:\\3d-heart-data\\pediatric_ct_heart\\experiments\\cardiac_chd68_next_training_design_20261010\\training_pipeline_diagnostics.json",
+      "bytes": 2047,
+      "SHA256": "9ec493761d14ef3c22a38f69fd68fbb78537e239808e612c207cb18fb2dc42e0"
+    },
+    {
+      "path": "E:\\3d-heart-data\\pediatric_ct_heart\\experiments\\cardiac_chd68_next_training_design_20261010\\validation_PA_confusion_audit.json",
+      "bytes": 47172,
+      "SHA256": "1eeeb9acee32f567501f43f8dcbcf78d26913de80856022058f29a035230431a"
+    }
+  ],
+  "private_NII_used": false,
+  "new_test_pixels_read": false,
+  "external_cloud_training_started": false,
+  "caveats": [
+    "48releasecases are not48independently verified patients",
+    "No pediatric age/HU/mm/clinical generalization confirmation",
+    "Original10test already viewed; it cannot be a new independent finalholdout",
+    "Engineering recipes and thresholds are hypotheses, not guaranteed gain"
+  ],
+  "primary_references": [
+    "https://arxiv.org/abs/1606.06650",
+    "https://arxiv.org/abs/2404.09556",
+    "https://raw.githubusercontent.com/XiaoweiXu/Whole-heart-and-great-vessel-segmentation-of-chd_segmentation/master/README.md",
+    "https://docs.pytorch.org/docs/2.8/amp.html",
+    "https://github.com/MIC-DKFZ/nnUNet/blob/master/documentation/explanation_normalization.md"
+  ]
+}

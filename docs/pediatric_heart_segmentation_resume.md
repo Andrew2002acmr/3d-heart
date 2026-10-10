@@ -329,3 +329,23 @@ Heartbeat PAUSED; Pod не нужен для выполненной локаль
 [Постобработка: результат, аудит и ограничения](cardiac_chd68_postprocessing_v1.md).
 [Machine summary](../metadata/pediatric/cardiac_chd68_postprocessing_results_v1.json).
 Следующий own3D training не реализован/не запущен автоматически.
+
+
+## Own3D v3: аудит и план следующего обучения — 2026-10-10
+
+По просьбе пользователя проведены три независимых agent reviews и новый public-only аудит:
+геометрия и bbox всех48train cases, PA confusion всех10validation cases, sampler и кривые.
+Длинный case получает500/137=3.65 раза больше примеров. В equal-case среднем
+19.81% истинной PA теряется в фоне,10.75% превращается вLA.
+Patch128Z не охватывает entireAO bbox у47из48 cases.
+
+План: своя residual3DU-Net, uniform case/class patch sampling, AMP, AdamW с schedule,
+полные original-grid validation volumes. Предложенный первый budget30000updates
+уточняется по technical benchmark до quality evaluation. Реализацииown3D/trainer
+и GPU-ready execution config пока нет; новый training/benchmark не запускался.
+Global coarse+fine — условный этап с OOF training context; три seeds при успехе,
+matched CV позже. Исторический просмотренный test не является новым holdout.
+Private НИИ данные не использованы, split artifact сохранён, heartbeat PAUSED.
+
+[Обоснованный протокол](cardiac_chd68_3d_training_plan_v3.md).
+[Proposed recipe и verified evidence](../metadata/pediatric/cardiac_chd68_3d_training_design_v3.json).
