@@ -1,0 +1,439 @@
+{
+  "experiment": "cardiac_chd68_postprocessing_v1",
+  "date": "2026-10-10",
+  "partition": "validation",
+  "case_count": 10,
+  "grid": "original release NIfTI index grid; postprocessing of argmax masks",
+  "baseline_checkpoint_epoch": 23,
+  "baseline_checkpoint_SHA256": "c946ae1787583ff323e1620d82f6d069742c180c40754efb414a18d21b7145ee",
+  "execution_commit": "37ffd0124426fd3c90eb58faf5187198acd40ad0",
+  "postprocessing_config_SHA256": "d97d27a5a1eea565c619b082e26178fa0b46150f04cf3229e0332e74ae5f36cc",
+  "source_evaluation_commit": "948c4bb70da7c9f494e7dbfe84bcf09c8446271b",
+  "source_evaluation_config_SHA256": "7bf1064769004e0a24fa1ee49103dd5e7418d17576098ffb8848c8a24e9451a1",
+  "cohort_SHA256": "bf60efae0c766af11893e7414361e66a09c78f325c2c658f61f88de8839244e0",
+  "split_SHA256": "a291dd9d1cb5ce9437191e0260e590235cd0c5d5a34223ae8bb6a73cd14e3bdc",
+  "parameters_frozen_before_evaluation": true,
+  "GT_used_in_postprocessing": false,
+  "test_evaluated": false,
+  "GPU_used": false,
+  "seconds": 446.54529330000514,
+  "recommendation": "remove_small",
+  "recommendation_scope": "optional research cleanup; not enabled in clinical viewer; no independent-test claim",
+  "selection_rule": "recommend only variants with positive mean macro Dice, no class mean Dice regression and no case macro regression; report all candidates",
+  "baseline_per_class_mean_metrics": {
+    "LV": {
+      "Dice": 0.872177263550098,
+      "IoU": 0.7780278972705493,
+      "precision": 0.8435168485809525,
+      "recall": 0.9068276000221906
+    },
+    "RV": {
+      "Dice": 0.8184818469362305,
+      "IoU": 0.6994438194181312,
+      "precision": 0.8644986475040752,
+      "recall": 0.7985925618096972
+    },
+    "LA": {
+      "Dice": 0.7893338704130876,
+      "IoU": 0.6629679700240089,
+      "precision": 0.8165342548010843,
+      "recall": 0.8000260072291032
+    },
+    "RA": {
+      "Dice": 0.8464347726955916,
+      "IoU": 0.7414180735575906,
+      "precision": 0.8797328782063805,
+      "recall": 0.827717471009249
+    },
+    "MYO": {
+      "Dice": 0.8537091881712925,
+      "IoU": 0.747453047761059,
+      "precision": 0.8620703722601932,
+      "recall": 0.8555093383536612
+    },
+    "AO": {
+      "Dice": 0.7992014330658707,
+      "IoU": 0.6716746241296071,
+      "precision": 0.8075546489164486,
+      "recall": 0.8124083935322892
+    },
+    "PA": {
+      "Dice": 0.6054922284064216,
+      "IoU": 0.4653790552535272,
+      "precision": 0.6108409017996188,
+      "recall": 0.6513594863017957
+    }
+  },
+  "variants": {
+    "remove_small": {
+      "mean_macro_Dice": 0.7979389952716438,
+      "mean_paired_delta": 0.000106051951844921,
+      "cases_improved": 10,
+      "cases_worsened": 0,
+      "cases_unchanged": 0,
+      "class_mean_metrics": {
+        "LV": {
+          "Dice": 0.8722710419795691,
+          "IoU": 0.7781697978061974,
+          "precision": 0.8436928596468023,
+          "recall": 0.9068254939387688
+        },
+        "RV": {
+          "Dice": 0.8185894436771017,
+          "IoU": 0.6995984348580795,
+          "precision": 0.8648236020108697,
+          "recall": 0.7984846161708342
+        },
+        "LA": {
+          "Dice": 0.7897338478362174,
+          "IoU": 0.6635269501552461,
+          "precision": 0.8181322770529897,
+          "recall": 0.79918927678039
+        },
+        "RA": {
+          "Dice": 0.846495095865141,
+          "IoU": 0.741513440847814,
+          "precision": 0.8798928041235918,
+          "recall": 0.827688190112484
+        },
+        "MYO": {
+          "Dice": 0.8537898760711855,
+          "IoU": 0.7475713223033458,
+          "precision": 0.862242345594702,
+          "recall": 0.8554972679435711
+        },
+        "AO": {
+          "Dice": 0.7992014330658707,
+          "IoU": 0.6716746241296071,
+          "precision": 0.8075546489164486,
+          "recall": 0.8124083935322892
+        },
+        "PA": {
+          "Dice": 0.6054922284064216,
+          "IoU": 0.4653790552535272,
+          "precision": 0.6108409017996188,
+          "recall": 0.6513594863017957
+        }
+      },
+      "audit_totals": {
+        "removed_voxels": 26460,
+        "removed_correct_GT_voxels": 5556,
+        "added_voxels": 0,
+        "added_correct_GT_voxels": 0
+      },
+      "passes_selection_rule": true,
+      "case_macro_deltas": [
+        {
+          "case_id": "ct_1027",
+          "delta": 0.0001869340284128551
+        },
+        {
+          "case_id": "ct_1028",
+          "delta": 0.00012064558593571917
+        },
+        {
+          "case_id": "ct_1033",
+          "delta": 3.576364668289589e-05
+        },
+        {
+          "case_id": "ct_1036",
+          "delta": 0.00019374729597998464
+        },
+        {
+          "case_id": "ct_1046",
+          "delta": 0.00019057411611378416
+        },
+        {
+          "case_id": "ct_1056",
+          "delta": 8.989954984295334e-05
+        },
+        {
+          "case_id": "ct_1079",
+          "delta": 8.401866979157457e-05
+        },
+        {
+          "case_id": "ct_1099",
+          "delta": 2.114421158594393e-05
+        },
+        {
+          "case_id": "ct_1125",
+          "delta": 2.1461251367593803e-05
+        },
+        {
+          "case_id": "ct_1127",
+          "delta": 0.00011633116273590538
+        }
+      ]
+    },
+    "fill_small": {
+      "mean_macro_Dice": 0.7978343425044779,
+      "mean_paired_delta": 1.3991846790628593e-06,
+      "cases_improved": 5,
+      "cases_worsened": 2,
+      "cases_unchanged": 3,
+      "class_mean_metrics": {
+        "LV": {
+          "Dice": 0.872177263550098,
+          "IoU": 0.7780278972705493,
+          "precision": 0.8435168485809525,
+          "recall": 0.9068276000221906
+        },
+        "RV": {
+          "Dice": 0.8184818469362305,
+          "IoU": 0.6994438194181312,
+          "precision": 0.8644986475040752,
+          "recall": 0.7985925618096972
+        },
+        "LA": {
+          "Dice": 0.7893347764396473,
+          "IoU": 0.6629684390942094,
+          "precision": 0.81653038281513,
+          "recall": 0.8000326319203644
+        },
+        "RA": {
+          "Dice": 0.846443660961785,
+          "IoU": 0.741429582266085,
+          "precision": 0.8797338801958989,
+          "recall": 0.8277314975405823
+        },
+        "MYO": {
+          "Dice": 0.8537091881712925,
+          "IoU": 0.747453047761059,
+          "precision": 0.8620703722601932,
+          "recall": 0.8555093383536612
+        },
+        "AO": {
+          "Dice": 0.7992014330658707,
+          "IoU": 0.6716746241296071,
+          "precision": 0.8075546489164486,
+          "recall": 0.8124083935322892
+        },
+        "PA": {
+          "Dice": 0.6054922284064216,
+          "IoU": 0.4653790552535272,
+          "precision": 0.6108409017996188,
+          "recall": 0.6513594863017957
+        }
+      },
+      "audit_totals": {
+        "removed_voxels": 0,
+        "removed_correct_GT_voxels": 0,
+        "added_voxels": 322,
+        "added_correct_GT_voxels": 201
+      },
+      "passes_selection_rule": false,
+      "case_macro_deltas": [
+        {
+          "case_id": "ct_1027",
+          "delta": 2.587100006445908e-06
+        },
+        {
+          "case_id": "ct_1028",
+          "delta": 0.0
+        },
+        {
+          "case_id": "ct_1033",
+          "delta": -1.2090955503474277e-07
+        },
+        {
+          "case_id": "ct_1036",
+          "delta": 0.0
+        },
+        {
+          "case_id": "ct_1046",
+          "delta": 6.939104018055531e-07
+        },
+        {
+          "case_id": "ct_1056",
+          "delta": -9.312844284625754e-08
+        },
+        {
+          "case_id": "ct_1079",
+          "delta": 1.1348373574193715e-06
+        },
+        {
+          "case_id": "ct_1099",
+          "delta": 9.184140343343472e-06
+        },
+        {
+          "case_id": "ct_1125",
+          "delta": 0.0
+        },
+        {
+          "case_id": "ct_1127",
+          "delta": 6.05896679495288e-07
+        }
+      ]
+    },
+    "combined": {
+      "mean_macro_Dice": 0.7979403946625725,
+      "mean_paired_delta": 0.00010745134277360125,
+      "cases_improved": 10,
+      "cases_worsened": 0,
+      "cases_unchanged": 0,
+      "class_mean_metrics": {
+        "LV": {
+          "Dice": 0.8722710419795691,
+          "IoU": 0.7781697978061974,
+          "precision": 0.8436928596468023,
+          "recall": 0.9068254939387688
+        },
+        "RV": {
+          "Dice": 0.8185894436771017,
+          "IoU": 0.6995984348580795,
+          "precision": 0.8648236020108697,
+          "recall": 0.7984846161708342
+        },
+        "LA": {
+          "Dice": 0.7897347548822907,
+          "IoU": 0.6635274204119723,
+          "precision": 0.818128382699661,
+          "recall": 0.7991959014716511
+        },
+        "RA": {
+          "Dice": 0.8465039845555685,
+          "IoU": 0.7415249514965391,
+          "precision": 0.8798938023019716,
+          "recall": 0.8277022166438173
+        },
+        "MYO": {
+          "Dice": 0.8537898760711855,
+          "IoU": 0.7475713223033458,
+          "precision": 0.862242345594702,
+          "recall": 0.8554972679435711
+        },
+        "AO": {
+          "Dice": 0.7992014330658707,
+          "IoU": 0.6716746241296071,
+          "precision": 0.8075546489164486,
+          "recall": 0.8124083935322892
+        },
+        "PA": {
+          "Dice": 0.6054922284064216,
+          "IoU": 0.4653790552535272,
+          "precision": 0.6108409017996188,
+          "recall": 0.6513594863017957
+        }
+      },
+      "audit_totals": {
+        "removed_voxels": 26460,
+        "removed_correct_GT_voxels": 5556,
+        "added_voxels": 322,
+        "added_correct_GT_voxels": 201
+      },
+      "passes_selection_rule": true,
+      "case_macro_deltas": [
+        {
+          "case_id": "ct_1027",
+          "delta": 0.00018952662625315586
+        },
+        {
+          "case_id": "ct_1028",
+          "delta": 0.00012064558593571917
+        },
+        {
+          "case_id": "ct_1033",
+          "delta": 3.5642720380479886e-05
+        },
+        {
+          "case_id": "ct_1036",
+          "delta": 0.00019374729597998464
+        },
+        {
+          "case_id": "ct_1046",
+          "delta": 0.00019126849252693034
+        },
+        {
+          "case_id": "ct_1056",
+          "delta": 8.980099814659415e-05
+        },
+        {
+          "case_id": "ct_1079",
+          "delta": 8.515425350086314e-05
+        },
+        {
+          "case_id": "ct_1099",
+          "delta": 3.0328692488645892e-05
+        },
+        {
+          "case_id": "ct_1125",
+          "delta": 2.1461251367593803e-05
+        },
+        {
+          "case_id": "ct_1127",
+          "delta": 0.00011693751115604556
+        }
+      ]
+    }
+  },
+  "local_outputs": "E:\\3d-heart-data\\pediatric_ct_heart\\experiments\\cardiac_chd68_postprocessing_v1_20261010_checked",
+  "local_manifest_SHA256": "2bdf13179d3b9ae5030b6e3a3a9bc31a7de9c6d93aa5ff43581d4600a0b76afd",
+  "manifest_file_count": 82,
+  "saved_masks_verification": {
+    "saved_masks": 30,
+    "prediction_SHA256_verified": true,
+    "shape_affine_integer_labels_verified": true,
+    "AO_PA_voxelwise_unchanged_after_NIfTI_save": true,
+    "test_evaluated": false
+  },
+  "QA": {
+    "partition": "validation",
+    "test_used": false,
+    "cases": [
+      {
+        "case_id": "ct_1099",
+        "role": "Smallest macro delta",
+        "variant": "remove_small",
+        "axial_index": 86,
+        "display_crop": [
+          {
+            "start": 90,
+            "stop": 147
+          },
+          {
+            "start": 309,
+            "stop": 366
+          }
+        ],
+        "delta": 2.114421158594393e-05,
+        "image": "ct_1099_postprocessing_changes.png",
+        "image_SHA256": "1da07d571468ae0a62df9aee01d9379dd648f75a23023329ea02d2b97daf5f82",
+        "GT_used_only_for_metrics_and_QA": true
+      },
+      {
+        "case_id": "ct_1036",
+        "role": "Largest macro delta",
+        "variant": "remove_small",
+        "axial_index": 50,
+        "display_crop": [
+          {
+            "start": 27,
+            "stop": 84
+          },
+          {
+            "start": 165,
+            "stop": 222
+          }
+        ],
+        "delta": 0.00019374729597998464,
+        "image": "ct_1036_postprocessing_changes.png",
+        "image_SHA256": "a036afd72b6c1a34c638c8614e87cb57ef9d2f49426685058a217ba778fa11c4",
+        "GT_used_only_for_metrics_and_QA": true
+      }
+    ]
+  },
+  "tests": {
+    "full_suite_passed": 199,
+    "full_suite_seconds": 30.32,
+    "focused_after_QA_changes_passed": 12,
+    "focused_seconds": 3.37
+  },
+  "limitations": [
+    "Mean gain does not mean every edit is correct; remove_small removed 5556 correct GT voxels.",
+    "AO/PA preserved voxelwise; vessel failures are unchanged.",
+    "Validation-selected candidate, no independent test or clinical validation.",
+    "Public CHD68 age, identity independence and physical scale not independently verified.",
+    "No private NII clinical data used or uploaded."
+  ],
+  "initial_attempt": "Stopped before writing masks because GT>7 ignore policy did not match baseline; diagnostic preserved, fixed execution used a new directory."
+}

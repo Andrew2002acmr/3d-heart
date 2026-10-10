@@ -307,3 +307,25 @@ Age/patient independence/physical scale CHD68 не подтверждены;
 [Итог, ресурсы и ограничения](cardiac_chd68_resolution384_v2.md).
 [Machine summary](../metadata/pediatric/cardiac_chd68_resolution384_results_v2.json).
 Новый full training/test/tuning не запускать автоматически.
+
+
+## Локальная постобработка v1 завершена — 2026-10-10
+
+Frozen validation10, original release grid, baseline best23; no training/test/GPU.
+Config зафиксирован до evaluation, исполнение37ffd01. Три variants сохранены наE.
+remove_small: mean macro Dice0.797832943→0.797938995, Δ+0.000106052
+(+0.010605п.п.),10improved/0worsened, class mean Dice без ухудшений.
+26460voxels удалено, включая5556correctGT; recall отдельных классов снижается.
+fill_small отдельно ухудшил2cases; combined даёт ещё+0.000001399 к mean Dice,
+выбран более простой remove_small как optional research cleanup. AO/PA неизменны;
+крупные ошибки остаются. В просмотрщике автоматическая постобработка не включена.
+
+CPU446.55s;30savedNIfTI SHA/grid/vessel invariance verified; original hashes unchanged.
+All-output local SHA/size manifest наE;199fulltests/12focused passed; reserve80GB.
+First ignore-policy failure preserved, rerun in a new directory after GT>7ignore fix.
+QA ct_1036 полезная очистка / ct_1099 потеря правильной LA, просмотрены.
+Test не использовался; public age/identity/physical scale unconfirmed, no clinical claim.
+Heartbeat PAUSED; Pod не нужен для выполненной локальной проверки.
+[Постобработка: результат, аудит и ограничения](cardiac_chd68_postprocessing_v1.md).
+[Machine summary](../metadata/pediatric/cardiac_chd68_postprocessing_results_v1.json).
+Следующий own3D training не реализован/не запущен автоматически.
