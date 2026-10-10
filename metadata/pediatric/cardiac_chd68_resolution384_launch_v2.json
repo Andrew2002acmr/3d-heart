@@ -1,0 +1,66 @@
+{
+  "version": 2,
+  "client_date": "2026-10-10",
+  "stage": "awaiting_persistent_volume_capacity",
+  "full_training_explicitly_authorized": true,
+  "SSH": {
+    "host": "213.173.109.80",
+    "port": 15827,
+    "user": "root",
+    "identity": "id_ed25519_runpod only; IdentitiesOnly=yes",
+    "authentication": "publickey via existing local agent",
+    "host_ED25519_fingerprint": "SHA256:KWgjJ+QmPHmkpploB+1JZUcuxvpS5iahchO3xR1DP2U",
+    "subsequent_StrictHostKeyChecking": "yes",
+    "private_key_transferred": false
+  },
+  "hardware": {
+    "GPU": "NVIDIA GeForce RTX 4090",
+    "GPU_total_MiB": 24564,
+    "driver": "580.95.05",
+    "torch": "2.8.0+cu128",
+    "CUDA_available": true,
+    "logical_CPUs": 32,
+    "RAM_reported_GiB": 124,
+    "GPU_processes_before_launch": 0
+  },
+  "storage": {
+    "workspace_mount": "mfs#euro-2.runpod.net:9421[/networkvolumes/2n3wohq954]",
+    "filesystem": "fuse",
+    "mountpoint_confirmed": true,
+    "existing_bytes_du": 18412891648,
+    "new_archive_bytes": 7847032263,
+    "new_unpacked_bytes": 11732726492,
+    "reserve_bytes": 10000000000,
+    "required_total_before_additional_environment_results_bytes": 47992650403,
+    "minimum_allocated_capacity_GB": 50,
+    "preferred_capacity_GB": 60,
+    "personal_quota_verified": false,
+    "shared_pool_df_not_personal_capacity": true,
+    "old_data_deleted_or_moved": false
+  },
+  "runtime_plan": {
+    "source_code_commit": "55bf78f",
+    "script": "scripts/runpod_cardiac_resolution_full.sh",
+    "config": "configs/cardiac_chd68_resolution384_v2.json",
+    "config_SHA256": "ebc9add57e812383028cab7e1ab01634d90832ee7430f362df950b93fddc3bfb",
+    "model_initialization": "scratch",
+    "epochs": 30,
+    "evaluation": "both best checkpoints on original-grid validation only",
+    "test_evaluation_allowed": false,
+    "matching_GPU_benchmark_required": true,
+    "execution_commit": null
+  },
+  "checks": {
+    "full_suite_passed": 185,
+    "seconds": 82.4,
+    "existing_warnings": 322,
+    "focused_tests_passed": 17,
+    "bash_full_runner_syntax_passed": true
+  },
+  "bundle_transfer_started": false,
+  "GPU_benchmark_started": false,
+  "full_training_started": false,
+  "background_monitor_started": false,
+  "new_repo_created_on_Pod": false,
+  "new_empty_transfer_directory": "/workspace/incoming/resolution384_20261010"
+}

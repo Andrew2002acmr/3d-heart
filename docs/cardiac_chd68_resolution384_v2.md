@@ -171,3 +171,27 @@ predictions/metrics скачать на E с SHA-проверкой до ост�
 
 Финальная проверка archive: **217/217 payload SHA-256 и gzip CRC passed**.
 Свободно на E после упаковки: **225.06 GB**, резерв80GB соблюдён.
+
+
+## Разрешён новый full run, preflight — 2026-10-10
+
+Пользователь включил Pod и разрешил обучение resolution384. Актуальный endpoint
+213.173.109.80:15827, root, только прежний ключ. Старый port12476 закрывал SSH
+до authentication; port15827 publickey authentication успешно. Для нового endpoint
+host key сохранён, последующие connections strict=yes. Windows ssh-keyscan оказался
+несовместим с предложенным sntrup761 KEX; обычный ssh curve25519 подключился успешно.
+
+RTX4090/torch2.8.0+cu128/CUDA подтверждены; persistent /workspace mount подтверждён.
+Прежние v1 repos/data сохранены. На volume по du занято около18.51GB.
+Новый archive7.847GB + unpack11.733GB +10GBreserve дают минимум48.1GB
+до дополнительного environment/results. Для сохранения старых данных нужен volume
+минимум50GB, лучше60GB. df общего FUSE pool не показывает личную quota.
+Вопрос о выделенном размере отправлен пользователю; mass transfer/GPU benchmark/
+full training до подтверждения capacity не запускались. Данные не удалялись.
+
+Готов scripts/runpod_cardiac_resolution_full.sh: pinned commit, exclusive lock,
+refusal of reused prefix/output, train30scratch, v1/v2 original-grid validation,
+paired metrics, SHA export. Test не оценивается. Comparator проверяет одинаковые
+split/cohort/cases/GT voxel counts и original grid. 185 tests passed;17focused passed;
+bash -n passed. Actual execution commit будет зафиксирован при benchmark/launch;
+не обновлять checkout между ними. [Preflight/launch metadata](../metadata/pediatric/cardiac_chd68_resolution384_launch_v2.json).
