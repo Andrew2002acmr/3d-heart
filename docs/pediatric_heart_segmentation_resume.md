@@ -270,8 +270,8 @@ host key сохранён, последующие connections strict=yes. Window
 несовместим с предложенным sntrup761 KEX; обычный ssh curve25519 подключился успешно.
 
 RTX4090/torch2.8.0+cu128/CUDA подтверждены; persistent /workspace mount подтверждён.
-Прежние v1 repos/data сохранены. На volume по du занято около18.51GB.
-Новый archive7.847GB + unpack11.733GB +10GBreserve дают минимум48.1GB
+Прежние v1 repos/data сохранены. На volume по du занято около18.41GB.
+Новый archive7.847GB + unpack11.733GB +10GBreserve дают минимум48.0GB
 до дополнительного environment/results. Для сохранения старых данных нужен volume
 минимум50GB, лучше60GB. df общего FUSE pool не показывает личную quota.
 Вопрос о выделенном размере отправлен пользователю; mass transfer/GPU benchmark/
