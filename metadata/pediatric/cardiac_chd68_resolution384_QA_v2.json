@@ -1,0 +1,120 @@
+{
+  "partition": "validation",
+  "test_used": false,
+  "cases": [
+    {
+      "case_id": "ct_1036",
+      "role": "Best v2 validation",
+      "image": "ct_1036_paired_validation.png",
+      "baseline_Dice": 0.8796860142616459,
+      "variant_Dice": 0.8844732739551445,
+      "sampling": [
+        {
+          "plane": "Axial20%",
+          "axis": 2,
+          "index": 35
+        },
+        {
+          "plane": "Axial50%",
+          "axis": 2,
+          "index": 87
+        },
+        {
+          "plane": "Axial80%",
+          "axis": 2,
+          "index": 139
+        },
+        {
+          "plane": "Coronal",
+          "axis": 1,
+          "index": 252
+        },
+        {
+          "plane": "Sagittal",
+          "axis": 0,
+          "index": 235
+        }
+      ],
+      "image_SHA256": "ddfe4ffd7af5bb7a1df051691e667c919732bd3c6ba12971d5393a2a57649129"
+    },
+    {
+      "case_id": "ct_1079",
+      "role": "Middle rank v2 validation",
+      "image": "ct_1079_paired_validation.png",
+      "baseline_Dice": 0.7901304400925167,
+      "variant_Dice": 0.8000518797203312,
+      "sampling": [
+        {
+          "plane": "Axial20%",
+          "axis": 2,
+          "index": 74
+        },
+        {
+          "plane": "Axial50%",
+          "axis": 2,
+          "index": 146
+        },
+        {
+          "plane": "Axial80%",
+          "axis": 2,
+          "index": 218
+        },
+        {
+          "plane": "Coronal",
+          "axis": 1,
+          "index": 184
+        },
+        {
+          "plane": "Sagittal",
+          "axis": 0,
+          "index": 254
+        }
+      ],
+      "image_SHA256": "a7bdf27f1ce8c66d504ee501f939effabe58b54046d342c574ce328fad7a30c1"
+    },
+    {
+      "case_id": "ct_1027",
+      "role": "Worst v2 validation",
+      "image": "ct_1027_paired_validation.png",
+      "baseline_Dice": 0.6498062480704307,
+      "variant_Dice": 0.651303138306134,
+      "sampling": [
+        {
+          "plane": "Axial20%",
+          "axis": 2,
+          "index": 97
+        },
+        {
+          "plane": "Axial50%",
+          "axis": 2,
+          "index": 154
+        },
+        {
+          "plane": "Axial80%",
+          "axis": 2,
+          "index": 210
+        },
+        {
+          "plane": "Coronal",
+          "axis": 1,
+          "index": 231
+        },
+        {
+          "plane": "Sagittal",
+          "axis": 0,
+          "index": 256
+        }
+      ],
+      "image_SHA256": "119cd6a3aa4b7f7679fdb890b4837e0b98d50908ac7685623f0edf06a05cd1fb"
+    }
+  ],
+  "baseline_metrics_SHA256": "ae8ac16e8b6b13c96cf0173d528426d9cbfcb62b77e90124f3b3ec96efeab3ed",
+  "variant_metrics_SHA256": "462840f18ebf9d32af5247ece1677788b0477dfe019d760b523ca55ce077aec7",
+  "images_visually_inspected": true,
+  "images_stored_outside_Git": true,
+  "visual_observations": {
+    "ct_1036": "Good sampled central overlap; residual boundary errors and false AO label at peripheral axial80% region.",
+    "ct_1079": "Overall localization retained; internal mislabeled fragments and uneven chamber boundaries persist.",
+    "ct_1027": "Large chamber label confusion and slice-to-slice jagged boundaries visible in coronal/sagittal panels in both variants."
+  }
+}

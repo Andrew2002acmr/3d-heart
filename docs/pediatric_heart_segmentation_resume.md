@@ -289,3 +289,21 @@ bash -n passed. Actual execution commit будет зафиксирован пр
 Volume увеличен пользователем до120GB. SCP передаёт verified7.847GB public train/validation bundle. Remote cleanfeature checkout `/workspace/3d-heart-resolution384-v2` pinned948c4bb70da7c9f494e7dbfe84bcf09c8446271b. Preparation PID9540 ждёт завершения передачи, затем SHA/unpack/verify/GPU benchmark; full30epochs разрешены после sanity. Временная heartbeat обновлена на новый port15827 и разрешена пользователем; testsealed. Prefix `/workspace/exports/cardiac_chd68_resolution384_v2_20261010`; читать `_preparation_status.json` до full runner и `_status.json` после него. Не дублировать работающие процессы.
 
 Fullresolution384 runner started04:48:22UTC, PID9970; trainPID10077, state training. Actualbenchmark0.34384s/batch, estimated30train epochs2h13m excludingvalidation/save, technicalsanitypassed. 217payloadSHA verified; benchmark backed up onEwithSHA. No newtest evaluation. See resolution384 report and launchmetadata for exactrun/prefix/pin. Monitoractive, disableonlyafter verifiedresults/report.
+
+## Resolution384 v2 завершён и сохранён — 2026-10-10
+
+30epochs scratch, commit948c4bb, best epoch10; trainer9194.41s (2h33m14s).
+Paired original-grid validation10: v1 macroDice0.797833 → v2 0.795231,
+Δ−0.002602;4cases improved/6worsened. PA0.6055→0.6340, остальные6meanDice ниже.
+V2 не заменяет v1. Ct_1099 PA0.2398; ct_1125 PA recall0.2285;
+ct_1056 macro0.7735→0.7370. Test v2 не оценивался, split/config не менялись.
+
+64/64results SHA проверены и safe unpack на E, best/last дополнительно verified.
+Backup remote_runs/cardiac_chd68_resolution384_v2_20261010/artifacts;
+QA одинаковых CT/GT/v1/v2 slices в visual_QA: ct_1036/ct_1079/ct_1027.
+GPU-процесс завершён; Pod можно остановить. НИИ CT не отправлялись.
+Age/patient independence/physical scale CHD68 не подтверждены;
+это exploratory validation, не neonatal/clinical accuracy.
+[Итог, ресурсы и ограничения](cardiac_chd68_resolution384_v2.md).
+[Machine summary](../metadata/pediatric/cardiac_chd68_resolution384_results_v2.json).
+Новый full training/test/tuning не запускать автоматически.
