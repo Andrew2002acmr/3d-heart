@@ -1,0 +1,44 @@
+import {test,expect} from '@playwright/test';
+import {installLocalNetworkGuard} from '../scripts/local-network-guard.mjs';
+
+test('physical camera shortcuts and isolation hide masks and contour handles without editing data',async({page,context})=>{
+  await installLocalNetworkGuard(context,'http://127.0.0.1:5174');
+  const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));
+  await page.goto('/');await page.getByLabel('Логин',{exact:true}).fill('navigation-resident');await page.getByLabel('Пароль',{exact:true}).fill(process.env.HEART3D_E2E_PASSWORD!);await page.getByRole('button',{name:'Войти в рабочее пространство'}).click();
+  await page.getByRole('button',{name:'Открыть разметку'}).click();await expect(page.getByText('● Геометрия проверена')).toBeVisible({timeout:45000});
+  const project=(await (await page.request.get('/api/projects')).json())[0],id=project.id;
+  const v2=project.predictions.find((p:any)=>p.provenance.variant==='v2');
+  await page.getByLabel('Показать маску').selectOption(v2.id);await page.getByRole('button',{name:'Взять v2 за основу'}).click();
+  const trace=async()=>{const response=page.waitForResponse(r=>r.url().endsWith(`/api/projects/${id}/trace-contours`)&&r.request().method()==='POST',{timeout:45000});await page.getByRole('button',{name:'Контур маски на срезе'}).click();expect((await response).ok()).toBe(true);};
+  await trace();await expect(page.getByTestId('contour-count')).toHaveText('1');
+  await page.locator('.label-choice').filter({hasText:'RV'}).click();await trace();await expect(page.getByTestId('contour-count')).toHaveText('2');
+  await expect.poll(async()=> (await (await page.request.get('/api/projects/'+id)).json()).document.contours.length,{timeout:15000}).toBe(2);
+  await expect(page.getByTestId('save-status')).toContainText('Сохранено',{timeout:15000});
+  const before=await (await page.request.get('/api/projects/'+id)).json();
+  const mask=await (await page.request.get(`/api/projects/${id}/mask`)).body();
+  const camera=()=>page.evaluate(async()=>{const c=await import('/node_modules/.vite/deps/@cornerstonejs_core.js');const v=c.getRenderingEngines()[0].getViewports()[0];const a=v.getCamera();return {focal:a.focalPoint,scale:a.parallelScale};});
+  const canvas=page.getByTestId('viewport-0'),box=(await canvas.boundingBox())!;
+  const x=box.x+box.width*.5,y=box.y+box.height*.5;
+  await page.mouse.move(x,y);await page.keyboard.press('KeyV');await page.keyboard.down('Space');
+  await expect(page.getByRole('button',{name:'Сдвиг',exact:true})).toHaveAttribute('aria-pressed','true');
+  const c0=await camera();await page.mouse.down();await page.mouse.move(x+30,y+15,{steps:8});await page.mouse.up();await page.keyboard.up('Space');
+  await expect(page.getByRole('button',{name:'Контур',exact:true})).toHaveAttribute('aria-pressed','true');
+  expect((await camera()).focal).not.toEqual(c0.focal);
+  await page.keyboard.press('KeyZ');await expect(page.getByRole('button',{name:'Масштаб',exact:true})).toHaveAttribute('aria-pressed','true');
+  const c1=await camera();await page.mouse.move(x,y);await page.mouse.down();await page.mouse.move(x,y+45,{steps:8});await page.mouse.up();expect((await camera()).scale).not.toBe(c1.scale);
+  await page.keyboard.press('KeyH');await expect(page.getByRole('button',{name:'Сдвиг',exact:true})).toHaveAttribute('aria-pressed','true');
+  await page.keyboard.press('KeyV');await page.getByLabel('Ширина окна',{exact:true}).focus();await page.keyboard.press('KeyH');await expect(page.getByRole('button',{name:'Контур',exact:true})).toHaveAttribute('aria-pressed','true');
+  await page.locator('.label-choice').filter({hasText:'LV'}).click();await page.mouse.move(x,y);await page.keyboard.press('KeyI');
+  await expect(page.getByRole('button',{name:'Только выбранная',exact:true})).toHaveAttribute('aria-pressed','true');
+  await expect(page.getByLabel('Видимость LV',{exact:true})).toHaveAttribute('aria-pressed','true');await expect(page.getByLabel('Видимость RV',{exact:true})).toHaveAttribute('aria-pressed','false');
+  const visible=()=>page.evaluate(async(contours:any[])=>{const url=performance.getEntriesByType('resource').map(r=>r.name).find(n=>n.includes('/@cornerstonejs_tools.js?v='));if(!url)throw Error('Application tools module missing');const t=await import(url);return contours.filter(c=>t.annotation.visibility.isAnnotationVisible(c.id)).map(c=>c.label);},before.document.contours);
+  await expect.poll(visible).toEqual([1]);
+  await page.locator('.label-choice').filter({hasText:'RV'}).click();await expect.poll(visible).toEqual([2]);
+  // Rebuild native annotations by switching away and back; hidden contours stay hidden.
+  await page.getByLabel('Показать маску').selectOption('ct');await expect.poll(visible).toEqual([]);
+  await page.getByLabel('Показать маску').selectOption('draft');await expect.poll(visible).toEqual([2]);
+  await page.getByRole('button',{name:'Показать все',exact:true}).click();await expect.poll(visible).toEqual([1,2]);
+  await page.getByLabel('Видимость LV',{exact:true}).click();await expect.poll(visible).toEqual([2]);
+  const after=await (await page.request.get('/api/projects/'+id)).json();expect(after.document).toEqual(before.document);expect(after.version_id).toBe(before.version_id);
+  expect((await (await page.request.get(`/api/projects/${id}/mask`)).body()).equals(mask)).toBe(true);expect(errors).toEqual([]);
+});

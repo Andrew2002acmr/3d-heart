@@ -1,0 +1,21 @@
+import {sliceScope,type Project} from './api';
+export function PredictionControls({project,comparison,locked,ready,canAdopt,select,adopt,prepare,trace,flag,focusFlag,show3D}:{
+  project:Project,comparison:string,locked:boolean,ready:boolean,canAdopt:boolean,select:(value:string)=>void,adopt:(boundaries?:boolean)=>void,
+  prepare:()=>void,trace:()=>void,flag:()=>void,focusFlag:(axis:number,index:number)=>void,show3D:()=>void}){
+  if(!project.predictions?.length&&!project.annotation_scope)return null;
+  const current=project.predictions.find(p=>p.id===comparison);
+  const scope=sliceScope(project,comparison);
+  const draftScope=sliceScope(project,'draft');
+  const source=current||(comparison==='draft'?project.predictions.find(p=>p.id===project.document.base_prediction_id):undefined);
+  const warning=source?.provenance.warning;
+  const anatomy=source?.source==='AI anatomy slice draft'||source?.provenance.variant==='anatomy_slice_draft';
+  return <section className="prediction-bar"><div><strong>Исследовательский режим</strong><small>{anatomy?'Анатомический AI-черновик · требуется проверка врачом':'Интенсивности CHD68 не подтверждены как HU · экспертная GT отсутствует'}</small></div>
+    <label>Показать <select aria-label="Показать маску" value={comparison} disabled={!ready} onChange={e=>select(e.target.value)}><option value="ct">Только CT</option>{project.predictions.map(p=><option key={p.id} value={p.id}>{p.provenance.scope?`${p.provenance.variant==='anatomy_slice_draft'?'Анатомический AI-черновик':'AI-черновик'} · срез ${p.provenance.scope.index+1}`:`Prediction ${p.provenance.variant} · AI`}</option>)}<option value="draft">{draftScope?'Черновик для проверки':'Человеческий черновик'}</option></select></label>
+    {current&&canAdopt&&<><button disabled={!ready||project.status==='approved'||project.status==='submitted'} onClick={()=>adopt(false)}>{scope?'Взять черновик за основу':`Взять ${current.provenance.variant} за основу`}</button>{scope&&<button className="primary" disabled={!ready||project.status==='approved'||project.status==='submitted'} onClick={()=>adopt(true)}>Редактировать границы</button>}</>}
+    {!current&&comparison==='draft'&&<>{scope&&!project.document.contours.length&&<button className="primary" disabled={!ready||locked} onClick={prepare}>Редактировать границы</button>}<button disabled={!ready||locked} onClick={trace}>Контур маски на срезе</button><button disabled={!ready||locked} onClick={flag}>⚑ Подозрительный срез</button></>}
+    <button disabled={!ready||comparison==='ct'||(comparison==='draft'&&!project.version_id)||!!scope} title={scope?'Черновик содержит только один срез и не задаёт объёмную разметку':undefined} onClick={show3D}>3D-реконструкция</button>
+    {current&&<span className="ai-warning">AI · не утверждено{current.provenance.absent_classes?.length?` · ${anatomy?'не размечены':'в маске отсутствуют'}: ${current.provenance.absent_classes.join(', ')}`:''}</span>}
+    {scope&&<div className="slice-scope" role="status"><strong>{comparison==='draft'?(anatomy?'Черновик для проверки на основе анатомического AI-разбора':'Черновик для проверки на основе AI'):(anatomy?'Анатомический AI-черновик':'AI-черновик')} · исходный аксиальный срез {scope.index+1}</strong><span>только один срез; не экспертная GT</span><small>Редактирование: только исходный аксиальный срез {scope.index+1}. Остальные MPR — для контекста. 3D недоступно: один срез не задаёт объёмную разметку.</small>{anatomy&&source?.provenance.notebook_version_id&&<small>Связан с журналом анатомического разбора.{source.provenance.observer_sources?.includes('cloud_model')?' Визуальные наблюдения: облачная модель.':''}</small>}{warning&&<small>{warning}</small>}{source?.provenance.method&&<small>Метод: {source.provenance.method}</small>}{!!source?.provenance.review_required_classes?.length&&<small>Требуют проверки: {source.provenance.review_required_classes.join(', ')}. Наличие всех классов не подтверждено.</small>}</div>}
+    {!!project.document.flags?.length&&<div className="flags">{project.document.flags.map(f=><button key={f.id} onClick={()=>focusFlag(f.axis,f.slice)}>⚑ {project.labels.find(l=>l.id===f.label)?.code} · {['SAG','COR','AX'][f.axis]} {f.slice+1}</button>)}</div>}
+  </section>;
+}

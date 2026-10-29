@@ -1,0 +1,34 @@
+{
+  "id": "single_slice_assist_v1",
+  "purpose": "unapproved local one-plane research draft for physician validation",
+  "selection": {
+    "axial_fraction_range": [0.4, 0.6],
+    "interior_agreement_component_min_area_mm2": 25.0,
+    "ranking": "maximum number of labels with an interior v1/v2 agreement component meeting area; nearest middle; lower index tie",
+    "anatomical_presence_verified": false
+  },
+  "ensemble": "equal arithmetic mean of original-grid v1/v2 softmax probabilities",
+  "refinement": {
+    "method": "checkerboard ICM of fixed 4-neighbour HU-edge-weighted Potts energy",
+    "pairwise_weight": 0.35,
+    "HU_edge_sigma": 40.0,
+    "checkerboard_sweeps": 5,
+    "freeze_agreement_probability": 0.90,
+    "minimum_candidate_probability": 0.05,
+    "force_normal_connections": false,
+    "force_class_presence": false,
+    "fill_holes": false,
+    "remove_components": false
+  },
+  "review_flags": {
+    "probability_below": 0.75,
+    "margin_below": 0.25,
+    "model_disagreement": true,
+    "probabilities_are_calibrated": false
+  },
+  "clinical_validity_claimed": false,
+  "visual_expert_review_performed": false,
+  "parameter_selection": "fixed before viewing the refined mask; no GT or appearance-based tuning",
+  "intensity_adapter": "existing admitted HU+1024 exploratory adapter; unchanged frozen model preprocessing",
+  "scope": "only the selected original axial slice; every other plane is unannotated"
+}

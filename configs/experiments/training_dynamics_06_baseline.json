@@ -1,0 +1,117 @@
+{
+  "version": 1,
+  "experiment_scope": "public CHD68 release multiclass scratch pilot; not an age-verified pediatric cohort",
+  "data_root": "outputs/training_dynamics_06",
+  "reserve_GB": 10,
+  "cohort": "metadata/pediatric/cardiac_chd68_cohort_v1.json",
+  "split": "configs/splits/cardiac_chd68_v1.json",
+  "preprocessing": "configs/cardiac_chd68_preprocessing_v1.json",
+  "cache_relative_path": "prepared256",
+  "outputs_relative_path": "runs",
+  "checkpoint_relative_path": "runs",
+  "input_size": 256,
+  "model": {
+    "input_channels": 5,
+    "encoder_channels": [
+      16,
+      32,
+      64,
+      128
+    ],
+    "norm_groups": 8,
+    "output_channels": 8
+  },
+  "batch_size": 16,
+  "cpu_threads": 1,
+  "num_workers": 0,
+  "seed": 20261009,
+  "epochs": 30,
+  "learning_rate": 0.001,
+  "optimizer": "Adam",
+  "scheduler": "none_fixed_learning_rate",
+  "loss": {
+    "variant": "ce_dice",
+    "ignore_index": 255
+  },
+  "augmentation": {
+    "rotation_degrees": 5.0,
+    "scale_delta": 0.05,
+    "intensity_shift": 0.03,
+    "noise_std": 0.01,
+    "flips": false
+  },
+  "sampling": "all_foreground_slices_plus_at_most_equal_background_per_case",
+  "precision": "FP32",
+  "benchmark_warmup_batches": 5,
+  "sanity_batches": 20,
+  "full_training_authorized": true,
+  "external_NII_in_training": false,
+  "HD95_ASSD_mm_enabled": false,
+  "allowed_partitions": [
+    "train",
+    "validation"
+  ],
+  "stage06": {
+    "epoch_steps": 774,
+    "full_steps": 23220,
+    "control_steps": [
+      480,
+      3840,
+      7740,
+      15480,
+      23220
+    ],
+    "seeds": [
+      20261009,
+      20261010,
+      20261011
+    ],
+    "subset_seed": 20261029,
+    "subset_sizes": [
+      8,
+      16,
+      24,
+      32,
+      48
+    ],
+    "train_monitor": [
+      "ct_1030",
+      "ct_1040",
+      "ct_1007",
+      "ct_1066",
+      "ct_1021",
+      "ct_1111",
+      "ct_1037",
+      "ct_1089"
+    ],
+    "ablation_steps": 7740,
+    "learning_curve_steps": 7740,
+    "sampling_variants": [
+      "historical",
+      "ROI05_pool",
+      "equal_case",
+      "foreground_boost"
+    ],
+    "foreground_boost_rule": "equal cases; halve each case eligible background probability relative to equal_case; not an assumed70% target",
+    "loss_variants": [
+      "ce",
+      "ce_dice",
+      "weighted_ce_dice",
+      "focal_dice"
+    ],
+    "focal_gamma": 2.0,
+    "reproduction_tolerance_native_mean_Dice": 0.03,
+    "reference_native_development_Dice": 0.7978329276179655,
+    "selection": "historical max prepared-grid development case Dice; fixed-control checkpoints also reported",
+    "no_early_stopping": true,
+    "paid_infrastructure_started": false,
+    "execution_gate": "one full historical-budget baseline must finish and be inspected before additional training jobs",
+    "execution_differences": [
+      "RTX2060 instead of RTX4090",
+      "Python/Torch/CUDA versions differ",
+      "CPU threads1 instead of6 for bounded local execution; arithmetic/parity tested",
+      "cache preparation restricted to58 train/development cases; test sealed"
+    ],
+    "preserve_original_sampling_loss_and_FP32": true
+  }
+}

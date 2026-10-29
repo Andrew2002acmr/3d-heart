@@ -1,0 +1,6 @@
+# Local annotation service; core imaging dependencies remain in requirements-lock.txt.
+fastapi>=0.120,<1
+uvicorn>=0.38,<1
+sqlalchemy>=2.0,<3
+argon2-cffi>=25,<26
+httpx>=0.28,<1

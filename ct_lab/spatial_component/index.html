@@ -1,0 +1,30 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+body{margin:0;font:13px system-ui;color:#253047}.planes{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}canvas{width:100%;background:#111;cursor:crosshair}b{display:block;margin-bottom:6px}.note{color:#667085;font-size:12px;margin-top:6px}
+</style></head><body><div class="planes" id="planes"></div><div class="note" id="position"></div><script>
+const send=(type,data={})=>parent.postMessage({isStreamlitMessage:true,type,...data},'*');
+let args;
+function render(a){args=a;const root=document.getElementById('planes');root.innerHTML='';
+document.getElementById('position').textContent='Source XYZ: '+a.xyz.join(', ')+' · click any plane · filled = in-plane, rings = projection from other slices';
+document.body.dataset.xyz=a.xyz.join(',');
+for(const p of a.planes){const box=document.createElement('div'),label=document.createElement('b'),canvas=document.createElement('canvas');
+label.textContent=p.name;canvas.width=p.width;canvas.height=p.height;canvas.dataset.plane=p.name;canvas.dataset.axes=p.axes.join(',');canvas.setAttribute('aria-label',p.name+' source voxel picker');canvas.style.aspectRatio=(p.width*p.spacing[0])+'/'+(p.height*p.spacing[1]);
+box.append(label,canvas);root.append(box);const image=new Image();image.onload=()=>{const c=canvas.getContext('2d');c.drawImage(image,0,0);
+document.body.dataset.boxCount=(a.boxes||[]).length;
+for(const item of a.boxes||[]){const lo=item.bbox[0],hi=item.bbox[1],inside=a.xyz[p.axes[2]]>=lo[p.axes[2]]&&a.xyz[p.axes[2]]<hi[p.axes[2]];
+c.save();c.strokeStyle=item.color||'#00ff9d';c.fillStyle=item.color||'#00ff9d';c.globalAlpha=inside?1:.35;c.lineWidth=1.5;c.setLineDash(inside?[]:[5,4]);
+const x=lo[p.axes[0]],y=p.height-hi[p.axes[1]],w=hi[p.axes[0]]-x,h=hi[p.axes[1]]-lo[p.axes[1]];
+c.strokeRect(x,y,w,h);c.font='11px system-ui';c.fillText(item.name||'ROI',x+3,y+12);c.restore();}
+const u=a.xyz[p.axes[0]]+.5,v=p.height-a.xyz[p.axes[1]]-.5;c.strokeStyle='#00e5ff';c.lineWidth=1;
+c.beginPath();c.moveTo(u,0);c.lineTo(u,p.height);c.moveTo(0,v);c.lineTo(p.width,v);c.stroke();
+for(const item of a.diagnostics||[]){const point=item.xyz,inside=point[p.axes[2]]===a.xyz[p.axes[2]];
+if(!inside)continue;c.fillStyle=item.color;c.beginPath();c.arc(point[p.axes[0]]+.5,p.height-point[p.axes[1]]-.5,1.6,0,2*Math.PI);c.fill();}
+for(const point of a.selected){const x=point[p.axes[0]]+.5,y=p.height-point[p.axes[1]]-.5;const inside=point[p.axes[2]]===a.xyz[p.axes[2]];
+c.strokeStyle=inside?'#fff000':'rgba(255,230,0,.4)';c.fillStyle='#fff000';c.beginPath();c.arc(x,y,inside?2:1.8,0,2*Math.PI);inside?c.fill():c.stroke();}
+canvas.dataset.ready='true';send('streamlit:setFrameHeight',{height:Math.ceil(root.getBoundingClientRect().height+document.getElementById('position').getBoundingClientRect().height+14)});};image.src=p.source;
+canvas.onclick=e=>{const rect=canvas.getBoundingClientRect(),point=a.xyz.slice();
+point[p.axes[0]]=Math.max(0,Math.min(p.width-1,Math.floor((e.clientX-rect.left)/rect.width*p.width)));
+point[p.axes[1]]=Math.max(0,Math.min(p.height-1,p.height-1-Math.floor((e.clientY-rect.top)/rect.height*p.height)));
+send('streamlit:setComponentValue',{value:{xyz:point,nonce:Date.now()},dataType:'json'});};}}
+window.addEventListener('message',e=>{if(e.data.type==='streamlit:render'){document.body.dataset.selectedCount=e.data.args.selected.length;render(e.data.args);}});
+send('streamlit:componentReady',{apiVersion:1});send('streamlit:setFrameHeight',{height:320});
+</script></body></html>

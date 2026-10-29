@@ -1,0 +1,323 @@
+{
+  "execution": "manual existing RTX4090 only; no infrastructure provisioning",
+  "jobs": [
+    {
+      "group": "baseline",
+      "seed": 20261009,
+      "n": 48,
+      "steps": 23220,
+      "sampling": "historical",
+      "loss_name": "ce_dice",
+      "family": "baseline"
+    },
+    {
+      "group": "baseline",
+      "seed": 20261010,
+      "n": 48,
+      "steps": 23220,
+      "sampling": "historical",
+      "loss_name": "ce_dice",
+      "family": "baseline"
+    },
+    {
+      "group": "baseline",
+      "seed": 20261011,
+      "n": 48,
+      "steps": 23220,
+      "sampling": "historical",
+      "loss_name": "ce_dice",
+      "family": "baseline"
+    },
+    {
+      "group": "sampling",
+      "seed": 20261009,
+      "n": 48,
+      "steps": 7740,
+      "sampling": "ROI05_pool",
+      "loss_name": "ce_dice",
+      "family": "sampling"
+    },
+    {
+      "group": "sampling",
+      "seed": 20261009,
+      "n": 48,
+      "steps": 7740,
+      "sampling": "equal_case",
+      "loss_name": "ce_dice",
+      "family": "sampling"
+    },
+    {
+      "group": "sampling",
+      "seed": 20261009,
+      "n": 48,
+      "steps": 7740,
+      "sampling": "foreground_boost",
+      "loss_name": "ce_dice",
+      "family": "sampling"
+    },
+    {
+      "group": "sampling",
+      "seed": 20261010,
+      "n": 48,
+      "steps": 7740,
+      "sampling": "ROI05_pool",
+      "loss_name": "ce_dice",
+      "family": "sampling"
+    },
+    {
+      "group": "sampling",
+      "seed": 20261010,
+      "n": 48,
+      "steps": 7740,
+      "sampling": "equal_case",
+      "loss_name": "ce_dice",
+      "family": "sampling"
+    },
+    {
+      "group": "sampling",
+      "seed": 20261010,
+      "n": 48,
+      "steps": 7740,
+      "sampling": "foreground_boost",
+      "loss_name": "ce_dice",
+      "family": "sampling"
+    },
+    {
+      "group": "sampling",
+      "seed": 20261011,
+      "n": 48,
+      "steps": 7740,
+      "sampling": "ROI05_pool",
+      "loss_name": "ce_dice",
+      "family": "sampling"
+    },
+    {
+      "group": "sampling",
+      "seed": 20261011,
+      "n": 48,
+      "steps": 7740,
+      "sampling": "equal_case",
+      "loss_name": "ce_dice",
+      "family": "sampling"
+    },
+    {
+      "group": "sampling",
+      "seed": 20261011,
+      "n": 48,
+      "steps": 7740,
+      "sampling": "foreground_boost",
+      "loss_name": "ce_dice",
+      "family": "sampling"
+    },
+    {
+      "group": "data",
+      "seed": 20261009,
+      "n": 8,
+      "steps": 7740,
+      "sampling": "historical",
+      "loss_name": "ce_dice",
+      "family": "data"
+    },
+    {
+      "group": "data",
+      "seed": 20261009,
+      "n": 16,
+      "steps": 7740,
+      "sampling": "historical",
+      "loss_name": "ce_dice",
+      "family": "data"
+    },
+    {
+      "group": "data",
+      "seed": 20261009,
+      "n": 24,
+      "steps": 7740,
+      "sampling": "historical",
+      "loss_name": "ce_dice",
+      "family": "data"
+    },
+    {
+      "group": "data",
+      "seed": 20261009,
+      "n": 32,
+      "steps": 7740,
+      "sampling": "historical",
+      "loss_name": "ce_dice",
+      "family": "data"
+    },
+    {
+      "group": "data",
+      "seed": 20261010,
+      "n": 8,
+      "steps": 7740,
+      "sampling": "historical",
+      "loss_name": "ce_dice",
+      "family": "data"
+    },
+    {
+      "group": "data",
+      "seed": 20261010,
+      "n": 16,
+      "steps": 7740,
+      "sampling": "historical",
+      "loss_name": "ce_dice",
+      "family": "data"
+    },
+    {
+      "group": "data",
+      "seed": 20261010,
+      "n": 24,
+      "steps": 7740,
+      "sampling": "historical",
+      "loss_name": "ce_dice",
+      "family": "data"
+    },
+    {
+      "group": "data",
+      "seed": 20261010,
+      "n": 32,
+      "steps": 7740,
+      "sampling": "historical",
+      "loss_name": "ce_dice",
+      "family": "data"
+    },
+    {
+      "group": "data",
+      "seed": 20261011,
+      "n": 8,
+      "steps": 7740,
+      "sampling": "historical",
+      "loss_name": "ce_dice",
+      "family": "data"
+    },
+    {
+      "group": "data",
+      "seed": 20261011,
+      "n": 16,
+      "steps": 7740,
+      "sampling": "historical",
+      "loss_name": "ce_dice",
+      "family": "data"
+    },
+    {
+      "group": "data",
+      "seed": 20261011,
+      "n": 24,
+      "steps": 7740,
+      "sampling": "historical",
+      "loss_name": "ce_dice",
+      "family": "data"
+    },
+    {
+      "group": "data",
+      "seed": 20261011,
+      "n": 32,
+      "steps": 7740,
+      "sampling": "historical",
+      "loss_name": "ce_dice",
+      "family": "data"
+    },
+    {
+      "group": "losses",
+      "seed": 20261009,
+      "n": 48,
+      "steps": 7740,
+      "sampling": "historical",
+      "loss_name": "ce",
+      "family": "loss"
+    },
+    {
+      "group": "losses",
+      "seed": 20261009,
+      "n": 48,
+      "steps": 7740,
+      "sampling": "historical",
+      "loss_name": "focal_dice",
+      "family": "loss"
+    },
+    {
+      "group": "losses",
+      "seed": 20261009,
+      "n": 48,
+      "steps": 7740,
+      "sampling": "historical",
+      "loss_name": "weighted_ce_dice",
+      "family": "loss"
+    },
+    {
+      "group": "losses",
+      "seed": 20261010,
+      "n": 48,
+      "steps": 7740,
+      "sampling": "historical",
+      "loss_name": "ce",
+      "family": "loss"
+    },
+    {
+      "group": "losses",
+      "seed": 20261010,
+      "n": 48,
+      "steps": 7740,
+      "sampling": "historical",
+      "loss_name": "focal_dice",
+      "family": "loss"
+    },
+    {
+      "group": "losses",
+      "seed": 20261010,
+      "n": 48,
+      "steps": 7740,
+      "sampling": "historical",
+      "loss_name": "weighted_ce_dice",
+      "family": "loss"
+    },
+    {
+      "group": "losses",
+      "seed": 20261011,
+      "n": 48,
+      "steps": 7740,
+      "sampling": "historical",
+      "loss_name": "ce",
+      "family": "loss"
+    },
+    {
+      "group": "losses",
+      "seed": 20261011,
+      "n": 48,
+      "steps": 7740,
+      "sampling": "historical",
+      "loss_name": "focal_dice",
+      "family": "loss"
+    },
+    {
+      "group": "losses",
+      "seed": 20261011,
+      "n": 48,
+      "steps": 7740,
+      "sampling": "historical",
+      "loss_name": "weighted_ce_dice",
+      "family": "loss"
+    }
+  ],
+  "total_optimizer_steps": 301860,
+  "priority": [
+    "baseline",
+    "sampling",
+    "baseline additional seeds",
+    "data",
+    "losses"
+  ],
+  "three_initialization_seeds_per_main_configuration": true,
+  "same_nested_composition_seed": 20261029,
+  "subset_sizes": [
+    8,
+    16,
+    24,
+    32,
+    48
+  ],
+  "reused_prefixes": "historical sampler/CE+Dice/N48 at7740 uses each full baseline step007740; no duplicate training",
+  "ablation_selection": "fixed last7740 for sampling/loss/data to avoid unequal validation checkpoint-selection opportunities",
+  "baseline_selection": "historical max prepared development Dice at epoch ends; native reported separately",
+  "local_policy": "user limited local work to one full baseline; every other training job is manual RunPod pending"
+}

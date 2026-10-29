@@ -1,0 +1,37 @@
+import {test,expect} from '@playwright/test';
+import {installLocalNetworkGuard} from '../scripts/local-network-guard.mjs';
+import {readMPRStats} from '../scripts/render-stats.mjs';
+
+test('one-slice proposal focuses source index, preserves scope through adoption and prevents out-of-plane edits',async({page,context})=>{
+  const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));
+  await installLocalNetworkGuard(context,'http://127.0.0.1:5174');
+  await page.goto('/');await page.getByLabel('Логин',{exact:true}).fill('slice-resident');await page.getByLabel('Пароль',{exact:true}).fill(process.env.HEART3D_E2E_PASSWORD!);await page.getByRole('button',{name:'Войти в рабочее пространство'}).click();
+  await page.getByRole('button',{name:'Открыть разметку'}).click();await expect(page.getByText('● Геометрия проверена')).toBeVisible({timeout:45000});
+  await expect(page.locator('.slice-scope')).toContainText('исходный аксиальный срез 29');
+  await expect(page.locator('.pane-0 .pane-label small')).toHaveText('29 / 64');
+  await expect(page.getByLabel('Срез Аксиальная',{exact:true})).toHaveValue('28');
+  await expect.poll(async()=> (await readMPRStats(page))[0].colored).toBeGreaterThan(20);
+  await expect(page.getByRole('button',{name:'3D-реконструкция'})).toBeDisabled();
+  let p=(await (await page.request.get('/api/projects')).json())[0];const id=p.id;
+  expect(p.version_id).toBeNull();const proposal=p.predictions.find((v:any)=>v.provenance.variant==='slice_draft');
+  const before=await (await page.request.get(`/api/projects/${id}/export/${proposal.id}`)).body();
+  await page.getByRole('button',{name:'Взять черновик за основу'}).click();await expect(page.getByRole('button',{name:'Кисть',exact:true})).toBeEnabled();
+  await expect(page.getByLabel('Показать маску')).toHaveValue('draft');await expect(page.locator('.slice-scope')).toContainText('Черновик для проверки на основе AI');
+  await page.locator('.label-choice').filter({hasText:'RV'}).click();await page.getByRole('button',{name:'Кисть',exact:true}).click();
+  const box=(await page.getByTestId('viewport-0').boundingBox())!;await page.mouse.click(box.x+box.width*.5,box.y+box.height*.5);
+  await expect.poll(async()=> (await (await page.request.get('/api/projects/'+id)).json()).document.operations.length).toBeGreaterThan(0);
+  await expect(page.getByTestId('save-status')).toContainText('Сохранено');
+  p=await (await page.request.get('/api/projects/'+id)).json();const head=p.version_id;
+  expect(p.annotation_scope).toEqual({axis:2,index:28,complete_volume:false});
+  expect(p.document.operations.filter((o:any)=>o.kind==='brush').every((o:any)=>o.indices.every((i:number)=>Math.floor(i/(96*96))===28))).toBe(true);
+  await page.getByLabel('Срез Аксиальная',{exact:true}).focus();await page.keyboard.press('ArrowRight');await expect(page.getByLabel('Срез Аксиальная',{exact:true})).toHaveValue('29');
+  await page.mouse.click(box.x+box.width*.5,box.y+box.height*.5);await page.waitForTimeout(700);
+  expect((await (await page.request.get('/api/projects/'+id)).json()).version_id).toBe(head);
+  await page.getByLabel('Срез Аксиальная',{exact:true}).focus();await page.keyboard.press('ArrowLeft');
+  await page.getByRole('button',{name:'⚑ Подозрительный срез'}).click();
+  await expect.poll(async()=> (await (await page.request.get('/api/projects/'+id)).json()).document.flags.length).toBe(1);
+  expect((await (await page.request.get(`/api/projects/${id}/export/${proposal.id}`)).body()).equals(before)).toBe(true);
+  await page.reload();await expect(page.getByText('● Геометрия проверена')).toBeVisible({timeout:45000});
+  await expect(page.getByLabel('Срез Аксиальная',{exact:true})).toHaveValue('28');await expect(page.getByRole('button',{name:'3D-реконструкция'})).toBeDisabled();
+  expect(errors).toEqual([]);
+});

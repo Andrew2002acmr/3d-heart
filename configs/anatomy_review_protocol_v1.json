@@ -1,0 +1,43 @@
+{
+  "id": "anatomy_review_protocol_v1",
+  "purpose": "anatomical evidence collection across the CT volume before annotating one target slice",
+  "source": "admitted original HU CT only; no prediction or probability maps",
+  "local_only": true,
+  "observer_required": "human reviewer or separately verified offline visual runtime",
+  "target_selection": "after volume survey and structure tracking; no CNN label-count ranking",
+  "overview_counts": {"AX": 17, "COR": 9, "SAG": 9},
+  "window_presets": [
+    {"name": "soft_tissue", "width": 600.0, "level": 150.0},
+    {"name": "wide", "width": 1600.0, "level": 300.0}
+  ],
+  "maximum_display_edge": 768,
+  "display_geometry": "axis-aligned physical aspect ratio; source pixel-centre mapping stored per packet; no modification of CT",
+  "phases": [
+    "verify orientation, acquisition phase, field of view and artefacts without overlays",
+    "survey AX/COR/SAG and record visible features separately from hypotheses",
+    "trace candidate structures through adjacent slices and cross-check another plane; record gaps and contradictions",
+    "choose target plane after survey; assess each label as delineated, uncertain, not_visible or not_assessable",
+    "justify each target boundary with CT evidence IDs and annotation-protocol rule",
+    "review unresolved anatomy; save a separate candidate; expert review remains mandatory"
+  ],
+  "prohibited_shortcuts": [
+    "using predictions, confidence maps or label agreement as anatomical observations",
+    "naming chambers by screen position or contrast brightness alone",
+    "enforcing normal chamber-vessel connections in congenital/postoperative anatomy",
+    "inventing unseen structures, valve planes, continuity or observations",
+    "marking unsampled or unseen ranges as reviewed",
+    "treating notebook completeness as anatomical correctness"
+  ],
+  "labels": {
+    "LV": "verify ventricular morphology and continuity; do not infer identity from side alone",
+    "RV": "seek trabecular and outflow morphology; explicit uncertainty if not assessable",
+    "LA": "assess morphology and venous/valvar relationships across slices",
+    "RA": "assess morphology and caval/coronary-sinus relationships; contrast mixing is not a boundary",
+    "MYO": "record epicardial/endocardial boundary and unresolved source label semantics",
+    "AO": "trace root and ascending pathway; do not assume normal LV connection",
+    "PA": "trace trunk and branching; distinguish from adjacent vessels using continuity"
+  },
+  "unresolved_label_protocol": ["MYO coverage in CHD68", "valve-ring boundaries", "aortic and pulmonary extent"],
+  "clinical_validity_claimed": false,
+  "automatic_expert_approval": false
+}

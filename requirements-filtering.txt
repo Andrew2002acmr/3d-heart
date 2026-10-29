@@ -1,0 +1,3 @@
+-r requirements-ct-lab.txt
+# Optional projection dependency; PCA/SVD and k-NN/cKDTree use NumPy/SciPy.
+umap-learn>=0.5.9,<0.6

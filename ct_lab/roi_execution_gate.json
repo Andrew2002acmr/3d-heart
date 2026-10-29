@@ -1,0 +1,10 @@
+{
+  "CV_epochs": 18,
+  "initial_CV_epochs": 6,
+  "CV_steps_per_epoch": 48,
+  "reason": "A real train-only fold0 Full-FOV six-epoch pilot predicted background. Foreground targets, pixel-center geometry and optimizer updates were verified. CV warmup was extended equally for B/D before any outer segmentation score, without changing main budgets. This file reproduces the executed train-only decision; the original exploratory protocol remains preserved.",
+  "external_development_segmentation_metrics_seen": false,
+  "main_epochs_steps_architecture_loss_jobs_unchanged": true,
+  "localizer_threshold_margin_unchanged": true,
+  "scope": "train-only preliminary decision, not outer-validation tuning"
+}

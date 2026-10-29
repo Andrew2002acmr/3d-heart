@@ -1,0 +1,21 @@
+# Future private HTTPS pilot only. Set an institution-controlled hostname and
+# serve only the built frontend. Never point this root at .web-data or the repo.
+{$HEART3D_HOST} {
+    bind 127.0.0.1
+    tls internal
+    handle /api/* {
+        reverse_proxy 127.0.0.1:8000
+    }
+    handle {
+        root * {$HEART3D_WEB_DIST}
+        try_files {path} /index.html
+        file_server
+    }
+    header {
+        Content-Security-Policy "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; connect-src 'self'; img-src 'self' data: blob:; worker-src 'self' blob:; font-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'self'"
+        X-Content-Type-Options nosniff
+        Referrer-Policy no-referrer
+        X-Frame-Options DENY
+    }
+    # Access logging stays disabled: URLs/headers can contain sensitive metadata.
+}

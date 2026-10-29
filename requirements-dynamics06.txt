@@ -1,0 +1,14 @@
+# Keep the pod's verified CUDA PyTorch installation. Never replace it with CPU torch.
+# Local exact versions are recorded in outputs/training_dynamics_06/environment.json
+# and report_versions.json; destination versions must be recorded by the runner.
+numpy>=2.2,<3
+scipy>=1.15,<2
+nibabel>=5.3,<6
+psutil>=5.9
+scikit-image>=0.25,<0.27
+pandas>=2.2,<3
+matplotlib>=3.10,<4
+scikit-learn>=1.6,<2
+streamlit>=1.50,<2
+plotly>=6,<8
+pytest>=8,<10

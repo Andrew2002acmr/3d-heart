@@ -1,0 +1,68 @@
+import {test,expect} from '@playwright/test';
+import {installLocalNetworkGuard} from '../scripts/local-network-guard.mjs';
+import {readMPRStats} from '../scripts/render-stats.mjs';
+
+test('CT-only multiview notes, adjacent-slice tracking, target rationale and independent immutable notebook',async({page,context})=>{
+  const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));
+  await installLocalNetworkGuard(context,'http://127.0.0.1:5174');
+  await page.goto('/?view=anatomy');await page.getByLabel('Логин',{exact:true}).fill('anatomy-resident');await page.getByLabel('Пароль',{exact:true}).fill(process.env.HEART3D_E2E_PASSWORD!);await page.getByRole('button',{name:'Войти в рабочее пространство'}).click();
+  await page.getByRole('button',{name:'Открыть разметку'}).click();await expect(page.getByText('● Геометрия проверена')).toBeVisible({timeout:45000});
+  const panel=page.getByRole('complementary',{name:'Анатомический разбор CT'});
+  await expect(panel).toBeVisible();expect(new URL(page.url()).searchParams.get('view')).toBe('anatomy');
+  await expect.poll(async()=> (await readMPRStats(page)).every(s=>s.gray>100&&s.grayLevels>=16&&s.colored===0)).toBe(true);
+  const project=(await (await page.request.get('/api/projects')).json())[0],id=project.id;
+  const getBook=async()=> (await page.request.get(`/api/projects/${id}/anatomy-review`)).json();
+  await expect(panel.getByText('Журнал пока пуст.',{exact:false})).toBeVisible();
+  async function note(view:string,text:string){
+    await panel.getByRole('combobox',{name:'Текущий вид',exact:true}).selectOption(view);
+    await panel.getByRole('button',{name:'Записать текущий вид'}).click();
+    await panel.getByRole('textbox',{name:'Что видно на CT',exact:true}).fill(text);
+    await panel.getByLabel('Видимые признаки · по одному на строке',{exact:true}).fill('synthetic visible feature');
+    await panel.getByRole('button',{name:'Добавить запись',exact:true}).click();
+  }
+  await note('0','synthetic landmark A');
+  await page.getByLabel('Срез Аксиальная',{exact:true}).focus();await page.keyboard.press('ArrowRight');
+  await note('0','synthetic landmark B');await note('1','synthetic cross-plane C');
+  await expect.poll(async()=> (await getBook()).document.observations.length).toBe(3);
+  let book=await getBook();const [a,b,c]=book.document.observations;
+  expect(a.locator.native_axis).toBe(2);expect(Math.abs(a.locator.native_index-b.locator.native_index)).toBe(1);
+  expect(c.locator.view).toBe('COR');expect(book.document.observations.every((n:any)=>n.locator.overlay_visible===false)).toBe(true);
+  await panel.getByLabel('Целевой аксиальный срез',{exact:true}).fill(String(a.locator.native_index+1));
+  await panel.getByRole('button',{name:'Выбрать',exact:true}).click();
+  await panel.getByRole('tab',{name:'Ход структур'}).click();
+  for(const text of ['synthetic landmark A','synthetic landmark B','synthetic cross-plane C'])await panel.locator('.anatomy-check').filter({hasText:text}).locator('input').check();
+  await panel.getByRole('combobox',{name:'От записи',exact:true}).selectOption(a.id);await panel.getByRole('combobox',{name:'К записи',exact:true}).selectOption(b.id);
+  await panel.getByRole('button',{name:'Добавить связь',exact:true}).click();await panel.getByRole('button',{name:'Записать ход структуры'}).click();
+  await expect.poll(async()=> (await getBook()).document.tracks.length).toBe(1);
+  await panel.getByRole('tab',{name:'Решения',exact:true}).click();await panel.getByRole('combobox',{name:'Оценка',exact:true}).selectOption('delineated');
+  const support=panel.locator('details').filter({has:page.locator('summary',{hasText:'Поддерживающие наблюдения'})});
+  for(const text of ['synthetic landmark A','synthetic landmark B','synthetic cross-plane C'])await support.locator('.anatomy-check').filter({hasText:text}).locator('input').check();
+  await panel.getByText('Связанный ход структуры',{exact:true}).click();
+  await panel.locator('details').filter({has:page.locator('summary',{hasText:'Связанный ход структуры'})}).locator('input').check();
+  await panel.getByLabel('Правило проведения границы',{exact:true}).fill('synthetic protocol boundary');await panel.getByLabel('Обоснование решения',{exact:true}).fill('synthetic adjacent AX plus COR evidence');
+  await panel.getByRole('button',{name:'Записать решение',exact:true}).click();
+  await expect.poll(async()=> (await getBook()).document.decisions.length).toBe(1);
+  book=await getBook();expect(book.readiness.ready).toBe(false);expect(book.readiness.expert_validated).toBe(false);
+  expect(book.readiness.issues.some((s:string)=>s.startsWith('Structure 1:'))).toBe(false);
+  const originalProject=await (await page.request.get('/api/projects/'+id)).json();expect(originalProject.version_id).toBe(project.version_id);expect(originalProject.revision).toBe(project.revision);
+  const exported=await (await page.request.get(`/api/projects/${id}/anatomy-review/export?version_id=${book.version_id}`)).json();expect(exported.document.observations).toHaveLength(3);expect(exported.document_sha256).toMatch(/^[a-f0-9]{64}$/);
+  await page.reload();await expect(page.getByText('● Геометрия проверена')).toBeVisible({timeout:45000});await expect(panel.getByText('synthetic landmark A',{exact:true})).toBeVisible();
+  await panel.getByRole('button',{name:'Записать текущий вид'}).click();await panel.getByRole('textbox',{name:'Что видно на CT',exact:true}).fill('uncommitted synthetic note');
+  await page.getByRole('button',{name:'← Кабинет',exact:true}).click();await expect(panel.getByRole('textbox',{name:'Что видно на CT',exact:true})).toHaveValue('uncommitted synthetic note');
+  expect((await getBook()).document.observations).toHaveLength(3);
+  await panel.getByRole('button',{name:'Отмена',exact:true}).click();expect(errors).toEqual([]);
+  // Model proposals retain their source and cannot become human by opening Edit.
+  book=await getBook();
+  const cloudNote={...book.document.observations[0],id:'synthetic-cloud-observation',statement:'synthetic cloud observation',source:'cloud_model'};
+  const user=await (await page.request.get('/api/auth/me')).json();
+  const savedCloud=await page.request.post(`/api/projects/${id}/anatomy-review`,{headers:{'X-CSRF-Token':user.csrf},data:{base_version_id:book.version_id,ct_sha256:book.ct_sha256,document:{...book.document,observations:[...book.document.observations,cloudNote]}}});
+  expect(savedCloud.ok()).toBe(true);
+  await page.reload();await expect(page.getByText('● Геометрия проверена')).toBeVisible({timeout:45000});
+  const cloudArticle=panel.locator('.anatomy-notes article').filter({hasText:'synthetic cloud observation'});
+  await expect(cloudArticle).toContainText('Облачная модель');
+  await expect(cloudArticle.getByRole('button',{name:'Изменить',exact:true})).toHaveCount(0);
+  await expect(panel.locator('.anatomy-notes article').filter({hasText:'synthetic landmark A'}).getByRole('button',{name:'Изменить',exact:true})).toHaveCount(1);
+  expect((await getBook()).document.observations.find((n:any)=>n.id===cloudNote.id).source).toBe('cloud_model');
+  expect((await (await page.request.get('/api/projects/'+id)).json()).version_id).toBe(project.version_id);
+  expect(errors).toEqual([]);
+});

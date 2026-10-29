@@ -1,0 +1,13 @@
+{
+  "id": "clinical_exploratory_hu_offset1024_v1",
+  "input_units": "HU_verified_from_DICOM",
+  "gain": 1.0,
+  "offset": 1024.0,
+  "source_intensity_convention_confirmed": false,
+  "exploratory_only": true,
+  "hypothesis": "CHD68 may use nonnegative stored CT values approximated by HU+1024. This is not established by the source README or available manifests.",
+  "selection_policy": "Declared before viewing predictions. Same fixed transform for both models. No per-case percentile fit, no output-based selection.",
+  "model_preprocessing": "Apply the unchanged checkpoint-specific frozen [0,2015] clip and linear normalization only AFTER this explicit exploratory adapter.",
+  "spatial_policy": "lossless RAS index reorientation for model; inverse index reorientation to original DICOM-derived grid; no Z resampling or anatomy crop",
+  "clinical_validity_claimed": false
+}
